@@ -7,12 +7,13 @@ import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const navLinks = [
-  { href: '#sobre', label: 'Sobre' },
-  { href: '#metodologia', label: 'Metodologia' },
-  { href: '#ferramentas', label: 'Ferramentas' },
-  { href: '#parceiros', label: 'Parceiros' },
-  { href: '#como-funciona', label: 'Como Funciona' },
-  { href: '#resultados', label: 'Resultados' },
+  { href: '/#sobre', label: 'Sobre' },
+  { href: '/#metodologia', label: 'Metodologia' },
+  { href: '/ff', label: 'Fórmula Fluente' },
+  { href: '/#ferramentas', label: 'Ferramentas' },
+  { href: '/#parceiros', label: 'Parceiros' },
+  { href: '/#como-funciona', label: 'Como Funciona' },
+  { href: '/#resultados', label: 'Resultados' },
 ]
 
 export default function Navbar() {
@@ -36,7 +37,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="#home" className="flex items-center gap-2 shrink-0">
+        <Link href="/" className="flex items-center gap-2 shrink-0">
           <div className="relative w-10 h-10">
             <Image
               src="/images/Logo-ETT.png"
@@ -67,7 +68,7 @@ export default function Navbar() {
         {/* CTA */}
         <div className="hidden md:block">
           <Link
-            href="#inscricao"
+            href="/#inscricao"
             className="px-4 py-2 rounded-lg bg-neon-green text-black font-bold text-sm hover:bg-neon-green/90 transition-all hover:shadow-neon-green whitespace-nowrap"
           >
             Inscreva-se no próximo encontro gratuito
@@ -98,7 +99,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="#inscricao"
+            href="/#inscricao"
             onClick={() => setMobileOpen(false)}
             className="mt-2 px-4 py-3 rounded-lg bg-neon-green text-black font-bold text-sm text-center hover:bg-neon-green/90 transition-all"
           >

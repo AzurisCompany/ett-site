@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**ETT (English Talk Time)** is a Brazilian English language acceleration program targeting tech professionals (Data, AI, BI, Cloud, Technology). The site is a **greenfield project** — there is no code yet. The `ConteudoSite/` folder contains planning documents, brand assets, and partner logos used to build the site.
+**ETT (English Talk Time)** is a Brazilian English language acceleration program targeting tech professionals (Data, AI, BI, Cloud, Technology). This directory holds the Next.js 14 source for the marketing site. The site is built as a static export (`output: 'export'`); the generated `out/` is copied to the repo root for GitHub Pages — see `../CLAUDE.md` for the build/deploy flow.
 
-The project is written/documented in **Portuguese (pt-BR)**.
+The site copy is in **Portuguese (pt-BR)**. `ConteudoSite/` contains the original planning documents (notably `ProjetoGeralETT.docx`), brand assets, and partner logos that informed the site content.
 
 ## Content & Assets
 
