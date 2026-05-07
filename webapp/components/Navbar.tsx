@@ -10,10 +10,10 @@ const navLinks = [
   { href: '/#sobre', label: 'Sobre' },
   { href: '/#metodologia', label: 'Metodologia' },
   { href: '/ff', label: 'Fórmula Fluente' },
+  { href: '/agenda', label: 'Agenda' },
   { href: '/#ferramentas', label: 'Ferramentas' },
   { href: '/#parceiros', label: 'Parceiros' },
   { href: '/#como-funciona', label: 'Como Funciona' },
-  { href: '/#resultados', label: 'Resultados' },
 ]
 
 export default function Navbar() {
