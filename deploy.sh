@@ -34,24 +34,33 @@ fi
 # -------------------------------------------------------------------
 # 2. COPIA P/ RAIZ (GitHub Pages serve daqui)
 # -------------------------------------------------------------------
-echo "==> [2/4] Copiando export estatico para a raiz..."
+echo "==> [2/4] Espelhando export estatico para a raiz..."
 
-# _next/ regenera com hashes a cada build, entao recriamos do zero
-rm -rf "$ROOT/_next"
-cp -r "$OUT/_next" "$ROOT/_next"
-
-# .html / .txt que o Next gera no nivel raiz do export
+# 2a) Remove .html/.txt orfaos na raiz que nao existem mais no export
 shopt -s nullglob
-for f in "$OUT"/*.html "$OUT"/*.txt; do
-  cp "$f" "$ROOT/"
+for f in "$ROOT"/*.html "$ROOT"/*.txt; do
+  bn=$(basename "$f")
+  if [[ ! -f "$OUT/$bn" ]]; then
+    rm -f "$f"
+    echo "    (rm orfao) $bn"
+  fi
 done
 shopt -u nullglob
 
-# images/ - merge (mantem possiveis arquivos extras que existam na raiz)
-if [[ -d "$OUT/images" ]]; then
-  mkdir -p "$ROOT/images"
-  cp -r "$OUT/images/." "$ROOT/images/"
-fi
+# 2b) Espelha cada entrada top-level de webapp/out/ na raiz
+#     Diretorios sao recriados do zero (rm -rf + cp -r);
+#     arquivos sao sobrescritos.
+shopt -s nullglob
+for entry in "$OUT"/*; do
+  bn=$(basename "$entry")
+  if [[ -d "$entry" ]]; then
+    rm -rf "$ROOT/$bn"
+    cp -r "$entry" "$ROOT/$bn"
+  else
+    cp "$entry" "$ROOT/"
+  fi
+done
+shopt -u nullglob
 
 # -------------------------------------------------------------------
 # 3. STAGE + COMMIT
