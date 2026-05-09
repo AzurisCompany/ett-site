@@ -2,21 +2,16 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
 import { CheckCircle2, Loader2, MapPin, Calendar, Users } from 'lucide-react'
 
-const schema = z.object({
-  name: z.string().min(2, 'Nome precisa ter ao menos 2 caracteres'),
-  email: z.string().email('E-mail inválido'),
-  linkedin: z.string().optional(),
-  level: z.enum(['zero', 'basico', 'intermediario', 'avancado'], {
-    required_error: 'Selecione seu nível atual',
-  }),
-})
-
-type FormData = z.infer<typeof schema>
+// API legacy v1.3 da RD Station — endpoint público com CORS aberto.
+// O token público da conta RD da GUBigData (mesmo da LP de origem
+// https://eventos.gubigdata.com.br/tenhointeresseprogramaaceleracaoingles)
+// fica exposto no client porque ele só identifica a conta, não autoriza
+// leitura/escrita do CRM.
+const RD_FORM_ACTION = 'https://www.rdstation.com.br/api/1.3/conversions'
+const RD_TOKEN_PUBLIC = '91ad62b8804b60a50c32a768d4adb263'
+const RD_CONVERSION_ID = 'tenhointeresseprogramaaceleracaoingles'
 
 const levels = [
   { value: 'zero', label: 'Zero — nunca estudei inglês' },
@@ -27,18 +22,44 @@ const levels = [
 
 export default function LeadForm() {
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm<FormData>({ resolver: zodResolver(schema) })
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    setError(null)
+    setSubmitting(true)
 
-  async function onSubmit(data: FormData) {
-    // Simulate API call
-    await new Promise((r) => setTimeout(r, 1200))
-    console.log('Lead:', data)
-    setSubmitted(true)
+    const form = event.currentTarget
+    const formData = new FormData(form)
+
+    // Honeypot — se preenchido, finge sucesso e descarta.
+    if ((formData.get('website') as string)?.length) {
+      setSubmitted(true)
+      setSubmitting(false)
+      return
+    }
+    formData.delete('website')
+
+    try {
+      const resp = await fetch(RD_FORM_ACTION, {
+        method: 'POST',
+        body: formData,
+      })
+      if (!resp.ok) {
+        const text = await resp.text().catch(() => '')
+        console.error('[LeadForm] RD respondeu', resp.status, text.slice(0, 300))
+        throw new Error(`http_${resp.status}`)
+      }
+      setSubmitted(true)
+    } catch (err) {
+      console.error('[LeadForm] falha no submit', err)
+      setError(
+        'Não foi possível enviar agora. Tente de novo em instantes ou nos chame em contato@englishtalktime.com.br.',
+      )
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -120,67 +141,68 @@ export default function LeadForm() {
                   key="form"
                   initial={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  onSubmit={handleSubmit(onSubmit)}
+                  onSubmit={handleSubmit}
                   className="space-y-5"
-                  noValidate
                 >
+                  {/* Hidden fields exigidos pela RD v1.3 */}
+                  <input type="hidden" name="token_rdstation" value={RD_TOKEN_PUBLIC} />
+                  <input type="hidden" name="identificador" value={RD_CONVERSION_ID} />
+
                   {/* Name */}
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="rd-name" className="block text-sm font-medium text-gray-300 mb-2">
                       Nome completo <span className="text-neon-green">*</span>
                     </label>
                     <input
-                      id="name"
+                      id="rd-name"
+                      name="nome"
                       type="text"
+                      required
+                      minLength={2}
                       placeholder="Seu nome"
-                      {...register('name')}
                       className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-neon-green/60 focus:ring-1 focus:ring-neon-green/30 transition-colors"
                     />
-                    {errors.name && (
-                      <p className="mt-1.5 text-xs text-red-400">{errors.name.message}</p>
-                    )}
                   </div>
 
                   {/* Email */}
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="rd-email" className="block text-sm font-medium text-gray-300 mb-2">
                       E-mail <span className="text-neon-green">*</span>
                     </label>
                     <input
-                      id="email"
+                      id="rd-email"
+                      name="email"
                       type="email"
+                      required
                       placeholder="seu@email.com"
-                      {...register('email')}
                       className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-neon-green/60 focus:ring-1 focus:ring-neon-green/30 transition-colors"
                     />
-                    {errors.email && (
-                      <p className="mt-1.5 text-xs text-red-400">{errors.email.message}</p>
-                    )}
                   </div>
 
                   {/* LinkedIn (optional) */}
                   <div>
-                    <label htmlFor="linkedin" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="rd-linkedin" className="block text-sm font-medium text-gray-300 mb-2">
                       LinkedIn{' '}
                       <span className="text-gray-500 text-xs font-normal">(opcional — para networking)</span>
                     </label>
                     <input
-                      id="linkedin"
-                      type="url"
+                      id="rd-linkedin"
+                      name="linkedin"
+                      type="text"
                       placeholder="https://linkedin.com/in/seu-perfil"
-                      {...register('linkedin')}
                       className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-tech-blue/60 focus:ring-1 focus:ring-tech-blue/30 transition-colors"
                     />
                   </div>
 
                   {/* Level */}
                   <div>
-                    <label htmlFor="level" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="rd-level" className="block text-sm font-medium text-gray-300 mb-2">
                       Qual seu nível atual de inglês? <span className="text-neon-green">*</span>
                     </label>
                     <select
-                      id="level"
-                      {...register('level')}
+                      id="rd-level"
+                      name="cf_nivel_ingles"
+                      required
                       defaultValue=""
                       className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white focus:outline-none focus:border-neon-green/60 focus:ring-1 focus:ring-neon-green/30 transition-colors appearance-none cursor-pointer"
                     >
@@ -193,18 +215,21 @@ export default function LeadForm() {
                         </option>
                       ))}
                     </select>
-                    {errors.level && (
-                      <p className="mt-1.5 text-xs text-red-400">{errors.level.message}</p>
-                    )}
                   </div>
+
+                  {error && (
+                    <div className="rounded-xl border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-300">
+                      {error}
+                    </div>
+                  )}
 
                   {/* Submit */}
                   <button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={submitting}
                     className="w-full py-4 rounded-xl bg-neon-green text-black font-bold text-base hover:bg-neon-green/90 disabled:opacity-60 disabled:cursor-not-allowed transition-all hover:shadow-neon-green-lg hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2"
                   >
-                    {isSubmitting ? (
+                    {submitting ? (
                       <>
                         <Loader2 className="w-5 h-5 animate-spin" />
                         Enviando...
@@ -218,6 +243,16 @@ export default function LeadForm() {
                     Seus dados são usados apenas para envio do link do evento e diagnóstico ETT.
                     Sem spam.
                   </p>
+
+                  {/* Honeypot — campo escondido; humano nunca preenche */}
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }}
+                  />
                 </motion.form>
               )}
             </AnimatePresence>
