@@ -9,7 +9,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ett.dssbr.com.br'),
+  metadataBase: new URL('https://englishtalktime.com.br'),
   title: 'ETT – English Talk Time | Programa de Aceleração de Inglês para o Mercado Internacional',
   description:
     'Pare de travar no inglês. O ETT é o programa de aceleração para profissionais de Tecnologia, Dados, IA e BI que precisam de inglês funcional para o mercado internacional. Metodologia Fórmula Fluente + IA + Comunidade.',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://ett.dssbr.com.br',
+    url: 'https://englishtalktime.com.br',
     siteName: 'English Talk Time – ETT',
     title: 'ETT – Do inglês travado ao inglês funcional para o mercado internacional',
     description:
@@ -70,7 +70,7 @@ const jsonLd = {
   name: 'English Talk Time – ETT',
   description:
     'Programa de aceleração de inglês para profissionais de Tecnologia, Dados, IA e BI. Parte do ecossistema DSSBR & GUBigData IA.',
-  url: 'https://ett.dssbr.com.br',
+  url: 'https://englishtalktime.com.br',
   logo: '/images/Logo-ETT.png',
   foundingOrganization: {
     '@type': 'Organization',

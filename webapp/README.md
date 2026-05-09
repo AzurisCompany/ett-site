@@ -20,23 +20,17 @@ npm run dev
 
 Acesse [http://localhost:3000](http://localhost:3000).
 
-## Deploy na Vercel
+## Deploy
 
-### Opção 1 — Vercel CLI
+Produção: **https://englishtalktime.com.br** (servido por hosting externo que puxa do repo).
+
+O fluxo completo (build estático + espelhamento na raiz + push + pull manual no painel do hosting) está documentado em [`../CLAUDE.md`](../CLAUDE.md). Em resumo, a partir da raiz do repo:
 
 ```bash
-npm install -g vercel
-vercel
+./deploy.sh "mensagem opcional do commit"
 ```
 
-Siga o wizard. O projeto é detectado automaticamente como Next.js.
-
-### Opção 2 — GitHub + Vercel Dashboard
-
-1. Faça push do repositório para o GitHub
-2. Acesse [vercel.com](https://vercel.com) → **Add New Project**
-3. Importe o repositório
-4. Clique em **Deploy** — zero configuração necessária
+Não use `vercel` / `next start` — o site é exportado estático (`output: 'export'`) e servido pelo hosting; não há funções server-side ativas.
 
 ### Variáveis de ambiente (opcional)
 
@@ -65,7 +59,7 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 export async function POST(req: Request) {
   const body = await req.json()
   await resend.emails.send({
-    from: 'ETT <noreply@ett.dssbr.com.br>',
+    from: 'ETT <noreply@englishtalktime.com.br>',
     to: body.email,
     subject: 'Confirmado! Seu acesso ao próximo encontro ETT',
     html: `<p>Olá ${body.name}, em breve você receberá o link do encontro e o diagnóstico ETT FluenteLevel.</p>`,

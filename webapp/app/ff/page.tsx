@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Fórmula Fluente — Metodologia do ETT',
     description:
       'Threshold + Imersão = Fluência. O método que destila por que algumas pessoas chegam à fluência em meses e outras passam anos travadas.',
-    url: 'https://ett.dssbr.com.br/ff',
+    url: 'https://englishtalktime.com.br/ff/',
     images: [{ url: '/images/ETT-top01.png', width: 1200, height: 630 }],
   },
 }

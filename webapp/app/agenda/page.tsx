@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Agenda ETT — Próximos encontros',
     description:
       'Online toda segunda + presencial semanal em Curitiba. Veja as próximas datas e marque na sua agenda.',
-    url: 'https://ett.dssbr.com.br/agenda/',
+    url: 'https://englishtalktime.com.br/agenda/',
     images: [{ url: '/images/ETT-top01.png', width: 1200, height: 630 }],
   },
 }

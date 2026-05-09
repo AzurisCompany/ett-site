@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**ETT (English Talk Time)** is a Brazilian English language acceleration program targeting tech professionals (Data, AI, BI, Cloud, Technology). This directory holds the Next.js 14 source for the marketing site. The site is built as a static export (`output: 'export'`); the generated `out/` is copied to the repo root for GitHub Pages — see `../CLAUDE.md` for the build/deploy flow.
+**ETT (English Talk Time)** is a Brazilian English language acceleration program targeting tech professionals (Data, AI, BI, Cloud, Technology). This directory holds the Next.js 14 source for the marketing site.
+
+Production: **https://englishtalktime.com.br** (servido por hosting externo, **não** GitHub Pages). O site é build estático (`output: 'export'`); `webapp/out/` é espelhado na raiz do repo e o hosting puxa de lá após disparo manual no painel — veja `../CLAUDE.md` para o fluxo completo de build/deploy e as limitações conhecidas do `deploy.sh`.
 
 The site copy is in **Portuguese (pt-BR)**. `ConteudoSite/` contains the original planning documents (notably `ProjetoGeralETT.docx`), brand assets, and partner logos that informed the site content.
 
