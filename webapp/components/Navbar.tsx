@@ -71,7 +71,7 @@ export default function Navbar() {
             href="/#inscricao"
             className="px-4 py-2 rounded-lg bg-neon-green text-black font-bold text-sm hover:bg-neon-green/90 transition-all hover:shadow-neon-green whitespace-nowrap"
           >
-            Inscreva-se no próximo encontro gratuito
+            Tenho Interesse
           </Link>
         </div>
 
@@ -103,7 +103,7 @@ export default function Navbar() {
             onClick={() => setMobileOpen(false)}
             className="mt-2 px-4 py-3 rounded-lg bg-neon-green text-black font-bold text-sm text-center hover:bg-neon-green/90 transition-all"
           >
-            Inscreva-se no próximo encontro gratuito
+            Tenho Interesse
           </Link>
         </div>
       )}

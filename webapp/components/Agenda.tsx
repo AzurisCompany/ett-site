@@ -16,8 +16,7 @@ import {
   BookMarked,
 } from 'lucide-react'
 
-const ETT_PROGRAM_URL =
-  'https://gubigdata.com.br/programa-de-aceleracao-do-ingles-para-mercado-internacional/'
+const ETT_PROGRAM_URL = 'https://forms.gle/jpK8bR4houvAXTwm9'
 
 type EventType = 'online' | 'presencial'
 

@@ -88,15 +88,16 @@ export default function LeadForm() {
             className="text-center mb-10"
           >
             <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
-              Próximo Encontro
+              Lista do ETT
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
               Dê o primeiro passo hoje
             </h2>
             <p className="text-gray-400 text-lg">
-              Entrada gratuita. Sem compromisso.{' '}
-              <strong className="text-gray-200">Online toda segunda</strong> ou{' '}
-              <strong className="text-gray-200">presencial em Curitiba</strong> — escolha o formato que cabe na sua semana.
+              Cadastre-se na nossa lista para receber{' '}
+              <strong className="text-gray-200">datas dos próximos encontros</strong> (online toda segunda ou
+              presenciais em Curitiba), <strong className="text-gray-200">novidades do programa</strong> e o lançamento
+              do <strong className="text-gray-200">ebook da Fórmula Fluente</strong>. Gratuito, sem compromisso.
             </p>
 
             {/* Event info */}
@@ -136,11 +137,12 @@ export default function LeadForm() {
                   <div className="w-16 h-16 rounded-full bg-neon-green/15 border border-neon-green/30 flex items-center justify-center mx-auto mb-6">
                     <CheckCircle2 className="w-8 h-8 text-neon-green" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">Inscrição confirmada!</h3>
+                  <h3 className="text-2xl font-bold text-white mb-3">Cadastro confirmado!</h3>
                   <p className="text-gray-300 leading-relaxed max-w-sm mx-auto">
-                    Obrigado! Em breve você receberá o{' '}
-                    <strong className="text-neon-green">link do próximo encontro</strong> e acesso ao{' '}
-                    <strong className="text-tech-blue">diagnóstico inicial ETT FluenteLevel</strong>.
+                    Obrigado! Você está na nossa lista. Vai receber em primeira mão as{' '}
+                    <strong className="text-neon-green">datas dos próximos encontros</strong>, novidades do programa
+                    e o lançamento do{' '}
+                    <strong className="text-tech-blue">ebook da Fórmula Fluente</strong>.
                     Verifique seu e-mail.
                   </p>
                 </motion.div>
@@ -281,13 +283,13 @@ export default function LeadForm() {
                         Enviando...
                       </>
                     ) : (
-                      'Quero participar do próximo encontro gratuito'
+                      'Quero receber as informações do ETT'
                     )}
                   </button>
 
                   <p className="text-xs text-gray-600 text-center">
-                    Seus dados são usados apenas para envio do link do evento e diagnóstico ETT.
-                    Sem spam.
+                    Cadastrando você concorda em receber e-mails com as datas dos encontros, novidades do programa
+                    e o lançamento do ebook. Sem spam — pode descadastrar a qualquer momento.
                   </p>
 
                   {/* Honeypot — campo escondido; humano nunca preenche */}
