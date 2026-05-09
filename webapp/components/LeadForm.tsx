@@ -41,6 +41,12 @@ export default function LeadForm() {
     }
     formData.delete('website')
 
+    // Normaliza LinkedIn: aceita "linkedin.com/in/foo" e completa pra https://
+    const linkedin = (formData.get('linkedin') as string)?.trim() ?? ''
+    if (linkedin && !/^https?:\/\//i.test(linkedin)) {
+      formData.set('linkedin', `https://${linkedin.replace(/^\/+/, '')}`)
+    }
+
     try {
       const resp = await fetch(RD_FORM_ACTION, {
         method: 'POST',
@@ -88,22 +94,24 @@ export default function LeadForm() {
               Dê o primeiro passo hoje
             </h2>
             <p className="text-gray-400 text-lg">
-              Entrada gratuita. Sem compromisso. O próximo encontro acontece no IEP — Curitiba/PR.
+              Entrada gratuita. Sem compromisso.{' '}
+              <strong className="text-gray-200">Online toda segunda</strong> ou{' '}
+              <strong className="text-gray-200">presencial em Curitiba</strong> — escolha o formato que cabe na sua semana.
             </p>
 
             {/* Event info */}
             <div className="flex flex-wrap justify-center gap-4 mt-6 text-sm text-gray-400">
               <div className="flex items-center gap-2">
+                <Calendar className="w-4 h-4 text-neon-green" />
+                Online toda segunda + presencial semanal
+              </div>
+              <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-neon-green" />
-                IEP – Instituto de Engenharia do Paraná, Curitiba
+                Curitiba: IEP, UTFPR, Hard Rock, Habita
               </div>
               <div className="flex items-center gap-2">
                 <Users className="w-4 h-4 text-neon-green" />
-                Vagas limitadas — até 100 participantes
-              </div>
-              <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-neon-green" />
-                Mensal — gratuito
+                Sempre gratuito — vagas limitadas
               </div>
             </div>
           </motion.div>
@@ -179,17 +187,55 @@ export default function LeadForm() {
                     />
                   </div>
 
-                  {/* LinkedIn (optional) */}
+                  {/* Empresa */}
+                  <div>
+                    <label htmlFor="rd-empresa" className="block text-sm font-medium text-gray-300 mb-2">
+                      Empresa <span className="text-neon-green">*</span>
+                    </label>
+                    <input
+                      id="rd-empresa"
+                      name="empresa"
+                      type="text"
+                      required
+                      minLength={2}
+                      placeholder="Onde você trabalha"
+                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-neon-green/60 focus:ring-1 focus:ring-neon-green/30 transition-colors"
+                    />
+                  </div>
+
+                  {/* Telefone */}
+                  <div>
+                    <label htmlFor="rd-telefone" className="block text-sm font-medium text-gray-300 mb-2">
+                      Telefone <span className="text-neon-green">*</span>{' '}
+                      <span className="text-gray-500 text-xs font-normal">(WhatsApp para confirmar)</span>
+                    </label>
+                    <input
+                      id="rd-telefone"
+                      name="telefone"
+                      type="tel"
+                      required
+                      pattern="^[\d\s()+\-]{8,}$"
+                      title="Digite um telefone válido com DDD (ex: 41 99999-9999)"
+                      placeholder="(41) 99999-9999"
+                      autoComplete="tel"
+                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-neon-green/60 focus:ring-1 focus:ring-neon-green/30 transition-colors"
+                    />
+                  </div>
+
+                  {/* LinkedIn */}
                   <div>
                     <label htmlFor="rd-linkedin" className="block text-sm font-medium text-gray-300 mb-2">
-                      LinkedIn{' '}
-                      <span className="text-gray-500 text-xs font-normal">(opcional — para networking)</span>
+                      LinkedIn <span className="text-neon-green">*</span>{' '}
+                      <span className="text-gray-500 text-xs font-normal">(usado para networking no encontro)</span>
                     </label>
                     <input
                       id="rd-linkedin"
                       name="linkedin"
                       type="text"
-                      placeholder="https://linkedin.com/in/seu-perfil"
+                      required
+                      pattern="(https?:\/\/)?(www\.)?linkedin\.com\/(in|pub)\/[\w\-_%]+\/?.*"
+                      title="Cole o link do seu perfil LinkedIn (ex: linkedin.com/in/seu-usuario)"
+                      placeholder="linkedin.com/in/seu-perfil"
                       className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-tech-blue/60 focus:ring-1 focus:ring-tech-blue/30 transition-colors"
                     />
                   </div>
@@ -235,7 +281,7 @@ export default function LeadForm() {
                         Enviando...
                       </>
                     ) : (
-                      'Quero participar do próximo encontro gratuito no IEP'
+                      'Quero participar do próximo encontro gratuito'
                     )}
                   </button>
 

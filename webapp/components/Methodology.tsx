@@ -36,7 +36,7 @@ const pillars = [
     description:
       'O idioma só se torna utilizável quando você fala, escuta, responde e se corrige. Board games, storytelling, role-play, simulações e noites temáticas criam o espaço seguro para o conhecimento sair do campo passivo para o ativo.',
     color: 'neon-green',
-    partner: 'English Talk Time (sessões presenciais)',
+    partner: 'English Talk Time (sessões online + presenciais)',
   },
   {
     number: '04',
