@@ -10,6 +10,7 @@ const navLinks = [
   { href: '/#sobre', label: 'Sobre' },
   { href: '/#metodologia', label: 'Metodologia' },
   { href: '/ff', label: 'Fórmula Fluente' },
+  { href: '/imersoes', label: 'Imersões' },
   { href: '/agenda', label: 'Agenda' },
   { href: '/#ferramentas', label: 'Ferramentas' },
   { href: '/#parceiros', label: 'Parceiros' },

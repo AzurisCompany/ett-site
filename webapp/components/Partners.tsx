@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useState } from 'react'
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink, Handshake, ArrowRight } from 'lucide-react'
 
 const partners = [
   {
@@ -41,6 +41,24 @@ const partners = [
     description:
       'Instituto de Engenharia do Paraná — apoio institucional centenário. Local oficial dos encontros presenciais English Talk Time em Curitiba/PR.',
     color: 'tech-blue',
+  },
+  {
+    id: 'utfpr',
+    name: 'UTFPR',
+    logo: '/images/utfpr-logo.svg',
+    role: 'Apoio Acadêmico',
+    description:
+      'Universidade Tecnológica Federal do Paraná — referência nacional em formação tecnológica. Parceria acadêmica que conecta o ETT à comunidade universitária de tech, engenharia e dados.',
+    color: 'tech-blue',
+  },
+  {
+    id: 'hardrock',
+    name: 'Hard Rock Cafe',
+    logo: '/images/hardrock-logo.jpg',
+    role: 'Networking & Experiência',
+    description:
+      'Parceiro de experiências sociais e networking do ETT. Encontros temáticos em um ambiente icônico, conectando profissionais tech em momentos descontraídos para praticar inglês na vida real.',
+    color: 'neon-green',
   },
   {
     id: 'formula-fluente',
@@ -157,6 +175,33 @@ export default function Partners() {
               </motion.div>
             )
           })}
+
+          {/* CTA — Seja um parceiro */}
+          <motion.a
+            href="https://forms.gle/yEFHStoPkVCSLuba8"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.5, delay: partners.length * 0.1 }}
+            className="group relative bg-gradient-to-br from-neon-green/10 via-dark-card to-tech-blue/10 border-2 border-dashed border-neon-green/40 rounded-2xl p-6 flex flex-col items-center justify-center text-center min-h-[260px] hover:border-neon-green hover:shadow-neon-green transition-all duration-300 cursor-pointer"
+          >
+            <div className="w-16 h-16 rounded-2xl bg-neon-green/15 border border-neon-green/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <Handshake className="w-8 h-8 text-neon-green" />
+            </div>
+            <h3 className="text-xl font-bold text-white mb-2">
+              Seja um parceiro do ETT
+            </h3>
+            <p className="text-gray-400 text-sm mb-5 max-w-xs">
+              Marca, escola, instituição ou empresa de tech?
+              Some forças com a gente.
+            </p>
+            <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-neon-green text-dark font-semibold text-sm shadow-neon-green group-hover:gap-3 transition-all">
+              Quero ser parceiro
+              <ArrowRight className="w-4 h-4" />
+            </span>
+          </motion.a>
         </div>
 
         {/* Credibility bar */}
