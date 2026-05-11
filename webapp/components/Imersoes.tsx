@@ -43,8 +43,8 @@ const imersoes: Imersao[] = [
     uf: 'PR',
     tag: 'Próxima a acontecer',
     tagColor: 'green',
-    when: 'Junho 2026',
-    whenDetail: 'Datas exatas a confirmar',
+    when: '29/jul — 02/ago 2026',
+    whenDetail: '5 dias de imersão presencial — formato Cherry Top',
     format: '5 dias — imersão presencial',
     bullets: [
       'Primeira edição ETT em Curitiba',
@@ -65,8 +65,8 @@ const imersoes: Imersao[] = [
     uf: 'MG',
     tag: 'Múltiplas turmas • 5 dias • 8 vagas',
     tagColor: 'blue',
-    when: 'Q3/Q4 2026',
-    whenDetail: '3 turmas previstas (Ago / Set–Out / Nov) — datas a confirmar',
+    when: 'Setembro · Outubro · Novembro 2026',
+    whenDetail: '3 turmas confirmadas: 03–07/set · 08–12/out · 18–22/nov',
     format: '5 dias com hospedagem e refeições inclusas',
     bullets: [
       'Immersion Village Brazil — sede oficial Cherry Top',

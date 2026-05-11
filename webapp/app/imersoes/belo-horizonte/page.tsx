@@ -4,9 +4,9 @@ import Footer from '@/components/Footer'
 import ImersaoDetalhe from '@/components/ImersaoDetalhe'
 
 export const metadata: Metadata = {
-  title: 'Imersão em Inglês — Belo Horizonte 2026 | ETT × Cherry Top',
+  title: 'Imersão em Inglês — Belo Horizonte 2026 (Set · Out · Nov) | ETT × Cherry Top',
   description:
-    'Imersão presencial de 5 dias na Immersion Village Brazil (Lagoa Santa/MG). 90 horas de certificado, 8 vagas por turma, hospedagem e refeições inclusas. Metodologia Bonding + Native-like.',
+    'Imersão presencial de 5 dias na Immersion Village Brazil (Lagoa Santa/MG). 3 turmas confirmadas: 03–07/set, 08–12/out e 18–22/nov 2026. 90h de certificado, 8 vagas por turma, hospedagem e refeições inclusas. Bonding + Native-like.',
   openGraph: {
     title: 'Imersão BH 2026 — ETT × Cherry Top',
     description:
@@ -34,17 +34,17 @@ export default function BeloHorizontePage() {
         turmas={[
           {
             label: 'Turma 1 — OMEGA / ZETA',
-            when: 'Agosto 2026 — datas a confirmar',
+            when: '03 a 07 de setembro de 2026',
             detalhe: 'Advanced + Upper Intermediate + Intermediate',
           },
           {
             label: 'Turma 2 — GAMA / DELTA',
-            when: 'Setembro/Outubro 2026 — datas a confirmar',
+            when: '08 a 12 de outubro de 2026',
             detalhe: 'Pré-Intermediate + Intermediate + Advanced',
           },
           {
             label: 'Turma 3 — ALPHA / BETA',
-            when: 'Novembro 2026 — datas a confirmar',
+            when: '18 a 22 de novembro de 2026',
             detalhe: 'Elementary + iniciantes (com onboarding online prévio)',
           },
         ]}
@@ -60,7 +60,7 @@ export default function BeloHorizontePage() {
           'Apenas 8 vagas por turma — alto contato e feedback individual',
           'Inglês 24 horas por dia — regra "english only" durante toda a imersão',
           'Foco em tech: devs, dados, IA, BI e cloud',
-          '3 turmas previstas no Q3/Q4 — você escolhe a melhor para seu nível',
+          '3 turmas confirmadas (set, out, nov) — você escolhe a melhor para seu nível',
           'Certificado de 90 horas reconhecido Cherry Top',
         ]}
         inclusos={[
@@ -77,7 +77,7 @@ export default function BeloHorizontePage() {
         fotos={fotosBH}
         fotosLegenda="Fotos da Immersion Village Brazil e edições anteriores Cherry Top — o ambiente que vai te receber."
         ctaLabel="Quero participar da imersão em BH"
-        vagasInfo="8 vagas por turma — 3 turmas em Q3/Q4 2026"
+        vagasInfo="8 vagas por turma — 3 turmas (set · out · nov 2026)"
       />
       <Footer />
     </>

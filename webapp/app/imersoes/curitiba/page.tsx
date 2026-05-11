@@ -4,13 +4,13 @@ import Footer from '@/components/Footer'
 import ImersaoDetalhe from '@/components/ImersaoDetalhe'
 
 export const metadata: Metadata = {
-  title: 'Imersão em Inglês — Curitiba 2026 | ETT × Cherry Top',
+  title: 'Imersão em Inglês — Curitiba 29/jul a 02/ago 2026 | ETT × Cherry Top',
   description:
-    'Primeira edição ETT em Curitiba. Imersão presencial em Junho/2026, em parceria com Cherry Top e IEP. Metodologia Bonding + Native-like para profissionais de tech. Vagas extremamente limitadas.',
+    'Primeira edição ETT em Curitiba. Imersão presencial de 5 dias (29/07 a 02/08/2026), em parceria com Cherry Top e IEP. Metodologia Bonding + Native-like para profissionais de tech. Vagas extremamente limitadas.',
   openGraph: {
-    title: 'Imersão Curitiba 2026 — ETT × Cherry Top',
+    title: 'Imersão Curitiba 29/jul a 02/ago 2026 — ETT × Cherry Top',
     description:
-      'Primeira edição ETT em Curitiba. Junho/2026, em parceria com Cherry Top e IEP.',
+      'Primeira edição ETT em Curitiba. 5 dias presenciais com Cherry Top e IEP.',
     url: 'https://englishtalktime.com.br/imersoes/curitiba/',
     images: [{ url: '/images/ETT-top01.png', width: 1200, height: 630 }],
   },
@@ -29,8 +29,8 @@ export default function CuritibaPage() {
         turmas={[
           {
             label: 'Turma única — Primeira edição',
-            when: 'Junho 2026 — datas exatas a confirmar',
-            detalhe: 'Formato Cherry Top de 5 dias, perfil tech',
+            when: '29 de julho a 02 de agosto de 2026',
+            detalhe: '5 dias de imersão presencial — formato Cherry Top, perfil tech',
           },
         ]}
         format="5 dias de imersão presencial — formato Cherry Top"
