@@ -21,10 +21,17 @@ import {
   Zap,
   BookMarked,
   ExternalLink,
+  PlayCircle,
+  Subtitles,
+  MousePointerClick,
+  Pause,
 } from 'lucide-react'
 
 const ETT_PROGRAM_URL =
   'https://gubigdata.com.br/programa-de-aceleracao-do-ingles-para-mercado-internacional/'
+
+const SUBTITLES_TOOL_URL =
+  'https://ett-subtitles.vercel.app/study?series=formulafluente&season=1&episode=1'
 
 const pillars = [
   {
@@ -514,8 +521,131 @@ export default function FormulaFluente() {
         </div>
       </section>
 
+      {/* SUBTITLES TOOL — Aulas do Frank Florida */}
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-neon-green/8 blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4 relative">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12 max-w-3xl mx-auto"
+          >
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+              Ferramenta ETT · Subtitles
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              Escute o método na voz de{' '}
+              <span className="gradient-text">quem criou</span>
+            </h2>
+            <p className="text-gray-400 text-lg leading-relaxed">
+              Não dá pra entender a Fórmula Fluente de verdade só lendo este resumo.
+              Você precisa <strong className="text-white">ouvir o Frank Florida</strong> —
+              o poliglota que já formou mais de 365 mil brasileiros — explicando cada princípio,
+              do jeito que ele explica há 30+ anos.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.6 }}
+            className="max-w-5xl mx-auto"
+          >
+            <div className="bg-dark-card border border-neon-green/30 rounded-3xl overflow-hidden shadow-neon-green">
+              <div className="grid md:grid-cols-5 gap-0">
+                {/* Lado esquerdo — player visual */}
+                <a
+                  href={SUBTITLES_TOOL_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="md:col-span-2 relative aspect-video md:aspect-auto bg-gradient-to-br from-dark via-dark-secondary to-neon-green/10 flex items-center justify-center group cursor-pointer overflow-hidden border-b md:border-b-0 md:border-r border-dark-border"
+                >
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(0,255,157,0.15),transparent_60%)]" />
+                  <div className="relative flex flex-col items-center text-center px-6">
+                    <div className="w-20 h-20 rounded-full bg-neon-green/20 border-2 border-neon-green/60 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-neon-green/30 transition-all">
+                      <PlayCircle className="w-12 h-12 text-neon-green" />
+                    </div>
+                    <div className="text-xs uppercase tracking-widest text-neon-green font-bold mb-2">
+                      Aula 1 · Episódio 1
+                    </div>
+                    <div className="text-white font-bold text-lg leading-tight mb-1">
+                      Fórmula Fluente
+                    </div>
+                    <div className="text-gray-400 text-sm">
+                      por <strong className="text-white">Frank Florida</strong>
+                    </div>
+                  </div>
+                </a>
+
+                {/* Lado direito — pitch + CTA */}
+                <div className="md:col-span-3 p-8 md:p-10 flex flex-col justify-center">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Subtitles className="w-5 h-5 text-tech-blue" />
+                    <span className="text-tech-blue font-semibold text-sm">
+                      ETT Subtitles — vídeo + legenda interativa
+                    </span>
+                  </div>
+
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+                    Comece pela aula 1.
+                    <br />
+                    <span className="gradient-text">Em 30 minutos você muda de chave.</span>
+                  </h3>
+
+                  <p className="text-gray-400 leading-relaxed mb-6">
+                    Frank explica por que <em className="text-gray-200 not-italic">método</em> vence{' '}
+                    <em className="text-gray-200 not-italic">talento</em>, qual é o threshold de
+                    1.000 palavras, e como organizar 30 minutos por dia pra sair do "sei mas trava".
+                    A ferramenta deixa você <strong className="text-white">pausar, repetir e marcar palavras</strong>{' '}
+                    enquanto ouve.
+                  </p>
+
+                  {/* Mini-features */}
+                  <div className="grid grid-cols-3 gap-3 mb-6">
+                    <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-dark/60 border border-dark-border">
+                      <MousePointerClick className="w-4 h-4 text-neon-green" />
+                      <span className="text-xs text-gray-300 leading-tight">
+                        Clique em qualquer palavra
+                      </span>
+                    </div>
+                    <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-dark/60 border border-dark-border">
+                      <Pause className="w-4 h-4 text-neon-green" />
+                      <span className="text-xs text-gray-300 leading-tight">
+                        Pause e repita a frase
+                      </span>
+                    </div>
+                    <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-dark/60 border border-dark-border">
+                      <BookOpen className="w-4 h-4 text-neon-green" />
+                      <span className="text-xs text-gray-300 leading-tight">
+                        Legenda PT + EN sincronizada
+                      </span>
+                    </div>
+                  </div>
+
+                  <a
+                    href={SUBTITLES_TOOL_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-neon-green text-black font-bold text-base hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg hover:-translate-y-0.5 self-start"
+                  >
+                    Assistir a aula 1 agora
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                  <p className="text-xs text-gray-500 mt-3">
+                    Gratuito · abre em nova aba · sem cadastro pra começar
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* IMERSÃO - 3 CAMADAS */}
-      <section className="section-padding">
+      <section className="section-padding bg-dark-secondary border-y border-dark-border">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -560,7 +690,7 @@ export default function FormulaFluente() {
       </section>
 
       {/* PRINCÍPIOS */}
-      <section className="section-padding bg-dark-secondary border-y border-dark-border">
+      <section className="section-padding">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
