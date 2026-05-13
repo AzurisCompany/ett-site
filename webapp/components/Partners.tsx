@@ -16,6 +16,15 @@ const partners = [
     color: 'neon-green',
   },
   {
+    id: 'aprendendoingles',
+    name: 'Aprendendo Inglês',
+    logo: '/images/aprendendoingles-logo.png',
+    role: 'Conteúdo & Estudo',
+    description:
+      'Plataforma brasileira de conteúdo gratuito para aprender inglês — dicas práticas, vídeos, músicas, histórias e cursos estruturados. Material de apoio para a jornada do aluno ETT entre os encontros.',
+    color: 'tech-blue',
+  },
+  {
     id: 'cherrytop',
     name: 'Cherry Top',
     logo: '/images/logo-cherrytop.jpeg',
