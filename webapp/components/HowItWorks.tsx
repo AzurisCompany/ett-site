@@ -17,7 +17,7 @@ const steps = [
     icon: DoorOpen,
     title: 'Entrada Gratuita',
     description:
-      'Participe de um encontro gratuito — online toda segunda ou presencial em Curitiba (IEP, UTFPR, Hard Rock, Habita). Conheça a metodologia, experimente o ambiente e comece a construir vínculo com a comunidade DSSBR & GUBigData.',
+      'Participe de um encontro gratuito — online toda segunda ou presencial em Curitiba (IEP, UTFPR, Hard Rock, Habitat). Conheça a metodologia, experimente o ambiente e comece a construir vínculo com a comunidade DSSBR & GUBigData.',
     tag: 'Online ou presencial',
     color: 'neon-green',
   },

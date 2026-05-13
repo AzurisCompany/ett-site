@@ -30,7 +30,7 @@ interface AgendaEvent {
   city?: string
   time: string
   timeNote?: string
-  venueIcon?: 'iep' | 'utfpr' | 'hardrock' | 'habita'
+  venueIcon?: 'iep' | 'utfpr' | 'hardrock' | 'habitat'
   highlight?: boolean
 }
 
@@ -42,7 +42,7 @@ const events: AgendaEvent[] = [
     type: 'online',
     title: 'Encontro Online ETT',
     location: 'Online · Google Meet',
-    time: '8h às 21h30',
+    time: '20h às 21h30',
   },
   {
     date: '2026-05-14',
@@ -63,7 +63,7 @@ const events: AgendaEvent[] = [
     type: 'online',
     title: 'Encontro Online ETT',
     location: 'Online · Google Meet',
-    time: '8h às 21h30',
+    time: '20h às 21h30',
   },
   {
     date: '2026-05-21',
@@ -84,7 +84,7 @@ const events: AgendaEvent[] = [
     type: 'online',
     title: 'Encontro Online ETT',
     location: 'Online · Google Meet',
-    time: '8h às 21h30',
+    time: '20h às 21h30',
   },
   {
     date: '2026-05-27',
@@ -106,19 +106,19 @@ const events: AgendaEvent[] = [
     type: 'online',
     title: 'Encontro Online ETT',
     location: 'Online · Google Meet',
-    time: '8h às 21h30',
+    time: '20h às 21h30',
   },
   {
     date: '2026-06-04',
     weekday: 'Quinta',
     dateLabel: '4 de junho',
     type: 'presencial',
-    title: 'English Talk Time · Habita',
-    location: 'Habita',
+    title: 'English Talk Time · Habitat',
+    location: 'Habitat',
     city: 'Curitiba/PR',
     time: '19h às 21h30',
     timeNote: 'horário a confirmar',
-    venueIcon: 'habita',
+    venueIcon: 'habitat',
   },
 ]
 
@@ -140,8 +140,8 @@ const venues = [
   },
   {
     icon: Home,
-    name: 'Habita',
-    desc: 'Espaço Habita — comunidade local, networking e prática de conversação.',
+    name: 'Habitat',
+    desc: 'Espaço Habitat — comunidade local, networking e prática de conversação.',
   },
 ]
 
@@ -169,7 +169,7 @@ export default function Agenda() {
             </h1>
             <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
               Online toda segunda. Presencial uma vez por semana, alternando entre IEP, UTFPR,
-              Hard Rock e Habita. Veja a próxima data e marque na sua agenda.
+              Hard Rock e Habitat. Veja a próxima data e marque na sua agenda.
             </p>
 
             {/* Quick stats */}
@@ -216,10 +216,10 @@ export default function Agenda() {
               </div>
               <div className="flex items-center gap-2 text-gray-400 text-sm mb-2">
                 <Clock className="w-4 h-4" />
-                <span>8h às 21h30</span>
+                <span>20h às 21h30</span>
               </div>
               <p className="text-gray-500 text-sm leading-relaxed">
-                Janela aberta o dia inteiro para sessões síncronas, prática de conversação
+                Sessão síncrona toda segunda à noite — prática de conversação ao vivo
                 e suporte da comunidade.
               </p>
             </motion.div>
@@ -245,7 +245,7 @@ export default function Agenda() {
                 <span>4 locais em rotação · Curitiba/PR</span>
               </div>
               <p className="text-gray-500 text-sm leading-relaxed">
-                Um encontro por semana em local diferente: IEP, UTFPR, Hard Rock e Habita.
+                Um encontro por semana em local diferente: IEP, UTFPR, Hard Rock e Habitat.
                 Networking, role-play e conversação ao vivo.
               </p>
             </motion.div>

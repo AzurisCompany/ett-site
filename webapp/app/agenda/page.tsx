@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'Agenda — Próximos encontros | ETT English Talk Time',
   description:
-    'Agenda dos próximos 30 dias do ETT: encontros online toda segunda (8h–21h30) e presenciais semanais em Curitiba (IEP, UTFPR, Hard Rock, Habita).',
+    'Agenda dos próximos 30 dias do ETT: encontros online toda segunda (8h–21h30) e presenciais semanais em Curitiba (IEP, UTFPR, Hard Rock, Habitat).',
   openGraph: {
     title: 'Agenda ETT — Próximos encontros',
     description:

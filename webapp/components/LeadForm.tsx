@@ -20,6 +20,20 @@ const levels = [
   { value: 'avancado', label: 'Avançado — quero polir e focar em carreira' },
 ]
 
+// Máscara BR: progressivo conforme digita
+// 2 → (XX
+// 3-6 → (XX) XXXX
+// 7-10 → (XX) XXXX-XXXX (fixo)
+// 11 → (XX) XXXXX-XXXX (celular)
+function formatPhoneBR(value: string): string {
+  const digits = value.replace(/\D/g, '').slice(0, 11)
+  if (digits.length === 0) return ''
+  if (digits.length <= 2) return `(${digits}`
+  if (digits.length <= 6) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`
+  if (digits.length <= 10) return `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`
+  return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`
+}
+
 export default function LeadForm() {
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
@@ -108,7 +122,7 @@ export default function LeadForm() {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-neon-green" />
-                Curitiba: IEP, UTFPR, Hard Rock, Habita
+                Curitiba: IEP, UTFPR, Hard Rock, Habitat
               </div>
               <div className="flex items-center gap-2">
                 <Users className="w-4 h-4 text-neon-green" />
@@ -215,11 +229,17 @@ export default function LeadForm() {
                       id="rd-telefone"
                       name="telefone"
                       type="tel"
+                      inputMode="tel"
                       required
-                      pattern="^[\d\s()+\-]{8,}$"
-                      title="Digite um telefone válido com DDD (ex: 41 99999-9999)"
+                      pattern="^\(\d{2}\) \d{4,5}-\d{4}$"
+                      title="Digite um telefone com DDD (ex: (41) 99999-9999)"
                       placeholder="(41) 99999-9999"
+                      maxLength={15}
                       autoComplete="tel"
+                      onInput={(e) => {
+                        const target = e.currentTarget
+                        target.value = formatPhoneBR(target.value)
+                      }}
                       className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-neon-green/60 focus:ring-1 focus:ring-neon-green/30 transition-colors"
                     />
                   </div>
