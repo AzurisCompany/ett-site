@@ -70,6 +70,15 @@ const partners = [
     color: 'neon-green',
   },
   {
+    id: 'habitat-mobilidade',
+    name: 'Habitat Mobilidade',
+    logo: '/images/habitat-mobilidade-logo.png',
+    role: 'Ecossistema de Inovação',
+    description:
+      'Habitat de Inovação do Sistema FIEP voltado à mobilidade, dentro do Parque Tecnológico. Conecta o ETT à comunidade de startups, indústria e profissionais de tecnologia do Paraná.',
+    color: 'tech-blue',
+  },
+  {
     id: 'formula-fluente',
     name: 'Fórmula Fluente',
     logo: null,
