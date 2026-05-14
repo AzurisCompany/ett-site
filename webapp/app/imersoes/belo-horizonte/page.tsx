@@ -3,16 +3,128 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ImersaoDetalhe from '@/components/ImersaoDetalhe'
 
-export const metadata: Metadata = {
-  title: 'Imersão em Inglês — Belo Horizonte 2026 (Set · Out · Nov) | ETT × Cherry Top',
-  description:
-    'Imersão presencial de 5 dias na Immersion Village Brazil (Lagoa Santa/MG). 3 turmas confirmadas: 03–07/set, 08–12/out e 18–22/nov 2026. 90h de certificado, 8 vagas por turma, hospedagem e refeições inclusas. Bonding + Native-like.',
-  openGraph: {
-    title: 'Imersão BH 2026 — ETT × Cherry Top',
+const SITE_URL = 'https://englishtalktime.com.br'
+const ORG_ID = `${SITE_URL}/#organization`
+
+const bhLocation = {
+  '@type': 'Place',
+  name: 'Immersion Village Brazil',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Lagoa Santa',
+    addressRegion: 'MG',
+    addressCountry: 'BR',
+  },
+}
+
+const bhTurmas = [
+  {
+    name: 'Imersão em Inglês em BH — Turma OMEGA / ZETA (set/2026)',
+    startDate: '2026-09-03T09:00:00-03:00',
+    endDate: '2026-09-07T18:00:00-03:00',
     description:
-      '5 dias de imersão total na sede oficial Cherry Top do Brasil. Múltiplas turmas Q3/Q4 2026.',
+      '5 dias de treino intensivo de fala em inglês na Immersion Village Brazil (Lagoa Santa/MG). Advanced + Upper Intermediate + Intermediate. Hospedagem, refeições e certificado de 90h inclusos.',
+  },
+  {
+    name: 'Imersão em Inglês em BH — Turma GAMA / DELTA (out/2026)',
+    startDate: '2026-10-08T09:00:00-03:00',
+    endDate: '2026-10-12T18:00:00-03:00',
+    description:
+      '5 dias de treino intensivo de fala em inglês na Immersion Village Brazil. Pré-Intermediate + Intermediate + Advanced. Hospedagem, refeições e certificado de 90h inclusos.',
+  },
+  {
+    name: 'Imersão em Inglês em BH — Turma ALPHA / BETA (nov/2026)',
+    startDate: '2026-11-18T09:00:00-03:00',
+    endDate: '2026-11-22T18:00:00-03:00',
+    description:
+      '5 dias de treino intensivo de fala em inglês na Immersion Village Brazil. Elementary + iniciantes (com onboarding online prévio). Hospedagem, refeições e certificado de 90h inclusos.',
+  },
+]
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Imersões',
+          item: `${SITE_URL}/imersoes/`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Belo Horizonte',
+          item: `${SITE_URL}/imersoes/belo-horizonte/`,
+        },
+      ],
+    },
+    ...bhTurmas.map((t) => ({
+      '@type': 'Event',
+      name: t.name,
+      description: t.description,
+      startDate: t.startDate,
+      endDate: t.endDate,
+      eventStatus: 'https://schema.org/EventScheduled',
+      eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+      location: bhLocation,
+      organizer: { '@id': ORG_ID },
+      performer: {
+        '@type': 'Organization',
+        name: 'Cherry Top Business Communication',
+        url: 'https://cherrytop.com.br',
+      },
+      maximumAttendeeCapacity: 8,
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'BRL',
+        availability: 'https://schema.org/LimitedAvailability',
+        url: `${SITE_URL}/imersoes/belo-horizonte/`,
+        validFrom: '2026-01-01T00:00:00-03:00',
+      },
+      inLanguage: ['en', 'pt-BR'],
+      image: `${SITE_URL}/imersoes/bh-2026/01.jpeg`,
+      url: `${SITE_URL}/imersoes/belo-horizonte/`,
+    })),
+  ],
+}
+
+export const metadata: Metadata = {
+  title:
+    'Imersão em Inglês em Belo Horizonte — Set · Out · Nov 2026 | Treino de Fala ETT × Cherry Top',
+  description:
+    '5 dias de treino intensivo de fala em inglês na Immersion Village Brazil (Lagoa Santa/MG). 3 turmas em 2026: 03–07/set, 08–12/out e 18–22/nov. 90h de certificado, 8 vagas por turma, hospedagem e refeições inclusas. Bonding + Native-like.',
+  keywords: [
+    'imersão em inglês Belo Horizonte',
+    'imersão em inglês BH',
+    'curso intensivo de inglês BH',
+    'treino de fala em inglês BH',
+    'Immersion Village Brazil',
+    'Cherry Top Belo Horizonte',
+    'Lagoa Santa inglês',
+    'imersão em inglês com hospedagem',
+  ],
+  alternates: {
+    canonical: '/imersoes/belo-horizonte/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'pt_BR',
+    title: 'Imersão em Inglês em BH 2026 — ETT × Cherry Top',
+    description:
+      '5 dias de imersão total na sede oficial Cherry Top do Brasil. 3 turmas em set, out e nov 2026.',
     url: 'https://englishtalktime.com.br/imersoes/belo-horizonte/',
-    images: [{ url: '/imersoes/bh-2026/01.jpeg', width: 1200, height: 630 }],
+    images: [
+      {
+        url: '/imersoes/bh-2026/01.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Imersão em inglês em Belo Horizonte — Immersion Village Brazil',
+      },
+    ],
   },
 }
 
@@ -24,6 +136,10 @@ const fotosBH = [
 export default function BeloHorizontePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
       <ImersaoDetalhe
         eyebrow="Imersão Belo Horizonte • Cherry Top"

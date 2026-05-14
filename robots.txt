@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /_next/
+Disallow: /api/
+
+Host: https://englishtalktime.com.br
+Sitemap: https://englishtalktime.com.br/sitemap.xml

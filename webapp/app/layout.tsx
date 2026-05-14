@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Script from 'next/script'
+import Analytics from '@/components/Analytics'
+import CookieConsent from '@/components/CookieConsent'
 import './globals.css'
-
-const GA_MEASUREMENT_ID = 'G-4Q2GYMRY7F'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -13,16 +12,47 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://englishtalktime.com.br'),
-  title: 'ETT – English Talk Time | Programa de Aceleração de Inglês para o Mercado Internacional',
+  title: 'ETT — Grupo de Conversação em Inglês e Treino de Fala | Curitiba & Online',
   description:
-    'Pare de travar no inglês. O ETT é o programa de aceleração para profissionais de Tecnologia, Dados, IA e BI que precisam de inglês funcional para o mercado internacional. Metodologia Fórmula Fluente + IA + Comunidade.',
+    'Grupo de conversação em inglês com treino de fala guiado e ferramentas de apoio com IA. Encontros semanais online (toda segunda) e presenciais em Curitiba — IEP, UTFPR, Hard Rock e Habitat. Para profissionais de Tecnologia, Dados, IA e BI.',
   keywords: [
+    // intenção: praticar / treinar a fala
+    'grupo de conversação em inglês',
+    'conversação em inglês',
+    'praticar inglês',
+    'treinar inglês falando',
+    'treino de fala em inglês',
+    'speaking practice português',
+    'encontros para falar inglês',
+    'onde treinar inglês',
+    'destravar inglês',
+    'english speaking club',
+    'english conversation club',
+    'meetup inglês',
+    'conversation club',
+    // local
+    'grupo de conversação em inglês Curitiba',
+    'praticar inglês em Curitiba',
+    'conversação em inglês Curitiba',
+    'encontro de inglês Curitiba',
+    'aulas de conversação Curitiba',
+    'inglês Curitiba grátis',
+    // online
+    'praticar inglês online',
+    'conversação em inglês online',
+    'grupo de conversação online segunda',
+    'praticar inglês online grátis',
+    // tech (preservado)
     'inglês para tech',
     'inglês para programadores',
-    'inglês acelerado',
-    'aprender inglês rápido',
+    'inglês para devs',
+    'inglês para dados e IA',
     'inglês mercado internacional',
-    'dados inteligência artificial inglês',
+    // ferramentas / método
+    'praticar inglês com IA',
+    'ferramentas para aprender inglês',
+    'Fórmula Fluente',
+    // marca
     'English Talk Time',
     'ETT',
     'DSSBR',
@@ -30,28 +60,32 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'DSSBR & GUBigData IA' }],
   creator: 'DSSBR & GUBigData IA',
+  publisher: 'English Talk Time – ETT',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
     url: 'https://englishtalktime.com.br',
     siteName: 'English Talk Time – ETT',
-    title: 'ETT – Do inglês travado ao inglês funcional para o mercado internacional',
+    title: 'ETT — Grupo de Conversação em Inglês | Treino de Fala com Ferramentas de IA',
     description:
-      'Programa de aceleração de inglês para profissionais de Tecnologia, Dados, IA e BI. Metodologia Fórmula Fluente + ferramentas com IA + comunidade DSSBR.',
+      'Encontros semanais para treinar a fala em inglês — online toda segunda e presenciais em Curitiba. Método Fórmula Fluente + ferramentas com IA + comunidade DSSBR & GUBigData.',
     images: [
       {
         url: '/images/ETT-top01.png',
         width: 1200,
         height: 630,
-        alt: 'English Talk Time – Programa de Aceleração de Inglês',
+        alt: 'English Talk Time — Grupo de Conversação em Inglês em Curitiba e Online',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ETT – English Talk Time | Inglês para o Mercado Internacional',
+    title: 'ETT — Grupo de Conversação em Inglês | Treino de Fala com Ferramentas',
     description:
-      'Aceleração de inglês para profissionais de tech. Metodologia Fórmula Fluente + IA. Comunidade DSSBR & GUBigData.',
+      'Treine a fala em inglês em encontros semanais online e presenciais em Curitiba — com método, ferramentas de IA e comunidade tech.',
     images: ['/images/ETT-top01.png'],
   },
   robots: {
@@ -67,20 +101,71 @@ export const metadata: Metadata = {
   },
 }
 
+const SITE_URL = 'https://englishtalktime.com.br'
+
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'EducationalOrganization',
-  name: 'English Talk Time – ETT',
-  description:
-    'Programa de aceleração de inglês para profissionais de Tecnologia, Dados, IA e BI. Parte do ecossistema DSSBR & GUBigData IA.',
-  url: 'https://englishtalktime.com.br',
-  logo: '/images/Logo-ETT.png',
-  foundingOrganization: {
-    '@type': 'Organization',
-    name: 'DSSBR & GUBigData IA',
-  },
-  educationalCredentialAwarded: 'Certificado de Inglês Funcional para o Mercado Internacional',
-  teaches: 'Inglês para profissionais de Tecnologia e Dados',
+  '@graph': [
+    {
+      '@type': ['Organization', 'EducationalOrganization', 'LocalBusiness'],
+      '@id': `${SITE_URL}/#organization`,
+      name: 'English Talk Time – ETT',
+      alternateName: ['ETT', 'English Talk Time'],
+      description:
+        'Grupo de conversação em inglês e treino de fala com ferramentas de apoio com IA. Encontros semanais online e presenciais em Curitiba para profissionais de Tecnologia, Dados, IA e BI.',
+      slogan: 'Do inglês travado ao inglês funcional para o mercado internacional',
+      url: SITE_URL,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/images/Logo-ETT.png`,
+      },
+      image: `${SITE_URL}/images/ETT-top01.png`,
+      foundingOrganization: {
+        '@type': 'Organization',
+        name: 'DSSBR & GUBigData IA',
+      },
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Curitiba',
+        addressRegion: 'PR',
+        addressCountry: 'BR',
+      },
+      areaServed: [
+        { '@type': 'City', name: 'Curitiba' },
+        { '@type': 'AdministrativeArea', name: 'Paraná' },
+        { '@type': 'Country', name: 'Brasil' },
+        { '@type': 'VirtualLocation', name: 'Online' },
+      ],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer support',
+        availableLanguage: ['Portuguese', 'English'],
+        areaServed: 'BR',
+      },
+      sameAs: [],
+      keywords:
+        'grupo de conversação em inglês, treino de fala em inglês, praticar inglês Curitiba, conversação online, encontros para falar inglês, English speaking club, inglês para tech, Fórmula Fluente',
+      educationalCredentialAwarded:
+        'Certificado de Inglês Funcional para o Mercado Internacional',
+      teaches: [
+        'English conversation practice',
+        'Speaking training in English',
+        'Business English for tech professionals',
+        'English for Data, AI, BI and Cloud professionals',
+      ],
+      knowsLanguage: ['en', 'pt-BR'],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: 'English Talk Time',
+      description:
+        'Grupo de conversação em inglês com treino de fala e ferramentas de apoio com IA.',
+      publisher: { '@id': `${SITE_URL}/#organization` },
+      inLanguage: 'pt-BR',
+    },
+  ],
 }
 
 export default function RootLayout({
@@ -98,18 +183,8 @@ export default function RootLayout({
       </head>
       <body className="bg-dark text-gray-100 antialiased">
         {children}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="ga-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}');
-          `}
-        </Script>
+        <Analytics />
+        <CookieConsent />
       </body>
     </html>
   )

@@ -42,7 +42,7 @@ export default function Navbar() {
           <div className="relative w-10 h-10">
             <Image
               src="/images/Logo-ETT.png"
-              alt="ETT Logo"
+              alt="Logo English Talk Time — grupo de conversação em inglês"
               fill
               className="object-contain"
               sizes="40px"

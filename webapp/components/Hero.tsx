@@ -19,7 +19,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Image
           src="/images/ETT-top01.png"
-          alt="ETT Background"
+          alt="English Talk Time — grupo de conversação em inglês em Curitiba e online"
           fill
           className="object-cover"
           priority
@@ -82,10 +82,13 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.35 }}
           className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed"
         >
-          Programa de aceleração criado pelo ecossistema{' '}
-          <span className="text-white font-semibold">DSSBR & GUBigData IA</span>{' '}
-          para profissionais de{' '}
-          <span className="text-tech-blue font-medium">Tecnologia, Dados, IA e BI</span>
+          <span className="text-white font-semibold">Grupo de conversação em inglês</span>{' '}
+          com <span className="text-neon-green font-medium">treino de fala guiado</span> e{' '}
+          <span className="text-tech-blue font-medium">ferramentas de apoio com IA</span>.
+          Encontros semanais <span className="text-white">online (toda segunda)</span> e{' '}
+          <span className="text-white">presenciais em Curitiba</span>. Programa do
+          ecossistema <span className="text-white font-semibold">DSSBR & GUBigData IA</span>{' '}
+          para profissionais de Tecnologia, Dados, IA e BI.
         </motion.p>
 
         {/* CTA Buttons */}

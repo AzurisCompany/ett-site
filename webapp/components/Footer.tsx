@@ -11,30 +11,30 @@ const partnerLogos = [
 
 const links = [
   {
+    title: 'Onde Praticar',
+    items: [
+      { label: 'Grupo de Conversação', href: '/conversacao/' },
+      { label: 'Praticar Inglês em Curitiba', href: '/curitiba/' },
+      { label: 'Conversação Online (segundas)', href: '/online/' },
+      { label: 'Agenda completa', href: '/agenda/' },
+    ],
+  },
+  {
     title: 'Programa',
     items: [
-      { label: 'Sobre o ETT', href: '#sobre' },
-      { label: 'Metodologia', href: '#metodologia' },
-      { label: 'Ferramentas', href: '#ferramentas' },
-      { label: 'Como Funciona', href: '#como-funciona' },
+      { label: 'Sobre o ETT', href: '/#sobre' },
+      { label: 'Metodologia · Fórmula Fluente', href: '/ff/' },
+      { label: 'Imersões com Cherry Top', href: '/imersoes/' },
+      { label: 'Blog ETT', href: '/blog/' },
     ],
   },
   {
     title: 'Parceiros',
     items: [
-      { label: 'BeeTools', href: '#parceiros' },
-      { label: 'Cherry Top', href: '#parceiros' },
-      { label: 'Coders', href: '#parceiros' },
-      { label: 'IEP – Curitiba', href: '#parceiros' },
-    ],
-  },
-  {
-    title: 'Comunidade',
-    items: [
-      { label: 'DSSBR', href: '#sobre' },
-      { label: 'GUBigData IA', href: '#sobre' },
-      { label: 'Fórmula Fluente', href: '#metodologia' },
-      { label: 'Inscreva-se', href: '#inscricao' },
+      { label: 'BeeTools', href: '/#parceiros' },
+      { label: 'Cherry Top', href: '/#parceiros' },
+      { label: 'Coders', href: '/#parceiros' },
+      { label: 'IEP — Curitiba', href: '/#parceiros' },
     ],
   },
 ]
@@ -51,7 +51,7 @@ export default function Footer() {
               <div className="relative w-10 h-10">
                 <Image
                   src="/images/Logo-ETT.png"
-                  alt="ETT Logo"
+                  alt="Logo English Talk Time"
                   fill
                   className="object-contain"
                   sizes="40px"
@@ -136,8 +136,12 @@ export default function Footer() {
             © {new Date().getFullYear()} English Talk Time (ETT) — DSSBR & GUBigData IA. Todos os direitos reservados.
           </span>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-gray-400 transition-colors">Política de Privacidade</a>
-            <a href="#" className="hover:text-gray-400 transition-colors">Termos de Uso</a>
+            <Link href="/politica-privacidade/" className="hover:text-gray-400 transition-colors">
+              Política de Privacidade
+            </Link>
+            <Link href="/termos-uso/" className="hover:text-gray-400 transition-colors">
+              Termos de Uso
+            </Link>
           </div>
         </div>
       </div>
