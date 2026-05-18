@@ -84,7 +84,7 @@ const jsonLd = {
 
 export const metadata: Metadata = {
   title:
-    'Imersões em Inglês — Curitiba, BH e Flórida 2026/2027 | Treino Intensivo ETT × Cherry Top',
+    'Imersões em Inglês 2026/2027 — Curitiba, BH e Flórida | ETT',
   description:
     'Imersões em inglês para destravar a fala em 5 dias no Brasil (Curitiba e BH) ou até 30 dias na Flórida. Treino intensivo com método Bonding + Native-like da Cherry Top — 40+ anos formando profissionais fluentes. Vagas limitadas.',
   keywords: [

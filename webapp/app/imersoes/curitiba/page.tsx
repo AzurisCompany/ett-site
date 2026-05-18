@@ -29,6 +29,7 @@ const jsonLd = {
     },
     {
       '@type': 'Event',
+      '@id': `${SITE_URL}/imersoes/curitiba/#event-jul-2026`,
       name: 'Imersão em Inglês em Curitiba — ETT × Cherry Top',
       description:
         '5 dias de treino intensivo de fala em inglês em Curitiba, em parceria com Cherry Top e IEP. Primeira edição ETT na capital paranaense — método Bonding + Native-like para profissionais de tech.',
@@ -53,8 +54,10 @@ const jsonLd = {
         url: 'https://cherrytop.com.br',
       },
       offers: {
-        '@type': 'Offer',
+        '@type': 'AggregateOffer',
         priceCurrency: 'BRL',
+        lowPrice: '3000',
+        highPrice: '6000',
         availability: 'https://schema.org/LimitedAvailability',
         url: `${SITE_URL}/imersoes/curitiba/`,
         validFrom: '2026-01-01T00:00:00-03:00',
@@ -68,7 +71,7 @@ const jsonLd = {
 
 export const metadata: Metadata = {
   title:
-    'Imersão em Inglês em Curitiba — 29/jul a 02/ago 2026 | Treino de Fala ETT × Cherry Top',
+    'Imersão em Inglês em Curitiba — Jul/2026 | ETT × Cherry Top',
   description:
     'Primeira imersão ETT em Curitiba: 5 dias presenciais (29/07 a 02/08/2026) de treino intensivo de fala em inglês, em parceria com Cherry Top e IEP. Para profissionais de tech. Vagas extremamente limitadas.',
   keywords: [
@@ -124,7 +127,7 @@ export default function CuritibaPage() {
         ]}
         format="5 dias de imersão presencial — formato Cherry Top"
         local={{
-          name: 'IEP — Instituto de Engenharia do Paraná (a confirmar)',
+          name: 'IEP — Instituto de Engenharia do Paraná',
           address: 'Curitiba — PR',
         }}
         lideranca="Equipe Cherry Top — facilitadores trazidos de BH"

@@ -9,6 +9,7 @@ import {
   Wifi,
   CheckCircle2,
   Users,
+  GraduationCap,
 } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -400,6 +401,39 @@ export default function CuritibaPage() {
                 className="inline-flex items-center gap-2 text-tech-blue font-semibold hover:text-tech-blue/80 transition-colors"
               >
                 Ver detalhes do encontro online <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* CROSS-LINK IMERSÃO CURITIBA */}
+        <section className="section-padding bg-dark-secondary border-y border-dark-border">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto bg-dark-card border border-neon-green/30 rounded-3xl p-8 md:p-10">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-neon-green/10 border border-neon-green/30 flex items-center justify-center flex-shrink-0">
+                  <GraduationCap className="w-6 h-6 text-neon-green" />
+                </div>
+                <div>
+                  <div className="text-xs uppercase tracking-wider text-neon-green font-semibold mb-1">
+                    Imersão presencial em Curitiba
+                  </div>
+                  <h3 className="font-bold text-white text-xl md:text-2xl leading-snug">
+                    Quer ir além do encontro semanal? Imersão Curitiba — 29/jul a 02/ago 2026
+                  </h3>
+                </div>
+              </div>
+              <p className="text-gray-400 leading-relaxed mb-5">
+                5 dias intensivos de treino de fala em inglês, em parceria com{' '}
+                <strong className="text-white">Cherry Top</strong> e{' '}
+                <strong className="text-white">IEP</strong>. Primeira edição local pra
+                profissionais de tech — vagas extremamente limitadas.
+              </p>
+              <Link
+                href="/imersoes/curitiba/"
+                className="inline-flex items-center gap-2 text-neon-green font-semibold hover:text-neon-green/80 transition-colors"
+              >
+                Ver detalhes da imersão em Curitiba <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>

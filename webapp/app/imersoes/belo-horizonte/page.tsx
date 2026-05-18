@@ -19,6 +19,7 @@ const bhLocation = {
 
 const bhTurmas = [
   {
+    slug: 'omega-zeta-set-2026',
     name: 'Imersão em Inglês em BH — Turma OMEGA / ZETA (set/2026)',
     startDate: '2026-09-03T09:00:00-03:00',
     endDate: '2026-09-07T18:00:00-03:00',
@@ -26,6 +27,7 @@ const bhTurmas = [
       '5 dias de treino intensivo de fala em inglês na Immersion Village Brazil (Lagoa Santa/MG). Advanced + Upper Intermediate + Intermediate. Hospedagem, refeições e certificado de 90h inclusos.',
   },
   {
+    slug: 'gama-delta-out-2026',
     name: 'Imersão em Inglês em BH — Turma GAMA / DELTA (out/2026)',
     startDate: '2026-10-08T09:00:00-03:00',
     endDate: '2026-10-12T18:00:00-03:00',
@@ -33,6 +35,7 @@ const bhTurmas = [
       '5 dias de treino intensivo de fala em inglês na Immersion Village Brazil. Pré-Intermediate + Intermediate + Advanced. Hospedagem, refeições e certificado de 90h inclusos.',
   },
   {
+    slug: 'alpha-beta-nov-2026',
     name: 'Imersão em Inglês em BH — Turma ALPHA / BETA (nov/2026)',
     startDate: '2026-11-18T09:00:00-03:00',
     endDate: '2026-11-22T18:00:00-03:00',
@@ -64,6 +67,7 @@ const jsonLd = {
     },
     ...bhTurmas.map((t) => ({
       '@type': 'Event',
+      '@id': `${SITE_URL}/imersoes/belo-horizonte/#${t.slug}`,
       name: t.name,
       description: t.description,
       startDate: t.startDate,
@@ -79,8 +83,10 @@ const jsonLd = {
       },
       maximumAttendeeCapacity: 8,
       offers: {
-        '@type': 'Offer',
+        '@type': 'AggregateOffer',
         priceCurrency: 'BRL',
+        lowPrice: '7000',
+        highPrice: '12000',
         availability: 'https://schema.org/LimitedAvailability',
         url: `${SITE_URL}/imersoes/belo-horizonte/`,
         validFrom: '2026-01-01T00:00:00-03:00',
@@ -94,7 +100,7 @@ const jsonLd = {
 
 export const metadata: Metadata = {
   title:
-    'Imersão em Inglês em Belo Horizonte — Set · Out · Nov 2026 | Treino de Fala ETT × Cherry Top',
+    'Imersão em Inglês em BH 2026 — 3 Turmas Set/Out/Nov | ETT',
   description:
     '5 dias de treino intensivo de fala em inglês na Immersion Village Brazil (Lagoa Santa/MG). 3 turmas em 2026: 03–07/set, 08–12/out e 18–22/nov. 90h de certificado, 8 vagas por turma, hospedagem e refeições inclusas. Bonding + Native-like.',
   keywords: [

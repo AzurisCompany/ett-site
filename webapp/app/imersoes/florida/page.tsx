@@ -19,6 +19,7 @@ const flLocation = {
 
 const flTurmas = [
   {
+    slug: 'turma-1-jan-2027',
     name: 'Imersão em Inglês na Flórida — Turma 1 (18 dias, jan/2027)',
     startDate: '2027-01-10T09:00:00-05:00',
     endDate: '2027-01-27T18:00:00-05:00',
@@ -26,6 +27,7 @@ const flTurmas = [
       '18 dias de imersão internacional em inglês no Windsor Cay Resort, Flórida. Treino de fala 24h por dia com método Bonding + Native-like. Liderada por Leonarda Flyhigher (Cherry Top).',
   },
   {
+    slug: 'turma-2-jan-mar-2027',
     name: 'Imersão em Inglês na Flórida — Turma 2 (30+ dias, jan-mar/2027)',
     startDate: '2027-01-29T09:00:00-05:00',
     endDate: '2027-03-01T18:00:00-05:00',
@@ -57,6 +59,7 @@ const jsonLd = {
     },
     ...flTurmas.map((t) => ({
       '@type': 'Event',
+      '@id': `${SITE_URL}/imersoes/florida/#${t.slug}`,
       name: t.name,
       description: t.description,
       startDate: t.startDate,
@@ -71,8 +74,10 @@ const jsonLd = {
         url: 'https://cherrytop.com.br',
       },
       offers: {
-        '@type': 'Offer',
+        '@type': 'AggregateOffer',
         priceCurrency: 'USD',
+        lowPrice: '5000',
+        highPrice: '12000',
         availability: 'https://schema.org/LimitedAvailability',
         url: `${SITE_URL}/imersoes/florida/`,
         validFrom: '2026-01-01T00:00:00-03:00',
@@ -86,7 +91,7 @@ const jsonLd = {
 
 export const metadata: Metadata = {
   title:
-    'Imersão em Inglês na Flórida 2027 — 18 ou 30 dias | Treino Native-like ETT × Cherry Top',
+    'Imersão em Inglês na Flórida 2027 — 18 ou 30 Dias | ETT',
   description:
     'Imersão internacional no Windsor Cay Resort (Flórida, EUA) — até 30 dias de treino de fala em inglês 24h por dia. 2 turmas em 2027: 10–27/jan (18 dias) e 29/jan–01/mar (30+ dias). Liderada por Leonarda Flyhigher (Cherry Top). Método Bonding + Native-like.',
   keywords: [

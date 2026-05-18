@@ -4,6 +4,7 @@ import About from '@/components/About'
 import Methodology from '@/components/Methodology'
 import Tools from '@/components/Tools'
 import Partners from '@/components/Partners'
+import ImersoesTeaser from '@/components/ImersoesTeaser'
 import HowItWorks from '@/components/HowItWorks'
 import Results from '@/components/Results'
 import Testimonials from '@/components/Testimonials'
@@ -35,6 +36,7 @@ export default function Home() {
       <Methodology />
       <Tools />
       <Partners />
+      <ImersoesTeaser />
       <HowItWorks />
       <Results />
       <Testimonials />

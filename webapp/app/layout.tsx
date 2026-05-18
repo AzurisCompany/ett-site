@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Analytics from '@/components/Analytics'
 import CookieConsent from '@/components/CookieConsent'
+import WhatsappFloat from '@/components/WhatsappFloat'
 import './globals.css'
 
 const inter = Inter({
@@ -183,6 +184,7 @@ export default function RootLayout({
       </head>
       <body className="bg-dark text-gray-100 antialiased">
         {children}
+        <WhatsappFloat />
         <Analytics />
         <CookieConsent />
       </body>
