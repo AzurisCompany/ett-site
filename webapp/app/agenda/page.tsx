@@ -26,6 +26,12 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: '/agenda/',
+    languages: {
+      'pt-BR': `${SITE_URL}/agenda/`,
+      en: `${SITE_URL}/en/schedule/`,
+      es: `${SITE_URL}/es/agenda/`,
+      'x-default': `${SITE_URL}/agenda/`,
+    },
   },
   openGraph: {
     type: 'website',

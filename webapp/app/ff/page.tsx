@@ -36,6 +36,12 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: '/ff/',
+    languages: {
+      'pt-BR': `${SITE_URL}/ff/`,
+      en: `${SITE_URL}/en/method/`,
+      es: `${SITE_URL}/es/metodo/`,
+      'x-default': `${SITE_URL}/ff/`,
+    },
   },
   openGraph: {
     type: 'website',

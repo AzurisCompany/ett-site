@@ -28,9 +28,9 @@ function buildLinks(locale: Locale): NavLink[] {
     return [
       { href: '/en/#about', label: m.about },
       { href: '/en/#method', label: m.methodology },
-      { href: '/ff', label: m.formulafluente, langTag: 'PT' },
+      { href: '/en/method/', label: m.formulafluente },
       { href: '/imersoes', label: m.immersions, langTag: 'PT' },
-      { href: '/agenda', label: m.agenda, langTag: 'PT' },
+      { href: '/en/schedule/', label: m.agenda },
       { href: '/en/#tools', label: m.tools },
       { href: '/en/#partners', label: m.partners },
       { href: '/en/#how', label: m.howItWorks },
@@ -40,9 +40,9 @@ function buildLinks(locale: Locale): NavLink[] {
     return [
       { href: '/es/#about', label: m.about },
       { href: '/es/#method', label: m.methodology },
-      { href: '/ff', label: m.formulafluente, langTag: 'PT' },
+      { href: '/es/metodo/', label: m.formulafluente },
       { href: '/imersoes', label: m.immersions, langTag: 'PT' },
-      { href: '/agenda', label: m.agenda, langTag: 'PT' },
+      { href: '/es/agenda/', label: m.agenda },
       { href: '/es/#tools', label: m.tools },
       { href: '/es/#partners', label: m.partners },
       { href: '/es/#how', label: m.howItWorks },
