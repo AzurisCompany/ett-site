@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     authors: ['DSSBR & GUBigData IA'],
     images: [
       {
-        url: '/images/ETT-top01.png',
+        url: '/images/ETT-top01.webp',
         width: 1200,
         height: 630,
         alt: post.title,
@@ -68,7 +68,7 @@ const jsonLd = {
       url: `${SITE_URL}/blog/${SLUG}/`,
       inLanguage: 'pt-BR',
       keywords: 'praticar inglês Curitiba, onde treinar inglês Curitiba, meetup inglês',
-      image: `${SITE_URL}/images/ETT-top01.png`,
+      image: `${SITE_URL}/images/ETT-top01.webp`,
       wordCount: 950,
       articleSection: post.category,
       about: {

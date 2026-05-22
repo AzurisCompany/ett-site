@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/online/`,
     images: [
       {
-        url: '/images/ETT-top01.png',
+        url: '/images/ETT-top01.webp',
         width: 1200,
         height: 630,
         alt: 'Conversação em inglês online toda segunda — grupo ETT',
@@ -122,7 +122,7 @@ const jsonLd = {
         url: `${SITE_URL}/online/`,
         validFrom: '2026-01-01T00:00:00-03:00',
       },
-      image: `${SITE_URL}/images/ETT-top01.png`,
+      image: `${SITE_URL}/images/ETT-top01.webp`,
       url: `${SITE_URL}/online/`,
     })),
   ],

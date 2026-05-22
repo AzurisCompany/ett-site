@@ -44,7 +44,7 @@ export const metadata: Metadata = {
       'Weekly online conversation meetings + AI-powered learning tools. Built for Tech, Data, AI and BI professionals targeting the international job market.',
     images: [
       {
-        url: '/images/ETT-top01.png',
+        url: '/images/ETT-top01.webp',
         width: 1200,
         height: 630,
         alt: 'English Talk Time — English conversation group for tech professionals',
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     title: 'ETT — English Conversation Group for Tech Professionals',
     description:
       'Online speaking practice every Monday + AI-powered learning tools. For tech, data, AI and BI professionals.',
-    images: ['/images/ETT-top01.png'],
+    images: ['/images/ETT-top01.webp'],
   },
 }
 

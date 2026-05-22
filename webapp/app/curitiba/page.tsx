@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/curitiba/`,
     images: [
       {
-        url: '/images/ETT-top01.png',
+        url: '/images/ETT-top01.webp',
         width: 1200,
         height: 630,
         alt: 'Praticar inglês em Curitiba — grupo de conversação ETT',
@@ -112,7 +112,7 @@ const jsonLd = {
       description:
         'Grupo de conversação em inglês em Curitiba com encontros presenciais semanais em rotação por IEP, UTFPR, Hard Rock Cafe e Habitat. Gratuito, para profissionais e estudantes de tech.',
       url: `${SITE_URL}/curitiba/`,
-      image: `${SITE_URL}/images/ETT-top01.png`,
+      image: `${SITE_URL}/images/ETT-top01.webp`,
       parentOrganization: { '@id': ORG_ID },
       address: {
         '@type': 'PostalAddress',

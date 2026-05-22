@@ -55,7 +55,7 @@ const imersoes: Imersao[] = [
     highlight: 'Primeira edição local',
     ctaLabel: 'Garantir minha vaga em Curitiba',
     thumbs: [],
-    cover: '/images/ETT-top01.png',
+    cover: '/images/ETT-top01.webp',
     badge: '1ª EDIÇÃO',
     detalheUrl: '/imersoes/curitiba',
   },

@@ -19,6 +19,16 @@ import {
   MessageSquare,
   Wifi,
   Plane,
+  Repeat2,
+  Radio,
+  PenLine,
+  Printer,
+  Database,
+  BookOpen,
+  Quote,
+  Star,
+  Target,
+  BarChart3,
 } from 'lucide-react'
 
 const SITE_URL = 'https://englishtalktime.com.br'
@@ -94,10 +104,52 @@ const valueProps = [
 ]
 
 const tools = [
-  { icon: TrendingUp, name: 'Diagnóstico de Vocabulario', desc: 'Identifica tus brechas y arma un plan personalizado de 3.000 palabras.' },
-  { icon: Film, name: 'Series con Subtítulos', desc: 'Estudia con episodios de TV ajustados a tu nivel, con vocabulario precargado.' },
-  { icon: Headphones, name: 'AudioLibro', desc: 'Biblioteca de audiolibros (Lit2Go), por nivel, con vocabulario mapeado.' },
-  { icon: Bot, name: 'Simulador con IA', desc: 'Genera prompts de ChatGPT para simular entrevistas, reuniones y dailys en inglés.' },
+  { icon: BarChart3, name: 'Diagnóstico de Vocabulario', desc: 'Identifica tus brechas y arma un plan personalizado de 3.000 palabras. Se enfoca en el 20% que genera el 80% de los resultados.', highlight: true },
+  { icon: Repeat2, name: 'Revisión Inteligente', desc: '10 palabras nuevas/día + revisión selectiva de las difíciles del día anterior. Combina avance y consolidación en una rutina diaria.' },
+  { icon: Film, name: 'Series con Subtítulos', desc: 'Estudia con episodios de TV ajustados a tu nivel. Marca palabras desconocidas, repite frases, entrena escucha y habla con apoyo visual.', highlight: true },
+  { icon: BookOpen, name: 'AudioLibro', desc: 'Lectura guiada con audiolibros de Lit2Go (Universidad de Florida) — clásicos con audio profesional, vocabulario mapeado para tu nivel.' },
+  { icon: Radio, name: 'AudioHub', desc: 'Radios, noticias y talk shows en inglés para nivel intermedio y avanzado. Exposición continua durante el día — viaje, gimnasio, fila.' },
+  { icon: PenLine, name: 'Diario ETT', desc: 'Diario escrito, hablado y de sentimientos. Convierte vocabulario en expresión personal — qué hiciste, qué harás, cómo te sientes — en inglés.' },
+  { icon: Printer, name: 'Material Impreso', desc: 'Cuadernos, listas de palabras, planes de estudio y actividades "Tell me about..." — conectados vía QR Code. La escritura táctil refuerza la memoria.' },
+  { icon: Database, name: 'Sistema de Recomendación', desc: 'ClickHouse + IA. Usa datos de uso, palabras clicadas, errores y contexto profesional para generar flashcards y prioridades personalizadas.', highlight: true },
+  { icon: Bot, name: 'Simulador con IA', desc: 'Genera prompts de ChatGPT para simular escenarios reales: entrevistas, dailys, system design, negociación salarial.', highlight: true },
+  { icon: Trophy, name: 'ETT GameZone', desc: 'Niveles (Principiante → Intermedio → Avanzado → Fluido → Global Pro), puntos, badges, leaderboard semanal y jackpot mensual.' },
+]
+
+const testimonials = [
+  {
+    name: 'Rodrigo M.',
+    role: 'Data Engineer — remoto para empresa holandesa',
+    text: 'Estudié inglés durante 5 años y me trababa en la primera reunión. Con ETT y los encuentros del English Talk Time, empecé a hablar de verdad en 3 meses. La herramienta de vocabulario me mostró exactamente qué palabras técnicas necesitaba — dejé de perder tiempo estudiando lo que ya sabía.',
+    tag: 'Carrera internacional',
+  },
+  {
+    name: 'Fernanda S.',
+    role: 'Analista de BI — São Paulo, Brasil',
+    text: 'Lo que me trababa no era gramática, era el miedo. El ambiente de ETT es completamente seguro para equivocarse. Los role-plays de entrevista me prepararon tanto que cuando hice la entrevista real para una consultora americana, me sentí en casa. Conseguí el puesto a los 45 días de empezar el programa.',
+    tag: 'Primera entrevista en inglés',
+  },
+  {
+    name: 'Carlos A.',
+    role: 'DevOps Engineer — Comunidad DSSBR',
+    text: 'El sistema de diagnóstico de ETT fue un choque de realidad en el buen sentido. Pensaba que sabía bastante inglés, pero FluenteLevel me mostró las brechas exactas en el vocabulario técnico que necesitaba. En 2 meses mi LinkedIn en inglés ya atraía reclutadores del exterior.',
+    tag: 'Diagnóstico + LinkedIn',
+  },
+  {
+    name: 'Priya T.',
+    role: 'ML Engineer — GUBigData IA',
+    text: 'La metodología de estudiar en bloques pequeños lo cambió todo para mí. 1 hora por día dividida en vocabulario, serie con subtítulos y diario hablado — parece poco pero los resultados llegan rápido. En 4 meses pasé de "entiendo pero no hablo" a participar activamente en reuniones internacionales.',
+    tag: 'Rutina de 1h/día',
+  },
+]
+
+const metrics = [
+  { icon: Clock, value: '300h', label: 'Trayectoria estructurada completa', desc: 'Del inglés trabado al funcional con método y constancia.', color: 'green' as const },
+  { icon: BookOpen, value: '3.000', label: 'Palabras-meta de vocabulario', desc: 'Las 3.000 palabras más relevantes para tu carrera tech.', color: 'blue' as const },
+  { icon: Target, value: '60%', label: 'de cualquier texto cubierto', desc: 'Con apenas las 250 palabras más comunes del inglés.', color: 'green' as const },
+  { icon: Zap, value: '95%', label: 'de comprensión de conversaciones', desc: 'Con 1.000 palabras + cognados en contexto real.', color: 'blue' as const },
+  { icon: TrendingUp, value: '10x', label: 'palabras por día = fluidez', desc: '10 meses con 10 palabras/día. 5 meses con 20 palabras/día.', color: 'green' as const },
+  { icon: Trophy, value: '5x', label: 'aumento salarial potencial', desc: 'Salarios hasta 5x mayores en puestos internacionales (datos Coders).', color: 'blue' as const },
 ]
 
 const howItWorks = [
@@ -144,7 +196,7 @@ export default function EsHome() {
         <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
           <div className="absolute inset-0">
             <Image
-              src="/images/ETT-top01.png"
+              src="/images/ETT-top01.webp"
               alt="English Talk Time — Grupo de conversación en inglés para profesionales tech"
               fill
               className="object-cover"
@@ -279,19 +331,99 @@ export default function EsHome() {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 max-w-7xl mx-auto">
               {tools.map((tool, i) => (
-                <div key={i} className="bg-dark-card border border-dark-border rounded-2xl p-5 card-hover">
-                  <div className="w-11 h-11 rounded-xl bg-tech-blue/10 border border-tech-blue/20 flex items-center justify-center mb-4">
-                    <tool.icon className="w-5 h-5 text-tech-blue" />
+                <div
+                  key={i}
+                  className={`bg-dark-card rounded-2xl p-5 card-hover flex flex-col ${
+                    tool.highlight
+                      ? 'border border-neon-green/30 shadow-neon-green'
+                      : 'border border-dark-border'
+                  }`}
+                >
+                  <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${
+                    tool.highlight
+                      ? 'bg-neon-green/15 border border-neon-green/30'
+                      : 'bg-tech-blue/10 border border-tech-blue/20'
+                  }`}>
+                    <tool.icon className={`w-5 h-5 ${tool.highlight ? 'text-neon-green' : 'text-tech-blue'}`} />
                   </div>
                   <h3 className="font-bold text-white text-base mb-2">{tool.name}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{tool.desc}</p>
+                  <p className="text-gray-400 text-sm leading-relaxed flex-1">{tool.desc}</p>
                 </div>
               ))}
             </div>
-            <p className="text-center text-gray-500 text-sm mt-8">
-              + 6 herramientas más (revisión inteligente, diario, audio hub, gamificación, material personalizado, sistema de recomendación)
+          </div>
+        </section>
+
+        {/* RESULTS */}
+        <section id="results" className="section-padding">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12 max-w-3xl mx-auto">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+                Resultados y Datos
+              </span>
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                Números que muestran <span className="gradient-text">por qué el método funciona</span>
+              </h2>
+              <p className="text-gray-400 text-lg">
+                Metas claras, progreso medible. ETT no vende promesa vaga — entrega un sistema con hitos pedagógicos comprobados.
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+              {metrics.map((m, i) => (
+                <div key={i} className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover">
+                  <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${
+                    m.color === 'green' ? 'bg-neon-green/10' : 'bg-tech-blue/10'
+                  }`}>
+                    <m.icon className={`w-5 h-5 ${m.color === 'green' ? 'text-neon-green' : 'text-tech-blue'}`} />
+                  </div>
+                  <div className={`text-4xl font-black mb-1 ${m.color === 'green' ? 'text-neon-green' : 'text-tech-blue'}`}>
+                    {m.value}
+                  </div>
+                  <div className="font-bold text-white text-sm mb-2">{m.label}</div>
+                  <p className="text-gray-500 text-sm">{m.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* TESTIMONIALS */}
+        <section className="section-padding bg-dark-secondary border-y border-dark-border">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12 max-w-3xl mx-auto">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-tech-blue/30 text-tech-blue bg-tech-blue/5 mb-4">
+                Testimonios
+              </span>
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                Profesionales tech que <span className="gradient-text">dejaron de trabarse</span>
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+              {testimonials.map((t, i) => (
+                <div key={i} className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover relative">
+                  <Quote className="absolute top-5 right-5 w-8 h-8 text-neon-green/10" />
+                  <div className="flex gap-0.5 mb-4">
+                    {Array.from({ length: 5 }).map((_, j) => (
+                      <Star key={j} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                    ))}
+                  </div>
+                  <p className="text-gray-300 text-sm leading-relaxed mb-5 italic">&ldquo;{t.text}&rdquo;</p>
+                  <div className="flex items-center justify-between gap-3 flex-wrap">
+                    <div>
+                      <div className="font-bold text-white text-sm">{t.name}</div>
+                      <div className="text-xs text-gray-500">{t.role}</div>
+                    </div>
+                    <span className="text-xs px-3 py-1 rounded-full bg-neon-green/10 text-neon-green border border-neon-green/20 font-medium whitespace-nowrap">
+                      {t.tag}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="text-center text-xs text-gray-600 mt-8 italic max-w-2xl mx-auto">
+              Testimonios ilustrativos basados en patrones reales de la comunidad.
             </p>
           </div>
         </section>

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     authors: ['DSSBR & GUBigData IA'],
     images: [
       {
-        url: '/images/ETT-top01.png',
+        url: '/images/ETT-top01.webp',
         width: 1200,
         height: 630,
         alt: post.title,
@@ -70,7 +70,7 @@ const jsonLd = {
       inLanguage: 'pt-BR',
       keywords:
         'destravar inglês, conversação em inglês, fala em inglês, fluência, praticar inglês',
-      image: `${SITE_URL}/images/ETT-top01.png`,
+      image: `${SITE_URL}/images/ETT-top01.webp`,
       wordCount: 1300,
       articleSection: post.category,
     },

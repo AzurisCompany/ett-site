@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     url: 'https://englishtalktime.com.br/agenda/',
     images: [
       {
-        url: '/images/ETT-top01.png',
+        url: '/images/ETT-top01.webp',
         width: 1200,
         height: 630,
         alt: 'Agenda ETT — encontros de conversação em inglês em Curitiba e online',
@@ -102,7 +102,7 @@ function buildAgendaJsonLd() {
         audienceType:
           'Profissionais e estudantes de Tecnologia, Dados, IA, BI e Cloud',
       },
-      image: `${SITE_URL}/images/ETT-top01.png`,
+      image: `${SITE_URL}/images/ETT-top01.webp`,
       url: `${SITE_URL}/agenda/`,
     }
   })

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/blog/`,
     images: [
       {
-        url: '/images/ETT-top01.png',
+        url: '/images/ETT-top01.webp',
         width: 1200,
         height: 630,
         alt: 'Blog ETT — artigos sobre praticar inglês',

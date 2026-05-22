@@ -18,7 +18,7 @@ export default function Hero() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/ETT-top01.png"
+          src="/images/ETT-top01.webp"
           alt="English Talk Time — grupo de conversação em inglês em Curitiba e online"
           fill
           className="object-cover"

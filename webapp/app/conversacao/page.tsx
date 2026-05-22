@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/conversacao/`,
     images: [
       {
-        url: '/images/ETT-top01.png',
+        url: '/images/ETT-top01.webp',
         width: 1200,
         height: 630,
         alt: 'Grupo de Conversação em Inglês ETT — Treino de Fala com Ferramentas',
