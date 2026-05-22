@@ -705,6 +705,10 @@ export default function FormulaFluente() {
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
               Os 6 mantras da <span className="gradient-text">prática diária</span>
             </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Como organizar uma rotina diária de 1 hora pra estudar inglês de verdade —
+              sem se enrolar em apps, séries aleatórias ou aulas que não destravam a fala.
+            </p>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">

@@ -83,8 +83,9 @@ export default function Hero() {
           className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed"
         >
           <span className="text-white font-semibold">Grupo de conversação em inglês</span>{' '}
-          com <span className="text-neon-green font-medium">treino de fala guiado</span> e{' '}
-          <span className="text-tech-blue font-medium">ferramentas de apoio com IA</span>.
+          pra quem quer <span className="text-neon-green font-medium">destravar inglês</span> e{' '}
+          <span className="text-tech-blue font-medium">falar inglês fluente</span>.
+          Treino de fala guiado + ferramentas de apoio com IA, em uma rotina diária estruturada.
           Encontros semanais <span className="text-white">online (toda segunda)</span> e{' '}
           <span className="text-white">presenciais em Curitiba</span>. Programa do
           ecossistema <span className="text-white font-semibold">DSSBR & GUBigData IA</span>{' '}

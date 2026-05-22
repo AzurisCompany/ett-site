@@ -145,7 +145,7 @@ const jsonLd = {
       },
       sameAs: [],
       keywords:
-        'grupo de conversação em inglês, treino de fala em inglês, praticar inglês Curitiba, conversação online, encontros para falar inglês, English speaking club, inglês para tech, Fórmula Fluente',
+        'grupo de conversação em inglês, treino de fala em inglês, praticar inglês Curitiba, conversação online, encontros para falar inglês, destravar inglês, falar inglês fluente, rotina diária para estudar inglês, English speaking club, English conversation group Brazil, conversation club Curitiba, speaking practice, inglês para tech, inglês para Data Engineer, inglês para BI, inglês para DevOps, inglês para AI Engineer, role play entrevista inglês, preparar entrevista inglês tech, LinkedIn inglês profissional, ferramentas com IA para inglês, prompts ChatGPT inglês, séries com legenda inglês, audiobook inglês, Fórmula Fluente',
       educationalCredentialAwarded:
         'Certificado de Inglês Funcional para o Mercado Internacional',
       teaches: [

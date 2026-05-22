@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     'aulas de conversação Curitiba',
     'inglês Curitiba grátis',
     'inglês para tech Curitiba',
+    'conversation club Curitiba',
+    'english conversation group Curitiba',
+    'speaking practice Curitiba',
     'IEP UTFPR Hard Rock Habitat inglês',
   ],
   alternates: { canonical: '/curitiba/' },
@@ -166,8 +169,10 @@ export default function CuritibaPage() {
               </h1>
               <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
                 Encontros presenciais <strong className="text-white">grátis</strong>, em rotação
-                por 4 locais da cidade. Treino de fala em inglês com ferramentas de apoio com IA,
-                pra profissionais de tech e estudantes que querem destravar a conversação.
+                por 4 locais da cidade — o{' '}
+                <strong className="text-white">conversation club de Curitiba</strong> pra
+                profissionais de tech e estudantes que querem destravar a fala em inglês,
+                com treino guiado e ferramentas de apoio com IA.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
                 <a

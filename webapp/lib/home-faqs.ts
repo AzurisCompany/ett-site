@@ -28,4 +28,16 @@ export const homeFaqs: HomeFaq[] = [
     q: 'Funciona pra quem trava na hora de falar mesmo entendendo bem?',
     a: 'É exatamente pra esse perfil. O bloqueio de fala é o público-alvo número 1 do ETT — pessoas que estudaram anos, entendem, mas travam na hora H. A combinação de comunidade segura (você fala errado e ninguém julga), simulação de situações reais (entrevista, daily, demo, networking) e suporte das ferramentas de IA destrava isso de forma sistemática.',
   },
+  {
+    q: 'Vocês ajudam a preparar entrevista internacional em inglês para tech?',
+    a: 'Sim. A preparação de entrevista é um dos cenários de role-play recorrentes nos encontros (entrevista técnica, self-pitch, system design discussion em inglês, salary negotiation). A ferramenta ETT AI Prompt também gera prompts de simulação pro ChatGPT pra você treinar entrevistas reais entre os encontros. Pra um aprofundamento maior, a camada de Coders (parceiro) oferece mentoria 1:1 de carreira internacional (CV, LinkedIn profissional em inglês, entrevistas).',
+  },
+  {
+    q: 'Tem material específico pra inglês de Data Engineer, BI, DevOps ou AI Engineer?',
+    a: 'Sim, o vocabulário e as simulações são desenhados pra profissionais de Tecnologia, Dados, IA e BI. Os tópicos dos encontros incluem "explaining a bug to a senior dev", "presenting a dashboard", "discussing a data pipeline", "model evaluation review", "incident retro". A ferramenta de Diagnóstico de Vocabulário também ajusta o plano de estudos ao seu cargo — Data Engineer, BI Analyst, DevOps, AI Engineer ou similar.',
+  },
+  {
+    q: 'Como funciona a rotina diária de 1 hora de estudo proposta pelo ETT?',
+    a: 'A rotina ETT distribui ~1 hora por dia entre 4 blocos curtos: 10–15 min de vocabulário (técnica dos pontinhos), 20–30 min de input rico (séries com legenda ou audiobook), 10–15 min de produção ativa (diário escrito ou falado) e 5–10 min de revisão. O encontro semanal de conversação é o "exame prático" da rotina. As ferramentas com IA estruturam tudo automaticamente conforme seu nível e bloqueios.',
+  },
 ]

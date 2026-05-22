@@ -137,16 +137,17 @@ export default function Tools() {
           className="text-center mb-14"
         >
           <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
-            Ferramentas Inteligentes
+            Ferramentas com IA para Inglês
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
-            10 ferramentas que transformam
+            10 ferramentas com IA pra
             <br />
-            <span className="gradient-text">estudo em resultado</span>
+            <span className="gradient-text">destravar conversação em inglês</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Cada ferramenta foi desenhada para resolver um problema específico no processo de aprendizado.
-            Juntas, formam um sistema que torna o estudo preciso, relevante e motivador.
+            Diagnóstico de vocabulário, séries com legenda, audiobook, simulação com ChatGPT,
+            flashcards inteligentes e mais. Cada ferramenta resolve um bloqueio diferente —
+            juntas, viram uma rotina diária de prática precisa, relevante e motivadora.
           </p>
         </motion.div>
 
