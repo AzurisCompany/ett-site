@@ -64,6 +64,12 @@ export const metadata: Metadata = {
   publisher: 'English Talk Time – ETT',
   alternates: {
     canonical: '/',
+    languages: {
+      'pt-BR': 'https://englishtalktime.com.br/',
+      en: 'https://englishtalktime.com.br/en/',
+      es: 'https://englishtalktime.com.br/es/',
+      'x-default': 'https://englishtalktime.com.br/',
+    },
   },
   openGraph: {
     type: 'website',

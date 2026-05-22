@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Github, Linkedin, Instagram } from 'lucide-react'
+import { footer as footerMessages, type Locale } from '@/lib/i18n/messages'
 
 const partnerLogos = [
   { src: '/images/logobeetools.webp', alt: 'BeeTools', width: 100 },
@@ -9,37 +10,80 @@ const partnerLogos = [
   { src: '/images/logoiep.jpg', alt: 'IEP', width: 80 },
 ]
 
-const links = [
-  {
-    title: 'Onde Praticar',
-    items: [
-      { label: 'Grupo de Conversação', href: '/conversacao/' },
-      { label: 'Praticar Inglês em Curitiba', href: '/curitiba/' },
-      { label: 'Conversação Online (segundas)', href: '/online/' },
-      { label: 'Agenda completa', href: '/agenda/' },
-    ],
-  },
-  {
-    title: 'Programa',
-    items: [
-      { label: 'Sobre o ETT', href: '/#sobre' },
-      { label: 'Metodologia · Fórmula Fluente', href: '/ff/' },
-      { label: 'Imersões com Cherry Top', href: '/imersoes/' },
-      { label: 'Blog ETT', href: '/blog/' },
-    ],
-  },
-  {
-    title: 'Parceiros',
-    items: [
-      { label: 'BeeTools', href: '/#parceiros' },
-      { label: 'Cherry Top', href: '/#parceiros' },
-      { label: 'Coders', href: '/#parceiros' },
-      { label: 'IEP — Curitiba', href: '/#parceiros' },
-    ],
-  },
-]
+function buildLinks(locale: Locale) {
+  const m = footerMessages[locale]
+  if (locale === 'en' || locale === 'es') {
+    const prefix = locale === 'en' ? '/en' : '/es'
+    return [
+      {
+        title: m.whereToPractice.title,
+        items: [
+          { label: m.whereToPractice.conversation, href: `${prefix}/#about` },
+          { label: m.whereToPractice.online, href: `${prefix}/#online` },
+          { label: m.whereToPractice.curitiba, href: '/curitiba/' },
+          { label: m.whereToPractice.agendaFull, href: '/agenda/' },
+        ],
+      },
+      {
+        title: m.program.title,
+        items: [
+          { label: m.program.about, href: `${prefix}/#about` },
+          { label: m.program.methodology, href: '/ff/' },
+          { label: m.program.immersions, href: '/imersoes/' },
+          { label: m.program.blog, href: '/blog/' },
+        ],
+      },
+      {
+        title: m.partners.title,
+        items: [
+          { label: m.partners.beetools, href: `${prefix}/#partners` },
+          { label: m.partners.cherrytop, href: `${prefix}/#partners` },
+          { label: m.partners.coders, href: `${prefix}/#partners` },
+          { label: m.partners.iep, href: `${prefix}/#partners` },
+        ],
+      },
+    ]
+  }
+  return [
+    {
+      title: m.whereToPractice.title,
+      items: [
+        { label: m.whereToPractice.conversation, href: '/conversacao/' },
+        { label: m.whereToPractice.curitiba, href: '/curitiba/' },
+        { label: m.whereToPractice.online, href: '/online/' },
+        { label: m.whereToPractice.agendaFull, href: '/agenda/' },
+      ],
+    },
+    {
+      title: m.program.title,
+      items: [
+        { label: m.program.about, href: '/#sobre' },
+        { label: m.program.methodology, href: '/ff/' },
+        { label: m.program.immersions, href: '/imersoes/' },
+        { label: m.program.blog, href: '/blog/' },
+      ],
+    },
+    {
+      title: m.partners.title,
+      items: [
+        { label: m.partners.beetools, href: '/#parceiros' },
+        { label: m.partners.cherrytop, href: '/#parceiros' },
+        { label: m.partners.coders, href: '/#parceiros' },
+        { label: m.partners.iep, href: '/#parceiros' },
+      ],
+    },
+  ]
+}
 
-export default function Footer() {
+interface FooterProps {
+  locale?: Locale
+}
+
+export default function Footer({ locale = 'pt-BR' }: FooterProps) {
+  const m = footerMessages[locale]
+  const links = buildLinks(locale)
+  const privacyHref = '/politica-privacidade/'
+  const termsHref = '/termos-uso/'
   return (
     <footer className="bg-dark-secondary border-t border-dark-border pt-16 pb-8">
       <div className="container mx-auto px-4">
@@ -63,8 +107,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed mb-5">
-              Programa de aceleração de inglês para profissionais de Tecnologia, Dados, IA e BI.
-              Ecossistema DSSBR & GUBigData IA.
+              {m.tagline}
             </p>
             <div className="flex gap-3">
               {[
@@ -109,7 +152,7 @@ export default function Footer() {
         {/* Partner logos row */}
         <div className="border-t border-dark-border pt-10 mb-8">
           <p className="text-xs text-gray-600 text-center uppercase tracking-widest mb-6">
-            Parceiros Oficiais
+            {m.partnersOfficial}
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8">
             {partnerLogos.map((logo) => (
@@ -133,14 +176,14 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-dark-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-600">
           <span>
-            © {new Date().getFullYear()} English Talk Time (ETT) — DSSBR & GUBigData IA. Todos os direitos reservados.
+            © {new Date().getFullYear()} English Talk Time (ETT) — DSSBR & GUBigData IA. {m.rights}
           </span>
           <div className="flex gap-4">
-            <Link href="/politica-privacidade/" className="hover:text-gray-400 transition-colors">
-              Política de Privacidade
+            <Link href={privacyHref} className="hover:text-gray-400 transition-colors">
+              {m.privacy}
             </Link>
-            <Link href="/termos-uso/" className="hover:text-gray-400 transition-colors">
-              Termos de Uso
+            <Link href={termsHref} className="hover:text-gray-400 transition-colors">
+              {m.terms}
             </Link>
           </div>
         </div>
