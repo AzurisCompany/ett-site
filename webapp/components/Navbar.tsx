@@ -19,6 +19,7 @@ import {
 interface NavLink {
   href: string
   label: string
+  langTag?: 'PT'
 }
 
 function buildLinks(locale: Locale): NavLink[] {
@@ -27,6 +28,9 @@ function buildLinks(locale: Locale): NavLink[] {
     return [
       { href: '/en/#about', label: m.about },
       { href: '/en/#method', label: m.methodology },
+      { href: '/ff', label: m.formulafluente, langTag: 'PT' },
+      { href: '/imersoes', label: m.immersions, langTag: 'PT' },
+      { href: '/agenda', label: m.agenda, langTag: 'PT' },
       { href: '/en/#tools', label: m.tools },
       { href: '/en/#partners', label: m.partners },
       { href: '/en/#how', label: m.howItWorks },
@@ -36,6 +40,9 @@ function buildLinks(locale: Locale): NavLink[] {
     return [
       { href: '/es/#about', label: m.about },
       { href: '/es/#method', label: m.methodology },
+      { href: '/ff', label: m.formulafluente, langTag: 'PT' },
+      { href: '/imersoes', label: m.immersions, langTag: 'PT' },
+      { href: '/agenda', label: m.agenda, langTag: 'PT' },
       { href: '/es/#tools', label: m.tools },
       { href: '/es/#partners', label: m.partners },
       { href: '/es/#how', label: m.howItWorks },
@@ -108,9 +115,18 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-gray-300 hover:text-neon-green transition-colors text-sm font-medium"
+              className="text-gray-300 hover:text-neon-green transition-colors text-sm font-medium inline-flex items-baseline gap-0.5"
             >
               {link.label}
+              {link.langTag && (
+                <sup
+                  className="text-[9px] font-bold tracking-wider text-gray-500 ml-0.5"
+                  title="Page only available in Portuguese"
+                  aria-label="Portuguese"
+                >
+                  {link.langTag}
+                </sup>
+              )}
             </Link>
           ))}
         </div>
@@ -178,9 +194,17 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="text-gray-300 hover:text-neon-green transition-colors text-base font-medium py-1"
+              className="text-gray-300 hover:text-neon-green transition-colors text-base font-medium py-1 inline-flex items-baseline gap-1"
             >
               {link.label}
+              {link.langTag && (
+                <sup
+                  className="text-[10px] font-bold tracking-wider text-gray-500"
+                  aria-label="Portuguese"
+                >
+                  {link.langTag}
+                </sup>
+              )}
             </Link>
           ))}
 
