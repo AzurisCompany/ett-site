@@ -1,12 +1,50 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Calendar, Clock, ArrowRight, Tag } from 'lucide-react'
+import { Calendar, Clock, ArrowRight, Tag, ExternalLink } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { blogPosts } from '@/lib/blog-posts'
+import { partnerPosts } from '@/lib/partner-posts'
 
 const SITE_URL = 'https://englishtalktime.com.br'
 const ORG_ID = `${SITE_URL}/#organization`
+
+// Lista unificada: posts próprios + indicações de parceiros, do mais novo pro mais antigo.
+interface BlogCard {
+  slug: string
+  href: string
+  title: string
+  excerpt: string
+  date: string
+  readMinutes: number
+  category: string
+  isPartner: boolean
+  partnerName?: string
+}
+
+const allCards: BlogCard[] = [
+  ...blogPosts.map((p) => ({
+    slug: p.slug,
+    href: `/blog/${p.slug}/`,
+    title: p.title,
+    excerpt: p.excerpt,
+    date: p.date,
+    readMinutes: p.readMinutes,
+    category: p.category,
+    isPartner: false,
+  })),
+  ...partnerPosts.map((p) => ({
+    slug: p.slug,
+    href: `/blog/indicacoes/${p.slug}/`,
+    title: p.title,
+    excerpt: p.excerpt,
+    date: p.date,
+    readMinutes: p.readMinutes,
+    category: p.category,
+    isPartner: true,
+    partnerName: p.partnerName,
+  })),
+].sort((a, b) => (a.date < b.date ? 1 : -1))
 
 export const metadata: Metadata = {
   title: 'Blog ETT — Como Praticar Inglês, Conversação e Treino de Fala',
@@ -82,12 +120,12 @@ const jsonLd = {
       url: `${SITE_URL}/blog/`,
       publisher: { '@id': ORG_ID },
       inLanguage: 'pt-BR',
-      blogPost: blogPosts.map((p) => ({
+      blogPost: allCards.map((p) => ({
         '@type': 'BlogPosting',
         headline: p.title,
-        description: p.description,
+        description: p.excerpt,
         datePublished: p.date,
-        url: `${SITE_URL}/blog/${p.slug}/`,
+        url: `${SITE_URL}${p.href}`,
         author: { '@id': ORG_ID },
         publisher: { '@id': ORG_ID },
         inLanguage: 'pt-BR',
@@ -131,17 +169,29 @@ export default function BlogIndexPage() {
         <section className="section-padding bg-dark-secondary border-y border-dark-border">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto space-y-5">
-              {blogPosts.map((p) => (
+              {allCards.map((p) => (
                 <Link
-                  key={p.slug}
-                  href={`/blog/${p.slug}/`}
+                  key={p.href}
+                  href={p.href}
                   className="block bg-dark-card border border-dark-border rounded-2xl p-6 md:p-8 card-hover hover:border-neon-green/30 transition-all group"
                 >
                   <div className="flex flex-wrap items-center gap-3 mb-3 text-xs text-gray-400">
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full border border-neon-green/30 text-neon-green bg-neon-green/5 font-semibold uppercase tracking-wider">
+                    <span
+                      className={
+                        p.isPartner
+                          ? 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full border border-tech-blue/40 text-tech-blue bg-tech-blue/5 font-semibold uppercase tracking-wider'
+                          : 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full border border-neon-green/30 text-neon-green bg-neon-green/5 font-semibold uppercase tracking-wider'
+                      }
+                    >
                       <Tag className="w-3 h-3" />
                       {p.category}
                     </span>
+                    {p.isPartner && p.partnerName && (
+                      <span className="inline-flex items-center gap-1 text-tech-blue/80">
+                        <ExternalLink className="w-3 h-3" />
+                        {p.partnerName}
+                      </span>
+                    )}
                     <span className="inline-flex items-center gap-1">
                       <Calendar className="w-3.5 h-3.5" />
                       {formatDate(p.date)}
@@ -156,7 +206,8 @@ export default function BlogIndexPage() {
                   </h2>
                   <p className="text-gray-400 leading-relaxed mb-4">{p.excerpt}</p>
                   <span className="inline-flex items-center gap-1.5 text-neon-green text-sm font-semibold">
-                    Ler artigo <ArrowRight className="w-4 h-4" />
+                    {p.isPartner ? 'Ver indicação' : 'Ler artigo'}{' '}
+                    <ArrowRight className="w-4 h-4" />
                   </span>
                 </Link>
               ))}

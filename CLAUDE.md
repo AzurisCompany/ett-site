@@ -74,6 +74,27 @@ Atalhos a evitar / pontos a observar:
 - **LeadForm** (`webapp/components/LeadForm.tsx`) faz `POST` direto pra **RD Station Marketing API v1.3** (`https://www.rdstation.com.br/api/1.3/conversions`) — endpoint público com CORS aberto. Token público (`token_rdstation`) e identificador da conversão (`tenhointeresseprogramaaceleracaoingles`) hardcoded no componente; o token só identifica a conta GUBigData, não autoriza leitura/escrita do CRM. Os 6 campos coletados (Nome, E-mail, Empresa, Telefone, LinkedIn, Nível) são enviados como `nome`/`email`/`empresa`/`telefone`/`linkedin`/`cf_nivel_ingles`. Validação via HTML5 nativa (`required`, `pattern`, `type=email/tel`) + normalização de URL do LinkedIn no JS. Honeypot `website` oculto descarta bots. **Sem react-hook-form, sem zod, sem backend nosso.** Se aparecer spam: a primeira escalada é captcha matemático client-side (~20 linhas); a segunda é função serverless com rate-limit.
 - **Path alias:** `@/*` mapeia para a raiz de `webapp/` (`webapp/tsconfig.json`).
 
+## Indicações de Parceiros (Blog) — fluxo semanal
+
+O blog divulga artigos do parceiro **Aprendendo Inglês** (`aprendendoingles.com.br`). Cada indicação é UMA página em `/blog/indicacoes/<slug>/` com um **resumo original nosso** + link pro artigo completo no site do parceiro. **Nunca copiar o texto integral do parceiro** — o `summary` é curadoria/resenha do ETT (conteúdo original); o leitor termina a leitura no site dele.
+
+Arquitetura (data-driven, 1 página por artigo):
+
+- **`webapp/lib/partner-posts.ts`** — array `partnerPosts: PartnerPost[]`. Adicionar indicação = adicionar 1 objeto. **Não** se cria `page.tsx` por post.
+- **`webapp/app/blog/indicacoes/[slug]/page.tsx`** — rota dinâmica com `generateStaticParams` que renderiza todos os objetos.
+- A listagem (`app/blog/page.tsx`) e o `sitemap.ts` já mesclam `partnerPosts` automaticamente (selo azul "Indicação" + nome do parceiro).
+- **`webapp/scripts/partner-feed.mjs`** — detector de RSS (`npm run partner:feed` ou `partner:feed:json`). Lê o feed do parceiro, deduplica contra `partner-posts.ts` (por `partnerUrl` limpa) e lista os artigos ainda não publicados, do mais novo pro mais antigo. É só detector — não escreve nada.
+
+**Procedimento do agente semanal (Nível 4 de automação):**
+
+1. `cd webapp && npm run partner:feed` para ver os novos artigos.
+2. Pegar **o mais recente** ainda não publicado. Pular itens que não sejam artigo de dica (ex.: `Vídeo |`, `Easy English Song |`, `Story |` — preferir categoria "Dicas práticas" / "Estratégias de Aprendizado"). Publicar no máximo 1 por execução.
+3. Ler o artigo completo no link, escrever um **resumo ORIGINAL em pt-BR** (2-4 parágrafos no campo `summary`) + um parágrafo `whyRead` com o ângulo do ETT. Adicionar o objeto no início do array em `partner-posts.ts` (slug curto e descritivo; `date` = data de hoje; `partnerDate` = data original do feed).
+4. `npm run build` para validar. Depois `./deploy.sh "feat(blog): indicação <título curto>"` a partir da raiz.
+5. **Lembrar o usuário** que a produção só atualiza após o pull manual no painel do hosting (ver acima).
+
+Esse fluxo é disparado por uma rotina agendada (`/schedule`, semanal). Ver `CONTEXTO-SESSAO-SEO-2026-05-22.md` e o histórico de commits para contexto.
+
 ## SEO / Metadata
 
 URLs canônicas, Open Graph e JSON-LD usam `https://englishtalktime.com.br`. Se algum dia o domínio mudar, atualize:
@@ -81,6 +102,7 @@ URLs canônicas, Open Graph e JSON-LD usam `https://englishtalktime.com.br`. Se 
 - `webapp/app/layout.tsx` (`metadataBase`, `openGraph.url`, `jsonLd.url`)
 - `webapp/app/ff/page.tsx` (`openGraph.url`)
 - `webapp/app/agenda/page.tsx` (`openGraph.url`)
+- `webapp/app/blog/indicacoes/[slug]/page.tsx` (`SITE_URL`)
 
 ## Project Context (`webapp/ConteudoSite/`)
 

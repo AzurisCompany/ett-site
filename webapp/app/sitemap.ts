@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { blogPosts } from '@/lib/blog-posts'
+import { partnerPosts } from '@/lib/partner-posts'
 
 const BASE_URL = 'https://englishtalktime.com.br'
 
@@ -10,6 +11,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(p.date),
     changeFrequency: 'monthly',
     priority: 0.7,
+  }))
+  const partnerEntries: MetadataRoute.Sitemap = partnerPosts.map((p) => ({
+    url: `${BASE_URL}/blog/indicacoes/${p.slug}/`,
+    lastModified: new Date(p.date),
+    changeFrequency: 'monthly',
+    priority: 0.6,
   }))
 
   return [
@@ -116,6 +123,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     ...blogEntries,
+    ...partnerEntries,
     {
       url: `${BASE_URL}/politica-privacidade/`,
       lastModified: now,
