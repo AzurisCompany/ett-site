@@ -35,6 +35,7 @@ export interface NavMessages {
   tools: string
   partners: string
   howItWorks: string
+  blog: string
   cta: string
   language: string
 }
@@ -60,6 +61,7 @@ export const nav: Record<Locale, NavMessages> = {
     tools: 'Ferramentas',
     partners: 'Parceiros',
     howItWorks: 'Como Funciona',
+    blog: 'Blog',
     cta: 'Tenho Interesse',
     language: 'Idioma',
   },
@@ -72,6 +74,7 @@ export const nav: Record<Locale, NavMessages> = {
     tools: 'Tools',
     partners: 'Partners',
     howItWorks: 'How It Works',
+    blog: 'Blog',
     cta: 'I want in',
     language: 'Language',
   },
@@ -84,6 +87,7 @@ export const nav: Record<Locale, NavMessages> = {
     tools: 'Herramientas',
     partners: 'Socios',
     howItWorks: 'Cómo funciona',
+    blog: 'Blog',
     cta: 'Quiero participar',
     language: 'Idioma',
   },

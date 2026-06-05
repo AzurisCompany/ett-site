@@ -34,6 +34,7 @@ function buildLinks(locale: Locale): NavLink[] {
       { href: '/en/#tools', label: m.tools },
       { href: '/en/#partners', label: m.partners },
       { href: '/en/#how', label: m.howItWorks },
+      { href: '/blog', label: m.blog, langTag: 'PT' },
     ]
   }
   if (locale === 'es') {
@@ -46,6 +47,7 @@ function buildLinks(locale: Locale): NavLink[] {
       { href: '/es/#tools', label: m.tools },
       { href: '/es/#partners', label: m.partners },
       { href: '/es/#how', label: m.howItWorks },
+      { href: '/blog', label: m.blog, langTag: 'PT' },
     ]
   }
   return [
@@ -57,6 +59,7 @@ function buildLinks(locale: Locale): NavLink[] {
     { href: '/#ferramentas', label: m.tools },
     { href: '/#parceiros', label: m.partners },
     { href: '/#como-funciona', label: m.howItWorks },
+    { href: '/blog', label: m.blog },
   ]
 }
 
