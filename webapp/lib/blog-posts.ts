@@ -11,6 +11,18 @@ export interface BlogPostMeta {
 
 export const blogPosts: BlogPostMeta[] = [
   {
+    slug: 'parceria-aprendendo-ingles',
+    title: 'ETT firma parceria com o Aprendendo Inglês',
+    description:
+      'O English Talk Time fecha parceria com o portal Aprendendo Inglês para dar aos participantes mais uma fonte confiável de conteúdo gratuito — artigos, músicas e newsletter diária — pra manter o inglês na rotina entre um encontro de conversação e outro.',
+    excerpt:
+      'Novidade na comunidade ETT: agora você conta com o conteúdo do Aprendendo Inglês — dicas práticas, Easy English Songs e uma newsletter diária — pra manter contato com o idioma todo dia, fora dos nossos encontros.',
+    date: '2026-06-06',
+    readMinutes: 3,
+    category: 'Parcerias',
+    tags: ['parceria', 'Aprendendo Inglês', 'rotina de estudo', 'conteúdo gratuito'],
+  },
+  {
     slug: 'como-destravar-conversacao-em-ingles',
     title:
       'Como Destravar a Conversação em Inglês (Quando Você Entende, Mas Trava na Hora de Falar)',

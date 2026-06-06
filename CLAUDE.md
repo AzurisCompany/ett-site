@@ -20,7 +20,7 @@ Repo serve o site **ETT (English Talk Time)** via duas árvores acopladas:
 
 `formulafluente/` e `webapp/ConteudoSite/` guardam documentos de planejamento da marca/programa em português + logos de parceiros — referência, não rota do site.
 
-`novoconteudo/` é a **área de rascunho (staging) de conteúdo pros próximos posts do blog**. Conteúdo bruto (ideias, textos, links, materiais de parceiro) é colocado aqui antes de virar página publicada. **Não é build artifact e não vira rota automaticamente** — é matéria-prima. Daqui o conteúdo é transformado em (a) indicação de parceiro → objeto em `webapp/lib/partner-posts.ts` (`/blog/indicacoes/<slug>/`), ou (b) post próprio → `webapp/app/blog/<slug>/page.tsx`. Ver `novoconteudo/README.md` pra convenção de nomes e destinos.
+`novoConteudo/` é a **área de rascunho (staging) de conteúdo pros próximos posts do blog**. Conteúdo bruto (ideias, textos, links, materiais de parceiro, banners) é colocado aqui antes de virar página publicada. **Não é build artifact e não vira rota automaticamente** — é matéria-prima. Daqui o conteúdo é transformado em (a) indicação de parceiro → objeto em `webapp/lib/partner-posts.ts` (`/blog/indicacoes/<slug>/`), ou (b) post próprio → entrada em `webapp/lib/blog-posts.ts` + `webapp/app/blog/<slug>/page.tsx`. Imagens vão otimizadas (webp) pra `webapp/public/images/`. Ver `novoConteudo/README.md` pra convenção de nomes e destinos.
 
 ## Common Commands
 
