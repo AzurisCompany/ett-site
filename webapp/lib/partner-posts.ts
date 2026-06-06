@@ -47,6 +47,33 @@ export interface PartnerPost {
 
 export const partnerPosts: PartnerPost[] = [
   {
+    slug: 'aprender-ingles-devagar-e-mais-rapido',
+    partnerName: 'Aprendendo Inglês',
+    partnerUrl:
+      'https://www.aprendendoingles.com.br/2026/05/29/video-why-slow-is-better-in-language-learning/',
+    partnerHome: 'https://www.aprendendoingles.com.br/',
+    partnerLogo: '/images/aprendendoingles-logo.png',
+    partnerAuthor: 'Steve Kaufmann (via Aprendendo Inglês)',
+    partnerTitle: 'Why SLOW IS BETTER in language learning',
+    title: 'Aprender inglês devagar é o que te faz chegar mais rápido',
+    description:
+      'Promessas de "fluência em 3 meses" vendem pressa, não resultado. Steve Kaufmann, que fala mais de 20 idiomas, defende o caminho oposto: aceitar que aprender leva tempo é justamente o que acelera. Resumo do vídeo indicado pelo parceiro Aprendendo Inglês + o ângulo do ETT.',
+    excerpt:
+      'O poliglota Steve Kaufmann desmonta os "atalhos milagrosos" de fluência e defende o aprendizado lento e prazeroso como o caminho mais rápido de verdade. Resumimos o vídeo indicado pelo Aprendendo Inglês e mostramos como isso vale pra quem é de tech e quer destravar o inglês sem ansiedade.',
+    date: '2026-06-06',
+    partnerDate: '2026-05-29',
+    readMinutes: 4,
+    category: 'Indicação',
+    tags: ['estratégia de aprendizado', 'fluência', 'consistência', 'imersão', 'destravar inglês'],
+    summary: [
+      'O vídeo, do poliglota Steve Kaufmann (que fala mais de 20 idiomas), parte de um paradoxo: aceitar que aprender um idioma é lento é o que, na prática, acelera a fluência. Ele critica diretamente as promessas de "atalho milagroso" — do tipo "decore 12 frases e fale fluente" — e mostra que mesmo entre idiomas parecidos (espanhol e português, mandarim e cantonês) não existe pulo do gato: a quilometragem de exposição é inevitável.',
+      'A inspiração vem do movimento "Slow Food", de Carlo Petrini: assim como uma boa refeição, o aprendizado tem valor na própria experiência, não só no resultado. Kaufmann conta como mergulha em conteúdo autêntico que ele genuinamente curte — séries históricas em tcheco, polonês, ucraniano e russo — e defende que acessar uma cultura pelas vozes dela próprias torna o estudo prazeroso o bastante pra você não desistir. A consistência vem do prazer, não da força de vontade.',
+      'O ponto mais útil é a divisão entre o que você não controla e o que controla. Velocidade de aprendizado: fora do seu controle. Mas quanto você lê, quanto escuta, quanto fala e o quão ativamente você se engaja: 100% no seu controle. Ele ainda alerta que a distração digital constante sabota a concentração profunda que o aprendizado real exige. A conclusão é quase um respiro: a jornada é a recompensa — e, quando você menos perceber, já estará no nível que queria.',
+    ],
+    whyRead:
+      'Quem é de tech está acostumado a otimizar tudo e quer "hackear" o inglês também — e é exatamente aí que muita gente trava e desiste, frustrada por não virar fluente em um trimestre. Este vídeo é o antídoto contra essa ansiedade: tira o peso da pressa e devolve o foco pro que realmente move o ponteiro — exposição constante e prazerosa. No ETT a gente acredita nisso na prática: encontro toda semana, conversa de verdade, pouco a pouco. Indicamos pra quem precisa parar de esperar o atalho e começar a acumular horas com leveza.',
+  },
+  {
     slug: 'guerras-de-sotaque-reino-unido',
     partnerName: 'Aprendendo Inglês',
     partnerUrl:
