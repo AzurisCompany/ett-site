@@ -19,6 +19,8 @@ export interface PartnerPost {
   partnerUrl: string
   /** homepage do parceiro (atribuição) */
   partnerHome: string
+  /** logo do parceiro (em /public), pra atribuição visual */
+  partnerLogo: string
   /** autor original do artigo, se houver */
   partnerAuthor?: string
   /** título original do artigo no parceiro */
@@ -45,15 +47,43 @@ export interface PartnerPost {
 
 export const partnerPosts: PartnerPost[] = [
   {
+    slug: 'guerras-de-sotaque-reino-unido',
+    partnerName: 'Aprendendo Inglês',
+    partnerUrl:
+      'https://www.aprendendoingles.com.br/2026/05/23/as-guerras-de-sotaque-do-reino-unido/',
+    partnerHome: 'https://www.aprendendoingles.com.br/',
+    partnerLogo: '/images/aprendendoingles-logo.png',
+    partnerAuthor: 'Rubens Queiroz de Almeida',
+    partnerTitle: 'As "Guerras de Sotaque" do Reino Unido',
+    title: 'Por que o seu sotaque de brasileiro não é defeito',
+    description:
+      'Um passeio pelos sotaques britânicos — do RP da elite ao inglês multicultural de Londres — mostra que sotaque é identidade, não erro. Resumo do artigo do parceiro Aprendendo Inglês + o ângulo do ETT pra quem trava com medo de "falar errado".',
+    excerpt:
+      'No Reino Unido o sotaque funciona como um "código de barras social" — e mesmo lá dentro existe preconceito entre regiões. O artigo do Rubens Queiroz mostra que manter a própria voz é orgulho, não deficiência. Nós explicamos por que isso importa pra quem aprende inglês no Brasil.',
+    date: '2026-06-05',
+    partnerDate: '2026-05-23',
+    readMinutes: 4,
+    category: 'Indicação',
+    tags: ['sotaque', 'pronúncia', 'inglês britânico', 'destravar inglês', 'mentalidade'],
+    summary: [
+      'O artigo faz um tour pelos sotaques do Reino Unido e mostra como, lá dentro, a forma de falar funciona como um "código de barras sonoro": o Received Pronunciation (RP) — aquele inglês "da BBC", associado à elite e às escolas de prestígio — virou por décadas o padrão que abria portas, mesmo sendo falado hoje por menos de 3% da população. Quem não falava assim era injustamente lido como menos inteligente.',
+      'A partir daí o texto desmonta esse preconceito de sotaque (o tal "accentism"): sotaques do norte como Geordie, Scouse e Yorkshire são vistos como simpáticos mas perdem espaço no mercado corporativo; o Brummie, de Birmingham, carregou fama de "menos atraente" até séries como Peaky Blinders ajudarem a virar o jogo. Ou seja: mesmo entre nativos, existe uma hierarquia social embutida no jeito de falar.',
+      'O contraponto vem do Multicultural London English (MLE) — o inglês que nasceu nos bairros multiculturais de Londres, misturando influências jamaicanas, africanas e do sul da Ásia, e que hoje domina a fala da juventude e o grime/drill. Para os linguistas, é evolução natural da língua. A conclusão prática do autor é direta: sotaque é uma questão de identidade, e manter a própria voz é um ato de orgulho, não um defeito a ser apagado.',
+    ],
+    whyRead:
+      'No ETT a gente vê muita gente de tech travar não por falta de vocabulário, mas por vergonha do próprio sotaque — "vão perceber que sou brasileiro". Este artigo é o antídoto: se nem os ingleses concordam sobre qual sotaque é o "certo", o seu sotaque de brasileiro também não é erro. O objetivo numa call internacional é ser entendido com clareza, não soar como a rainha. Leitura curta e libertadora pra quem precisa abrir a boca e praticar sem esse peso. Recomendamos.',
+  },
+  {
     slug: 'o-poder-da-palavra-ainda-no-ingles',
     partnerName: 'Aprendendo Inglês',
     partnerUrl:
       'https://www.aprendendoingles.com.br/2026/05/31/o-poder-de-uma-unica-palavra-como-o-ainda-pode-salvar-seu-ingles/',
     partnerHome: 'https://www.aprendendoingles.com.br/',
+    partnerLogo: '/images/aprendendoingles-logo.png',
     partnerAuthor: 'Rubens Queiroz de Almeida',
     partnerTitle:
       "O Poder de uma Única Palavra: Como o 'Ainda' Pode Salvar seu Inglês",
-    title: 'A palavra "ainda" pode destravar o seu inglês (indicação de leitura)',
+    title: 'A palavra "ainda" pode destravar o seu inglês',
     description:
       'Trocar "eu não falo inglês" por "eu não falo inglês… ainda" muda a forma como o seu cérebro encara o aprendizado. Resumo do artigo do parceiro Aprendendo Inglês + o ângulo do ETT.',
     excerpt:

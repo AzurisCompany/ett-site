@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import {
   ArrowLeft,
@@ -8,7 +9,6 @@ import {
   Clock,
   Tag,
   ExternalLink,
-  BookOpen,
 } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -125,7 +125,7 @@ export default function PartnerPostPage({
 
       <main className="bg-dark min-h-screen pt-16">
         {/* HERO */}
-        <header className="relative section-padding overflow-hidden hero-grid">
+        <header className="relative pt-10 pb-12 md:pt-14 md:pb-16 overflow-hidden hero-grid">
           <div className="absolute inset-0 bg-gradient-to-b from-tech-blue/5 via-transparent to-transparent pointer-events-none" />
           <div className="container mx-auto px-4 relative">
             <div className="max-w-3xl mx-auto">
@@ -156,26 +156,42 @@ export default function PartnerPostPage({
               </h1>
               <p className="text-gray-300 text-lg leading-relaxed">{post.description}</p>
 
-              <p className="mt-5 text-sm text-gray-500">
-                Curadoria ETT sobre um artigo de{' '}
-                <a
-                  href={post.partnerHome}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-tech-blue hover:underline"
-                >
-                  {post.partnerName}
-                </a>
-                {post.partnerAuthor ? `, por ${post.partnerAuthor}` : ''} · publicado
-                originalmente em {formatDate(post.partnerDate)}.
-              </p>
+              {/* Atribuição ao parceiro — card editorial com a logo (vai pro artigo) */}
+              <a
+                href={post.partnerUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/partner flex items-center gap-4 mt-7 p-3 pr-5 rounded-2xl bg-dark-card border border-dark-border hover:border-tech-blue/40 transition-colors w-fit max-w-full"
+              >
+                <span className="shrink-0 inline-flex items-center justify-center rounded-xl bg-white px-4 py-3 shadow-md">
+                  <Image
+                    src={post.partnerLogo}
+                    alt={post.partnerName}
+                    width={180}
+                    height={95}
+                    className="h-10 w-auto"
+                  />
+                </span>
+                <span className="flex flex-col leading-snug min-w-0">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-tech-blue">
+                    Indicação de parceiro
+                  </span>
+                  <span className="text-sm font-semibold text-white truncate">
+                    {post.partnerName}
+                    {post.partnerAuthor ? ` · ${post.partnerAuthor}` : ''}
+                  </span>
+                  <span className="text-xs text-gray-500">
+                    Curadoria ETT · artigo publicado em {formatDate(post.partnerDate)}
+                  </span>
+                </span>
+              </a>
             </div>
           </div>
         </header>
 
         {/* ARTICLE BODY */}
         <article className="bg-dark-secondary border-y border-dark-border">
-          <div className="container mx-auto px-4 py-12 md:py-16">
+          <div className="container mx-auto px-4 py-10 md:py-14">
             <div className="max-w-3xl mx-auto prose-blog">
               <h2>O que o artigo diz</h2>
               {post.summary.map((para, i) => (
@@ -187,8 +203,21 @@ export default function PartnerPostPage({
 
               {/* CTA pro artigo original do parceiro */}
               <div className="not-prose my-8 bg-dark-card border border-tech-blue/30 rounded-2xl p-6 md:p-7">
-                <div className="flex items-start gap-3 mb-4">
-                  <BookOpen className="w-5 h-5 text-tech-blue shrink-0 mt-0.5" />
+                <div className="flex items-start gap-4 mb-4">
+                  <a
+                    href={post.partnerUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 inline-flex items-center justify-center rounded-xl bg-white px-2.5 py-2 shadow-md hover:shadow-tech-blue/30 transition-shadow"
+                  >
+                    <Image
+                      src={post.partnerLogo}
+                      alt={post.partnerName}
+                      width={180}
+                      height={95}
+                      className="h-8 w-auto"
+                    />
+                  </a>
                   <div>
                     <p className="text-white font-semibold leading-snug">
                       Leia o artigo completo no {post.partnerName}

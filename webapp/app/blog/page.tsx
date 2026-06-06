@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Calendar, Clock, ArrowRight, Tag, ExternalLink } from 'lucide-react'
+import Image from 'next/image'
+import { Calendar, Clock, ArrowRight, Tag } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { blogPosts } from '@/lib/blog-posts'
@@ -20,6 +21,7 @@ interface BlogCard {
   category: string
   isPartner: boolean
   partnerName?: string
+  partnerLogo?: string
 }
 
 const allCards: BlogCard[] = [
@@ -43,6 +45,7 @@ const allCards: BlogCard[] = [
     category: p.category,
     isPartner: true,
     partnerName: p.partnerName,
+    partnerLogo: p.partnerLogo,
   })),
 ].sort((a, b) => (a.date < b.date ? 1 : -1))
 
@@ -173,42 +176,55 @@ export default function BlogIndexPage() {
                 <Link
                   key={p.href}
                   href={p.href}
-                  className="block bg-dark-card border border-dark-border rounded-2xl p-6 md:p-8 card-hover hover:border-neon-green/30 transition-all group"
+                  className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-7 bg-dark-card border border-dark-border rounded-2xl p-6 md:p-8 card-hover hover:border-neon-green/30 transition-all group"
                 >
-                  <div className="flex flex-wrap items-center gap-3 mb-3 text-xs text-gray-400">
-                    <span
-                      className={
-                        p.isPartner
-                          ? 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full border border-tech-blue/40 text-tech-blue bg-tech-blue/5 font-semibold uppercase tracking-wider'
-                          : 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full border border-neon-green/30 text-neon-green bg-neon-green/5 font-semibold uppercase tracking-wider'
-                      }
-                    >
-                      <Tag className="w-3 h-3" />
-                      {p.category}
-                    </span>
-                    {p.isPartner && p.partnerName && (
-                      <span className="inline-flex items-center gap-1 text-tech-blue/80">
-                        <ExternalLink className="w-3 h-3" />
-                        {p.partnerName}
+                  <div className="flex-1 min-w-0 order-2 sm:order-1">
+                    <div className="flex flex-wrap items-center gap-3 mb-3 text-xs text-gray-400">
+                      <span
+                        className={
+                          p.isPartner
+                            ? 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full border border-tech-blue/40 text-tech-blue bg-tech-blue/5 font-semibold uppercase tracking-wider'
+                            : 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full border border-neon-green/30 text-neon-green bg-neon-green/5 font-semibold uppercase tracking-wider'
+                        }
+                      >
+                        <Tag className="w-3 h-3" />
+                        {p.category}
                       </span>
-                    )}
-                    <span className="inline-flex items-center gap-1">
-                      <Calendar className="w-3.5 h-3.5" />
-                      {formatDate(p.date)}
-                    </span>
-                    <span className="inline-flex items-center gap-1">
-                      <Clock className="w-3.5 h-3.5" />
-                      {p.readMinutes} min
+                      <span className="inline-flex items-center gap-1">
+                        <Calendar className="w-3.5 h-3.5" />
+                        {formatDate(p.date)}
+                      </span>
+                      <span className="inline-flex items-center gap-1">
+                        <Clock className="w-3.5 h-3.5" />
+                        {p.readMinutes} min
+                      </span>
+                    </div>
+                    <h2 className="text-xl md:text-2xl font-bold text-white mb-3 leading-snug group-hover:text-neon-green transition-colors">
+                      {p.title}
+                    </h2>
+                    <p className="text-gray-400 leading-relaxed mb-4">{p.excerpt}</p>
+                    <span className="inline-flex items-center gap-1.5 text-neon-green text-sm font-semibold">
+                      {p.isPartner ? 'Ver indicação' : 'Ler artigo'}{' '}
+                      <ArrowRight className="w-4 h-4" />
                     </span>
                   </div>
-                  <h2 className="text-xl md:text-2xl font-bold text-white mb-3 leading-snug group-hover:text-neon-green transition-colors">
-                    {p.title}
-                  </h2>
-                  <p className="text-gray-400 leading-relaxed mb-4">{p.excerpt}</p>
-                  <span className="inline-flex items-center gap-1.5 text-neon-green text-sm font-semibold">
-                    {p.isPartner ? 'Ver indicação' : 'Ler artigo'}{' '}
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
+
+                  {p.isPartner && p.partnerLogo && (
+                    <div className="order-1 sm:order-2 shrink-0 sm:self-center flex sm:flex-col items-center gap-2.5">
+                      <span className="inline-flex items-center justify-center rounded-2xl bg-white px-5 py-4 shadow-md sm:w-40">
+                        <Image
+                          src={p.partnerLogo}
+                          alt={p.partnerName ?? 'Parceiro'}
+                          width={180}
+                          height={95}
+                          className="h-10 sm:h-14 w-auto"
+                        />
+                      </span>
+                      <span className="text-[11px] font-semibold uppercase tracking-wider text-tech-blue/80">
+                        via {p.partnerName}
+                      </span>
+                    </div>
+                  )}
                 </Link>
               ))}
             </div>

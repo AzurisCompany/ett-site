@@ -110,6 +110,9 @@ body {
   margin-top: 2.5rem;
   margin-bottom: 1rem;
 }
+.prose-blog > h2:first-child {
+  margin-top: 0;
+}
 .prose-blog h3 {
   color: #fff;
   font-size: 1.25rem;
