@@ -3,6 +3,7 @@ import Hero from '@/components/Hero'
 import About from '@/components/About'
 import Methodology from '@/components/Methodology'
 import Tools from '@/components/Tools'
+import PlayerShowcase from '@/components/PlayerShowcase'
 import Partners from '@/components/Partners'
 import ImersoesTeaser from '@/components/ImersoesTeaser'
 import HowItWorks from '@/components/HowItWorks'
@@ -35,6 +36,7 @@ export default function Home() {
       <About />
       <Methodology />
       <Tools />
+      <PlayerShowcase />
       <Partners />
       <ImersoesTeaser />
       <HowItWorks />

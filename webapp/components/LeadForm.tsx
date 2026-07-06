@@ -105,13 +105,14 @@ export default function LeadForm() {
               Lista do ETT
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-              Dê o primeiro passo hoje
+              Cadastre-se e comece de graça
             </h2>
             <p className="text-gray-400 text-lg">
-              Cadastre-se na nossa lista para receber{' '}
-              <strong className="text-gray-200">datas dos próximos encontros</strong> (online toda segunda ou
-              presenciais em Curitiba), <strong className="text-gray-200">novidades do programa</strong> e o lançamento
-              do <strong className="text-gray-200">ebook da Fórmula Fluente</strong>. Gratuito, sem compromisso.
+              Um cadastro rápido e você recebe a <strong className="text-gray-200">agenda dos encontros</strong>{' '}
+              (online toda segunda ou presenciais em Curitiba), a{' '}
+              <strong className="text-gray-200">metodologia e o acesso às ferramentas com IA (ETT Player)</strong>{' '}
+              e passa a <strong className="text-gray-200">participar gratuitamente</strong> da comunidade.
+              Sem custo de inscrição, sem compromisso.
             </p>
 
             {/* Event info */}
@@ -154,9 +155,8 @@ export default function LeadForm() {
                   <h3 className="text-2xl font-bold text-white mb-3">Cadastro confirmado!</h3>
                   <p className="text-gray-300 leading-relaxed max-w-sm mx-auto">
                     Obrigado! Você está na nossa lista. Vai receber em primeira mão as{' '}
-                    <strong className="text-neon-green">datas dos próximos encontros</strong>, novidades do programa
-                    e o lançamento do{' '}
-                    <strong className="text-tech-blue">ebook da Fórmula Fluente</strong>.
+                    <strong className="text-neon-green">datas dos próximos encontros</strong>, o acesso às{' '}
+                    <strong className="text-tech-blue">ferramentas (ETT Player)</strong> e a metodologia.
                     Verifique seu e-mail.
                   </p>
                 </motion.div>

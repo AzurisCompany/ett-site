@@ -203,13 +203,14 @@ export default function Tools() {
           className="text-center mt-12"
         >
           <p className="text-gray-400 mb-5">
-            Todas as ferramentas disponíveis para participantes do programa ETT.
+            Não são planos no papel — <strong className="text-gray-200">já estão no ar no ETT Player</strong>{' '}
+            e são gratuitas pra quem participa do programa. Veja o app funcionando logo abaixo. 👇
           </p>
           <a
-            href="#inscricao"
+            href="#player"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-neon-green text-black font-bold text-base hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg hover:-translate-y-0.5"
           >
-            Quero acesso às ferramentas — inscreva-me no encontro gratuito
+            Ver o ETT Player em ação
           </a>
         </motion.div>
       </div>

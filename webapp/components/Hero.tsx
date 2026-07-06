@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Zap, ChevronDown, Cpu, Globe, TrendingUp, Clock } from 'lucide-react'
+import { Zap, ChevronDown, Cpu, Globe, TrendingUp, Clock, Check } from 'lucide-react'
 
 const stats = [
   { value: '300h', label: 'de contato estruturado', icon: Clock },
@@ -57,7 +57,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neon-green/30 bg-neon-green/10 text-neon-green text-sm font-medium mb-8"
         >
           <Zap className="w-4 h-4" />
-          <span>+365 mil alunos já acelerados com a Fórmula Fluente</span>
+          <span>Programa aberto à comunidade • Participação 100% gratuita</span>
         </motion.div>
 
         {/* Main title */}
@@ -82,14 +82,15 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.35 }}
           className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed"
         >
-          <span className="text-white font-semibold">Grupo de conversação em inglês</span>{' '}
+          <span className="text-white font-semibold">Grupo de conversação em inglês aberto e gratuito</span>{' '}
           pra quem quer <span className="text-neon-green font-medium">destravar inglês</span> e{' '}
-          <span className="text-tech-blue font-medium">falar inglês fluente</span>.
-          Treino de fala guiado + ferramentas de apoio com IA, em uma rotina diária estruturada.
-          Encontros semanais <span className="text-white">online (toda segunda)</span> e{' '}
-          <span className="text-white">presenciais em Curitiba</span>. Programa do
-          ecossistema <span className="text-white font-semibold">DSSBR & GUBigData IA</span>{' '}
-          para profissionais de Tecnologia, Dados, IA e BI.
+          <span className="text-tech-blue font-medium">falar com fluência</span>.
+          <span className="text-white"> Cadastre-se</span> para receber a agenda dos encontros, a
+          metodologia e o acesso às <span className="text-white">ferramentas com IA</span> — e{' '}
+          <span className="text-white font-semibold">participe de graça</span>, online (toda segunda)
+          ou presencial em Curitiba. Programa do ecossistema{' '}
+          <span className="text-white font-semibold">DSSBR &amp; GUBigData IA</span> para
+          profissionais de Tecnologia, Dados, IA e BI.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -106,11 +107,29 @@ export default function Hero() {
             Quero participar do próximo encontro gratuito
           </Link>
           <Link
-            href="#ferramentas"
+            href="#player"
             className="w-full sm:w-auto px-8 py-4 rounded-lg border border-tech-blue/50 text-tech-blue font-bold text-base sm:text-lg hover:bg-tech-blue/10 hover:border-tech-blue transition-all hover:-translate-y-0.5 active:translate-y-0"
           >
-            Ver as ferramentas com IA
+            Conhecer as ferramentas com IA
           </Link>
+        </motion.div>
+
+        {/* Reassurance strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.6 }}
+          className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mb-14 text-sm text-gray-400"
+        >
+          <span className="inline-flex items-center gap-1.5">
+            <Check className="w-4 h-4 text-neon-green" /> Sem custo de inscrição
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <Check className="w-4 h-4 text-neon-green" /> Online (toda segunda) + presencial em Curitiba
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <Check className="w-4 h-4 text-neon-green" /> +365 mil alunos na metodologia Fórmula Fluente
+          </span>
         </motion.div>
 
         {/* Stats bar */}
