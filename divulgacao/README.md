@@ -1,23 +1,42 @@
-# /divulgacao/ — e-mails de marketing (RD Station)
+# /divulgacao/ — central de kits de divulgação
 
-Cada pasta aqui é **uma campanha de e-mail**, publicada como página estática em
-`https://englishtalktime.com.br/divulgacao/<campanha>/`.
+`index.html` desta pasta é o **hub**: lista todos os kits. Cada subpasta é **um kit**,
+publicado como página estática em `https://englishtalktime.com.br/divulgacao/<slug>/`:
 
-Fica em `public/` de propósito: o export do Next copia sem tocar, então a URL serve o
-**HTML cru do e-mail** — sem layout, fontes ou scripts injetados. Fluxo de uso:
-abrir a URL → `Ctrl+U` (ver código-fonte) → copiar tudo → colar no RD Station num
-e-mail do tipo "Código HTML".
+```
+<slug>/
+├── index.html   ← a página do kit (o link que se compartilha) · noindex
+├── email.html   ← o HTML cru do e-mail pro RD Station
+├── textos.md    ← os 5 blocos de texto por rede
+└── assets/      ← as 5 artes canônicas
+```
+
+Fica em `public/` de propósito: o export do Next copia sem tocar, então as URLs servem
+HTML cru — sem layout, fontes ou scripts injetados. Pro e-mail, o fluxo é:
+abrir `.../email.html` → `Ctrl+U` (ver código-fonte) → copiar tudo → colar no RD Station
+num e-mail do tipo "Código HTML".
+
+**Processo completo (como criar um kit novo):** `novoConteudo/PROCESSO-DIVULGACAO-ETT.md`.
+Template: `novoConteudo/_template-kit/`. Artes: `webapp/scripts/kits/`.
 
 > ⚠️ A pasta `divulgacao/` **da raiz do repo** é cópia de build e é apagada a cada
 > `./deploy.sh`. Arquivo novo vai sempre aqui, em `webapp/public/divulgacao/`.
 
-## Campanhas
+## Kits
 
 | Pasta | O quê | Publicado |
 |---|---|---|
-| `convitesegunda20h/` | Convite pro encontro online de conversação, toda segunda 20h (sala: `ett-speak.vercel.app`) | 2026-07-26 |
+| `convitesegunda20h/` | Encontro online de conversação, toda segunda 20h (sala: `ett-speak.vercel.app`). Kit completo: 5 artes + textos + e-mail | 2026-07-26 · kit em 2026-07-27 |
+
+> `convitesegunda20h` é um slug **legado** (nasceu como pasta só do e-mail) e **não pode
+> ser renomeado**: os e-mails já disparados apontam pra `EmailTopNovo.jpg` dentro dela.
+> Kits novos usam slug descritivo em kebab-case.
 
 ## Convenções
+
+**Página do kit:** `noindex, nofollow` sempre. Kit é material de trabalho — não pode
+competir com as páginas do site no Google. (O sitemap é gerado por `app/sitemap.ts`, que
+só lista rotas do app, então `public/` já fica de fora.)
 
 **HTML de e-mail, não de site:**
 
@@ -40,6 +59,11 @@ e-mail do tipo "Código HTML".
 - Comentário no topo com o passo a passo pro RD Station e 3–4 sugestões de assunto pra teste A/B.
 - Onde entra o nome da pessoa, deixar um cumprimento neutro + comentário indicando o ponto — o token de personalização varia por conta RD e é inserido pelo editor deles.
 - **Não** incluir bloco de descadastro nem endereço do remetente: a RD insere automaticamente no rodapé.
+
+**Artes do kit (5 formatos canônicos, nomes fixos):** `banner.png`+`banner.webp` 1920×1080,
+`og-1200x630.png`, `feed-1080x1080.png`, `feed-1080x1350.png`, `story-1080x1920.png`.
+Geradas por script (`webapp/scripts/kits/`), nunca à mão — assim dá pra corrigir a copy e
+regerar tudo. O banner do e-mail é um arquivo à parte (JPEG, com regra de nome próprio).
 
 ## Checklist antes de disparar
 

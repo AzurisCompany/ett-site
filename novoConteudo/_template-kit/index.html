@@ -1,0 +1,166 @@
+<!doctype html>
+<!--
+  =====================================================================
+  ETT — KIT DE DIVULGAÇÃO: {{TITULO}}
+
+  TEMPLATE. Como usar:
+    cp -r novoConteudo/_template-kit webapp/public/divulgacao/{{SLUG}}
+  e trocar {{TITULO}}, {{SLUG}}, {{BADGE}}, {{LEDE}}, {{FATO_*}} e os
+  blocos de texto. Depois adicionar o card no hub
+  (webapp/public/divulgacao/index.html), sempre em primeiro.
+
+  Artes: copie webapp/scripts/kits/build_encontro_segunda.py, troque o
+  CONFIG e as imagens-fonte, e rode. Saída em ./assets/.
+
+  Processo completo: novoConteudo/PROCESSO-DIVULGACAO-ETT.md
+  Manter o noindex: kit não pode competir com o site no Google.
+  =====================================================================
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kit de divulgação — {{TITULO}} · ETT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#050510;--panel:#0B0F1F;--panel2:#0F1528;--border:#1D2438;
+        --text:#E8ECF5;--muted:#95A0B8;--neon:#00FF9D;--blue:#00BFFF}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.55;
+    -webkit-font-smoothing:antialiased}
+  a{color:var(--neon)}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--border);background:
+    radial-gradient(900px 320px at 12% -10%, rgba(0,255,157,.10), transparent 60%),
+    linear-gradient(180deg,#070B18,#050510)}
+  .top{display:flex;align-items:center;gap:14px;padding:22px 0}
+  .top img{height:40px;border-radius:8px}
+  .top span{font-size:13px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+  .badge{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--neon);background:rgba(0,255,157,.08);border:1px solid rgba(0,255,157,.35);
+    border-radius:999px;padding:6px 14px}
+  h1{font-size:clamp(28px,4.4vw,44px);line-height:1.1;margin:16px 0 10px;font-weight:800;letter-spacing:-.02em}
+  .lede{color:var(--muted);max-width:62ch;margin:0 0 22px}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;padding-bottom:26px}
+  .fact{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:8px 14px;
+    font-size:14px;color:#C6CFE2}
+  .fact b{color:#fff}
+  h2{font-size:20px;margin:40px 0 6px;font-weight:800}
+  h2 .n{color:var(--neon);font-size:13px;letter-spacing:.14em;display:block;margin-bottom:6px}
+  .hint{color:var(--muted);font-size:14px;margin:0 0 18px;max-width:70ch}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+  .art{background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;
+    display:flex;flex-direction:column}
+  .art .ph{background:#070A14;display:flex;align-items:center;justify-content:center;min-height:150px;padding:10px}
+  .art .ph img{max-width:100%;max-height:230px;display:block;border-radius:6px}
+  .art .meta{padding:12px 14px 14px;border-top:1px solid var(--border)}
+  .art .meta strong{display:block;font-size:14px}
+  .art .meta small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+  .btn{display:inline-block;margin-top:10px;background:var(--neon);color:#04120C;font-weight:800;
+    font-size:13px;text-decoration:none;border:0;border-radius:8px;padding:9px 14px;cursor:pointer;font-family:inherit}
+  .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
+  .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+  .txt{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:16px 18px;margin-bottom:16px}
+  .txt .head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+  .txt .head em{color:var(--muted);font-style:normal;font-size:12.5px}
+  pre{white-space:pre-wrap;word-wrap:break-word;background:var(--panel2);border:1px solid var(--border);
+    border-radius:10px;padding:14px;margin:0;font-family:ui-monospace,Menlo,monospace;font-size:13.5px;color:#DCE3F2}
+  footer{border-top:1px solid var(--border);margin-top:56px;padding:26px 0 60px;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="top">
+      <img src="/images/Logo-ETT.png" alt="English Talk Time">
+      <span>Kit de divulgação</span>
+    </div>
+    <span class="badge">{{BADGE}}</span>
+    <h1>{{TITULO}}</h1>
+    <p class="lede">{{LEDE}}</p>
+    <div class="facts">
+      <div class="fact"><b>Quando:</b> {{FATO_QUANDO}}</div>
+      <div class="fact"><b>Onde:</b> {{FATO_ONDE}}</div>
+      <div class="fact"><b>Quanto:</b> {{FATO_QUANTO}}</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <h2><span class="n">01</span>Links oficiais</h2>
+  <p class="hint">Pra gerar prévia de link, compartilhe o <b>site</b> — esta página é <code>noindex</code>.</p>
+  <div class="links">
+    <a class="btn" href="{{CTA_URL}}" target="_blank" rel="noopener">{{CTA_LABEL}} ↗</a>
+    <a class="btn ghost" href="https://englishtalktime.com.br/" target="_blank" rel="noopener">Site do ETT ↗</a>
+    <a class="btn ghost" href="./email.html" target="_blank">E-mail HTML (RD Station) ↗</a>
+    <a class="btn ghost" href="./textos.md" target="_blank">textos.md ↗</a>
+  </div>
+
+  <h2><span class="n">02</span>Artes</h2>
+  <p class="hint">5 formatos canônicos, gerados por script. Não trocar os nomes dos arquivos.</p>
+  <div class="grid">
+    <div class="art"><div class="ph"><img src="./assets/banner.png" alt=""></div>
+      <div class="meta"><strong>Banner 16:9</strong><small>1920×1080</small>
+        <a class="btn" href="./assets/banner.png" download>Baixar PNG</a>
+        <a class="btn ghost" href="./assets/banner.webp" download>WebP</a></div></div>
+    <div class="art"><div class="ph"><img src="./assets/og-1200x630.png" alt=""></div>
+      <div class="meta"><strong>Preview de link</strong><small>1200×630</small>
+        <a class="btn" href="./assets/og-1200x630.png" download>Baixar</a></div></div>
+    <div class="art"><div class="ph"><img src="./assets/feed-1080x1080.png" alt=""></div>
+      <div class="meta"><strong>Feed 1:1</strong><small>1080×1080</small>
+        <a class="btn" href="./assets/feed-1080x1080.png" download>Baixar</a></div></div>
+    <div class="art"><div class="ph"><img src="./assets/feed-1080x1350.png" alt=""></div>
+      <div class="meta"><strong>Feed 4:5</strong><small>1080×1350</small>
+        <a class="btn" href="./assets/feed-1080x1350.png" download>Baixar</a></div></div>
+    <div class="art"><div class="ph"><img src="./assets/story-1080x1920.png" alt=""></div>
+      <div class="meta"><strong>Story 9:16</strong><small>1080×1920</small>
+        <a class="btn" href="./assets/story-1080x1920.png" download>Baixar</a></div></div>
+  </div>
+
+  <h2><span class="n">03</span>Textos prontos</h2>
+  <p class="hint">Fato verificável, sem promessa de resultado nem prazo. Ver as regras de copy no CLAUDE.md.</p>
+
+  <div class="txt"><div class="head"><strong>LinkedIn</strong><em>institucional</em>
+    <button class="btn" data-copy="t1">Copiar</button></div><pre id="t1">{{TEXTO_LINKEDIN}}</pre></div>
+
+  <div class="txt"><div class="head"><strong>Instagram</strong><em>feed · link na bio</em>
+    <button class="btn" data-copy="t2">Copiar</button></div><pre id="t2">{{TEXTO_INSTAGRAM}}</pre></div>
+
+  <div class="txt"><div class="head"><strong>WhatsApp / Telegram</strong><em>encaminhável</em>
+    <button class="btn" data-copy="t3">Copiar</button></div><pre id="t3">{{TEXTO_WHATSAPP}}</pre></div>
+
+  <div class="txt"><div class="head"><strong>X / Twitter</strong><em>≤280 caracteres</em>
+    <button class="btn" data-copy="t4">Copiar</button></div><pre id="t4">{{TEXTO_X}}</pre></div>
+
+  <div class="txt"><div class="head"><strong>Repost</strong><em>1ª pessoa</em>
+    <button class="btn" data-copy="t5">Copiar</button></div><pre id="t5">{{TEXTO_REPOST}}</pre></div>
+
+</div>
+
+<footer><div class="wrap">ETT · English Talk Time — material de divulgação interno.</div></footer>
+
+<script>
+  document.querySelectorAll('[data-copy]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var txt = document.getElementById(b.dataset.copy).innerText;
+      var done = function () { var o = b.textContent; b.textContent = 'Copiado ✓';
+        setTimeout(function () { b.textContent = o }, 1600) };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(txt).then(done);
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = txt; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done() } catch (e) { alert('Selecione e copie manualmente.') }
+        document.body.removeChild(ta);
+      }
+    });
+  });
+</script>
+</body>
+</html>

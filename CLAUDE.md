@@ -22,7 +22,13 @@ Repo serve o site **ETT (English Talk Time)** via duas árvores acopladas:
 
 `novoConteudo/` é a **área de rascunho (staging) de conteúdo pros próximos posts do blog**. Conteúdo bruto (ideias, textos, links, materiais de parceiro, banners) é colocado aqui antes de virar página publicada. **Não é build artifact e não vira rota automaticamente** — é matéria-prima. Daqui o conteúdo é transformado em (a) indicação de parceiro → objeto em `webapp/lib/partner-posts.ts` (`/blog/indicacoes/<slug>/`), ou (b) post próprio → entrada em `webapp/lib/blog-posts.ts` + `webapp/app/blog/<slug>/page.tsx`. Imagens vão otimizadas (webp) pra `webapp/public/images/`. Ver `novoConteudo/README.md` pra convenção de nomes e destinos.
 
-`webapp/public/divulgacao/<campanha>/` guarda os **e-mails de marketing em HTML** (RD Station). Cada campanha é uma pasta com `index.html` + imagens. Fica em `public/` de propósito: o export copia sem tocar, então a URL (`/divulgacao/<campanha>/`) serve **o HTML cru do e-mail**, sem o Next injetar layout, fontes ou scripts — o usuário abre, dá "ver código-fonte" e cola no RD. Convenções:
+`webapp/public/divulgacao/` é a **Central de Divulgação**: `index.html` é o hub e cada subpasta é um **kit** (`/divulgacao/<slug>/`) com `index.html` (a página compartilhável, `noindex`), `email.html` (o HTML cru pro RD Station), `textos.md` (5 blocos: LinkedIn, Instagram, WhatsApp, X, repost) e `assets/` (5 artes canônicas: banner 1920×1080 + webp, og 1200×630, feed 1080×1080, feed 1080×1350, story 1080×1920). Fica em `public/` de propósito: o export copia sem tocar, então a URL serve HTML cru — pro e-mail, o usuário abre `.../email.html`, dá "ver código-fonte" e cola no RD.
+
+- **Processo completo em `novoConteudo/PROCESSO-DIVULGACAO-ETT.md`** (adaptado do `PLAYBOOK-KIT-DIVULGACAO-PORTAVEL.md`, sistema que já roda no DSSBR). Template em `novoConteudo/_template-kit/`. Geradores de arte em `webapp/scripts/kits/` (composição por proporção, PIL) e `webapp/scripts/gerar-imagens.py` (baseline letterbox); Inter versionada em `webapp/scripts/fonts/` porque não está instalada no sistema.
+- **Kit é sempre `noindex, nofollow`** e fica fora do sitemap (que só lista rotas do app). Link colado no LinkedIn/WhatsApp pra gerar prévia é o do **site**, não o do kit.
+- `convitesegunda20h` é slug **legado** (nasceu como pasta só de e-mail) e não pode ser renomeado: e-mails já disparados apontam pra `EmailTopNovo.jpg` dentro dela.
+
+Convenções do e-mail:
 
 - Tabelas aninhadas, 600px, **CSS 100% inline**, `bgcolor` em todo `td` (Outlook desktop ignora `background-color` em `div`). Botão com padding no `td`, não no `<a>`.
 - **Imagens em JPEG/PNG, nunca `.webp`** (vários clientes de e-mail não renderizam), com **URL absoluta** de produção — ou seja, a imagem só carrega depois do pull no Hostinger.

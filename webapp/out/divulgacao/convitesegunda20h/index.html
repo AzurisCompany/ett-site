@@ -1,321 +1,264 @@
 <!doctype html>
 <!--
   =====================================================================
-  ETT — E-mail de convite: Encontro de Conversação Online
-  Toda segunda-feira, 20h–21h30 (horário de Brasília)
-  Sala: https://ett-speak.vercel.app/
+  ETT — KIT DE DIVULGAÇÃO: Encontro de conversação online (segunda, 20h)
 
-  COMO USAR NO RD STATION MARKETING
-  ---------------------------------
-  1. Novo E-mail  >  tipo "Código HTML" (não o editor de arrastar).
-  2. Cole TODO o conteúdo deste arquivo (do <!doctype> ao </html>).
-  3. Personalização: onde está "Oi!" você pode inserir o campo dinâmico
-     de nome pelo próprio editor da RD (o token muda conforme a conta,
-     por isso não está chumbado aqui).
-  4. O bloco de descadastro/endereço do remetente é inserido
-     automaticamente pela RD no rodapé — não duplique aqui.
-  5. Envie um teste pra si mesmo e confira no Gmail + celular.
+  Esta é a PÁGINA DO KIT (material de trabalho da equipe e dos parceiros).
+  O e-mail HTML pro RD Station está ao lado, em ./email.html — abra e use
+  "ver código-fonte" pra copiar.
 
-  ASSUNTOS SUGERIDOS (teste A/B)
-  ------------------------------
-  A) Segunda, 20h: 90 minutos falando inglês (é de graça)
-  B) Sua vaga na roda de conversação de segunda está aberta
-  C) Você entende inglês. Segunda-feira você vai falar.
-  D) 20h de segunda: entra, fala, sai melhor do que entrou
+  Página estática, servida direta de webapp/public/ (o Next não injeta
+  nada aqui). noindex de propósito: kit é material raso e repetitivo,
+  não pode competir com as páginas do site no Google. Por isso também
+  NÃO entra no sitemap (webapp/app/sitemap.ts só lista rotas do app).
 
-  PRÉ-CABEÇALHO (preheader) — já embutido no HTML:
-  "Online, gratuito e sem instalar nada. Só clicar no horário e falar."
-
-  IMAGENS
-  -------
-  Banner de topo: /divulgacao/convitesegunda20h/EmailTopNovo.jpg
-  (600x338 exibido, 1200x675 real p/ telas retina, 124 KB).
-  Original em alta: novoConteudo/EttMeetOnline-segunda20h/EmailTopNovo.png
-  (a versão anterior do banner está arquivada na mesma pasta como
-   EttTopSegunda20h.png — trocar o nome do arquivo publicado a cada
-   versão é de propósito: o hosting serve imagem com cache de 7 dias)
-  URLs absolutas e formato JPEG/PNG de propósito — vários clientes de
-  e-mail (Outlook desktop, por ex.) não renderizam .webp.
-  O banner só carrega DEPOIS do pull no painel do Hostinger.
+  Regenerar as artes:  python3 webapp/scripts/kits/build_encontro_segunda.py
+  Processo completo:   novoConteudo/PROCESSO-DIVULGACAO-ETT.md
   =====================================================================
 -->
-<html lang="pt-BR" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="x-apple-disable-message-reformatting">
-<meta name="color-scheme" content="dark light">
-<meta name="supported-color-schemes" content="dark light">
-<title>ETT — Encontro de conversação em inglês · toda segunda, 20h</title>
-<!--[if mso]>
-<noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
+<meta name="robots" content="noindex, nofollow">
+<title>Kit de divulgação — Encontro de conversação em inglês · ETT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  body, table, td, a, h1, h2, h3, p, span { font-family: Arial, Helvetica, sans-serif !important; }
-</style>
-<![endif]-->
-<style>
-  body { margin:0; padding:0; width:100% !important; }
-  img { border:0; outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; }
-  table { border-collapse:collapse !important; }
-  a { color:#00FF9D; }
-  /* Evita que o iOS/Gmail transforme datas e horários em links azuis */
-  a[x-apple-data-detectors], .unstyled-link a {
-    color:inherit !important; text-decoration:none !important; font-size:inherit !important;
-    font-family:inherit !important; font-weight:inherit !important; line-height:inherit !important;
+  :root{
+    --bg:#050510; --panel:#0B0F1F; --panel2:#0F1528; --border:#1D2438;
+    --text:#E8ECF5; --muted:#95A0B8; --neon:#00FF9D; --blue:#00BFFF;
   }
-  @media only screen and (max-width:620px) {
-    .wrap { width:100% !important; }
-    .px { padding-left:22px !important; padding-right:22px !important; }
-    .h1 { font-size:27px !important; line-height:34px !important; }
-    .stack { display:block !important; width:100% !important; }
-    .stack-gap { height:14px !important; line-height:14px !important; font-size:14px !important; }
-    .btn a { display:block !important; }
-  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+       line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:var(--neon)}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--border);background:
+    radial-gradient(900px 320px at 12% -10%, rgba(0,255,157,.10), transparent 60%),
+    linear-gradient(180deg,#070B18,#050510)}
+  .top{display:flex;align-items:center;gap:14px;padding:22px 0}
+  .top img{height:40px;border-radius:8px}
+  .top span{font-size:13px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+  .badge{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--neon);background:rgba(0,255,157,.08);
+    border:1px solid rgba(0,255,157,.35);border-radius:999px;padding:6px 14px}
+  h1{font-size:clamp(28px,4.4vw,44px);line-height:1.1;margin:16px 0 10px;font-weight:800;letter-spacing:-.02em}
+  .lede{color:var(--muted);max-width:62ch;margin:0 0 22px}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;padding-bottom:26px}
+  .fact{background:var(--panel);border:1px solid var(--border);border-radius:10px;
+    padding:8px 14px;font-size:14px;color:#C6CFE2}
+  .fact b{color:#fff}
+  h2{font-size:20px;margin:40px 0 6px;font-weight:800;letter-spacing:-.01em}
+  h2 .n{color:var(--neon);font-size:13px;letter-spacing:.14em;display:block;margin-bottom:6px}
+  .hint{color:var(--muted);font-size:14px;margin:0 0 18px;max-width:70ch}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+  .art{background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;
+    display:flex;flex-direction:column}
+  .art .ph{background:#070A14;display:flex;align-items:center;justify-content:center;
+    min-height:150px;padding:10px}
+  .art .ph img{max-width:100%;max-height:230px;display:block;border-radius:6px}
+  .art .meta{padding:12px 14px 14px;border-top:1px solid var(--border)}
+  .art .meta strong{display:block;font-size:14px}
+  .art .meta small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+  .btn{display:inline-block;margin-top:10px;background:var(--neon);color:#04120C;
+    font-weight:800;font-size:13px;text-decoration:none;border:0;border-radius:8px;
+    padding:9px 14px;cursor:pointer;font-family:inherit}
+  .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
+  .btn:hover{filter:brightness(1.08)}
+  .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+  .txt{background:var(--panel);border:1px solid var(--border);border-radius:14px;
+    padding:16px 18px;margin-bottom:16px}
+  .txt .head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+  .txt .head strong{font-size:15px}
+  .txt .head em{color:var(--muted);font-style:normal;font-size:12.5px}
+  pre{white-space:pre-wrap;word-wrap:break-word;background:var(--panel2);
+    border:1px solid var(--border);border-radius:10px;padding:14px;margin:0;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;color:#DCE3F2}
+  .note{background:rgba(0,191,255,.06);border:1px solid rgba(0,191,255,.28);
+    border-radius:12px;padding:14px 16px;color:#CFE6F5;font-size:14px;margin:24px 0}
+  footer{border-top:1px solid var(--border);margin-top:56px;padding:26px 0 60px;
+    color:var(--muted);font-size:13px}
+  @media(max-width:560px){.art .ph img{max-height:180px}}
 </style>
 </head>
+<body>
 
-<body style="margin:0; padding:0; background-color:#050510;">
+<header>
+  <div class="wrap">
+    <div class="top">
+      <img src="/images/Logo-ETT.png" alt="English Talk Time">
+      <span>Kit de divulgação</span>
+    </div>
+    <span class="badge">Encontro · toda segunda</span>
+    <h1>Encontro de conversação em inglês</h1>
+    <p class="lede">
+      Tudo que a equipe (e quem quiser divulgar) precisa pra postar sobre o encontro
+      online de segunda: artes prontas em 5 formatos, textos por rede e o e-mail HTML.
+      Copia, baixa e posta.
+    </p>
+    <div class="facts">
+      <div class="fact"><b>Quando:</b> toda segunda, 20h–21h30 (Brasília)</div>
+      <div class="fact"><b>Onde:</b> online, pelo navegador</div>
+      <div class="fact"><b>Quanto:</b> gratuito, sem cadastro</div>
+    </div>
+  </div>
+</header>
 
-<!-- Preheader: aparece na prévia da caixa de entrada, invisível no corpo -->
-<div style="display:none; font-size:1px; color:#050510; line-height:1px; max-height:0; max-width:0; opacity:0; overflow:hidden;">
-  Online, gratuito e sem instalar nada. Só clicar no horário e falar.
-  &#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;
+<div class="wrap">
+
+  <h2><span class="n">01</span>Links oficiais</h2>
+  <p class="hint">
+    Pra gerar prévia de link (LinkedIn, WhatsApp), compartilhe o <b>site</b> ou a <b>sala</b> —
+    esta página do kit é <code>noindex</code> e não gera preview de propósito.
+  </p>
+  <div class="links">
+    <a class="btn" href="https://ett-speak.vercel.app/" target="_blank" rel="noopener">Sala do encontro ↗</a>
+    <a class="btn ghost" href="https://englishtalktime.com.br/" target="_blank" rel="noopener">Site do ETT ↗</a>
+    <a class="btn ghost" href="./email.html" target="_blank">E-mail HTML (RD Station) ↗</a>
+    <a class="btn ghost" href="./textos.md" target="_blank">textos.md ↗</a>
+  </div>
+
+  <h2><span class="n">02</span>Artes</h2>
+  <p class="hint">
+    5 formatos canônicos. Clique em <b>Baixar</b> — o arquivo vem com o nome certo.
+    Precisa mudar a arte? Edite o bloco <code>CONFIG</code> em
+    <code>webapp/scripts/kits/build_encontro_segunda.py</code> e rode o script de novo.
+  </p>
+  <div class="grid">
+    <div class="art">
+      <div class="ph"><img src="./assets/banner.png" alt="Banner 16:9"></div>
+      <div class="meta"><strong>Banner 16:9</strong><small>1920×1080 · capa de post, topo de e-mail</small>
+        <a class="btn" href="./assets/banner.png" download>Baixar PNG</a>
+        <a class="btn ghost" href="./assets/banner.webp" download>WebP</a></div>
+    </div>
+    <div class="art">
+      <div class="ph"><img src="./assets/og-1200x630.png" alt="Open Graph"></div>
+      <div class="meta"><strong>Preview de link</strong><small>1200×630 · WhatsApp, LinkedIn, X</small>
+        <a class="btn" href="./assets/og-1200x630.png" download>Baixar</a></div>
+    </div>
+    <div class="art">
+      <div class="ph"><img src="./assets/feed-1080x1080.png" alt="Feed quadrado"></div>
+      <div class="meta"><strong>Feed 1:1</strong><small>1080×1080 · quadrado</small>
+        <a class="btn" href="./assets/feed-1080x1080.png" download>Baixar</a></div>
+    </div>
+    <div class="art">
+      <div class="ph"><img src="./assets/feed-1080x1350.png" alt="Feed vertical"></div>
+      <div class="meta"><strong>Feed 4:5</strong><small>1080×1350 · maior alcance no Instagram</small>
+        <a class="btn" href="./assets/feed-1080x1350.png" download>Baixar</a></div>
+    </div>
+    <div class="art">
+      <div class="ph"><img src="./assets/story-1080x1920.png" alt="Story"></div>
+      <div class="meta"><strong>Story 9:16</strong><small>1080×1920 · stories e reels</small>
+        <a class="btn" href="./assets/story-1080x1920.png" download>Baixar</a></div>
+    </div>
+    <div class="art">
+      <div class="ph"><img src="./EmailTopNovo.jpg" alt="Banner do e-mail"></div>
+      <div class="meta"><strong>Banner do e-mail</strong><small>1200×675 JPEG · usado no email.html</small>
+        <a class="btn ghost" href="./EmailTopNovo.jpg" download>Baixar</a></div>
+    </div>
+  </div>
+
+  <h2><span class="n">03</span>Textos prontos</h2>
+  <p class="hint">
+    Copy sóbria de propósito: fato verificável, sem promessa de resultado nem prazo.
+    O que se vende aqui é o encontro de segunda — não uma transformação de carreira.
+  </p>
+
+  <div class="txt">
+    <div class="head"><strong>LinkedIn</strong><em>institucional · 3 parágrafos</em>
+      <button class="btn" data-copy="t1">Copiar</button></div>
+<pre id="t1">🗣️ Toda segunda-feira, 20h: encontro de conversação em inglês. Online, gratuito e aberto.
+
+O ETT (English Talk Time) não é aula nem curso — é um grupo que se encontra pra falar inglês. Cada encontro tem tema, perguntas e rodadas, em grupos pequenos, das 20h às 21h30 (horário de Brasília). Você entra pelo navegador, conversa e vai embora: sem matrícula, sem mensalidade e sem venda no fim.
+
+É pra quem já entende inglês mas trava na hora de falar. Não tem prova de nível na porta e ninguém é corrigido em público.
+
+Segunda que vem tem de novo. A sala é esta: https://ett-speak.vercel.app/
+Sobre o grupo: https://englishtalktime.com.br
+
+#EnglishTalkTime #inglês #conversação #carreiraInternacional #inglesparatech</pre>
+  </div>
+
+  <div class="txt">
+    <div class="head"><strong>Instagram</strong><em>feed · link na bio</em>
+      <button class="btn" data-copy="t2">Copiar</button></div>
+<pre id="t2">Você entende inglês. Segunda-feira você vai falar. 🗣️
+
+Encontro de conversação online do ETT, toda segunda às 20h (horário de Brasília). Tema, perguntas e rodadas em grupos pequenos — você não assiste ao encontro, você fala nele. Gratuito, pelo navegador, sem instalar nada e sem cadastro.
+
+Link na bio pra entrar na sala.
+.
+.
+#EnglishTalkTime #inglês #conversação #praticaringlês #inglesonline #inglesparatech #carreirainternacional #estudaringlês</pre>
+  </div>
+
+  <div class="txt">
+    <div class="head"><strong>WhatsApp / Telegram</strong><em>encaminhável</em>
+      <button class="btn" data-copy="t3">Copiar</button></div>
+<pre id="t3">📣 *Encontro de conversação em inglês — toda segunda, 20h*
+
+Online, gratuito e sem cadastro. Você entra, conversa 90 minutos com gente que também está treinando, e sai. Cada encontro tem tema e rodadas — ninguém fica encarando o silêncio.
+
+Sala: https://ett-speak.vercel.app/
+Sobre: https://englishtalktime.com.br</pre>
+  </div>
+
+  <div class="txt">
+    <div class="head"><strong>X / Twitter</strong><em>210 caracteres</em>
+      <button class="btn" data-copy="t4">Copiar</button></div>
+<pre id="t4">Toda segunda, 20h: encontro de conversação em inglês. Online, gratuito, sem cadastro. Tema, perguntas e rodadas em grupos pequenos — você não assiste, você fala. https://englishtalktime.com.br #EnglishTalkTime #inglês</pre>
+  </div>
+
+  <div class="txt">
+    <div class="head"><strong>Repost</strong><em>1ª pessoa · pra participante ou parceiro</em>
+      <button class="btn" data-copy="t5">Copiar</button></div>
+<pre id="t5">Participo do English Talk Time, um encontro de conversação em inglês que acontece toda segunda-feira às 20h, online e gratuito. Não é aula: é gente treinando junto, com tema e rodadas, em grupos pequenos.
+
+Se você entende inglês mas trava na hora de falar, aparece: https://ett-speak.vercel.app/</pre>
+  </div>
+
+  <h2><span class="n">04</span>E-mail (RD Station)</h2>
+  <p class="hint">
+    Abra <a href="./email.html" target="_blank">email.html</a>, use “ver código-fonte”, copie tudo e
+    cole em <b>RD Station → E-mails → Criar e-mail → Código HTML</b>. O bloco de descadastro
+    é inserido pela própria RD — não duplique. As sugestões de assunto estão no comentário
+    no topo do arquivo.
+  </p>
+  <div class="note">
+    <b>Antes de disparar:</b> inserir o campo dinâmico de nome onde está “Oi!”, enviar um teste
+    pra si mesmo (Gmail + celular) e conferir se o banner carregou — as imagens do e-mail só
+    aparecem <b>depois</b> do pull manual no painel do Hostinger.
+  </div>
+
 </div>
 
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#050510" style="background-color:#050510;">
-<tr>
-<td align="center" style="padding:24px 12px 40px 12px;">
+<footer>
+  <div class="wrap">
+    ETT · English Talk Time — material de divulgação interno.
+    Página <code>noindex</code>, fora do sitemap. Artes geradas por
+    <code>webapp/scripts/kits/build_encontro_segunda.py</code>.
+  </div>
+</footer>
 
-  <table role="presentation" class="wrap" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px; max-width:600px;">
-
-    <!-- ============ BANNER DE TOPO ============ -->
-    <tr>
-      <td align="center" bgcolor="#0A1F52" style="background-color:#0A1F52; line-height:0; font-size:0; border-radius:14px 14px 0 0;">
-        <a href="https://ett-speak.vercel.app/" target="_blank" style="text-decoration:none;">
-          <img src="https://englishtalktime.com.br/divulgacao/convitesegunda20h/EmailTopNovo.jpg"
-               width="600" height="338"
-               alt="ETT Meet Online — encontro online de prática de inglês, toda segunda-feira às 20h"
-               style="display:block; width:100%; max-width:600px; height:auto; border-radius:14px 14px 0 0;">
-        </a>
-      </td>
-    </tr>
-
-    <!-- ============ HERO ============ -->
-    <tr>
-      <td bgcolor="#0D0D1A" class="px" style="background-color:#0D0D1A; border:1px solid #1E1E3A; border-top:0; padding:34px 40px 32px 40px;">
-
-        <!-- selo -->
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-          <tr>
-            <td bgcolor="#06281D" style="background-color:#06281D; border:1px solid #0B5A3E; border-radius:100px; padding:7px 15px; font-family:Arial,Helvetica,sans-serif; font-size:11px; font-weight:bold; letter-spacing:1.2px; color:#00FF9D; text-transform:uppercase;">
-              Gratuito &nbsp;&#183;&nbsp; Online &nbsp;&#183;&nbsp; Toda segunda
-            </td>
-          </tr>
-        </table>
-
-        <h1 class="h1" style="margin:22px 0 0 0; font-family:Arial,Helvetica,sans-serif; font-size:32px; line-height:39px; font-weight:bold; color:#ffffff;">
-          Segunda, 20h:<br>
-          <span style="color:#00FF9D;">90 minutos falando inglês</span> de verdade.
-        </h1>
-
-        <p style="margin:18px 0 0 0; font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:26px; color:#B9BECD;">
-          Oi! O <strong style="color:#ffffff;">English Talk Time</strong> acontece toda segunda-feira, das
-          <strong style="color:#ffffff;">20h às 21h30</strong>, online. Não é aula expositiva, não tem prova
-          e não custa nada: é uma roda de conversação guiada onde a pessoa que fala é <em>você</em>.
-        </p>
-
-        <p style="margin:14px 0 0 0; font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:26px; color:#B9BECD;">
-          Você abre o link no navegador &mdash; sem app pra instalar &mdash; e entra na sala.
-        </p>
-
-        <!-- destaque do encontro (mesma promessa do banner de topo) -->
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:22px 0 0 0;">
-          <tr>
-            <td bgcolor="#101A33" style="background-color:#101A33; border:1px solid #24365E; border-radius:10px; padding:16px 18px; font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:24px; color:#D6DAE6;">
-              &#10023;&nbsp; Nesta segunda tem extra: além da conversação, vamos conhecer
-              <strong style="color:#ffffff;">3 novas ferramentas da plataforma</strong>.
-            </td>
-          </tr>
-        </table>
-
-        <!-- CTA principal -->
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:28px 0 0 0;" class="btn">
-          <tr>
-            <td align="center" bgcolor="#00FF9D" style="background-color:#00FF9D; border-radius:10px;">
-              <a href="https://ett-speak.vercel.app/" target="_blank"
-                 style="display:inline-block; padding:16px 34px; font-family:Arial,Helvetica,sans-serif; font-size:16px; font-weight:bold; color:#050510; text-decoration:none; border-radius:10px;">
-                Entrar na sala de segunda &rarr;
-              </a>
-            </td>
-          </tr>
-        </table>
-
-        <p style="margin:14px 0 0 0; font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:20px; color:#6F7689;">
-          Guarde este link: <span class="unstyled-link" style="color:#8C93A6;">ett-speak.vercel.app</span> &nbsp;&#183;&nbsp; a sala abre alguns minutos antes das 20h.
-        </p>
-
-      </td>
-    </tr>
-
-    <!-- ============ COMO FUNCIONA ============ -->
-    <tr>
-      <td bgcolor="#0F0F1E" class="px" style="background-color:#0F0F1E; border-left:1px solid #1E1E3A; border-right:1px solid #1E1E3A; padding:34px 40px 10px 40px;">
-
-        <p style="margin:0 0 22px 0; font-family:Arial,Helvetica,sans-serif; font-size:12px; font-weight:bold; letter-spacing:1.6px; color:#00BFFF; text-transform:uppercase;">
-          Como funciona
-        </p>
-
-        <!-- passo 1 -->
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-          <tr>
-            <td width="38" valign="top" style="width:38px; padding:0 0 20px 0; font-family:Arial,Helvetica,sans-serif; font-size:20px; font-weight:bold; color:#00FF9D; line-height:24px;">1</td>
-            <td valign="top" style="padding:0 0 20px 0;">
-              <p style="margin:0 0 4px 0; font-family:Arial,Helvetica,sans-serif; font-size:16px; font-weight:bold; color:#ffffff; line-height:24px;">Você clica e entra</p>
-              <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:24px; color:#9AA1B3;">Abre no navegador, no computador ou no celular. Sem download, sem burocracia.</p>
-            </td>
-          </tr>
-          <!-- passo 2 -->
-          <tr>
-            <td width="38" valign="top" style="width:38px; padding:0 0 20px 0; font-family:Arial,Helvetica,sans-serif; font-size:20px; font-weight:bold; color:#00FF9D; line-height:24px;">2</td>
-            <td valign="top" style="padding:0 0 20px 0;">
-              <p style="margin:0 0 4px 0; font-family:Arial,Helvetica,sans-serif; font-size:16px; font-weight:bold; color:#ffffff; line-height:24px;">A conversa é guiada</p>
-              <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:24px; color:#9AA1B3;">Tema, perguntas e rodadas prontas na tela. Ninguém fica olhando pro silêncio sem saber o que dizer.</p>
-            </td>
-          </tr>
-          <!-- passo 3 -->
-          <tr>
-            <td width="38" valign="top" style="width:38px; padding:0 0 20px 0; font-family:Arial,Helvetica,sans-serif; font-size:20px; font-weight:bold; color:#00FF9D; line-height:24px;">3</td>
-            <td valign="top" style="padding:0 0 20px 0;">
-              <p style="margin:0 0 4px 0; font-family:Arial,Helvetica,sans-serif; font-size:16px; font-weight:bold; color:#ffffff; line-height:24px;">Todo mundo fala</p>
-              <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:24px; color:#9AA1B3;">Você não assiste ao encontro &mdash; você pratica nele. Sai de lá com a boca acostumada ao idioma.</p>
-            </td>
-          </tr>
-        </table>
-
-      </td>
-    </tr>
-
-    <!-- ============ FICHA DO ENCONTRO ============ -->
-    <tr>
-      <td bgcolor="#0F0F1E" class="px" style="background-color:#0F0F1E; border-left:1px solid #1E1E3A; border-right:1px solid #1E1E3A; padding:8px 40px 34px 40px;">
-
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0A0A16" style="background-color:#0A0A16; border:1px solid #1E1E3A; border-radius:12px;">
-          <tr>
-            <td style="padding:24px 26px 22px 26px;">
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                  <td width="96" valign="top" style="width:96px; padding-bottom:12px; font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#6F7689; line-height:22px;">Quando</td>
-                  <td valign="top" class="unstyled-link" style="padding-bottom:12px; font-family:Arial,Helvetica,sans-serif; font-size:15px; color:#E6E8EF; line-height:22px;">Toda segunda-feira, 20h &agrave;s 21h30 (Bras&iacute;lia)</td>
-                </tr>
-                <tr>
-                  <td width="96" valign="top" style="width:96px; padding-bottom:12px; font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#6F7689; line-height:22px;">Onde</td>
-                  <td valign="top" style="padding-bottom:12px; font-family:Arial,Helvetica,sans-serif; font-size:15px; color:#E6E8EF; line-height:22px;">Online, direto no navegador</td>
-                </tr>
-                <tr>
-                  <td width="96" valign="top" style="width:96px; padding-bottom:12px; font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#6F7689; line-height:22px;">Quanto</td>
-                  <td valign="top" style="padding-bottom:12px; font-family:Arial,Helvetica,sans-serif; font-size:15px; color:#E6E8EF; line-height:22px;">Gratuito, sem custo de inscri&ccedil;&atilde;o</td>
-                </tr>
-                <tr>
-                  <td width="96" valign="top" style="width:96px; font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#6F7689; line-height:22px;">Pra quem</td>
-                  <td valign="top" style="font-family:Arial,Helvetica,sans-serif; font-size:15px; color:#E6E8EF; line-height:22px;">Quem entende inglês mas trava na hora de falar &mdash; especialmente profissionais de tech, dados e IA</td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </table>
-
-        <p style="margin:16px 0 0 0; font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:22px; color:#6F7689;">
-          &#128197;
-          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=ETT%20%E2%80%94%20Encontro%20de%20Conversa%C3%A7%C3%A3o%20em%20Ingl%C3%AAs%20(online)&amp;dates=20260727T230000Z%2F20260728T003000Z&amp;recur=RRULE%3AFREQ%3DWEEKLY%3BBYDAY%3DMO&amp;details=Encontro%20semanal%20e%20gratuito%20de%20conversa%C3%A7%C3%A3o%20em%20ingl%C3%AAs%20do%20English%20Talk%20Time.%20Sala%3A%20https%3A%2F%2Fett-speak.vercel.app%2F&amp;location=https%3A%2F%2Fett-speak.vercel.app%2F"
-             target="_blank" style="color:#00BFFF; text-decoration:underline;">Adicionar o encontro semanal na minha agenda</a>
-        </p>
-
-      </td>
-    </tr>
-
-    <!-- ============ QUEBRA DE OBJEÇÃO ============ -->
-    <tr>
-      <td bgcolor="#0F0F1E" class="px" style="background-color:#0F0F1E; border-left:1px solid #1E1E3A; border-right:1px solid #1E1E3A; padding:0 40px 34px 40px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-          <tr>
-            <td style="border-left:3px solid #00FF9D; padding:2px 0 2px 18px;">
-              <p style="margin:0 0 8px 0; font-family:Arial,Helvetica,sans-serif; font-size:17px; line-height:26px; font-weight:bold; color:#ffffff;">
-                &ldquo;Mas meu inglês ainda não está bom o suficiente.&rdquo;
-              </p>
-              <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:25px; color:#9AA1B3;">
-                Essa é a frase que a gente mais ouve &mdash; e é exatamente por isso que o encontro existe.
-                O ETT é treino, não é prova. Ninguém corrige você em público, ninguém mede seu nível na porta.
-                Errar em voz alta faz parte do método: é assim que a fala destrava.
-              </p>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-
-    <!-- ============ ETT PLAYER ============ -->
-    <tr>
-      <td bgcolor="#0B1520" class="px" style="background-color:#0B1520; border-left:1px solid #1E1E3A; border-right:1px solid #1E1E3A; border-top:1px solid #12324A; padding:30px 40px 32px 40px;">
-        <p style="margin:0 0 8px 0; font-family:Arial,Helvetica,sans-serif; font-size:12px; font-weight:bold; letter-spacing:1.6px; color:#00BFFF; text-transform:uppercase;">
-          Enquanto segunda não chega
-        </p>
-        <p style="margin:0 0 6px 0; font-family:Arial,Helvetica,sans-serif; font-size:19px; line-height:27px; font-weight:bold; color:#ffffff;">
-          As ferramentas do ETT já estão no ar.
-        </p>
-        <p style="margin:0 0 20px 0; font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:24px; color:#9AA1B3;">
-          Flashcards, treino de fala, legendas de séries, audiobook, rádio e diagnóstico de nível &mdash;
-          tudo no ETT Player, liberado pra quem participa da comunidade.
-        </p>
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn">
-          <tr>
-            <td align="center" bgcolor="#0B1520" style="background-color:#0B1520; border:1px solid #00BFFF; border-radius:10px;">
-              <a href="https://ett-player.vercel.app/" target="_blank"
-                 style="display:inline-block; padding:13px 28px; font-family:Arial,Helvetica,sans-serif; font-size:15px; font-weight:bold; color:#00BFFF; text-decoration:none; border-radius:10px;">
-                Explorar o ETT Player &#8599;
-              </a>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-
-    <!-- ============ RODAPÉ ============ -->
-    <tr>
-      <td bgcolor="#0D0D1A" class="px" style="background-color:#0D0D1A; border:1px solid #1E1E3A; border-top:0; border-radius:0 0 14px 14px; padding:28px 40px 30px 40px;">
-
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-          <tr>
-            <td align="center" style="padding-bottom:16px; font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:24px; color:#6F7689;">
-              <a href="https://englishtalktime.com.br/agenda/" target="_blank" style="color:#8C93A6; text-decoration:none;">Agenda completa</a>
-              &nbsp;&nbsp;&#183;&nbsp;&nbsp;
-              <a href="https://englishtalktime.com.br/" target="_blank" style="color:#8C93A6; text-decoration:none;">Site do ETT</a>
-              &nbsp;&nbsp;&#183;&nbsp;&nbsp;
-              <a href="https://englishtalktime.com.br/blog/" target="_blank" style="color:#8C93A6; text-decoration:none;">Blog</a>
-            </td>
-          </tr>
-          <tr>
-            <td align="center" style="border-top:1px solid #1E1E3A; padding-top:18px; font-family:Arial,Helvetica,sans-serif; font-size:12px; line-height:20px; color:#5A6072;">
-              <strong style="color:#8C93A6;">English Talk Time (ETT)</strong><br>
-              Programa aberto de acelera&ccedil;&atilde;o de ingl&ecirc;s para profissionais de tecnologia.<br>
-              Encontros online toda segunda &#183; presenciais em Curitiba/PR.
-            </td>
-          </tr>
-          <tr>
-            <td align="center" style="padding-top:14px; font-family:Arial,Helvetica,sans-serif; font-size:11px; line-height:18px; color:#4A5062;">
-              Voc&ecirc; recebe este e-mail porque se cadastrou para participar dos encontros do ETT.
-              <!-- O bloco de descadastro e o endereço do remetente são inseridos automaticamente pela RD Station abaixo desta linha. -->
-            </td>
-          </tr>
-        </table>
-
-      </td>
-    </tr>
-
-  </table>
-
-</td>
-</tr>
-</table>
-
+<script>
+  document.querySelectorAll('[data-copy]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var txt = document.getElementById(b.dataset.copy).innerText;
+      var done = function () { var o = b.textContent; b.textContent = 'Copiado ✓';
+        setTimeout(function () { b.textContent = o }, 1600) };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(txt).then(done);
+      } else { // file:// ou http: clipboard API indisponível
+        var ta = document.createElement('textarea');
+        ta.value = txt; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done() } catch (e) { alert('Selecione e copie manualmente.') }
+        document.body.removeChild(ta);
+      }
+    });
+  });
+</script>
 </body>
 </html>
