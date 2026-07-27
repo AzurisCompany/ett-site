@@ -3,6 +3,37 @@ export interface HomeFaq {
   a: string
 }
 
+/**
+ * FAQ curta da home — só as dúvidas que travam a decisão de aparecer no
+ * primeiro encontro. A lista longa (`homeFaqs`) fica em /detalhes/.
+ */
+export const homeFaqsCurtas: HomeFaq[] = [
+  {
+    q: 'Quanto custa para participar?',
+    a: 'Os encontros de conversação, online e presenciais, são gratuitos. As ferramentas do ETT Player também são gratuitas para quem faz o programa de aceleração (presença nos encontros + rotina de 1 hora por dia) e, na Trilha de Dedicação, enquanto estiverem em beta. Quem quiser acesso completo sem compromisso de rotina vai escolher um plano mensal — que ainda está em definição. Hoje, em fase de testes, tudo está liberado.',
+  },
+  {
+    q: 'É aula de inglês?',
+    a: 'Não. Não tem professor explicando gramática na frente da sala, não tem matrícula e não tem prova. É uma roda de conversação com roteiro: tema, perguntas e rodadas para que todo mundo fale. Você pratica a fala com outras pessoas, não assiste a alguém falando.',
+  },
+  {
+    q: 'Qual nível de inglês eu preciso ter?',
+    a: 'Se você entende razoavelmente mas trava na hora de falar, esse é exatamente o público. A partir de um básico-intermediário (A2) já dá para acompanhar e aproveitar. Quem está começando do zero a gente orienta a construir uma base primeiro — e a porta continua aberta para vir conhecer.',
+  },
+  {
+    q: 'Como eu entro no encontro online?',
+    a: 'É um link no navegador, sem instalar nada, toda segunda das 20h às 21h30 (horário de Brasília). Você pode entrar direto pelo botão aqui do site ou se cadastrar para receber o lembrete por e-mail.',
+  },
+  {
+    q: 'Preciso ligar a câmera e falar na frente de todo mundo?',
+    a: 'A conversa acontece em grupos pequenos, com rodízio — não é você falando para uma plateia. Câmera é bem-vinda, mas ninguém é obrigado. E ninguém corrige seu inglês em público: errar em voz alta faz parte do treino.',
+  },
+  {
+    q: 'Onde acontecem os encontros presenciais?',
+    a: 'Em Curitiba, em rodízio entre quatro casas parceiras: IEP (Instituto de Engenharia do Paraná), UTFPR, Hard Rock Cafe e Habitat (Sistema FIEP). As datas e o local de cada semana ficam na agenda.',
+  },
+]
+
 export const homeFaqs: HomeFaq[] = [
   {
     q: 'O que é o ETT e como funciona o grupo de conversação em inglês?',

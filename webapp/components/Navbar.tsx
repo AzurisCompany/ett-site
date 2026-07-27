@@ -50,15 +50,14 @@ function buildLinks(locale: Locale): NavLink[] {
       { href: '/blog', label: m.blog, langTag: 'PT' },
     ]
   }
+  // Menu pt-BR enxuto: a home simplificada não tem mais as âncoras #sobre,
+  // #metodologia e #como-funciona — esse conteúdo vive em /detalhes/.
   return [
-    { href: '/#sobre', label: m.about },
-    { href: '/#metodologia', label: m.methodology },
-    { href: '/ff', label: m.formulafluente },
-    { href: '/imersoes', label: m.immersions },
     { href: '/agenda', label: m.agenda },
+    { href: '/#precos', label: m.pricing },
     { href: '/#ferramentas', label: m.tools },
-    { href: '/#parceiros', label: m.partners },
-    { href: '/#como-funciona', label: m.howItWorks },
+    { href: '/detalhes/', label: m.program },
+    { href: '/imersoes', label: m.immersions },
     { href: '/blog', label: m.blog },
   ]
 }

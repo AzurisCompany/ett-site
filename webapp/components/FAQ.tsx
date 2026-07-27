@@ -3,9 +3,16 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { HelpCircle } from 'lucide-react'
-import { homeFaqs } from '@/lib/home-faqs'
+import { homeFaqs, type HomeFaq } from '@/lib/home-faqs'
 
-export default function FAQ() {
+interface FAQProps {
+  /** Lista de perguntas. Sem prop, usa a lista longa (usada em /detalhes/). */
+  faqs?: HomeFaq[]
+  title?: React.ReactNode
+  subtitle?: string
+}
+
+export default function FAQ({ faqs = homeFaqs, title, subtitle }: FAQProps) {
   const [openIdx, setOpenIdx] = useState<number | null>(0)
 
   return (
@@ -25,17 +32,21 @@ export default function FAQ() {
             Perguntas Frequentes
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-            Tudo o que você precisa saber pra{' '}
-            <span className="gradient-text">praticar inglês com a gente</span>
+            {title ?? (
+              <>
+                Tudo o que você precisa saber pra{' '}
+                <span className="gradient-text">praticar inglês com a gente</span>
+              </>
+            )}
           </h2>
           <p className="text-gray-400 text-lg leading-relaxed">
-            Grupo de conversação em inglês, treino de fala com ferramentas,
-            online toda segunda e presencial em Curitiba — sem letra miúda.
+            {subtitle ??
+              'Grupo de conversação em inglês, treino de fala com ferramentas, online toda segunda e presencial em Curitiba — sem letra miúda.'}
           </p>
         </motion.div>
 
         <div className="max-w-3xl mx-auto space-y-3">
-          {homeFaqs.map((faq, i) => {
+          {faqs.map((faq, i) => {
             const open = openIdx === i
             return (
               <motion.div

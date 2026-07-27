@@ -20,6 +20,25 @@ const levels = [
   { value: 'avancado', label: 'Avançado — quero polir e focar em carreira' },
 ]
 
+const trilhas = [
+  {
+    value: 'aceleracao',
+    label: 'Aceleração — encontros + 1h/dia nas ferramentas (gratuito)',
+  },
+  { value: 'dedicacao', label: 'Dedicação — encontros + ferramentas em beta (gratuito)' },
+  { value: 'livre', label: 'Livre — quero usar no meu ritmo, me avise do plano mensal' },
+  { value: 'nao_sei', label: 'Ainda não sei — quero conhecer primeiro' },
+]
+
+// Pesquisa de precificação: alimenta a definição do plano mensal.
+const faixas = [
+  { value: 'ate_49', label: 'Até R$ 49/mês' },
+  { value: '50_99', label: 'Entre R$ 50 e R$ 99/mês' },
+  { value: '100_199', label: 'Entre R$ 100 e R$ 199/mês' },
+  { value: '200_mais', label: 'R$ 200/mês ou mais' },
+  { value: 'so_gratuito', label: 'Prefiro a trilha gratuita e me comprometer com a rotina' },
+]
+
 // Máscara BR: progressivo conforme digita
 // 2 → (XX
 // 3-6 → (XX) XXXX
@@ -101,25 +120,21 @@ export default function LeadForm() {
             transition={{ duration: 0.6 }}
             className="text-center mb-10"
           >
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
-              Lista do ETT
-            </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-              Cadastre-se e comece de graça
+              Participe do próximo encontro
             </h2>
             <p className="text-gray-400 text-lg">
-              Um cadastro rápido e você recebe a <strong className="text-gray-200">agenda dos encontros</strong>{' '}
-              (online toda segunda ou presenciais em Curitiba), a{' '}
-              <strong className="text-gray-200">metodologia e o acesso às ferramentas com IA (ETT Player)</strong>{' '}
-              e passa a <strong className="text-gray-200">participar gratuitamente</strong> da comunidade.
-              Sem custo de inscrição, sem compromisso.
+              Deixe seu nome e e-mail. Você recebe o{' '}
+              <strong className="text-gray-200">link do encontro online de segunda</strong>, as{' '}
+              <strong className="text-gray-200">datas dos presenciais em Curitiba</strong> e o
+              acesso às ferramentas do ETT Player.
             </p>
 
-            {/* Event info */}
+            {/* Info do encontro */}
             <div className="flex flex-wrap justify-center gap-4 mt-6 text-sm text-gray-400">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4 text-neon-green" />
-                Online toda segunda + presencial semanal
+                Online toda segunda, 20h
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-neon-green" />
@@ -127,7 +142,7 @@ export default function LeadForm() {
               </div>
               <div className="flex items-center gap-2">
                 <Users className="w-4 h-4 text-neon-green" />
-                Sempre gratuito — vagas limitadas
+                Sem custo. Sem venda no fim.
               </div>
             </div>
           </motion.div>
@@ -152,13 +167,22 @@ export default function LeadForm() {
                   <div className="w-16 h-16 rounded-full bg-neon-green/15 border border-neon-green/30 flex items-center justify-center mx-auto mb-6">
                     <CheckCircle2 className="w-8 h-8 text-neon-green" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">Cadastro confirmado!</h3>
+                  <h3 className="text-2xl font-bold text-white mb-3">Pronto, você está dentro!</h3>
                   <p className="text-gray-300 leading-relaxed max-w-sm mx-auto">
-                    Obrigado! Você está na nossa lista. Vai receber em primeira mão as{' '}
-                    <strong className="text-neon-green">datas dos próximos encontros</strong>, o acesso às{' '}
-                    <strong className="text-tech-blue">ferramentas (ETT Player)</strong> e a metodologia.
-                    Verifique seu e-mail.
+                    Você vai receber o{' '}
+                    <strong className="text-neon-green">link do encontro de segunda</strong>, as
+                    datas dos presenciais e o acesso às{' '}
+                    <strong className="text-tech-blue">ferramentas do ETT Player</strong>. Confira
+                    seu e-mail.
                   </p>
+                  <a
+                    href="https://ett-speak.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center mt-6 px-6 py-3 rounded-lg border border-neon-green/40 text-neon-green font-bold text-sm hover:bg-neon-green/10 transition-all"
+                  >
+                    Já quero ver a sala do encontro ↗
+                  </a>
                 </motion.div>
               ) : (
                 <motion.form
@@ -203,17 +227,64 @@ export default function LeadForm() {
                     />
                   </div>
 
+                  {/* Trilha pretendida */}
+                  <div>
+                    <label htmlFor="rd-trilha" className="block text-sm font-medium text-gray-300 mb-2">
+                      Como você quer participar?{' '}
+                      <span className="text-gray-500 text-xs font-normal">(pode mudar depois)</span>
+                    </label>
+                    <select
+                      id="rd-trilha"
+                      name="cf_trilha_ett"
+                      defaultValue=""
+                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white focus:outline-none focus:border-neon-green/60 focus:ring-1 focus:ring-neon-green/30 transition-colors appearance-none cursor-pointer"
+                    >
+                      <option value="" className="text-gray-600">
+                        Selecione uma trilha...
+                      </option>
+                      {trilhas.map((t) => (
+                        <option key={t.value} value={t.value} className="bg-dark-secondary">
+                          {t.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  {/* Pesquisa de preço */}
+                  <div>
+                    <label htmlFor="rd-faixa" className="block text-sm font-medium text-gray-300 mb-2">
+                      Se existisse um plano mensal, qual faixa faria sentido pra você?{' '}
+                      <span className="text-gray-500 text-xs font-normal">
+                        (nos ajuda a definir o valor)
+                      </span>
+                    </label>
+                    <select
+                      id="rd-faixa"
+                      name="cf_faixa_plano_mensal"
+                      defaultValue=""
+                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white focus:outline-none focus:border-tech-blue/60 focus:ring-1 focus:ring-tech-blue/30 transition-colors appearance-none cursor-pointer"
+                    >
+                      <option value="" className="text-gray-600">
+                        Prefiro não responder
+                      </option>
+                      {faixas.map((f) => (
+                        <option key={f.value} value={f.value} className="bg-dark-secondary">
+                          {f.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
                   {/* Empresa */}
                   <div>
                     <label htmlFor="rd-empresa" className="block text-sm font-medium text-gray-300 mb-2">
-                      Empresa <span className="text-neon-green">*</span>
+                      Empresa{' '}
+                      <span className="text-gray-500 text-xs font-normal">(opcional)</span>
                     </label>
                     <input
                       id="rd-empresa"
                       name="empresa"
                       type="text"
-                      required
-                      minLength={2}
                       placeholder="Onde você trabalha"
                       className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-neon-green/60 focus:ring-1 focus:ring-neon-green/30 transition-colors"
                     />
@@ -222,15 +293,16 @@ export default function LeadForm() {
                   {/* Telefone */}
                   <div>
                     <label htmlFor="rd-telefone" className="block text-sm font-medium text-gray-300 mb-2">
-                      Telefone <span className="text-neon-green">*</span>{' '}
-                      <span className="text-gray-500 text-xs font-normal">(WhatsApp para confirmar)</span>
+                      Telefone{' '}
+                      <span className="text-gray-500 text-xs font-normal">
+                        (opcional — só para o lembrete no WhatsApp)
+                      </span>
                     </label>
                     <input
                       id="rd-telefone"
                       name="telefone"
                       type="tel"
                       inputMode="tel"
-                      required
                       pattern="^\(\d{2}\) \d{4,5}-\d{4}$"
                       title="Digite um telefone com DDD (ex: (41) 99999-9999)"
                       placeholder="(41) 99999-9999"
@@ -247,14 +319,15 @@ export default function LeadForm() {
                   {/* LinkedIn */}
                   <div>
                     <label htmlFor="rd-linkedin" className="block text-sm font-medium text-gray-300 mb-2">
-                      LinkedIn <span className="text-neon-green">*</span>{' '}
-                      <span className="text-gray-500 text-xs font-normal">(usado para networking no encontro)</span>
+                      LinkedIn{' '}
+                      <span className="text-gray-500 text-xs font-normal">
+                        (opcional — usado para o networking no encontro)
+                      </span>
                     </label>
                     <input
                       id="rd-linkedin"
                       name="linkedin"
                       type="text"
-                      required
                       pattern="(https?:\/\/)?(www\.)?linkedin\.com\/(in|pub)\/[\w\-_%]+\/?.*"
                       title="Cole o link do seu perfil LinkedIn (ex: linkedin.com/in/seu-usuario)"
                       placeholder="linkedin.com/in/seu-perfil"
@@ -265,17 +338,17 @@ export default function LeadForm() {
                   {/* Level */}
                   <div>
                     <label htmlFor="rd-level" className="block text-sm font-medium text-gray-300 mb-2">
-                      Qual seu nível atual de inglês? <span className="text-neon-green">*</span>
+                      Qual seu nível atual de inglês?{' '}
+                      <span className="text-gray-500 text-xs font-normal">(opcional)</span>
                     </label>
                     <select
                       id="rd-level"
                       name="cf_nivel_ingles"
-                      required
                       defaultValue=""
                       className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white focus:outline-none focus:border-neon-green/60 focus:ring-1 focus:ring-neon-green/30 transition-colors appearance-none cursor-pointer"
                     >
-                      <option value="" disabled className="text-gray-600">
-                        Selecione seu nível...
+                      <option value="" className="text-gray-600">
+                        Prefiro não dizer agora
                       </option>
                       {levels.map((l) => (
                         <option key={l.value} value={l.value} className="bg-dark-secondary">
@@ -303,13 +376,14 @@ export default function LeadForm() {
                         Enviando...
                       </>
                     ) : (
-                      'Quero receber as informações do ETT'
+                      'Quero participar do próximo encontro'
                     )}
                   </button>
 
                   <p className="text-xs text-gray-600 text-center">
-                    Cadastrando você concorda em receber e-mails com as datas dos encontros, novidades do programa
-                    e o lançamento do ebook. Sem spam — pode descadastrar a qualquer momento.
+                    Só os dois primeiros campos são obrigatórios. Você vai receber e-mails com as
+                    datas dos encontros e as novidades do programa — sem spam, e pode descadastrar
+                    a qualquer momento.
                   </p>
 
                   {/* Honeypot — campo escondido; humano nunca preenche */}

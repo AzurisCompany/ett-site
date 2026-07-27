@@ -38,6 +38,9 @@ export interface NavMessages {
   blog: string
   cta: string
   language: string
+  /** Usados só no menu pt-BR da home simplificada. */
+  pricing: string
+  program: string
 }
 
 export interface FooterMessages {
@@ -62,8 +65,10 @@ export const nav: Record<Locale, NavMessages> = {
     partners: 'Parceiros',
     howItWorks: 'Como Funciona',
     blog: 'Blog',
-    cta: 'Tenho Interesse',
+    cta: 'Quero participar',
     language: 'Idioma',
+    pricing: 'Preços',
+    program: 'O programa',
   },
   en: {
     about: 'About',
@@ -77,6 +82,8 @@ export const nav: Record<Locale, NavMessages> = {
     blog: 'Blog',
     cta: 'I want in',
     language: 'Language',
+    pricing: 'Pricing',
+    program: 'The program',
   },
   es: {
     about: 'Sobre',
@@ -90,6 +97,8 @@ export const nav: Record<Locale, NavMessages> = {
     blog: 'Blog',
     cta: 'Quiero participar',
     language: 'Idioma',
+    pricing: 'Precios',
+    program: 'El programa',
   },
 }
 
