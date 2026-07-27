@@ -1,0 +1,270 @@
+<!doctype html>
+<!--
+  =====================================================================
+  ETT — KIT DE DIVULGAÇÃO: CherryTop Business Meal
+  Atividade ONLINE da Cherry Top · sábado 01/08/2026, 12h–13h
+
+  Realização é da CHERRY TOP; o ETT divulga. Toda a copy diz isso —
+  não transformar em atividade do ETT nem escrever "patrocinado".
+
+  E-mail HTML pro RD Station: ./email.html
+  Artes: python3 webapp/scripts/kits/build_cherrytop_business_meal.py
+  Processo: novoConteudo/PROCESSO-DIVULGACAO-ETT.md
+  noindex de propósito (kit é material de trabalho, fora do sitemap).
+  =====================================================================
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kit de divulgação — CherryTop Business Meal · ETT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#050510; --panel:#0B0F1F; --panel2:#0F1528; --border:#1D2438;
+    --text:#E8ECF5; --muted:#95A0B8; --neon:#00FF9D; --blue:#00BFFF; --cherry:#E23B33;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+       line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:var(--neon)}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--border);background:
+    radial-gradient(900px 320px at 12% -10%, rgba(226,59,51,.14), transparent 60%),
+    linear-gradient(180deg,#12060C,#050510)}
+  .top{display:flex;align-items:center;gap:14px;padding:22px 0}
+  .top img{height:40px;border-radius:8px}
+  .top img.cherry{background:#fff;padding:4px}
+  .top span{font-size:13px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+  .badge{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.1em;
+    text-transform:uppercase;color:#FF8E86;background:rgba(226,59,51,.10);
+    border:1px solid rgba(226,59,51,.45);border-radius:999px;padding:6px 14px}
+  h1{font-size:clamp(28px,4.4vw,44px);line-height:1.1;margin:16px 0 10px;font-weight:800;letter-spacing:-.02em}
+  .lede{color:var(--muted);max-width:62ch;margin:0 0 22px}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;padding-bottom:26px}
+  .fact{background:var(--panel);border:1px solid var(--border);border-radius:10px;
+    padding:8px 14px;font-size:14px;color:#C6CFE2}
+  .fact b{color:#fff}
+  h2{font-size:20px;margin:40px 0 6px;font-weight:800;letter-spacing:-.01em}
+  h2 .n{color:var(--neon);font-size:13px;letter-spacing:.14em;display:block;margin-bottom:6px}
+  .hint{color:var(--muted);font-size:14px;margin:0 0 18px;max-width:70ch}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+  .art{background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;
+    display:flex;flex-direction:column}
+  .art .ph{background:#070A14;display:flex;align-items:center;justify-content:center;
+    min-height:150px;padding:10px}
+  .art .ph img{max-width:100%;max-height:230px;display:block;border-radius:6px}
+  .art .meta{padding:12px 14px 14px;border-top:1px solid var(--border)}
+  .art .meta strong{display:block;font-size:14px}
+  .art .meta small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+  .btn{display:inline-block;margin-top:10px;background:var(--neon);color:#04120C;
+    font-weight:800;font-size:13px;text-decoration:none;border:0;border-radius:8px;
+    padding:9px 14px;cursor:pointer;font-family:inherit}
+  .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
+  .btn:hover{filter:brightness(1.08)}
+  .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+  .txt{background:var(--panel);border:1px solid var(--border);border-radius:14px;
+    padding:16px 18px;margin-bottom:16px}
+  .txt .head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+  .txt .head strong{font-size:15px}
+  .txt .head em{color:var(--muted);font-style:normal;font-size:12.5px}
+  pre{white-space:pre-wrap;word-wrap:break-word;background:var(--panel2);
+    border:1px solid var(--border);border-radius:10px;padding:14px;margin:0;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;color:#DCE3F2}
+  .note{background:rgba(0,191,255,.06);border:1px solid rgba(0,191,255,.28);
+    border-radius:12px;padding:14px 16px;color:#CFE6F5;font-size:14px;margin:24px 0}
+  .warn{background:rgba(255,188,125,.07);border:1px solid rgba(255,188,125,.32);
+    border-radius:12px;padding:14px 16px;color:#F6DCC2;font-size:14px;margin:24px 0}
+  footer{border-top:1px solid var(--border);margin-top:56px;padding:26px 0 60px;
+    color:var(--muted);font-size:13px}
+  @media(max-width:560px){.art .ph img{max-height:180px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="top">
+      <img src="/images/Logo-ETT.png" alt="English Talk Time">
+      <img class="cherry" src="/images/logo-cherrytop.jpeg" alt="Cherry Top Business Communication">
+      <span>Kit de divulgação</span>
+    </div>
+    <span class="badge">Parceria · Cherry Top</span>
+    <h1>CherryTop Business Meal</h1>
+    <p class="lede">
+      Experiência imersiva online da <b>Cherry Top</b> pra praticar inglês de negócios —
+      <b>negotiation, networking e team building</b>. O ETT está divulgando pra comunidade.
+      Aqui estão as artes, os textos por rede e o e-mail pronto.
+    </p>
+    <div class="facts">
+      <div class="fact"><b>Quando:</b> sábado, 01/08/2026, 12h–13h (Brasília)</div>
+      <div class="fact"><b>Onde:</b> online</div>
+      <div class="fact"><b>Quanto:</b> gratuito</div>
+      <div class="fact"><b>Como entrar:</b> pelo grupo de WhatsApp</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <h2><span class="n">01</span>Links oficiais</h2>
+  <p class="hint">
+    O CTA de tudo é <b>entrar no grupo de WhatsApp</b> — é por lá que saem as vagas, o link
+    da sala e as dinâmicas one-to-one da tarde de sábado.
+  </p>
+  <div class="links">
+    <a class="btn" href="https://chat.whatsapp.com/LEpi3Cm9cWv20kBHg5xjdb" target="_blank" rel="noopener">Grupo de WhatsApp ↗</a>
+    <a class="btn ghost" href="https://englishtalktime.com.br/" target="_blank" rel="noopener">Site do ETT ↗</a>
+    <a class="btn ghost" href="./email.html" target="_blank">E-mail HTML (RD Station) ↗</a>
+    <a class="btn ghost" href="./textos.md" target="_blank">textos.md ↗</a>
+  </div>
+
+  <div class="warn">
+    <b>Confirmar antes de disparar:</b> o horário está sendo comunicado como
+    <b>horário de Brasília</b> — isso não estava dito na mensagem original, foi suposição.
+    E o link do grupo aqui é a versão limpa do convite (sem os parâmetros de rastreio que
+    vieram no WhatsApp).
+  </div>
+
+  <h2><span class="n">02</span>Artes</h2>
+  <p class="hint">
+    Arte tipográfica: não existe foto real desta atividade, e ilustrar um encontro online
+    com foto de imersão presencial passaria informação errada. Se surgir foto real,
+    é regerar com um comando.
+  </p>
+  <div class="grid">
+    <div class="art">
+      <div class="ph"><img src="./assets/banner.png" alt="Banner 16:9"></div>
+      <div class="meta"><strong>Banner 16:9</strong><small>1920×1080 · capa de post, topo de e-mail</small>
+        <a class="btn" href="./assets/banner.png" download>Baixar PNG</a>
+        <a class="btn ghost" href="./assets/banner.webp" download>WebP</a></div>
+    </div>
+    <div class="art">
+      <div class="ph"><img src="./assets/og-1200x630.png" alt="Open Graph"></div>
+      <div class="meta"><strong>Preview de link</strong><small>1200×630 · WhatsApp, LinkedIn, X</small>
+        <a class="btn" href="./assets/og-1200x630.png" download>Baixar</a></div>
+    </div>
+    <div class="art">
+      <div class="ph"><img src="./assets/feed-1080x1080.png" alt="Feed quadrado"></div>
+      <div class="meta"><strong>Feed 1:1</strong><small>1080×1080 · quadrado</small>
+        <a class="btn" href="./assets/feed-1080x1080.png" download>Baixar</a></div>
+    </div>
+    <div class="art">
+      <div class="ph"><img src="./assets/feed-1080x1350.png" alt="Feed vertical"></div>
+      <div class="meta"><strong>Feed 4:5</strong><small>1080×1350 · maior alcance no Instagram</small>
+        <a class="btn" href="./assets/feed-1080x1350.png" download>Baixar</a></div>
+    </div>
+    <div class="art">
+      <div class="ph"><img src="./assets/story-1080x1920.png" alt="Story"></div>
+      <div class="meta"><strong>Story 9:16</strong><small>1080×1920 · stories e reels</small>
+        <a class="btn" href="./assets/story-1080x1920.png" download>Baixar</a></div>
+    </div>
+  </div>
+
+  <h2><span class="n">03</span>Textos prontos</h2>
+  <p class="hint">
+    Todos os blocos deixam claro que a <b>realização é da Cherry Top</b> e que o ETT divulga.
+    Nada de promessa de resultado — só o que foi combinado: uma hora, três temas, online.
+  </p>
+
+  <div class="txt">
+    <div class="head"><strong>LinkedIn</strong><em>institucional · 3 parágrafos</em>
+      <button class="btn" data-copy="t1">Copiar</button></div>
+<pre id="t1">🍒 Sábado, 1º de agosto, 12h: CherryTop Business Meal — uma hora praticando inglês de negócios, online e gratuito.
+
+A atividade é da Cherry Top, parceira do ETT nas imersões, e o foco é bem específico: negotiation, networking e team building. Não é aula de gramática — é conversa em situações de negócio, do jeito que elas acontecem numa mesa.
+
+Quem entra no grupo de WhatsApp da atividade também tem acesso, na tarde de sábado, às dinâmicas one-to-one online com a equipe da Cherry Top.
+
+Entrada pelo grupo: https://chat.whatsapp.com/LEpi3Cm9cWv20kBHg5xjdb
+Sobre o ETT: https://englishtalktime.com.br
+
+#EnglishTalkTime #CherryTop #businessenglish #networking #inglesparatech</pre>
+  </div>
+
+  <div class="txt">
+    <div class="head"><strong>Instagram</strong><em>feed · link na bio</em>
+      <button class="btn" data-copy="t2">Copiar</button></div>
+<pre id="t2">🍒 CherryTop Business Meal — sábado, 1º de agosto, 12h.
+
+Uma hora praticando inglês de negócios: negotiation, networking e team building. Online e gratuito. A atividade é da Cherry Top, parceira do ETT, e a entrada é pelo grupo de WhatsApp — quem está no grupo também pega as dinâmicas one-to-one da tarde.
+
+Link do grupo na bio.
+.
+.
+#EnglishTalkTime #CherryTop #businessenglish #inglesdenegocios #networking #praticaringlês #inglesonline #inglesparatech</pre>
+  </div>
+
+  <div class="txt">
+    <div class="head"><strong>WhatsApp / Telegram</strong><em>encaminhável</em>
+      <button class="btn" data-copy="t3">Copiar</button></div>
+<pre id="t3">🍒 *CherryTop Business Meal — sábado, 01/08, 12h às 13h*
+
+Uma hora praticando inglês de negócios (negotiation, networking e team building), online e gratuito. Realização da Cherry Top, parceira do ETT.
+
+Quem entra no grupo também tem as dinâmicas one-to-one na tarde de sábado.
+
+Entrar no grupo: https://chat.whatsapp.com/LEpi3Cm9cWv20kBHg5xjdb</pre>
+  </div>
+
+  <div class="txt">
+    <div class="head"><strong>X / Twitter</strong><em>dentro dos 280</em>
+      <button class="btn" data-copy="t4">Copiar</button></div>
+<pre id="t4">🍒 Sábado, 1º/08, 12h: CherryTop Business Meal — uma hora de inglês de negócios (negotiation, networking, team building). Online e gratuito, realização da Cherry Top. Entrada pelo grupo: https://chat.whatsapp.com/LEpi3Cm9cWv20kBHg5xjdb #EnglishTalkTime</pre>
+  </div>
+
+  <div class="txt">
+    <div class="head"><strong>Repost</strong><em>1ª pessoa · Cherry Top, equipe ou participante</em>
+      <button class="btn" data-copy="t5">Copiar</button></div>
+<pre id="t5">Sábado, 1º de agosto, às 12h, tem CherryTop Business Meal: uma hora online praticando inglês de negócios — negotiation, networking e team building. É gratuito e a entrada é pelo grupo de WhatsApp da atividade.
+
+À tarde a equipe da Cherry Top faz dinâmicas one-to-one com quem estiver no grupo.
+
+https://chat.whatsapp.com/LEpi3Cm9cWv20kBHg5xjdb</pre>
+  </div>
+
+  <h2><span class="n">04</span>E-mail (RD Station)</h2>
+  <p class="hint">
+    Abra <a href="./email.html" target="_blank">email.html</a>, use “ver código-fonte”, copie tudo e
+    cole em <b>RD Station → E-mails → Criar e-mail → Código HTML</b>. Sugestões de assunto no
+    comentário do topo do arquivo. O descadastro é inserido pela RD — não duplique.
+  </p>
+  <div class="note">
+    <b>É esta semana:</b> a atividade é <b>sábado, 01/08</b>. Pra o e-mail sair com a imagem
+    carregando, o pull no painel do Hostinger precisa acontecer <b>antes</b> do disparo —
+    a arte do topo é servida por URL absoluta deste site.
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    ETT · English Talk Time — material de divulgação interno.
+    Realização da atividade: <b>Cherry Top Business Communication</b>.
+    Página <code>noindex</code>, fora do sitemap.
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('[data-copy]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var txt = document.getElementById(b.dataset.copy).innerText;
+      var done = function () { var o = b.textContent; b.textContent = 'Copiado ✓';
+        setTimeout(function () { b.textContent = o }, 1600) };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(txt).then(done);
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = txt; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done() } catch (e) { alert('Selecione e copie manualmente.') }
+        document.body.removeChild(ta);
+      }
+    });
+  });
+</script>
+</body>
+</html>

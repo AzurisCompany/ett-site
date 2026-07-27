@@ -139,8 +139,18 @@ pra aviso simples, **não** pra peça de destaque.
 
 ### 4.3 Nível 2 — composição por proporção (o padrão)
 
-Molde: `webapp/scripts/kits/build_encontro_segunda.py`. Copie, troque o bloco `CONFIG`
-(headline, selo, data, sub, rodapé) e as imagens-fonte. As funções de layout não mudam.
+Helpers compartilhados em `webapp/scripts/kits/ett_kit.py` (fontes, wrap/auto-encolhimento,
+fundo, chips de logo, rodapé, `gerar()`). Kit novo = copiar
+`build_cherrytop_business_meal.py`, trocar `CONFIG` e o `render()`.
+(`build_encontro_segunda.py`, o piloto, é standalone e **não** importa o módulo — não foi
+refatorado pra não arriscar mudar arte já publicada.)
+
+Cores de fundo diferenciam o kit sem sair da marca: azul no encontro de segunda, vinho no
+da Cherry Top (parâmetros `bot=` e `glow=` de `background()`).
+
+**Logo de parceiro vai em chip BRANCO**, nunca recolorida: a da Cherry Top tem texto
+azul-marinho que sumiria no fundo escuro. E logo quadrada com muito respiro interno precisa
+de chip maior que o do ETT pra ficar legível (a da Cherry Top vai 40–50% maior).
 
 Regras aprendidas fazendo o kit piloto:
 
@@ -253,6 +263,7 @@ Checklist antes de entregar o link:
 | Kit | Estado |
 |---|---|
 | `convitesegunda20h` — encontro online | ✅ piloto, feito |
+| `cherrytop-business-meal` — atividade da Cherry Top, 01/08/2026 | ✅ feito (arte tipográfica, sem foto; usa `ett_kit.py`) |
 | Encontro presencial de Curitiba | ⛔ bloqueado: `agenda-events.ts` parado em 2026-06-04 |
 | `ett-player` / `ett-speak` — ferramentas | pronto pra fazer (já tem screenshot real) |
 | Parceiros (BeeTools, Cherry Top, Coders, IEP) | precisa alinhar o que cada acordo permite anunciar |

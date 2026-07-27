@@ -26,6 +26,7 @@ Template: `novoConteudo/_template-kit/`. Artes: `webapp/scripts/kits/`.
 
 | Pasta | O quê | Publicado |
 |---|---|---|
+| `cherrytop-business-meal/` | Atividade online **da Cherry Top** (ETT divulga): sábado 01/08/2026, 12h–13h, gratuito. Entrada pelo grupo de WhatsApp. Kit completo + e-mail | 2026-07-27 |
 | `convitesegunda20h/` | Encontro online de conversação, toda segunda 20h (sala: `ett-speak.vercel.app`). Kit completo: 5 artes + textos + e-mail | 2026-07-26 · kit em 2026-07-27 |
 
 > `convitesegunda20h` é um slug **legado** (nasceu como pasta só do e-mail) e **não pode
