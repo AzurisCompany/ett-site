@@ -44,3 +44,7 @@ next-env.d.ts
 
 # Misc
 *.pem
+
+# Python (geradores de arte dos kits)
+__pycache__/
+*.pyc
