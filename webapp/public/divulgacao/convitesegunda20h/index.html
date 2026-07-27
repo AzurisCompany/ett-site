@@ -26,8 +26,14 @@
   PRÉ-CABEÇALHO (preheader) — já embutido no HTML:
   "Online, gratuito e sem instalar nada. Só clicar no horário e falar."
 
-  IMAGENS: hospedadas em englishtalktime.com.br (URLs absolutas, PNG).
-  Não trocar por .webp — vários clientes de e-mail não renderizam webp.
+  IMAGENS
+  -------
+  Banner de topo: /divulgacao/convitesegunda20h/EttTopSegunda20h.jpg
+  (600x315 exibido, 1200x630 real p/ telas retina, 122 KB).
+  Original em alta: novoConteudo/EttMeetOnline-segunda20h/EttTopSegunda20h.png
+  URLs absolutas e formato JPEG/PNG de propósito — vários clientes de
+  e-mail (Outlook desktop, por ex.) não renderizam .webp.
+  O banner só carrega DEPOIS do pull no painel do Hostinger.
   =====================================================================
 -->
 <html lang="pt-BR" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -79,18 +85,21 @@
 
   <table role="presentation" class="wrap" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px; max-width:600px;">
 
-    <!-- ============ CABEÇALHO / LOGO ============ -->
+    <!-- ============ BANNER DE TOPO ============ -->
     <tr>
-      <td align="center" style="padding:8px 0 22px 0;">
-        <a href="https://englishtalktime.com.br/" target="_blank" style="text-decoration:none;">
-          <img src="https://englishtalktime.com.br/images/Logo-ETT.png" width="84" height="52" alt="English Talk Time" style="display:block; width:84px; height:52px;">
+      <td align="center" bgcolor="#0A1F52" style="background-color:#0A1F52; line-height:0; font-size:0; border-radius:14px 14px 0 0;">
+        <a href="https://ett-speak.vercel.app/" target="_blank" style="text-decoration:none;">
+          <img src="https://englishtalktime.com.br/divulgacao/convitesegunda20h/EttTopSegunda20h.jpg"
+               width="600" height="315"
+               alt="ETT Meet Online — encontro online de prática de inglês, toda segunda-feira às 20h"
+               style="display:block; width:100%; max-width:600px; height:auto; border-radius:14px 14px 0 0;">
         </a>
       </td>
     </tr>
 
     <!-- ============ HERO ============ -->
     <tr>
-      <td bgcolor="#0D0D1A" class="px" style="background-color:#0D0D1A; border:1px solid #1E1E3A; border-radius:14px 14px 0 0; padding:34px 40px 32px 40px;">
+      <td bgcolor="#0D0D1A" class="px" style="background-color:#0D0D1A; border:1px solid #1E1E3A; border-top:0; padding:34px 40px 32px 40px;">
 
         <!-- selo -->
         <table role="presentation" cellpadding="0" cellspacing="0" border="0">
@@ -115,6 +124,16 @@
         <p style="margin:14px 0 0 0; font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:26px; color:#B9BECD;">
           Você abre o link no navegador &mdash; sem app pra instalar &mdash; e entra na sala.
         </p>
+
+        <!-- destaque do encontro (mesma promessa do banner de topo) -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:22px 0 0 0;">
+          <tr>
+            <td bgcolor="#101A33" style="background-color:#101A33; border:1px solid #24365E; border-radius:10px; padding:16px 18px; font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:24px; color:#D6DAE6;">
+              &#10023;&nbsp; Nesta segunda tem extra: além da conversação, vamos conhecer
+              <strong style="color:#ffffff;">3 novas ferramentas da plataforma</strong>.
+            </td>
+          </tr>
+        </table>
 
         <!-- CTA principal -->
         <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:28px 0 0 0;" class="btn">
