@@ -1,20 +1,24 @@
 # Textos — CherryTop Business Meal (sábado, 01/08, 12h–13h · online)
 
 Kit: https://englishtalktime.com.br/divulgacao/cherrytop-business-meal/
-Grupo de WhatsApp (é por onde se entra): https://chat.whatsapp.com/LEpi3Cm9cWv20kBHg5xjdb
-Site: https://englishtalktime.com.br
+**Sala do encontro:** https://ett-speak.vercel.app/r/cherrytop
+**Grupo de WhatsApp** (vagas + one-to-one da tarde): https://chat.whatsapp.com/LEpi3Cm9cWv20kBHg5xjdb
+Post no blog: https://englishtalktime.com.br/blog/cherrytop-business-meal/
 
 **Realização: Cherry Top.** O ETT está divulgando pra comunidade — a copy diz isso
 explicitamente em todos os blocos. Não escrever "patrocinado por" nem tratar como
 atividade do ETT.
 
-Fatos confirmados (da conversa com a Leonarda, 27/07/2026): nome da atividade,
-alvo (Negotiation, Networking & Team Building), sábado 01/08 das 12h às 13h, online,
-entrada pelo grupo de WhatsApp, e dinâmicas one-to-one à tarde **somente** para quem
-estiver no grupo. Gratuidade confirmada com o Alessandro.
+Os dois links têm papéis diferentes e ambos aparecem nos textos: a **sala** é onde o
+encontro acontece no sábado ao meio-dia; o **grupo** é onde saem as vagas e onde acontece
+o atendimento one-to-one da tarde (só pra quem está no grupo).
 
-⚠️ O horário está sendo comunicado como **horário de Brasília** — foi uma suposição,
-não estava dito na mensagem original.
+Fatos confirmados (conversa com a Leonarda, 27/07/2026): nome da atividade, alvo
+(Negotiation, Networking & Team Building), sábado 01/08 das 12h às 13h, online, grupo de
+WhatsApp, e o one-to-one da tarde. Gratuidade confirmada com o Alessandro.
+
+⚠️ O horário está sendo comunicado como **horário de Brasília** — foi suposição, não
+estava dito na mensagem original.
 
 ---
 
@@ -24,9 +28,10 @@ não estava dito na mensagem original.
 
 A atividade é da Cherry Top, parceira do ETT nas imersões, e o foco é bem específico: **negotiation, networking e team building**. Não é aula de gramática — é conversa em situações de negócio, do jeito que elas acontecem numa mesa.
 
-Quem entra no grupo de WhatsApp da atividade também tem acesso, na tarde de sábado, às dinâmicas one-to-one online com a equipe da Cherry Top.
+No sábado, é só entrar na sala no horário. E quem entra no grupo de WhatsApp da atividade também tem, na parte da tarde, as dinâmicas one-to-one online com a equipe da Cherry Top.
 
-Entrada pelo grupo: https://chat.whatsapp.com/LEpi3Cm9cWv20kBHg5xjdb
+Sala do encontro: https://ett-speak.vercel.app/r/cherrytop
+Grupo de WhatsApp: https://chat.whatsapp.com/LEpi3Cm9cWv20kBHg5xjdb
 Sobre o ETT: https://englishtalktime.com.br
 
 #EnglishTalkTime #CherryTop #businessenglish #networking #inglesparatech
@@ -37,9 +42,11 @@ Sobre o ETT: https://englishtalktime.com.br
 
 🍒 CherryTop Business Meal — sábado, 1º de agosto, 12h.
 
-Uma hora praticando inglês de negócios: negotiation, networking e team building. Online e gratuito. A atividade é da Cherry Top, parceira do ETT, e a entrada é pelo grupo de WhatsApp — quem está no grupo também pega as dinâmicas one-to-one da tarde.
+Uma hora praticando inglês de negócios: negotiation, networking e team building. Online e gratuito. A atividade é da Cherry Top, parceira do ETT.
 
-Link do grupo na bio.
+No sábado você entra direto na sala. No grupo de WhatsApp saem as vagas e o one-to-one da tarde.
+
+Links na bio: sala do encontro e grupo.
 
 .
 .
@@ -53,25 +60,24 @@ Link do grupo na bio.
 
 Uma hora praticando inglês de negócios (negotiation, networking e team building), online e gratuito. Realização da Cherry Top, parceira do ETT.
 
-Quem entra no grupo também tem as dinâmicas one-to-one na tarde de sábado.
-
-Entrar no grupo: https://chat.whatsapp.com/LEpi3Cm9cWv20kBHg5xjdb
+Sala do encontro: https://ett-speak.vercel.app/r/cherrytop
+Grupo (vagas + one-to-one da tarde): https://chat.whatsapp.com/LEpi3Cm9cWv20kBHg5xjdb
 
 ---
 
 ## X / Twitter
 
-🍒 Sábado, 1º/08, 12h: CherryTop Business Meal — uma hora de inglês de negócios (negotiation, networking, team building). Online e gratuito, realização da Cherry Top. Entrada pelo grupo: https://chat.whatsapp.com/LEpi3Cm9cWv20kBHg5xjdb #EnglishTalkTime
+🍒 Sábado, 1º/08, 12h: CherryTop Business Meal — uma hora de inglês de negócios (negotiation, networking, team building). Online e gratuito, realização da Cherry Top. Sala: https://ett-speak.vercel.app/r/cherrytop #EnglishTalkTime
 
 ---
 
 ## Repost (1ª pessoa — pra Cherry Top, equipe ou participante)
 
-Sábado, 1º de agosto, às 12h, tem CherryTop Business Meal: uma hora online praticando inglês de negócios — negotiation, networking e team building. É gratuito e a entrada é pelo grupo de WhatsApp da atividade.
+Sábado, 1º de agosto, às 12h, tem CherryTop Business Meal: uma hora online praticando inglês de negócios — negotiation, networking e team building. É gratuito.
 
-À tarde a equipe da Cherry Top faz dinâmicas one-to-one com quem estiver no grupo.
+A sala é esta: https://ett-speak.vercel.app/r/cherrytop
 
-https://chat.whatsapp.com/LEpi3Cm9cWv20kBHg5xjdb
+E quem entra no grupo de WhatsApp da atividade ainda pega as dinâmicas one-to-one com a equipe da Cherry Top na tarde de sábado: https://chat.whatsapp.com/LEpi3Cm9cWv20kBHg5xjdb
 
 ---
 
@@ -88,5 +94,5 @@ https://chat.whatsapp.com/LEpi3Cm9cWv20kBHg5xjdb
 
 A) Sábado, 12h: uma hora de inglês de negócios com a Cherry Top (grátis)
 B) Negotiation, networking e team building — sábado, online e sem custo
-C) CherryTop Business Meal: sua vaga está no grupo de WhatsApp
+C) CherryTop Business Meal: a sala abre sábado ao meio-dia
 D) Sábado tem mesa de negócios em inglês. Você tem 1 hora livre?

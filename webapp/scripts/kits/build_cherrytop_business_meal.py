@@ -32,12 +32,12 @@ CONFIG = {
     "date_big": "SÁB 01/08 · 12H ÀS 13H",
     "sub": "Uma hora praticando inglês de negócios em grupo, com a equipe da Cherry Top.",
     "chips": ["Negotiation", "Networking", "Team Building"],
-    "cta": "Vagas pelo grupo de WhatsApp da atividade",
+    "cta": "Sala: ett-speak.vercel.app/r/cherrytop",
     # só no 9:16, que sobra altura
     "bullets": [
         "Atividade realizada pela Cherry Top",
         "Uma hora, em inglês, em situações de negócio",
-        "À tarde tem dinâmica one-to-one — só pra quem está no grupo",
+        "Grupo de WhatsApp: vagas e o one-to-one da tarde",
     ],
     "footer_left": "ONLINE · 12H ÀS 13H · HORÁRIO DE BRASÍLIA",
     "footer_right": "ENGLISHTALKTIME.COM.BR",

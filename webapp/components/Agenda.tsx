@@ -1,5 +1,7 @@
 'use client'
 
+import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import {
   Calendar,
@@ -12,12 +14,13 @@ import {
   Music,
   Home,
   ExternalLink,
+  ArrowRight,
   Lightbulb,
   BookMarked,
 } from 'lucide-react'
-import { agendaEvents as events } from '@/lib/agenda-events'
+import { eventosFuturos, type AgendaEvent } from '@/lib/agenda-events'
 
-const ETT_PROGRAM_URL = 'https://forms.gle/jpK8bR4houvAXTwm9'
+const SEMANAS = 4
 
 const venues = [
   {
@@ -42,10 +45,24 @@ const venues = [
   },
 ]
 
-const onlineCount = events.filter((e) => e.type === 'online').length
-const presencialCount = events.filter((e) => e.type === 'presencial').length
-
 export default function Agenda() {
+  /**
+   * Lista calculada no navegador, não no build: o site é export estático e um
+   * build de semanas atrás mostraria encontros que já aconteceram (era o que
+   * acontecia até 27/07/2026, com a agenda parada em "11 de maio a 4 de junho").
+   */
+  const [events, setEvents] = useState<AgendaEvent[] | null>(null)
+  useEffect(() => {
+    setEvents(eventosFuturos(SEMANAS))
+  }, [])
+
+  const onlineCount = events?.filter((e) => e.type === 'online').length ?? 0
+  const presencialCount = events?.filter((e) => e.type === 'presencial').length ?? 0
+  const periodo =
+    events && events.length > 0
+      ? `${events[0].dateLabel} a ${events[events.length - 1].dateLabel}`
+      : 'próximas semanas'
+
   return (
     <main className="bg-dark min-h-screen pt-16">
       {/* HERO */}
@@ -83,7 +100,7 @@ export default function Agenda() {
               </div>
               <div className="flex items-center gap-2 px-4 py-2 rounded-xl border border-dark-border bg-dark-card">
                 <Calendar className="w-5 h-5 text-gray-400" />
-                <span className="text-white font-bold text-lg">{events.length}</span>
+                <span className="text-white font-bold text-lg">{events?.length ?? 0}</span>
                 <span className="text-gray-400 text-sm">encontros</span>
               </div>
             </div>
@@ -164,12 +181,19 @@ export default function Agenda() {
               Cronograma
             </span>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
-              Encontros de <span className="gradient-text">11 de maio a 4 de junho</span>
+              Encontros de <span className="gradient-text">{periodo}</span>
             </h2>
           </motion.div>
 
           <div className="max-w-5xl mx-auto grid sm:grid-cols-2 gap-3">
-            {events.map((ev, i) => {
+            {events === null
+              ? Array.from({ length: 4 }).map((_, i) => (
+                  <div
+                    key={`skeleton-${i}`}
+                    className="h-[96px] rounded-xl border border-dark-border bg-dark-card animate-pulse"
+                  />
+                ))
+              : events.map((ev, i) => {
               const isOnline = ev.type === 'online'
               const Icon = isOnline ? Wifi : MapPin
               const dayNum = ev.dateLabel.split(' ')[0]
@@ -221,9 +245,9 @@ export default function Agenda() {
                           <Icon className="w-2.5 h-2.5" />
                           {ev.type}
                         </span>
-                        {ev.highlight && (
-                          <span className="inline-flex px-1.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-neon-green/15 text-neon-green border border-neon-green/40">
-                            Atenção
+                        {ev.partner && (
+                          <span className="inline-flex px-1.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-tech-blue/10 text-tech-blue border border-tech-blue/30">
+                            {ev.partner}
                           </span>
                         )}
                         <span className="ml-auto inline-flex items-center gap-1 text-xs text-gray-400">
@@ -242,17 +266,34 @@ export default function Agenda() {
                       </p>
 
                       {ev.timeNote && (
-                        <p className={`text-[11px] mt-1 italic leading-tight ${
+                        <p className={`text-[11px] mt-1 leading-tight ${
                           ev.highlight ? 'text-neon-green/80' : 'text-gray-500'
                         }`}>
                           {ev.timeNote}
                         </p>
                       )}
+
+                      {ev.links && ev.links.length > 0 && (
+                        <div className="flex flex-wrap gap-x-3 gap-y-1 mt-2">
+                          {ev.links.map((l) => (
+                            <a
+                              key={l.url}
+                              href={l.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 text-[11px] font-semibold text-neon-green hover:underline"
+                            >
+                              {l.label}
+                              <ExternalLink className="w-3 h-3" />
+                            </a>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </motion.div>
-              )
-            })}
+                  )
+                })}
           </div>
         </div>
       </section>
@@ -322,30 +363,27 @@ export default function Agenda() {
               </div>
 
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-5">
-                Inscrição + Ebook gratuito
+                Gratuito
               </span>
 
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-tight">
-                Inscreva-se no <span className="gradient-text">ETT</span> e receba o ebook
-                quando lançarmos
+                Quer receber as datas dos <span className="gradient-text">próximos encontros</span>?
               </h2>
               <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-xl mx-auto">
-                Garanta sua vaga nos próximos encontros e receba primeiro o ebook da
-                Fórmula Fluente — método completo, threshold, 4 pilares e os 10 passos por lição.
+                Deixe nome e e-mail e a gente avisa quando tiver encontro novo — online ou
+                presencial. Aparecer para conhecer continua livre, sem cadastro.
               </p>
 
-              <a
-                href={ETT_PROGRAM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/#inscricao"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-neon-green text-black font-bold text-sm hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg"
               >
-                Inscreva-se no ETT e receba o ebook
-                <ExternalLink className="w-4 h-4" />
-              </a>
+                Tenho interesse
+                <ArrowRight className="w-4 h-4" />
+              </Link>
 
               <p className="text-xs text-gray-500 mt-4">
-                Lançamento do ebook em breve — quem se inscrever no ETT recebe primeiro.
+                Sem custo. Sem venda no fim.
               </p>
             </div>
           </motion.div>

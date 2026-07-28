@@ -11,6 +11,19 @@ export interface BlogPostMeta {
 
 export const blogPosts: BlogPostMeta[] = [
   {
+    slug: 'cherrytop-business-meal',
+    title:
+      'CherryTop Business Meal: uma hora de inglês de negócios, online e gratuita (sábado, 1º de agosto)',
+    description:
+      'A Cherry Top, parceira do ETT nas imersões, realiza no sábado 01/08/2026, das 12h às 13h, uma experiência online gratuita pra praticar negotiation, networking e team building em inglês. Entrada pelo grupo de WhatsApp da atividade.',
+    excerpt:
+      'Sábado, 1º de agosto, meio-dia: uma hora praticando inglês em situações de negócio — negociação, networking e trabalho em equipe. Online, gratuito, realização da Cherry Top. À tarde tem dinâmica one-to-one pra quem estiver no grupo.',
+    date: '2026-07-27',
+    readMinutes: 4,
+    category: 'Encontros',
+    tags: ['inglês de negócios', 'Cherry Top', 'networking', 'encontro online'],
+  },
+  {
     slug: 'parceria-aprendendo-ingles',
     title: 'ETT firma parceria com o Aprendendo Inglês',
     description:
