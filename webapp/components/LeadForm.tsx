@@ -10,9 +10,13 @@ import { CheckCircle2, Loader2, MapPin, Calendar, Users } from 'lucide-react'
 // fica exposto no client porque ele só identifica a conta, não autoriza
 // leitura/escrita do CRM.
 //
-// Os nomes dos campos são exatamente os da LP acima — `name`, `email`,
-// `company`, `personal_phone`, `conversion_identifier` — pra caírem nos campos
-// padrão da RD. Testado em 31/07/2026: HTTP 200 e "Lead conversion saved".
+// Campos: `name`, `email`, `company`, `personal_phone` (nomes padrão da RD,
+// iguais aos da LP acima) + `identificador`.
+//
+// ⚠️ `identificador`, NÃO `conversion_identifier`. A LP usa o segundo, mas ela
+// posta em outro endpoint — na v1.3 o segundo é ignorado e a conversão chega
+// como "Identificador: Indefinido". Verificado com lead de teste em 31/07/2026.
+//
 // Em 31/07 o formulário foi reduzido a 4 campos: os selects de trilha e de
 // nível e o LinkedIn saíram, porque formulário longo lê-se como captura de
 // vendas num programa que é aberto.
@@ -55,10 +59,20 @@ export default function LeadForm() {
     }
     formData.delete('website')
 
+    // Enviar como x-www-form-urlencoded, NUNCA como FormData.
+    // A v1.3 da RD não parseia multipart direito: o boundary vaza pro valor do
+    // último campo. Um lead de teste em 31/07/2026 chegou com
+    // "Telefone: ------XjqDhzJoDj3k0avrjDkS5I--".
+    const body = new URLSearchParams()
+    formData.forEach((value, key) => {
+      if (typeof value === 'string') body.append(key, value)
+    })
+
     try {
       const resp = await fetch(RD_FORM_ACTION, {
         method: 'POST',
-        body: formData,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body,
       })
       if (!resp.ok) {
         const text = await resp.text().catch(() => '')
@@ -169,7 +183,7 @@ export default function LeadForm() {
                 >
                   {/* Hidden fields exigidos pela RD v1.3 */}
                   <input type="hidden" name="token_rdstation" value={RD_TOKEN_PUBLIC} />
-                  <input type="hidden" name="conversion_identifier" value={RD_CONVERSION_ID} />
+                  <input type="hidden" name="identificador" value={RD_CONVERSION_ID} />
 
                   {/* Name */}
                   <div>
