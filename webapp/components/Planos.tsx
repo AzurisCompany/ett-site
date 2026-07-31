@@ -17,15 +17,12 @@ import {
   premios,
   faqCobranca,
   CHECKOUT_ADESAO,
-  CHECKOUT_ASSINATURA,
   PRECO_ADESAO,
   PRECO_MENSAL,
   META_DIAS,
 } from '@/lib/planos'
 
-/** Enquanto os links do gateway não existem, os botões levam ao formulário. */
-const hrefAdesao = CHECKOUT_ADESAO ?? '/#inscricao'
-const hrefAssinatura = CHECKOUT_ASSINATURA ?? '/#inscricao'
+const hrefAdesao = CHECKOUT_ADESAO
 
 const encontros = [
   {
@@ -55,12 +52,13 @@ export default function Planos() {
             className="max-w-3xl mx-auto text-center"
           >
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
-              Uma entrada de <span className="neon-green">R$ {PRECO_ADESAO}</span>. Depois, você
-              escolhe.
+              Adesão ao programa: <span className="neon-green">R$ {PRECO_ADESAO}</span>. Depois,
+              você escolhe.
             </h1>
             <p className="text-gray-400 text-lg leading-relaxed">
               O encontro de segunda é aberto pra qualquer pessoa, sem cadastro e sem pagar — isso
-              não muda. O que tem preço é a plataforma e as horas de mentoria individual.
+              não muda. O que tem preço é a plataforma, o material didático e as horas de
+              mentoria individual.
             </p>
           </motion.div>
 
@@ -155,8 +153,8 @@ export default function Planos() {
             E depois dos 30 dias?
           </motion.h2>
           <p className="text-gray-400 text-center max-w-2xl mx-auto mb-10 leading-relaxed">
-            Você escolhe como continuar. Nos dois casos mantém as ferramentas, as turmas por nível
-            e o presencial de sábado.
+            Você escolhe como continuar. Nos dois casos mantém as ferramentas, o acompanhamento e
+            os encontros online e presenciais.
           </p>
 
           <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto items-stretch">
@@ -180,14 +178,12 @@ export default function Planos() {
                 <p className="text-gray-400 text-sm leading-relaxed mb-3">{t.descricao}</p>
                 <p className="text-gray-500 text-xs leading-relaxed mt-auto">{t.condicao}</p>
 
-                {t.id === 'livre' && (
-                  <Link
-                    href={hrefAssinatura}
-                    className="mt-6 w-full inline-flex items-center justify-center px-5 py-3 rounded-lg border border-dark-border text-gray-200 font-bold text-sm hover:border-neon-green/40 hover:text-white transition-all"
-                  >
-                    Assinar a Trilha Livre
-                  </Link>
-                )}
+                <Link
+                  href={t.href}
+                  className="mt-6 w-full inline-flex items-center justify-center px-5 py-3 rounded-lg border border-dark-border text-gray-200 font-bold text-sm hover:border-neon-green/40 hover:text-white transition-all"
+                >
+                  Ver a {t.nome}
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -359,8 +355,8 @@ export default function Planos() {
           <p className="text-gray-400 leading-relaxed mb-8">
             O encontro de segunda continua de graça — pra você, pra quem chegar hoje e pra quem
             nunca vai pagar nada. Os R$ {PRECO_ADESAO} pagam duas horas da agenda de uma pessoa
-            sentada com você montando seu plano, mais a sua conta na plataforma. É isso, e só
-            isso.
+            sentada com você montando seu plano, o seu material didático e a sua conta na
+            plataforma. É isso, e só isso.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -379,7 +375,7 @@ export default function Planos() {
           </div>
 
           <p className="text-gray-600 text-xs mt-6">
-            Trilha Livre por R$ {PRECO_MENSAL}/mês a partir do dia 31. Cancela quando quiser.
+            Trilha de Dedicação por R$ {PRECO_MENSAL}/mês a partir do dia 31. Cancela quando quiser.
           </p>
         </div>
       </section>

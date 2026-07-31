@@ -23,12 +23,13 @@ export default function Precos() {
             Quanto custa
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-            Uma entrada de <span className="neon-green">R$ {PRECO_ADESAO}</span>.
+            Adesão ao programa: <span className="neon-green">R$ {PRECO_ADESAO}</span>.
             <br className="hidden sm:block" /> Depois, você escolhe.
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
             O encontro de segunda é aberto pra qualquer pessoa, sem cadastro e sem pagar — isso
-            não muda. O que tem preço é a plataforma e as horas de mentoria individual.
+            não muda. O que tem preço é a plataforma, o material didático e as horas de mentoria
+            individual.
           </p>
         </motion.div>
 
@@ -139,7 +140,8 @@ export default function Precos() {
           <p className="text-sm text-gray-400 leading-relaxed">
             O encontro de segunda continua de graça — pra você, pra quem chegar hoje e pra quem
             nunca vai pagar nada. Os R$ {PRECO_ADESAO} pagam duas horas da agenda de uma pessoa
-            sentada com você montando seu plano, mais a sua conta na plataforma. É isso, e só isso.
+            sentada com você montando seu plano, o seu material didático e a sua conta na
+            plataforma. É isso, e só isso.
           </p>
         </motion.div>
 

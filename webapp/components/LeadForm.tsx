@@ -29,7 +29,7 @@ const trilhas = [
     value: 'aceleracao',
     label: 'Aceleração — quero a bolsa e me comprometer com a rotina diária',
   },
-  { value: 'livre', label: 'Livre — quero usar no meu ritmo, no plano mensal' },
+  { value: 'dedicacao', label: 'Dedicação — quero usar no meu ritmo, no plano mensal' },
   { value: 'nao_sei', label: 'Ainda não sei — quero conversar primeiro' },
 ]
 

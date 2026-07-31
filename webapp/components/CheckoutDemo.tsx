@@ -9,6 +9,8 @@ const WHATSAPP_NUMBER = '5541998003687'
 export type PedidoDemo = {
   titulo: string
   subtitulo: string
+  /** Pra onde o "voltar" leva — a página do plano que originou o pedido. */
+  voltarHref: string
   itens: { descricao: string; valor: string }[]
   total: string
   totalNota: string
@@ -26,11 +28,11 @@ export default function CheckoutDemo({ pedido }: { pedido: PedidoDemo }) {
     <section className="pt-32 pb-20 bg-dark min-h-screen">
       <div className="container mx-auto px-4 max-w-2xl">
         <Link
-          href="/planos/"
+          href={pedido.voltarHref}
           className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-neon-green transition-colors mb-6"
         >
           <ArrowLeft className="w-4 h-4" />
-          Voltar para os planos
+          Voltar
         </Link>
 
         {/* O pagamento online ainda não abriu — isso precisa ficar claro antes de tudo */}
