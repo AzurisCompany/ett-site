@@ -9,33 +9,16 @@ import { CheckCircle2, Loader2, MapPin, Calendar, Users } from 'lucide-react'
 // https://eventos.gubigdata.com.br/tenhointeresseprogramaaceleracaoingles)
 // fica exposto no client porque ele só identifica a conta, não autoriza
 // leitura/escrita do CRM.
+//
+// Os nomes dos campos são exatamente os da LP acima — `name`, `email`,
+// `company`, `personal_phone`, `conversion_identifier` — pra caírem nos campos
+// padrão da RD. Testado em 31/07/2026: HTTP 200 e "Lead conversion saved".
+// Em 31/07 o formulário foi reduzido a 4 campos: os selects de trilha e de
+// nível e o LinkedIn saíram, porque formulário longo lê-se como captura de
+// vendas num programa que é aberto.
 const RD_FORM_ACTION = 'https://www.rdstation.com.br/api/1.3/conversions'
 const RD_TOKEN_PUBLIC = '91ad62b8804b60a50c32a768d4adb263'
 const RD_CONVERSION_ID = 'tenhointeresseprogramaaceleracaoingles'
-
-const levels = [
-  { value: 'zero', label: 'Zero — nunca estudei inglês' },
-  { value: 'basico', label: 'Básico — conheço algumas palavras' },
-  { value: 'intermediario', label: 'Intermediário — entendo mas trava para falar' },
-  { value: 'avancado', label: 'Avançado — quero polir e focar em carreira' },
-]
-
-// Espelha o modelo publicado em /planos/ (ver lib/planos.ts). A antiga trilha
-// "dedicacao" saiu do site em 31/07 — o valor fica documentado aqui porque
-// ainda existe na base da RD.
-const trilhas = [
-  { value: 'conhecer', label: 'Conhecer — quero testar 30 dias antes de decidir' },
-  {
-    value: 'aceleracao',
-    label: 'Aceleração — quero a bolsa e me comprometer com a rotina diária',
-  },
-  { value: 'dedicacao', label: 'Dedicação — quero usar no meu ritmo, no plano mensal' },
-  { value: 'nao_sei', label: 'Ainda não sei — quero conversar primeiro' },
-]
-
-// A pesquisa de faixa de preço (`cf_faixa_plano_mensal`) saiu em 31/07: o valor
-// do plano mensal foi definido em R$ 39 e publicado em /planos/, então perguntar
-// "se existisse um plano mensal" passou a contradizer a própria página.
 
 // Máscara BR: progressivo conforme digita
 // 2 → (XX
@@ -71,12 +54,6 @@ export default function LeadForm() {
       return
     }
     formData.delete('website')
-
-    // Normaliza LinkedIn: aceita "linkedin.com/in/foo" e completa pra https://
-    const linkedin = (formData.get('linkedin') as string)?.trim() ?? ''
-    if (linkedin && !/^https?:\/\//i.test(linkedin)) {
-      formData.set('linkedin', `https://${linkedin.replace(/^\/+/, '')}`)
-    }
 
     try {
       const resp = await fetch(RD_FORM_ACTION, {
@@ -136,11 +113,11 @@ export default function LeadForm() {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-neon-green" />
-                Curitiba: IEP, UTFPR, Hard Rock, Habitat
+                IEP Talks, sábados 10h · Curitiba
               </div>
               <div className="flex items-center gap-2">
                 <Users className="w-4 h-4 text-neon-green" />
-                Sem custo. Sem venda no fim.
+                Os encontros são gratuitos.
               </div>
             </div>
           </motion.div>
@@ -192,7 +169,7 @@ export default function LeadForm() {
                 >
                   {/* Hidden fields exigidos pela RD v1.3 */}
                   <input type="hidden" name="token_rdstation" value={RD_TOKEN_PUBLIC} />
-                  <input type="hidden" name="identificador" value={RD_CONVERSION_ID} />
+                  <input type="hidden" name="conversion_identifier" value={RD_CONVERSION_ID} />
 
                   {/* Name */}
                   <div>
@@ -201,7 +178,7 @@ export default function LeadForm() {
                     </label>
                     <input
                       id="rd-name"
-                      name="nome"
+                      name="name"
                       type="text"
                       required
                       minLength={2}
@@ -225,29 +202,6 @@ export default function LeadForm() {
                     />
                   </div>
 
-                  {/* Trilha pretendida */}
-                  <div>
-                    <label htmlFor="rd-trilha" className="block text-sm font-medium text-gray-300 mb-2">
-                      Como você quer participar?{' '}
-                      <span className="text-gray-500 text-xs font-normal">(pode mudar depois)</span>
-                    </label>
-                    <select
-                      id="rd-trilha"
-                      name="cf_trilha_ett"
-                      defaultValue=""
-                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white focus:outline-none focus:border-neon-green/60 focus:ring-1 focus:ring-neon-green/30 transition-colors appearance-none cursor-pointer"
-                    >
-                      <option value="" className="text-gray-600">
-                        Selecione uma trilha...
-                      </option>
-                      {trilhas.map((t) => (
-                        <option key={t.value} value={t.value} className="bg-dark-secondary">
-                          {t.label}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
                   {/* Empresa */}
                   <div>
                     <label htmlFor="rd-empresa" className="block text-sm font-medium text-gray-300 mb-2">
@@ -256,7 +210,7 @@ export default function LeadForm() {
                     </label>
                     <input
                       id="rd-empresa"
-                      name="empresa"
+                      name="company"
                       type="text"
                       placeholder="Onde você trabalha"
                       className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-neon-green/60 focus:ring-1 focus:ring-neon-green/30 transition-colors"
@@ -273,7 +227,7 @@ export default function LeadForm() {
                     </label>
                     <input
                       id="rd-telefone"
-                      name="telefone"
+                      name="personal_phone"
                       type="tel"
                       inputMode="tel"
                       pattern="^\(\d{2}\) \d{4,5}-\d{4}$"
@@ -287,48 +241,6 @@ export default function LeadForm() {
                       }}
                       className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-neon-green/60 focus:ring-1 focus:ring-neon-green/30 transition-colors"
                     />
-                  </div>
-
-                  {/* LinkedIn */}
-                  <div>
-                    <label htmlFor="rd-linkedin" className="block text-sm font-medium text-gray-300 mb-2">
-                      LinkedIn{' '}
-                      <span className="text-gray-500 text-xs font-normal">
-                        (opcional — usado para o networking no encontro)
-                      </span>
-                    </label>
-                    <input
-                      id="rd-linkedin"
-                      name="linkedin"
-                      type="text"
-                      pattern="(https?:\/\/)?(www\.)?linkedin\.com\/(in|pub)\/[\w\-_%]+\/?.*"
-                      title="Cole o link do seu perfil LinkedIn (ex: linkedin.com/in/seu-usuario)"
-                      placeholder="linkedin.com/in/seu-perfil"
-                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-tech-blue/60 focus:ring-1 focus:ring-tech-blue/30 transition-colors"
-                    />
-                  </div>
-
-                  {/* Level */}
-                  <div>
-                    <label htmlFor="rd-level" className="block text-sm font-medium text-gray-300 mb-2">
-                      Qual seu nível atual de inglês?{' '}
-                      <span className="text-gray-500 text-xs font-normal">(opcional)</span>
-                    </label>
-                    <select
-                      id="rd-level"
-                      name="cf_nivel_ingles"
-                      defaultValue=""
-                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white focus:outline-none focus:border-neon-green/60 focus:ring-1 focus:ring-neon-green/30 transition-colors appearance-none cursor-pointer"
-                    >
-                      <option value="" className="text-gray-600">
-                        Prefiro não dizer agora
-                      </option>
-                      {levels.map((l) => (
-                        <option key={l.value} value={l.value} className="bg-dark-secondary">
-                          {l.label}
-                        </option>
-                      ))}
-                    </select>
                   </div>
 
                   {error && (
