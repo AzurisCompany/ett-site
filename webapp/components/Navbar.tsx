@@ -54,7 +54,7 @@ function buildLinks(locale: Locale): NavLink[] {
   // #metodologia e #como-funciona — esse conteúdo vive em /detalhes/.
   return [
     { href: '/agenda', label: m.agenda },
-    { href: '/#precos', label: m.pricing },
+    { href: '/planos/', label: m.pricing },
     { href: '/#ferramentas', label: m.tools },
     { href: '/detalhes/', label: m.program },
     { href: '/imersoes', label: m.immersions },

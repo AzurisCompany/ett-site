@@ -41,9 +41,9 @@ export const agendaEvents: AgendaEvent[] = [
     dateLabel: '14 de maio',
     type: 'presencial',
     title: 'English Talk Time · IEP',
-    location: 'IEP — Instituto de Ensino e Pesquisa',
+    location: 'IEP — Instituto de Engenharia do Paraná',
     city: 'Curitiba/PR',
-    venueAddress: 'Curitiba, PR, Brasil',
+    venueAddress: 'Instituto de Engenharia do Paraná, Curitiba, PR, Brasil',
     time: '19h às 21h30',
     timeNote: 'horário a confirmar',
     venueIcon: 'iep',
@@ -160,6 +160,34 @@ function iso(d: Date): string {
 }
 
 /**
+ * Próximas ocorrências de um dia da semana, a partir de "hoje".
+ *
+ * `horaLimite` é a hora até a qual o evento de hoje ainda conta (se hoje já é
+ * o dia da semana certo e ainda não passou dela, hoje entra na lista).
+ */
+function proximosDiasDaSemana(
+  diaSemana: number,
+  quantidade: number,
+  hoje: Date,
+  horaLimite: number,
+): Date[] {
+  const dia = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate())
+  const hojeAindaVale = hoje.getDay() === diaSemana && hoje.getHours() < horaLimite
+  if (!hojeAindaVale) {
+    do {
+      dia.setDate(dia.getDate() + 1)
+    } while (dia.getDay() !== diaSemana)
+  }
+
+  const dias: Date[] = []
+  for (let i = 0; i < quantidade; i++) {
+    dias.push(new Date(dia))
+    dia.setDate(dia.getDate() + 7)
+  }
+  return dias
+}
+
+/**
  * Encontros online de segunda, gerados a partir de "hoje".
  *
  * Gerado em vez de listado de propósito: o site é export estático e o build
@@ -168,37 +196,53 @@ function iso(d: Date): string {
  * passou das 22h, hoje conta).
  */
 export function encontrosOnlineRecorrentes(quantidade: number, hoje = new Date()): AgendaEvent[] {
-  const dia = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate())
-  const hojeAindaVale = hoje.getDay() === 1 && hoje.getHours() < 22
-  if (!hojeAindaVale) {
-    do {
-      dia.setDate(dia.getDate() + 1)
-    } while (dia.getDay() !== 1)
-  }
-
-  const eventos: AgendaEvent[] = []
-  for (let i = 0; i < quantidade; i++) {
-    eventos.push({
-      date: iso(dia),
-      startTime: '20:00',
-      endTime: '21:30',
-      weekday: 'Segunda',
-      dateLabel: labelData(dia),
-      type: 'online',
-      title: 'Encontro Online ETT',
-      location: 'Online · sala do ETT Speak',
-      time: '20h às 21h30',
-      links: [{ url: 'https://ett-speak.vercel.app/', label: 'Abrir a sala' }],
-    })
-    dia.setDate(dia.getDate() + 7)
-  }
-  return eventos
+  return proximosDiasDaSemana(1, quantidade, hoje, 22).map((dia) => ({
+    date: iso(dia),
+    startTime: '20:00',
+    endTime: '21:30',
+    weekday: 'Segunda',
+    dateLabel: labelData(dia),
+    type: 'online',
+    title: 'Encontro Online ETT',
+    location: 'Online · sala do ETT Speak',
+    time: '20h às 21h30',
+    links: [{ url: 'https://ett-speak.vercel.app/', label: 'Abrir a sala' }],
+  }))
 }
 
 /**
- * O que a /agenda/ mostra: os encontros de segunda gerados + os eventos
- * datados que ainda não passaram, em ordem. Chamar no cliente (useEffect),
- * nunca no build — ver comentário acima.
+ * IEP Talks — encontro presencial de sábado, no IEP, em Curitiba.
+ *
+ * Recorrente, então é gerado pela mesma regra das segundas: escrever as datas à
+ * mão faria a agenda congelar de novo (foi o bug de 27/07).
+ */
+export function encontrosPresenciaisRecorrentes(
+  quantidade: number,
+  hoje = new Date(),
+): AgendaEvent[] {
+  return proximosDiasDaSemana(6, quantidade, hoje, 12).map((dia) => ({
+    date: iso(dia),
+    startTime: '10:00',
+    endTime: '12:00',
+    weekday: 'Sábado',
+    dateLabel: labelData(dia),
+    type: 'presencial',
+    title: 'IEP Talks',
+    location: 'IEP — Instituto de Engenharia do Paraná',
+    city: 'Curitiba/PR',
+    venueAddress: 'Instituto de Engenharia do Paraná, Curitiba, PR, Brasil',
+    time: '10h às 12h',
+    venueIcon: 'iep',
+  }))
+}
+
+/**
+ * O que a /agenda/ mostra: os encontros recorrentes gerados (segunda online e
+ * sábado presencial) + os eventos datados que ainda não passaram, em ordem.
+ * Chamar no cliente (useEffect), nunca no build — ver comentário acima.
+ *
+ * Um evento datado tem precedência sobre o recorrente do mesmo dia e tipo: é
+ * assim que se cancela ou se substitui uma ocorrência específica.
  */
 export function eventosFuturos(semanas = 4, hoje = new Date()): AgendaEvent[] {
   const limite = new Date(hoje.getTime() + semanas * 7 * DIA_MS)
@@ -206,8 +250,11 @@ export function eventosFuturos(semanas = 4, hoje = new Date()): AgendaEvent[] {
   const limiteIso = iso(limite)
 
   const datados = agendaEvents.filter((e) => e.date >= hojeIso && e.date <= limiteIso)
-  const recorrentes = encontrosOnlineRecorrentes(semanas, hoje).filter(
-    (e) => !datados.some((d) => d.date === e.date && d.type === 'online'),
+  const recorrentes = [
+    ...encontrosOnlineRecorrentes(semanas, hoje),
+    ...encontrosPresenciaisRecorrentes(semanas, hoje),
+  ].filter(
+    (e) => e.date <= limiteIso && !datados.some((d) => d.date === e.date && d.type === e.type),
   )
 
   return [...datados, ...recorrentes].sort((a, b) =>

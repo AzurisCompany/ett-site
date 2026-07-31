@@ -20,24 +20,22 @@ const levels = [
   { value: 'avancado', label: 'Avançado — quero polir e focar em carreira' },
 ]
 
+// Espelha o modelo publicado em /planos/ (ver lib/planos.ts). A antiga trilha
+// "dedicacao" saiu do site em 31/07 — o valor fica documentado aqui porque
+// ainda existe na base da RD.
 const trilhas = [
+  { value: 'conhecer', label: 'Conhecer — quero testar 30 dias antes de decidir' },
   {
     value: 'aceleracao',
-    label: 'Aceleração — encontros + 1h/dia nas ferramentas (gratuito)',
+    label: 'Aceleração — quero a bolsa e me comprometer com a rotina diária',
   },
-  { value: 'dedicacao', label: 'Dedicação — encontros + ferramentas em beta (gratuito)' },
-  { value: 'livre', label: 'Livre — quero usar no meu ritmo, me avise do plano mensal' },
-  { value: 'nao_sei', label: 'Ainda não sei — quero conhecer primeiro' },
+  { value: 'livre', label: 'Livre — quero usar no meu ritmo, no plano mensal' },
+  { value: 'nao_sei', label: 'Ainda não sei — quero conversar primeiro' },
 ]
 
-// Pesquisa de precificação: alimenta a definição do plano mensal.
-const faixas = [
-  { value: 'ate_49', label: 'Até R$ 49/mês' },
-  { value: '50_99', label: 'Entre R$ 50 e R$ 99/mês' },
-  { value: '100_199', label: 'Entre R$ 100 e R$ 199/mês' },
-  { value: '200_mais', label: 'R$ 200/mês ou mais' },
-  { value: 'so_gratuito', label: 'Prefiro a trilha gratuita e me comprometer com a rotina' },
-]
+// A pesquisa de faixa de preço (`cf_faixa_plano_mensal`) saiu em 31/07: o valor
+// do plano mensal foi definido em R$ 39 e publicado em /planos/, então perguntar
+// "se existisse um plano mensal" passou a contradizer a própria página.
 
 // Máscara BR: progressivo conforme digita
 // 2 → (XX
@@ -245,31 +243,6 @@ export default function LeadForm() {
                       {trilhas.map((t) => (
                         <option key={t.value} value={t.value} className="bg-dark-secondary">
                           {t.label}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
-                  {/* Pesquisa de preço */}
-                  <div>
-                    <label htmlFor="rd-faixa" className="block text-sm font-medium text-gray-300 mb-2">
-                      Se existisse um plano mensal, qual faixa faria sentido pra você?{' '}
-                      <span className="text-gray-500 text-xs font-normal">
-                        (nos ajuda a definir o valor)
-                      </span>
-                    </label>
-                    <select
-                      id="rd-faixa"
-                      name="cf_faixa_plano_mensal"
-                      defaultValue=""
-                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white focus:outline-none focus:border-tech-blue/60 focus:ring-1 focus:ring-tech-blue/30 transition-colors appearance-none cursor-pointer"
-                    >
-                      <option value="" className="text-gray-600">
-                        Prefiro não responder
-                      </option>
-                      {faixas.map((f) => (
-                        <option key={f.value} value={f.value} className="bg-dark-secondary">
-                          {f.label}
                         </option>
                       ))}
                     </select>

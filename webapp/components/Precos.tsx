@@ -2,99 +2,16 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Check, Clock, Wallet, FlaskConical, Minus } from 'lucide-react'
+import { Check, Wallet, ShieldCheck, ArrowRight } from 'lucide-react'
+import {
+  portas,
+  trilhas,
+  CHECKOUT_ADESAO,
+  PRECO_ADESAO,
+} from '@/lib/planos'
 
-type Trilha = {
-  nome: string
-  preco: string
-  precoNota?: string
-  destaque?: string
-  paraQuem: string
-  itens: { texto: string; tem: boolean }[]
-  compromisso: string
-  compromissoNota?: string
-  cta: string
-  cor: 'verde' | 'azul' | 'neutro'
-}
-
-const trilhas: Trilha[] = [
-  {
-    nome: 'Trilha de Aceleração',
-    preco: 'R$ 0',
-    precoNota: 'sempre',
-    destaque: 'O programa completo',
-    paraQuem: 'Pra quem vai fazer o programa de aceleração de verdade.',
-    itens: [
-      { texto: 'Encontros online e presenciais', tem: true },
-      { texto: 'ETT Player completo — todas as ferramentas', tem: true },
-      { texto: 'Plano de estudos personalizado', tem: true },
-      { texto: 'Acompanhamento do seu progresso', tem: true },
-    ],
-    compromisso: 'Presença nos encontros + rotina de 1 hora por dia nas ferramentas.',
-    compromissoNota:
-      'A rotina é acompanhada mês a mês. Se você der uma pausa, não tem multa nem cobrança por trás — no máximo você passa a escolher outra trilha quando voltar.',
-    cta: 'Quero a Trilha de Aceleração',
-    cor: 'verde',
-  },
-  {
-    nome: 'Trilha de Dedicação',
-    preco: 'R$ 0',
-    precoNota: 'sempre',
-    paraQuem: 'Pra quem vem aos encontros mas não consegue fechar 1 hora todo dia.',
-    itens: [
-      { texto: 'Encontros online e presenciais', tem: true },
-      { texto: 'Ferramentas em beta, enquanto estiverem em beta', tem: true },
-      { texto: 'Comunidade e material de apoio', tem: true },
-      { texto: 'ETT Player completo e plano personalizado', tem: false },
-    ],
-    compromisso: 'Só presença nos encontros. Sem rotina obrigatória.',
-    compromissoNota:
-      'Toda ferramenta nova entra em beta aberto — nesse período ela é gratuita pra você também. Quando sai do beta, fica com quem está na Aceleração ou num plano.',
-    cta: 'Quero a Trilha de Dedicação',
-    cor: 'azul',
-  },
-  {
-    nome: 'Trilha Livre',
-    preco: 'Plano mensal',
-    precoNota: 'valor em definição',
-    paraQuem: 'Pra quem quer tudo no próprio ritmo, sem compromisso nenhum.',
-    itens: [
-      { texto: 'Encontros online e presenciais', tem: true },
-      { texto: 'ETT Player completo — todas as ferramentas', tem: true },
-      { texto: 'Plano de estudos personalizado', tem: true },
-      { texto: 'Acompanhamento do seu progresso', tem: true },
-    ],
-    compromisso: 'Nenhum. Ninguém cobra rotina de você.',
-    compromissoNota:
-      'Ainda estamos definindo o valor — e queremos definir junto com quem vai usar. No cadastro tem uma pergunta rápida sobre qual faixa faria sentido pra você.',
-    cta: 'Quero ser avisado do plano',
-    cor: 'neutro',
-  },
-]
-
-const estilos = {
-  verde: {
-    card: 'border-neon-green/30 shadow-neon-green',
-    preco: 'text-neon-green',
-    check: 'text-neon-green',
-    icone: 'text-neon-green',
-    cta: 'bg-neon-green text-black hover:bg-neon-green/90 hover:shadow-neon-green-lg',
-  },
-  azul: {
-    card: 'border-tech-blue/25',
-    preco: 'text-tech-blue',
-    check: 'text-tech-blue',
-    icone: 'text-tech-blue',
-    cta: 'border border-tech-blue/50 text-tech-blue hover:bg-tech-blue/10 hover:border-tech-blue',
-  },
-  neutro: {
-    card: 'border-dark-border',
-    preco: 'text-gray-300',
-    check: 'text-gray-500',
-    icone: 'text-gray-500',
-    cta: 'border border-dark-border text-gray-300 hover:border-neon-green/40 hover:text-white',
-  },
-} as const
+/** Enquanto o link do gateway não existe, o botão leva ao formulário. */
+const hrefAdesao = CHECKOUT_ADESAO ?? '/#inscricao'
 
 export default function Precos() {
   return (
@@ -114,15 +31,16 @@ export default function Precos() {
             Quanto custa
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-            Você paga com <span className="neon-green">dedicação</span> ou com plano.
+            Uma entrada de <span className="neon-green">R$ {PRECO_ADESAO}</span>.
+            <br className="hidden sm:block" /> Depois, você escolhe.
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
-            Os encontros de conversação são gratuitos nas três trilhas. O que muda é o quanto
-            você se compromete com a rotina — e é isso que define se você paga alguma coisa.
+            O encontro de segunda é aberto pra qualquer pessoa, sem cadastro e sem pagar — isso
+            não muda. O que tem preço é a plataforma e as horas de mentoria individual.
           </p>
         </motion.div>
 
-        {/* Status honesto da fase atual */}
+        {/* Quem já está numa trilha gratuita não passa a pagar */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -130,97 +48,137 @@ export default function Precos() {
           transition={{ duration: 0.4 }}
           className="max-w-3xl mx-auto mb-10 flex items-start gap-3 rounded-2xl border border-tech-blue/25 bg-tech-blue/5 px-5 py-4"
         >
-          <FlaskConical className="w-5 h-5 text-tech-blue shrink-0 mt-0.5" />
+          <ShieldCheck className="w-5 h-5 text-tech-blue shrink-0 mt-0.5" />
           <p className="text-sm text-gray-300 leading-relaxed">
-            <strong className="text-white">Estamos em fase de testes.</strong> Hoje tudo está
-            liberado, sem cobrança para ninguém. Quando os planos entrarem no ar,{' '}
             <strong className="text-white">
-              quem já estiver numa trilha gratuita continua sem pagar
+              Quem já está numa trilha gratuita não passa a pagar.
             </strong>{' '}
-            — não existe cobrança retroativa.
+            Se você se cadastrou antes desta página mudar, sua adesão está isenta. Não existe
+            cobrança retroativa.
           </p>
         </motion.div>
 
-        {/* As trilhas */}
-        <div className="grid md:grid-cols-3 gap-5 max-w-6xl mx-auto items-stretch">
-          {trilhas.map((t, i) => {
-            const s = estilos[t.cor]
-            return (
-              <motion.div
-                key={t.nome}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className={`relative bg-dark-card border rounded-2xl p-6 flex flex-col ${s.card}`}
-              >
-                {t.destaque && (
-                  <span className="absolute -top-3 left-6 px-3 py-1 rounded-full bg-neon-green text-black text-xs font-bold uppercase tracking-wide">
-                    {t.destaque}
-                  </span>
-                )}
-
-                <h3 className="font-bold text-white text-lg mb-2 mt-2">{t.nome}</h3>
-                <div className="flex items-baseline gap-2 flex-wrap mb-1">
-                  <span className={`text-3xl font-black ${s.preco}`}>{t.preco}</span>
-                  {t.precoNota && <span className="text-gray-500 text-sm">{t.precoNota}</span>}
-                </div>
-                <p className="text-gray-400 text-sm mb-6 leading-relaxed">{t.paraQuem}</p>
-
-                <ul className="space-y-2.5 mb-6">
-                  {t.itens.map((item) => (
-                    <li
-                      key={item.texto}
-                      className={`flex items-start gap-2.5 text-sm ${
-                        item.tem ? 'text-gray-300' : 'text-gray-600 line-through decoration-gray-700'
-                      }`}
-                    >
-                      {item.tem ? (
-                        <Check className={`w-4 h-4 shrink-0 mt-0.5 ${s.check}`} />
-                      ) : (
-                        <Minus className="w-4 h-4 shrink-0 mt-0.5 text-gray-700" />
-                      )}
-                      {item.texto}
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="rounded-xl bg-dark/60 border border-dark-border p-4 mb-6">
-                  <p className="flex items-start gap-2.5 text-sm text-gray-300">
-                    <Clock className={`w-4 h-4 shrink-0 mt-0.5 ${s.icone}`} />
-                    <span>
-                      <strong className="text-white">Compromisso:</strong> {t.compromisso}
-                    </span>
-                  </p>
-                  {t.compromissoNota && (
-                    <p className="text-xs text-gray-500 mt-3 leading-relaxed">
-                      {t.compromissoNota}
-                    </p>
-                  )}
-                </div>
-
-                <Link
-                  href="#inscricao"
-                  className={`mt-auto w-full inline-flex items-center justify-center px-5 py-3.5 rounded-lg font-bold text-sm transition-all ${s.cta}`}
+        {/* A decisão: olhar ou entrar */}
+        <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto items-stretch">
+          {portas.map((p, i) => (
+            <motion.div
+              key={p.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className={`relative bg-dark-card border rounded-2xl p-6 sm:p-7 flex flex-col ${
+                p.destaque ? 'border-neon-green/35 shadow-neon-green' : 'border-dark-border'
+              }`}
+            >
+              <h3 className="font-bold text-white text-lg mb-3 mt-1">{p.nome}</h3>
+              <div className="flex items-baseline gap-2 flex-wrap mb-1">
+                <span
+                  className={`text-4xl font-black ${
+                    p.destaque ? 'text-neon-green' : 'text-gray-200'
+                  }`}
                 >
-                  {t.cta}
-                </Link>
-              </motion.div>
-            )
-          })}
+                  {p.preco}
+                </span>
+                <span className="text-gray-500 text-sm">{p.precoNota}</span>
+              </div>
+              <p className="text-gray-400 text-sm mb-6 leading-relaxed">{p.paraQuem}</p>
+
+              <ul className="space-y-2.5 mb-6">
+                {p.itens.map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm text-gray-300">
+                    <Check
+                      className={`w-4 h-4 shrink-0 mt-0.5 ${
+                        p.destaque ? 'text-neon-green' : 'text-tech-blue'
+                      }`}
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <p className="text-xs text-gray-500 leading-relaxed mb-6 mt-auto">{p.rodape}</p>
+
+              <Link
+                href={p.id === 'entrar' ? hrefAdesao : '/#inscricao'}
+                className={`w-full inline-flex items-center justify-center px-5 py-3.5 rounded-lg font-bold text-sm transition-all ${
+                  p.destaque
+                    ? 'bg-neon-green text-black hover:bg-neon-green/90 hover:shadow-neon-green-lg'
+                    : 'border border-dark-border text-gray-200 hover:border-neon-green/40 hover:text-white'
+                }`}
+              >
+                {p.cta}
+              </Link>
+            </motion.div>
+          ))}
         </div>
 
-        {/* Regra dos encontros */}
+        {/* E depois dos 30 dias — subordinado às portas, não um terceiro cartão */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.5 }}
+          className="max-w-4xl mx-auto mt-6 rounded-2xl border border-dark-border bg-dark-secondary/40 p-6 sm:p-7"
+        >
+          <p className="text-sm text-gray-400 mb-5 leading-relaxed">
+            <strong className="text-white">E depois dos 30 dias?</strong> Você escolhe como
+            continuar. Nos dois casos mantém as ferramentas, as turmas por nível e o presencial de
+            sábado.
+          </p>
+
+          <div className="grid sm:grid-cols-2 gap-5">
+            {trilhas.map((t) => (
+              <div key={t.id}>
+                <div className="flex items-baseline gap-2 flex-wrap mb-1">
+                  <span className="text-white font-bold text-sm">{t.nome}</span>
+                  {t.precoAncora && (
+                    <span className="text-gray-600 text-xs line-through">{t.precoAncora}</span>
+                  )}
+                  <span className="text-neon-green font-black">{t.preco}</span>
+                </div>
+                <p className="text-gray-200 text-sm font-semibold mb-1.5">{t.custoReal}</p>
+                <p className="text-gray-500 text-xs leading-relaxed">{t.descricao}</p>
+              </div>
+            ))}
+          </div>
+
+          <Link
+            href="/planos/"
+            className="inline-flex items-center gap-1.5 mt-6 text-sm font-semibold text-neon-green hover:gap-2.5 transition-all"
+          >
+            Ver os planos em detalhe
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </motion.div>
+
+        {/* A objeção, respondida de frente */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="max-w-3xl mx-auto mt-10 rounded-2xl border border-dark-border bg-dark-card/60 px-6 py-5"
+        >
+          <p className="text-white font-bold text-sm mb-2">
+            “Por que R$ {PRECO_ADESAO} se o encontro de segunda é de graça?”
+          </p>
+          <p className="text-sm text-gray-400 leading-relaxed">
+            O encontro de segunda continua de graça — pra você, pra quem chegar hoje e pra quem
+            nunca vai pagar nada. Os R$ {PRECO_ADESAO} pagam duas horas da agenda de uma pessoa
+            sentada com você montando seu plano, mais a sua conta na plataforma. É isso, e só isso.
+          </p>
+        </motion.div>
+
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="max-w-3xl mx-auto text-center text-sm text-gray-500 mt-10 leading-relaxed"
+          className="max-w-3xl mx-auto text-center text-sm text-gray-500 mt-8 leading-relaxed"
         >
-          <strong className="text-gray-300">E se eu só quiser conhecer?</strong> Aparecer num
-          encontro para ver como é continua livre para qualquer pessoa, sem cadastro e sem pagar.
-          As trilhas existem para quem passa a participar com regularidade.
+          <strong className="text-gray-300">Não quer nada disso?</strong> Aparecer num encontro pra
+          ver como é continua livre pra qualquer pessoa, sem cadastro e sem pagar.
         </motion.p>
       </div>
     </section>
