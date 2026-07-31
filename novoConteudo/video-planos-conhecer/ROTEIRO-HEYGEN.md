@@ -85,6 +85,42 @@ cenas fecha perto de 2:45.
 
 ---
 
+## 3b. Pronto pra colar no HeyGen (pronúncia já aplicada)
+
+**Qual campo usar:** no editor normal do HeyGen não existe prompt — existe uma **caixa de
+script** por cena, e o que vai nela é a fala literal. É esta versão aqui, com a grafia fonética
+já embutida. O prompt da seção 2 só serve no fluxo "Create with AI", que **não é o recomendado**
+(o gerador reescreve com vocabulário de lançamento e obriga a revisar tudo de novo).
+
+**Cena 1**
+
+> Se você trabalha com tecnologia, lê inglês sem dificuldade, mas trava na hora de falar — esse vídeo é pra você. Em três minutos eu mostro o que tem dentro da plataforma do Ínglish Tók Táim. E você pode testar tudo por trinta dias, sem cartão.
+
+**Cena 2**
+
+> A primeira coisa que você faz aqui não é uma aula. É um diagnóstico. O Fluente Lével mede o seu nível e mostra quais palavras faltam pro inglês que você precisa usar no trabalho: a reunião, a déili, a entrevista. O resultado não é uma nota — é um plano de estudos, com o que estudar primeiro.
+
+**Cena 3**
+
+> A partir daí, as dez ferramentas ficam abertas. Revisão inteligente de vocabulário, que traz de volta as palavras que você errou. Séries com legenda, no seu nível. Audiobook, rádio e notícias. Diário falado e escrito. E simulações com inteligência artificial, pra você treinar a conversa que vai ter de verdade. Nada bloqueado, nada de versão reduzida.
+
+**Cena 4**
+
+> E não é só software. Você marca trinta minutos comigo, individual, pra passear pela plataforma e tirar as suas dúvidas. Os vídeos de demonstração ficam disponíveis pra assistir na hora que você quiser.
+
+**Cena 5**
+
+> No dia trinta e um, as ferramentas fecham. Mas o seu diagnóstico e o seu plano continuam visíveis — o que você descobriu sobre o seu inglês é seu. E os encontros de conversação continuam livres, como sempre foram: online toda segunda, oito da noite. E presencial todo sábado, dez da manhã, em Curitiba.
+
+**Cena 6**
+
+> Trinta dias, plataforma completa, sem cartão de crédito. O link do cadastro está logo abaixo. Te vejo no próximo encontro.
+
+Configuração ao lado do script: voz **Portuguese (Brazil)** masculina, velocidade **0,95×**,
+legendas ligadas, 16:9.
+
+---
+
 ## 4. Pronúncia — o erro que a TTS vai cometer
 
 A voz em português vai tropeçar nos nomes em inglês. Escreva **foneticamente** no campo de
