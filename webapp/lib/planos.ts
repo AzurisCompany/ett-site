@@ -113,6 +113,94 @@ export const trilhas: Trilha[] = [
   },
 ]
 
+export type CartaoHome = {
+  id: string
+  /** Tag no topo do cartão: separa a entrada do que vem depois. */
+  etiqueta?: string
+  nome: string
+  preco: string
+  /** Preço riscado ao lado do R$ 0. */
+  precoAncora?: string
+  precoNota?: string
+  /** O preço na outra moeda, em destaque (só a Aceleração usa). */
+  custoReal?: string
+  paraQuem: string
+  itens: string[]
+  rodape: string
+  cta: string
+  href: string
+  destaque?: boolean
+}
+
+/**
+ * As 4 opções como cartões cheios, na ordem do funil. É o "box de escolha" da
+ * home: entrada (conhecer / entrar) e o que vem depois dos 30 dias
+ * (Aceleração / Livre).
+ */
+export const cartoesHome: CartaoHome[] = [
+  {
+    id: 'conhecer',
+    etiqueta: 'Comece por aqui',
+    nome: portas[0].nome,
+    preco: portas[0].preco,
+    precoNota: portas[0].precoNota,
+    paraQuem: portas[0].paraQuem,
+    itens: portas[0].itens,
+    rodape: portas[0].rodape,
+    cta: portas[0].cta,
+    href: '/#inscricao',
+  },
+  {
+    id: 'entrar',
+    etiqueta: 'Comece por aqui',
+    nome: portas[1].nome,
+    preco: portas[1].preco,
+    precoNota: portas[1].precoNota,
+    paraQuem: portas[1].paraQuem,
+    itens: portas[1].itens,
+    rodape: portas[1].rodape,
+    cta: portas[1].cta,
+    href: CHECKOUT_ADESAO ?? '/#inscricao',
+    destaque: true,
+  },
+  {
+    id: 'aceleracao',
+    etiqueta: 'A partir do dia 31',
+    nome: 'Trilha de Aceleração',
+    preco: 'R$ 0',
+    precoAncora: `R$ ${PRECO_MENSAL}/mês`,
+    custoReal: 'Custa 1 hora por dia.',
+    paraQuem: 'Pra quem topa manter a rotina e não quer pagar mensalidade.',
+    itens: [
+      'ETT Player completo — as 10 ferramentas',
+      'Plano personalizado e acompanhamento',
+      'Encontros, turmas por nível e o presencial de sábado',
+      'Um prêmio a cada mês de meta batida',
+    ],
+    rodape: `${META_DIAS} dias válidos por mês, medidos no próprio Player. Se parar, sua bolsa entra em pausa — sem multa e sem cobrança retroativa.`,
+    cta: 'Como funciona a meta',
+    href: '/planos/',
+  },
+  {
+    id: 'livre',
+    etiqueta: 'A partir do dia 31',
+    nome: 'Trilha Livre',
+    preco: `R$ ${PRECO_MENSAL}`,
+    precoNota: 'por mês',
+    custoReal: 'Sem rotina obrigatória.',
+    paraQuem: 'Pra quem quer tudo no próprio ritmo, sem meta nenhuma.',
+    itens: [
+      'ETT Player completo — as 10 ferramentas',
+      'Plano personalizado e acompanhamento',
+      'Encontros, turmas por nível e o presencial de sábado',
+      `Anual por R$ ${PRECO_ANUAL} — dois meses de desconto`,
+    ],
+    rodape: 'Ninguém cobra rotina de você. Cancela quando quiser, direto no checkout.',
+    cta: 'Assinar a Trilha Livre',
+    href: CHECKOUT_ASSINATURA ?? '/#inscricao',
+  },
+]
+
 /**
  * Prêmios publicados.
  *

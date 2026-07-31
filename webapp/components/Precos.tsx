@@ -3,15 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Check, Wallet, ShieldCheck, ArrowRight } from 'lucide-react'
-import {
-  portas,
-  trilhas,
-  CHECKOUT_ADESAO,
-  PRECO_ADESAO,
-} from '@/lib/planos'
-
-/** Enquanto o link do gateway não existe, o botão leva ao formulário. */
-const hrefAdesao = CHECKOUT_ADESAO ?? '/#inscricao'
+import { cartoesHome, PRECO_ADESAO } from '@/lib/planos'
 
 export default function Precos() {
   return (
@@ -58,38 +50,58 @@ export default function Precos() {
           </p>
         </motion.div>
 
-        {/* A decisão: olhar ou entrar */}
-        <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto items-stretch">
-          {portas.map((p, i) => (
+        {/* Box de escolha: as 4 opções, na ordem do funil */}
+        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-5 max-w-7xl mx-auto items-stretch">
+          {cartoesHome.map((c, i) => (
             <motion.div
-              key={p.id}
+              key={c.id}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className={`relative bg-dark-card border rounded-2xl p-6 sm:p-7 flex flex-col ${
-                p.destaque ? 'border-neon-green/35 shadow-neon-green' : 'border-dark-border'
+              transition={{ duration: 0.5, delay: i * 0.06 }}
+              className={`relative bg-dark-card border rounded-2xl p-6 flex flex-col ${
+                c.destaque ? 'border-neon-green/35 shadow-neon-green' : 'border-dark-border'
               }`}
             >
-              <h3 className="font-bold text-white text-lg mb-3 mt-1">{p.nome}</h3>
-              <div className="flex items-baseline gap-2 flex-wrap mb-1">
+              {c.etiqueta && (
                 <span
-                  className={`text-4xl font-black ${
-                    p.destaque ? 'text-neon-green' : 'text-gray-200'
+                  className={`absolute -top-2.5 left-5 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${
+                    c.destaque
+                      ? 'bg-neon-green text-black'
+                      : 'bg-dark-secondary text-gray-400 border border-dark-border'
                   }`}
                 >
-                  {p.preco}
+                  {c.etiqueta}
                 </span>
-                <span className="text-gray-500 text-sm">{p.precoNota}</span>
-              </div>
-              <p className="text-gray-400 text-sm mb-6 leading-relaxed">{p.paraQuem}</p>
+              )}
 
-              <ul className="space-y-2.5 mb-6">
-                {p.itens.map((item) => (
+              <h3 className="font-bold text-white text-lg mb-3 mt-2">{c.nome}</h3>
+
+              <div className="flex items-baseline gap-2 flex-wrap mb-1">
+                {c.precoAncora && (
+                  <span className="text-gray-600 text-sm line-through">{c.precoAncora}</span>
+                )}
+                <span
+                  className={`text-3xl font-black ${
+                    c.destaque ? 'text-neon-green' : 'text-gray-100'
+                  }`}
+                >
+                  {c.preco}
+                </span>
+                {c.precoNota && <span className="text-gray-500 text-sm">{c.precoNota}</span>}
+              </div>
+
+              {c.custoReal && (
+                <p className="text-white text-sm font-semibold mb-2">{c.custoReal}</p>
+              )}
+              <p className="text-gray-400 text-sm mb-5 leading-relaxed">{c.paraQuem}</p>
+
+              <ul className="space-y-2.5 mb-5">
+                {c.itens.map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-sm text-gray-300">
                     <Check
                       className={`w-4 h-4 shrink-0 mt-0.5 ${
-                        p.destaque ? 'text-neon-green' : 'text-tech-blue'
+                        c.destaque ? 'text-neon-green' : 'text-tech-blue'
                       }`}
                     />
                     {item}
@@ -97,60 +109,21 @@ export default function Precos() {
                 ))}
               </ul>
 
-              <p className="text-xs text-gray-500 leading-relaxed mb-6 mt-auto">{p.rodape}</p>
+              <p className="text-xs text-gray-500 leading-relaxed mb-6 mt-auto">{c.rodape}</p>
 
               <Link
-                href={p.id === 'entrar' ? hrefAdesao : '/#inscricao'}
+                href={c.href}
                 className={`w-full inline-flex items-center justify-center px-5 py-3.5 rounded-lg font-bold text-sm transition-all ${
-                  p.destaque
+                  c.destaque
                     ? 'bg-neon-green text-black hover:bg-neon-green/90 hover:shadow-neon-green-lg'
                     : 'border border-dark-border text-gray-200 hover:border-neon-green/40 hover:text-white'
                 }`}
               >
-                {p.cta}
+                {c.cta}
               </Link>
             </motion.div>
           ))}
         </div>
-
-        {/* E depois dos 30 dias — subordinado às portas, não um terceiro cartão */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 0.5 }}
-          className="max-w-4xl mx-auto mt-6 rounded-2xl border border-dark-border bg-dark-secondary/40 p-6 sm:p-7"
-        >
-          <p className="text-sm text-gray-400 mb-5 leading-relaxed">
-            <strong className="text-white">E depois dos 30 dias?</strong> Você escolhe como
-            continuar. Nos dois casos mantém as ferramentas, as turmas por nível e o presencial de
-            sábado.
-          </p>
-
-          <div className="grid sm:grid-cols-2 gap-5">
-            {trilhas.map((t) => (
-              <div key={t.id}>
-                <div className="flex items-baseline gap-2 flex-wrap mb-1">
-                  <span className="text-white font-bold text-sm">{t.nome}</span>
-                  {t.precoAncora && (
-                    <span className="text-gray-600 text-xs line-through">{t.precoAncora}</span>
-                  )}
-                  <span className="text-neon-green font-black">{t.preco}</span>
-                </div>
-                <p className="text-gray-200 text-sm font-semibold mb-1.5">{t.custoReal}</p>
-                <p className="text-gray-500 text-xs leading-relaxed">{t.descricao}</p>
-              </div>
-            ))}
-          </div>
-
-          <Link
-            href="/planos/"
-            className="inline-flex items-center gap-1.5 mt-6 text-sm font-semibold text-neon-green hover:gap-2.5 transition-all"
-          >
-            Ver os planos em detalhe
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </motion.div>
 
         {/* A objeção, respondida de frente */}
         <motion.div
@@ -170,16 +143,25 @@ export default function Precos() {
           </p>
         </motion.div>
 
-        <motion.p
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="max-w-3xl mx-auto text-center text-sm text-gray-500 mt-8 leading-relaxed"
+          className="text-center mt-8"
         >
-          <strong className="text-gray-300">Não quer nada disso?</strong> Aparecer num encontro pra
-          ver como é continua livre pra qualquer pessoa, sem cadastro e sem pagar.
-        </motion.p>
+          <Link
+            href="/planos/"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-neon-green hover:gap-2.5 transition-all"
+          >
+            Ver os planos em detalhe
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+          <p className="max-w-3xl mx-auto text-sm text-gray-500 mt-6 leading-relaxed">
+            <strong className="text-gray-300">Não quer nada disso?</strong> Aparecer num encontro
+            pra ver como é continua livre pra qualquer pessoa, sem cadastro e sem pagar.
+          </p>
+        </motion.div>
       </div>
     </section>
   )
