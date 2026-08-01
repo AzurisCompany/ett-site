@@ -8,21 +8,19 @@
  */
 
 /**
- * URLs do checkout.
+ * URLs do checkout — gateway próprio, no ar desde 01/08/2026.
  *
- * ⚠️ É AQUI que se troca — mais nada precisa mudar.
+ * ⚠️ É AQUI que se troca se o gateway mudar — mais nada precisa mudar.
  *
- * `CHECKOUT_ADESAO` já é o gateway real (PIX ou cartão em até 3x), funcionando
- * de ponta a ponta.
+ * Adesão: cobrança única, PIX ou cartão em até 3x.
+ * Assinatura: recorrente, mensal ou anual.
  *
- * `CHECKOUT_DEDICACAO` **ainda aponta pra prévia interna** de propósito: a
- * página `https://azuris.com.br/ett/assinatura` abre com os preços certos, mas
- * o botão devolve 500 até rodar a migração de produção que cria a coluna
- * `assinaturas.produto_slug`. Assim que a migração rodar, trocar por essa URL e
- * apagar `app/planos/checkout/`.
+ * As prévias internas de checkout (`app/planos/checkout/`) foram apagadas — não
+ * recriar. Se um dia o gateway cair, o certo é tirar o botão do ar, não simular
+ * um checkout.
  */
 export const CHECKOUT_ADESAO = 'https://azuris.com.br/ett/adesao'
-export const CHECKOUT_DEDICACAO = '/planos/checkout/dedicacao/'
+export const CHECKOUT_DEDICACAO = 'https://azuris.com.br/ett/assinatura'
 
 export const PRECO_ADESAO = 67
 export const PRECO_MENSAL = 37
