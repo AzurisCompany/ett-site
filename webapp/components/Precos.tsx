@@ -126,31 +126,12 @@ export default function Precos() {
           ))}
         </div>
 
-        {/* A objeção, respondida de frente */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="max-w-3xl mx-auto mt-10 rounded-2xl border border-dark-border bg-dark-card/60 px-6 py-5"
-        >
-          <p className="text-white font-bold text-sm mb-2">
-            “Por que R$ {PRECO_ADESAO} se o encontro de segunda é de graça?”
-          </p>
-          <p className="text-sm text-gray-400 leading-relaxed">
-            O encontro de segunda continua de graça — pra você, pra quem chegar hoje e pra quem
-            nunca vai pagar nada. Os R$ {PRECO_ADESAO} pagam duas horas da agenda de uma pessoa
-            sentada com você montando seu plano, o seu material didático e a sua conta na
-            plataforma. É isso, e só isso.
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mt-8"
+          className="text-center mt-10"
         >
           <p className="max-w-3xl mx-auto text-sm text-gray-500 leading-relaxed">
             <strong className="text-gray-300">Não quer nada disso?</strong> Aparecer num encontro
