@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Check, Wallet, ShieldCheck, ArrowRight } from 'lucide-react'
+import { Check, Wallet, ShieldCheck } from 'lucide-react'
 import { cartoesHome, PRECO_ADESAO } from '@/lib/planos'
 
 export default function Precos() {
@@ -152,14 +152,7 @@ export default function Precos() {
           transition={{ duration: 0.5 }}
           className="text-center mt-8"
         >
-          <Link
-            href="/planos/"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-neon-green hover:gap-2.5 transition-all"
-          >
-            Ver os planos em detalhe
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-          <p className="max-w-3xl mx-auto text-sm text-gray-500 mt-6 leading-relaxed">
+          <p className="max-w-3xl mx-auto text-sm text-gray-500 leading-relaxed">
             <strong className="text-gray-300">Não quer nada disso?</strong> Aparecer num encontro
             pra ver como é continua livre pra qualquer pessoa, sem cadastro e sem pagar.
           </p>

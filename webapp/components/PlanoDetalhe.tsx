@@ -12,11 +12,11 @@ export default function PlanoDetalhe({ plano }: { plano: DetalhePlano }) {
       <section className="pt-32 pb-12 bg-dark">
         <div className="container mx-auto px-4 max-w-3xl">
           <Link
-            href="/planos/"
+            href="/#precos"
             className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-neon-green transition-colors mb-6"
           >
             <ArrowLeft className="w-4 h-4" />
-            Todos os planos
+            Todas as opções
           </Link>
 
           <motion.div
@@ -125,10 +125,10 @@ export default function PlanoDetalhe({ plano }: { plano: DetalhePlano }) {
           <p className="text-gray-500 text-xs leading-relaxed mt-6">{plano.observacao}</p>
 
           <Link
-            href="/planos/"
+            href="/#precos"
             className="inline-block mt-6 text-sm font-semibold text-neon-green hover:underline"
           >
-            Comparar com os outros planos
+            Comparar com as outras opções
           </Link>
         </div>
       </section>

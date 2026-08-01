@@ -92,14 +92,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-    {
-      url: `${BASE_URL}/planos/`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    // Páginas de cada plano. O checkout (`/planos/checkout/*`) fica fora: é
-    // transação, não conteúdo, e está marcado noindex.
+    // Páginas de cada plano. Não existe mais índice em `/planos/` — a
+    // comparação vive na seção `#precos` da home. O checkout
+    // (`/planos/checkout/*`) fica fora: é transação, não conteúdo, e está
+    // marcado noindex.
     ...['conhecer', 'adesao', 'dedicacao', 'aceleracao'].map((slug) => ({
       url: `${BASE_URL}/planos/${slug}/`,
       lastModified: now,
