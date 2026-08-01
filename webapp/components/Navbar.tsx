@@ -54,8 +54,10 @@ function buildLinks(locale: Locale): NavLink[] {
   // #metodologia e #como-funciona — esse conteúdo vive em /detalhes/.
   return [
     { href: '/agenda', label: m.agenda },
+    { href: '/conversacao/', label: m.conversation },
     { href: '/#ferramentas', label: m.tools },
     { href: '/detalhes/', label: m.program },
+    { href: '/ff/', label: m.formulafluente },
     { href: '/imersoes', label: m.immersions },
     { href: '/blog', label: m.blog },
   ]
@@ -111,7 +113,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden xl:flex items-center gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -179,7 +181,7 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden text-gray-300 hover:text-white transition-colors"
+            className="xl:hidden text-gray-300 hover:text-white transition-colors"
             aria-label="Menu"
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -189,7 +191,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-dark-secondary border-t border-dark-border px-4 py-4 flex flex-col gap-4">
+        <div className="xl:hidden bg-dark-secondary border-t border-dark-border px-4 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.href}

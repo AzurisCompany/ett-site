@@ -41,6 +41,7 @@ export interface NavMessages {
   /** Usados só no menu pt-BR da home simplificada. */
   pricing: string
   program: string
+  conversation: string
 }
 
 export interface FooterMessages {
@@ -69,6 +70,7 @@ export const nav: Record<Locale, NavMessages> = {
     language: 'Idioma',
     pricing: 'Preços',
     program: 'O programa',
+    conversation: 'Conversação',
   },
   en: {
     about: 'About',
@@ -84,6 +86,7 @@ export const nav: Record<Locale, NavMessages> = {
     language: 'Language',
     pricing: 'Pricing',
     program: 'The program',
+    conversation: 'Conversation',
   },
   es: {
     about: 'Sobre',
@@ -99,6 +102,7 @@ export const nav: Record<Locale, NavMessages> = {
     language: 'Idioma',
     pricing: 'Precios',
     program: 'El programa',
+    conversation: 'Conversación',
   },
 }
 

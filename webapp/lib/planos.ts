@@ -10,19 +10,23 @@
 /**
  * URLs do checkout.
  *
- * ⚠️ É AQUI que se troca quando o gateway estiver ligado — mais nada precisa
- * mudar. Hoje apontam pras prévias internas (`app/planos/checkout/`), que
- * mostram o resumo do pedido, deixam explícito que o pagamento online ainda não
- * abriu e mandam concluir pelo WhatsApp.
+ * ⚠️ É AQUI que se troca — mais nada precisa mudar.
  *
- * Quando as URLs reais entrarem, **apagar `app/planos/checkout/`**.
+ * `CHECKOUT_ADESAO` já é o gateway real (PIX ou cartão em até 3x), funcionando
+ * de ponta a ponta.
+ *
+ * `CHECKOUT_DEDICACAO` **ainda aponta pra prévia interna** de propósito: a
+ * página `https://azuris.com.br/ett/assinatura` abre com os preços certos, mas
+ * o botão devolve 500 até rodar a migração de produção que cria a coluna
+ * `assinaturas.produto_slug`. Assim que a migração rodar, trocar por essa URL e
+ * apagar `app/planos/checkout/`.
  */
-export const CHECKOUT_ADESAO = '/planos/checkout/adesao/'
+export const CHECKOUT_ADESAO = 'https://azuris.com.br/ett/adesao'
 export const CHECKOUT_DEDICACAO = '/planos/checkout/dedicacao/'
 
-export const PRECO_ADESAO = 70
-export const PRECO_MENSAL = 39
-export const PRECO_ANUAL = 390
+export const PRECO_ADESAO = 67
+export const PRECO_MENSAL = 37
+export const PRECO_ANUAL = 370
 /** Dias válidos por mês que revalidam a bolsa da Aceleração. */
 export const META_DIAS = 20
 /** Preço de venda da apostila — é a âncora que dá tamanho ao prêmio. */
@@ -298,7 +302,7 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
       },
     ],
     inclui: portas[1].itens,
-    observacao: `Cobrança única — não vira mensalidade. Compra pela internet tem 7 dias de arrependimento garantidos por lei. Nota fiscal emitida pela Azuris.`,
+    observacao: `Cobrança única — não vira mensalidade. PIX ou cartão em até 3x. Compra pela internet tem 7 dias de arrependimento garantidos por lei. Nota fiscal emitida pela Azuris.`,
     ctaLabel: `Fazer minha adesão — R$ ${PRECO_ADESAO}`,
     ctaHref: CHECKOUT_ADESAO,
   },
