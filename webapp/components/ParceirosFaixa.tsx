@@ -17,7 +17,9 @@ const logos = [
 
 export default function ParceirosFaixa() {
   return (
-    <section className="bg-dark border-y border-dark-border py-12">
+    // O id existe porque o rodapé aponta 4 links pra `/#parceiros`. Sem ele os
+    // links não tinham onde ancorar e não faziam nada.
+    <section id="parceiros" className="bg-dark border-y border-dark-border py-12">
       <div className="container mx-auto px-4">
         <p className="text-center text-xs uppercase tracking-widest text-gray-600 mb-8">
           Casas que recebem os encontros e parceiros do programa
