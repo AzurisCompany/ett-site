@@ -26,9 +26,13 @@ execução e as 4 decisões do Alessandro).
 | `43334cf` | Plano de revisão de marketing (documento) |
 | `c0be934` | **Revisão de copy**: elimina contradições de preço, unifica o presencial, captura mais cedo |
 | `2514263` | ETT Player volta como CTA secundário |
+| `6c7a727` | Handoff desta sessão + atualiza `CLAUDE.md` |
+| `f03b3a4` | **Conserta as 5 âncoras mortas do rodapé** |
+| `af633e3` | Marca as âncoras como corrigidas na doc |
 
-⚠️ **Pull no Hostinger pendente no fim da sessão. São 7 commits acumulados; um pull traz tudo** —
-e é ele que coloca a cobrança e os preços novos no ar. Até lá a produção mostra R$ 70/R$ 39.
+⚠️ **Pull no Hostinger pendente no fim da sessão. São 10 commits acumulados; um pull traz tudo** —
+e é ele que coloca a cobrança e os preços novos no ar. Até lá a produção mostra R$ 70/R$ 39, a
+`/planos/` que foi removida, o menu antigo e as contradições de copy.
 
 ---
 
@@ -209,7 +213,7 @@ primeiro (que regenera) e só então o `tsc`.
 
 ## Externas (não são deste repo)
 
-1. **Pull no Hostinger** — 7 commits acumulados. Sem isso nada acima está em produção.
+1. **Pull no Hostinger** — 10 commits acumulados. Sem isso nada acima está em produção.
 2. **Apagar os 4 leads de teste na conta RD** (`teste-claude-*@azuris.com.br`), da sessão de 31/07.
 3. **Conferir onde caem os e-mails capturados pelo próprio ETT Player.** A tela de entrada é um
    portão de e-mail com aviso de "novidades por e-mail + convite do WhatsApp" — se não cai na RD, a
