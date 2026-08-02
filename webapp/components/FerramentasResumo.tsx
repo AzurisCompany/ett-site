@@ -3,9 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowUpRight, MessageSquare, Layers, Film, Headphones } from 'lucide-react'
-
-const PLAYER_URL = 'https://ett-player.vercel.app/'
+import { ArrowRight, MessageSquare, Layers, Film, Headphones } from 'lucide-react'
 
 const modulos = [
   { icon: MessageSquare, label: 'Treino de fala com IA' },
@@ -38,8 +36,8 @@ export default function FerramentasResumo() {
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-6">
               O <strong className="text-white">ETT Player</strong> reúne o material de apoio dos
-              participantes num app só. Não é promessa de roadmap — está funcionando, você pode
-              abrir agora e ver.
+              participantes num app só. Não é promessa de roadmap — está no ar e em uso. É onde
+              seu diagnóstico, seu plano de estudo e sua evolução ficam registrados.
             </p>
 
             <ul className="grid sm:grid-cols-2 gap-3 mb-8">
@@ -54,15 +52,13 @@ export default function FerramentasResumo() {
             </ul>
 
             <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href={PLAYER_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/planos/conhecer/"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-neon-green text-black font-bold text-sm hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg hover:-translate-y-0.5"
               >
-                Abrir o ETT Player
-                <ArrowUpRight className="w-4 h-4" />
-              </a>
+                Ver por dentro — teste de 30 dias
+                <ArrowRight className="w-4 h-4" />
+              </Link>
               <Link
                 href="/detalhes/#ferramentas"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-lg border border-dark-border text-gray-300 font-semibold text-sm hover:border-neon-green/40 hover:text-white transition-all"
@@ -72,25 +68,22 @@ export default function FerramentasResumo() {
             </div>
           </motion.div>
 
-          {/* Screenshot */}
-          <motion.a
-            href={PLAYER_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* Screenshot — imagem, não link: o acesso ao Player é do programa.
+              Ver PLANO-REVISAO-MARKETING-2026-08-01.md, decisão #3. */}
+          <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="group block rounded-2xl border border-dark-border bg-dark-card overflow-hidden shadow-2xl hover:border-neon-green/40 transition-all"
+            className="rounded-2xl border border-dark-border bg-dark-card overflow-hidden shadow-2xl"
           >
             <div className="flex items-center gap-2 px-4 py-3 bg-dark border-b border-dark-border">
               <span className="w-3 h-3 rounded-full bg-red-500/70" />
               <span className="w-3 h-3 rounded-full bg-yellow-500/70" />
               <span className="w-3 h-3 rounded-full bg-green-500/70" />
               <span className="ml-3 flex-1 truncate text-xs text-gray-500 font-mono">
-                ett-player.vercel.app
+                ETT Player
               </span>
-              <ArrowUpRight className="w-4 h-4 text-gray-500 group-hover:text-neon-green transition-colors" />
             </div>
             <Image
               src="/images/ett-player.webp"
@@ -99,7 +92,7 @@ export default function FerramentasResumo() {
               height={1000}
               className="w-full h-auto"
             />
-          </motion.a>
+          </motion.div>
         </div>
       </div>
     </section>

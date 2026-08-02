@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import HeroSimples from '@/components/HeroSimples'
 import ProximosEncontros from '@/components/ProximosEncontros'
+import CapturaRapida from '@/components/CapturaRapida'
 import ComoE from '@/components/ComoE'
 import FerramentasResumo from '@/components/FerramentasResumo'
 import ParceirosFaixa from '@/components/ParceirosFaixa'
@@ -32,6 +33,7 @@ export default function Home() {
       <Navbar />
       <HeroSimples />
       <ProximosEncontros />
+      <CapturaRapida />
       <ComoE />
       <FerramentasResumo />
       <ParceirosFaixa />

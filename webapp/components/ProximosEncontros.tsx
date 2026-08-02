@@ -7,11 +7,13 @@ import { Video, MapPin, ArrowUpRight, CalendarDays } from 'lucide-react'
 
 const SPEAK_URL = 'https://ett-speak.vercel.app/'
 
-const locais = [
+/* O presencial semanal é o IEP Talks, no IEP. UTFPR, Hard Rock e Habitat são
+   casas parceiras que recebem edições especiais — não é rodízio semanal.
+   Ver PLANO-REVISAO-MARKETING-2026-08-01.md, decisão #2. */
+const detalhesPresencial = [
+  'Sábados, das 10h às 12h',
   'IEP — Instituto de Engenharia do Paraná',
-  'UTFPR',
-  'Hard Rock Cafe',
-  'Habitat (Sistema FIEP)',
+  'Entrada franca, é só chegar',
 ]
 
 /**
@@ -163,16 +165,16 @@ export default function ProximosEncontros() {
               </div>
               <div>
                 <h3 className="font-bold text-white text-lg leading-tight">Presencial</h3>
-                <p className="text-sm text-tech-blue">Curitiba, toda semana</p>
+                <p className="text-sm text-tech-blue">IEP Talks · sábados, 10h</p>
               </div>
             </div>
 
             <p className="text-gray-400 text-sm leading-relaxed mb-5">
-              Os encontros presenciais rodam entre quatro casas parceiras da cidade:
+              Todo sábado, no mesmo lugar — sem precisar conferir onde é dessa vez:
             </p>
 
             <ul className="space-y-2 mb-6">
-              {locais.map((l) => (
+              {detalhesPresencial.map((l) => (
                 <li
                   key={l}
                   className="flex items-center gap-2 rounded-xl px-4 py-3 bg-dark/50 border border-dark-border text-sm text-gray-300"

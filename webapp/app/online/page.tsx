@@ -16,13 +16,17 @@ import { agendaEvents } from '@/lib/agenda-events'
 
 const SITE_URL = 'https://englishtalktime.com.br'
 const ORG_ID = `${SITE_URL}/#organization`
-const FORM_URL = 'https://forms.gle/jpK8bR4houvAXTwm9'
+/* Captura oficial é o formulário do próprio site (RD Station), na home.
+   Antes estas landings mandavam pra um Google Form externo — dois caminhos de
+   captura, campos diferentes e tráfego saindo do site. Ver
+   PLANO-REVISAO-MARKETING-2026-08-01.md. */
+const FORM_URL = '/#inscricao'
 
 export const metadata: Metadata = {
   title:
     'Conversação em Inglês Online Grátis — Toda Segunda às 20h | English Talk Time',
   description:
-    'Grupo de conversação em inglês online e gratuito, toda segunda às 20h–21h30 via Google Meet. Treino de fala estruturado para profissionais de tech do Brasil inteiro. Ferramentas de apoio com IA inclusas.',
+    'Grupo de conversação em inglês online e gratuito, toda segunda às 20h–21h30 via Google Meet. Treino de fala estruturado para profissionais de tech do Brasil inteiro. Entrar no encontro não custa nada.',
   keywords: [
     'praticar inglês online',
     'praticar inglês online grátis',
@@ -159,8 +163,6 @@ export default function OnlinePage() {
               <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
                 <a
                   href={FORM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-neon-green text-dark font-bold text-base hover:bg-neon-green/90 transition-all hover:shadow-neon-green"
                 >
                   Receber o link do próximo encontro
@@ -202,7 +204,7 @@ export default function OnlinePage() {
                 Como funciona o <span className="gradient-text">encontro online</span>
               </h2>
               <p className="text-gray-400 text-lg">
-                Sem catraca, sem mensalidade. Você se inscreve, recebe o link, entra na sala
+                Sem catraca e sem cartão. Você se inscreve, recebe o link, entra na sala
                 e participa.
               </p>
             </div>
@@ -211,7 +213,7 @@ export default function OnlinePage() {
                 {
                   n: '1',
                   title: 'Inscrição',
-                  body: 'Preenche o formulário com nome, email e nível. Demora 2 minutos.',
+                  body: 'Preenche o formulário com nome e e-mail. Demora menos de um minuto.',
                 },
                 {
                   n: '2',
@@ -428,8 +430,6 @@ export default function OnlinePage() {
                 </p>
                 <a
                   href={FORM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-neon-green text-dark font-bold text-base hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg"
                 >
                   Quero o link do próximo encontro online

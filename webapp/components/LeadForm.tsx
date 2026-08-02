@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { CheckCircle2, Loader2, MapPin, Calendar, Users } from 'lucide-react'
 
@@ -114,9 +115,9 @@ export default function LeadForm() {
             </h2>
             <p className="text-gray-400 text-lg">
               Deixe seu nome e e-mail. Você recebe o{' '}
-              <strong className="text-gray-200">link do encontro online de segunda</strong>, as{' '}
-              <strong className="text-gray-200">datas dos presenciais em Curitiba</strong> e o
-              acesso às ferramentas do ETT Player.
+              <strong className="text-gray-200">link do encontro online de segunda</strong> e as{' '}
+              <strong className="text-gray-200">datas do IEP Talks em Curitiba</strong>. Só isso —
+              é grátis e você não precisa decidir mais nada agora.
             </p>
 
             {/* Info do encontro */}
@@ -159,19 +160,21 @@ export default function LeadForm() {
                   <h3 className="text-2xl font-bold text-white mb-3">Pronto, você está dentro!</h3>
                   <p className="text-gray-300 leading-relaxed max-w-sm mx-auto">
                     Você vai receber o{' '}
-                    <strong className="text-neon-green">link do encontro de segunda</strong>, as
-                    datas dos presenciais e o acesso às{' '}
-                    <strong className="text-tech-blue">ferramentas do ETT Player</strong>. Confira
-                    seu e-mail.
+                    <strong className="text-neon-green">link do encontro de segunda</strong> e as
+                    datas do IEP Talks. Confira seu e-mail.
                   </p>
-                  <a
-                    href="https://ett-speak.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center mt-6 px-6 py-3 rounded-lg border border-neon-green/40 text-neon-green font-bold text-sm hover:bg-neon-green/10 transition-all"
+                  <p className="text-gray-500 text-sm leading-relaxed max-w-sm mx-auto mt-5 pt-5 border-t border-dark-border">
+                    Quer também as{' '}
+                    <strong className="text-gray-300">ferramentas do ETT Player</strong>, o
+                    material didático e a mentoria individual? Isso é o programa — e dá pra testar
+                    30 dias sem cartão.
+                  </p>
+                  <Link
+                    href="/planos/conhecer/"
+                    className="inline-flex items-center justify-center mt-4 px-6 py-3 rounded-lg border border-neon-green/40 text-neon-green font-bold text-sm hover:bg-neon-green/10 transition-all"
                   >
-                    Já quero ver a sala do encontro ↗
-                  </a>
+                    Ver o teste de 30 dias
+                  </Link>
                 </motion.div>
               ) : (
                 <motion.form

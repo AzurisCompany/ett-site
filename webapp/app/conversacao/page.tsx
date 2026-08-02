@@ -15,7 +15,11 @@ import Footer from '@/components/Footer'
 
 const SITE_URL = 'https://englishtalktime.com.br'
 const ORG_ID = `${SITE_URL}/#organization`
-const FORM_URL = 'https://forms.gle/jpK8bR4houvAXTwm9'
+/* Captura oficial é o formulário do próprio site (RD Station), na home.
+   Antes estas landings mandavam pra um Google Form externo — dois caminhos de
+   captura, campos diferentes e tráfego saindo do site. Ver
+   PLANO-REVISAO-MARKETING-2026-08-01.md. */
+const FORM_URL = '/#inscricao'
 
 export const metadata: Metadata = {
   title:
@@ -193,8 +197,6 @@ export default function ConversacaoPage() {
                 </Link>
                 <a
                   href={FORM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-dark-border text-white font-semibold hover:border-neon-green/50 hover:bg-dark-card transition-all"
                 >
                   Quero participar
@@ -400,7 +402,7 @@ export default function ConversacaoPage() {
                   </div>
                 </div>
                 <p className="text-gray-400 text-sm leading-relaxed mb-3">
-                  Em rotação por 4 venues: IEP, UTFPR, Hard Rock Cafe e Habitat. Networking
+                  O IEP Talks, todo sábado das 10h às 12h no IEP. Networking
                   presencial com a comunidade ETT local, prática real e conversação ao vivo.
                 </p>
                 <span className="inline-flex items-center gap-1.5 text-neon-green text-sm font-medium">
@@ -459,8 +461,6 @@ export default function ConversacaoPage() {
                 </p>
                 <a
                   href={FORM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-neon-green text-dark font-bold text-base hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg"
                 >
                   Quero participar do grupo de conversação

@@ -24,10 +24,14 @@ const passos = [
   },
 ]
 
+/* ⚠️ Estas frases já foram falsas uma vez. Quando os planos foram publicados
+   em 31/07, esta lista ainda dizia "não tem mensalidade" — e o site passou a se
+   contradizer. O que é gratuito é o ENCONTRO; o programa é pago. Ver
+   PLANO-REVISAO-MARKETING-2026-08-01.md antes de mexer. */
 const naoE = [
   'Não é aula: não tem professor na frente explicando gramática',
-  'Não é curso: não tem matrícula, mensalidade nem contrato',
-  'Não tem venda no fim: você entra, conversa e vai embora',
+  'Não é curso: não tem matrícula, turma fechada nem fidelidade',
+  'Não tem venda no encontro: ninguém vai te oferecer nada lá dentro',
   'Não tem prova: ninguém mede seu nível na porta',
 ]
 
@@ -48,7 +52,7 @@ export default function ComoE() {
             Como é um encontro
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Uma hora e meia, três coisas acontecendo.
+            Uma hora e meia no online, duas no presencial — e sempre as mesmas três coisas.
           </p>
         </motion.div>
 
@@ -96,8 +100,10 @@ export default function ComoE() {
           <p className="text-sm text-gray-500 mt-5 pt-5 border-t border-dark-border leading-relaxed">
             O ETT é mantido pela comunidade{' '}
             <strong className="text-gray-300">DSSBR &amp; GUBigData IA</strong> junto com casas e
-            escolas parceiras. Existem programas pagos opcionais (imersões e mentoria de carreira),
-            mas eles são de parceiros e não têm nada a ver com participar dos encontros.
+            escolas parceiras. <strong className="text-gray-300">Aparecer num encontro é grátis e
+            continua sendo.</strong> Quem quer as ferramentas, o material didático e a mentoria
+            individual entre um encontro e outro entra no programa, que é pago — e as imersões e a
+            mentoria de carreira são de parceiros. Nada disso é condição pra sentar na roda.
           </p>
         </motion.div>
       </div>

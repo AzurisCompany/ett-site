@@ -10,7 +10,7 @@ export interface HomeFaq {
 export const homeFaqsCurtas: HomeFaq[] = [
   {
     q: 'Quanto custa para participar?',
-    a: 'Os encontros de conversação, online e presenciais, são gratuitos. As ferramentas do ETT Player também são gratuitas para quem faz o programa de aceleração (presença nos encontros + rotina de 1 hora por dia) e, na Trilha de Dedicação, enquanto estiverem em beta. Quem quiser acesso completo sem compromisso de rotina vai escolher um plano mensal — que ainda está em definição. Hoje, em fase de testes, tudo está liberado.',
+    a: 'Entrar nos encontros de conversação — o online de segunda e o IEP Talks de sábado — é gratuito, sem cadastro e sem cartão. Isso não muda. O que é pago é o programa, para quem quer as ferramentas, o material didático e a mentoria individual entre um encontro e outro: são 30 dias de teste sem cartão, depois uma adesão única de R$ 67 (que já inclui os 30 primeiros dias e duas horas de mentoria individual) e, a partir do dia 31, R$ 37 por mês na Trilha de Dedicação — ou R$ 0 na Trilha de Aceleração, para quem mantém a rotina de 20 dias válidos no mês.',
   },
   {
     q: 'É aula de inglês?',
@@ -30,7 +30,7 @@ export const homeFaqsCurtas: HomeFaq[] = [
   },
   {
     q: 'Onde acontecem os encontros presenciais?',
-    a: 'Em Curitiba, em rodízio entre quatro casas parceiras: IEP (Instituto de Engenharia do Paraná), UTFPR, Hard Rock Cafe e Habitat (Sistema FIEP). As datas e o local de cada semana ficam na agenda.',
+    a: 'Em Curitiba, no IEP (Instituto de Engenharia do Paraná): é o IEP Talks, todo sábado das 10h às 12h. As datas ficam na agenda, junto com qualquer edição especial que apareça em outra casa parceira.',
   },
 ]
 
@@ -41,11 +41,11 @@ export const homeFaqs: HomeFaq[] = [
   },
   {
     q: 'Como faço pra praticar inglês com vocês — online ou em Curitiba?',
-    a: 'Toda segunda às 20h–21h30 tem encontro online via Google Meet, aberto pra quem está em qualquer lugar do Brasil. Os encontros presenciais acontecem semanalmente em Curitiba, em rotação entre 4 locais: IEP, UTFPR, Hard Rock Cafe e Habitat (Sistema FIEP). Veja a agenda atualizada e marque a próxima data.',
+    a: 'Toda segunda às 20h–21h30 tem encontro online via Google Meet, aberto pra quem está em qualquer lugar do Brasil. O presencial é o IEP Talks, todo sábado das 10h às 12h no IEP (Instituto de Engenharia do Paraná), em Curitiba. Veja a agenda atualizada e marque a próxima data.',
   },
   {
     q: 'Preciso pagar pra participar dos encontros de conversação?',
-    a: 'Não. Os encontros (online e presenciais) são gratuitos e abertos à comunidade — basta se inscrever pra receber a agenda e o link. O ETT tem camadas pagas opcionais: imersões intensivas com a Cherry Top (Curitiba, BH, Flórida), mentoria de carreira internacional com a Coders e acesso premium às ferramentas com IA.',
+    a: 'Não. Os encontros (online de segunda e IEP Talks de sábado) são gratuitos e abertos — você nem precisa se cadastrar pra aparecer, e o cadastro serve só pra receber o link e as datas por e-mail. O que é pago é o programa, pra quem quer o que acontece entre um encontro e outro: adesão única de R$ 67 com duas horas de mentoria individual, material didático e os 30 primeiros dias inclusos, e depois R$ 37/mês na Trilha de Dedicação ou R$ 0 na Trilha de Aceleração, mantendo a rotina. Imersões (Cherry Top) e mentoria de carreira internacional (Coders) são programas de parceiros, à parte.',
   },
   {
     q: 'Qual o nível mínimo de inglês pra participar do grupo de conversação?',

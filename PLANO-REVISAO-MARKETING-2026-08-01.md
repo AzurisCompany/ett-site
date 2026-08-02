@@ -156,15 +156,40 @@ produção não muda).
 
 ## Estado da execução
 
-- [ ] P0 — contradições de preço (hero, ComoE, FAQ curta, LeadForm)
-- [ ] P0 — unificar presencial no IEP Talks (FAQ, `/curitiba/`, `/agenda/` metadata)
-- [ ] P0 — corrigir `/online/`
-- [ ] P0 — alinhar `homeFaqs` longa (usada em `/detalhes/`)
-- [ ] P0 — nível, contagem de ferramentas, duração
-- [ ] P1 — tirar CTAs externos do Player (`FerramentasResumo.tsx`)
-- [ ] P1 — rebaixar "Ver a sala do encontro" no hero
-- [ ] P1 — mini-captura depois de `ProximosEncontros`
-- [ ] P1 — alinhar promessa do `LeadForm`
-- [ ] Externo — fechar acesso público do ETT Player
+**P0 e P1 aplicados em 2026-08-01.**
+
+- [x] P0 — contradições de preço (hero, ComoE, FAQ curta, LeadForm)
+- [x] P0 — unificar presencial no IEP Talks (FAQ, `/curitiba/`, `/agenda/`, `/conversacao/`,
+      `layout.tsx`, `HowItWorks.tsx` e o **card da home** em `ProximosEncontros.tsx`)
+- [x] P0 — corrigir `/online/`
+- [x] P0 — alinhar `homeFaqs` longa (usada em `/detalhes/`)
+- [x] P0 — nível (A2 em todo lugar), contagem de ferramentas ("todas" em vez de "as 10"), duração
+- [x] P1 — tirar CTAs externos do Player (`FerramentasResumo.tsx`)
+- [x] P1 — rebaixar "Ver a sala do encontro" no hero
+- [x] P1 — mini-captura depois de `ProximosEncontros` (`components/CapturaRapida.tsx`)
+- [x] P1 — alinhar promessa do `LeadForm`
+- [ ] Externo — **fechar acesso público do ETT Player** (fora deste repo; a copy já não cita o link)
+
+### Achados extras corrigidos na mesma passada
+
+- **Dois caminhos de captura.** `/online/`, `/curitiba/`, `/conversacao/`, o blog e as indicações
+  mandavam pra um **Google Form externo** (`forms.gle/jpK8bR4...`), com campos diferentes dos do
+  formulário do site e tirando o visitante do domínio. Todos passaram a apontar pra `/#inscricao`
+  (RD Station), que é a captura oficial. **Se o Google Form era proposital, reverter é trocar a
+  constante `FORM_URL` de volta nesses arquivos.**
+- **`/curitiba/` anunciava "Sem encontros presenciais confirmados".** A página filtrava
+  `agendaEvents` **no build**, e o IEP Talks é gerado por regra — então a seção ficava vazia
+  enquanto o resto do site dizia "todo sábado". Criado `components/ProximosPresenciais.tsx`, que
+  calcula no navegador via `eventosFuturos()`, igual à agenda e à home.
+
+### Pendente / decisão do Alessandro
+
+- **Landings `/en/` e `/es/`** continuam apontando pro Google Form, com **depoimentos fictícios** e
+  **sem o modelo de cobrança novo**. Ficaram fora desta passada de propósito — são páginas em outro
+  idioma e merecem decisão própria.
+- **Post do blog** `praticar-ingles-em-curitiba-gratis` ainda descreve a rotação por 4 locais. É
+  conteúdo datado (maio); reescrever muda um artigo publicado.
+- **Kit** `/divulgacao/convitesegunda20h/` ainda diz "sem mensalidade" — é o registro de um e-mail
+  já disparado, `noindex`. Reescrever seria reescrever história.
 
 Última atualização: **2026-08-01**.

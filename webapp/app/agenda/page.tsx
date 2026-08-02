@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title:
     'Agenda de Encontros — Grupo de Conversação em Inglês ETT | Online & Curitiba',
   description:
-    'Próximos encontros para treinar a fala em inglês: online toda segunda (20h–21h30) e presenciais em Curitiba (IEP, UTFPR, Hard Rock, Habitat). Conversação guiada com ferramentas de apoio. Participe gratuitamente.',
+    'Próximos encontros para treinar a fala em inglês: online toda segunda (20h–21h30) e o IEP Talks presencial todo sábado (10h–12h) em Curitiba. Conversação guiada, aberta e gratuita.',
   keywords: [
     'agenda grupo de conversação em inglês',
     'encontros para praticar inglês Curitiba',

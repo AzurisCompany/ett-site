@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import ProximosPresenciais from '@/components/ProximosPresenciais'
 import {
   ArrowRight,
   Calendar,
@@ -13,17 +14,20 @@ import {
 } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { agendaEvents } from '@/lib/agenda-events'
 
 const SITE_URL = 'https://englishtalktime.com.br'
 const ORG_ID = `${SITE_URL}/#organization`
-const FORM_URL = 'https://forms.gle/jpK8bR4houvAXTwm9'
+/* Captura oficial é o formulário do próprio site (RD Station), na home.
+   Antes estas landings mandavam pra um Google Form externo — dois caminhos de
+   captura, campos diferentes e tráfego saindo do site. Ver
+   PLANO-REVISAO-MARKETING-2026-08-01.md. */
+const FORM_URL = '/#inscricao'
 
 export const metadata: Metadata = {
   title:
     'Praticar Inglês em Curitiba — Grupo de Conversação Semanal | English Talk Time',
   description:
-    'Onde praticar inglês em Curitiba: grupo de conversação presencial em rotação semanal por IEP, UTFPR, Hard Rock Cafe e Habitat. Treino de fala em inglês com ferramentas de apoio. Grátis, aberto a profissionais de tech.',
+    'Onde praticar inglês em Curitiba: o IEP Talks, grupo de conversação presencial todo sábado das 10h às 12h no Instituto de Engenharia do Paraná. Treino de fala guiado, gratuito e aberto a profissionais de tech.',
   keywords: [
     'praticar inglês em Curitiba',
     'onde treinar inglês Curitiba',
@@ -37,7 +41,7 @@ export const metadata: Metadata = {
     'conversation club Curitiba',
     'english conversation group Curitiba',
     'speaking practice Curitiba',
-    'IEP UTFPR Hard Rock Habitat inglês',
+    'IEP Talks Curitiba inglês',
   ],
   alternates: { canonical: '/curitiba/' },
   openGraph: {
@@ -45,7 +49,7 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     title: 'Praticar Inglês em Curitiba — Grupo de Conversação Semanal',
     description:
-      'Encontros presenciais em rotação por 4 locais de Curitiba: IEP, UTFPR, Hard Rock e Habitat. Treino de fala em inglês gratuito.',
+      'IEP Talks: encontro presencial de conversação todo sábado, 10h–12h, no IEP em Curitiba. Treino de fala em inglês gratuito.',
     url: `${SITE_URL}/curitiba/`,
     images: [
       {
@@ -85,10 +89,6 @@ const venues = [
   },
 ]
 
-const today = new Date().toISOString().slice(0, 10)
-const proximosPresenciais = agendaEvents
-  .filter((e) => e.type === 'presencial' && e.date >= today)
-  .slice(0, 6)
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -110,7 +110,7 @@ const jsonLd = {
       '@id': `${SITE_URL}/curitiba/#local`,
       name: 'English Talk Time — Grupo de Conversação em Inglês em Curitiba',
       description:
-        'Grupo de conversação em inglês em Curitiba com encontros presenciais semanais em rotação por IEP, UTFPR, Hard Rock Cafe e Habitat. Gratuito, para profissionais e estudantes de tech.',
+        'Grupo de conversação em inglês em Curitiba: o IEP Talks acontece todo sábado, das 10h às 12h, no Instituto de Engenharia do Paraná. Gratuito, para profissionais e estudantes de tech.',
       url: `${SITE_URL}/curitiba/`,
       image: `${SITE_URL}/images/ETT-top01.webp`,
       parentOrganization: { '@id': ORG_ID },
@@ -168,17 +168,16 @@ export default function CuritibaPage() {
                 <span className="gradient-text">Grupo de Conversação Semanal</span>
               </h1>
               <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
-                Encontros presenciais <strong className="text-white">grátis</strong>, em rotação
-                por 4 locais da cidade — o{' '}
+                O <strong className="text-white">IEP Talks</strong> acontece{' '}
+                <strong className="text-white">todo sábado, das 10h às 12h</strong>, no Instituto
+                de Engenharia do Paraná — o{' '}
                 <strong className="text-white">conversation club de Curitiba</strong> pra
-                profissionais de tech e estudantes que querem destravar a fala em inglês,
-                com treino guiado e ferramentas de apoio com IA.
+                profissionais de tech e estudantes que querem destravar a fala em inglês.
+                Entrar não custa nada.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
                 <a
                   href={FORM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-neon-green text-dark font-bold text-base hover:bg-neon-green/90 transition-all hover:shadow-neon-green"
                 >
                   Garantir lugar no próximo encontro
@@ -210,63 +209,7 @@ export default function CuritibaPage() {
               </h2>
             </div>
 
-            {proximosPresenciais.length === 0 ? (
-              <p className="text-center text-gray-400 max-w-md mx-auto">
-                Sem encontros presenciais confirmados nos próximos dias.
-                <br />
-                <Link href="/agenda/" className="text-neon-green underline mt-2 inline-block">
-                  Ver agenda completa
-                </Link>
-              </p>
-            ) : (
-              <div className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-3">
-                {proximosPresenciais.map((ev) => {
-                  const dayNum = ev.dateLabel.split(' ')[0]
-                  const monthAbbr = ev.dateLabel.split(' de ')[1].slice(0, 3)
-                  return (
-                    <div
-                      key={ev.date}
-                      className="relative bg-dark-card border border-neon-green/20 rounded-xl p-3.5 card-hover"
-                    >
-                      <div className="flex items-start gap-3">
-                        <div className="shrink-0 w-14 rounded-lg border border-neon-green/30 bg-neon-green/5 text-center py-1.5">
-                          <div className="text-[10px] uppercase tracking-wider font-bold text-neon-green">
-                            {ev.weekday.slice(0, 3).toLowerCase()}
-                          </div>
-                          <div className="text-white font-black text-xl leading-none my-0.5">
-                            {dayNum}
-                          </div>
-                          <div className="text-gray-500 text-[10px] uppercase tracking-wider">
-                            {monthAbbr}
-                          </div>
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-1.5 mb-1">
-                            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-neon-green/10 text-neon-green border border-neon-green/30">
-                              <MapPin className="w-2.5 h-2.5" />
-                              presencial
-                            </span>
-                            <span className="ml-auto inline-flex items-center gap-1 text-xs text-gray-400">
-                              <Clock className="w-3 h-3" />
-                              {ev.time}
-                            </span>
-                          </div>
-                          <h3 className="font-bold text-white text-sm leading-snug mb-1 truncate">
-                            {ev.title}
-                          </h3>
-                          <p className="text-xs text-gray-500 leading-snug truncate">
-                            {ev.location}
-                            {ev.city && (
-                              <span className="text-gray-600"> · {ev.city}</span>
-                            )}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
-            )}
+            <ProximosPresenciais quantidade={4} />
 
             <div className="text-center mt-8">
               <Link
@@ -285,14 +228,15 @@ export default function CuritibaPage() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 max-w-3xl mx-auto">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-tech-blue/30 text-tech-blue bg-tech-blue/5 mb-4">
-                4 Locais · Curitiba
+                Casas parceiras · Curitiba
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
                 Nossos pontos de <span className="gradient-text">encontro</span>
               </h2>
               <p className="text-gray-400 text-lg">
-                A rotação semanal expõe a comunidade a contextos diferentes — acadêmico,
-                universitário, descontraído e corporativo.
+                O encontro semanal é no IEP. As outras casas recebem edições especiais — e
+                cada uma coloca a conversa num contexto diferente: universitário, descontraído
+                e corporativo.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-5 max-w-5xl mx-auto">
@@ -460,8 +404,6 @@ export default function CuritibaPage() {
                 </p>
                 <a
                   href={FORM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-neon-green text-dark font-bold text-base hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg"
                 >
                   Quero participar em Curitiba

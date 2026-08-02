@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://englishtalktime.com.br'),
   title: 'ETT — Grupo de Conversação em Inglês e Treino de Fala | Curitiba & Online',
   description:
-    'Grupo de conversação em inglês com treino de fala guiado e ferramentas de apoio com IA. Encontros semanais online (toda segunda) e presenciais em Curitiba — IEP, UTFPR, Hard Rock e Habitat. Para profissionais de Tecnologia, Dados, IA e BI.',
+    'Grupo de conversação em inglês com treino de fala guiado e ferramentas de apoio com IA. Encontros semanais online (toda segunda, 20h) e presenciais em Curitiba (IEP Talks, sábados 10h). Para profissionais de Tecnologia, Dados, IA e BI.',
   keywords: [
     // intenção: praticar / treinar a fala
     'grupo de conversação em inglês',

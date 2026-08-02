@@ -5,7 +5,8 @@ import Footer from '@/components/Footer'
 import { type BlogPostMeta, getRelatedPosts } from '@/lib/blog-posts'
 
 const SITE_URL = 'https://englishtalktime.com.br'
-const FORM_URL = 'https://forms.gle/jpK8bR4houvAXTwm9'
+/* Captura oficial: formulário do próprio site (RD Station). */
+const FORM_URL = '/#inscricao'
 
 interface BlogLayoutProps {
   post: BlogPostMeta
@@ -100,8 +101,6 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
                     href={FORM_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-neon-green text-dark font-bold text-sm hover:bg-neon-green/90 transition-all"
                   >
                     Quero participar <ArrowRight className="w-4 h-4" />

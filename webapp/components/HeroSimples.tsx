@@ -7,10 +7,12 @@ import { Check, ArrowUpRight } from 'lucide-react'
 
 const SPEAK_URL = 'https://ett-speak.vercel.app/'
 
+/* O encontro é gratuito; o programa (ferramentas, mentoria, material) é pago.
+   Os dois fatos andam sempre juntos — ver PLANO-REVISAO-MARKETING-2026-08-01.md. */
 const reassurances = [
-  'Não é curso e não tem mensalidade',
-  'Online toda segunda + presencial em Curitiba',
-  'Do intermediário travado ao avançado',
+  'Entrar no encontro é grátis — sem cadastro e sem cartão',
+  'Online toda segunda + IEP Talks sábados em Curitiba',
+  'Do básico-intermediário (A2) em diante',
 ]
 
 export default function HeroSimples() {
@@ -83,10 +85,11 @@ export default function HeroSimples() {
           transition={{ duration: 0.6, delay: 0.28 }}
           className="text-base text-gray-400 max-w-2xl mx-auto mb-10"
         >
-          Participar dos encontros é gratuito. As ferramentas de apoio também são, para quem
-          faz o programa —{' '}
+          <strong className="text-gray-300">Participar dos encontros é gratuito e vai continuar
+          sendo.</strong> Quem quiser as ferramentas, o material e a mentoria individual entre um
+          encontro e outro entra no programa —{' '}
           <Link href="#precos" className="text-gray-300 underline underline-offset-4 hover:text-neon-green transition-colors">
-            veja como funciona
+            veja os planos
           </Link>
           .
         </motion.p>
@@ -102,16 +105,19 @@ export default function HeroSimples() {
             href="#inscricao"
             className="w-full sm:w-auto px-8 py-4 rounded-lg bg-neon-green text-black font-bold text-base sm:text-lg hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg hover:-translate-y-0.5 active:translate-y-0"
           >
-            Quero participar
+            Quero o link do próximo encontro
           </Link>
+          {/* Secundário de propósito: mandar a pessoa pra sala antes de ela
+              deixar o e-mail era o CTA mais bonito da home levando tráfego
+              embora. Ver PLANO-REVISAO-MARKETING-2026-08-01.md, P1. */}
           <a
             href={SPEAK_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-tech-blue/50 text-tech-blue font-bold text-base sm:text-lg hover:bg-tech-blue/10 hover:border-tech-blue transition-all hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center gap-1.5 text-sm text-gray-400 hover:text-tech-blue transition-colors underline underline-offset-4"
           >
-            Ver a sala do encontro
-            <ArrowUpRight className="w-5 h-5" />
+            ou entre direto na sala do encontro
+            <ArrowUpRight className="w-4 h-4" />
           </a>
         </motion.div>
 

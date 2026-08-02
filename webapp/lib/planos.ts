@@ -179,7 +179,7 @@ export const cartoesHome: CartaoHome[] = [
     custoReal: 'Sem rotina obrigatória — 1h de dedicação por dia.',
     paraQuem: 'Pra quem quer tudo no próprio ritmo.',
     itens: [
-      'ETT Player completo — as 10 ferramentas',
+      'ETT Player completo — todas as ferramentas',
       'Encontros online e presenciais',
       'O sistema acompanha e registra sua evolução',
       'Acompanhamento e feedback das ferramentas',
@@ -198,7 +198,7 @@ export const cartoesHome: CartaoHome[] = [
     custoReal: 'Custa 1h da sua dedicação por dia.',
     paraQuem: 'Pra quem topa manter a rotina e não quer pagar mensalidade.',
     itens: [
-      'ETT Player completo — as 10 ferramentas',
+      'ETT Player completo — todas as ferramentas',
       'Encontros online e presenciais',
       'O sistema acompanha e registra sua evolução',
       'Acompanhamento e feedback das ferramentas',
@@ -337,7 +337,7 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
       },
     ],
     inclui: [
-      'ETT Player completo — as 10 ferramentas',
+      'ETT Player completo — todas as ferramentas',
       'Plano de estudos personalizado',
       'O sistema acompanha e registra sua evolução',
       'Acompanhamento e feedback das ferramentas',
@@ -381,7 +381,7 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
       },
     ],
     inclui: [
-      'ETT Player completo — as 10 ferramentas',
+      'ETT Player completo — todas as ferramentas',
       'Plano de estudos personalizado',
       'O sistema acompanha e registra sua evolução',
       'Acompanhamento e feedback das ferramentas',

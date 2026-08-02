@@ -16,7 +16,8 @@ import { partnerPosts, getPartnerPost } from '@/lib/partner-posts'
 
 const SITE_URL = 'https://englishtalktime.com.br'
 const ORG_ID = `${SITE_URL}/#organization`
-const FORM_URL = 'https://forms.gle/jpK8bR4houvAXTwm9'
+/* Captura oficial: formulário do próprio site (RD Station). */
+const FORM_URL = '/#inscricao'
 
 export function generateStaticParams() {
   return partnerPosts.map((p) => ({ slug: p.slug }))
@@ -260,8 +261,6 @@ export default function PartnerPostPage({
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
                     href={FORM_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-neon-green text-dark font-bold text-sm hover:bg-neon-green/90 transition-all"
                   >
                     Quero participar <ArrowRight className="w-4 h-4" />
