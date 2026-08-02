@@ -66,7 +66,7 @@ export const nav: Record<Locale, NavMessages> = {
     partners: 'Parceiros',
     howItWorks: 'Como Funciona',
     blog: 'Blog',
-    cta: 'Quero participar',
+    cta: 'Tenho Interesse',
     language: 'Idioma',
     pricing: 'Preços',
     program: 'O programa',

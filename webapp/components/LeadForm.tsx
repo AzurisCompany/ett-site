@@ -110,16 +110,18 @@ export default function LeadForm() {
             transition={{ duration: 0.6 }}
             className="text-center mb-10"
           >
+            {/* Título deliberadamente sem convite direto: quem chega aqui ainda
+                está se informando, não decidindo. Ver a conversa de 02/08. */}
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-              Participe do próximo encontro
+              Quer saber mais sobre o ETT?
             </h2>
             <p className="text-gray-400 text-lg">
-              Deixe seu nome e e-mail. Você recebe o{' '}
-              <strong className="text-gray-200">link do encontro online de segunda</strong>, as{' '}
-              <strong className="text-gray-200">datas do IEP Talks em Curitiba</strong> e, na
-              sequência, mais informações sobre o programa por e-mail. Se preferir conversar,{' '}
-              <strong className="text-gray-200">alguém da equipe entra em contato</strong> para
-              esclarecer suas dúvidas. É grátis e você não precisa decidir nada agora.
+              Deixe seu nome e e-mail. Ao se inscrever você{' '}
+              <strong className="text-gray-200">começa a receber informações por e-mail</strong> — o
+              link do encontro online de segunda, as datas do IEP Talks em Curitiba e as novidades
+              do programa — e{' '}
+              <strong className="text-gray-200">entramos em contato para tirar suas dúvidas</strong>.
+              É grátis e você não precisa decidir nada agora.
             </p>
 
             {/* Info do encontro */}
@@ -165,8 +167,8 @@ export default function LeadForm() {
                     <strong className="text-neon-green">link do encontro de segunda</strong> e as
                     datas do IEP Talks. A partir daí chegam mais informações sobre o programa por
                     e-mail, e{' '}
-                    <strong className="text-gray-200">alguém da equipe vai entrar em contato</strong>{' '}
-                    para esclarecer suas dúvidas. Confira seu e-mail.
+                    <strong className="text-gray-200">entraremos em contato</strong> para tirar suas
+                    dúvidas. Confira seu e-mail.
                   </p>
                   <p className="text-gray-500 text-sm leading-relaxed max-w-sm mx-auto mt-5 pt-5 border-t border-dark-border">
                     Quer também as{' '}
@@ -289,9 +291,8 @@ export default function LeadForm() {
 
                   <p className="text-xs text-gray-600 text-center">
                     Só os dois primeiros campos são obrigatórios. Você vai receber e-mails com as
-                    datas dos encontros e mais informações sobre o programa, e alguém da equipe
-                    pode entrar em contato para tirar dúvidas — sem spam, e pode descadastrar a
-                    qualquer momento.
+                    datas dos encontros e mais informações sobre o programa, e podemos entrar em
+                    contato para tirar dúvidas — sem spam, e pode descadastrar a qualquer momento.
                   </p>
 
                   {/* Honeypot — campo escondido; humano nunca preenche */}
