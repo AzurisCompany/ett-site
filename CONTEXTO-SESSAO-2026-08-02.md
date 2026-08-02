@@ -16,6 +16,7 @@ Handoff da sessão de **2026-08-02**. Sessão curta, três blocos:
 |---|---|
 | `f22e8a3` | Remove os 2 CTAs do hero; formulário passa a prometer informações por e-mail + contato da equipe |
 | `abf7313` | CTA do topo vira "Tenho Interesse"; título do formulário deixa de convidar pro encontro |
+| `99c8f06` | Este handoff + `CLAUDE.md` corrigido em 6 pontos + revisão de 02/08 no plano de marketing |
 
 ---
 
@@ -100,7 +101,13 @@ Alessandro respondeu colando o painel do Hostinger, que mostrava **"Conectado co
 implantação **concluída em 9s**, commit `f22e8a3`, branch `main`, diretório `public_html`.
 
 Testado no deploy seguinte: **push às 14:12 UTC, produção com `last-modified` de 14:14 UTC, sem
-ninguém tocar no painel.** Auto Deployment está ligado.
+ninguém tocar no painel.** Auto Deployment está ligado. O terceiro deploy da sessão (`99c8f06`,
+o de documentação) confirmou de novo: publicou às 18:55 UTC sozinho.
+
+**Ressalva honesta para quem ler depois:** o Alessandro nunca confirmou explicitamente que não
+clicou em "Reimplantar" durante o teste. A conclusão vem da medição — três deploys, nenhum com
+intervenção observada. Se algum dia um push não aparecer na produção em ~5 minutos, a primeira
+hipótese é que o Auto Deployment nunca esteve ligado e alguém estava clicando.
 
 ## O que mudou na documentação
 
