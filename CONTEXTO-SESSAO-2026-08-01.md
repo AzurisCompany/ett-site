@@ -221,9 +221,11 @@ primeiro (que regenera) e só então o `tsc`.
 
 5. **Landings `/en/` e `/es/`** ficaram fora da revisão: ainda apontam pro Google Form, têm
    **depoimentos fictícios** e **não conhecem o modelo de cobrança novo**.
-6. **Rodapé com âncoras mortas** — `/#sobre` e `/#parceiros` (×4) na home pt-BR. A correção
-   proposta era apontar pra `/detalhes/#sobre` e dar `id="parceiros"` à faixa de logos.
-   **Não foi aplicada** (o pedido virou outra coisa antes).
+6. ~~**Rodapé com âncoras mortas**~~ — ✅ **corrigido em `f03b3a4`**: "Sobre o ETT" aponta pra
+   `/detalhes/#sobre` (é onde a seção vive desde 26/07) e a faixa de logos ganhou `id="parceiros"`,
+   que era o que faltava pros 4 links de parceiro ancorarem. Fica um resíduo conhecido: os quatro
+   links (BeeTools, Cherry Top, Coders, IEP) caem todos na mesma faixa. A versão boa seria cada um
+   apontar pro site do parceiro, ou a faixa virar seção com nome e descrição de cada um.
 7. Post do blog `praticar-ingles-em-curitiba-gratis` ainda descreve a rotação por 4 locais
    (conteúdo datado de maio).
 8. Kit `/divulgacao/convitesegunda20h/` ainda diz "sem mensalidade" (registro de e-mail já
