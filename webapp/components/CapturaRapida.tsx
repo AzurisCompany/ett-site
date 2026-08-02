@@ -36,8 +36,9 @@ export default function CapturaRapida() {
               Quer o link da próxima segunda no seu e-mail?
             </h3>
             <p className="text-sm text-gray-400 leading-relaxed">
-              Nome e e-mail, menos de um minuto. Você recebe o link do encontro online e as datas
-              do IEP Talks. É grátis e não tem mais nada pra decidir agora.
+              Nome e e-mail, menos de um minuto. Você recebe o link do encontro online, as datas do
+              IEP Talks e mais informações sobre o programa — e alguém da equipe entra em contato
+              para tirar suas dúvidas. É grátis e não tem nada pra decidir agora.
             </p>
           </div>
 

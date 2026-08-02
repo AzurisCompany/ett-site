@@ -3,9 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Check, ArrowUpRight } from 'lucide-react'
-
-const SPEAK_URL = 'https://ett-speak.vercel.app/'
+import { Check } from 'lucide-react'
 
 /* O encontro é gratuito; o programa (ferramentas, mentoria, material) é pago.
    Os dois fatos andam sempre juntos — ver PLANO-REVISAO-MARKETING-2026-08-01.md. */
@@ -93,33 +91,6 @@ export default function HeroSimples() {
           </Link>
           .
         </motion.p>
-
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.36 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10"
-        >
-          <Link
-            href="#inscricao"
-            className="w-full sm:w-auto px-8 py-4 rounded-lg bg-neon-green text-black font-bold text-base sm:text-lg hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg hover:-translate-y-0.5 active:translate-y-0"
-          >
-            Quero o link do próximo encontro
-          </Link>
-          {/* Secundário de propósito: mandar a pessoa pra sala antes de ela
-              deixar o e-mail era o CTA mais bonito da home levando tráfego
-              embora. Ver PLANO-REVISAO-MARKETING-2026-08-01.md, P1. */}
-          <a
-            href={SPEAK_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-1.5 text-sm text-gray-400 hover:text-tech-blue transition-colors underline underline-offset-4"
-          >
-            ou entre direto na sala do encontro
-            <ArrowUpRight className="w-4 h-4" />
-          </a>
-        </motion.div>
 
         {/* Tranquilizadores */}
         <motion.ul
