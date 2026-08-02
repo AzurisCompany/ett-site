@@ -55,7 +55,15 @@ comando abre um wizard interativo. A validação real é `npx tsc --noEmit` + `n
 `opacity: 0` e só dispara com scroll real — screenshot headless sai preto. O que funciona é
 extrair a seção do HTML gerado pra um arquivo temporário com o CSS do build e a regra
 `[style*="opacity:0"]{opacity:1!important}`. ⚠️ **Esse arquivo temporário não pode ficar em
-`webapp/out/`** (é espelhado pra raiz no deploy) — apagar antes.
+`webapp/out/`** (é espelhado pra raiz no deploy) — apagar antes. Três detalhes que custaram
+tentativa (01/08): `--virtual-time-budget` **não** resolve (a captura sai com a animação pela
+metade); **não** juntar `transform:none` ao override (zera o `scale-110` do fundo e desloca o
+layout inteiro); e janela alta **não** captura a página toda — o hero é `min-h-[92vh]`, então uma
+janela de 5200px estica o hero pra ~4800px e o resto some do enquadramento.
+
+**Apagou uma rota?** O `npx tsc --noEmit` vai falhar com `TS2307: Cannot find module .../page.js`
+apontando pra `.next/types/` — é tipo gerado obsoleto, não erro real. Rodar `npm run build` antes
+(que regenera) e só então o typecheck.
 
 ## Deploy
 
