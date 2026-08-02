@@ -31,7 +31,7 @@ Quatro perguntas foram feitas ao Alessandro e respondidas. **São a base de toda
 |---|---|---|
 | 1 | O que o lead do formulário recebe? | **Só link do encontro + datas dos presenciais.** Ferramenta só via "Conhecer" (30 dias) ou adesão. |
 | 2 | Qual o presencial real em Curitiba? | **Só o IEP Talks — sábados, 10h–12h, no IEP.** UTFPR, Hard Rock e Habitat saem da copy. |
-| 3 | O ETT Player público é demo ou produto? | **O acesso público vai ser fechado.** Tirar os botões externos da home; usar screenshot + CTA de cadastro. |
+| 3 | O ETT Player público é demo ou produto? | **Continua público** — o Player tem portão de e-mail na entrada, então a URL não entrega o que os planos vendem. O link volta pra home como **CTA secundário**; o primário segue sendo o cadastro/teste. *(Revisado em 01/08: a primeira resposta tinha sido "fechar o acesso", e foi corrigida ao confirmar que existe autenticação.)* |
 | 4 | Simplificar os 4 cartões de plano da home? | **Não — mantém os 4.** (Conhecer · Adesão · Dedicação · Aceleração) |
 
 ---
@@ -164,11 +164,13 @@ produção não muda).
 - [x] P0 — corrigir `/online/`
 - [x] P0 — alinhar `homeFaqs` longa (usada em `/detalhes/`)
 - [x] P0 — nível (A2 em todo lugar), contagem de ferramentas ("todas" em vez de "as 10"), duração
-- [x] P1 — tirar CTAs externos do Player (`FerramentasResumo.tsx`)
+- [x] P1 — Player como CTA **secundário** em `FerramentasResumo.tsx` (o link é público e continua
+      assim; o que mudou é o peso — o botão verde agora é o teste de 30 dias)
 - [x] P1 — rebaixar "Ver a sala do encontro" no hero
 - [x] P1 — mini-captura depois de `ProximosEncontros` (`components/CapturaRapida.tsx`)
 - [x] P1 — alinhar promessa do `LeadForm`
-- [ ] Externo — **fechar acesso público do ETT Player** (fora deste repo; a copy já não cita o link)
+- [x] ~~Externo — fechar acesso público do ETT Player~~ — **cancelado**: o Player já tem
+      autenticação (portão de e-mail), então o acesso público fica.
 
 ### Achados extras corrigidos na mesma passada
 
