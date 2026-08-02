@@ -29,7 +29,7 @@ Quatro perguntas foram feitas ao Alessandro e respondidas. **São a base de toda
 
 | # | Pergunta | Decisão |
 |---|---|---|
-| 1 | O que o lead do formulário recebe? | **Só link do encontro + datas dos presenciais.** Ferramenta só via "Conhecer" (30 dias) ou adesão. |
+| 1 | O que o lead do formulário recebe? | ~~Só link do encontro + datas dos presenciais.~~ **Revisado em 02/08/2026:** link + datas **e** informações sobre o programa por e-mail, **e a equipe entra em contato** para tirar dúvidas. Ferramenta continua só via "Conhecer" (30 dias) ou adesão. Ver a seção "Revisão de 02/08/2026" no fim deste arquivo. |
 | 2 | Qual o presencial real em Curitiba? | **Só o IEP Talks — sábados, 10h–12h, no IEP.** UTFPR, Hard Rock e Habitat saem da copy. |
 | 3 | O ETT Player público é demo ou produto? | **Continua público** — o Player tem portão de e-mail na entrada, então a URL não entrega o que os planos vendem. O link volta pra home como **CTA secundário**; o primário segue sendo o cadastro/teste. *(Revisado em 01/08: a primeira resposta tinha sido "fechar o acesso", e foi corrigida ao confirmar que existe autenticação.)* |
 | 4 | Simplificar os 4 cartões de plano da home? | **Não — mantém os 4.** (Conhecer · Adesão · Dedicação · Aceleração) |
@@ -194,4 +194,41 @@ produção não muda).
 - **Kit** `/divulgacao/convitesegunda20h/` ainda diz "sem mensalidade" — é o registro de um e-mail
   já disparado, `noindex`. Reescrever seria reescrever história.
 
-Última atualização: **2026-08-01**.
+---
+
+## Revisão de 02/08/2026 — o funil deixou de convidar e passou a informar
+
+Um dia depois de o P0/P1 entrar no ar, o Alessandro pediu uma correção de tom. O diagnóstico dele,
+em uma frase: **"a pessoa só quer mais informações"** — o site pedia decisão cedo demais.
+
+### O que mudou
+
+| Onde | Antes | Agora |
+|---|---|---|
+| Hero (`HeroSimples.tsx`) | Botão verde "Quero o link do próximo encontro" + link "ou entre direto na sala do encontro" | **Sem CTA nenhum.** Os dois botões foram removidos |
+| CTA do topo (`lib/i18n/messages.ts`, `nav['pt-BR'].cta`) | "Quero participar" | **"Tenho Interesse"** |
+| Título do formulário | "Participe do próximo encontro" | **"Quer saber mais sobre o ETT?"** |
+| Botão do formulário | "Quero participar do próximo encontro" | **"Quero mais informações"** |
+| Promessa do formulário | Só link + datas | **Informações por e-mail + a equipe entra em contato** |
+
+Commits: `f22e8a3` (hero + promessa) e `abf7313` (CTA do topo + título).
+
+### Por que isso reverte a decisão #1
+
+A decisão #1 encolheu a promessa de propósito: prometer acompanhamento lia-se como captura de
+vendas num programa aberto. A revisão de 02/08 vai na direção oposta — e é uma escolha coerente com
+o CTA novo, porque **"Tenho Interesse" cria uma expectativa de retorno que "Quero participar" não
+criava.** Quem clica em "tenho interesse" espera resposta.
+
+⚠️ **Isso virou promessa operacional, e ela aparece em três lugares da home** (faixa
+`CapturaRapida`, intro do formulário, tela de sucesso). **Alguém precisa de fato responder os
+leads** — se o contato não acontecer, a copy nova é pior do que a antiga, que não prometia nada.
+Falta combinar **quem faz** e **em quanto tempo**.
+
+### Consequência a observar
+
+O hero ficou sem CTA: o primeiro ponto de conversão da home passou a ser a faixa `CapturaRapida`,
+logo depois de `ProximosEncontros`. Vale olhar a taxa de cadastro depois de alguns dias — se cair,
+o caminho não é devolver os dois botões, é reforçar a faixa.
+
+Última atualização: **2026-08-02**.

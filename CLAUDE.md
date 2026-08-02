@@ -9,7 +9,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 O domínio NÃO está no GitHub Pages. Está em um **hosting externo** que aponta para os arquivos estáticos do repositório (raiz do `main`). Por isso:
 
 - Não existe arquivo `CNAME` no repo (não é necessário).
-- A publicação acontece em duas etapas: (1) `git push` deste repo, (2) **alguém precisa entrar no painel do hosting e disparar o pull/deploy manualmente**. Sem o passo 2 a produção não atualiza.
+- **O Hostinger está com Auto Deployment ligado (confirmado em 02/08/2026): o push já publica.** O painel mostra "Conectado com GitHub" e a implantação dispara sozinha, levando ~9s. Medido: push às 14:12 UTC, produção com `last-modified` de 14:14 UTC sem ninguém tocar no painel. **Até 02/08 este arquivo dizia que o pull era manual** — era verdade antes; a conexão com o GitHub foi feita em algum momento entre 01/08 e 02/08.
+- Ainda assim, **confira** depois de deployar: `curl -sI https://englishtalktime.com.br/ | grep -i last-modified` mais ou menos 2 minutos após o push. Se não tiver mudado, aí sim abrir `hpanel.hostinger.com` e clicar em **Reimplantar** (o botão continua existindo). Diretório raiz do site no painel: `public_html`, branch `main`.
 
 ## Repository Layout
 
@@ -31,7 +32,7 @@ Repo serve o site **ETT (English Talk Time)** via duas árvores acopladas:
 Convenções do e-mail:
 
 - Tabelas aninhadas, 600px, **CSS 100% inline**, `bgcolor` em todo `td` (Outlook desktop ignora `background-color` em `div`). Botão com padding no `td`, não no `<a>`.
-- **Imagens em JPEG/PNG, nunca `.webp`** (vários clientes de e-mail não renderizam), com **URL absoluta** de produção — ou seja, a imagem só carrega depois do pull no Hostinger.
+- **Imagens em JPEG/PNG, nunca `.webp`** (vários clientes de e-mail não renderizam), com **URL absoluta** de produção — ou seja, a imagem só carrega depois que o deploy publicou.
 - **Nome de arquivo novo a cada versão da imagem.** O hosting serve imagem com `max-age` de 7 dias; reaproveitar o nome faz o RD puxar a versão velha.
 - Original em alta resolução vai arquivado em `novoConteudo/<campanha>/`, não em `public/`.
 - Comentário no topo do HTML com o passo a passo pro RD e sugestões de assunto. O bloco de descadastro é inserido pela própria RD — não duplicar.
@@ -82,7 +83,10 @@ O que ele faz, em ordem:
    - Arquivos top-level (`index.html`, `404.html`, `index.txt`) são sobrescritos.
    - Remove órfãos `.html`/`.txt` da raiz que não existem mais em `webapp/out/`.
 3. `git add -A` + `git commit` + `git push` para `origin/main`.
-4. **(Manual)** Entrar no painel do hosting e disparar o pull/deploy. Só depois desse passo a produção em `englishtalktime.com.br` atualiza.
+
+O script **não** tem passo 4: desde que o Auto Deployment do Hostinger está ligado (02/08/2026), o push publica sozinho em ~2 minutos. Confira com `curl -sI https://englishtalktime.com.br/ | grep -i last-modified` — e só recorra ao botão "Reimplantar" no hpanel se o horário não tiver mudado.
+
+⚠️ **O commit é o que sobe.** Como o hosting puxa do `main`, qualquer coisa comitada pelo `git add -A` vai pro ar — não existe mais a janela entre o push e o pull manual que antes servia de rede de proteção.
 
 ### Limitações conhecidas do `deploy.sh`
 
@@ -93,7 +97,7 @@ Atalhos a evitar / pontos a observar:
 - **⚠️ Arquivo solto num diretório da raiz é APAGADO pelo deploy.** Como cada diretório top-level é recriado do zero a partir de `webapp/out/`, qualquer coisa colocada à mão em `images/`, `divulgacao/`, `agenda/` etc. **na raiz** some no `./deploy.sh` seguinte. Já aconteceu (2026-07-26, banner de e-mail perdido). Asset novo vai **sempre** em `webapp/public/<caminho>/`. O usuário acessa o repo pelo Windows via `C:\WSL\home\` → `/home/binhara/` e costuma soltar arquivo na raiz: **antes de deployar, olhar o `git status` atrás de arquivo untracked na raiz e mover primeiro** (e apagar o `<nome>:Zone.Identifier` que vem junto). Ao mover, **dizer explicitamente pra onde** — senão ele confere a pasta, vê vazia e recopia.
 - **Não checa branch.** Por convenção, deploy roda em `main`. Confira `git rev-parse --abbrev-ref HEAD` antes.
 - **Não roda `npm install` automaticamente.** Se mudou `package.json` ou é o primeiro deploy na máquina, rode `cd webapp && npm install` antes.
-- **Não dispara o pull no hosting.** Esse passo é manual; depois de ver o push concluído, abra o painel.
+- **Não espera nem confere a publicação.** O Auto Deployment do Hostinger cuida do pull, mas o script termina no push: quem quiser certeza confere o `last-modified` da produção ~2 min depois.
 
 ## Architecture Notes
 
@@ -134,7 +138,7 @@ Arquitetura (data-driven, 1 página por artigo):
 2. Pegar **o mais recente** ainda não publicado. Pular itens que não sejam artigo de dica (ex.: `Vídeo |`, `Easy English Song |`, `Story |` — preferir categoria "Dicas práticas" / "Estratégias de Aprendizado"). Publicar no máximo 1 por execução.
 3. Ler o artigo completo no link, escrever um **resumo ORIGINAL em pt-BR** (2-4 parágrafos no campo `summary`) + um parágrafo `whyRead` com o ângulo do ETT. Adicionar o objeto no início do array em `partner-posts.ts` (slug curto e descritivo; `date` = data de hoje; `partnerDate` = data original do feed).
 4. `npm run build` para validar. Depois `./deploy.sh "feat(blog): indicação <título curto>"` a partir da raiz.
-5. **Lembrar o usuário** que a produção só atualiza após o pull manual no painel do hosting (ver acima).
+5. **Conferir a publicação** — o Auto Deployment publica sozinho em ~2 min; validar com `curl -sI` (ver "## Deploy").
 
 Esse fluxo é disparado por uma rotina agendada (`/schedule`, semanal). Ver `CONTEXTO-SESSAO-SEO-2026-05-22.md` e o histórico de commits para contexto.
 
