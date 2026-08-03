@@ -128,6 +128,55 @@ qualquer coisa na working tree é comitada e publicada em ~2 minutos. A limitaç
 
 ---
 
+# Parte 4 — Sessão da noite (re-leitura + vídeos dos planos)
+
+Segunda sessão do mesmo dia. Commit: `8d04559`.
+
+## Re-leitura — o que a produção mostrou (02/08 ~19h UTC)
+
+- ✅ **Auto Deployment confirmado pela 4ª vez**: o commit de documentação `4f13546` publicou
+  sozinho (`last-modified` 19:05 UTC). Não resta dúvida sobre o pull manual.
+- ✅ **19 rotas conferidas, todas 200**, exceto `/planos/` (403, já conhecido). Os dois checkouts
+  (`azuris.com.br/ett/{adesao,assinatura}`) respondendo 200. Preços 67/37/370 e a copy nova do
+  funil ("Tenho Interesse", "Quer saber mais sobre o ETT?") conferidos no HTML servido.
+- 🔴 **SSL `.com`/`.lat` reconferido: os dois dão timeout** (`curl` retorna 000). ~3 meses.
+- 🟡 **`/agenda/` sem eventos datados futuros** — confirmado no `agenda-events.ts`: o último é
+  01/08. Só os recorrentes gerados aparecem.
+- 🟡 **Termos de uso**: 5 menções a "gratuito"; Política, 1. Não avançou.
+- 🟡 **Indicação do parceiro**: apareceu um elegível **mais novo** que o de ontem —
+  *"Persistência, Constância e Método: o caminho real para aprender inglês"* (02/08, Dicas
+  práticas). *"O desconforto que ensina"* (01/08) segue elegível. 10 não publicados no feed.
+
+## Vídeos nas páginas de plano
+
+Pedido do Alessandro: colocar os vídeos do YouTube em `/planos/conhecer/` e `/planos/adesao/`.
+
+| Página | Vídeo | Título no YouTube |
+|---|---|---|
+| `/planos/conhecer/` | `bG_YZD9tT_s` | ETT - Conheça o English Talk Time |
+| `/planos/adesao/` | `C9WizsadjSM` | ETT - Adesão ao Programa |
+
+Os dois conferidos como públicos via oEmbed antes de publicar (canal Alessandro Binhara).
+
+**Como foi feito** — o espaço de vídeo já existia em `components/PlanoDetalhe.tsx` como placeholder
+("Vídeo em breve"). Em vez de trocar o placeholder, virou condicional:
+
+- **`lib/planos.ts`** ganhou o campo opcional **`videoId`** no tipo `DetalhePlano`. Preenchido em
+  `conhecer` e `adesao`; **`dedicacao` e `aceleracao` seguem sem** → continuam mostrando o
+  placeholder. Gravou o vídeo? Cola o ID no objeto e acabou — não se mexe em componente.
+- **`PlanoDetalhe.tsx`** renderiza `iframe` de `youtube-nocookie.com/embed/<id>?rel=0` com
+  `loading="lazy"` (nada do YouTube carrega até o visitante rolar até a seção) dentro do mesmo
+  `aspect-video`, e o `videoTitulo` virou legenda abaixo do vídeo.
+
+⚠️ **As legendas ainda são os textos do placeholder** ("Um tour de 3 minutos pela plataforma" /
+"Como funcionam os dois encontros da adesão") — não são os títulos reais dos vídeos, e o
+"3 minutos" não foi verificado. Perguntado ao Alessandro, sem resposta até o fim da sessão.
+
+Publicado e conferido no ar: os dois `youtube-nocookie` aparecem no HTML servido,
+`last-modified: 03/08 01:43 UTC` (~30s depois do push).
+
+---
+
 # Pendências abertas
 
 ## Precisa de decisão sua
@@ -149,14 +198,17 @@ qualquer coisa na working tree é comitada e publicada em ~2 minutos. A limitaç
 
 6. **Landings `/en/` e `/es/`** seguem fora de todas as revisões: Google Form externo, depoimentos
    fictícios e preços velhos.
-7. **Indicação do parceiro** parada há ~8 semanas — elegível: *"O desconforto que ensina"* (01/08).
+7. **Indicação do parceiro** parada há ~8 semanas — elegível mais novo: *"Persistência, Constância
+   e Método"* (02/08); *"O desconforto que ensina"* (01/08) também serve.
 8. Post `praticar-ingles-em-curitiba-gratis` ainda descreve a rotação por 4 locais (maio).
 9. Kit `/divulgacao/convitesegunda20h/` ainda diz "sem mensalidade" (`noindex`, registro de e-mail
    já disparado).
 10. Contagem de ferramentas: planos dizem "todas", `Tools.tsx` diz 10, o Player mostra 12.
 11. `/planos/` respondendo 403 na produção.
-12. Gravar os 4 vídeos dos planos; sequência de e-mails do dia 25 ao 35; acordos de parceiro por
-    escrito.
+12. Vídeos dos planos: **2 de 4 no ar** (Conhecer e Adesão). Faltam **Dedicação** e **Aceleração**
+    — é só preencher `videoId` em `lib/planos.ts`. Decidir também se as legendas dos 2 publicados
+    ficam como estão. Segue pendente: sequência de e-mails do dia 25 ao 35; acordos de parceiro
+    por escrito.
 13. 🟡 Fotos reais dos encontros; hero ainda com imagem genérica; site sem favicon.
 
 ---
