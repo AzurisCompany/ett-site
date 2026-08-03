@@ -51,14 +51,31 @@ export default function PlanoDetalhe({ plano }: { plano: DetalhePlano }) {
         </div>
       </section>
 
-      {/* Espaço do vídeo — trocar o placeholder pelo embed quando gravar */}
+      {/* Vídeo do plano — placeholder enquanto não tem videoId */}
       <section className="pb-14 bg-dark">
         <div className="container mx-auto px-4 max-w-3xl">
-          <div className="aspect-video w-full rounded-2xl border border-dark-border bg-dark-card flex flex-col items-center justify-center text-center px-6">
-            <PlayCircle className="w-12 h-12 text-gray-700 mb-4" />
-            <p className="text-gray-400 font-semibold">{plano.videoTitulo}</p>
-            <p className="text-gray-600 text-sm mt-1">Vídeo em breve</p>
-          </div>
+          {plano.videoId ? (
+            <>
+              <div className="aspect-video w-full rounded-2xl overflow-hidden border border-dark-border bg-dark-card">
+                <iframe
+                  className="w-full h-full"
+                  src={`https://www.youtube-nocookie.com/embed/${plano.videoId}?rel=0`}
+                  title={plano.videoTitulo}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+              <p className="text-gray-500 text-sm mt-3 text-center">{plano.videoTitulo}</p>
+            </>
+          ) : (
+            <div className="aspect-video w-full rounded-2xl border border-dark-border bg-dark-card flex flex-col items-center justify-center text-center px-6">
+              <PlayCircle className="w-12 h-12 text-gray-700 mb-4" />
+              <p className="text-gray-400 font-semibold">{plano.videoTitulo}</p>
+              <p className="text-gray-600 text-sm mt-1">Vídeo em breve</p>
+            </div>
+          )}
         </div>
       </section>
 

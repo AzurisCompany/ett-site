@@ -219,8 +219,10 @@ export type DetalhePlano = {
   precoNota?: string
   destaqueFrase?: string
   intro: string
-  /** Placeholder do vídeo — trocar pelo embed quando gravar. */
+  /** Título do vídeo — vira legenda do embed e texto do placeholder. */
   videoTitulo: string
+  /** ID do vídeo no YouTube. Sem isso, a página mostra o placeholder "Vídeo em breve". */
+  videoId?: string
   blocos: { titulo: string; texto: string }[]
   inclui: string[]
   observacao: string
@@ -240,6 +242,7 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
     intro:
       'Trinta dias com a plataforma inteira aberta, sem cartão e sem compromisso. Existe pra você ver por dentro antes de decidir qualquer coisa.',
     videoTitulo: 'Um tour de 3 minutos pela plataforma',
+    videoId: 'bG_YZD9tT_s',
     blocos: [
       {
         titulo: 'Começa por um diagnóstico, não por uma aula',
@@ -277,6 +280,7 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
     precoNota: 'cobrança única',
     intro: `R$ ${PRECO_ADESAO}, uma vez só. É a sua adesão ao programa: duas horas de mentoria individual, o material didático e a entrada nos encontros de conversação.`,
     videoTitulo: 'Como funcionam os dois encontros da adesão',
+    videoId: 'C9WizsadjSM',
     blocos: [
       {
         titulo: 'Dois encontros de uma hora, só seus',
