@@ -39,7 +39,7 @@ export default function About() {
   return (
     <section id="sobre" className="section-padding bg-dark-secondary relative overflow-hidden">
       {/* Subtle background accent */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-green/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/30 to-transparent" />
 
       <div className="container mx-auto px-4">
         {/* Section header */}
@@ -51,7 +51,7 @@ export default function About() {
           custom={0}
           className="text-center mb-14"
         >
-          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
             Sobre o ETT
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
@@ -62,9 +62,9 @@ export default function About() {
           <p className="text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed">
             O <strong className="text-white">English Talk Time (ETT)</strong> é um programa de aceleração
             criado para encurtar a distância entre duas realidades muito comuns: o profissional que
-            estuda há anos, entende razoavelmente, mas <strong className="text-neon-green">trava para falar</strong>;
+            estuda há anos, entende razoavelmente, mas <strong className="text-brand-red">trava para falar</strong>;
             e o profissional que precisa usar inglês de forma funcional para{' '}
-            <strong className="text-tech-blue">entrevistas, reuniões, networking e trabalho remoto</strong>.
+            <strong className="text-brand-silver">entrevistas, reuniões, networking e trabalho remoto</strong>.
           </p>
         </motion.div>
 
@@ -80,7 +80,7 @@ export default function About() {
           >
             <p>
               O projeto nasce com foco especial em profissionais e estudantes de{' '}
-              <span className="text-tech-blue font-medium">Negócios, Tecnologia, Dados, IA, BI, Cloud e áreas correlatas</span>,
+              <span className="text-brand-silver font-medium">Negócios, Tecnologia, Dados, IA, BI, Cloud e áreas correlatas</span>,
               porque esse público já sente de forma muito concreta a pressão de atuar em contextos
               globais — e ao mesmo tempo costuma ter dificuldade de transformar estudo solto em
               comunicação real.
@@ -89,7 +89,7 @@ export default function About() {
               A proposta central do ETT é simples, mas poderosa:{' '}
               <strong className="text-white">não oferecer mais um curso de inglês</strong>, e sim
               uma metodologia aplicada onde se aprende a <em>aprender</em>, seguindo o ditado:{' '}
-              <em className="text-neon-green">"Dê um peixe a um homem e você o alimentará por um dia; ensine-o a pescar e você o alimentará por toda a vida."</em>
+              <em className="text-brand-red">"Dê um peixe a um homem e você o alimentará por um dia; ensine-o a pescar e você o alimentará por toda a vida."</em>
             </p>
             <p>
               O ETT articula curadoria, rotina, prática guiada, imersão, ferramentas inteligentes
@@ -109,7 +109,7 @@ export default function About() {
           >
             <p>
               O objetivo principal é levar o participante do zero (ou do nível travado) até um{' '}
-              <strong className="text-neon-green">inglês funcional para o mercado internacional</strong>,
+              <strong className="text-brand-red">inglês funcional para o mercado internacional</strong>,
               com atenção especial às necessidades de profissionais de tecnologia e dados.
             </p>
             <p>
@@ -128,7 +128,7 @@ export default function About() {
                   key={s.n}
                   className="bg-dark-card border border-dark-border rounded-xl p-4 text-center"
                 >
-                  <div className="text-2xl font-bold text-neon-green">{s.n}</div>
+                  <div className="text-2xl font-bold text-brand-red">{s.n}</div>
                   <div className="text-xs text-gray-500 mt-1">{s.l}</div>
                 </div>
               ))}
@@ -148,8 +148,8 @@ export default function About() {
               custom={i + 3}
               className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover"
             >
-              <div className="w-11 h-11 rounded-xl bg-neon-green/10 border border-neon-green/20 flex items-center justify-center mb-4">
-                <h.icon className="w-5 h-5 text-neon-green" />
+              <div className="w-11 h-11 rounded-xl bg-brand-red/10 border border-brand-red/20 flex items-center justify-center mb-4">
+                <h.icon className="w-5 h-5 text-brand-red" />
               </div>
               <h3 className="font-bold text-white text-base mb-2">{h.title}</h3>
               <p className="text-gray-400 text-sm leading-relaxed">{h.text}</p>

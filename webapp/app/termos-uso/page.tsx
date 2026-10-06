@@ -41,7 +41,7 @@ export default function TermosUsoPage() {
         <header className="relative section-padding hero-grid">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-tech-blue/30 text-tech-blue bg-tech-blue/5 mb-5">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-5">
                 Documento legal
               </span>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">

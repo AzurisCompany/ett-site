@@ -50,7 +50,7 @@ export default function ParceirosFaixa() {
         </motion.div>
 
         <p className="text-center text-sm text-gray-600 mt-8">
-          <Link href="/detalhes/#parceiros" className="hover:text-neon-green transition-colors">
+          <Link href="/detalhes/#parceiros" className="hover:text-brand-red transition-colors">
             Conhecer cada parceiro →
           </Link>
         </p>

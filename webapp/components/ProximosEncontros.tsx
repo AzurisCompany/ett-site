@@ -57,7 +57,7 @@ export default function ProximosEncontros() {
 
   return (
     <section id="encontros" className="section-padding bg-dark-secondary relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-green/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/30 to-transparent" />
 
       <div className="container mx-auto px-4">
         <motion.div
@@ -82,15 +82,15 @@ export default function ProximosEncontros() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5 }}
-            className="bg-dark-card border border-neon-green/25 rounded-2xl p-7 flex flex-col"
+            className="bg-dark-card border border-brand-red/25 rounded-2xl p-7 flex flex-col"
           >
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-11 h-11 rounded-xl bg-neon-green/10 border border-neon-green/20 flex items-center justify-center">
-                <Video className="w-5 h-5 text-neon-green" />
+              <div className="w-11 h-11 rounded-xl bg-brand-red/10 border border-brand-red/20 flex items-center justify-center">
+                <Video className="w-5 h-5 text-brand-red" />
               </div>
               <div>
                 <h3 className="font-bold text-white text-lg leading-tight">Online</h3>
-                <p className="text-sm text-neon-green">Toda segunda, 20h às 21h30</p>
+                <p className="text-sm text-brand-red">Toda segunda, 20h às 21h30</p>
               </div>
             </div>
 
@@ -106,18 +106,18 @@ export default function ProximosEncontros() {
                       key={d.toISOString()}
                       className={`flex items-center justify-between rounded-xl px-4 py-3 border ${
                         i === 0
-                          ? 'bg-neon-green/5 border-neon-green/30'
+                          ? 'bg-brand-red/5 border-brand-red/30'
                           : 'bg-dark/50 border-dark-border'
                       }`}
                     >
                       <span className="flex items-center gap-2 text-sm text-gray-300">
                         <CalendarDays
-                          className={`w-4 h-4 ${i === 0 ? 'text-neon-green' : 'text-gray-600'}`}
+                          className={`w-4 h-4 ${i === 0 ? 'text-brand-red' : 'text-gray-600'}`}
                         />
                         Segunda, {formatar(d)}
                       </span>
                       {i === 0 && (
-                        <span className="text-xs font-bold text-neon-green uppercase tracking-wide">
+                        <span className="text-xs font-bold text-brand-red uppercase tracking-wide">
                           Próximo
                         </span>
                       )}
@@ -137,14 +137,14 @@ export default function ProximosEncontros() {
                 href={SPEAK_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-neon-green text-black font-bold text-sm hover:bg-neon-green/90 transition-all"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all"
               >
                 Entrar na sala
                 <ArrowUpRight className="w-4 h-4" />
               </a>
               <Link
                 href="#inscricao"
-                className="flex-1 inline-flex items-center justify-center px-5 py-3 rounded-lg border border-dark-border text-gray-300 font-semibold text-sm hover:border-neon-green/40 hover:text-white transition-all"
+                className="flex-1 inline-flex items-center justify-center px-5 py-3 rounded-lg border border-dark-border text-gray-300 font-semibold text-sm hover:border-brand-red/40 hover:text-white transition-all"
               >
                 Receber o lembrete
               </Link>
@@ -157,15 +157,15 @@ export default function ProximosEncontros() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-dark-card border border-tech-blue/25 rounded-2xl p-7 flex flex-col"
+            className="bg-dark-card border border-brand-silver/25 rounded-2xl p-7 flex flex-col"
           >
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-11 h-11 rounded-xl bg-tech-blue/10 border border-tech-blue/20 flex items-center justify-center">
-                <MapPin className="w-5 h-5 text-tech-blue" />
+              <div className="w-11 h-11 rounded-xl bg-brand-silver/10 border border-brand-silver/20 flex items-center justify-center">
+                <MapPin className="w-5 h-5 text-brand-silver" />
               </div>
               <div>
                 <h3 className="font-bold text-white text-lg leading-tight">Presencial</h3>
-                <p className="text-sm text-tech-blue">IEP Talks · sábados, 10h</p>
+                <p className="text-sm text-brand-silver">IEP Talks · sábados, 10h</p>
               </div>
             </div>
 
@@ -188,7 +188,7 @@ export default function ProximosEncontros() {
             <div className="mt-auto">
               <Link
                 href="/agenda/"
-                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-tech-blue/50 text-tech-blue font-bold text-sm hover:bg-tech-blue/10 hover:border-tech-blue transition-all"
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-brand-silver/50 text-brand-silver font-bold text-sm hover:bg-brand-silver/10 hover:border-brand-silver transition-all"
               >
                 Ver datas e locais na agenda
               </Link>

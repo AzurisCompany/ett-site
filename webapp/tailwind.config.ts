@@ -10,13 +10,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'neon-green': '#00FF9D',
-        'tech-blue': '#00BFFF',
+        // logo corrigida (06/10/2026): o verde saiu da marca — ação = vermelho, secundária = cinza
+        'brand-red': {
+          DEFAULT: '#F05A60', // vermelho da logo clareado p/ texto, borda e tinta em fundo marinho (AA)
+          deep: '#D72229', // vermelho oficial da logo — botão/fundo sólido, sempre com texto branco
+        },
+        'brand-silver': '#A8A9AC', // cinza da logo ("Time" e 3º balão) — cor secundária
+        'brand-navy': '#162B4E',
+        'brand-gray': '#59595B',
         'dark': {
-          DEFAULT: '#050510',
-          secondary: '#0D0D1A',
-          card: '#0F0F1E',
-          border: '#1E1E3A',
+          DEFAULT: '#0A1630',
+          secondary: '#0E1D3C',
+          card: '#132649',
+          border: '#24395F',
         },
       },
       fontFamily: {
@@ -25,7 +31,7 @@ const config: Config = {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'hero-grid': "radial-gradient(circle at 1px 1px, rgba(0,255,157,0.07) 1px, transparent 0)",
+        'hero-grid': "radial-gradient(circle at 1px 1px, rgba(240,90,96,0.07) 1px, transparent 0)",
       },
       backgroundSize: {
         'grid': '40px 40px',
@@ -41,9 +47,9 @@ const config: Config = {
         },
       },
       boxShadow: {
-        'neon-green': '0 0 20px rgba(0, 255, 157, 0.3)',
-        'neon-blue': '0 0 20px rgba(0, 191, 255, 0.3)',
-        'neon-green-lg': '0 0 40px rgba(0, 255, 157, 0.4)',
+        'brand-red': '0 8px 24px rgba(215, 34, 41, 0.30)',
+        'brand-red-lg': '0 12px 36px rgba(215, 34, 41, 0.40)',
+        'brand-silver': '0 8px 24px rgba(168, 169, 172, 0.20)',
       },
     },
   },

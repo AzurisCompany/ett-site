@@ -17,7 +17,7 @@ export default function FAQ({ faqs = homeFaqs, title, subtitle }: FAQProps) {
 
   return (
     <section id="faq" className="section-padding bg-dark relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-green/20 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/20 to-transparent" />
 
       <div className="container mx-auto px-4">
         <motion.div
@@ -27,7 +27,7 @@ export default function FAQ({ faqs = homeFaqs, title, subtitle }: FAQProps) {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 max-w-3xl mx-auto"
         >
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
             <HelpCircle className="w-3.5 h-3.5" />
             Perguntas Frequentes
           </span>
@@ -66,7 +66,7 @@ export default function FAQ({ faqs = homeFaqs, title, subtitle }: FAQProps) {
                     {faq.q}
                   </span>
                   <span
-                    className={`text-neon-green text-2xl leading-none transition-transform shrink-0 ${
+                    className={`text-brand-red text-2xl leading-none transition-transform shrink-0 ${
                       open ? 'rotate-45' : ''
                     }`}
                   >

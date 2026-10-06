@@ -8,7 +8,7 @@ import { cartoesHome, PRECO_ADESAO } from '@/lib/planos'
 export default function Precos() {
   return (
     <section id="precos" className="section-padding bg-dark relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-green/25 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/25 to-transparent" />
 
       <div className="container mx-auto px-4">
         <motion.div
@@ -18,12 +18,12 @@ export default function Precos() {
           transition={{ duration: 0.5 }}
           className="text-center mb-10"
         >
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
             <Wallet className="w-3.5 h-3.5" />
             Quanto custa
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-            Adesão ao programa: <span className="neon-green">R$ {PRECO_ADESAO}</span>.
+            Adesão ao programa: <span className="brand-red">R$ {PRECO_ADESAO}</span>.
             <br className="hidden sm:block" /> Depois, você escolhe.
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
@@ -39,9 +39,9 @@ export default function Precos() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="max-w-3xl mx-auto mb-10 flex items-start gap-3 rounded-2xl border border-tech-blue/25 bg-tech-blue/5 px-5 py-4"
+          className="max-w-3xl mx-auto mb-10 flex items-start gap-3 rounded-2xl border border-brand-silver/25 bg-brand-silver/5 px-5 py-4"
         >
-          <ShieldCheck className="w-5 h-5 text-tech-blue shrink-0 mt-0.5" />
+          <ShieldCheck className="w-5 h-5 text-brand-silver shrink-0 mt-0.5" />
           <p className="text-sm text-gray-300 leading-relaxed">
             <strong className="text-white">
               Quem já está numa trilha gratuita não passa a pagar.
@@ -61,14 +61,14 @@ export default function Precos() {
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: i * 0.06 }}
               className={`relative bg-dark-card border rounded-2xl p-6 flex flex-col ${
-                c.destaque ? 'border-neon-green/35 shadow-neon-green' : 'border-dark-border'
+                c.destaque ? 'border-brand-red/35 shadow-brand-red' : 'border-dark-border'
               }`}
             >
               {c.etiqueta && (
                 <span
                   className={`absolute -top-2.5 left-5 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${
                     c.destaque
-                      ? 'bg-neon-green text-black'
+                      ? 'bg-brand-red-deep text-white'
                       : 'bg-dark-secondary text-gray-400 border border-dark-border'
                   }`}
                 >
@@ -84,7 +84,7 @@ export default function Precos() {
                 )}
                 <span
                   className={`text-3xl font-black ${
-                    c.destaque ? 'text-neon-green' : 'text-gray-100'
+                    c.destaque ? 'text-brand-red' : 'text-gray-100'
                   }`}
                 >
                   {c.preco}
@@ -102,7 +102,7 @@ export default function Precos() {
                   <li key={item} className="flex items-start gap-2.5 text-sm text-gray-300">
                     <Check
                       className={`w-4 h-4 shrink-0 mt-0.5 ${
-                        c.destaque ? 'text-neon-green' : 'text-tech-blue'
+                        c.destaque ? 'text-brand-red' : 'text-brand-silver'
                       }`}
                     />
                     {item}
@@ -116,8 +116,8 @@ export default function Precos() {
                 href={c.href}
                 className={`w-full inline-flex items-center justify-center px-5 py-3.5 rounded-lg font-bold text-sm transition-all ${
                   c.destaque
-                    ? 'bg-neon-green text-black hover:bg-neon-green/90 hover:shadow-neon-green-lg'
-                    : 'border border-dark-border text-gray-200 hover:border-neon-green/40 hover:text-white'
+                    ? 'bg-brand-red-deep text-white hover:bg-brand-red-deep/90 hover:shadow-brand-red-lg'
+                    : 'border border-dark-border text-gray-200 hover:border-brand-red/40 hover:text-white'
                 }`}
               >
                 {c.cta}

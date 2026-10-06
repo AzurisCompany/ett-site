@@ -12,7 +12,7 @@ const imersoes = [
     detail: '5 dias presenciais · 1ª edição local',
     href: '/imersoes/curitiba/',
     badge: '1ª EDIÇÃO',
-    accent: 'neon-green',
+    accent: 'brand-red',
   },
   {
     city: 'Belo Horizonte',
@@ -20,7 +20,7 @@ const imersoes = [
     when: 'Set · Out · Nov 2026',
     detail: '3 turmas · 5 dias · hospedagem inclusa',
     href: '/imersoes/belo-horizonte/',
-    accent: 'tech-blue',
+    accent: 'brand-silver',
   },
   {
     city: 'Flórida',
@@ -33,8 +33,8 @@ const imersoes = [
 ]
 
 const accentMap = {
-  'neon-green': 'border-neon-green/30 hover:border-neon-green/60 text-neon-green',
-  'tech-blue': 'border-tech-blue/30 hover:border-tech-blue/60 text-tech-blue',
+  'brand-red': 'border-brand-red/30 hover:border-brand-red/60 text-brand-red',
+  'brand-silver': 'border-brand-silver/30 hover:border-brand-silver/60 text-brand-silver',
   purple: 'border-purple-400/30 hover:border-purple-400/60 text-purple-300',
 }
 
@@ -49,7 +49,7 @@ export default function ImersoesTeaser() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 max-w-3xl mx-auto"
         >
-          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
             Imersões 2026/2027 · em parceria com Cherry Top
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
@@ -78,7 +78,7 @@ export default function ImersoesTeaser() {
                 className={`block bg-dark-card border rounded-2xl p-6 transition-all card-hover ${accentMap[im.accent as keyof typeof accentMap]}`}
               >
                 {im.badge && (
-                  <span className="inline-block mb-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-neon-green text-dark">
+                  <span className="inline-block mb-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand-red-deep text-white">
                     {im.badge}
                   </span>
                 )}
@@ -105,7 +105,7 @@ export default function ImersoesTeaser() {
         <div className="text-center mt-10">
           <Link
             href="/imersoes/"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-neon-green text-dark font-bold text-base hover:bg-neon-green/90 transition-all hover:shadow-neon-green"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red"
           >
             Ver todas as imersões
             <ArrowRight className="w-4 h-4" />

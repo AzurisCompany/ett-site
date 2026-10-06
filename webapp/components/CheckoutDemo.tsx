@@ -29,7 +29,7 @@ export default function CheckoutDemo({ pedido }: { pedido: PedidoDemo }) {
       <div className="container mx-auto px-4 max-w-2xl">
         <Link
           href={pedido.voltarHref}
-          className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-neon-green transition-colors mb-6"
+          className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-brand-red transition-colors mb-6"
         >
           <ArrowLeft className="w-4 h-4" />
           Voltar
@@ -40,9 +40,9 @@ export default function CheckoutDemo({ pedido }: { pedido: PedidoDemo }) {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="flex items-start gap-3 rounded-2xl border border-tech-blue/30 bg-tech-blue/5 px-5 py-4 mb-6"
+          className="flex items-start gap-3 rounded-2xl border border-brand-silver/30 bg-brand-silver/5 px-5 py-4 mb-6"
         >
-          <Info className="w-5 h-5 text-tech-blue shrink-0 mt-0.5" />
+          <Info className="w-5 h-5 text-brand-silver shrink-0 mt-0.5" />
           <p className="text-sm text-gray-300 leading-relaxed">
             <strong className="text-white">
               O pagamento online ainda não está aberto.
@@ -83,7 +83,7 @@ export default function CheckoutDemo({ pedido }: { pedido: PedidoDemo }) {
             <div className="flex items-baseline justify-between gap-4 mt-5 pt-5 border-t border-dark-border">
               <span className="text-white font-bold">Total</span>
               <div className="text-right">
-                <span className="text-3xl font-black text-neon-green">{pedido.total}</span>
+                <span className="text-3xl font-black text-brand-red">{pedido.total}</span>
                 <span className="block text-gray-500 text-xs mt-0.5">{pedido.totalNota}</span>
               </div>
             </div>
@@ -97,7 +97,7 @@ export default function CheckoutDemo({ pedido }: { pedido: PedidoDemo }) {
             <ul className="space-y-2.5">
               {pedido.inclui.map((i) => (
                 <li key={i} className="flex items-start gap-2.5 text-sm text-gray-300">
-                  <Check className="w-4 h-4 shrink-0 mt-0.5 text-neon-green" />
+                  <Check className="w-4 h-4 shrink-0 mt-0.5 text-brand-red" />
                   {i}
                 </li>
               ))}
@@ -119,7 +119,7 @@ export default function CheckoutDemo({ pedido }: { pedido: PedidoDemo }) {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-lg bg-neon-green text-black font-bold text-sm hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg"
+              className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg"
             >
               <MessageCircle className="w-4 h-4" />
               Concluir pelo WhatsApp
@@ -127,7 +127,7 @@ export default function CheckoutDemo({ pedido }: { pedido: PedidoDemo }) {
 
             <Link
               href="/#inscricao"
-              className="w-full inline-flex items-center justify-center px-5 py-3 rounded-lg border border-dark-border text-gray-300 font-semibold text-sm hover:border-neon-green/40 hover:text-white transition-all"
+              className="w-full inline-flex items-center justify-center px-5 py-3 rounded-lg border border-dark-border text-gray-300 font-semibold text-sm hover:border-brand-red/40 hover:text-white transition-all"
             >
               Prefiro deixar meus dados no formulário
             </Link>

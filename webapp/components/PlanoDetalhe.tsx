@@ -13,7 +13,7 @@ export default function PlanoDetalhe({ plano }: { plano: DetalhePlano }) {
         <div className="container mx-auto px-4 max-w-3xl">
           <Link
             href="/#precos"
-            className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-neon-green transition-colors mb-6"
+            className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-brand-red transition-colors mb-6"
           >
             <ArrowLeft className="w-4 h-4" />
             Todas as opções
@@ -24,7 +24,7 @@ export default function PlanoDetalhe({ plano }: { plano: DetalhePlano }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
           >
-            <span className="inline-block px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+            <span className="inline-block px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
               {plano.etiqueta}
             </span>
 
@@ -36,7 +36,7 @@ export default function PlanoDetalhe({ plano }: { plano: DetalhePlano }) {
               {plano.precoAncora && (
                 <span className="text-gray-600 text-lg line-through">{plano.precoAncora}</span>
               )}
-              <span className="text-4xl font-black text-neon-green">{plano.preco}</span>
+              <span className="text-4xl font-black text-brand-red">{plano.preco}</span>
               {plano.precoNota && (
                 <span className="text-gray-500 text-sm">{plano.precoNota}</span>
               )}
@@ -81,7 +81,7 @@ export default function PlanoDetalhe({ plano }: { plano: DetalhePlano }) {
 
       {/* Explicação */}
       <section className="section-padding bg-dark-secondary relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-green/25 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/25 to-transparent" />
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="space-y-10">
             {plano.blocos.map((b, i) => (
@@ -104,7 +104,7 @@ export default function PlanoDetalhe({ plano }: { plano: DetalhePlano }) {
 
       {/* O que está incluso */}
       <section className="section-padding bg-dark relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-green/25 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/25 to-transparent" />
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="text-2xl font-bold text-white mb-6">O que está incluso</h2>
           <ul className="grid sm:grid-cols-2 gap-3">
@@ -113,7 +113,7 @@ export default function PlanoDetalhe({ plano }: { plano: DetalhePlano }) {
                 key={i}
                 className="flex items-start gap-2.5 text-sm text-gray-300 rounded-xl border border-dark-border bg-dark-card px-4 py-3"
               >
-                <Check className="w-4 h-4 shrink-0 mt-0.5 text-neon-green" />
+                <Check className="w-4 h-4 shrink-0 mt-0.5 text-brand-red" />
                 {i}
               </li>
             ))}
@@ -123,18 +123,18 @@ export default function PlanoDetalhe({ plano }: { plano: DetalhePlano }) {
 
       {/* CTA final */}
       <section className="py-16 bg-dark-secondary relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-green/25 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/25 to-transparent" />
         <div className="container mx-auto px-4 max-w-2xl text-center">
           {plano.ctaNota && (
-            <div className="flex items-start gap-3 text-left rounded-2xl border border-tech-blue/25 bg-tech-blue/5 px-5 py-4 mb-6">
-              <Info className="w-5 h-5 text-tech-blue shrink-0 mt-0.5" />
+            <div className="flex items-start gap-3 text-left rounded-2xl border border-brand-silver/25 bg-brand-silver/5 px-5 py-4 mb-6">
+              <Info className="w-5 h-5 text-brand-silver shrink-0 mt-0.5" />
               <p className="text-sm text-gray-300 leading-relaxed">{plano.ctaNota}</p>
             </div>
           )}
 
           <Link
             href={plano.ctaHref}
-            className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-neon-green text-black font-bold hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg"
+            className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-brand-red-deep text-white font-bold hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg"
           >
             {plano.ctaLabel}
           </Link>
@@ -143,7 +143,7 @@ export default function PlanoDetalhe({ plano }: { plano: DetalhePlano }) {
 
           <Link
             href="/#precos"
-            className="inline-block mt-6 text-sm font-semibold text-neon-green hover:underline"
+            className="inline-block mt-6 text-sm font-semibold text-brand-red hover:underline"
           >
             Comparar com as outras opções
           </Link>

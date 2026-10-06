@@ -67,7 +67,7 @@ export default function Agenda() {
     <main className="bg-dark min-h-screen pt-16">
       {/* HERO */}
       <section className="section-padding relative overflow-hidden hero-grid">
-        <div className="absolute inset-0 bg-gradient-to-b from-tech-blue/5 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-silver/5 via-transparent to-transparent pointer-events-none" />
         <div className="container mx-auto px-4 relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -75,7 +75,7 @@ export default function Agenda() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-tech-blue/30 text-tech-blue bg-tech-blue/5 mb-6">
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-6">
               Próximos 30 dias
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
@@ -88,13 +88,13 @@ export default function Agenda() {
 
             {/* Quick stats */}
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-              <div className="flex items-center gap-2 px-4 py-2 rounded-xl border border-tech-blue/30 bg-tech-blue/5">
-                <Wifi className="w-5 h-5 text-tech-blue" />
+              <div className="flex items-center gap-2 px-4 py-2 rounded-xl border border-brand-silver/30 bg-brand-silver/5">
+                <Wifi className="w-5 h-5 text-brand-silver" />
                 <span className="text-white font-bold text-lg">{onlineCount}</span>
                 <span className="text-gray-400 text-sm">online</span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-xl border border-neon-green/30 bg-neon-green/5">
-                <Users className="w-5 h-5 text-neon-green" />
+              <div className="flex items-center gap-2 px-4 py-2 rounded-xl border border-brand-red/30 bg-brand-red/5">
+                <Users className="w-5 h-5 text-brand-red" />
                 <span className="text-white font-bold text-lg">{presencialCount}</span>
                 <span className="text-gray-400 text-sm">presenciais</span>
               </div>
@@ -117,14 +117,14 @@ export default function Agenda() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.5 }}
-              className="bg-dark-card border border-tech-blue/30 rounded-2xl p-6"
+              className="bg-dark-card border border-brand-silver/30 rounded-2xl p-6"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-tech-blue/10 border border-tech-blue/30 flex items-center justify-center">
-                  <Wifi className="w-6 h-6 text-tech-blue" />
+                <div className="w-12 h-12 rounded-xl bg-brand-silver/10 border border-brand-silver/30 flex items-center justify-center">
+                  <Wifi className="w-6 h-6 text-brand-silver" />
                 </div>
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-tech-blue font-semibold">Recorrente</div>
+                  <div className="text-xs uppercase tracking-wider text-brand-silver font-semibold">Recorrente</div>
                   <h3 className="font-bold text-white text-lg">Online · todas as segundas</h3>
                 </div>
               </div>
@@ -143,14 +143,14 @@ export default function Agenda() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.5 }}
-              className="bg-dark-card border border-neon-green/30 rounded-2xl p-6"
+              className="bg-dark-card border border-brand-red/30 rounded-2xl p-6"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-neon-green/10 border border-neon-green/30 flex items-center justify-center">
-                  <Users className="w-6 h-6 text-neon-green" />
+                <div className="w-12 h-12 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center">
+                  <Users className="w-6 h-6 text-brand-red" />
                 </div>
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-neon-green font-semibold">Semanal</div>
+                  <div className="text-xs uppercase tracking-wider text-brand-red font-semibold">Semanal</div>
                   <h3 className="font-bold text-white text-lg">Presencial · quartas ou quintas</h3>
                 </div>
               </div>
@@ -177,7 +177,7 @@ export default function Agenda() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
               Cronograma
             </span>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
@@ -207,20 +207,20 @@ export default function Agenda() {
                   viewport={{ once: true, margin: '-30px' }}
                   transition={{ duration: 0.3, delay: (i % 4) * 0.04 }}
                   className={`relative bg-dark-card border rounded-xl p-3.5 card-hover ${
-                    isOnline ? 'border-tech-blue/20' : 'border-neon-green/20'
-                  } ${ev.highlight ? 'shadow-neon-green' : ''}`}
+                    isOnline ? 'border-brand-silver/20' : 'border-brand-red/20'
+                  } ${ev.highlight ? 'shadow-brand-red' : ''}`}
                 >
                   <div className="flex items-start gap-3">
                     {/* Date pill */}
                     <div
                       className={`shrink-0 w-14 rounded-lg border text-center py-1.5 ${
                         isOnline
-                          ? 'border-tech-blue/30 bg-tech-blue/5'
-                          : 'border-neon-green/30 bg-neon-green/5'
+                          ? 'border-brand-silver/30 bg-brand-silver/5'
+                          : 'border-brand-red/30 bg-brand-red/5'
                       }`}
                     >
                       <div className={`text-[10px] uppercase tracking-wider font-bold ${
-                        isOnline ? 'text-tech-blue' : 'text-neon-green'
+                        isOnline ? 'text-brand-silver' : 'text-brand-red'
                       }`}>
                         {weekdayAbbr}
                       </div>
@@ -238,15 +238,15 @@ export default function Agenda() {
                         <span
                           className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider border ${
                             isOnline
-                              ? 'bg-tech-blue/10 text-tech-blue border-tech-blue/30'
-                              : 'bg-neon-green/10 text-neon-green border-neon-green/30'
+                              ? 'bg-brand-silver/10 text-brand-silver border-brand-silver/30'
+                              : 'bg-brand-red/10 text-brand-red border-brand-red/30'
                           }`}
                         >
                           <Icon className="w-2.5 h-2.5" />
                           {ev.type}
                         </span>
                         {ev.partner && (
-                          <span className="inline-flex px-1.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-tech-blue/10 text-tech-blue border border-tech-blue/30">
+                          <span className="inline-flex px-1.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-brand-silver/10 text-brand-silver border border-brand-silver/30">
                             {ev.partner}
                           </span>
                         )}
@@ -267,7 +267,7 @@ export default function Agenda() {
 
                       {ev.timeNote && (
                         <p className={`text-[11px] mt-1 leading-tight ${
-                          ev.highlight ? 'text-neon-green/80' : 'text-gray-500'
+                          ev.highlight ? 'text-brand-red/80' : 'text-gray-500'
                         }`}>
                           {ev.timeNote}
                         </p>
@@ -281,7 +281,7 @@ export default function Agenda() {
                               href={l.url}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1 text-[11px] font-semibold text-neon-green hover:underline"
+                              className="inline-flex items-center gap-1 text-[11px] font-semibold text-brand-red hover:underline"
                             >
                               {l.label}
                               <ExternalLink className="w-3 h-3" />
@@ -308,7 +308,7 @@ export default function Agenda() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
               4 Locais
             </span>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
@@ -330,8 +330,8 @@ export default function Agenda() {
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover"
               >
-                <div className="w-11 h-11 rounded-xl bg-neon-green/10 border border-neon-green/20 flex items-center justify-center mb-4">
-                  <v.icon className="w-5 h-5 text-neon-green" />
+                <div className="w-11 h-11 rounded-xl bg-brand-red/10 border border-brand-red/20 flex items-center justify-center mb-4">
+                  <v.icon className="w-5 h-5 text-brand-red" />
                 </div>
                 <h3 className="font-bold text-white text-lg mb-2">{v.name}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{v.desc}</p>
@@ -349,20 +349,20 @@ export default function Agenda() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center bg-dark-card border border-neon-green/30 rounded-3xl p-10 md:p-14 shadow-neon-green relative overflow-hidden"
+            className="max-w-3xl mx-auto text-center bg-dark-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-neon-green/8 to-tech-blue/8 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 to-brand-silver/8 pointer-events-none" />
             <div className="relative">
               <div className="inline-flex items-center justify-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-neon-green/10 border border-neon-green/30 flex items-center justify-center">
-                  <Lightbulb className="w-6 h-6 text-neon-green" />
+                <div className="w-12 h-12 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center">
+                  <Lightbulb className="w-6 h-6 text-brand-red" />
                 </div>
-                <div className="w-12 h-12 rounded-xl bg-tech-blue/10 border border-tech-blue/30 flex items-center justify-center">
-                  <BookMarked className="w-6 h-6 text-tech-blue" />
+                <div className="w-12 h-12 rounded-xl bg-brand-silver/10 border border-brand-silver/30 flex items-center justify-center">
+                  <BookMarked className="w-6 h-6 text-brand-silver" />
                 </div>
               </div>
 
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-5">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-5">
                 Gratuito
               </span>
 
@@ -376,7 +376,7 @@ export default function Agenda() {
 
               <Link
                 href="/#inscricao"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-neon-green text-black font-bold text-sm hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg"
               >
                 Tenho interesse
                 <ArrowRight className="w-4 h-4" />

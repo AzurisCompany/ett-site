@@ -149,10 +149,10 @@ export default function BlogIndexPage() {
       <main className="bg-dark min-h-screen pt-16">
         {/* HERO */}
         <section className="relative section-padding overflow-hidden hero-grid">
-          <div className="absolute inset-0 bg-gradient-to-b from-tech-blue/5 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-silver/5 via-transparent to-transparent pointer-events-none" />
           <div className="container mx-auto px-4 relative">
             <div className="max-w-3xl mx-auto text-center">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-6">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-6">
                 Blog ETT
               </span>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-5 leading-tight">
@@ -176,15 +176,15 @@ export default function BlogIndexPage() {
                 <Link
                   key={p.href}
                   href={p.href}
-                  className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-7 bg-dark-card border border-dark-border rounded-2xl p-6 md:p-8 card-hover hover:border-neon-green/30 transition-all group"
+                  className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-7 bg-dark-card border border-dark-border rounded-2xl p-6 md:p-8 card-hover hover:border-brand-red/30 transition-all group"
                 >
                   <div className="flex-1 min-w-0 order-2 sm:order-1">
                     <div className="flex flex-wrap items-center gap-3 mb-3 text-xs text-gray-400">
                       <span
                         className={
                           p.isPartner
-                            ? 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full border border-tech-blue/40 text-tech-blue bg-tech-blue/5 font-semibold uppercase tracking-wider'
-                            : 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full border border-neon-green/30 text-neon-green bg-neon-green/5 font-semibold uppercase tracking-wider'
+                            ? 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full border border-brand-silver/40 text-brand-silver bg-brand-silver/5 font-semibold uppercase tracking-wider'
+                            : 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full border border-brand-red/30 text-brand-red bg-brand-red/5 font-semibold uppercase tracking-wider'
                         }
                       >
                         <Tag className="w-3 h-3" />
@@ -199,11 +199,11 @@ export default function BlogIndexPage() {
                         {p.readMinutes} min
                       </span>
                     </div>
-                    <h2 className="text-xl md:text-2xl font-bold text-white mb-3 leading-snug group-hover:text-neon-green transition-colors">
+                    <h2 className="text-xl md:text-2xl font-bold text-white mb-3 leading-snug group-hover:text-brand-red transition-colors">
                       {p.title}
                     </h2>
                     <p className="text-gray-400 leading-relaxed mb-4">{p.excerpt}</p>
-                    <span className="inline-flex items-center gap-1.5 text-neon-green text-sm font-semibold">
+                    <span className="inline-flex items-center gap-1.5 text-brand-red text-sm font-semibold">
                       {p.isPartner ? 'Ver indicação' : 'Ler artigo'}{' '}
                       <ArrowRight className="w-4 h-4" />
                     </span>
@@ -220,7 +220,7 @@ export default function BlogIndexPage() {
                           className="h-10 sm:h-14 w-auto"
                         />
                       </span>
-                      <span className="text-[11px] font-semibold uppercase tracking-wider text-tech-blue/80">
+                      <span className="text-[11px] font-semibold uppercase tracking-wider text-brand-silver/80">
                         via {p.partnerName}
                       </span>
                     </div>

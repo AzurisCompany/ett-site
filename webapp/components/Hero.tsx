@@ -38,13 +38,13 @@ export default function Hero() {
         animate={{ scale: [1, 1.2, 1], opacity: [0.15, 0.25, 0.15] }}
         transition={{ duration: 8, repeat: Infinity }}
         className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(0,255,157,0.12) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(215, 34, 41,0.12) 0%, transparent 70%)' }}
       />
       <motion.div
         animate={{ scale: [1.2, 1, 1.2], opacity: [0.1, 0.2, 0.1] }}
         transition={{ duration: 10, repeat: Infinity }}
         className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full blur-3xl pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(0,191,255,0.12) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(168, 169, 172,0.12) 0%, transparent 70%)' }}
       />
 
       {/* Content */}
@@ -54,7 +54,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neon-green/30 bg-neon-green/10 text-neon-green text-sm font-medium mb-8"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-red/30 bg-brand-red/10 text-brand-red text-sm font-medium mb-8"
         >
           <Zap className="w-4 h-4" />
           <span>Programa aberto à comunidade • Participação 100% gratuita</span>
@@ -68,9 +68,9 @@ export default function Hero() {
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight max-w-5xl mx-auto"
         >
           Do inglês{' '}
-          <span className="neon-green">travado</span>{' '}
+          <span className="brand-red">travado</span>{' '}
           ao inglês{' '}
-          <span className="neon-blue">funcional</span>{' '}
+          <span className="brand-silver">funcional</span>{' '}
           <br className="hidden md:block" />
           para o mercado internacional
         </motion.h1>
@@ -83,8 +83,8 @@ export default function Hero() {
           className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed"
         >
           <span className="text-white font-semibold">Grupo de conversação em inglês aberto e gratuito</span>{' '}
-          pra quem quer <span className="text-neon-green font-medium">destravar inglês</span> e{' '}
-          <span className="text-tech-blue font-medium">falar com fluência</span>.
+          pra quem quer <span className="text-brand-red font-medium">destravar inglês</span> e{' '}
+          <span className="text-brand-silver font-medium">falar com fluência</span>.
           <span className="text-white"> Cadastre-se</span> para receber a agenda dos encontros, a
           metodologia e o acesso às <span className="text-white">ferramentas com IA</span> — e{' '}
           <span className="text-white font-semibold">participe de graça</span>, online (toda segunda)
@@ -102,13 +102,13 @@ export default function Hero() {
         >
           <Link
             href="#inscricao"
-            className="w-full sm:w-auto px-8 py-4 rounded-lg bg-neon-green text-black font-bold text-base sm:text-lg hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg hover:-translate-y-0.5 active:translate-y-0"
+            className="w-full sm:w-auto px-8 py-4 rounded-lg bg-brand-red-deep text-white font-bold text-base sm:text-lg hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg hover:-translate-y-0.5 active:translate-y-0"
           >
             Quero participar do próximo encontro gratuito
           </Link>
           <Link
             href="#player"
-            className="w-full sm:w-auto px-8 py-4 rounded-lg border border-tech-blue/50 text-tech-blue font-bold text-base sm:text-lg hover:bg-tech-blue/10 hover:border-tech-blue transition-all hover:-translate-y-0.5 active:translate-y-0"
+            className="w-full sm:w-auto px-8 py-4 rounded-lg border border-brand-silver/50 text-brand-silver font-bold text-base sm:text-lg hover:bg-brand-silver/10 hover:border-brand-silver transition-all hover:-translate-y-0.5 active:translate-y-0"
           >
             Conhecer as ferramentas com IA
           </Link>
@@ -122,13 +122,13 @@ export default function Hero() {
           className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mb-14 text-sm text-gray-400"
         >
           <span className="inline-flex items-center gap-1.5">
-            <Check className="w-4 h-4 text-neon-green" /> Sem custo de inscrição
+            <Check className="w-4 h-4 text-brand-red" /> Sem custo de inscrição
           </span>
           <span className="inline-flex items-center gap-1.5">
-            <Check className="w-4 h-4 text-neon-green" /> Online (toda segunda) + presencial em Curitiba
+            <Check className="w-4 h-4 text-brand-red" /> Online (toda segunda) + presencial em Curitiba
           </span>
           <span className="inline-flex items-center gap-1.5">
-            <Check className="w-4 h-4 text-neon-green" /> +365 mil alunos na metodologia Fórmula Fluente
+            <Check className="w-4 h-4 text-brand-red" /> +365 mil alunos na metodologia Fórmula Fluente
           </span>
         </motion.div>
 
@@ -147,8 +147,8 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.7 + i * 0.1 }}
               className="flex flex-col items-center gap-1 px-4 py-3 rounded-xl bg-dark-card/80 border border-dark-border backdrop-blur-sm"
             >
-              <stat.icon className="w-4 h-4 text-neon-green mb-1" />
-              <span className="text-xl font-bold text-neon-green">{stat.value}</span>
+              <stat.icon className="w-4 h-4 text-brand-red mb-1" />
+              <span className="text-xl font-bold text-brand-red">{stat.value}</span>
               <span className="text-xs text-gray-400 text-center">{stat.label}</span>
             </motion.div>
           ))}

@@ -157,10 +157,10 @@ export default function CuritibaPage() {
       <main className="bg-dark min-h-screen pt-16">
         {/* HERO */}
         <section className="relative section-padding overflow-hidden hero-grid">
-          <div className="absolute inset-0 bg-gradient-to-b from-neon-green/8 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-red/8 via-transparent to-transparent pointer-events-none" />
           <div className="container mx-auto px-4 relative">
             <div className="max-w-4xl mx-auto text-center">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-6">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-6">
                 Curitiba · PR
               </span>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
@@ -178,14 +178,14 @@ export default function CuritibaPage() {
               <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
                 <a
                   href={FORM_URL}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-neon-green text-dark font-bold text-base hover:bg-neon-green/90 transition-all hover:shadow-neon-green"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red"
                 >
                   Garantir lugar no próximo encontro
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <Link
                   href="#proximos"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-dark-border text-white font-semibold hover:border-neon-green/50 hover:bg-dark-card transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-dark-border text-white font-semibold hover:border-brand-red/50 hover:bg-dark-card transition-all"
                 >
                   Ver próximas datas
                 </Link>
@@ -201,7 +201,7 @@ export default function CuritibaPage() {
         >
           <div className="container mx-auto px-4">
             <div className="text-center mb-10 max-w-3xl mx-auto">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 Próximos encontros presenciais
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
@@ -214,7 +214,7 @@ export default function CuritibaPage() {
             <div className="text-center mt-8">
               <Link
                 href="/agenda/"
-                className="inline-flex items-center gap-2 text-gray-400 hover:text-neon-green text-sm transition-colors"
+                className="inline-flex items-center gap-2 text-gray-400 hover:text-brand-red text-sm transition-colors"
               >
                 <Calendar className="w-4 h-4" />
                 Ver agenda completa
@@ -227,7 +227,7 @@ export default function CuritibaPage() {
         <section className="section-padding bg-dark">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 max-w-3xl mx-auto">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-tech-blue/30 text-tech-blue bg-tech-blue/5 mb-4">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 Casas parceiras · Curitiba
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
@@ -246,7 +246,7 @@ export default function CuritibaPage() {
                   href={v.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-dark-card border border-dark-border rounded-2xl p-5 card-hover flex gap-4 hover:border-neon-green/30 transition-all"
+                  className="bg-dark-card border border-dark-border rounded-2xl p-5 card-hover flex gap-4 hover:border-brand-red/30 transition-all"
                 >
                   <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-white/5 border border-dark-border flex-shrink-0">
                     <Image
@@ -306,7 +306,7 @@ export default function CuritibaPage() {
                     className="bg-dark-card border border-dark-border rounded-2xl p-5"
                   >
                     <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-neon-green shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
                       <div>
                         <h3 className="font-bold text-white text-base mb-2">
                           {item.title}
@@ -326,13 +326,13 @@ export default function CuritibaPage() {
         {/* CROSS-LINK ONLINE */}
         <section className="section-padding bg-dark">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto bg-dark-card border border-tech-blue/30 rounded-3xl p-8 md:p-10">
+            <div className="max-w-3xl mx-auto bg-dark-card border border-brand-silver/30 rounded-3xl p-8 md:p-10">
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-tech-blue/10 border border-tech-blue/30 flex items-center justify-center flex-shrink-0">
-                  <Wifi className="w-6 h-6 text-tech-blue" />
+                <div className="w-12 h-12 rounded-xl bg-brand-silver/10 border border-brand-silver/30 flex items-center justify-center flex-shrink-0">
+                  <Wifi className="w-6 h-6 text-brand-silver" />
                 </div>
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-tech-blue font-semibold mb-1">
+                  <div className="text-xs uppercase tracking-wider text-brand-silver font-semibold mb-1">
                     Tem online também
                   </div>
                   <h3 className="font-bold text-white text-xl md:text-2xl">
@@ -347,7 +347,7 @@ export default function CuritibaPage() {
               </p>
               <Link
                 href="/online/"
-                className="inline-flex items-center gap-2 text-tech-blue font-semibold hover:text-tech-blue/80 transition-colors"
+                className="inline-flex items-center gap-2 text-brand-silver font-semibold hover:text-brand-silver/80 transition-colors"
               >
                 Ver detalhes do encontro online <ArrowRight className="w-4 h-4" />
               </Link>
@@ -358,13 +358,13 @@ export default function CuritibaPage() {
         {/* CROSS-LINK IMERSÃO CURITIBA */}
         <section className="section-padding bg-dark-secondary border-y border-dark-border">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto bg-dark-card border border-neon-green/30 rounded-3xl p-8 md:p-10">
+            <div className="max-w-3xl mx-auto bg-dark-card border border-brand-red/30 rounded-3xl p-8 md:p-10">
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-neon-green/10 border border-neon-green/30 flex items-center justify-center flex-shrink-0">
-                  <GraduationCap className="w-6 h-6 text-neon-green" />
+                <div className="w-12 h-12 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center flex-shrink-0">
+                  <GraduationCap className="w-6 h-6 text-brand-red" />
                 </div>
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-neon-green font-semibold mb-1">
+                  <div className="text-xs uppercase tracking-wider text-brand-red font-semibold mb-1">
                     Imersão presencial em Curitiba
                   </div>
                   <h3 className="font-bold text-white text-xl md:text-2xl leading-snug">
@@ -380,7 +380,7 @@ export default function CuritibaPage() {
               </p>
               <Link
                 href="/imersoes/curitiba/"
-                className="inline-flex items-center gap-2 text-neon-green font-semibold hover:text-neon-green/80 transition-colors"
+                className="inline-flex items-center gap-2 text-brand-red font-semibold hover:text-brand-red/80 transition-colors"
               >
                 Ver detalhes da imersão em Curitiba <ArrowRight className="w-4 h-4" />
               </Link>
@@ -391,10 +391,10 @@ export default function CuritibaPage() {
         {/* CTA FINAL */}
         <section className="section-padding bg-dark-secondary border-t border-dark-border">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center bg-dark-card border border-neon-green/30 rounded-3xl p-10 md:p-14 shadow-neon-green relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-neon-green/8 to-tech-blue/8 pointer-events-none" />
+            <div className="max-w-3xl mx-auto text-center bg-dark-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 to-brand-silver/8 pointer-events-none" />
               <div className="relative">
-                <Users className="w-10 h-10 text-neon-green mx-auto mb-5" />
+                <Users className="w-10 h-10 text-brand-red mx-auto mb-5" />
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
                   Vem praticar inglês <span className="gradient-text">com a gente em Curitiba</span>
                 </h2>
@@ -404,7 +404,7 @@ export default function CuritibaPage() {
                 </p>
                 <a
                   href={FORM_URL}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-neon-green text-dark font-bold text-base hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg"
                 >
                   Quero participar em Curitiba
                   <ArrowRight className="w-5 h-5" />

@@ -35,7 +35,7 @@ const metrics = [
     suffix: 'h',
     label: 'Jornada estruturada completa',
     description: 'De inglês travado a funcional com método e constância',
-    color: 'neon-green',
+    color: 'brand-red',
   },
   {
     icon: BookOpen,
@@ -43,7 +43,7 @@ const metrics = [
     suffix: '',
     label: 'Palavras-meta de vocabulário',
     description: 'As 3.000 palavras mais relevantes para a sua carreira',
-    color: 'tech-blue',
+    color: 'brand-silver',
   },
   {
     icon: Target,
@@ -51,7 +51,7 @@ const metrics = [
     suffix: '%',
     label: 'de qualquer texto coberto',
     description: 'Com apenas as 250 palavras mais comuns do inglês',
-    color: 'neon-green',
+    color: 'brand-red',
   },
   {
     icon: Zap,
@@ -59,7 +59,7 @@ const metrics = [
     suffix: '%',
     label: 'de compreensão de conversas',
     description: 'Com 1.000 palavras + cognatos em contexto real',
-    color: 'tech-blue',
+    color: 'brand-silver',
   },
   {
     icon: TrendingUp,
@@ -67,7 +67,7 @@ const metrics = [
     suffix: 'x',
     label: 'Palavras por dia = fluência',
     description: '10 meses com 10 palavras/dia. 5 meses com 20 palavras/dia',
-    color: 'neon-green',
+    color: 'brand-red',
   },
   {
     icon: Trophy,
@@ -75,7 +75,7 @@ const metrics = [
     suffix: 'x',
     label: 'Potencial de aumento salarial',
     description: 'Salários até 5x maiores em vagas internacionais (dados Coders)',
-    color: 'tech-blue',
+    color: 'brand-silver',
   },
 ]
 
@@ -83,14 +83,14 @@ const gamificationLevels = [
   { level: 'Novato', range: '0–500 pts', color: 'text-gray-400', bg: 'bg-gray-800' },
   { level: 'Intermediário', range: '501–1.500 pts', color: 'text-yellow-400', bg: 'bg-yellow-900/20' },
   { level: 'Avançado', range: '1.501–3.000 pts', color: 'text-orange-400', bg: 'bg-orange-900/20' },
-  { level: 'Fluente', range: '3.001–6.000 pts', color: 'text-tech-blue', bg: 'bg-tech-blue/10' },
-  { level: 'Global Pro', range: '6.001+ pts', color: 'text-neon-green', bg: 'bg-neon-green/10' },
+  { level: 'Fluente', range: '3.001–6.000 pts', color: 'text-brand-silver', bg: 'bg-brand-silver/10' },
+  { level: 'Global Pro', range: '6.001+ pts', color: 'text-brand-red', bg: 'bg-brand-red/10' },
 ]
 
 export default function Results() {
   return (
     <section id="resultados" className="section-padding bg-dark relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-green/20 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/20 to-transparent" />
 
       <div className="container mx-auto px-4">
         <motion.div
@@ -100,7 +100,7 @@ export default function Results() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
             Resultados & Dados
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
@@ -126,11 +126,11 @@ export default function Results() {
               className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover"
             >
               <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${
-                m.color === 'neon-green' ? 'bg-neon-green/10' : 'bg-tech-blue/10'
+                m.color === 'brand-red' ? 'bg-brand-red/10' : 'bg-brand-silver/10'
               }`}>
-                <m.icon className={`w-5 h-5 ${m.color === 'neon-green' ? 'text-neon-green' : 'text-tech-blue'}`} />
+                <m.icon className={`w-5 h-5 ${m.color === 'brand-red' ? 'text-brand-red' : 'text-brand-silver'}`} />
               </div>
-              <div className={`text-4xl font-black mb-1 ${m.color === 'neon-green' ? 'text-neon-green' : 'text-tech-blue'}`}>
+              <div className={`text-4xl font-black mb-1 ${m.color === 'brand-red' ? 'text-brand-red' : 'text-brand-silver'}`}>
                 <CountUp end={m.value} suffix={m.suffix} />
               </div>
               <div className="font-bold text-white text-sm mb-2">{m.label}</div>
@@ -149,7 +149,7 @@ export default function Results() {
         >
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-white mb-2 flex items-center justify-center gap-2">
-              <Trophy className="w-6 h-6 text-neon-green" />
+              <Trophy className="w-6 h-6 text-brand-red" />
               Sistema de Gamificação ETT
             </h3>
             <p className="text-gray-400">
@@ -178,15 +178,15 @@ export default function Results() {
 
           <div className="grid sm:grid-cols-3 gap-4 text-center text-sm text-gray-400">
             <div className="bg-dark/50 rounded-xl p-4 border border-dark-border">
-              <div className="text-neon-green font-bold text-base mb-1">Pontos diários</div>
+              <div className="text-brand-red font-bold text-base mb-1">Pontos diários</div>
               Estudo, check-in, palavras revisadas e encontros = pontos acumulados
             </div>
             <div className="bg-dark/50 rounded-xl p-4 border border-dark-border">
-              <div className="text-tech-blue font-bold text-base mb-1">Badges & conquistas</div>
+              <div className="text-brand-silver font-bold text-base mb-1">Badges & conquistas</div>
               Primeiro episódio, semana perfeita, nível desbloqueado — cada marco é reconhecido
             </div>
             <div className="bg-dark/50 rounded-xl p-4 border border-dark-border">
-              <div className="text-neon-green font-bold text-base mb-1">Jackpot mensal</div>
+              <div className="text-brand-red font-bold text-base mb-1">Jackpot mensal</div>
               Os participantes mais constantes do mês concorrem a prêmios e benefícios exclusivos
             </div>
           </div>

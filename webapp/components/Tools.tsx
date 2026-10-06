@@ -120,12 +120,12 @@ const tools = [
 export default function Tools() {
   return (
     <section id="ferramentas" className="section-padding bg-dark-secondary relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-tech-blue/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-silver/30 to-transparent" />
 
       {/* Background glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl pointer-events-none opacity-5"
-        style={{ background: 'radial-gradient(circle, #00FF9D 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, #D72229 0%, transparent 70%)' }}
       />
 
       <div className="container mx-auto px-4">
@@ -136,7 +136,7 @@ export default function Tools() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
             Ferramentas com IA para Inglês
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
@@ -161,13 +161,13 @@ export default function Tools() {
               transition={{ duration: 0.5, delay: i * 0.07 }}
               className={`relative bg-dark-card rounded-2xl p-5 card-hover flex flex-col ${
                 tool.highlight
-                  ? 'border border-neon-green/30 shadow-neon-green'
+                  ? 'border border-brand-red/30 shadow-brand-red'
                   : 'border border-dark-border'
               }`}
             >
               {/* Badge */}
               {tool.badge && (
-                <span className="absolute top-4 right-4 px-2 py-0.5 rounded-full text-xs font-bold bg-neon-green/15 text-neon-green border border-neon-green/25">
+                <span className="absolute top-4 right-4 px-2 py-0.5 rounded-full text-xs font-bold bg-brand-red/15 text-brand-red border border-brand-red/25">
                   {tool.badge}
                 </span>
               )}
@@ -175,15 +175,15 @@ export default function Tools() {
               {/* Icon */}
               <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${
                 tool.highlight
-                  ? 'bg-neon-green/15 border border-neon-green/30'
-                  : 'bg-tech-blue/10 border border-tech-blue/20'
+                  ? 'bg-brand-red/15 border border-brand-red/30'
+                  : 'bg-brand-silver/10 border border-brand-silver/20'
               }`}>
-                <tool.icon className={`w-5 h-5 ${tool.highlight ? 'text-neon-green' : 'text-tech-blue'}`} />
+                <tool.icon className={`w-5 h-5 ${tool.highlight ? 'text-brand-red' : 'text-brand-silver'}`} />
               </div>
 
               <h3 className="font-bold text-white text-base mb-1">{tool.name}</h3>
               <p className={`text-xs font-semibold uppercase tracking-wide mb-3 ${
-                tool.highlight ? 'text-neon-green' : 'text-tech-blue'
+                tool.highlight ? 'text-brand-red' : 'text-brand-silver'
               }`}>
                 {tool.tagline}
               </p>
@@ -208,7 +208,7 @@ export default function Tools() {
           </p>
           <a
             href="#player"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-neon-green text-black font-bold text-base hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg hover:-translate-y-0.5"
           >
             Ver o ETT Player em ação
           </a>

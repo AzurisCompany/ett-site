@@ -32,10 +32,10 @@ const SUBTITLES_TOOL_URL =
 const LEAD_FORM_URL = 'https://forms.gle/jpK8bR4houvAXTwm9'
 
 const pillars = [
-  { title: 'Escribir', pct: 40, type: 'Activa · Escrita', icon: PenLine, color: 'neon-green', note: 'La más difícil — por eso va primero. Quien escribe, lee.' },
-  { title: 'Hablar', pct: 30, type: 'Activa · Oral', icon: MessageSquare, color: 'neon-green', note: 'Pronunciación + velocidad. Quien habla, escucha y entiende.' },
-  { title: 'Escuchar', pct: 20, type: 'Pasiva · Oral', icon: Headphones, color: 'tech-blue', note: 'Acentos, modismos, ritmo. El subconsciente hace el trabajo.' },
-  { title: 'Leer', pct: 10, type: 'Pasiva · Escrita', icon: BookOpen, color: 'tech-blue', note: 'La más fácil — información pura, sin pronunciación.' },
+  { title: 'Escribir', pct: 40, type: 'Activa · Escrita', icon: PenLine, color: 'brand-red', note: 'La más difícil — por eso va primero. Quien escribe, lee.' },
+  { title: 'Hablar', pct: 30, type: 'Activa · Oral', icon: MessageSquare, color: 'brand-red', note: 'Pronunciación + velocidad. Quien habla, escucha y entiende.' },
+  { title: 'Escuchar', pct: 20, type: 'Pasiva · Oral', icon: Headphones, color: 'brand-silver', note: 'Acentos, modismos, ritmo. El subconsciente hace el trabajo.' },
+  { title: 'Leer', pct: 10, type: 'Pasiva · Escrita', icon: BookOpen, color: 'brand-silver', note: 'La más fácil — información pura, sin pronunciación.' },
 ]
 
 const stages = [
@@ -46,9 +46,9 @@ const stages = [
 ]
 
 const immersionLayers = [
-  { icon: Plane, title: 'En el exterior', color: 'neon-green', desc: 'Cuando es viable, busca contacto con nativos y evita compatriotas hasta tener fluidez. Cada palabra cotidiana aparece decenas de veces por día.' },
-  { icon: MapPin, title: 'En tu país', color: 'tech-blue', desc: 'Intercambio de idiomas, Meetup, hostels, Couchsurfing, clases online, comunidad de práctica. En ETT, es el corazón de los encuentros semanales.' },
-  { icon: Brain, title: 'En tu cabeza', color: 'neon-green', desc: 'Traducir el diálogo interno en el tránsito, la ducha, la fila. La técnica de mayor apalancamiento por minuto — funciona en cualquier lugar.' },
+  { icon: Plane, title: 'En el exterior', color: 'brand-red', desc: 'Cuando es viable, busca contacto con nativos y evita compatriotas hasta tener fluidez. Cada palabra cotidiana aparece decenas de veces por día.' },
+  { icon: MapPin, title: 'En tu país', color: 'brand-silver', desc: 'Intercambio de idiomas, Meetup, hostels, Couchsurfing, clases online, comunidad de práctica. En ETT, es el corazón de los encuentros semanales.' },
+  { icon: Brain, title: 'En tu cabeza', color: 'brand-red', desc: 'Traducir el diálogo interno en el tránsito, la ducha, la fila. La técnica de mayor apalancamiento por minuto — funciona en cualquier lugar.' },
 ]
 
 const principles = [
@@ -61,8 +61,8 @@ const principles = [
 ]
 
 const colorMap = {
-  'neon-green': { bg: 'bg-neon-green/10', border: 'border-neon-green/20', icon: 'text-neon-green', text: 'text-neon-green', bar: 'bg-neon-green' },
-  'tech-blue': { bg: 'bg-tech-blue/10', border: 'border-tech-blue/20', icon: 'text-tech-blue', text: 'text-tech-blue', bar: 'bg-tech-blue' },
+  'brand-red': { bg: 'bg-brand-red/10', border: 'border-brand-red/20', icon: 'text-brand-red', text: 'text-brand-red', bar: 'bg-brand-red-deep' },
+  'brand-silver': { bg: 'bg-brand-silver/10', border: 'border-brand-silver/20', icon: 'text-brand-silver', text: 'text-brand-silver', bar: 'bg-brand-silver' },
 }
 
 const jsonLd = {
@@ -95,10 +95,10 @@ export default function EsMetodoPage() {
       <main className="bg-dark min-h-screen pt-16">
         {/* HERO */}
         <section className="section-padding relative overflow-hidden hero-grid">
-          <div className="absolute inset-0 bg-gradient-to-b from-neon-green/5 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-red/5 via-transparent to-transparent pointer-events-none" />
           <div className="container mx-auto px-4 relative">
             <div className="max-w-4xl mx-auto text-center">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-6">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-6">
                 Metodología
               </span>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
@@ -109,11 +109,11 @@ export default function EsMetodoPage() {
                 pasan años trabadas. Base científica, práctica deliberada, threshold + inmersión.
               </p>
 
-              <div className="inline-flex flex-wrap items-center justify-center gap-3 sm:gap-5 p-6 sm:p-8 rounded-3xl border border-neon-green/30 bg-neon-green/5 shadow-neon-green">
+              <div className="inline-flex flex-wrap items-center justify-center gap-3 sm:gap-5 p-6 sm:p-8 rounded-3xl border border-brand-red/30 bg-brand-red/5 shadow-brand-red">
                 <span className="text-xl sm:text-3xl font-bold text-white">Threshold</span>
-                <span className="text-xl sm:text-3xl font-bold text-tech-blue">+</span>
+                <span className="text-xl sm:text-3xl font-bold text-brand-silver">+</span>
                 <span className="text-xl sm:text-3xl font-bold text-white">Inmersión</span>
-                <span className="text-xl sm:text-3xl font-bold text-tech-blue">=</span>
+                <span className="text-xl sm:text-3xl font-bold text-brand-silver">=</span>
                 <span className="text-xl sm:text-3xl font-bold gradient-text">Fluidez</span>
               </div>
 
@@ -130,7 +130,7 @@ export default function EsMetodoPage() {
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto items-start">
               <div>
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-tech-blue/30 text-tech-blue bg-tech-blue/5 mb-4">
+                <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                   La Premisa
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-tight">
@@ -147,20 +147,20 @@ export default function EsMetodoPage() {
 
               <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <Layers className="w-6 h-6 text-neon-green" />
+                  <Layers className="w-6 h-6 text-brand-red" />
                   <h3 className="font-bold text-white text-lg">Idioma = LEGO Lingüístico</h3>
                 </div>
                 <p className="text-gray-400 text-sm leading-relaxed mb-4">
                   Toda lengua se reduce a dos piezas:
                 </p>
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="p-4 rounded-xl bg-neon-green/5 border border-neon-green/20">
-                    <div className="text-xs uppercase tracking-wider text-neon-green font-semibold mb-1">Palabras</div>
+                  <div className="p-4 rounded-xl bg-brand-red/5 border border-brand-red/20">
+                    <div className="text-xs uppercase tracking-wider text-brand-red font-semibold mb-1">Palabras</div>
                     <div className="text-white font-bold mb-1">Vocabulario</div>
                     <div className="text-xs text-gray-500">Hemisferio derecho · memorizar</div>
                   </div>
-                  <div className="p-4 rounded-xl bg-tech-blue/5 border border-tech-blue/20">
-                    <div className="text-xs uppercase tracking-wider text-tech-blue font-semibold mb-1">Orden</div>
+                  <div className="p-4 rounded-xl bg-brand-silver/5 border border-brand-silver/20">
+                    <div className="text-xs uppercase tracking-wider text-brand-silver font-semibold mb-1">Orden</div>
                     <div className="text-white font-bold mb-1">Gramática</div>
                     <div className="text-xs text-gray-500">Hemisferio izquierdo · entender reglas</div>
                   </div>
@@ -174,7 +174,7 @@ export default function EsMetodoPage() {
         <section className="section-padding">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 Los 4 Pilares
               </span>
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
@@ -218,11 +218,11 @@ export default function EsMetodoPage() {
 
         {/* THRESHOLD */}
         <section className="section-padding bg-dark-secondary border-y border-dark-border relative overflow-hidden">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-neon-green/5 blur-3xl pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-brand-red/5 blur-3xl pointer-events-none" />
           <div className="container mx-auto px-4 relative">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+                <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                   El Threshold
                 </span>
                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
@@ -236,18 +236,18 @@ export default function EsMetodoPage() {
 
               <div className="grid sm:grid-cols-3 gap-4 mb-12">
                 {[
-                  { num: '250', label: 'palabras', desc: '~60% de cualquier texto', color: 'tech-blue' },
-                  { num: '1.000', label: 'palabras', desc: 'sostener conversación simple', color: 'neon-green', highlight: true },
-                  { num: '2.000', label: 'palabras', desc: 'fluidez funcional (90–95%)', color: 'neon-green' },
+                  { num: '250', label: 'palabras', desc: '~60% de cualquier texto', color: 'brand-silver' },
+                  { num: '1.000', label: 'palabras', desc: 'sostener conversación simple', color: 'brand-red', highlight: true },
+                  { num: '2.000', label: 'palabras', desc: 'fluidez funcional (90–95%)', color: 'brand-red' },
                 ].map((b, i) => {
                   const c = colorMap[b.color as keyof typeof colorMap]
                   return (
-                    <div key={i} className={`bg-dark-card border ${b.highlight ? 'border-neon-green/40 shadow-neon-green' : 'border-dark-border'} rounded-2xl p-6 text-center`}>
+                    <div key={i} className={`bg-dark-card border ${b.highlight ? 'border-brand-red/40 shadow-brand-red' : 'border-dark-border'} rounded-2xl p-6 text-center`}>
                       <div className={`text-5xl font-black ${c.text} mb-1`}>{b.num}</div>
                       <div className="text-xs uppercase tracking-wider text-gray-500 mb-3">{b.label}</div>
                       <div className="text-gray-300 text-sm">{b.desc}</div>
                       {b.highlight && (
-                        <div className="mt-3 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-neon-green/10 border border-neon-green/30 text-neon-green text-xs font-semibold">
+                        <div className="mt-3 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-semibold">
                           <Target className="w-3 h-3" /> threshold
                         </div>
                       )}
@@ -259,26 +259,26 @@ export default function EsMetodoPage() {
               <div className="grid md:grid-cols-2 gap-5">
                 <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
                   <div className="flex items-center gap-2 mb-4">
-                    <AlertTriangle className="w-5 h-5 text-tech-blue" />
+                    <AlertTriangle className="w-5 h-5 text-brand-silver" />
                     <h3 className="font-bold text-white">Antes del threshold</h3>
                   </div>
                   <ul className="space-y-2.5 text-sm text-gray-400">
-                    <li className="flex gap-2"><span className="text-tech-blue">→</span> Estudia con cuidado, despacio, en papel.</li>
-                    <li className="flex gap-2"><span className="text-tech-blue">→</span> Evita errores — el cerebro graba como un HD.</li>
-                    <li className="flex gap-2"><span className="text-tech-blue">→</span> Usa traducciones controladas y respuestas modelo.</li>
-                    <li className="flex gap-2"><span className="text-tech-blue">→</span> Construye contexto — piezas del rompecabezas.</li>
+                    <li className="flex gap-2"><span className="text-brand-silver">→</span> Estudia con cuidado, despacio, en papel.</li>
+                    <li className="flex gap-2"><span className="text-brand-silver">→</span> Evita errores — el cerebro graba como un HD.</li>
+                    <li className="flex gap-2"><span className="text-brand-silver">→</span> Usa traducciones controladas y respuestas modelo.</li>
+                    <li className="flex gap-2"><span className="text-brand-silver">→</span> Construye contexto — piezas del rompecabezas.</li>
                   </ul>
                 </div>
-                <div className="bg-dark-card border border-neon-green/30 rounded-2xl p-6 shadow-neon-green">
+                <div className="bg-dark-card border border-brand-red/30 rounded-2xl p-6 shadow-brand-red">
                   <div className="flex items-center gap-2 mb-4">
-                    <Sparkles className="w-5 h-5 text-neon-green" />
+                    <Sparkles className="w-5 h-5 text-brand-red" />
                     <h3 className="font-bold text-white">Después del threshold</h3>
                   </div>
                   <ul className="space-y-2.5 text-sm text-gray-300">
-                    <li className="flex gap-2"><span className="text-neon-green">→</span> Suelta la lengua — habla, equivócate, habla otra vez.</li>
-                    <li className="flex gap-2"><span className="text-neon-green">→</span> Multiplica la inmersión por 10x.</li>
-                    <li className="flex gap-2"><span className="text-neon-green">→</span> El subconsciente clasifica los datos solo.</li>
-                    <li className="flex gap-2"><span className="text-neon-green">→</span> La bola de nieve empieza a rodar — casi automático.</li>
+                    <li className="flex gap-2"><span className="text-brand-red">→</span> Suelta la lengua — habla, equivócate, habla otra vez.</li>
+                    <li className="flex gap-2"><span className="text-brand-red">→</span> Multiplica la inmersión por 10x.</li>
+                    <li className="flex gap-2"><span className="text-brand-red">→</span> El subconsciente clasifica los datos solo.</li>
+                    <li className="flex gap-2"><span className="text-brand-red">→</span> La bola de nieve empieza a rodar — casi automático.</li>
                   </ul>
                 </div>
               </div>
@@ -290,7 +290,7 @@ export default function EsMetodoPage() {
         <section className="section-padding">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-tech-blue/30 text-tech-blue bg-tech-blue/5 mb-4">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 Las 4 Etapas
               </span>
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
@@ -304,15 +304,15 @@ export default function EsMetodoPage() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
               {stages.map((s) => (
-                <div key={s.n} className={`relative bg-dark-card border rounded-2xl p-6 ${s.highlight ? 'border-neon-green/40' : 'border-dark-border'}`}>
-                  <div className={`text-6xl font-black mb-3 ${s.highlight ? 'text-neon-green' : 'text-gray-700'}`}>{s.n}</div>
+                <div key={s.n} className={`relative bg-dark-card border rounded-2xl p-6 ${s.highlight ? 'border-brand-red/40' : 'border-dark-border'}`}>
+                  <div className={`text-6xl font-black mb-3 ${s.highlight ? 'text-brand-red' : 'text-gray-700'}`}>{s.n}</div>
                   <h3 className="font-bold text-white text-base mb-2 leading-tight">{s.label}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{s.sub}</p>
                   {s.n === 3 && (
-                    <span className="absolute top-4 right-4 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-neon-green/10 border border-neon-green/30 text-neon-green text-xs font-semibold">threshold</span>
+                    <span className="absolute top-4 right-4 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-semibold">threshold</span>
                   )}
                   {s.n === 4 && (
-                    <span className="absolute top-4 right-4 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-neon-green/10 border border-neon-green/30 text-neon-green text-xs font-semibold">fluidez</span>
+                    <span className="absolute top-4 right-4 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-semibold">fluidez</span>
                   )}
                 </div>
               ))}
@@ -322,10 +322,10 @@ export default function EsMetodoPage() {
 
         {/* SUBTITLES TOOL */}
         <section className="section-padding bg-dark-secondary border-y border-dark-border relative overflow-hidden">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-neon-green/8 blur-3xl pointer-events-none" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-brand-red/8 blur-3xl pointer-events-none" />
           <div className="container mx-auto px-4 relative">
             <div className="text-center mb-12 max-w-3xl mx-auto">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 Herramienta ETT · Subtitles
               </span>
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
@@ -342,20 +342,20 @@ export default function EsMetodoPage() {
             </div>
 
             <div className="max-w-5xl mx-auto">
-              <div className="bg-dark-card border border-neon-green/30 rounded-3xl overflow-hidden shadow-neon-green">
+              <div className="bg-dark-card border border-brand-red/30 rounded-3xl overflow-hidden shadow-brand-red">
                 <div className="grid md:grid-cols-5 gap-0">
                   <a
                     href={SUBTITLES_TOOL_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="md:col-span-2 relative aspect-video md:aspect-auto bg-gradient-to-br from-dark via-dark-secondary to-neon-green/10 flex items-center justify-center group cursor-pointer overflow-hidden border-b md:border-b-0 md:border-r border-dark-border"
+                    className="md:col-span-2 relative aspect-video md:aspect-auto bg-gradient-to-br from-dark via-dark-secondary to-brand-red/10 flex items-center justify-center group cursor-pointer overflow-hidden border-b md:border-b-0 md:border-r border-dark-border"
                   >
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(0,255,157,0.15),transparent_60%)]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(215, 34, 41,0.15),transparent_60%)]" />
                     <div className="relative flex flex-col items-center text-center px-6">
-                      <div className="w-20 h-20 rounded-full bg-neon-green/20 border-2 border-neon-green/60 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-neon-green/30 transition-all">
-                        <PlayCircle className="w-12 h-12 text-neon-green" />
+                      <div className="w-20 h-20 rounded-full bg-brand-red/20 border-2 border-brand-red/60 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-brand-red/30 transition-all">
+                        <PlayCircle className="w-12 h-12 text-brand-red" />
                       </div>
-                      <div className="text-xs uppercase tracking-widest text-neon-green font-bold mb-2">Clase 1 · Episodio 1</div>
+                      <div className="text-xs uppercase tracking-widest text-brand-red font-bold mb-2">Clase 1 · Episodio 1</div>
                       <div className="text-white font-bold text-lg leading-tight mb-1">Fórmula Fluente</div>
                       <div className="text-gray-400 text-sm">por <strong className="text-white">Frank Florida</strong></div>
                     </div>
@@ -363,8 +363,8 @@ export default function EsMetodoPage() {
 
                   <div className="md:col-span-3 p-8 md:p-10 flex flex-col justify-center">
                     <div className="flex items-center gap-2 mb-4">
-                      <Subtitles className="w-5 h-5 text-tech-blue" />
-                      <span className="text-tech-blue font-semibold text-sm">ETT Subtitles — video + subtítulos interactivos</span>
+                      <Subtitles className="w-5 h-5 text-brand-silver" />
+                      <span className="text-brand-silver font-semibold text-sm">ETT Subtitles — video + subtítulos interactivos</span>
                     </div>
 
                     <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
@@ -382,15 +382,15 @@ export default function EsMetodoPage() {
 
                     <div className="grid grid-cols-3 gap-3 mb-6">
                       <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-dark/60 border border-dark-border">
-                        <MousePointerClick className="w-4 h-4 text-neon-green" />
+                        <MousePointerClick className="w-4 h-4 text-brand-red" />
                         <span className="text-xs text-gray-300 leading-tight">Click en cualquier palabra</span>
                       </div>
                       <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-dark/60 border border-dark-border">
-                        <Pause className="w-4 h-4 text-neon-green" />
+                        <Pause className="w-4 h-4 text-brand-red" />
                         <span className="text-xs text-gray-300 leading-tight">Pausa y repite la frase</span>
                       </div>
                       <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-dark/60 border border-dark-border">
-                        <BookOpen className="w-4 h-4 text-neon-green" />
+                        <BookOpen className="w-4 h-4 text-brand-red" />
                         <span className="text-xs text-gray-300 leading-tight">Subtítulos PT + EN sincronizados</span>
                       </div>
                     </div>
@@ -399,7 +399,7 @@ export default function EsMetodoPage() {
                       href={SUBTITLES_TOOL_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-neon-green text-black font-bold text-base hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg hover:-translate-y-0.5 self-start"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg hover:-translate-y-0.5 self-start"
                     >
                       Ver la clase 1 ahora
                       <ExternalLink className="w-4 h-4" />
@@ -416,7 +416,7 @@ export default function EsMetodoPage() {
         <section className="section-padding">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-tech-blue/30 text-tech-blue bg-tech-blue/5 mb-4">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 Inmersión
               </span>
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
@@ -448,7 +448,7 @@ export default function EsMetodoPage() {
         <section className="section-padding bg-dark-secondary border-y border-dark-border">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 Principios Prácticos
               </span>
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
@@ -463,8 +463,8 @@ export default function EsMetodoPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
               {principles.map((p) => (
                 <div key={p.title} className="bg-dark-card border border-dark-border rounded-2xl p-6">
-                  <div className="w-10 h-10 rounded-lg bg-neon-green/10 border border-neon-green/20 flex items-center justify-center mb-4">
-                    <p.icon className="w-5 h-5 text-neon-green" />
+                  <div className="w-10 h-10 rounded-lg bg-brand-red/10 border border-brand-red/20 flex items-center justify-center mb-4">
+                    <p.icon className="w-5 h-5 text-brand-red" />
                   </div>
                   <h3 className="font-bold text-white text-base mb-2 leading-snug">{p.title}</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">{p.desc}</p>
@@ -477,19 +477,19 @@ export default function EsMetodoPage() {
         {/* CTA */}
         <section className="section-padding">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center bg-dark-card border border-neon-green/30 rounded-3xl p-10 md:p-14 shadow-neon-green relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-neon-green/8 to-tech-blue/8 pointer-events-none" />
+            <div className="max-w-3xl mx-auto text-center bg-dark-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 to-brand-silver/8 pointer-events-none" />
               <div className="relative">
                 <div className="inline-flex items-center justify-center gap-3 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-neon-green/10 border border-neon-green/30 flex items-center justify-center">
-                    <Lightbulb className="w-6 h-6 text-neon-green" />
+                  <div className="w-12 h-12 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center">
+                    <Lightbulb className="w-6 h-6 text-brand-red" />
                   </div>
-                  <div className="w-12 h-12 rounded-xl bg-tech-blue/10 border border-tech-blue/30 flex items-center justify-center">
-                    <BookMarked className="w-6 h-6 text-tech-blue" />
+                  <div className="w-12 h-12 rounded-xl bg-brand-silver/10 border border-brand-silver/30 flex items-center justify-center">
+                    <BookMarked className="w-6 h-6 text-brand-silver" />
                   </div>
                 </div>
 
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-5">
+                <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-5">
                   Empieza a practicar
                 </span>
 
@@ -506,14 +506,14 @@ export default function EsMetodoPage() {
                     href={LEAD_FORM_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-neon-green text-black font-bold text-sm hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg"
+                    className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg"
                   >
                     Regístrame
                     <ExternalLink className="w-4 h-4" />
                   </a>
                   <Link
                     href="/es/agenda/"
-                    className="inline-flex items-center gap-2 text-tech-blue font-semibold hover:text-tech-blue/80 transition-colors text-sm"
+                    className="inline-flex items-center gap-2 text-brand-silver font-semibold hover:text-brand-silver/80 transition-colors text-sm"
                   >
                     Ver agenda completa <ArrowRight className="w-4 h-4" />
                   </Link>

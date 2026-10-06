@@ -56,7 +56,7 @@ export default function DetalhesPage() {
           </p>
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-neon-green hover:text-neon-green/80 transition-colors shrink-0"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-brand-red hover:text-brand-red/80 transition-colors shrink-0"
           >
             <ArrowLeft className="w-4 h-4" />
             Voltar para a home

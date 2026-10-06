@@ -39,7 +39,7 @@ export default function ProximosPresenciais({ quantidade = 4 }: { quantidade?: n
       <p className="text-center text-gray-400 max-w-md mx-auto">
         Sem encontros presenciais confirmados nos próximos dias.
         <br />
-        <Link href="/agenda/" className="text-neon-green underline mt-2 inline-block">
+        <Link href="/agenda/" className="text-brand-red underline mt-2 inline-block">
           Ver agenda completa
         </Link>
       </p>
@@ -54,11 +54,11 @@ export default function ProximosPresenciais({ quantidade = 4 }: { quantidade?: n
         return (
           <div
             key={`${ev.date}-${ev.title}`}
-            className="relative bg-dark-card border border-neon-green/20 rounded-xl p-3.5 card-hover"
+            className="relative bg-dark-card border border-brand-red/20 rounded-xl p-3.5 card-hover"
           >
             <div className="flex items-start gap-3">
-              <div className="shrink-0 w-14 rounded-lg border border-neon-green/30 bg-neon-green/5 text-center py-1.5">
-                <div className="text-[10px] uppercase tracking-wider font-bold text-neon-green">
+              <div className="shrink-0 w-14 rounded-lg border border-brand-red/30 bg-brand-red/5 text-center py-1.5">
+                <div className="text-[10px] uppercase tracking-wider font-bold text-brand-red">
                   {ev.weekday.slice(0, 3).toLowerCase()}
                 </div>
                 <div className="text-white font-black text-xl leading-none my-0.5">{dayNum}</div>
@@ -69,7 +69,7 @@ export default function ProximosPresenciais({ quantidade = 4 }: { quantidade?: n
               <div className="min-w-0">
                 <h3 className="font-bold text-white text-sm leading-snug mb-1">{ev.title}</h3>
                 <p className="text-xs text-gray-400 flex items-center gap-1.5">
-                  <MapPin className="w-3 h-3 text-neon-green shrink-0" />
+                  <MapPin className="w-3 h-3 text-brand-red shrink-0" />
                   {ev.location}
                 </p>
                 <p className="text-xs text-gray-500 mt-1">{ev.time}</p>

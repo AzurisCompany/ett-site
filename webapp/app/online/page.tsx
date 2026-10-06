@@ -144,10 +144,10 @@ export default function OnlinePage() {
       <main className="bg-dark min-h-screen pt-16">
         {/* HERO */}
         <section className="relative section-padding overflow-hidden hero-grid">
-          <div className="absolute inset-0 bg-gradient-to-b from-tech-blue/8 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-silver/8 via-transparent to-transparent pointer-events-none" />
           <div className="container mx-auto px-4 relative">
             <div className="max-w-4xl mx-auto text-center">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-tech-blue/30 text-tech-blue bg-tech-blue/5 mb-6">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-6">
                 <Wifi className="w-3.5 h-3.5" />
                 Online · Toda Segunda · 20h
               </span>
@@ -163,32 +163,32 @@ export default function OnlinePage() {
               <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
                 <a
                   href={FORM_URL}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-neon-green text-dark font-bold text-base hover:bg-neon-green/90 transition-all hover:shadow-neon-green"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red"
                 >
                   Receber o link do próximo encontro
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <Link
                   href="#datas"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-dark-border text-white font-semibold hover:border-tech-blue/50 hover:bg-dark-card transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-dark-border text-white font-semibold hover:border-brand-silver/50 hover:bg-dark-card transition-all"
                 >
                   Ver próximas datas
                 </Link>
               </div>
               <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-dark-border bg-dark-card text-sm text-gray-300">
-                  <Clock className="w-4 h-4 text-tech-blue" />
+                  <Clock className="w-4 h-4 text-brand-silver" />
                   20h–21h30
                 </div>
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-dark-border bg-dark-card text-sm text-gray-300">
-                  <Wifi className="w-4 h-4 text-tech-blue" />
+                  <Wifi className="w-4 h-4 text-brand-silver" />
                   Google Meet
                 </div>
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-dark-border bg-dark-card text-sm text-gray-300">
-                  <Globe2 className="w-4 h-4 text-tech-blue" />
+                  <Globe2 className="w-4 h-4 text-brand-silver" />
                   Brasil inteiro
                 </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-dark-border bg-dark-card text-sm text-neon-green font-medium">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-dark-border bg-dark-card text-sm text-brand-red font-medium">
                   Gratuito
                 </div>
               </div>
@@ -235,7 +235,7 @@ export default function OnlinePage() {
                   key={s.title}
                   className="bg-dark-card border border-dark-border rounded-2xl p-5 card-hover relative overflow-hidden"
                 >
-                  <span className="absolute top-3 right-4 text-5xl font-black text-tech-blue/15 leading-none select-none">
+                  <span className="absolute top-3 right-4 text-5xl font-black text-brand-silver/15 leading-none select-none">
                     {s.n}
                   </span>
                   <h3 className="font-bold text-white text-base mb-2 pr-8 relative">
@@ -252,7 +252,7 @@ export default function OnlinePage() {
         <section id="datas" className="section-padding bg-dark">
           <div className="container mx-auto px-4">
             <div className="text-center mb-10 max-w-3xl mx-auto">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-tech-blue/30 text-tech-blue bg-tech-blue/5 mb-4">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 Próximas Segundas
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
@@ -268,7 +268,7 @@ export default function OnlinePage() {
               <p className="text-center text-gray-400 max-w-md mx-auto">
                 Sem datas online confirmadas nos próximos dias.
                 <br />
-                <Link href="/agenda/" className="text-tech-blue underline mt-2 inline-block">
+                <Link href="/agenda/" className="text-brand-silver underline mt-2 inline-block">
                   Ver agenda completa
                 </Link>
               </p>
@@ -280,11 +280,11 @@ export default function OnlinePage() {
                   return (
                     <div
                       key={ev.date}
-                      className="relative bg-dark-card border border-tech-blue/20 rounded-xl p-3.5 card-hover"
+                      className="relative bg-dark-card border border-brand-silver/20 rounded-xl p-3.5 card-hover"
                     >
                       <div className="flex items-start gap-3">
-                        <div className="shrink-0 w-14 rounded-lg border border-tech-blue/30 bg-tech-blue/5 text-center py-1.5">
-                          <div className="text-[10px] uppercase tracking-wider font-bold text-tech-blue">
+                        <div className="shrink-0 w-14 rounded-lg border border-brand-silver/30 bg-brand-silver/5 text-center py-1.5">
+                          <div className="text-[10px] uppercase tracking-wider font-bold text-brand-silver">
                             {ev.weekday.slice(0, 3).toLowerCase()}
                           </div>
                           <div className="text-white font-black text-xl leading-none my-0.5">
@@ -296,7 +296,7 @@ export default function OnlinePage() {
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-1.5 mb-1">
-                            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-tech-blue/10 text-tech-blue border border-tech-blue/30">
+                            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-brand-silver/10 text-brand-silver border border-brand-silver/30">
                               <Wifi className="w-2.5 h-2.5" />
                               online
                             </span>
@@ -322,7 +322,7 @@ export default function OnlinePage() {
             <div className="text-center mt-8">
               <Link
                 href="/agenda/"
-                className="inline-flex items-center gap-2 text-gray-400 hover:text-neon-green text-sm transition-colors"
+                className="inline-flex items-center gap-2 text-gray-400 hover:text-brand-red text-sm transition-colors"
               >
                 <Calendar className="w-4 h-4" />
                 Ver agenda completa (online + presencial)
@@ -369,7 +369,7 @@ export default function OnlinePage() {
                     className="bg-dark-card border border-dark-border rounded-2xl p-5"
                   >
                     <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-tech-blue shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-brand-silver shrink-0 mt-0.5" />
                       <div>
                         <h3 className="font-bold text-white text-base mb-2">{b.title}</h3>
                         <p className="text-gray-400 text-sm leading-relaxed">{b.body}</p>
@@ -385,13 +385,13 @@ export default function OnlinePage() {
         {/* CROSS-LINK CURITIBA */}
         <section className="section-padding bg-dark">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto bg-dark-card border border-neon-green/30 rounded-3xl p-8 md:p-10">
+            <div className="max-w-3xl mx-auto bg-dark-card border border-brand-red/30 rounded-3xl p-8 md:p-10">
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-neon-green/10 border border-neon-green/30 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-neon-green" />
+                <div className="w-12 h-12 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-6 h-6 text-brand-red" />
                 </div>
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-neon-green font-semibold mb-1">
+                  <div className="text-xs uppercase tracking-wider text-brand-red font-semibold mb-1">
                     Mora em Curitiba?
                   </div>
                   <h3 className="font-bold text-white text-xl md:text-2xl">
@@ -406,7 +406,7 @@ export default function OnlinePage() {
               </p>
               <Link
                 href="/curitiba/"
-                className="inline-flex items-center gap-2 text-neon-green font-semibold hover:text-neon-green/80 transition-colors"
+                className="inline-flex items-center gap-2 text-brand-red font-semibold hover:text-brand-red/80 transition-colors"
               >
                 Ver encontros presenciais em Curitiba <ArrowRight className="w-4 h-4" />
               </Link>
@@ -417,10 +417,10 @@ export default function OnlinePage() {
         {/* CTA FINAL */}
         <section className="section-padding bg-dark-secondary border-t border-dark-border">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center bg-dark-card border border-tech-blue/30 rounded-3xl p-10 md:p-14 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-tech-blue/8 to-neon-green/8 pointer-events-none" />
+            <div className="max-w-3xl mx-auto text-center bg-dark-card border border-brand-silver/30 rounded-3xl p-10 md:p-14 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-silver/8 to-brand-red/8 pointer-events-none" />
               <div className="relative">
-                <Users className="w-10 h-10 text-tech-blue mx-auto mb-5" />
+                <Users className="w-10 h-10 text-brand-silver mx-auto mb-5" />
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
                   A próxima segunda <span className="gradient-text">vai te encontrar falando</span>
                 </h2>
@@ -430,7 +430,7 @@ export default function OnlinePage() {
                 </p>
                 <a
                   href={FORM_URL}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-neon-green text-dark font-bold text-base hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg"
                 >
                   Quero o link do próximo encontro online
                   <ArrowRight className="w-5 h-5" />

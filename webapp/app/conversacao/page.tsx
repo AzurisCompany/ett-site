@@ -172,10 +172,10 @@ export default function ConversacaoPage() {
       <main className="bg-dark min-h-screen pt-16">
         {/* HERO */}
         <section className="relative section-padding overflow-hidden hero-grid">
-          <div className="absolute inset-0 bg-gradient-to-b from-neon-green/5 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-red/5 via-transparent to-transparent pointer-events-none" />
           <div className="container mx-auto px-4 relative">
             <div className="max-w-4xl mx-auto text-center">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-6">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-6">
                 Grupo de Conversação · Como Funciona
               </span>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
@@ -191,13 +191,13 @@ export default function ConversacaoPage() {
               <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
                 <Link
                   href="/agenda/"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-neon-green text-dark font-bold text-base hover:bg-neon-green/90 transition-all hover:shadow-neon-green"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red"
                 >
                   Ver próxima data <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
                   href={FORM_URL}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-dark-border text-white font-semibold hover:border-neon-green/50 hover:bg-dark-card transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-dark-border text-white font-semibold hover:border-brand-red/50 hover:bg-dark-card transition-all"
                 >
                   Quero participar
                 </a>
@@ -243,20 +243,20 @@ export default function ConversacaoPage() {
                   key={c.title}
                   className={`bg-dark-card border rounded-2xl p-6 ${
                     c.tone === 'green'
-                      ? 'border-neon-green/30 shadow-neon-green'
+                      ? 'border-brand-red/30 shadow-brand-red'
                       : 'border-dark-border'
                   }`}
                 >
                   <div
                     className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${
                       c.tone === 'green'
-                        ? 'bg-neon-green/10 border border-neon-green/30'
+                        ? 'bg-brand-red/10 border border-brand-red/30'
                         : 'bg-dark-secondary border border-dark-border'
                     }`}
                   >
                     <c.icon
                       className={`w-5 h-5 ${
-                        c.tone === 'green' ? 'text-neon-green' : 'text-gray-500'
+                        c.tone === 'green' ? 'text-brand-red' : 'text-gray-500'
                       }`}
                     />
                   </div>
@@ -284,7 +284,7 @@ export default function ConversacaoPage() {
         <section className="section-padding bg-dark">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 max-w-3xl mx-auto">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-tech-blue/30 text-tech-blue bg-tech-blue/5 mb-4">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 Cada encontro
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
@@ -300,7 +300,7 @@ export default function ConversacaoPage() {
                   key={f.title}
                   className="bg-dark-card border border-dark-border rounded-2xl p-5 card-hover relative overflow-hidden"
                 >
-                  <span className="absolute top-3 right-4 text-5xl font-black text-neon-green/15 leading-none select-none">
+                  <span className="absolute top-3 right-4 text-5xl font-black text-brand-red/15 leading-none select-none">
                     {f.n}
                   </span>
                   <h3 className="font-bold text-white text-base mb-2 pr-8 relative">
@@ -322,7 +322,7 @@ export default function ConversacaoPage() {
         >
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 max-w-3xl mx-auto">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 Ferramentas de apoio
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
@@ -340,8 +340,8 @@ export default function ConversacaoPage() {
                   key={t.title}
                   className="bg-dark-card border border-dark-border rounded-2xl p-5 card-hover"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-tech-blue/10 border border-tech-blue/30 flex items-center justify-center mb-3">
-                    <Cpu className="w-5 h-5 text-tech-blue" />
+                  <div className="w-10 h-10 rounded-xl bg-brand-silver/10 border border-brand-silver/30 flex items-center justify-center mb-3">
+                    <Cpu className="w-5 h-5 text-brand-silver" />
                   </div>
                   <h3 className="font-bold text-white text-base mb-2">{t.title}</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">{t.desc}</p>
@@ -365,14 +365,14 @@ export default function ConversacaoPage() {
             <div className="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto">
               <Link
                 href="/online/"
-                className="bg-dark-card border border-tech-blue/30 rounded-2xl p-6 card-hover block hover:border-tech-blue/60"
+                className="bg-dark-card border border-brand-silver/30 rounded-2xl p-6 card-hover block hover:border-brand-silver/60"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-tech-blue/10 border border-tech-blue/30 flex items-center justify-center">
-                    <Wifi className="w-6 h-6 text-tech-blue" />
+                  <div className="w-12 h-12 rounded-xl bg-brand-silver/10 border border-brand-silver/30 flex items-center justify-center">
+                    <Wifi className="w-6 h-6 text-brand-silver" />
                   </div>
                   <div>
-                    <div className="text-xs uppercase tracking-wider text-tech-blue font-semibold">
+                    <div className="text-xs uppercase tracking-wider text-brand-silver font-semibold">
                       Online
                     </div>
                     <h3 className="font-bold text-white text-lg">Toda segunda · 20h–21h30</h3>
@@ -382,20 +382,20 @@ export default function ConversacaoPage() {
                   Encontro semanal via Google Meet, aberto pra todo o Brasil. Treino de fala
                   estruturado em 1h30 — comunidade pequena o suficiente pra todo mundo falar.
                 </p>
-                <span className="inline-flex items-center gap-1.5 text-tech-blue text-sm font-medium">
+                <span className="inline-flex items-center gap-1.5 text-brand-silver text-sm font-medium">
                   Ver detalhes do online <ArrowRight className="w-3.5 h-3.5" />
                 </span>
               </Link>
               <Link
                 href="/curitiba/"
-                className="bg-dark-card border border-neon-green/30 rounded-2xl p-6 card-hover block hover:border-neon-green/60"
+                className="bg-dark-card border border-brand-red/30 rounded-2xl p-6 card-hover block hover:border-brand-red/60"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-neon-green/10 border border-neon-green/30 flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-neon-green" />
+                  <div className="w-12 h-12 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center">
+                    <MapPin className="w-6 h-6 text-brand-red" />
                   </div>
                   <div>
-                    <div className="text-xs uppercase tracking-wider text-neon-green font-semibold">
+                    <div className="text-xs uppercase tracking-wider text-brand-red font-semibold">
                       Presencial
                     </div>
                     <h3 className="font-bold text-white text-lg">Curitiba · semanal</h3>
@@ -405,7 +405,7 @@ export default function ConversacaoPage() {
                   O IEP Talks, todo sábado das 10h às 12h no IEP. Networking
                   presencial com a comunidade ETT local, prática real e conversação ao vivo.
                 </p>
-                <span className="inline-flex items-center gap-1.5 text-neon-green text-sm font-medium">
+                <span className="inline-flex items-center gap-1.5 text-brand-red text-sm font-medium">
                   Ver detalhes em Curitiba <ArrowRight className="w-3.5 h-3.5" />
                 </span>
               </Link>
@@ -413,7 +413,7 @@ export default function ConversacaoPage() {
             <div className="text-center mt-8">
               <Link
                 href="/agenda/"
-                className="inline-flex items-center gap-2 text-gray-400 hover:text-neon-green text-sm transition-colors"
+                className="inline-flex items-center gap-2 text-gray-400 hover:text-brand-red text-sm transition-colors"
               >
                 <Calendar className="w-4 h-4" />
                 Ver agenda completa dos próximos encontros
@@ -437,7 +437,7 @@ export default function ConversacaoPage() {
                     key={p}
                     className="flex items-start gap-3 bg-dark-card border border-dark-border rounded-xl p-4"
                   >
-                    <CheckCircle2 className="w-5 h-5 text-neon-green shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
                     <span className="text-gray-300 text-base leading-relaxed">{p}</span>
                   </li>
                 ))}
@@ -449,8 +449,8 @@ export default function ConversacaoPage() {
         {/* CTA */}
         <section className="section-padding bg-dark">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center bg-dark-card border border-neon-green/30 rounded-3xl p-10 md:p-14 shadow-neon-green relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-neon-green/8 to-tech-blue/8 pointer-events-none" />
+            <div className="max-w-3xl mx-auto text-center bg-dark-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 to-brand-silver/8 pointer-events-none" />
               <div className="relative">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
                   Próximo encontro <span className="gradient-text">é segunda</span>
@@ -461,7 +461,7 @@ export default function ConversacaoPage() {
                 </p>
                 <a
                   href={FORM_URL}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-neon-green text-dark font-bold text-base hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg"
                 >
                   Quero participar do grupo de conversação
                   <ArrowRight className="w-5 h-5" />

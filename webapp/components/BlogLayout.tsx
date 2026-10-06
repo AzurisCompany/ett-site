@@ -42,18 +42,18 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
       <main className="bg-dark min-h-screen pt-16">
         {/* HERO */}
         <header className="relative section-padding overflow-hidden hero-grid">
-          <div className="absolute inset-0 bg-gradient-to-b from-tech-blue/5 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-silver/5 via-transparent to-transparent pointer-events-none" />
           <div className="container mx-auto px-4 relative">
             <div className="max-w-3xl mx-auto">
               <Link
                 href="/blog/"
-                className="inline-flex items-center gap-1.5 text-gray-400 hover:text-neon-green text-sm transition-colors mb-6"
+                className="inline-flex items-center gap-1.5 text-gray-400 hover:text-brand-red text-sm transition-colors mb-6"
               >
                 <ArrowLeft className="w-4 h-4" /> Blog ETT
               </Link>
 
               <div className="flex flex-wrap items-center gap-3 mb-5 text-xs text-gray-400">
-                <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full border border-neon-green/30 text-neon-green bg-neon-green/5 font-semibold uppercase tracking-wider">
+                <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full border border-brand-red/30 text-brand-red bg-brand-red/5 font-semibold uppercase tracking-wider">
                   <Tag className="w-3 h-3" />
                   {post.category}
                 </span>
@@ -85,10 +85,10 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
         {/* CTA */}
         <section className="section-padding bg-dark">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto bg-dark-card border border-neon-green/30 rounded-3xl p-8 md:p-10 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-neon-green/8 to-tech-blue/8 pointer-events-none" />
+            <div className="max-w-3xl mx-auto bg-dark-card border border-brand-red/30 rounded-3xl p-8 md:p-10 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 to-brand-silver/8 pointer-events-none" />
               <div className="relative">
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+                <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                   Próximo passo
                 </span>
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight">
@@ -101,13 +101,13 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
                     href={FORM_URL}
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-neon-green text-dark font-bold text-sm hover:bg-neon-green/90 transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all"
                   >
                     Quero participar <ArrowRight className="w-4 h-4" />
                   </a>
                   <Link
                     href="/conversacao/"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-dark-border text-white font-semibold text-sm hover:border-neon-green/40 hover:bg-dark-card transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-dark-border text-white font-semibold text-sm hover:border-brand-red/40 hover:bg-dark-card transition-all"
                   >
                     Saber como funciona
                   </Link>
@@ -130,12 +130,12 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
                     <Link
                       key={r.slug}
                       href={`/blog/${r.slug}/`}
-                      className="bg-dark-card border border-dark-border rounded-2xl p-5 card-hover hover:border-neon-green/30 transition-all block group"
+                      className="bg-dark-card border border-dark-border rounded-2xl p-5 card-hover hover:border-brand-red/30 transition-all block group"
                     >
-                      <span className="inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider border border-neon-green/30 text-neon-green bg-neon-green/5 mb-3">
+                      <span className="inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider border border-brand-red/30 text-brand-red bg-brand-red/5 mb-3">
                         {r.category}
                       </span>
-                      <h3 className="font-bold text-white text-lg mb-2 leading-snug group-hover:text-neon-green transition-colors">
+                      <h3 className="font-bold text-white text-lg mb-2 leading-snug group-hover:text-brand-red transition-colors">
                         {r.title}
                       </h3>
                       <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">

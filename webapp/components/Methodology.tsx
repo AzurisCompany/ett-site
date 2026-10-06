@@ -17,7 +17,7 @@ const pillars = [
     title: 'Comprometimento, Constância e Comunidade',
     description:
       'Sem rotina, o inglês vira intenção. Com rotina, vira competência. A comunidade de prática do ETT reduz o isolamento, gera pertencimento e transforma o estudo em prática social — com desafios, rankings, badges e evolução coletiva.',
-    color: 'neon-green',
+    color: 'brand-red',
     partner: 'Ecossistema DSSBR & GUBigData',
   },
   {
@@ -26,7 +26,7 @@ const pillars = [
     title: 'Base Estruturada de Aprendizagem',
     description:
       'Nem todo aluno começa pela conversação. O ETT oferece nivelamento, trilha personalizada e integração com parceiros pedagógicos para os níveis A0 a B1, garantindo que ninguém fique sem saber o próximo passo.',
-    color: 'tech-blue',
+    color: 'brand-silver',
     partner: 'BeeTools (IA, RV, gamificação)',
   },
   {
@@ -35,7 +35,7 @@ const pillars = [
     title: 'Prática Real e Conversação Guiada',
     description:
       'O idioma só se torna utilizável quando você fala, escuta, responde e se corrige. Board games, storytelling, role-play, simulações e noites temáticas criam o espaço seguro para o conhecimento sair do campo passivo para o ativo.',
-    color: 'neon-green',
+    color: 'brand-red',
     partner: 'English Talk Time (sessões online + presenciais)',
   },
   {
@@ -44,7 +44,7 @@ const pillars = [
     title: 'Imersão Intensiva e Contínua',
     description:
       'Há um tipo de crescimento que só acontece quando o aluno usa o inglês de forma mais contínua e intensa. Programas de imersão no Brasil e nos EUA criam o salto de nível que o estudo regular não consegue sozinho.',
-    color: 'tech-blue',
+    color: 'brand-silver',
     partner: 'Cherry Top (30+ anos de imersão)',
   },
   {
@@ -53,7 +53,7 @@ const pillars = [
     title: 'Empregabilidade Internacional',
     description:
       'O ETT não quer apenas melhorar o inglês — quer ajudar o participante a transformar isso em movimento de carreira. Currículo, LinkedIn, entrevistas, estratégia de posicionamento e aspectos contratuais para o mercado global.',
-    color: 'neon-green',
+    color: 'brand-red',
     partner: 'Coders (vagas no exterior em 30-45 dias)',
   },
   {
@@ -62,32 +62,32 @@ const pillars = [
     title: 'Inteligência, Dados e Personalização',
     description:
       'Cada clique, erro, palavra desconhecida e legenda marcada alimenta um sistema inteligente que identifica lacunas reais e sugere prioridades sob medida. O estudo passa a ser mais preciso, não apenas mais intenso.',
-    color: 'tech-blue',
+    color: 'brand-silver',
     partner: 'Sistema ETT + ClickHouse + IA',
   },
 ]
 
 const colorMap = {
-  'neon-green': {
-    bg: 'bg-neon-green/10',
-    border: 'border-neon-green/20',
-    icon: 'text-neon-green',
-    number: 'text-neon-green/30',
-    badge: 'bg-neon-green/10 text-neon-green border-neon-green/20',
+  'brand-red': {
+    bg: 'bg-brand-red/10',
+    border: 'border-brand-red/20',
+    icon: 'text-brand-red',
+    number: 'text-brand-red/30',
+    badge: 'bg-brand-red/10 text-brand-red border-brand-red/20',
   },
-  'tech-blue': {
-    bg: 'bg-tech-blue/10',
-    border: 'border-tech-blue/20',
-    icon: 'text-tech-blue',
-    number: 'text-tech-blue/30',
-    badge: 'bg-tech-blue/10 text-tech-blue border-tech-blue/20',
+  'brand-silver': {
+    bg: 'bg-brand-silver/10',
+    border: 'border-brand-silver/20',
+    icon: 'text-brand-silver',
+    number: 'text-brand-silver/30',
+    badge: 'bg-brand-silver/10 text-brand-silver border-brand-silver/20',
   },
 }
 
 export default function Methodology() {
   return (
     <section id="metodologia" className="section-padding bg-dark relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-green/20 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/20 to-transparent" />
 
       <div className="container mx-auto px-4">
         <motion.div
@@ -97,7 +97,7 @@ export default function Methodology() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-tech-blue/30 text-tech-blue bg-tech-blue/5 mb-4">
+          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
             Metodologia & Pilares
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
@@ -118,13 +118,13 @@ export default function Methodology() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-12 p-5 rounded-2xl border border-neon-green/20 bg-neon-green/5 flex flex-col sm:flex-row items-center gap-4 max-w-3xl mx-auto"
+          className="mb-12 p-5 rounded-2xl border border-brand-red/20 bg-brand-red/5 flex flex-col sm:flex-row items-center gap-4 max-w-3xl mx-auto"
         >
-          <div className="w-12 h-12 rounded-xl bg-neon-green/15 border border-neon-green/30 flex items-center justify-center shrink-0">
-            <BrainCircuit className="w-6 h-6 text-neon-green" />
+          <div className="w-12 h-12 rounded-xl bg-brand-red/15 border border-brand-red/30 flex items-center justify-center shrink-0">
+            <BrainCircuit className="w-6 h-6 text-brand-red" />
           </div>
           <p className="text-gray-300 text-sm leading-relaxed text-center sm:text-left">
-            <strong className="text-neon-green">Base científica — Fórmula Fluente:</strong>{' '}
+            <strong className="text-brand-red">Base científica — Fórmula Fluente:</strong>{' '}
             250 palavras mais comuns cobrem ~60% de qualquer texto. Com 1.000 palavras + cognatos,
             você compreende 90–95% de uma conversa. Aprender 10 palavras/dia = fluência em 10 meses.{' '}
             <strong className="text-white">Você não precisa estudar tudo — precisa estudar o que gera mais retorno.</strong>

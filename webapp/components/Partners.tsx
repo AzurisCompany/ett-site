@@ -11,7 +11,7 @@ type Partner = {
   logo: string | null
   role: string
   description: string
-  color: 'neon-green' | 'tech-blue'
+  color: 'brand-red' | 'brand-silver'
   url: string | null
 }
 
@@ -23,7 +23,7 @@ const partners: Partner[] = [
     role: 'Base Estruturada',
     description:
       'Escola de inglês do amanhã com IA (BRAIn), realidade virtual e gamificação. Parceira oficial do Governo Federal (#TôComProf) e certificada ETS®. Aprendizado rápido e divertido para profissionais tech.',
-    color: 'neon-green',
+    color: 'brand-red',
     url: 'https://www.beetools.com.br/',
   },
   {
@@ -33,7 +33,7 @@ const partners: Partner[] = [
     role: 'Conteúdo & Estudo',
     description:
       'Plataforma brasileira de conteúdo gratuito para aprender inglês — dicas práticas, vídeos, músicas, histórias e cursos estruturados. Material de apoio para a jornada do aluno ETT entre os encontros.',
-    color: 'tech-blue',
+    color: 'brand-silver',
     url: 'https://www.aprendendoingles.com.br/',
   },
   {
@@ -43,7 +43,7 @@ const partners: Partner[] = [
     role: 'Imersão Intensiva',
     description:
       'Mais de 30 anos de experiência em imersão. Cursos intensivos no Brasil e nos EUA (Flórida). Alunos saltam de nível inicial para intermediário e de intermediário para avançado em poucas semanas.',
-    color: 'tech-blue',
+    color: 'brand-silver',
     url: 'https://cherrytop.com.br',
   },
   {
@@ -53,7 +53,7 @@ const partners: Partner[] = [
     role: 'Carreira Internacional',
     description:
       'Mentoria completa de carreira internacional. Profissionais de tech conseguem vagas no exterior em 30–45 dias, com salários até 5x maiores. LinkedIn otimizado, entrevistas e suporte para relocação.',
-    color: 'neon-green',
+    color: 'brand-red',
     url: 'https://www.coders.com.br/',
   },
   {
@@ -63,7 +63,7 @@ const partners: Partner[] = [
     role: 'Apoio Institucional',
     description:
       'Instituto de Engenharia do Paraná — apoio institucional centenário. Local oficial dos encontros presenciais English Talk Time em Curitiba/PR.',
-    color: 'tech-blue',
+    color: 'brand-silver',
     url: 'https://iep.org.br/',
   },
   {
@@ -73,7 +73,7 @@ const partners: Partner[] = [
     role: 'Apoio Acadêmico',
     description:
       'Universidade Tecnológica Federal do Paraná — referência nacional em formação tecnológica. Parceria acadêmica que conecta o ETT à comunidade universitária de tech, engenharia e dados.',
-    color: 'tech-blue',
+    color: 'brand-silver',
     url: 'https://www.utfpr.edu.br/',
   },
   {
@@ -83,7 +83,7 @@ const partners: Partner[] = [
     role: 'Networking & Experiência',
     description:
       'Parceiro de experiências sociais e networking do ETT. Encontros temáticos em um ambiente icônico, conectando profissionais tech em momentos descontraídos para praticar inglês na vida real.',
-    color: 'neon-green',
+    color: 'brand-red',
     url: 'https://cafe.hardrock.com/curitiba/',
   },
   {
@@ -93,7 +93,7 @@ const partners: Partner[] = [
     role: 'Ecossistema de Inovação',
     description:
       'Habitat de Inovação do Sistema FIEP voltado à mobilidade, dentro do Parque Tecnológico. Conecta o ETT à comunidade de startups, indústria e profissionais de tecnologia do Paraná.',
-    color: 'tech-blue',
+    color: 'brand-silver',
     url: 'https://www.sistemafiep.org.br/parquetecnologico/mobilidade/',
   },
   {
@@ -103,27 +103,27 @@ const partners: Partner[] = [
     role: 'Base Pedagógica',
     description:
       'Metodologia criada por Frank Florida que já formou mais de 365 mil brasileiros. Base de todas as ferramentas inteligentes do ETT: estudo em pequenos blocos, vocabulário relevante, repetição orientada e imersão distribuída.',
-    color: 'neon-green',
+    color: 'brand-red',
     url: '/ff/',
   },
 ]
 
 const colorMap = {
-  'neon-green': {
-    border: 'border-neon-green/30',
-    bg: 'bg-neon-green/5',
-    badge: 'bg-neon-green/15 text-neon-green border-neon-green/25',
-    glow: 'hover:shadow-neon-green',
-    icon: 'text-neon-green',
-    dot: 'bg-neon-green',
+  'brand-red': {
+    border: 'border-brand-red/30',
+    bg: 'bg-brand-red/5',
+    badge: 'bg-brand-red/15 text-brand-red border-brand-red/25',
+    glow: 'hover:shadow-brand-red',
+    icon: 'text-brand-red',
+    dot: 'bg-brand-red-deep',
   },
-  'tech-blue': {
-    border: 'border-tech-blue/30',
-    bg: 'bg-tech-blue/5',
-    badge: 'bg-tech-blue/15 text-tech-blue border-tech-blue/25',
-    glow: 'hover:shadow-neon-blue',
-    icon: 'text-tech-blue',
-    dot: 'bg-tech-blue',
+  'brand-silver': {
+    border: 'border-brand-silver/30',
+    bg: 'bg-brand-silver/5',
+    badge: 'bg-brand-silver/15 text-brand-silver border-brand-silver/25',
+    glow: 'hover:shadow-brand-silver',
+    icon: 'text-brand-silver',
+    dot: 'bg-brand-silver',
   },
 }
 
@@ -132,7 +132,7 @@ export default function Partners() {
 
   return (
     <section id="parceiros" className="section-padding bg-dark relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-green/20 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/20 to-transparent" />
 
       <div className="container mx-auto px-4">
         <motion.div
@@ -142,7 +142,7 @@ export default function Partners() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-tech-blue/30 text-tech-blue bg-tech-blue/5 mb-4">
+          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
             Parceiros & Autoridade
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
@@ -184,7 +184,7 @@ export default function Partners() {
                     target={isExternal ? '_blank' : undefined}
                     rel={isExternal ? 'noopener noreferrer' : undefined}
                     aria-label={`Visitar site ${partner.name}`}
-                    className="absolute inset-0 z-10 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neon-green/60"
+                    className="absolute inset-0 z-10 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/60"
                   />
                 )}
 
@@ -207,8 +207,8 @@ export default function Partners() {
                       />
                     </div>
                   ) : (
-                    <div className="w-16 h-16 rounded-xl bg-neon-green/10 border border-neon-green/20 flex items-center justify-center flex-shrink-0">
-                      <span className="text-neon-green font-black text-xl">FF</span>
+                    <div className="w-16 h-16 rounded-xl bg-brand-red/10 border border-brand-red/20 flex items-center justify-center flex-shrink-0">
+                      <span className="text-brand-red font-black text-xl">FF</span>
                     </div>
                   )}
                   <div>
@@ -236,10 +236,10 @@ export default function Partners() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, delay: partners.length * 0.1 }}
-            className="group relative bg-gradient-to-br from-neon-green/10 via-dark-card to-tech-blue/10 border-2 border-dashed border-neon-green/40 rounded-2xl p-6 flex flex-col items-center justify-center text-center min-h-[260px] hover:border-neon-green hover:shadow-neon-green transition-all duration-300 cursor-pointer"
+            className="group relative bg-gradient-to-br from-brand-red/10 via-dark-card to-brand-silver/10 border-2 border-dashed border-brand-red/40 rounded-2xl p-6 flex flex-col items-center justify-center text-center min-h-[260px] hover:border-brand-red hover:shadow-brand-red transition-all duration-300 cursor-pointer"
           >
-            <div className="w-16 h-16 rounded-2xl bg-neon-green/15 border border-neon-green/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <Handshake className="w-8 h-8 text-neon-green" />
+            <div className="w-16 h-16 rounded-2xl bg-brand-red/15 border border-brand-red/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <Handshake className="w-8 h-8 text-brand-red" />
             </div>
             <h3 className="text-xl font-bold text-white mb-2">
               Seja um parceiro do ETT
@@ -248,7 +248,7 @@ export default function Partners() {
               Marca, escola, instituição ou empresa de tech?
               Some forças com a gente.
             </p>
-            <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-neon-green text-dark font-semibold text-sm shadow-neon-green group-hover:gap-3 transition-all">
+            <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-red-deep text-white font-semibold text-sm shadow-brand-red group-hover:gap-3 transition-all">
               Quero ser parceiro
               <ArrowRight className="w-4 h-4" />
             </span>
@@ -270,7 +270,7 @@ export default function Partners() {
             { n: 'Centenário', l: 'apoio institucional do IEP' },
           ].map((item) => (
             <div key={item.n} className="text-center py-2">
-              <div className="text-xl font-bold text-neon-green">{item.n}</div>
+              <div className="text-xl font-bold text-brand-red">{item.n}</div>
               <div className="text-xs text-gray-500 mt-1">{item.l}</div>
             </div>
           ))}

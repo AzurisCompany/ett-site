@@ -21,7 +21,7 @@ const modulos = [
 export default function FerramentasResumo() {
   return (
     <section id="ferramentas" className="section-padding bg-dark-secondary relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-green/25 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/25 to-transparent" />
 
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
@@ -32,7 +32,7 @@ export default function FerramentasResumo() {
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5 }}
           >
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-5">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-5">
               Já está no ar
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5 leading-tight">
@@ -50,8 +50,8 @@ export default function FerramentasResumo() {
             <ul className="grid sm:grid-cols-2 gap-3 mb-8">
               {modulos.map((m) => (
                 <li key={m.label} className="flex items-center gap-3 text-sm text-gray-300">
-                  <span className="w-9 h-9 rounded-lg bg-neon-green/10 border border-neon-green/20 flex items-center justify-center shrink-0">
-                    <m.icon className="w-4 h-4 text-neon-green" />
+                  <span className="w-9 h-9 rounded-lg bg-brand-red/10 border border-brand-red/20 flex items-center justify-center shrink-0">
+                    <m.icon className="w-4 h-4 text-brand-red" />
                   </span>
                   {m.label}
                 </li>
@@ -61,7 +61,7 @@ export default function FerramentasResumo() {
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/planos/conhecer/"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-neon-green text-black font-bold text-sm hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg hover:-translate-y-0.5"
               >
                 Ver por dentro — teste de 30 dias
                 <ArrowRight className="w-4 h-4" />
@@ -70,7 +70,7 @@ export default function FerramentasResumo() {
                 href={PLAYER_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-dark-border text-gray-300 font-semibold text-sm hover:border-neon-green/40 hover:text-white transition-all"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-dark-border text-gray-300 font-semibold text-sm hover:border-brand-red/40 hover:text-white transition-all"
               >
                 Abrir o ETT Player
                 <ArrowUpRight className="w-4 h-4" />
@@ -79,7 +79,7 @@ export default function FerramentasResumo() {
 
             <Link
               href="/detalhes/#ferramentas"
-              className="inline-block mt-4 text-sm text-gray-500 hover:text-neon-green underline underline-offset-4 transition-colors"
+              className="inline-block mt-4 text-sm text-gray-500 hover:text-brand-red underline underline-offset-4 transition-colors"
             >
               Ver todas as ferramentas, uma a uma
             </Link>
@@ -94,7 +94,7 @@ export default function FerramentasResumo() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="group block rounded-2xl border border-dark-border bg-dark-card overflow-hidden shadow-2xl hover:border-neon-green/40 transition-all"
+            className="group block rounded-2xl border border-dark-border bg-dark-card overflow-hidden shadow-2xl hover:border-brand-red/40 transition-all"
           >
             <div className="flex items-center gap-2 px-4 py-3 bg-dark border-b border-dark-border">
               <span className="w-3 h-3 rounded-full bg-red-500/70" />
@@ -103,7 +103,7 @@ export default function FerramentasResumo() {
               <span className="ml-3 flex-1 truncate text-xs text-gray-500 font-mono">
                 ett-player.vercel.app
               </span>
-              <ArrowUpRight className="w-4 h-4 text-gray-500 group-hover:text-neon-green transition-colors" />
+              <ArrowUpRight className="w-4 h-4 text-gray-500 group-hover:text-brand-red transition-colors" />
             </div>
             <Image
               src="/images/ett-player.webp"

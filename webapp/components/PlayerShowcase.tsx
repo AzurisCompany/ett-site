@@ -27,12 +27,12 @@ const modules = [
 export default function PlayerShowcase() {
   return (
     <section id="player" className="section-padding bg-dark relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-green/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/30 to-transparent" />
 
       {/* Background glow */}
       <div
         className="absolute top-1/3 right-0 w-[600px] h-[600px] rounded-full blur-3xl pointer-events-none opacity-[0.06]"
-        style={{ background: 'radial-gradient(circle, #00BFFF 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, #F05A60 0%, transparent 70%)' }}
       />
 
       <div className="container mx-auto px-4">
@@ -43,10 +43,10 @@ export default function PlayerShowcase() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-green opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-neon-green" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red-deep opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-red-deep" />
             </span>
             As ferramentas já estão no ar
           </span>
@@ -71,7 +71,7 @@ export default function PlayerShowcase() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.6 }}
-            className="group block rounded-2xl border border-dark-border bg-dark-card overflow-hidden shadow-2xl hover:border-neon-green/40 hover:shadow-neon-green transition-all"
+            className="group block rounded-2xl border border-dark-border bg-dark-card overflow-hidden shadow-2xl hover:border-brand-red/40 hover:shadow-brand-red transition-all"
           >
             {/* Fake browser bar */}
             <div className="flex items-center gap-2 px-4 py-3 bg-dark-secondary border-b border-dark-border">
@@ -81,7 +81,7 @@ export default function PlayerShowcase() {
               <span className="ml-3 flex-1 truncate text-xs text-gray-500 font-mono">
                 ett-player.vercel.app
               </span>
-              <ArrowUpRight className="w-4 h-4 text-gray-500 group-hover:text-neon-green transition-colors" />
+              <ArrowUpRight className="w-4 h-4 text-gray-500 group-hover:text-brand-red transition-colors" />
             </div>
             <Image
               src="/images/ett-player.webp"
@@ -102,8 +102,8 @@ export default function PlayerShowcase() {
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
               {modules.map((mod) => (
                 <div key={mod.label} className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-neon-green/10 border border-neon-green/20 flex items-center justify-center flex-shrink-0">
-                    <mod.icon className="w-4 h-4 text-neon-green" />
+                  <div className="w-9 h-9 rounded-lg bg-brand-red/10 border border-brand-red/20 flex items-center justify-center flex-shrink-0">
+                    <mod.icon className="w-4 h-4 text-brand-red" />
                   </div>
                   <div>
                     <div className="font-semibold text-white text-sm">{mod.label}</div>
@@ -113,9 +113,9 @@ export default function PlayerShowcase() {
               ))}
             </div>
 
-            <div className="rounded-2xl border border-neon-green/20 bg-dark-card p-6">
+            <div className="rounded-2xl border border-brand-red/20 bg-dark-card p-6">
               <p className="flex items-start gap-2 text-gray-300 text-sm mb-5">
-                <Check className="w-5 h-5 text-neon-green flex-shrink-0" />
+                <Check className="w-5 h-5 text-brand-red flex-shrink-0" />
                 <span>
                   <strong className="text-white">Acesso gratuito</strong> pra quem participa do
                   programa. Cadastre-se para receber seu login e um{' '}
@@ -127,14 +127,14 @@ export default function PlayerShowcase() {
                   href={PLAYER_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-neon-green text-black font-bold text-sm hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg hover:-translate-y-0.5"
                 >
                   Explorar o ETT Player
                   <ArrowUpRight className="w-4 h-4" />
                 </a>
                 <a
                   href="#inscricao"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-tech-blue/50 text-tech-blue font-bold text-sm hover:bg-tech-blue/10 hover:border-tech-blue transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-brand-silver/50 text-brand-silver font-bold text-sm hover:bg-brand-silver/10 hover:border-brand-silver transition-all"
                 >
                   Quero meu acesso grátis
                 </a>

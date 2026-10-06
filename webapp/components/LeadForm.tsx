@@ -93,12 +93,12 @@ export default function LeadForm() {
 
   return (
     <section id="inscricao" className="section-padding bg-dark relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-green/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/30 to-transparent" />
 
       {/* Background glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full blur-3xl pointer-events-none opacity-[0.04]"
-        style={{ background: 'radial-gradient(circle, #00FF9D 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, #D72229 0%, transparent 70%)' }}
       />
 
       <div className="container mx-auto px-4">
@@ -127,15 +127,15 @@ export default function LeadForm() {
             {/* Info do encontro */}
             <div className="flex flex-wrap justify-center gap-4 mt-6 text-sm text-gray-400">
               <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-neon-green" />
+                <Calendar className="w-4 h-4 text-brand-red" />
                 Online toda segunda, 20h
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-neon-green" />
+                <MapPin className="w-4 h-4 text-brand-red" />
                 IEP Talks, sábados 10h · Curitiba
               </div>
               <div className="flex items-center gap-2">
-                <Users className="w-4 h-4 text-neon-green" />
+                <Users className="w-4 h-4 text-brand-red" />
                 Os encontros são gratuitos.
               </div>
             </div>
@@ -147,7 +147,7 @@ export default function LeadForm() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-dark-card border border-neon-green/20 rounded-2xl p-8 shadow-neon-green"
+            className="bg-dark-card border border-brand-red/20 rounded-2xl p-8 shadow-brand-red"
           >
             <AnimatePresence mode="wait">
               {submitted ? (
@@ -158,13 +158,13 @@ export default function LeadForm() {
                   exit={{ opacity: 0 }}
                   className="text-center py-8"
                 >
-                  <div className="w-16 h-16 rounded-full bg-neon-green/15 border border-neon-green/30 flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle2 className="w-8 h-8 text-neon-green" />
+                  <div className="w-16 h-16 rounded-full bg-brand-red/15 border border-brand-red/30 flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle2 className="w-8 h-8 text-brand-red" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-3">Pronto, você está dentro!</h3>
                   <p className="text-gray-300 leading-relaxed max-w-sm mx-auto">
                     Você vai receber o{' '}
-                    <strong className="text-neon-green">link do encontro de segunda</strong> e as
+                    <strong className="text-brand-red">link do encontro de segunda</strong> e as
                     datas do IEP Talks. A partir daí chegam mais informações sobre o programa por
                     e-mail, e{' '}
                     <strong className="text-gray-200">entraremos em contato</strong> para tirar suas
@@ -178,7 +178,7 @@ export default function LeadForm() {
                   </p>
                   <Link
                     href="/planos/conhecer/"
-                    className="inline-flex items-center justify-center mt-4 px-6 py-3 rounded-lg border border-neon-green/40 text-neon-green font-bold text-sm hover:bg-neon-green/10 transition-all"
+                    className="inline-flex items-center justify-center mt-4 px-6 py-3 rounded-lg border border-brand-red/40 text-brand-red font-bold text-sm hover:bg-brand-red/10 transition-all"
                   >
                     Ver o teste de 30 dias
                   </Link>
@@ -198,7 +198,7 @@ export default function LeadForm() {
                   {/* Name */}
                   <div>
                     <label htmlFor="rd-name" className="block text-sm font-medium text-gray-300 mb-2">
-                      Nome completo <span className="text-neon-green">*</span>
+                      Nome completo <span className="text-brand-red">*</span>
                     </label>
                     <input
                       id="rd-name"
@@ -207,14 +207,14 @@ export default function LeadForm() {
                       required
                       minLength={2}
                       placeholder="Seu nome"
-                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-neon-green/60 focus:ring-1 focus:ring-neon-green/30 transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-brand-red/60 focus:ring-1 focus:ring-brand-red/30 transition-colors"
                     />
                   </div>
 
                   {/* Email */}
                   <div>
                     <label htmlFor="rd-email" className="block text-sm font-medium text-gray-300 mb-2">
-                      E-mail <span className="text-neon-green">*</span>
+                      E-mail <span className="text-brand-red">*</span>
                     </label>
                     <input
                       id="rd-email"
@@ -222,7 +222,7 @@ export default function LeadForm() {
                       type="email"
                       required
                       placeholder="seu@email.com"
-                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-neon-green/60 focus:ring-1 focus:ring-neon-green/30 transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-brand-red/60 focus:ring-1 focus:ring-brand-red/30 transition-colors"
                     />
                   </div>
 
@@ -237,7 +237,7 @@ export default function LeadForm() {
                       name="company"
                       type="text"
                       placeholder="Onde você trabalha"
-                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-neon-green/60 focus:ring-1 focus:ring-neon-green/30 transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-brand-red/60 focus:ring-1 focus:ring-brand-red/30 transition-colors"
                     />
                   </div>
 
@@ -263,7 +263,7 @@ export default function LeadForm() {
                         const target = e.currentTarget
                         target.value = formatPhoneBR(target.value)
                       }}
-                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-neon-green/60 focus:ring-1 focus:ring-neon-green/30 transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-brand-red/60 focus:ring-1 focus:ring-brand-red/30 transition-colors"
                     />
                   </div>
 
@@ -277,7 +277,7 @@ export default function LeadForm() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full py-4 rounded-xl bg-neon-green text-black font-bold text-base hover:bg-neon-green/90 disabled:opacity-60 disabled:cursor-not-allowed transition-all hover:shadow-neon-green-lg hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2"
+                    className="w-full py-4 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 disabled:opacity-60 disabled:cursor-not-allowed transition-all hover:shadow-brand-red-lg hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2"
                   >
                     {submitting ? (
                       <>

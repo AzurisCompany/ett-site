@@ -92,20 +92,14 @@ export default function Footer({ locale = 'pt-BR' }: FooterProps) {
         <div className="grid md:grid-cols-4 gap-10 mb-14">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="relative w-10 h-10">
-                <Image
-                  src="/images/Logo-ETT.png"
-                  alt="Logo English Talk Time"
-                  fill
-                  className="object-contain"
-                  sizes="40px"
-                />
-              </div>
-              <div>
-                <div className="font-bold text-white leading-tight">English Talk Time</div>
-                <div className="text-xs text-neon-green font-medium">ETT</div>
-              </div>
+            <div className="mb-5">
+              <Image
+                src="/images/ett-logo-institucional-negativa.svg"
+                alt="English Talk Time — Programa de Aceleração de Inglês"
+                width={160}
+                height={84}
+                className="h-20 w-auto"
+              />
             </div>
             <p className="text-gray-500 text-sm leading-relaxed mb-5">
               {m.tagline}
@@ -120,7 +114,7 @@ export default function Footer({ locale = 'pt-BR' }: FooterProps) {
                   key={label}
                   href="#"
                   aria-label={label}
-                  className="w-9 h-9 rounded-lg border border-dark-border flex items-center justify-center text-gray-500 hover:text-neon-green hover:border-neon-green/30 transition-colors"
+                  className="w-9 h-9 rounded-lg border border-dark-border flex items-center justify-center text-gray-500 hover:text-brand-red hover:border-brand-red/30 transition-colors"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -139,7 +133,7 @@ export default function Footer({ locale = 'pt-BR' }: FooterProps) {
                   <li key={item.label}>
                     <Link
                       href={item.href}
-                      className="text-gray-500 text-sm hover:text-neon-green transition-colors"
+                      className="text-gray-500 text-sm hover:text-brand-red transition-colors"
                     >
                       {item.label}
                     </Link>

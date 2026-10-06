@@ -27,8 +27,8 @@ export default function CapturaRapida() {
           transition={{ duration: 0.45 }}
           className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center gap-5 sm:gap-8 text-center sm:text-left"
         >
-          <span className="w-12 h-12 shrink-0 rounded-xl bg-neon-green/10 border border-neon-green/20 flex items-center justify-center">
-            <Mail className="w-5 h-5 text-neon-green" />
+          <span className="w-12 h-12 shrink-0 rounded-xl bg-brand-red/10 border border-brand-red/20 flex items-center justify-center">
+            <Mail className="w-5 h-5 text-brand-red" />
           </span>
 
           <div className="flex-1">
@@ -44,7 +44,7 @@ export default function CapturaRapida() {
 
           <Link
             href="#inscricao"
-            className="w-full sm:w-auto shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-neon-green text-black font-bold text-sm hover:bg-neon-green/90 transition-all hover:shadow-neon-green hover:-translate-y-0.5"
+            className="w-full sm:w-auto shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red hover:-translate-y-0.5"
           >
             Quero receber
             <ArrowRight className="w-4 h-4" />

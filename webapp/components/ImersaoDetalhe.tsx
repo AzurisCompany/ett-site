@@ -51,14 +51,14 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
     <main className="bg-dark min-h-screen">
       {/* HERO */}
       <section className="relative pt-32 pb-12 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-neon-green/5 via-dark to-dark" />
-        <div className="absolute top-20 right-0 w-96 h-96 bg-neon-green/10 rounded-full blur-3xl" />
-        <div className="absolute top-40 left-0 w-96 h-96 bg-tech-blue/10 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-red/5 via-dark to-dark" />
+        <div className="absolute top-20 right-0 w-96 h-96 bg-brand-red/10 rounded-full blur-3xl" />
+        <div className="absolute top-40 left-0 w-96 h-96 bg-brand-silver/10 rounded-full blur-3xl" />
 
         <div className="container mx-auto px-4 relative">
           <Link
             href="/imersoes"
-            className="inline-flex items-center gap-1.5 text-gray-400 hover:text-neon-green text-sm mb-6 transition-colors"
+            className="inline-flex items-center gap-1.5 text-gray-400 hover:text-brand-red text-sm mb-6 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Voltar para imersões
@@ -70,7 +70,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
             transition={{ duration: 0.5 }}
             className="max-w-4xl"
           >
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
               {props.eyebrow}
             </span>
             <div className="flex items-center gap-2 text-gray-400 text-sm mb-3">
@@ -95,7 +95,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="flex flex-col md:flex-row items-center gap-5 md:gap-8 bg-dark-card border border-neon-green/20 rounded-2xl p-5 md:p-6"
+            className="flex flex-col md:flex-row items-center gap-5 md:gap-8 bg-dark-card border border-brand-red/20 rounded-2xl p-5 md:p-6"
           >
             <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-white/5 border border-dark-border flex-shrink-0">
               <Image
@@ -107,7 +107,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
               />
             </div>
             <div className="flex-1 text-center md:text-left">
-              <div className="text-xs uppercase tracking-widest text-neon-green font-semibold mb-1">
+              <div className="text-xs uppercase tracking-widest text-brand-red font-semibold mb-1">
                 Imersão em parceria com
               </div>
               <div className="text-xl font-bold text-white mb-1">
@@ -116,14 +116,14 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
               <p className="text-gray-400 text-sm">
                 <strong className="text-white">40+ anos</strong> formando profissionais fluentes ·
                 metodologia <strong className="text-white">Bonding + Native-like</strong> ·
-                fluência até <strong className="text-neon-green">10× mais rápido</strong>
+                fluência até <strong className="text-brand-red">10× mais rápido</strong>
               </p>
             </div>
             <a
               href="https://cherrytop.com.br"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-gray-400 hover:text-neon-green inline-flex items-center gap-1.5 transition-colors whitespace-nowrap"
+              className="text-sm text-gray-400 hover:text-brand-red inline-flex items-center gap-1.5 transition-colors whitespace-nowrap"
             >
               cherrytop.com.br <ArrowRight className="w-3.5 h-3.5" />
             </a>
@@ -140,7 +140,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
               {/* Turmas */}
               <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
                 <div className="flex items-center gap-2 mb-4">
-                  <Calendar className="w-5 h-5 text-neon-green" />
+                  <Calendar className="w-5 h-5 text-brand-red" />
                   <h2 className="text-xl font-bold text-white">
                     {props.turmas.length > 1 ? 'Turmas previstas' : 'Quando'}
                   </h2>
@@ -149,12 +149,12 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
                   {props.turmas.map((t, i) => (
                     <div
                       key={i}
-                      className="p-4 rounded-xl bg-dark border border-dark-border hover:border-neon-green/30 transition-colors"
+                      className="p-4 rounded-xl bg-dark border border-dark-border hover:border-brand-red/30 transition-colors"
                     >
                       <div className="flex items-start justify-between gap-3 flex-wrap">
                         <div>
                           <div className="font-semibold text-white">{t.label}</div>
-                          <div className="text-neon-green text-sm font-medium mt-0.5">
+                          <div className="text-brand-red text-sm font-medium mt-0.5">
                             {t.when}
                           </div>
                           {t.detalhe && (
@@ -170,13 +170,13 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
               {/* Highlights */}
               <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
                 <div className="flex items-center gap-2 mb-4">
-                  <GraduationCap className="w-5 h-5 text-neon-green" />
+                  <GraduationCap className="w-5 h-5 text-brand-red" />
                   <h2 className="text-xl font-bold text-white">Destaques desta imersão</h2>
                 </div>
                 <ul className="space-y-2.5">
                   {props.highlights.map((h) => (
                     <li key={h} className="flex items-start gap-2 text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-neon-green shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
                       <span>{h}</span>
                     </li>
                   ))}
@@ -187,7 +187,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
                   <h3 className="font-bold text-white mb-3 flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-neon-green" />
+                    <CheckCircle2 className="w-4 h-4 text-brand-red" />
                     Incluso
                   </h3>
                   <ul className="space-y-1.5 text-gray-400 text-sm">
@@ -214,7 +214,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
 
             {/* Sidebar — info + CTA */}
             <aside className="space-y-4 lg:sticky lg:top-24 lg:self-start">
-              <div className="bg-gradient-to-br from-neon-green/10 via-dark-card to-tech-blue/10 border border-neon-green/30 rounded-2xl p-6">
+              <div className="bg-gradient-to-br from-brand-red/10 via-dark-card to-brand-silver/10 border border-brand-red/30 rounded-2xl p-6">
                 <div className="text-xs text-gray-400 uppercase tracking-wider mb-1">
                   Investimento
                 </div>
@@ -224,7 +224,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
                 </div>
                 {props.vagasInfo && (
                   <div className="flex items-center gap-2 text-gray-300 text-sm mb-5 pb-5 border-b border-dark-border">
-                    <Users className="w-4 h-4 text-tech-blue" />
+                    <Users className="w-4 h-4 text-brand-silver" />
                     {props.vagasInfo}
                   </div>
                 )}
@@ -232,7 +232,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
                   href={FORM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-neon-green text-dark font-bold text-base hover:bg-neon-green/90 transition-all hover:shadow-neon-green"
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red"
                 >
                   {props.ctaLabel}
                   <ArrowRight className="w-4 h-4" />
@@ -244,7 +244,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
 
               <div className="bg-dark-card border border-dark-border rounded-2xl p-6 space-y-3 text-sm">
                 <div className="flex items-start gap-2">
-                  <Building2 className="w-4 h-4 text-tech-blue shrink-0 mt-0.5" />
+                  <Building2 className="w-4 h-4 text-brand-silver shrink-0 mt-0.5" />
                   <div>
                     <div className="text-white font-semibold">{props.local.name}</div>
                     {props.local.address && (
@@ -255,12 +255,12 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
                   </div>
                 </div>
                 <div className="flex items-start gap-2">
-                  <Users className="w-4 h-4 text-tech-blue shrink-0 mt-0.5" />
+                  <Users className="w-4 h-4 text-brand-silver shrink-0 mt-0.5" />
                   <div className="text-gray-300">{props.format}</div>
                 </div>
                 {props.lideranca && (
                   <div className="flex items-start gap-2">
-                    <GraduationCap className="w-4 h-4 text-tech-blue shrink-0 mt-0.5" />
+                    <GraduationCap className="w-4 h-4 text-brand-silver shrink-0 mt-0.5" />
                     <div className="text-gray-300">{props.lideranca}</div>
                   </div>
                 )}
@@ -301,7 +301,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
                   viewport={{ once: true, margin: '-40px' }}
                   transition={{ duration: 0.35, delay: (i % 8) * 0.04 }}
                   onClick={() => setLightbox(src)}
-                  className="relative aspect-square rounded-xl overflow-hidden bg-dark-card border border-dark-border hover:border-neon-green/40 transition-all group cursor-pointer"
+                  className="relative aspect-square rounded-xl overflow-hidden bg-dark-card border border-dark-border hover:border-brand-red/40 transition-all group cursor-pointer"
                 >
                   <Image
                     src={src}
@@ -315,14 +315,14 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
               ))}
             </div>
           ) : (
-            <div className="bg-dark-card border border-dashed border-neon-green/30 rounded-2xl p-10 text-center max-w-2xl mx-auto">
+            <div className="bg-dark-card border border-dashed border-brand-red/30 rounded-2xl p-10 text-center max-w-2xl mx-auto">
               <div className="text-5xl mb-3">📸</div>
               <p className="text-gray-300 text-lg">
                 Galeria desta edição será publicada após a realização.
               </p>
               <Link
                 href="/imersoes#galeria-eua"
-                className="inline-flex items-center gap-1.5 text-neon-green hover:underline text-sm mt-4"
+                className="inline-flex items-center gap-1.5 text-brand-red hover:underline text-sm mt-4"
               >
                 Ver galeria das imersões já realizadas <ArrowRight className="w-3.5 h-3.5" />
               </Link>
@@ -347,7 +347,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
               href={FORM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-neon-green text-dark font-bold text-lg hover:bg-neon-green/90 transition-all hover:shadow-neon-green"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-red-deep text-white font-bold text-lg hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red"
             >
               {props.ctaLabel}
               <ArrowRight className="w-5 h-5" />
@@ -355,7 +355,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
             <div className="mt-8">
               <Link
                 href="/imersoes"
-                className="text-gray-400 hover:text-neon-green text-sm transition-colors inline-flex items-center gap-1.5"
+                className="text-gray-400 hover:text-brand-red text-sm transition-colors inline-flex items-center gap-1.5"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
                 Ver todas as imersões
@@ -373,7 +373,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
         >
           <button
             onClick={() => setLightbox(null)}
-            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-dark-card border border-dark-border text-white hover:bg-dark hover:border-neon-green/40 transition-all flex items-center justify-center"
+            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-dark-card border border-dark-border text-white hover:bg-dark hover:border-brand-red/40 transition-all flex items-center justify-center"
             aria-label="Fechar"
           >
             <X className="w-5 h-5" />

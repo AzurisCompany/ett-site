@@ -9,8 +9,8 @@ export default function EnNotFound() {
       <Navbar />
       <main className="bg-dark min-h-screen pt-24 flex items-center">
         <div className="container mx-auto px-4 max-w-2xl text-center py-16">
-          <div className="w-16 h-16 mx-auto rounded-2xl bg-neon-green/10 border border-neon-green/30 flex items-center justify-center mb-6">
-            <Wrench className="w-8 h-8 text-neon-green" />
+          <div className="w-16 h-16 mx-auto rounded-2xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center mb-6">
+            <Wrench className="w-8 h-8 text-brand-red" />
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
             This page is <span className="gradient-text">coming soon in English</span>
@@ -23,14 +23,14 @@ export default function EnNotFound() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/en/"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-neon-green text-dark font-bold text-base hover:bg-neon-green/90 transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all"
             >
               Back to English home
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href="/"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-dark-border text-white font-semibold hover:border-neon-green/50 hover:bg-dark-card transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-dark-border text-white font-semibold hover:border-brand-red/50 hover:bg-dark-card transition-all"
             >
               See the full site (in Portuguese)
             </Link>

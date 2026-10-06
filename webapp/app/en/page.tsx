@@ -209,22 +209,22 @@ export default function EnHome() {
           </div>
 
           <div className="relative z-10 container mx-auto px-4 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neon-green/30 bg-neon-green/10 text-neon-green text-sm font-medium mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-red/30 bg-brand-red/10 text-brand-red text-sm font-medium mb-8">
               <Zap className="w-4 h-4" />
               <span>+365,000 students already accelerated with the Fluent Formula</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight max-w-5xl mx-auto">
-              From <span className="neon-green">stuck English</span> to{' '}
-              <span className="neon-blue">functional fluency</span>{' '}
+              From <span className="brand-red">stuck English</span> to{' '}
+              <span className="brand-silver">functional fluency</span>{' '}
               <br className="hidden md:block" />
               for the international tech market
             </h1>
 
             <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
               <span className="text-white font-semibold">English conversation group</span> for
-              tech professionals who want to <span className="text-neon-green font-medium">unblock speaking</span> and{' '}
-              <span className="text-tech-blue font-medium">become fluent</span>.
+              tech professionals who want to <span className="text-brand-red font-medium">unblock speaking</span> and{' '}
+              <span className="text-brand-silver font-medium">become fluent</span>.
               Guided speaking practice + AI-powered learning tools, in a structured daily routine.
               Weekly <span className="text-white">online meetings (every Monday)</span> and{' '}
               <span className="text-white">in-person sessions in Curitiba, Brazil</span>.
@@ -233,13 +233,13 @@ export default function EnHome() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
               <Link
                 href="#signup"
-                className="w-full sm:w-auto px-8 py-4 rounded-lg bg-neon-green text-black font-bold text-base sm:text-lg hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg"
+                className="w-full sm:w-auto px-8 py-4 rounded-lg bg-brand-red-deep text-white font-bold text-base sm:text-lg hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg"
               >
                 Join the next free meeting
               </Link>
               <Link
                 href="#tools"
-                className="w-full sm:w-auto px-8 py-4 rounded-lg border border-tech-blue/50 text-tech-blue font-bold text-base sm:text-lg hover:bg-tech-blue/10 hover:border-tech-blue transition-all"
+                className="w-full sm:w-auto px-8 py-4 rounded-lg border border-brand-silver/50 text-brand-silver font-bold text-base sm:text-lg hover:bg-brand-silver/10 hover:border-brand-silver transition-all"
               >
                 See the AI tools
               </Link>
@@ -251,8 +251,8 @@ export default function EnHome() {
                   key={i}
                   className="flex flex-col items-center gap-1 px-4 py-3 rounded-xl bg-dark-card/80 border border-dark-border backdrop-blur-sm"
                 >
-                  <stat.icon className="w-4 h-4 text-neon-green mb-1" />
-                  <span className="text-xl font-bold text-neon-green">{stat.value}</span>
+                  <stat.icon className="w-4 h-4 text-brand-red mb-1" />
+                  <span className="text-xl font-bold text-brand-red">{stat.value}</span>
                   <span className="text-xs text-gray-400 text-center">{stat.label}</span>
                 </div>
               ))}
@@ -264,7 +264,7 @@ export default function EnHome() {
         <section id="about" className="section-padding bg-dark-secondary border-y border-dark-border">
           <div className="container mx-auto px-4">
             <div className="text-center mb-14 max-w-3xl mx-auto">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 Why ETT
               </span>
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
@@ -282,8 +282,8 @@ export default function EnHome() {
                   key={i}
                   className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover"
                 >
-                  <div className="w-11 h-11 rounded-xl bg-neon-green/10 border border-neon-green/20 flex items-center justify-center mb-4">
-                    <vp.icon className="w-5 h-5 text-neon-green" />
+                  <div className="w-11 h-11 rounded-xl bg-brand-red/10 border border-brand-red/20 flex items-center justify-center mb-4">
+                    <vp.icon className="w-5 h-5 text-brand-red" />
                   </div>
                   <h3 className="font-bold text-white text-base mb-2 leading-snug">{vp.title}</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">{vp.desc}</p>
@@ -297,7 +297,7 @@ export default function EnHome() {
         <section id="method" className="section-padding">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-tech-blue/30 text-tech-blue bg-tech-blue/5 mb-4">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 The Method
               </span>
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
@@ -310,7 +310,7 @@ export default function EnHome() {
               </p>
               <Link
                 href="/ff/"
-                className="inline-flex items-center gap-2 text-neon-green font-semibold hover:text-neon-green/80 transition-colors"
+                className="inline-flex items-center gap-2 text-brand-red font-semibold hover:text-brand-red/80 transition-colors"
               >
                 Read the full method (in Portuguese) <ArrowRight className="w-4 h-4" />
               </Link>
@@ -322,7 +322,7 @@ export default function EnHome() {
         <section id="tools" className="section-padding bg-dark-secondary border-y border-dark-border">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 max-w-3xl mx-auto">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 AI-Powered Tools
               </span>
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
@@ -340,16 +340,16 @@ export default function EnHome() {
                   key={i}
                   className={`bg-dark-card rounded-2xl p-5 card-hover flex flex-col ${
                     tool.highlight
-                      ? 'border border-neon-green/30 shadow-neon-green'
+                      ? 'border border-brand-red/30 shadow-brand-red'
                       : 'border border-dark-border'
                   }`}
                 >
                   <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${
                     tool.highlight
-                      ? 'bg-neon-green/15 border border-neon-green/30'
-                      : 'bg-tech-blue/10 border border-tech-blue/20'
+                      ? 'bg-brand-red/15 border border-brand-red/30'
+                      : 'bg-brand-silver/10 border border-brand-silver/20'
                   }`}>
-                    <tool.icon className={`w-5 h-5 ${tool.highlight ? 'text-neon-green' : 'text-tech-blue'}`} />
+                    <tool.icon className={`w-5 h-5 ${tool.highlight ? 'text-brand-red' : 'text-brand-silver'}`} />
                   </div>
                   <h3 className="font-bold text-white text-base mb-2">{tool.name}</h3>
                   <p className="text-gray-400 text-sm leading-relaxed flex-1">{tool.desc}</p>
@@ -363,7 +363,7 @@ export default function EnHome() {
         <section id="results" className="section-padding">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 max-w-3xl mx-auto">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 Results & Data
               </span>
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
@@ -377,11 +377,11 @@ export default function EnHome() {
               {metrics.map((m, i) => (
                 <div key={i} className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover">
                   <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${
-                    m.color === 'green' ? 'bg-neon-green/10' : 'bg-tech-blue/10'
+                    m.color === 'green' ? 'bg-brand-red/10' : 'bg-brand-silver/10'
                   }`}>
-                    <m.icon className={`w-5 h-5 ${m.color === 'green' ? 'text-neon-green' : 'text-tech-blue'}`} />
+                    <m.icon className={`w-5 h-5 ${m.color === 'green' ? 'text-brand-red' : 'text-brand-silver'}`} />
                   </div>
-                  <div className={`text-4xl font-black mb-1 ${m.color === 'green' ? 'text-neon-green' : 'text-tech-blue'}`}>
+                  <div className={`text-4xl font-black mb-1 ${m.color === 'green' ? 'text-brand-red' : 'text-brand-silver'}`}>
                     {m.value}
                   </div>
                   <div className="font-bold text-white text-sm mb-2">{m.label}</div>
@@ -396,7 +396,7 @@ export default function EnHome() {
         <section className="section-padding bg-dark-secondary border-y border-dark-border">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 max-w-3xl mx-auto">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-tech-blue/30 text-tech-blue bg-tech-blue/5 mb-4">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 Testimonials
               </span>
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
@@ -406,7 +406,7 @@ export default function EnHome() {
             <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
               {testimonials.map((t, i) => (
                 <div key={i} className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover relative">
-                  <Quote className="absolute top-5 right-5 w-8 h-8 text-neon-green/10" />
+                  <Quote className="absolute top-5 right-5 w-8 h-8 text-brand-red/10" />
                   <div className="flex gap-0.5 mb-4">
                     {Array.from({ length: 5 }).map((_, j) => (
                       <Star key={j} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
@@ -418,7 +418,7 @@ export default function EnHome() {
                       <div className="font-bold text-white text-sm">{t.name}</div>
                       <div className="text-xs text-gray-500">{t.role}</div>
                     </div>
-                    <span className="text-xs px-3 py-1 rounded-full bg-neon-green/10 text-neon-green border border-neon-green/20 font-medium whitespace-nowrap">
+                    <span className="text-xs px-3 py-1 rounded-full bg-brand-red/10 text-brand-red border border-brand-red/20 font-medium whitespace-nowrap">
                       {t.tag}
                     </span>
                   </div>
@@ -435,7 +435,7 @@ export default function EnHome() {
         <section id="partners" className="section-padding">
           <div className="container mx-auto px-4">
             <div className="text-center mb-10 max-w-3xl mx-auto">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-tech-blue/30 text-tech-blue bg-tech-blue/5 mb-4">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 Partners
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
@@ -465,7 +465,7 @@ export default function EnHome() {
         <section id="how" className="section-padding bg-dark-secondary border-y border-dark-border">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 max-w-3xl mx-auto">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 How It Works
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
@@ -487,13 +487,13 @@ export default function EnHome() {
         {/* ONLINE MEETING TEASER */}
         <section id="online" className="section-padding">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto bg-dark-card border border-tech-blue/30 rounded-3xl p-8 md:p-10">
+            <div className="max-w-3xl mx-auto bg-dark-card border border-brand-silver/30 rounded-3xl p-8 md:p-10">
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-tech-blue/10 border border-tech-blue/30 flex items-center justify-center flex-shrink-0">
-                  <Wifi className="w-6 h-6 text-tech-blue" />
+                <div className="w-12 h-12 rounded-xl bg-brand-silver/10 border border-brand-silver/30 flex items-center justify-center flex-shrink-0">
+                  <Wifi className="w-6 h-6 text-brand-silver" />
                 </div>
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-tech-blue font-semibold mb-1">
+                  <div className="text-xs uppercase tracking-wider text-brand-silver font-semibold mb-1">
                     Online — every Monday
                   </div>
                   <h3 className="font-bold text-white text-xl md:text-2xl leading-snug">
@@ -508,7 +508,7 @@ export default function EnHome() {
               </p>
               <Link
                 href="#signup"
-                className="inline-flex items-center gap-2 text-tech-blue font-semibold hover:text-tech-blue/80 transition-colors"
+                className="inline-flex items-center gap-2 text-brand-silver font-semibold hover:text-brand-silver/80 transition-colors"
               >
                 Join the next online meeting <ArrowRight className="w-4 h-4" />
               </Link>
@@ -519,13 +519,13 @@ export default function EnHome() {
         {/* FLORIDA IMMERSION TEASER */}
         <section className="section-padding bg-dark-secondary border-y border-dark-border">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto bg-dark-card border border-neon-green/30 rounded-3xl p-8 md:p-10">
+            <div className="max-w-3xl mx-auto bg-dark-card border border-brand-red/30 rounded-3xl p-8 md:p-10">
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-neon-green/10 border border-neon-green/30 flex items-center justify-center flex-shrink-0">
-                  <Plane className="w-6 h-6 text-neon-green" />
+                <div className="w-12 h-12 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center flex-shrink-0">
+                  <Plane className="w-6 h-6 text-brand-red" />
                 </div>
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-neon-green font-semibold mb-1">
+                  <div className="text-xs uppercase tracking-wider text-brand-red font-semibold mb-1">
                     USA Immersion — Florida
                   </div>
                   <h3 className="font-bold text-white text-xl md:text-2xl leading-snug">
@@ -539,7 +539,7 @@ export default function EnHome() {
               </p>
               <Link
                 href="/imersoes/florida/"
-                className="inline-flex items-center gap-2 text-neon-green font-semibold hover:text-neon-green/80 transition-colors"
+                className="inline-flex items-center gap-2 text-brand-red font-semibold hover:text-brand-red/80 transition-colors"
               >
                 See Florida immersion details (in Portuguese) <ArrowRight className="w-4 h-4" />
               </Link>
@@ -551,7 +551,7 @@ export default function EnHome() {
         <section className="section-padding">
           <div className="container mx-auto px-4">
             <div className="text-center mb-10 max-w-3xl mx-auto">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-tech-blue/30 text-tech-blue bg-tech-blue/5 mb-4">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 FAQ
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
@@ -565,7 +565,7 @@ export default function EnHome() {
                   className="bg-dark-card border border-dark-border rounded-2xl p-5 group"
                 >
                   <summary className="cursor-pointer font-semibold text-white text-base flex items-start gap-3 list-none">
-                    <CheckCircle2 className="w-5 h-5 text-neon-green shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
                     <span className="flex-1">{f.q}</span>
                   </summary>
                   <p className="text-gray-400 text-sm leading-relaxed mt-3 ml-8">{f.a}</p>
@@ -578,10 +578,10 @@ export default function EnHome() {
         {/* CTA / SIGNUP */}
         <section id="signup" className="section-padding bg-dark-secondary border-t border-dark-border">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center bg-dark-card border border-neon-green/30 rounded-3xl p-10 md:p-14 shadow-neon-green relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-neon-green/8 to-tech-blue/8 pointer-events-none" />
+            <div className="max-w-3xl mx-auto text-center bg-dark-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 to-brand-silver/8 pointer-events-none" />
               <div className="relative">
-                <Users className="w-10 h-10 text-neon-green mx-auto mb-5" />
+                <Users className="w-10 h-10 text-brand-red mx-auto mb-5" />
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
                   Join the <span className="gradient-text">next free meeting</span>
                 </h2>
@@ -593,7 +593,7 @@ export default function EnHome() {
                   href={LEAD_FORM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-neon-green text-dark font-bold text-base hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg"
                 >
                   Sign me up
                   <ArrowRight className="w-5 h-5" />

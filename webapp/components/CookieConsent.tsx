@@ -29,7 +29,7 @@ export default function CookieConsent() {
       role="dialog"
       aria-live="polite"
       aria-label="Aviso de cookies"
-      className="fixed bottom-3 left-3 right-3 md:left-auto md:right-4 md:bottom-4 md:max-w-md z-[60] bg-dark-card border border-neon-green/30 rounded-2xl p-5 shadow-2xl backdrop-blur-md"
+      className="fixed bottom-3 left-3 right-3 md:left-auto md:right-4 md:bottom-4 md:max-w-md z-[60] bg-dark-card border border-brand-red/30 rounded-2xl p-5 shadow-2xl backdrop-blur-md"
     >
       <button
         onClick={handleReject}
@@ -40,8 +40,8 @@ export default function CookieConsent() {
       </button>
 
       <div className="flex items-start gap-3 mb-3">
-        <div className="w-10 h-10 rounded-xl bg-neon-green/10 border border-neon-green/30 flex items-center justify-center flex-shrink-0">
-          <Cookie className="w-5 h-5 text-neon-green" />
+        <div className="w-10 h-10 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center flex-shrink-0">
+          <Cookie className="w-5 h-5 text-brand-red" />
         </div>
         <div>
           <h3 className="font-bold text-white text-base leading-snug mb-1">
@@ -59,7 +59,7 @@ export default function CookieConsent() {
         Saiba mais na nossa{' '}
         <Link
           href="/politica-privacidade/"
-          className="text-neon-green underline underline-offset-2 hover:text-neon-green/80"
+          className="text-brand-red underline underline-offset-2 hover:text-brand-red/80"
         >
           Política de Privacidade
         </Link>
@@ -69,13 +69,13 @@ export default function CookieConsent() {
       <div className="flex flex-col-reverse sm:flex-row gap-2">
         <button
           onClick={handleReject}
-          className="px-4 py-2 rounded-lg border border-dark-border text-gray-300 text-sm font-medium hover:border-neon-green/30 hover:bg-dark-secondary transition-colors"
+          className="px-4 py-2 rounded-lg border border-dark-border text-gray-300 text-sm font-medium hover:border-brand-red/30 hover:bg-dark-secondary transition-colors"
         >
           Rejeitar
         </button>
         <button
           onClick={handleAccept}
-          className="px-4 py-2 rounded-lg bg-neon-green text-dark text-sm font-bold hover:bg-neon-green/90 transition-colors"
+          className="px-4 py-2 rounded-lg bg-brand-red-deep text-white text-sm font-bold hover:bg-brand-red-deep/90 transition-colors"
         >
           Aceitar cookies
         </button>

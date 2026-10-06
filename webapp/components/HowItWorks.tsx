@@ -19,7 +19,7 @@ const steps = [
     description:
       'Participe de um encontro gratuito — online toda segunda ou o IEP Talks presencial aos sábados, em Curitiba. Conheça a metodologia, experimente o ambiente e comece a construir vínculo com a comunidade DSSBR & GUBigData.',
     tag: 'Online ou presencial',
-    color: 'neon-green',
+    color: 'brand-red',
   },
   {
     number: 2,
@@ -28,7 +28,7 @@ const steps = [
     description:
       'Diagnóstico de vocabulário para entender exatamente onde você está, o que precisa reforçar e quais recursos fazem mais sentido. Para alguns começa pela base (BeeTools), para outros direto à prática.',
     tag: 'Personalizado',
-    color: 'tech-blue',
+    color: 'brand-silver',
   },
   {
     number: 3,
@@ -37,7 +37,7 @@ const steps = [
     description:
       'Divisão clara: vocabulário (pontinhos), série/legenda, audiobook e diário. 1 hora por dia dividida em pequenos blocos — sem precisar de grandes janelas de tempo.',
     tag: '1h/dia',
-    color: 'neon-green',
+    color: 'brand-red',
   },
   {
     number: 4,
@@ -46,7 +46,7 @@ const steps = [
     description:
       'Conversas guiadas, simulações, storytelling, role-play e noites temáticas. Ambiente seguro para tirar o conhecimento do campo passivo e colocá-lo em uso real.',
     tag: 'Prática real',
-    color: 'tech-blue',
+    color: 'brand-silver',
   },
   {
     number: 5,
@@ -55,7 +55,7 @@ const steps = [
     description:
       'O sistema inteligente do ETT mapeia suas lacunas, gera flashcards personalizados, cria prompts para simulação com IA e mantém seu progresso visível e motivador.',
     tag: 'IA + dados',
-    color: 'neon-green',
+    color: 'brand-red',
   },
   {
     number: 6,
@@ -64,7 +64,7 @@ const steps = [
     description:
       'Para quem quer o salto de nível mais rápido: programas intensivos no Brasil e nos EUA. Sair de iniciante para intermediário — ou de intermediário para avançado — em poucas semanas.',
     tag: 'Opcional / aceleração',
-    color: 'tech-blue',
+    color: 'brand-silver',
   },
   {
     number: 7,
@@ -73,14 +73,14 @@ const steps = [
     description:
       'Currículo, LinkedIn, entrevistas em inglês, estratégia de posicionamento e suporte para relocação. Transforme seu inglês em mobilidade profissional concreta e salários até 5x maiores.',
     tag: 'Objetivo final',
-    color: 'neon-green',
+    color: 'brand-red',
   },
 ]
 
 export default function HowItWorks() {
   return (
     <section id="como-funciona" className="section-padding bg-dark-secondary relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-tech-blue/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-silver/30 to-transparent" />
 
       <div className="container mx-auto px-4">
         <motion.div
@@ -90,7 +90,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-neon-green/30 text-neon-green bg-neon-green/5 mb-4">
+          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
             Jornada do Aluno
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
@@ -107,12 +107,12 @@ export default function HowItWorks() {
         {/* Steps */}
         <div className="relative max-w-4xl mx-auto">
           {/* Vertical line */}
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-neon-green/40 via-tech-blue/20 to-transparent hidden sm:block" />
+          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-brand-red/40 via-brand-silver/20 to-transparent hidden sm:block" />
 
           <div className="space-y-8">
             {steps.map((step, i) => {
               const isEven = i % 2 === 0
-              const isGreen = step.color === 'neon-green'
+              const isGreen = step.color === 'brand-red'
               return (
                 <motion.div
                   key={step.number}
@@ -128,8 +128,8 @@ export default function HowItWorks() {
                   <div className="hidden sm:flex absolute left-1/2 -translate-x-1/2 top-4 z-10">
                     <div className={`w-10 h-10 rounded-full border-2 flex items-center justify-center font-black text-sm ${
                       isGreen
-                        ? 'border-neon-green bg-dark text-neon-green'
-                        : 'border-tech-blue bg-dark text-tech-blue'
+                        ? 'border-brand-red bg-dark text-brand-red'
+                        : 'border-brand-silver bg-dark text-brand-silver'
                     }`}>
                       {step.number}
                     </div>
@@ -138,19 +138,19 @@ export default function HowItWorks() {
                   {/* Card — takes half width on desktop */}
                   <div className={`w-full sm:w-[calc(50%-2.5rem)] ${isEven ? 'sm:pr-6' : 'sm:pl-6'}`}>
                     <div className={`bg-dark-card border rounded-2xl p-5 card-hover ${
-                      isGreen ? 'border-neon-green/15' : 'border-tech-blue/15'
+                      isGreen ? 'border-brand-red/15' : 'border-brand-silver/15'
                     }`}>
                       {/* Mobile step number */}
                       <div className="sm:hidden flex items-center gap-3 mb-3">
                         <div className={`w-8 h-8 rounded-full border-2 flex items-center justify-center font-black text-xs ${
                           isGreen
-                            ? 'border-neon-green text-neon-green'
-                            : 'border-tech-blue text-tech-blue'
+                            ? 'border-brand-red text-brand-red'
+                            : 'border-brand-silver text-brand-silver'
                         }`}>
                           {step.number}
                         </div>
                         <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${
-                          isGreen ? 'bg-neon-green/10 text-neon-green' : 'bg-tech-blue/10 text-tech-blue'
+                          isGreen ? 'bg-brand-red/10 text-brand-red' : 'bg-brand-silver/10 text-brand-silver'
                         }`}>
                           {step.tag}
                         </span>
@@ -158,14 +158,14 @@ export default function HowItWorks() {
 
                       <div className="flex items-start gap-3 mb-3">
                         <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${
-                          isGreen ? 'bg-neon-green/10' : 'bg-tech-blue/10'
+                          isGreen ? 'bg-brand-red/10' : 'bg-brand-silver/10'
                         }`}>
-                          <step.icon className={`w-5 h-5 ${isGreen ? 'text-neon-green' : 'text-tech-blue'}`} />
+                          <step.icon className={`w-5 h-5 ${isGreen ? 'text-brand-red' : 'text-brand-silver'}`} />
                         </div>
                         <div>
                           <h3 className="font-bold text-white text-base">{step.title}</h3>
                           <span className={`hidden sm:inline-flex text-xs font-medium px-2 py-0.5 rounded-full ${
-                            isGreen ? 'bg-neon-green/10 text-neon-green' : 'bg-tech-blue/10 text-tech-blue'
+                            isGreen ? 'bg-brand-red/10 text-brand-red' : 'bg-brand-silver/10 text-brand-silver'
                           }`}>
                             {step.tag}
                           </span>

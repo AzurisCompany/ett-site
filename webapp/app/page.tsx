@@ -62,7 +62,7 @@ export default function Home() {
           </p>
           <Link
             href="/detalhes/"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-dark-border text-gray-300 font-semibold text-sm hover:border-neon-green/40 hover:text-white transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-dark-border text-gray-300 font-semibold text-sm hover:border-brand-red/40 hover:text-white transition-all"
           >
             Ver o programa em detalhes
             <ArrowRight className="w-4 h-4" />

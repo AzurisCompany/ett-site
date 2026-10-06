@@ -38,7 +38,7 @@ const naoE = [
 export default function ComoE() {
   return (
     <section id="como-e" className="section-padding bg-dark relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-tech-blue/25 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-silver/25 to-transparent" />
 
       <div className="container mx-auto px-4">
         <motion.div
@@ -67,8 +67,8 @@ export default function ComoE() {
               className="bg-dark-card border border-dark-border rounded-2xl p-6"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-neon-green/10 border border-neon-green/20 flex items-center justify-center">
-                  <p.icon className="w-5 h-5 text-neon-green" />
+                <div className="w-10 h-10 rounded-xl bg-brand-red/10 border border-brand-red/20 flex items-center justify-center">
+                  <p.icon className="w-5 h-5 text-brand-red" />
                 </div>
                 <span className="text-2xl font-black text-dark-border">{i + 1}</span>
               </div>
@@ -87,7 +87,7 @@ export default function ComoE() {
           className="max-w-3xl mx-auto bg-dark-card border border-dark-border rounded-2xl p-7"
         >
           <h3 className="font-bold text-white text-lg mb-5">
-            Pra deixar claro o que o ETT <em className="text-neon-green not-italic">não</em> é
+            Pra deixar claro o que o ETT <em className="text-brand-red not-italic">não</em> é
           </h3>
           <ul className="grid sm:grid-cols-2 gap-3">
             {naoE.map((item) => (

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import Analytics from '@/components/Analytics'
 import CookieConsent from '@/components/CookieConsent'
@@ -124,7 +124,7 @@ const jsonLd = {
       url: SITE_URL,
       logo: {
         '@type': 'ImageObject',
-        url: `${SITE_URL}/images/Logo-ETT.png`,
+        url: `${SITE_URL}/images/ett-logo-2026.png`,
       },
       image: `${SITE_URL}/images/ETT-top01.webp`,
       foundingOrganization: {
@@ -173,6 +173,10 @@ const jsonLd = {
       inLanguage: 'pt-BR',
     },
   ],
+}
+
+export const viewport: Viewport = {
+  themeColor: '#0A1630',
 }
 
 export default function RootLayout({

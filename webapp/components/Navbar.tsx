@@ -97,19 +97,24 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href={homeHref} className="flex items-center gap-2 shrink-0">
-          <div className="relative w-10 h-10">
-            <Image
-              src="/images/Logo-ETT.png"
-              alt="Logo English Talk Time"
-              fill
-              className="object-contain"
-              sizes="40px"
-            />
-          </div>
-          <span className="font-bold text-white text-lg hidden sm:block">
-            English <span className="text-neon-green">Talk</span> Time
-          </span>
+        <Link href={homeHref} className="flex items-center shrink-0" aria-label="English Talk Time — início">
+          {/* Celular: só o símbolo. A partir de sm: assinatura horizontal completa. */}
+          <Image
+            src="/images/ett-simbolo.svg"
+            alt="English Talk Time"
+            width={44}
+            height={40}
+            className="h-9 w-auto sm:hidden"
+            priority
+          />
+          <Image
+            src="/images/ett-logo-horizontal-negativa.svg"
+            alt="English Talk Time — Programa de Aceleração de Inglês"
+            width={218}
+            height={48}
+            className="hidden sm:block h-10 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop links */}
@@ -118,7 +123,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-gray-300 hover:text-neon-green transition-colors text-sm font-medium inline-flex items-baseline gap-0.5"
+              className="text-gray-300 hover:text-brand-red transition-colors text-sm font-medium inline-flex items-baseline gap-0.5"
             >
               {link.label}
               {link.langTag && (
@@ -141,7 +146,7 @@ export default function Navbar() {
             <button
               onClick={() => setLangOpen(!langOpen)}
               onBlur={() => setTimeout(() => setLangOpen(false), 150)}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-dark-border text-gray-300 hover:text-neon-green hover:border-neon-green/30 transition-colors text-sm"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-dark-border text-gray-300 hover:text-brand-red hover:border-brand-red/30 transition-colors text-sm"
               aria-label={m.language}
             >
               <Globe className="w-4 h-4" />
@@ -157,7 +162,7 @@ export default function Navbar() {
                     className={cn(
                       'block px-3 py-2 text-sm transition-colors',
                       loc === locale
-                        ? 'bg-neon-green/10 text-neon-green'
+                        ? 'bg-brand-red/10 text-brand-red'
                         : 'text-gray-300 hover:bg-dark-border hover:text-white'
                     )}
                   >
@@ -172,7 +177,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <Link
               href={ctaHref(locale)}
-              className="px-4 py-2 rounded-lg bg-neon-green text-black font-bold text-sm hover:bg-neon-green/90 transition-all hover:shadow-neon-green whitespace-nowrap"
+              className="px-4 py-2 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red whitespace-nowrap"
             >
               {m.cta}
             </Link>
@@ -197,7 +202,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="text-gray-300 hover:text-neon-green transition-colors text-base font-medium py-1 inline-flex items-baseline gap-1"
+              className="text-gray-300 hover:text-brand-red transition-colors text-base font-medium py-1 inline-flex items-baseline gap-1"
             >
               {link.label}
               {link.langTag && (
@@ -221,7 +226,7 @@ export default function Navbar() {
                 className={cn(
                   'flex-1 text-center px-3 py-2 rounded-lg text-sm font-medium transition-colors',
                   loc === locale
-                    ? 'bg-neon-green/10 text-neon-green border border-neon-green/30'
+                    ? 'bg-brand-red/10 text-brand-red border border-brand-red/30'
                     : 'bg-dark-card text-gray-400 border border-dark-border'
                 )}
               >
@@ -233,7 +238,7 @@ export default function Navbar() {
           <Link
             href={ctaHref(locale)}
             onClick={() => setMobileOpen(false)}
-            className="mt-2 px-4 py-3 rounded-lg bg-neon-green text-black font-bold text-sm text-center hover:bg-neon-green/90 transition-all"
+            className="mt-2 px-4 py-3 rounded-lg bg-brand-red-deep text-white font-bold text-sm text-center hover:bg-brand-red-deep/90 transition-all"
           >
             {m.cta}
           </Link>

@@ -43,11 +43,11 @@ export default function HeroSimples() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neon-green/30 bg-neon-green/10 text-neon-green text-sm font-medium mb-8"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-red/30 bg-brand-red/10 text-brand-red text-sm font-medium mb-8"
         >
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-green opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-neon-green" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red-deep opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-red-deep" />
           </span>
           Grupo aberto e gratuito · Toda segunda, 20h
         </motion.div>
@@ -60,7 +60,7 @@ export default function HeroSimples() {
           className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl mx-auto"
         >
           Um grupo pra você{' '}
-          <span className="neon-green">falar inglês</span>
+          <span className="brand-red">falar inglês</span>
           <br className="hidden sm:block" /> toda semana.
         </motion.h1>
 
@@ -86,7 +86,7 @@ export default function HeroSimples() {
           <strong className="text-gray-300">Participar dos encontros é gratuito e vai continuar
           sendo.</strong> Quem quiser as ferramentas, o material e a mentoria individual entre um
           encontro e outro entra no programa —{' '}
-          <Link href="#precos" className="text-gray-300 underline underline-offset-4 hover:text-neon-green transition-colors">
+          <Link href="#precos" className="text-gray-300 underline underline-offset-4 hover:text-brand-red transition-colors">
             veja os planos
           </Link>
           .
@@ -101,7 +101,7 @@ export default function HeroSimples() {
         >
           {reassurances.map((r) => (
             <li key={r} className="inline-flex items-center gap-1.5">
-              <Check className="w-4 h-4 text-neon-green shrink-0" />
+              <Check className="w-4 h-4 text-brand-red shrink-0" />
               {r}
             </li>
           ))}

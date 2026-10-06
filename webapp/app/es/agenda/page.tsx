@@ -114,10 +114,10 @@ export default function EsAgendaPage() {
       <main className="bg-dark min-h-screen pt-16">
         {/* HERO */}
         <section className="relative section-padding overflow-hidden hero-grid">
-          <div className="absolute inset-0 bg-gradient-to-b from-tech-blue/8 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-silver/8 via-transparent to-transparent pointer-events-none" />
           <div className="container mx-auto px-4 relative">
             <div className="max-w-4xl mx-auto text-center">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-tech-blue/30 text-tech-blue bg-tech-blue/5 mb-6">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-6">
                 Online · todos los lunes
               </span>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
@@ -132,7 +132,7 @@ export default function EsAgendaPage() {
                 href={LEAD_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-neon-green text-dark font-bold text-base hover:bg-neon-green/90 transition-all hover:shadow-neon-green"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red"
               >
                 Registrarme para el próximo encuentro
                 <ArrowRight className="w-4 h-4" />
@@ -146,21 +146,21 @@ export default function EsAgendaPage() {
           <div className="container mx-auto px-4">
             <div className="grid sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
               <div className="flex items-start gap-3 bg-dark-card border border-dark-border rounded-xl p-4">
-                <Clock className="w-5 h-5 text-neon-green shrink-0 mt-0.5" />
+                <Clock className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
                 <div>
                   <div className="font-bold text-white text-sm">Horario</div>
                   <div className="text-gray-400 text-sm">Lunes · 20h–21h30 BRT (GMT-3)</div>
                 </div>
               </div>
               <div className="flex items-start gap-3 bg-dark-card border border-dark-border rounded-xl p-4">
-                <Wifi className="w-5 h-5 text-tech-blue shrink-0 mt-0.5" />
+                <Wifi className="w-5 h-5 text-brand-silver shrink-0 mt-0.5" />
                 <div>
                   <div className="font-bold text-white text-sm">Formato</div>
                   <div className="text-gray-400 text-sm">Google Meet · 90 minutos</div>
                 </div>
               </div>
               <div className="flex items-start gap-3 bg-dark-card border border-dark-border rounded-xl p-4">
-                <Globe className="w-5 h-5 text-neon-green shrink-0 mt-0.5" />
+                <Globe className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
                 <div>
                   <div className="font-bold text-white text-sm">Abierto a</div>
                   <div className="text-gray-400 text-sm">Cualquier lugar del mundo</div>
@@ -194,11 +194,11 @@ export default function EsAgendaPage() {
                   return (
                     <div
                       key={e.date}
-                      className="bg-dark-card border border-tech-blue/20 rounded-xl p-4 card-hover"
+                      className="bg-dark-card border border-brand-silver/20 rounded-xl p-4 card-hover"
                     >
                       <div className="flex items-start gap-3">
-                        <div className="shrink-0 w-16 rounded-lg border border-tech-blue/30 bg-tech-blue/5 text-center py-2">
-                          <div className="text-[10px] uppercase tracking-wider font-bold text-tech-blue">
+                        <div className="shrink-0 w-16 rounded-lg border border-brand-silver/30 bg-brand-silver/5 text-center py-2">
+                          <div className="text-[10px] uppercase tracking-wider font-bold text-brand-silver">
                             {weekdayEs(e.weekday).slice(0, 3)}
                           </div>
                           <div className="text-white font-black text-xl leading-none my-0.5">
@@ -210,7 +210,7 @@ export default function EsAgendaPage() {
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-1.5 mb-1">
-                            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-tech-blue/10 text-tech-blue border border-tech-blue/30">
+                            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-brand-silver/10 text-brand-silver border border-brand-silver/30">
                               <Wifi className="w-2.5 h-2.5" />
                               online
                             </span>
@@ -238,7 +238,7 @@ export default function EsAgendaPage() {
                 href={LEAD_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-neon-green text-dark font-bold text-base hover:bg-neon-green/90 transition-all hover:shadow-neon-green"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red"
               >
                 Regístrame — quiero el link del encuentro
                 <ArrowRight className="w-4 h-4" />
@@ -251,13 +251,13 @@ export default function EsAgendaPage() {
         {inPersonCount > 0 && (
           <section className="section-padding bg-dark-secondary border-y border-dark-border">
             <div className="container mx-auto px-4">
-              <div className="max-w-3xl mx-auto bg-dark-card border border-neon-green/20 rounded-2xl p-6 md:p-8">
+              <div className="max-w-3xl mx-auto bg-dark-card border border-brand-red/20 rounded-2xl p-6 md:p-8">
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-neon-green/10 border border-neon-green/30 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-neon-green" />
+                  <div className="w-12 h-12 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-brand-red" />
                   </div>
                   <div>
-                    <div className="text-xs uppercase tracking-wider text-neon-green font-semibold mb-1">
+                    <div className="text-xs uppercase tracking-wider text-brand-red font-semibold mb-1">
                       Presencial — Curitiba, Brasil
                     </div>
                     <h3 className="font-bold text-white text-lg md:text-xl leading-snug">
@@ -271,7 +271,7 @@ export default function EsAgendaPage() {
                 </p>
                 <Link
                   href="/agenda/"
-                  className="inline-flex items-center gap-2 text-neon-green font-semibold hover:text-neon-green/80 transition-colors text-sm"
+                  className="inline-flex items-center gap-2 text-brand-red font-semibold hover:text-brand-red/80 transition-colors text-sm"
                 >
                   Ver agenda completa (en portugués) <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -283,10 +283,10 @@ export default function EsAgendaPage() {
         {/* CTA */}
         <section className="section-padding">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center bg-dark-card border border-neon-green/30 rounded-3xl p-10 md:p-14 shadow-neon-green relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-neon-green/8 to-tech-blue/8 pointer-events-none" />
+            <div className="max-w-3xl mx-auto text-center bg-dark-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 to-brand-silver/8 pointer-events-none" />
               <div className="relative">
-                <Users className="w-10 h-10 text-neon-green mx-auto mb-5" />
+                <Users className="w-10 h-10 text-brand-red mx-auto mb-5" />
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
                   No te pierdas <span className="gradient-text">el próximo encuentro</span>
                 </h2>
@@ -298,7 +298,7 @@ export default function EsAgendaPage() {
                   href={LEAD_FORM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-neon-green text-dark font-bold text-base hover:bg-neon-green/90 transition-all hover:shadow-neon-green-lg"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg"
                 >
                   Regístrame
                   <ArrowRight className="w-5 h-5" />
