@@ -35,7 +35,7 @@ const imersoes = [
 const accentMap = {
   'brand-red': 'border-brand-red/30 hover:border-brand-red/60 text-brand-red',
   'brand-silver': 'border-brand-silver/30 hover:border-brand-silver/60 text-brand-silver',
-  purple: 'border-purple-400/30 hover:border-purple-400/60 text-purple-300',
+  purple: 'border-white/30 hover:border-white/60 text-white',
 }
 
 export default function ImersoesTeaser() {

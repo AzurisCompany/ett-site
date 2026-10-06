@@ -63,7 +63,7 @@ const jsonLd = {
         validFrom: '2026-01-01T00:00:00-03:00',
       },
       inLanguage: ['en', 'pt-BR'],
-      image: `${SITE_URL}/images/ETT-top01.webp`,
+      image: `${SITE_URL}/images/og-ett-2026.png`,
       url: `${SITE_URL}/imersoes/curitiba/`,
     },
   ],
@@ -95,7 +95,7 @@ export const metadata: Metadata = {
     url: 'https://englishtalktime.com.br/imersoes/curitiba/',
     images: [
       {
-        url: '/images/ETT-top01.webp',
+        url: '/images/og-ett-2026.png',
         width: 1200,
         height: 630,
         alt: 'Imersão em inglês em Curitiba — ETT × Cherry Top × IEP',

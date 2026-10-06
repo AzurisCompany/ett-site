@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     authors: ['DSSBR & GUBigData IA'],
     images: [
       {
-        url: '/images/ETT-top01.webp',
+        url: '/images/og-ett-2026.png',
         width: 1200,
         height: 630,
         alt: post.title,
@@ -68,7 +68,7 @@ const jsonLd = {
       url: `${SITE_URL}/blog/${SLUG}/`,
       inLanguage: 'pt-BR',
       keywords: 'grupo de conversação, Cambly, aula particular, conversation club',
-      image: `${SITE_URL}/images/ETT-top01.webp`,
+      image: `${SITE_URL}/images/og-ett-2026.png`,
       wordCount: 1400,
       articleSection: post.category,
     },

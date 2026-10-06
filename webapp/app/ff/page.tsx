@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     url: 'https://englishtalktime.com.br/ff/',
     images: [
       {
-        url: '/images/ETT-top01.webp',
+        url: '/images/og-ett-2026.png',
         width: 1200,
         height: 630,
         alt: 'Fórmula Fluente — metodologia de treino de fala em inglês do ETT',

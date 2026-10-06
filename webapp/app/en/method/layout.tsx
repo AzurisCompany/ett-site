@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       'Science-based English fluency method adapted from Frank Florida — 13 languages, 365,000+ students trained.',
     images: [
       {
-        url: '/images/ETT-top01.webp',
+        url: '/images/og-ett-2026.png',
         width: 1200,
         height: 630,
         alt: 'The Fluent Formula — English fluency method',

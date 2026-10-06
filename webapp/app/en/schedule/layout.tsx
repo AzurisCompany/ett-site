@@ -33,7 +33,7 @@ export const metadata: Metadata = {
       'Online English speaking practice every Monday, 8pm–9:30pm BRT (GMT-3). Free, structured, open globally.',
     images: [
       {
-        url: '/images/ETT-top01.webp',
+        url: '/images/og-ett-2026.png',
         width: 1200,
         height: 630,
         alt: 'ETT Schedule — Online English conversation meetings',

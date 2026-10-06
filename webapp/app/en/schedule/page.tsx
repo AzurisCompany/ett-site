@@ -40,7 +40,7 @@ function buildJsonLd() {
       '@type': 'Audience',
       audienceType: 'Tech, Data, AI, BI and Cloud professionals worldwide',
     },
-    image: `${SITE_URL}/images/ETT-top01.webp`,
+    image: `${SITE_URL}/images/og-ett-2026.png`,
     url: `${SITE_URL}/en/schedule/`,
   }))
 

@@ -112,7 +112,7 @@ export const metadata: Metadata = {
     url: 'https://englishtalktime.com.br/imersoes/',
     images: [
       {
-        url: '/images/ETT-top01.webp',
+        url: '/images/og-ett-2026.png',
         width: 1200,
         height: 630,
         alt: 'Imersões em inglês ETT × Cherry Top — Curitiba, BH e Flórida',

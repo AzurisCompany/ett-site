@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       'Método científico de fluidez en inglés adaptado de Frank Florida — 13 idiomas, +365.000 estudiantes formados.',
     images: [
       {
-        url: '/images/ETT-top01.webp',
+        url: '/images/og-ett-2026.png',
         width: 1200,
         height: 630,
         alt: 'La Fórmula Fluente — Método de fluidez en inglés',

@@ -55,7 +55,7 @@ export function generateMetadata({
       authors: ['DSSBR & GUBigData IA'],
       images: [
         {
-          url: '/images/ETT-top01.webp',
+          url: '/images/og-ett-2026.png',
           width: 1200,
           height: 630,
           alt: post.title,

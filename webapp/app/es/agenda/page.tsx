@@ -40,7 +40,7 @@ function buildJsonLd() {
       '@type': 'Audience',
       audienceType: 'Profesionales tech, datos, IA, BI y Cloud de LATAM',
     },
-    image: `${SITE_URL}/images/ETT-top01.webp`,
+    image: `${SITE_URL}/images/og-ett-2026.png`,
     url: `${SITE_URL}/es/agenda/`,
   }))
 

@@ -114,7 +114,7 @@ const imersoes: Imersao[] = [
 const tagColorMap = {
   green: 'bg-brand-red/15 text-brand-red border-brand-red/30',
   blue: 'bg-brand-silver/15 text-brand-silver border-brand-silver/30',
-  purple: 'bg-purple-500/15 text-purple-300 border-purple-400/30',
+  purple: 'bg-white/10 text-white border-white/30',
 }
 
 const galeriaEua: string[] = [

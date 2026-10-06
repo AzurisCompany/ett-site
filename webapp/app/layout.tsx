@@ -81,7 +81,7 @@ export const metadata: Metadata = {
       'Encontros semanais para treinar a fala em inglês — online toda segunda e presenciais em Curitiba. Método Fórmula Fluente + ferramentas com IA + comunidade DSSBR & GUBigData.',
     images: [
       {
-        url: '/images/ETT-top01.webp',
+        url: '/images/og-ett-2026.png',
         width: 1200,
         height: 630,
         alt: 'English Talk Time — Grupo de Conversação em Inglês em Curitiba e Online',
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
     title: 'ETT — Grupo de Conversação em Inglês | Treino de Fala com Ferramentas',
     description:
       'Treine a fala em inglês em encontros semanais online e presenciais em Curitiba — com método, ferramentas de IA e comunidade tech.',
-    images: ['/images/ETT-top01.webp'],
+    images: ['/images/og-ett-2026.png'],
   },
   robots: {
     index: true,
@@ -126,7 +126,7 @@ const jsonLd = {
         '@type': 'ImageObject',
         url: `${SITE_URL}/images/ett-logo-2026.png`,
       },
-      image: `${SITE_URL}/images/ETT-top01.webp`,
+      image: `${SITE_URL}/images/og-ett-2026.png`,
       foundingOrganization: {
         '@type': 'Organization',
         name: 'DSSBR & GUBigData IA',

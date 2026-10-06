@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/curitiba/`,
     images: [
       {
-        url: '/images/ETT-top01.webp',
+        url: '/images/og-ett-2026.png',
         width: 1200,
         height: 630,
         alt: 'Praticar inglês em Curitiba — grupo de conversação ETT',
@@ -112,7 +112,7 @@ const jsonLd = {
       description:
         'Grupo de conversação em inglês em Curitiba: o IEP Talks acontece todo sábado, das 10h às 12h, no Instituto de Engenharia do Paraná. Gratuito, para profissionais e estudantes de tech.',
       url: `${SITE_URL}/curitiba/`,
-      image: `${SITE_URL}/images/ETT-top01.webp`,
+      image: `${SITE_URL}/images/og-ett-2026.png`,
       parentOrganization: { '@id': ORG_ID },
       address: {
         '@type': 'PostalAddress',
