@@ -56,7 +56,7 @@ export default function ProximosEncontros() {
   }, [])
 
   return (
-    <section id="encontros" className="section-padding bg-dark-secondary relative overflow-hidden">
+    <section id="encontros" className="section-padding bg-surface-alt relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/30 to-transparent" />
 
       <div className="container mx-auto px-4">
@@ -67,10 +67,10 @@ export default function ProximosEncontros() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-4">
             Os próximos encontros
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-ink-muted max-w-2xl mx-auto text-lg">
             Acontecem toda semana, sempre. Escolha o formato que cabe na sua rotina.
           </p>
         </motion.div>
@@ -82,19 +82,19 @@ export default function ProximosEncontros() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5 }}
-            className="bg-dark-card border border-brand-red/25 rounded-2xl p-7 flex flex-col"
+            className="bg-surface-card border border-brand-red/25 rounded-2xl p-7 flex flex-col"
           >
             <div className="flex items-center gap-3 mb-5">
               <div className="w-11 h-11 rounded-xl bg-brand-red/10 border border-brand-red/20 flex items-center justify-center">
                 <Video className="w-5 h-5 text-brand-red" />
               </div>
               <div>
-                <h3 className="font-bold text-white text-lg leading-tight">Online</h3>
+                <h3 className="font-bold text-ink text-lg leading-tight">Online</h3>
                 <p className="text-sm text-brand-red">Toda segunda, 20h às 21h30</p>
               </div>
             </div>
 
-            <p className="text-gray-400 text-sm leading-relaxed mb-5">
+            <p className="text-ink-muted text-sm leading-relaxed mb-5">
               De qualquer lugar do Brasil, direto no navegador. Sem instalar nada.
             </p>
 
@@ -107,12 +107,12 @@ export default function ProximosEncontros() {
                       className={`flex items-center justify-between rounded-xl px-4 py-3 border ${
                         i === 0
                           ? 'bg-brand-red/5 border-brand-red/30'
-                          : 'bg-dark/50 border-dark-border'
+                          : 'bg-surface/50 border-surface-line'
                       }`}
                     >
-                      <span className="flex items-center gap-2 text-sm text-gray-300">
+                      <span className="flex items-center gap-2 text-sm text-ink-soft">
                         <CalendarDays
-                          className={`w-4 h-4 ${i === 0 ? 'text-brand-red' : 'text-gray-600'}`}
+                          className={`w-4 h-4 ${i === 0 ? 'text-brand-red' : 'text-ink-faint'}`}
                         />
                         Segunda, {formatar(d)}
                       </span>
@@ -127,7 +127,7 @@ export default function ProximosEncontros() {
                   Array.from({ length: 3 }).map((_, i) => (
                     <div
                       key={i}
-                      className="h-[46px] rounded-xl bg-dark/50 border border-dark-border animate-pulse"
+                      className="h-[46px] rounded-xl bg-surface/50 border border-surface-line animate-pulse"
                     />
                   ))}
             </div>
@@ -144,7 +144,7 @@ export default function ProximosEncontros() {
               </a>
               <Link
                 href="#inscricao"
-                className="flex-1 inline-flex items-center justify-center px-5 py-3 rounded-lg border border-dark-border text-gray-300 font-semibold text-sm hover:border-brand-red/40 hover:text-white transition-all"
+                className="flex-1 inline-flex items-center justify-center px-5 py-3 rounded-lg border border-surface-line text-ink-soft font-semibold text-sm hover:border-brand-red/40 hover:text-ink transition-all"
               >
                 Receber o lembrete
               </Link>
@@ -157,19 +157,19 @@ export default function ProximosEncontros() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-dark-card border border-brand-silver/25 rounded-2xl p-7 flex flex-col"
+            className="bg-surface-card border border-brand-silver/25 rounded-2xl p-7 flex flex-col"
           >
             <div className="flex items-center gap-3 mb-5">
               <div className="w-11 h-11 rounded-xl bg-brand-silver/10 border border-brand-silver/20 flex items-center justify-center">
                 <MapPin className="w-5 h-5 text-brand-silver" />
               </div>
               <div>
-                <h3 className="font-bold text-white text-lg leading-tight">Presencial</h3>
+                <h3 className="font-bold text-ink text-lg leading-tight">Presencial</h3>
                 <p className="text-sm text-brand-silver">IEP Talks · sábados, 10h</p>
               </div>
             </div>
 
-            <p className="text-gray-400 text-sm leading-relaxed mb-5">
+            <p className="text-ink-muted text-sm leading-relaxed mb-5">
               Todo sábado, no mesmo lugar — sem precisar conferir onde é dessa vez:
             </p>
 
@@ -177,9 +177,9 @@ export default function ProximosEncontros() {
               {detalhesPresencial.map((l) => (
                 <li
                   key={l}
-                  className="flex items-center gap-2 rounded-xl px-4 py-3 bg-dark/50 border border-dark-border text-sm text-gray-300"
+                  className="flex items-center gap-2 rounded-xl px-4 py-3 bg-surface/50 border border-surface-line text-sm text-ink-soft"
                 >
-                  <MapPin className="w-4 h-4 text-gray-600 shrink-0" />
+                  <MapPin className="w-4 h-4 text-ink-faint shrink-0" />
                   {l}
                 </li>
               ))}

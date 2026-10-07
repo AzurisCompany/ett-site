@@ -18,6 +18,8 @@ const jobs = [
   ['Assinatura Horizontal — Positiva.svg', 'ett-logo-horizontal-positiva.svg', 'all'],
   ['Assinatura Institucional — Negativa.svg', 'ett-logo-institucional-negativa.svg', 'all'],
   ['Assinatura Horizontal — Negativa.svg', 'ett-simbolo.svg', 'symbol'],
+  ['Assinatura Horizontal — Positiva.svg', 'ett-simbolo-positiva.svg', 'symbol'], // menu claro no celular
+  ['Assinatura Institucional — Positiva.svg', 'ett-logo-institucional-positiva.svg', 'all'],
 ];
 
 const browser = await chromium.launch();

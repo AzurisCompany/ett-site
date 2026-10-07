@@ -9,11 +9,11 @@ export default function PlanoDetalhe({ plano }: { plano: DetalhePlano }) {
   return (
     <>
       {/* Cabeçalho */}
-      <section className="pt-32 pb-12 bg-dark">
+      <section className="pt-32 pb-12 bg-surface">
         <div className="container mx-auto px-4 max-w-3xl">
           <Link
             href="/#precos"
-            className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-brand-red transition-colors mb-6"
+            className="inline-flex items-center gap-1.5 text-sm text-ink-subtle hover:text-brand-red transition-colors mb-6"
           >
             <ArrowLeft className="w-4 h-4" />
             Todas as opções
@@ -28,35 +28,35 @@ export default function PlanoDetalhe({ plano }: { plano: DetalhePlano }) {
               {plano.etiqueta}
             </span>
 
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4 leading-tight">
+            <h1 className="text-4xl sm:text-5xl font-bold text-ink mb-4 leading-tight">
               {plano.nome}
             </h1>
 
             <div className="flex items-baseline gap-3 flex-wrap mb-3">
               {plano.precoAncora && (
-                <span className="text-gray-600 text-lg line-through">{plano.precoAncora}</span>
+                <span className="text-ink-faint text-lg line-through">{plano.precoAncora}</span>
               )}
               <span className="text-4xl font-black text-brand-red">{plano.preco}</span>
               {plano.precoNota && (
-                <span className="text-gray-500 text-sm">{plano.precoNota}</span>
+                <span className="text-ink-subtle text-sm">{plano.precoNota}</span>
               )}
             </div>
 
             {plano.destaqueFrase && (
-              <p className="text-white font-semibold text-lg mb-4">{plano.destaqueFrase}</p>
+              <p className="text-ink font-semibold text-lg mb-4">{plano.destaqueFrase}</p>
             )}
 
-            <p className="text-gray-400 text-lg leading-relaxed">{plano.intro}</p>
+            <p className="text-ink-muted text-lg leading-relaxed">{plano.intro}</p>
           </motion.div>
         </div>
       </section>
 
       {/* Vídeo do plano — placeholder enquanto não tem videoId */}
-      <section className="pb-14 bg-dark">
+      <section className="pb-14 bg-surface">
         <div className="container mx-auto px-4 max-w-3xl">
           {plano.videoId ? (
             <>
-              <div className="aspect-video w-full rounded-2xl overflow-hidden border border-dark-border bg-dark-card">
+              <div className="aspect-video w-full rounded-2xl overflow-hidden border border-surface-line bg-surface-card">
                 <iframe
                   className="w-full h-full"
                   src={`https://www.youtube-nocookie.com/embed/${plano.videoId}?rel=0`}
@@ -67,20 +67,20 @@ export default function PlanoDetalhe({ plano }: { plano: DetalhePlano }) {
                   allowFullScreen
                 />
               </div>
-              <p className="text-gray-500 text-sm mt-3 text-center">{plano.videoTitulo}</p>
+              <p className="text-ink-subtle text-sm mt-3 text-center">{plano.videoTitulo}</p>
             </>
           ) : (
-            <div className="aspect-video w-full rounded-2xl border border-dark-border bg-dark-card flex flex-col items-center justify-center text-center px-6">
-              <PlayCircle className="w-12 h-12 text-gray-700 mb-4" />
-              <p className="text-gray-400 font-semibold">{plano.videoTitulo}</p>
-              <p className="text-gray-600 text-sm mt-1">Vídeo em breve</p>
+            <div className="aspect-video w-full rounded-2xl border border-surface-line bg-surface-card flex flex-col items-center justify-center text-center px-6">
+              <PlayCircle className="w-12 h-12 text-ink-faint mb-4" />
+              <p className="text-ink-muted font-semibold">{plano.videoTitulo}</p>
+              <p className="text-ink-faint text-sm mt-1">Vídeo em breve</p>
             </div>
           )}
         </div>
       </section>
 
       {/* Explicação */}
-      <section className="section-padding bg-dark-secondary relative overflow-hidden">
+      <section className="section-padding bg-surface-alt relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/25 to-transparent" />
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="space-y-10">
@@ -92,10 +92,10 @@ export default function PlanoDetalhe({ plano }: { plano: DetalhePlano }) {
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.45, delay: i * 0.05 }}
               >
-                <h2 className="text-xl sm:text-2xl font-bold text-white mb-3 leading-snug">
+                <h2 className="text-xl sm:text-2xl font-bold text-ink mb-3 leading-snug">
                   {b.titulo}
                 </h2>
-                <p className="text-gray-400 leading-relaxed">{b.texto}</p>
+                <p className="text-ink-muted leading-relaxed">{b.texto}</p>
               </motion.div>
             ))}
           </div>
@@ -103,15 +103,15 @@ export default function PlanoDetalhe({ plano }: { plano: DetalhePlano }) {
       </section>
 
       {/* O que está incluso */}
-      <section className="section-padding bg-dark relative overflow-hidden">
+      <section className="section-padding bg-surface relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/25 to-transparent" />
         <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-2xl font-bold text-white mb-6">O que está incluso</h2>
+          <h2 className="text-2xl font-bold text-ink mb-6">O que está incluso</h2>
           <ul className="grid sm:grid-cols-2 gap-3">
             {plano.inclui.map((i) => (
               <li
                 key={i}
-                className="flex items-start gap-2.5 text-sm text-gray-300 rounded-xl border border-dark-border bg-dark-card px-4 py-3"
+                className="flex items-start gap-2.5 text-sm text-ink-soft rounded-xl border border-surface-line bg-surface-card px-4 py-3"
               >
                 <Check className="w-4 h-4 shrink-0 mt-0.5 text-brand-red" />
                 {i}
@@ -122,13 +122,13 @@ export default function PlanoDetalhe({ plano }: { plano: DetalhePlano }) {
       </section>
 
       {/* CTA final */}
-      <section className="py-16 bg-dark-secondary relative overflow-hidden">
+      <section className="py-16 bg-surface-alt relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/25 to-transparent" />
         <div className="container mx-auto px-4 max-w-2xl text-center">
           {plano.ctaNota && (
             <div className="flex items-start gap-3 text-left rounded-2xl border border-brand-silver/25 bg-brand-silver/5 px-5 py-4 mb-6">
               <Info className="w-5 h-5 text-brand-silver shrink-0 mt-0.5" />
-              <p className="text-sm text-gray-300 leading-relaxed">{plano.ctaNota}</p>
+              <p className="text-sm text-ink-soft leading-relaxed">{plano.ctaNota}</p>
             </div>
           )}
 
@@ -139,7 +139,7 @@ export default function PlanoDetalhe({ plano }: { plano: DetalhePlano }) {
             {plano.ctaLabel}
           </Link>
 
-          <p className="text-gray-500 text-xs leading-relaxed mt-6">{plano.observacao}</p>
+          <p className="text-ink-subtle text-xs leading-relaxed mt-6">{plano.observacao}</p>
 
           <Link
             href="/#precos"

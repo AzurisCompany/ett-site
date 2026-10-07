@@ -26,11 +26,11 @@ export default function Hero() {
           quality={85}
         />
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-dark/85 via-dark/75 to-dark" />
+        <div className="absolute inset-0 bg-gradient-to-b from-surface/85 via-surface/75 to-surface" />
         {/* Grid pattern */}
         <div className="absolute inset-0 hero-grid opacity-60" />
         {/* Side vignettes */}
-        <div className="absolute inset-0 bg-gradient-to-r from-dark/60 via-transparent to-dark/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-surface/60 via-transparent to-surface/60" />
       </div>
 
       {/* Floating orbs */}
@@ -65,7 +65,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight max-w-5xl mx-auto"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-ink mb-6 leading-tight max-w-5xl mx-auto"
         >
           Do inglês{' '}
           <span className="brand-red">travado</span>{' '}
@@ -80,16 +80,16 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed"
+          className="text-lg sm:text-xl text-ink-soft max-w-3xl mx-auto mb-10 leading-relaxed"
         >
-          <span className="text-white font-semibold">Grupo de conversação em inglês aberto e gratuito</span>{' '}
+          <span className="text-ink font-semibold">Grupo de conversação em inglês aberto e gratuito</span>{' '}
           pra quem quer <span className="text-brand-red font-medium">destravar inglês</span> e{' '}
           <span className="text-brand-silver font-medium">falar com fluência</span>.
-          <span className="text-white"> Cadastre-se</span> para receber a agenda dos encontros, a
-          metodologia e o acesso às <span className="text-white">ferramentas com IA</span> — e{' '}
-          <span className="text-white font-semibold">participe de graça</span>, online (toda segunda)
+          <span className="text-ink"> Cadastre-se</span> para receber a agenda dos encontros, a
+          metodologia e o acesso às <span className="text-ink">ferramentas com IA</span> — e{' '}
+          <span className="text-ink font-semibold">participe de graça</span>, online (toda segunda)
           ou presencial em Curitiba. Programa do ecossistema{' '}
-          <span className="text-white font-semibold">DSSBR &amp; GUBigData IA</span> para
+          <span className="text-ink font-semibold">DSSBR &amp; GUBigData IA</span> para
           profissionais de Tecnologia, Dados, IA e BI.
         </motion.p>
 
@@ -119,7 +119,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.6 }}
-          className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mb-14 text-sm text-gray-400"
+          className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mb-14 text-sm text-ink-muted"
         >
           <span className="inline-flex items-center gap-1.5">
             <Check className="w-4 h-4 text-brand-red" /> Sem custo de inscrição
@@ -145,11 +145,11 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 + i * 0.1 }}
-              className="flex flex-col items-center gap-1 px-4 py-3 rounded-xl bg-dark-card/80 border border-dark-border backdrop-blur-sm"
+              className="flex flex-col items-center gap-1 px-4 py-3 rounded-xl bg-surface-card/80 border border-surface-line backdrop-blur-sm"
             >
               <stat.icon className="w-4 h-4 text-brand-red mb-1" />
               <span className="text-xl font-bold text-brand-red">{stat.value}</span>
-              <span className="text-xs text-gray-400 text-center">{stat.label}</span>
+              <span className="text-xs text-ink-muted text-center">{stat.label}</span>
             </motion.div>
           ))}
         </motion.div>
@@ -159,9 +159,9 @@ export default function Hero() {
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gray-500 flex flex-col items-center gap-1"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-ink-subtle flex flex-col items-center gap-1"
       >
-        <span className="text-xs uppercase tracking-widest text-gray-500">Scroll</span>
+        <span className="text-xs uppercase tracking-widest text-ink-subtle">Scroll</span>
         <ChevronDown className="w-5 h-5" />
       </motion.div>
     </section>

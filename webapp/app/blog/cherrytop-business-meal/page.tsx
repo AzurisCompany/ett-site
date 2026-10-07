@@ -116,7 +116,7 @@ export default function Post() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <BlogLayout post={post}>
-        <figure className="mb-8 overflow-hidden rounded-2xl border border-dark-border">
+        <figure className="mb-8 overflow-hidden rounded-2xl border border-surface-line">
           <Image
             src={COVER}
             alt="CherryTop Business Meal — sábado, 1º de agosto, 12h às 13h, online e gratuito"

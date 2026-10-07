@@ -26,7 +26,7 @@ const modules = [
 
 export default function PlayerShowcase() {
   return (
-    <section id="player" className="section-padding bg-dark relative overflow-hidden">
+    <section id="player" className="section-padding bg-surface relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/30 to-transparent" />
 
       {/* Background glow */}
@@ -50,11 +50,11 @@ export default function PlayerShowcase() {
             </span>
             As ferramentas já estão no ar
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-6">
             Não é promessa. É o{' '}
             <span className="gradient-text">ETT Player</span> — e já está funcionando.
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-ink-muted max-w-2xl mx-auto text-lg">
             Todas as ferramentas com IA reunidas em um só lugar. Metodologia, conversação,
             flashcards, séries, audiobook e simulação com IA — o app lembra exatamente
             onde você parou e continua de lá.
@@ -71,17 +71,17 @@ export default function PlayerShowcase() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.6 }}
-            className="group block rounded-2xl border border-dark-border bg-dark-card overflow-hidden shadow-2xl hover:border-brand-red/40 hover:shadow-brand-red transition-all"
+            className="group block rounded-2xl border border-surface-line bg-surface-card overflow-hidden shadow-2xl hover:border-brand-red/40 hover:shadow-brand-red transition-all"
           >
             {/* Fake browser bar */}
-            <div className="flex items-center gap-2 px-4 py-3 bg-dark-secondary border-b border-dark-border">
+            <div className="flex items-center gap-2 px-4 py-3 bg-surface-alt border-b border-surface-line">
               <span className="w-3 h-3 rounded-full bg-red-500/70" />
               <span className="w-3 h-3 rounded-full bg-yellow-500/70" />
               <span className="w-3 h-3 rounded-full bg-green-500/70" />
-              <span className="ml-3 flex-1 truncate text-xs text-gray-500 font-mono">
+              <span className="ml-3 flex-1 truncate text-xs text-ink-subtle font-mono">
                 ett-player.vercel.app
               </span>
-              <ArrowUpRight className="w-4 h-4 text-gray-500 group-hover:text-brand-red transition-colors" />
+              <ArrowUpRight className="w-4 h-4 text-ink-subtle group-hover:text-brand-red transition-colors" />
             </div>
             <Image
               src="/images/ett-player.webp"
@@ -106,20 +106,20 @@ export default function PlayerShowcase() {
                     <mod.icon className="w-4 h-4 text-brand-red" />
                   </div>
                   <div>
-                    <div className="font-semibold text-white text-sm">{mod.label}</div>
-                    <div className="text-gray-500 text-xs leading-snug">{mod.desc}</div>
+                    <div className="font-semibold text-ink text-sm">{mod.label}</div>
+                    <div className="text-ink-subtle text-xs leading-snug">{mod.desc}</div>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="rounded-2xl border border-brand-red/20 bg-dark-card p-6">
-              <p className="flex items-start gap-2 text-gray-300 text-sm mb-5">
+            <div className="rounded-2xl border border-brand-red/20 bg-surface-card p-6">
+              <p className="flex items-start gap-2 text-ink-soft text-sm mb-5">
                 <Check className="w-5 h-5 text-brand-red flex-shrink-0" />
                 <span>
-                  <strong className="text-white">Acesso gratuito</strong> pra quem participa do
+                  <strong className="text-ink">Acesso gratuito</strong> pra quem participa do
                   programa. Cadastre-se para receber seu login e um{' '}
-                  <strong className="text-white">plano de estudos personalizado</strong> ao seu nível.
+                  <strong className="text-ink">plano de estudos personalizado</strong> ao seu nível.
                 </span>
               </p>
               <div className="flex flex-col sm:flex-row gap-3">

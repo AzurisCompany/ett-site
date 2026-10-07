@@ -92,7 +92,7 @@ export default function LeadForm() {
   }
 
   return (
-    <section id="inscricao" className="section-padding bg-dark relative overflow-hidden">
+    <section id="inscricao" className="section-padding bg-surface relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/30 to-transparent" />
 
       {/* Background glow */}
@@ -112,20 +112,20 @@ export default function LeadForm() {
           >
             {/* Título deliberadamente sem convite direto: quem chega aqui ainda
                 está se informando, não decidindo. Ver a conversa de 02/08. */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-4">
               Quer saber mais sobre o ETT?
             </h2>
-            <p className="text-gray-400 text-lg">
+            <p className="text-ink-muted text-lg">
               Deixe seu nome e e-mail. Ao se inscrever você{' '}
-              <strong className="text-gray-200">começa a receber informações por e-mail</strong> — o
+              <strong className="text-ink">começa a receber informações por e-mail</strong> — o
               link do encontro online de segunda, as datas do IEP Talks em Curitiba e as novidades
               do programa — e{' '}
-              <strong className="text-gray-200">entramos em contato para tirar suas dúvidas</strong>.
+              <strong className="text-ink">entramos em contato para tirar suas dúvidas</strong>.
               É grátis e você não precisa decidir nada agora.
             </p>
 
             {/* Info do encontro */}
-            <div className="flex flex-wrap justify-center gap-4 mt-6 text-sm text-gray-400">
+            <div className="flex flex-wrap justify-center gap-4 mt-6 text-sm text-ink-muted">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4 text-brand-red" />
                 Online toda segunda, 20h
@@ -147,7 +147,7 @@ export default function LeadForm() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-dark-card border border-brand-red/20 rounded-2xl p-8 shadow-brand-red"
+            className="bg-surface-card border border-brand-red/20 rounded-2xl p-8 shadow-brand-red"
           >
             <AnimatePresence mode="wait">
               {submitted ? (
@@ -161,18 +161,18 @@ export default function LeadForm() {
                   <div className="w-16 h-16 rounded-full bg-brand-red/15 border border-brand-red/30 flex items-center justify-center mx-auto mb-6">
                     <CheckCircle2 className="w-8 h-8 text-brand-red" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">Pronto, você está dentro!</h3>
-                  <p className="text-gray-300 leading-relaxed max-w-sm mx-auto">
+                  <h3 className="text-2xl font-bold text-ink mb-3">Pronto, você está dentro!</h3>
+                  <p className="text-ink-soft leading-relaxed max-w-sm mx-auto">
                     Você vai receber o{' '}
                     <strong className="text-brand-red">link do encontro de segunda</strong> e as
                     datas do IEP Talks. A partir daí chegam mais informações sobre o programa por
                     e-mail, e{' '}
-                    <strong className="text-gray-200">entraremos em contato</strong> para tirar suas
+                    <strong className="text-ink">entraremos em contato</strong> para tirar suas
                     dúvidas. Confira seu e-mail.
                   </p>
-                  <p className="text-gray-500 text-sm leading-relaxed max-w-sm mx-auto mt-5 pt-5 border-t border-dark-border">
+                  <p className="text-ink-subtle text-sm leading-relaxed max-w-sm mx-auto mt-5 pt-5 border-t border-surface-line">
                     Quer também as{' '}
-                    <strong className="text-gray-300">ferramentas do ETT Player</strong>, o
+                    <strong className="text-ink-soft">ferramentas do ETT Player</strong>, o
                     material didático e a mentoria individual? Isso é o programa — e dá pra testar
                     30 dias sem cartão.
                   </p>
@@ -197,7 +197,7 @@ export default function LeadForm() {
 
                   {/* Name */}
                   <div>
-                    <label htmlFor="rd-name" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="rd-name" className="block text-sm font-medium text-ink-soft mb-2">
                       Nome completo <span className="text-brand-red">*</span>
                     </label>
                     <input
@@ -207,13 +207,13 @@ export default function LeadForm() {
                       required
                       minLength={2}
                       placeholder="Seu nome"
-                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-brand-red/60 focus:ring-1 focus:ring-brand-red/30 transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-surface border border-surface-line text-ink placeholder-ink-faint focus:outline-none focus:border-brand-red/60 focus:ring-1 focus:ring-brand-red/30 transition-colors"
                     />
                   </div>
 
                   {/* Email */}
                   <div>
-                    <label htmlFor="rd-email" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="rd-email" className="block text-sm font-medium text-ink-soft mb-2">
                       E-mail <span className="text-brand-red">*</span>
                     </label>
                     <input
@@ -222,30 +222,30 @@ export default function LeadForm() {
                       type="email"
                       required
                       placeholder="seu@email.com"
-                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-brand-red/60 focus:ring-1 focus:ring-brand-red/30 transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-surface border border-surface-line text-ink placeholder-ink-faint focus:outline-none focus:border-brand-red/60 focus:ring-1 focus:ring-brand-red/30 transition-colors"
                     />
                   </div>
 
                   {/* Empresa */}
                   <div>
-                    <label htmlFor="rd-empresa" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="rd-empresa" className="block text-sm font-medium text-ink-soft mb-2">
                       Empresa{' '}
-                      <span className="text-gray-500 text-xs font-normal">(opcional)</span>
+                      <span className="text-ink-subtle text-xs font-normal">(opcional)</span>
                     </label>
                     <input
                       id="rd-empresa"
                       name="company"
                       type="text"
                       placeholder="Onde você trabalha"
-                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-brand-red/60 focus:ring-1 focus:ring-brand-red/30 transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-surface border border-surface-line text-ink placeholder-ink-faint focus:outline-none focus:border-brand-red/60 focus:ring-1 focus:ring-brand-red/30 transition-colors"
                     />
                   </div>
 
                   {/* Telefone */}
                   <div>
-                    <label htmlFor="rd-telefone" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="rd-telefone" className="block text-sm font-medium text-ink-soft mb-2">
                       Telefone{' '}
-                      <span className="text-gray-500 text-xs font-normal">
+                      <span className="text-ink-subtle text-xs font-normal">
                         (opcional — para o lembrete no WhatsApp e o contato da equipe)
                       </span>
                     </label>
@@ -263,7 +263,7 @@ export default function LeadForm() {
                         const target = e.currentTarget
                         target.value = formatPhoneBR(target.value)
                       }}
-                      className="w-full px-4 py-3 rounded-xl bg-dark border border-dark-border text-white placeholder-gray-600 focus:outline-none focus:border-brand-red/60 focus:ring-1 focus:ring-brand-red/30 transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-surface border border-surface-line text-ink placeholder-ink-faint focus:outline-none focus:border-brand-red/60 focus:ring-1 focus:ring-brand-red/30 transition-colors"
                     />
                   </div>
 
@@ -289,7 +289,7 @@ export default function LeadForm() {
                     )}
                   </button>
 
-                  <p className="text-xs text-gray-600 text-center">
+                  <p className="text-xs text-ink-faint text-center">
                     Só os dois primeiros campos são obrigatórios. Você vai receber e-mails com as
                     datas dos encontros e mais informações sobre o programa, e podemos entrar em
                     contato para tirar dúvidas — sem spam, e pode descadastrar a qualquer momento.

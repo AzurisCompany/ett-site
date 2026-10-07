@@ -124,7 +124,7 @@ export default function PartnerPostPage({
       />
       <Navbar />
 
-      <main className="bg-dark min-h-screen pt-16">
+      <main className="bg-surface min-h-screen pt-16">
         {/* HERO */}
         <header className="relative pt-10 pb-12 md:pt-14 md:pb-16 overflow-hidden hero-grid">
           <div className="absolute inset-0 bg-gradient-to-b from-brand-silver/5 via-transparent to-transparent pointer-events-none" />
@@ -132,12 +132,12 @@ export default function PartnerPostPage({
             <div className="max-w-3xl mx-auto">
               <Link
                 href="/blog/"
-                className="inline-flex items-center gap-1.5 text-gray-400 hover:text-brand-red text-sm transition-colors mb-6"
+                className="inline-flex items-center gap-1.5 text-ink-muted hover:text-brand-red text-sm transition-colors mb-6"
               >
                 <ArrowLeft className="w-4 h-4" /> Blog ETT
               </Link>
 
-              <div className="flex flex-wrap items-center gap-3 mb-5 text-xs text-gray-400">
+              <div className="flex flex-wrap items-center gap-3 mb-5 text-xs text-ink-muted">
                 <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full border border-brand-silver/40 text-brand-silver bg-brand-silver/5 font-semibold uppercase tracking-wider">
                   <Tag className="w-3 h-3" />
                   {post.category}
@@ -152,17 +152,17 @@ export default function PartnerPostPage({
                 </span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-5 leading-tight">
                 {post.title}
               </h1>
-              <p className="text-gray-300 text-lg leading-relaxed">{post.description}</p>
+              <p className="text-ink-soft text-lg leading-relaxed">{post.description}</p>
 
               {/* Atribuição ao parceiro — card editorial com a logo (vai pro artigo) */}
               <a
                 href={post.partnerUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/partner flex items-center gap-4 mt-7 p-3 pr-5 rounded-2xl bg-dark-card border border-dark-border hover:border-brand-silver/40 transition-colors w-fit max-w-full"
+                className="group/partner flex items-center gap-4 mt-7 p-3 pr-5 rounded-2xl bg-surface-card border border-surface-line hover:border-brand-silver/40 transition-colors w-fit max-w-full"
               >
                 <span className="shrink-0 inline-flex items-center justify-center rounded-xl bg-white px-4 py-3 shadow-md">
                   <Image
@@ -177,11 +177,11 @@ export default function PartnerPostPage({
                   <span className="text-[10px] font-bold uppercase tracking-widest text-brand-silver">
                     Indicação de parceiro
                   </span>
-                  <span className="text-sm font-semibold text-white truncate">
+                  <span className="text-sm font-semibold text-ink truncate">
                     {post.partnerName}
                     {post.partnerAuthor ? ` · ${post.partnerAuthor}` : ''}
                   </span>
-                  <span className="text-xs text-gray-500">
+                  <span className="text-xs text-ink-subtle">
                     Curadoria ETT · artigo publicado em {formatDate(post.partnerDate)}
                   </span>
                 </span>
@@ -191,7 +191,7 @@ export default function PartnerPostPage({
         </header>
 
         {/* ARTICLE BODY */}
-        <article className="bg-dark-secondary border-y border-dark-border">
+        <article className="bg-surface-alt border-y border-surface-line">
           <div className="container mx-auto px-4 py-10 md:py-14">
             <div className="max-w-3xl mx-auto prose-blog">
               <h2>O que o artigo diz</h2>
@@ -203,7 +203,7 @@ export default function PartnerPostPage({
               <p>{post.whyRead}</p>
 
               {/* CTA pro artigo original do parceiro */}
-              <div className="not-prose my-8 bg-dark-card border border-brand-silver/30 rounded-2xl p-6 md:p-7">
+              <div className="not-prose my-8 bg-surface-card border border-brand-silver/30 rounded-2xl p-6 md:p-7">
                 <div className="flex items-start gap-4 mb-4">
                   <a
                     href={post.partnerUrl}
@@ -220,10 +220,10 @@ export default function PartnerPostPage({
                     />
                   </a>
                   <div>
-                    <p className="text-white font-semibold leading-snug">
+                    <p className="text-ink font-semibold leading-snug">
                       Leia o artigo completo no {post.partnerName}
                     </p>
-                    <p className="text-gray-400 text-sm mt-1 leading-relaxed">
+                    <p className="text-ink-muted text-sm mt-1 leading-relaxed">
                       “{post.partnerTitle}”
                       {post.partnerAuthor ? ` — ${post.partnerAuthor}` : ''}
                     </p>
@@ -233,7 +233,7 @@ export default function PartnerPostPage({
                   href={post.partnerUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-silver text-dark font-bold text-sm hover:bg-brand-silver/90 transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-navy !text-white !no-underline font-bold text-sm hover:bg-brand-navy/90 transition-all"
                 >
                   Ler no site do parceiro <ExternalLink className="w-4 h-4" />
                 </a>
@@ -243,18 +243,18 @@ export default function PartnerPostPage({
         </article>
 
         {/* CTA ETT */}
-        <section className="section-padding bg-dark">
+        <section className="section-padding bg-surface">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto bg-dark-card border border-brand-red/30 rounded-3xl p-8 md:p-10 relative overflow-hidden">
+            <div className="max-w-3xl mx-auto bg-surface-card border border-brand-red/30 rounded-3xl p-8 md:p-10 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 to-brand-silver/8 pointer-events-none" />
               <div className="relative">
                 <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                   Próximo passo
                 </span>
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight">
+                <h2 className="text-2xl md:text-3xl font-bold text-ink mb-3 leading-tight">
                   Da teoria pra prática: venha falar inglês
                 </h2>
-                <p className="text-gray-400 leading-relaxed mb-6">
+                <p className="text-ink-muted leading-relaxed mb-6">
                   Online toda segunda às 20h ou presencial em Curitiba (IEP, UTFPR, Hard Rock,
                   Habitat). Treino de fala em inglês com ferramentas de apoio com IA. Gratuito.
                 </p>
@@ -267,7 +267,7 @@ export default function PartnerPostPage({
                   </a>
                   <Link
                     href="/conversacao/"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-dark-border text-white font-semibold text-sm hover:border-brand-red/40 hover:bg-dark-card transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-surface-line text-ink font-semibold text-sm hover:border-brand-red/40 hover:bg-surface-card transition-all"
                   >
                     Saber como funciona
                   </Link>

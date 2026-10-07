@@ -25,7 +25,7 @@ const jsonLd = {
 
 export default function Home() {
   return (
-    <main className="bg-dark min-h-screen">
+    <main className="bg-surface min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -50,19 +50,19 @@ export default function Home() {
       <LeadForm />
 
       {/* Ponte para a versão longa do programa */}
-      <section className="bg-dark-secondary border-t border-dark-border py-14">
+      <section className="bg-surface-alt border-t border-surface-line py-14">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+          <h2 className="text-2xl sm:text-3xl font-bold text-ink mb-3">
             Quer entender o programa inteiro?
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto mb-7 leading-relaxed">
+          <p className="text-ink-muted max-w-2xl mx-auto mb-7 leading-relaxed">
             A metodologia completa, as ferramentas uma a uma, a jornada de estudo e os parceiros
             estão na página de detalhes. Mas você não precisa ler nada disso pra aparecer no
             encontro de segunda.
           </p>
           <Link
             href="/detalhes/"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-dark-border text-gray-300 font-semibold text-sm hover:border-brand-red/40 hover:text-white transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-surface-line text-ink-soft font-semibold text-sm hover:border-brand-red/40 hover:text-ink transition-all"
           >
             Ver o programa em detalhes
             <ArrowRight className="w-4 h-4" />

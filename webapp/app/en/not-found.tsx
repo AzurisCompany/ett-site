@@ -7,15 +7,15 @@ export default function EnNotFound() {
   return (
     <>
       <Navbar />
-      <main className="bg-dark min-h-screen pt-24 flex items-center">
+      <main className="bg-surface min-h-screen pt-24 flex items-center">
         <div className="container mx-auto px-4 max-w-2xl text-center py-16">
           <div className="w-16 h-16 mx-auto rounded-2xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center mb-6">
             <Wrench className="w-8 h-8 text-brand-red" />
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-ink mb-4">
             This page is <span className="gradient-text">coming soon in English</span>
           </h1>
-          <p className="text-gray-400 leading-relaxed mb-8">
+          <p className="text-ink-muted leading-relaxed mb-8">
             We are translating the rest of the site into English. For now, only the homepage in
             English is ready. The Portuguese version of this content is fully published — most of
             the tech vocabulary and brand names are the same.
@@ -30,7 +30,7 @@ export default function EnNotFound() {
             </Link>
             <Link
               href="/"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-dark-border text-white font-semibold hover:border-brand-red/50 hover:bg-dark-card transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-surface-line text-ink font-semibold hover:border-brand-red/50 hover:bg-surface-card transition-all"
             >
               See the full site (in Portuguese)
             </Link>

@@ -131,7 +131,7 @@ export default function Partners() {
   const [hovered, setHovered] = useState<string | null>(null)
 
   return (
-    <section id="parceiros" className="section-padding bg-dark relative overflow-hidden">
+    <section id="parceiros" className="section-padding bg-surface relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/20 to-transparent" />
 
       <div className="container mx-auto px-4">
@@ -145,12 +145,12 @@ export default function Partners() {
           <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
             Parceiros & Autoridade
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-6">
             Um ecossistema completo
             <br />
             <span className="gradient-text">de especialistas ao seu lado</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-ink-muted max-w-2xl mx-auto text-lg">
             O ETT não funciona sozinho — ele concentra os melhores parceiros em cada etapa
             da jornada: base, prática, imersão e carreira internacional.
           </p>
@@ -171,10 +171,10 @@ export default function Partners() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 onMouseEnter={() => setHovered(partner.id)}
                 onMouseLeave={() => setHovered(null)}
-                className={`relative bg-dark-card border rounded-2xl p-6 card-hover transition-all duration-300 ${
+                className={`relative bg-surface-card border rounded-2xl p-6 card-hover transition-all duration-300 ${
                   partner.url ? 'cursor-pointer' : 'cursor-default'
                 } ${
-                  isHovered ? `${colors.border} ${colors.bg} ${colors.glow}` : 'border-dark-border'
+                  isHovered ? `${colors.border} ${colors.bg} ${colors.glow}` : 'border-surface-line'
                 }`}
               >
                 {/* Stretched link — cobre o card inteiro quando há URL */}
@@ -197,7 +197,7 @@ export default function Partners() {
                 {/* Logo or text */}
                 <div className="flex items-center gap-4 mb-4">
                   {partner.logo ? (
-                    <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-white/5 border border-dark-border flex-shrink-0">
+                    <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-ink/5 border border-surface-line flex-shrink-0">
                       <Image
                         src={partner.logo}
                         alt={`${partner.name} logo`}
@@ -212,7 +212,7 @@ export default function Partners() {
                     </div>
                   )}
                   <div>
-                    <h3 className="font-bold text-white text-xl">{partner.name}</h3>
+                    <h3 className="font-bold text-ink text-xl">{partner.name}</h3>
                     <div className={`text-xs font-medium ${colors.icon} flex items-center gap-1`}>
                       <ExternalLink className="w-3 h-3" />
                       {partner.url ? 'Visitar site do parceiro' : 'Parceiro Oficial ETT'}
@@ -220,7 +220,7 @@ export default function Partners() {
                   </div>
                 </div>
 
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <p className="text-ink-muted text-sm leading-relaxed">
                   {partner.description}
                 </p>
               </motion.div>
@@ -236,15 +236,15 @@ export default function Partners() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, delay: partners.length * 0.1 }}
-            className="group relative bg-gradient-to-br from-brand-red/10 via-dark-card to-brand-silver/10 border-2 border-dashed border-brand-red/40 rounded-2xl p-6 flex flex-col items-center justify-center text-center min-h-[260px] hover:border-brand-red hover:shadow-brand-red transition-all duration-300 cursor-pointer"
+            className="group relative bg-gradient-to-br from-brand-red/10 via-surface-card to-brand-silver/10 border-2 border-dashed border-brand-red/40 rounded-2xl p-6 flex flex-col items-center justify-center text-center min-h-[260px] hover:border-brand-red hover:shadow-brand-red transition-all duration-300 cursor-pointer"
           >
             <div className="w-16 h-16 rounded-2xl bg-brand-red/15 border border-brand-red/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
               <Handshake className="w-8 h-8 text-brand-red" />
             </div>
-            <h3 className="text-xl font-bold text-white mb-2">
+            <h3 className="text-xl font-bold text-ink mb-2">
               Seja um parceiro do ETT
             </h3>
-            <p className="text-gray-400 text-sm mb-5 max-w-xs">
+            <p className="text-ink-muted text-sm mb-5 max-w-xs">
               Marca, escola, instituição ou empresa de tech?
               Some forças com a gente.
             </p>
@@ -261,7 +261,7 @@ export default function Partners() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-2xl border border-dark-border bg-dark-card"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-2xl border border-surface-line bg-surface-card"
         >
           {[
             { n: '+365 mil', l: 'alunos na Fórmula Fluente' },
@@ -271,7 +271,7 @@ export default function Partners() {
           ].map((item) => (
             <div key={item.n} className="text-center py-2">
               <div className="text-xl font-bold text-brand-red">{item.n}</div>
-              <div className="text-xs text-gray-500 mt-1">{item.l}</div>
+              <div className="text-xs text-ink-subtle mt-1">{item.l}</div>
             </div>
           ))}
         </motion.div>

@@ -154,7 +154,7 @@ export default function CuritibaPage() {
       />
       <Navbar />
 
-      <main className="bg-dark min-h-screen pt-16">
+      <main className="bg-surface min-h-screen pt-16">
         {/* HERO */}
         <section className="relative section-padding overflow-hidden hero-grid">
           <div className="absolute inset-0 bg-gradient-to-b from-brand-red/8 via-transparent to-transparent pointer-events-none" />
@@ -163,15 +163,15 @@ export default function CuritibaPage() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-6">
                 Curitiba · PR
               </span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-ink mb-6 leading-tight">
                 Praticar Inglês em Curitiba —{' '}
                 <span className="gradient-text">Grupo de Conversação Semanal</span>
               </h1>
-              <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
-                O <strong className="text-white">IEP Talks</strong> acontece{' '}
-                <strong className="text-white">todo sábado, das 10h às 12h</strong>, no Instituto
+              <p className="text-ink-soft text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
+                O <strong className="text-ink">IEP Talks</strong> acontece{' '}
+                <strong className="text-ink">todo sábado, das 10h às 12h</strong>, no Instituto
                 de Engenharia do Paraná — o{' '}
-                <strong className="text-white">conversation club de Curitiba</strong> pra
+                <strong className="text-ink">conversation club de Curitiba</strong> pra
                 profissionais de tech e estudantes que querem destravar a fala em inglês.
                 Entrar não custa nada.
               </p>
@@ -185,7 +185,7 @@ export default function CuritibaPage() {
                 </a>
                 <Link
                   href="#proximos"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-dark-border text-white font-semibold hover:border-brand-red/50 hover:bg-dark-card transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-surface-line text-ink font-semibold hover:border-brand-red/50 hover:bg-surface-card transition-all"
                 >
                   Ver próximas datas
                 </Link>
@@ -197,14 +197,14 @@ export default function CuritibaPage() {
         {/* PROXIMOS PRESENCIAIS */}
         <section
           id="proximos"
-          className="section-padding bg-dark-secondary border-y border-dark-border"
+          className="section-padding bg-surface-alt border-y border-surface-line"
         >
           <div className="container mx-auto px-4">
             <div className="text-center mb-10 max-w-3xl mx-auto">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 Próximos encontros presenciais
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                 Veja onde é o próximo <span className="gradient-text">e marque na agenda</span>
               </h2>
             </div>
@@ -214,7 +214,7 @@ export default function CuritibaPage() {
             <div className="text-center mt-8">
               <Link
                 href="/agenda/"
-                className="inline-flex items-center gap-2 text-gray-400 hover:text-brand-red text-sm transition-colors"
+                className="inline-flex items-center gap-2 text-ink-muted hover:text-brand-red text-sm transition-colors"
               >
                 <Calendar className="w-4 h-4" />
                 Ver agenda completa
@@ -224,16 +224,16 @@ export default function CuritibaPage() {
         </section>
 
         {/* VENUES */}
-        <section className="section-padding bg-dark">
+        <section className="section-padding bg-surface">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 max-w-3xl mx-auto">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 Casas parceiras · Curitiba
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                 Nossos pontos de <span className="gradient-text">encontro</span>
               </h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-ink-muted text-lg">
                 O encontro semanal é no IEP. As outras casas recebem edições especiais — e
                 cada uma coloca a conversa num contexto diferente: universitário, descontraído
                 e corporativo.
@@ -246,9 +246,9 @@ export default function CuritibaPage() {
                   href={v.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-dark-card border border-dark-border rounded-2xl p-5 card-hover flex gap-4 hover:border-brand-red/30 transition-all"
+                  className="bg-surface-card border border-surface-line rounded-2xl p-5 card-hover flex gap-4 hover:border-brand-red/30 transition-all"
                 >
-                  <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-white/5 border border-dark-border flex-shrink-0">
+                  <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-ink/5 border border-surface-line flex-shrink-0">
                     <Image
                       src={v.logo}
                       alt={`Logo ${v.name}`}
@@ -258,10 +258,10 @@ export default function CuritibaPage() {
                     />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-bold text-white text-base mb-2 leading-snug">
+                    <h3 className="font-bold text-ink text-base mb-2 leading-snug">
                       {v.name}
                     </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">{v.desc}</p>
+                    <p className="text-ink-muted text-sm leading-relaxed">{v.desc}</p>
                   </div>
                 </a>
               ))}
@@ -270,14 +270,14 @@ export default function CuritibaPage() {
         </section>
 
         {/* COMO É O ENCONTRO */}
-        <section className="section-padding bg-dark-secondary border-y border-dark-border">
+        <section className="section-padding bg-surface-alt border-y border-surface-line">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-10">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                   Como é o encontro <span className="gradient-text">presencial em Curitiba</span>
                 </h2>
-                <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                <p className="text-ink-muted text-lg max-w-2xl mx-auto">
                   Chega, conversa, sai falando inglês — sem aula chata, sem ninguém te
                   julgando por sotaque.
                 </p>
@@ -303,15 +303,15 @@ export default function CuritibaPage() {
                 ].map((item) => (
                   <div
                     key={item.title}
-                    className="bg-dark-card border border-dark-border rounded-2xl p-5"
+                    className="bg-surface-card border border-surface-line rounded-2xl p-5"
                   >
                     <div className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
                       <div>
-                        <h3 className="font-bold text-white text-base mb-2">
+                        <h3 className="font-bold text-ink text-base mb-2">
                           {item.title}
                         </h3>
-                        <p className="text-gray-400 text-sm leading-relaxed">
+                        <p className="text-ink-muted text-sm leading-relaxed">
                           {item.body}
                         </p>
                       </div>
@@ -324,9 +324,9 @@ export default function CuritibaPage() {
         </section>
 
         {/* CROSS-LINK ONLINE */}
-        <section className="section-padding bg-dark">
+        <section className="section-padding bg-surface">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto bg-dark-card border border-brand-silver/30 rounded-3xl p-8 md:p-10">
+            <div className="max-w-3xl mx-auto bg-surface-card border border-brand-silver/30 rounded-3xl p-8 md:p-10">
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-12 h-12 rounded-xl bg-brand-silver/10 border border-brand-silver/30 flex items-center justify-center flex-shrink-0">
                   <Wifi className="w-6 h-6 text-brand-silver" />
@@ -335,12 +335,12 @@ export default function CuritibaPage() {
                   <div className="text-xs uppercase tracking-wider text-brand-silver font-semibold mb-1">
                     Tem online também
                   </div>
-                  <h3 className="font-bold text-white text-xl md:text-2xl">
+                  <h3 className="font-bold text-ink text-xl md:text-2xl">
                     Não consegue ir presencial? Toda segunda online às 20h.
                   </h3>
                 </div>
               </div>
-              <p className="text-gray-400 leading-relaxed mb-5">
+              <p className="text-ink-muted leading-relaxed mb-5">
                 Se a agenda dessa semana não bate, ou você mora fora de Curitiba, o encontro
                 online é toda segunda às 20h–21h30 via Google Meet — mesma estrutura, mesma
                 comunidade.
@@ -356,9 +356,9 @@ export default function CuritibaPage() {
         </section>
 
         {/* CROSS-LINK IMERSÃO CURITIBA */}
-        <section className="section-padding bg-dark-secondary border-y border-dark-border">
+        <section className="section-padding bg-surface-alt border-y border-surface-line">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto bg-dark-card border border-brand-red/30 rounded-3xl p-8 md:p-10">
+            <div className="max-w-3xl mx-auto bg-surface-card border border-brand-red/30 rounded-3xl p-8 md:p-10">
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-12 h-12 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center flex-shrink-0">
                   <GraduationCap className="w-6 h-6 text-brand-red" />
@@ -367,15 +367,15 @@ export default function CuritibaPage() {
                   <div className="text-xs uppercase tracking-wider text-brand-red font-semibold mb-1">
                     Imersão presencial em Curitiba
                   </div>
-                  <h3 className="font-bold text-white text-xl md:text-2xl leading-snug">
+                  <h3 className="font-bold text-ink text-xl md:text-2xl leading-snug">
                     Quer ir além do encontro semanal? Imersão Curitiba — 29/jul a 02/ago 2026
                   </h3>
                 </div>
               </div>
-              <p className="text-gray-400 leading-relaxed mb-5">
+              <p className="text-ink-muted leading-relaxed mb-5">
                 5 dias intensivos de treino de fala em inglês, em parceria com{' '}
-                <strong className="text-white">Cherry Top</strong> e{' '}
-                <strong className="text-white">IEP</strong>. Primeira edição local pra
+                <strong className="text-ink">Cherry Top</strong> e{' '}
+                <strong className="text-ink">IEP</strong>. Primeira edição local pra
                 profissionais de tech — vagas extremamente limitadas.
               </p>
               <Link
@@ -389,16 +389,16 @@ export default function CuritibaPage() {
         </section>
 
         {/* CTA FINAL */}
-        <section className="section-padding bg-dark-secondary border-t border-dark-border">
+        <section className="section-padding bg-surface-alt border-t border-surface-line">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center bg-dark-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden">
+            <div className="max-w-3xl mx-auto text-center bg-surface-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 to-brand-silver/8 pointer-events-none" />
               <div className="relative">
                 <Users className="w-10 h-10 text-brand-red mx-auto mb-5" />
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                   Vem praticar inglês <span className="gradient-text">com a gente em Curitiba</span>
                 </h2>
-                <p className="text-gray-400 text-lg leading-relaxed mb-7 max-w-xl mx-auto">
+                <p className="text-ink-muted text-lg leading-relaxed mb-7 max-w-xl mx-auto">
                   Inscrição rápida. Você recebe a agenda do mês, o endereço do próximo
                   encontro e o link da comunidade.
                 </p>
@@ -409,7 +409,7 @@ export default function CuritibaPage() {
                   Quero participar em Curitiba
                   <ArrowRight className="w-5 h-5" />
                 </a>
-                <p className="text-gray-500 text-xs mt-4 italic">
+                <p className="text-ink-subtle text-xs mt-4 italic">
                   Gratuito. Sem compromisso. Sem spam.
                 </p>
               </div>

@@ -80,16 +80,16 @@ const metrics = [
 ]
 
 const gamificationLevels = [
-  { level: 'Novato', range: '0–500 pts', color: 'text-gray-400', bg: 'bg-gray-800' },
-  { level: 'Intermediário', range: '501–1.500 pts', color: 'text-yellow-400', bg: 'bg-yellow-900/20' },
-  { level: 'Avançado', range: '1.501–3.000 pts', color: 'text-orange-400', bg: 'bg-orange-900/20' },
+  { level: 'Novato', range: '0–500 pts', color: 'text-ink-muted', bg: 'bg-ink/5' },
+  { level: 'Intermediário', range: '501–1.500 pts', color: 'text-amber-800', bg: 'bg-amber-500/10' },
+  { level: 'Avançado', range: '1.501–3.000 pts', color: 'text-orange-800', bg: 'bg-orange-500/10' },
   { level: 'Fluente', range: '3.001–6.000 pts', color: 'text-brand-silver', bg: 'bg-brand-silver/10' },
   { level: 'Global Pro', range: '6.001+ pts', color: 'text-brand-red', bg: 'bg-brand-red/10' },
 ]
 
 export default function Results() {
   return (
-    <section id="resultados" className="section-padding bg-dark relative overflow-hidden">
+    <section id="resultados" className="section-padding bg-surface relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/20 to-transparent" />
 
       <div className="container mx-auto px-4">
@@ -103,12 +103,12 @@ export default function Results() {
           <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
             Resultados & Dados
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-6">
             Números que mostram
             <br />
             <span className="gradient-text">por que o método funciona</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-ink-muted max-w-2xl mx-auto text-lg">
             Metas claras, progresso mensurável. O ETT não vende promessa vaga —
             entrega um sistema com marcos pedagógicos comprovados.
           </p>
@@ -123,7 +123,7 @@ export default function Results() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover"
+              className="bg-surface-card border border-surface-line rounded-2xl p-6 card-hover"
             >
               <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${
                 m.color === 'brand-red' ? 'bg-brand-red/10' : 'bg-brand-silver/10'
@@ -133,8 +133,8 @@ export default function Results() {
               <div className={`text-4xl font-black mb-1 ${m.color === 'brand-red' ? 'text-brand-red' : 'text-brand-silver'}`}>
                 <CountUp end={m.value} suffix={m.suffix} />
               </div>
-              <div className="font-bold text-white text-sm mb-2">{m.label}</div>
-              <p className="text-gray-500 text-sm">{m.description}</p>
+              <div className="font-bold text-ink text-sm mb-2">{m.label}</div>
+              <p className="text-ink-subtle text-sm">{m.description}</p>
             </motion.div>
           ))}
         </div>
@@ -145,14 +145,14 @@ export default function Results() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6 }}
-          className="bg-dark-card border border-dark-border rounded-2xl p-8"
+          className="bg-surface-card border border-surface-line rounded-2xl p-8"
         >
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-white mb-2 flex items-center justify-center gap-2">
+            <h3 className="text-2xl font-bold text-ink mb-2 flex items-center justify-center gap-2">
               <Trophy className="w-6 h-6 text-brand-red" />
               Sistema de Gamificação ETT
             </h3>
-            <p className="text-gray-400">
+            <p className="text-ink-muted">
               Pontos, badges e ranking — porque constância precisa de motivação.
               Jackpot mensal para os mais consistentes.
             </p>
@@ -163,29 +163,29 @@ export default function Results() {
             {gamificationLevels.map((lvl, i) => (
               <div
                 key={lvl.level}
-                className={`flex-1 ${lvl.bg} border border-dark-border rounded-xl p-4 text-center relative`}
+                className={`flex-1 ${lvl.bg} border border-surface-line rounded-xl p-4 text-center relative`}
               >
                 {i < gamificationLevels.length - 1 && (
-                  <div className="hidden sm:block absolute -right-1 top-1/2 -translate-y-1/2 z-10 text-gray-600">
+                  <div className="hidden sm:block absolute -right-1 top-1/2 -translate-y-1/2 z-10 text-ink-faint">
                     →
                   </div>
                 )}
                 <div className={`font-bold text-sm ${lvl.color}`}>{lvl.level}</div>
-                <div className="text-xs text-gray-500 mt-1">{lvl.range}</div>
+                <div className="text-xs text-ink-subtle mt-1">{lvl.range}</div>
               </div>
             ))}
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-4 text-center text-sm text-gray-400">
-            <div className="bg-dark/50 rounded-xl p-4 border border-dark-border">
+          <div className="grid sm:grid-cols-3 gap-4 text-center text-sm text-ink-muted">
+            <div className="bg-surface/50 rounded-xl p-4 border border-surface-line">
               <div className="text-brand-red font-bold text-base mb-1">Pontos diários</div>
               Estudo, check-in, palavras revisadas e encontros = pontos acumulados
             </div>
-            <div className="bg-dark/50 rounded-xl p-4 border border-dark-border">
+            <div className="bg-surface/50 rounded-xl p-4 border border-surface-line">
               <div className="text-brand-silver font-bold text-base mb-1">Badges & conquistas</div>
               Primeiro episódio, semana perfeita, nível desbloqueado — cada marco é reconhecido
             </div>
-            <div className="bg-dark/50 rounded-xl p-4 border border-dark-border">
+            <div className="bg-surface/50 rounded-xl p-4 border border-surface-line">
               <div className="text-brand-red font-bold text-base mb-1">Jackpot mensal</div>
               Os participantes mais constantes do mês concorrem a prêmios e benefícios exclusivos
             </div>

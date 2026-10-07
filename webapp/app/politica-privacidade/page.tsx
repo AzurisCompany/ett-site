@@ -37,24 +37,24 @@ export default function PoliticaPrivacidadePage() {
       />
       <Navbar />
 
-      <main className="bg-dark min-h-screen pt-16">
+      <main className="bg-surface min-h-screen pt-16">
         <header className="relative section-padding hero-grid">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-5">
                 Documento legal
               </span>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-4 leading-tight">
                 Política de Privacidade
               </h1>
-              <p className="text-gray-400 text-base">
+              <p className="text-ink-muted text-base">
                 Última atualização: 14 de maio de 2026 · Conforme LGPD (Lei 13.709/2018).
               </p>
             </div>
           </div>
         </header>
 
-        <article className="bg-dark-secondary border-y border-dark-border">
+        <article className="bg-surface-alt border-y border-surface-line">
           <div className="container mx-auto px-4 py-12 md:py-16">
             <div className="max-w-3xl mx-auto prose-blog">
               <p>

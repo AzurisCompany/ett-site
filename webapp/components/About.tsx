@@ -37,7 +37,7 @@ const fadeUp = {
 
 export default function About() {
   return (
-    <section id="sobre" className="section-padding bg-dark-secondary relative overflow-hidden">
+    <section id="sobre" className="section-padding bg-surface-alt relative overflow-hidden">
       {/* Subtle background accent */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/30 to-transparent" />
 
@@ -54,13 +54,13 @@ export default function About() {
           <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
             Sobre o ETT
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-6 leading-tight">
             Não é mais um curso de inglês.
             <br />
             <span className="gradient-text">É um ecossistema de aceleração.</span>
           </h2>
-          <p className="text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed">
-            O <strong className="text-white">English Talk Time (ETT)</strong> é um programa de aceleração
+          <p className="text-ink-muted max-w-3xl mx-auto text-lg leading-relaxed">
+            O <strong className="text-ink">English Talk Time (ETT)</strong> é um programa de aceleração
             criado para encurtar a distância entre duas realidades muito comuns: o profissional que
             estuda há anos, entende razoavelmente, mas <strong className="text-brand-red">trava para falar</strong>;
             e o profissional que precisa usar inglês de forma funcional para{' '}
@@ -76,7 +76,7 @@ export default function About() {
             viewport={{ once: true, margin: '-80px' }}
             variants={fadeUp}
             custom={1}
-            className="space-y-5 text-gray-300 leading-relaxed text-base"
+            className="space-y-5 text-ink-soft leading-relaxed text-base"
           >
             <p>
               O projeto nasce com foco especial em profissionais e estudantes de{' '}
@@ -87,7 +87,7 @@ export default function About() {
             </p>
             <p>
               A proposta central do ETT é simples, mas poderosa:{' '}
-              <strong className="text-white">não oferecer mais um curso de inglês</strong>, e sim
+              <strong className="text-ink">não oferecer mais um curso de inglês</strong>, e sim
               uma metodologia aplicada onde se aprende a <em>aprender</em>, seguindo o ditado:{' '}
               <em className="text-brand-red">"Dê um peixe a um homem e você o alimentará por um dia; ensine-o a pescar e você o alimentará por toda a vida."</em>
             </p>
@@ -95,7 +95,7 @@ export default function About() {
               O ETT articula curadoria, rotina, prática guiada, imersão, ferramentas inteligentes
               de acompanhamento e conexão com objetivos de carreira — tudo em um único ecossistema
               estruturado para gerar{' '}
-              <strong className="text-white">constância, exposição diária ao idioma e uso em situações reais</strong>.
+              <strong className="text-ink">constância, exposição diária ao idioma e uso em situações reais</strong>.
             </p>
           </motion.div>
 
@@ -105,7 +105,7 @@ export default function About() {
             viewport={{ once: true, margin: '-80px' }}
             variants={fadeUp}
             custom={2}
-            className="space-y-5 text-gray-300 leading-relaxed text-base"
+            className="space-y-5 text-ink-soft leading-relaxed text-base"
           >
             <p>
               O objetivo principal é levar o participante do zero (ou do nível travado) até um{' '}
@@ -115,7 +115,7 @@ export default function About() {
             <p>
               "Inglês funcional" aqui não significa perfeição gramatical nem fala nativa. Significa
               que a pessoa consegue{' '}
-              <strong className="text-white">sustentar uma conversa, participar de uma entrevista, explicar um projeto, circular em networking internacional</strong>{' '}
+              <strong className="text-ink">sustentar uma conversa, participar de uma entrevista, explicar um projeto, circular em networking internacional</strong>{' '}
               e continuar evoluindo com autonomia.
             </p>
             <div className="mt-6 grid grid-cols-3 gap-4">
@@ -126,10 +126,10 @@ export default function About() {
               ].map((s) => (
                 <div
                   key={s.n}
-                  className="bg-dark-card border border-dark-border rounded-xl p-4 text-center"
+                  className="bg-surface-card border border-surface-line rounded-xl p-4 text-center"
                 >
                   <div className="text-2xl font-bold text-brand-red">{s.n}</div>
-                  <div className="text-xs text-gray-500 mt-1">{s.l}</div>
+                  <div className="text-xs text-ink-subtle mt-1">{s.l}</div>
                 </div>
               ))}
             </div>
@@ -146,19 +146,19 @@ export default function About() {
               viewport={{ once: true, margin: '-60px' }}
               variants={fadeUp}
               custom={i + 3}
-              className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover"
+              className="bg-surface-card border border-surface-line rounded-2xl p-6 card-hover"
             >
               <div className="w-11 h-11 rounded-xl bg-brand-red/10 border border-brand-red/20 flex items-center justify-center mb-4">
                 <h.icon className="w-5 h-5 text-brand-red" />
               </div>
-              <h3 className="font-bold text-white text-base mb-2">{h.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{h.text}</p>
+              <h3 className="font-bold text-ink text-base mb-2">{h.title}</h3>
+              <p className="text-ink-muted text-sm leading-relaxed">{h.text}</p>
             </motion.div>
           ))}
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-border to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-surface-line to-transparent" />
     </section>
   )
 }

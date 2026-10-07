@@ -20,7 +20,7 @@ const modulos = [
 
 export default function FerramentasResumo() {
   return (
-    <section id="ferramentas" className="section-padding bg-dark-secondary relative overflow-hidden">
+    <section id="ferramentas" className="section-padding bg-surface-alt relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/25 to-transparent" />
 
       <div className="container mx-auto px-4">
@@ -35,13 +35,13 @@ export default function FerramentasResumo() {
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-5">
               Já está no ar
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5 leading-tight">
+            <h2 className="text-3xl sm:text-4xl font-bold text-ink mb-5 leading-tight">
               E entre um encontro e outro,
               <br />
               você tem as ferramentas.
             </h2>
-            <p className="text-gray-400 text-lg leading-relaxed mb-6">
-              O <strong className="text-white">ETT Player</strong> reúne o material de apoio dos
+            <p className="text-ink-muted text-lg leading-relaxed mb-6">
+              O <strong className="text-ink">ETT Player</strong> reúne o material de apoio dos
               participantes num app só. Não é promessa de roadmap — está no ar e em uso, dá pra
               abrir e ver por dentro. É onde seu diagnóstico, seu plano de estudo e sua evolução
               ficam registrados.
@@ -49,7 +49,7 @@ export default function FerramentasResumo() {
 
             <ul className="grid sm:grid-cols-2 gap-3 mb-8">
               {modulos.map((m) => (
-                <li key={m.label} className="flex items-center gap-3 text-sm text-gray-300">
+                <li key={m.label} className="flex items-center gap-3 text-sm text-ink-soft">
                   <span className="w-9 h-9 rounded-lg bg-brand-red/10 border border-brand-red/20 flex items-center justify-center shrink-0">
                     <m.icon className="w-4 h-4 text-brand-red" />
                   </span>
@@ -70,7 +70,7 @@ export default function FerramentasResumo() {
                 href={PLAYER_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-dark-border text-gray-300 font-semibold text-sm hover:border-brand-red/40 hover:text-white transition-all"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-surface-line text-ink-soft font-semibold text-sm hover:border-brand-red/40 hover:text-ink transition-all"
               >
                 Abrir o ETT Player
                 <ArrowUpRight className="w-4 h-4" />
@@ -79,7 +79,7 @@ export default function FerramentasResumo() {
 
             <Link
               href="/detalhes/#ferramentas"
-              className="inline-block mt-4 text-sm text-gray-500 hover:text-brand-red underline underline-offset-4 transition-colors"
+              className="inline-block mt-4 text-sm text-ink-subtle hover:text-brand-red underline underline-offset-4 transition-colors"
             >
               Ver todas as ferramentas, uma a uma
             </Link>
@@ -94,16 +94,16 @@ export default function FerramentasResumo() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="group block rounded-2xl border border-dark-border bg-dark-card overflow-hidden shadow-2xl hover:border-brand-red/40 transition-all"
+            className="group block rounded-2xl border border-surface-line bg-surface-card overflow-hidden shadow-2xl hover:border-brand-red/40 transition-all"
           >
-            <div className="flex items-center gap-2 px-4 py-3 bg-dark border-b border-dark-border">
+            <div className="flex items-center gap-2 px-4 py-3 bg-surface border-b border-surface-line">
               <span className="w-3 h-3 rounded-full bg-red-500/70" />
               <span className="w-3 h-3 rounded-full bg-yellow-500/70" />
               <span className="w-3 h-3 rounded-full bg-green-500/70" />
-              <span className="ml-3 flex-1 truncate text-xs text-gray-500 font-mono">
+              <span className="ml-3 flex-1 truncate text-xs text-ink-subtle font-mono">
                 ett-player.vercel.app
               </span>
-              <ArrowUpRight className="w-4 h-4 text-gray-500 group-hover:text-brand-red transition-colors" />
+              <ArrowUpRight className="w-4 h-4 text-ink-subtle group-hover:text-brand-red transition-colors" />
             </div>
             <Image
               src="/images/ett-player.webp"

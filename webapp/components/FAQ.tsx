@@ -16,7 +16,7 @@ export default function FAQ({ faqs = homeFaqs, title, subtitle }: FAQProps) {
   const [openIdx, setOpenIdx] = useState<number | null>(0)
 
   return (
-    <section id="faq" className="section-padding bg-dark relative overflow-hidden">
+    <section id="faq" className="section-padding bg-surface relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/20 to-transparent" />
 
       <div className="container mx-auto px-4">
@@ -31,7 +31,7 @@ export default function FAQ({ faqs = homeFaqs, title, subtitle }: FAQProps) {
             <HelpCircle className="w-3.5 h-3.5" />
             Perguntas Frequentes
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-4 leading-tight">
             {title ?? (
               <>
                 Tudo o que você precisa saber pra{' '}
@@ -39,7 +39,7 @@ export default function FAQ({ faqs = homeFaqs, title, subtitle }: FAQProps) {
               </>
             )}
           </h2>
-          <p className="text-gray-400 text-lg leading-relaxed">
+          <p className="text-ink-muted text-lg leading-relaxed">
             {subtitle ??
               'Grupo de conversação em inglês, treino de fala com ferramentas, online toda segunda e presencial em Curitiba — sem letra miúda.'}
           </p>
@@ -55,14 +55,14 @@ export default function FAQ({ faqs = homeFaqs, title, subtitle }: FAQProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-30px' }}
                 transition={{ duration: 0.3, delay: (i % 6) * 0.04 }}
-                className="bg-dark-card border border-dark-border rounded-xl overflow-hidden"
+                className="bg-surface-card border border-surface-line rounded-xl overflow-hidden"
               >
                 <button
                   onClick={() => setOpenIdx(open ? null : i)}
-                  className="w-full px-5 py-4 text-left flex items-center justify-between gap-4 hover:bg-dark-secondary transition-colors"
+                  className="w-full px-5 py-4 text-left flex items-center justify-between gap-4 hover:bg-surface-alt transition-colors"
                   aria-expanded={open}
                 >
-                  <span className="font-semibold text-white text-base leading-snug">
+                  <span className="font-semibold text-ink text-base leading-snug">
                     {faq.q}
                   </span>
                   <span
@@ -74,7 +74,7 @@ export default function FAQ({ faqs = homeFaqs, title, subtitle }: FAQProps) {
                   </span>
                 </button>
                 {open && (
-                  <div className="px-5 pb-5 text-gray-400 leading-relaxed text-sm border-t border-dark-border pt-4">
+                  <div className="px-5 pb-5 text-ink-muted leading-relaxed text-sm border-t border-surface-line pt-4">
                     {faq.a}
                   </div>
                 )}

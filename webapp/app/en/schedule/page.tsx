@@ -112,7 +112,7 @@ export default function EnSchedulePage() {
       />
       <Navbar />
 
-      <main className="bg-dark min-h-screen pt-16">
+      <main className="bg-surface min-h-screen pt-16">
         {/* HERO */}
         <section className="relative section-padding overflow-hidden hero-grid">
           <div className="absolute inset-0 bg-gradient-to-b from-brand-silver/8 via-transparent to-transparent pointer-events-none" />
@@ -121,12 +121,12 @@ export default function EnSchedulePage() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-6">
                 Online · every Monday
               </span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-ink mb-6 leading-tight">
                 Weekly online <span className="gradient-text">English conversation meetings</span>
               </h1>
-              <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
+              <p className="text-ink-soft text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
                 Free structured speaking practice via Google Meet — every Monday from{' '}
-                <strong className="text-white">8pm to 9:30pm BRT (GMT-3)</strong>.
+                <strong className="text-ink">8pm to 9:30pm BRT (GMT-3)</strong>.
                 Open to tech professionals worldwide. Just sign up and we send you the link.
               </p>
               <a
@@ -143,28 +143,28 @@ export default function EnSchedulePage() {
         </section>
 
         {/* INFO BAR */}
-        <section className="bg-dark-secondary border-y border-dark-border py-8">
+        <section className="bg-surface-alt border-y border-surface-line py-8">
           <div className="container mx-auto px-4">
             <div className="grid sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
-              <div className="flex items-start gap-3 bg-dark-card border border-dark-border rounded-xl p-4">
+              <div className="flex items-start gap-3 bg-surface-card border border-surface-line rounded-xl p-4">
                 <Clock className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
                 <div>
-                  <div className="font-bold text-white text-sm">Time</div>
-                  <div className="text-gray-400 text-sm">Mondays · 8pm–9:30pm BRT (GMT-3)</div>
+                  <div className="font-bold text-ink text-sm">Time</div>
+                  <div className="text-ink-muted text-sm">Mondays · 8pm–9:30pm BRT (GMT-3)</div>
                 </div>
               </div>
-              <div className="flex items-start gap-3 bg-dark-card border border-dark-border rounded-xl p-4">
+              <div className="flex items-start gap-3 bg-surface-card border border-surface-line rounded-xl p-4">
                 <Wifi className="w-5 h-5 text-brand-silver shrink-0 mt-0.5" />
                 <div>
-                  <div className="font-bold text-white text-sm">Format</div>
-                  <div className="text-gray-400 text-sm">Google Meet · 90 minutes</div>
+                  <div className="font-bold text-ink text-sm">Format</div>
+                  <div className="text-ink-muted text-sm">Google Meet · 90 minutes</div>
                 </div>
               </div>
-              <div className="flex items-start gap-3 bg-dark-card border border-dark-border rounded-xl p-4">
+              <div className="flex items-start gap-3 bg-surface-card border border-surface-line rounded-xl p-4">
                 <Globe className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
                 <div>
-                  <div className="font-bold text-white text-sm">Open to</div>
-                  <div className="text-gray-400 text-sm">Anywhere in the world</div>
+                  <div className="font-bold text-ink text-sm">Open to</div>
+                  <div className="text-ink-muted text-sm">Anywhere in the world</div>
                 </div>
               </div>
             </div>
@@ -175,16 +175,16 @@ export default function EnSchedulePage() {
         <section className="section-padding">
           <div className="container mx-auto px-4">
             <div className="text-center mb-10 max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                 Upcoming <span className="gradient-text">online meetings</span>
               </h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-ink-muted text-lg">
                 Mark your calendar. New session every Monday — same time, same Google Meet link after sign up.
               </p>
             </div>
 
             {onlineEvents.length === 0 ? (
-              <p className="text-center text-gray-400 max-w-md mx-auto">
+              <p className="text-center text-ink-muted max-w-md mx-auto">
                 No confirmed online events in the coming days. Sign up to get notified when the next one is scheduled.
               </p>
             ) : (
@@ -195,17 +195,17 @@ export default function EnSchedulePage() {
                   return (
                     <div
                       key={e.date}
-                      className="bg-dark-card border border-brand-silver/20 rounded-xl p-4 card-hover"
+                      className="bg-surface-card border border-brand-silver/20 rounded-xl p-4 card-hover"
                     >
                       <div className="flex items-start gap-3">
                         <div className="shrink-0 w-16 rounded-lg border border-brand-silver/30 bg-brand-silver/5 text-center py-2">
                           <div className="text-[10px] uppercase tracking-wider font-bold text-brand-silver">
                             {weekdayEn(e.weekday).slice(0, 3)}
                           </div>
-                          <div className="text-white font-black text-xl leading-none my-0.5">
+                          <div className="text-ink font-black text-xl leading-none my-0.5">
                             {day}
                           </div>
-                          <div className="text-gray-500 text-[10px] uppercase tracking-wider">
+                          <div className="text-ink-subtle text-[10px] uppercase tracking-wider">
                             {monthAbbr}
                           </div>
                         </div>
@@ -215,15 +215,15 @@ export default function EnSchedulePage() {
                               <Wifi className="w-2.5 h-2.5" />
                               online
                             </span>
-                            <span className="ml-auto inline-flex items-center gap-1 text-xs text-gray-400">
+                            <span className="ml-auto inline-flex items-center gap-1 text-xs text-ink-muted">
                               <Clock className="w-3 h-3" />
                               8pm BRT
                             </span>
                           </div>
-                          <h3 className="font-bold text-white text-sm leading-snug mb-1">
+                          <h3 className="font-bold text-ink text-sm leading-snug mb-1">
                             ETT Online Meeting
                           </h3>
-                          <p className="text-xs text-gray-500 leading-snug">
+                          <p className="text-xs text-ink-subtle leading-snug">
                             Google Meet · 90 min · free
                           </p>
                         </div>
@@ -250,9 +250,9 @@ export default function EnSchedulePage() {
 
         {/* IN-PERSON MENTION */}
         {inPersonCount > 0 && (
-          <section className="section-padding bg-dark-secondary border-y border-dark-border">
+          <section className="section-padding bg-surface-alt border-y border-surface-line">
             <div className="container mx-auto px-4">
-              <div className="max-w-3xl mx-auto bg-dark-card border border-brand-red/20 rounded-2xl p-6 md:p-8">
+              <div className="max-w-3xl mx-auto bg-surface-card border border-brand-red/20 rounded-2xl p-6 md:p-8">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-12 h-12 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-6 h-6 text-brand-red" />
@@ -261,12 +261,12 @@ export default function EnSchedulePage() {
                     <div className="text-xs uppercase tracking-wider text-brand-red font-semibold mb-1">
                       In-person — Curitiba, Brazil
                     </div>
-                    <h3 className="font-bold text-white text-lg md:text-xl leading-snug">
+                    <h3 className="font-bold text-ink text-lg md:text-xl leading-snug">
                       Are you in Curitiba? We also meet in person, weekly.
                     </h3>
                   </div>
                 </div>
-                <p className="text-gray-400 leading-relaxed mb-4 text-sm">
+                <p className="text-ink-muted leading-relaxed mb-4 text-sm">
                   We rotate between 4 venues in Curitiba (IEP, UTFPR, Hard Rock Cafe, Habitat / FIEP).
                   The in-person sessions are described in Portuguese — the schedule page in PT has all the details and venue addresses.
                 </p>
@@ -284,14 +284,14 @@ export default function EnSchedulePage() {
         {/* CTA */}
         <section className="section-padding">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center bg-dark-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden">
+            <div className="max-w-3xl mx-auto text-center bg-surface-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 to-brand-silver/8 pointer-events-none" />
               <div className="relative">
                 <Users className="w-10 h-10 text-brand-red mx-auto mb-5" />
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                   Don't miss <span className="gradient-text">the next session</span>
                 </h2>
-                <p className="text-gray-400 text-lg leading-relaxed mb-7 max-w-xl mx-auto">
+                <p className="text-ink-muted text-lg leading-relaxed mb-7 max-w-xl mx-auto">
                   Quick signup — you'll receive the Google Meet link, the welcome material and the
                   community access.
                 </p>
@@ -304,7 +304,7 @@ export default function EnSchedulePage() {
                   Sign me up
                   <ArrowRight className="w-5 h-5" />
                 </a>
-                <p className="text-gray-500 text-xs mt-4 italic">
+                <p className="text-ink-subtle text-xs mt-4 italic">
                   Free. No commitment. No spam.
                 </p>
               </div>

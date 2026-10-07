@@ -86,7 +86,7 @@ export default function Post() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <BlogLayout post={post}>
-        <figure className="mb-8 overflow-hidden rounded-2xl border border-dark-border">
+        <figure className="mb-8 overflow-hidden rounded-2xl border border-surface-line">
           <Image
             src="/images/parceria-aprendendo-ingles.webp"
             alt="Parceria English Talk Time e Aprendendo Inglês"

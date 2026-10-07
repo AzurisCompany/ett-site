@@ -92,7 +92,7 @@ export default function EsMetodoPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Navbar />
 
-      <main className="bg-dark min-h-screen pt-16">
+      <main className="bg-surface min-h-screen pt-16">
         {/* HERO */}
         <section className="section-padding relative overflow-hidden hero-grid">
           <div className="absolute inset-0 bg-gradient-to-b from-brand-red/5 via-transparent to-transparent pointer-events-none" />
@@ -101,24 +101,24 @@ export default function EsMetodoPage() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-6">
                 Metodología
               </span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-ink mb-6 leading-tight">
                 La <span className="gradient-text">Fórmula Fluente</span>
               </h1>
-              <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
+              <p className="text-ink-muted text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
                 El método que destila por qué algunas personas llegan a la fluidez en meses y otras
                 pasan años trabadas. Base científica, práctica deliberada, threshold + inmersión.
               </p>
 
               <div className="inline-flex flex-wrap items-center justify-center gap-3 sm:gap-5 p-6 sm:p-8 rounded-3xl border border-brand-red/30 bg-brand-red/5 shadow-brand-red">
-                <span className="text-xl sm:text-3xl font-bold text-white">Threshold</span>
+                <span className="text-xl sm:text-3xl font-bold text-ink">Threshold</span>
                 <span className="text-xl sm:text-3xl font-bold text-brand-silver">+</span>
-                <span className="text-xl sm:text-3xl font-bold text-white">Inmersión</span>
+                <span className="text-xl sm:text-3xl font-bold text-ink">Inmersión</span>
                 <span className="text-xl sm:text-3xl font-bold text-brand-silver">=</span>
                 <span className="text-xl sm:text-3xl font-bold gradient-text">Fluidez</span>
               </div>
 
-              <p className="text-gray-500 text-sm mt-6 max-w-xl mx-auto">
-                Adaptado de la metodología de <strong className="text-gray-300">Frank Florida</strong> —
+              <p className="text-ink-subtle text-sm mt-6 max-w-xl mx-auto">
+                Adaptado de la metodología de <strong className="text-ink-soft">Frank Florida</strong> —
                 políglota con 13 idiomas y +365.000 estudiantes formados.
               </p>
             </div>
@@ -126,43 +126,43 @@ export default function EsMetodoPage() {
         </section>
 
         {/* PREMISE */}
-        <section className="section-padding bg-dark-secondary border-t border-dark-border">
+        <section className="section-padding bg-surface-alt border-t border-surface-line">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto items-start">
               <div>
                 <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                   La Premisa
                 </span>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold text-ink mb-5 leading-tight">
                   No es talento.
                   <br />
                   <span className="gradient-text">Es método.</span>
                 </h2>
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-ink-muted leading-relaxed">
                   Con el método errado puedes estudiar 10 años y nunca hablar. Con el camino correcto
                   llegas a la fluidez funcional en pocos meses, incluso desde cero. La diferencia está
-                  en <em className="text-white not-italic">qué</em> practicas y <em className="text-white not-italic">en qué orden</em>.
+                  en <em className="text-ink not-italic">qué</em> practicas y <em className="text-ink not-italic">en qué orden</em>.
                 </p>
               </div>
 
-              <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+              <div className="bg-surface-card border border-surface-line rounded-2xl p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <Layers className="w-6 h-6 text-brand-red" />
-                  <h3 className="font-bold text-white text-lg">Idioma = LEGO Lingüístico</h3>
+                  <h3 className="font-bold text-ink text-lg">Idioma = LEGO Lingüístico</h3>
                 </div>
-                <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                <p className="text-ink-muted text-sm leading-relaxed mb-4">
                   Toda lengua se reduce a dos piezas:
                 </p>
                 <div className="grid grid-cols-2 gap-3">
                   <div className="p-4 rounded-xl bg-brand-red/5 border border-brand-red/20">
                     <div className="text-xs uppercase tracking-wider text-brand-red font-semibold mb-1">Palabras</div>
-                    <div className="text-white font-bold mb-1">Vocabulario</div>
-                    <div className="text-xs text-gray-500">Hemisferio derecho · memorizar</div>
+                    <div className="text-ink font-bold mb-1">Vocabulario</div>
+                    <div className="text-xs text-ink-subtle">Hemisferio derecho · memorizar</div>
                   </div>
                   <div className="p-4 rounded-xl bg-brand-silver/5 border border-brand-silver/20">
                     <div className="text-xs uppercase tracking-wider text-brand-silver font-semibold mb-1">Orden</div>
-                    <div className="text-white font-bold mb-1">Gramática</div>
-                    <div className="text-xs text-gray-500">Hemisferio izquierdo · entender reglas</div>
+                    <div className="text-ink font-bold mb-1">Gramática</div>
+                    <div className="text-xs text-ink-subtle">Hemisferio izquierdo · entender reglas</div>
                   </div>
                 </div>
               </div>
@@ -177,10 +177,10 @@ export default function EsMetodoPage() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 Los 4 Pilares
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
                 70% del tiempo en <span className="gradient-text">habilidades activas</span>
               </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
+              <p className="text-ink-muted max-w-2xl mx-auto">
                 Es la inversión silenciosa que separa a quien aprende de quien solo estudia. La mayoría
                 de los cursos enfoca en lo más fácil — leer y escuchar — y por eso la mayoría nunca habla.
               </p>
@@ -190,34 +190,34 @@ export default function EsMetodoPage() {
               {pillars.map((p) => {
                 const c = colorMap[p.color as keyof typeof colorMap]
                 return (
-                  <div key={p.title} className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover">
+                  <div key={p.title} className="bg-surface-card border border-surface-line rounded-2xl p-6 card-hover">
                     <div className={`w-11 h-11 rounded-xl ${c.bg} border ${c.border} flex items-center justify-center mb-4`}>
                       <p.icon className={`w-5 h-5 ${c.icon}`} />
                     </div>
                     <div className={`text-xs uppercase tracking-wider ${c.text} font-semibold mb-1`}>{p.type}</div>
-                    <h3 className="text-2xl font-bold text-white mb-3">{p.title}</h3>
-                    <div className="h-2 rounded-full bg-dark-border overflow-hidden mb-2">
+                    <h3 className="text-2xl font-bold text-ink mb-3">{p.title}</h3>
+                    <div className="h-2 rounded-full bg-surface-line overflow-hidden mb-2">
                       <div className={`h-full ${c.bar}`} style={{ width: `${p.pct}%` }} />
                     </div>
                     <div className="flex justify-between items-center mb-4">
                       <span className={`text-3xl font-black ${c.text}`}>{p.pct}%</span>
-                      <span className="text-xs text-gray-500 uppercase tracking-wider">del tiempo</span>
+                      <span className="text-xs text-ink-subtle uppercase tracking-wider">del tiempo</span>
                     </div>
-                    <p className="text-gray-400 text-sm leading-relaxed">{p.note}</p>
+                    <p className="text-ink-muted text-sm leading-relaxed">{p.note}</p>
                   </div>
                 )
               })}
             </div>
 
-            <p className="mt-10 text-center text-gray-500 text-sm max-w-2xl mx-auto">
-              <strong className="text-gray-300">Principio del grit:</strong> ataca lo más difícil primero.
+            <p className="mt-10 text-center text-ink-subtle text-sm max-w-2xl mx-auto">
+              <strong className="text-ink-soft">Principio del grit:</strong> ataca lo más difícil primero.
               La habilidad activa contiene la pasiva — quien escribe sabe leer; quien habla entiende. Lo inverso no es cierto.
             </p>
           </div>
         </section>
 
         {/* THRESHOLD */}
-        <section className="section-padding bg-dark-secondary border-y border-dark-border relative overflow-hidden">
+        <section className="section-padding bg-surface-alt border-y border-surface-line relative overflow-hidden">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-brand-red/5 blur-3xl pointer-events-none" />
           <div className="container mx-auto px-4 relative">
             <div className="max-w-5xl mx-auto">
@@ -225,10 +225,10 @@ export default function EsMetodoPage() {
                 <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                   El Threshold
                 </span>
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
                   El punto donde el <span className="gradient-text">aprendizaje se vuelve automático</span>
                 </h2>
-                <p className="text-gray-400 max-w-2xl mx-auto">
+                <p className="text-ink-muted max-w-2xl mx-auto">
                   El nivel mínimo de vocabulario y gramática a partir del cual puedes sostener una conversación simple —
                   y a partir del cual el subconsciente toma el trabajo.
                 </p>
@@ -242,10 +242,10 @@ export default function EsMetodoPage() {
                 ].map((b, i) => {
                   const c = colorMap[b.color as keyof typeof colorMap]
                   return (
-                    <div key={i} className={`bg-dark-card border ${b.highlight ? 'border-brand-red/40 shadow-brand-red' : 'border-dark-border'} rounded-2xl p-6 text-center`}>
+                    <div key={i} className={`bg-surface-card border ${b.highlight ? 'border-brand-red/40 shadow-brand-red' : 'border-surface-line'} rounded-2xl p-6 text-center`}>
                       <div className={`text-5xl font-black ${c.text} mb-1`}>{b.num}</div>
-                      <div className="text-xs uppercase tracking-wider text-gray-500 mb-3">{b.label}</div>
-                      <div className="text-gray-300 text-sm">{b.desc}</div>
+                      <div className="text-xs uppercase tracking-wider text-ink-subtle mb-3">{b.label}</div>
+                      <div className="text-ink-soft text-sm">{b.desc}</div>
                       {b.highlight && (
                         <div className="mt-3 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-semibold">
                           <Target className="w-3 h-3" /> threshold
@@ -257,24 +257,24 @@ export default function EsMetodoPage() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-5">
-                <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+                <div className="bg-surface-card border border-surface-line rounded-2xl p-6">
                   <div className="flex items-center gap-2 mb-4">
                     <AlertTriangle className="w-5 h-5 text-brand-silver" />
-                    <h3 className="font-bold text-white">Antes del threshold</h3>
+                    <h3 className="font-bold text-ink">Antes del threshold</h3>
                   </div>
-                  <ul className="space-y-2.5 text-sm text-gray-400">
+                  <ul className="space-y-2.5 text-sm text-ink-muted">
                     <li className="flex gap-2"><span className="text-brand-silver">→</span> Estudia con cuidado, despacio, en papel.</li>
                     <li className="flex gap-2"><span className="text-brand-silver">→</span> Evita errores — el cerebro graba como un HD.</li>
                     <li className="flex gap-2"><span className="text-brand-silver">→</span> Usa traducciones controladas y respuestas modelo.</li>
                     <li className="flex gap-2"><span className="text-brand-silver">→</span> Construye contexto — piezas del rompecabezas.</li>
                   </ul>
                 </div>
-                <div className="bg-dark-card border border-brand-red/30 rounded-2xl p-6 shadow-brand-red">
+                <div className="bg-surface-card border border-brand-red/30 rounded-2xl p-6 shadow-brand-red">
                   <div className="flex items-center gap-2 mb-4">
                     <Sparkles className="w-5 h-5 text-brand-red" />
-                    <h3 className="font-bold text-white">Después del threshold</h3>
+                    <h3 className="font-bold text-ink">Después del threshold</h3>
                   </div>
-                  <ul className="space-y-2.5 text-sm text-gray-300">
+                  <ul className="space-y-2.5 text-sm text-ink-soft">
                     <li className="flex gap-2"><span className="text-brand-red">→</span> Suelta la lengua — habla, equivócate, habla otra vez.</li>
                     <li className="flex gap-2"><span className="text-brand-red">→</span> Multiplica la inmersión por 10x.</li>
                     <li className="flex gap-2"><span className="text-brand-red">→</span> El subconsciente clasifica los datos solo.</li>
@@ -293,10 +293,10 @@ export default function EsMetodoPage() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 Las 4 Etapas
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
                 La escalera de la <span className="gradient-text">competencia</span>
               </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
+              <p className="text-ink-muted max-w-2xl mx-auto">
                 La mayoría de los métodos intenta saltar de la etapa 2 directo a la 4 ("aprender intuitivamente").
                 Los niños tardan 4 años con inmersión 24/7 — tú no tienes ese tiempo. Necesitas la etapa 3.
               </p>
@@ -304,10 +304,10 @@ export default function EsMetodoPage() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
               {stages.map((s) => (
-                <div key={s.n} className={`relative bg-dark-card border rounded-2xl p-6 ${s.highlight ? 'border-brand-red/40' : 'border-dark-border'}`}>
-                  <div className={`text-6xl font-black mb-3 ${s.highlight ? 'text-brand-red' : 'text-gray-700'}`}>{s.n}</div>
-                  <h3 className="font-bold text-white text-base mb-2 leading-tight">{s.label}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{s.sub}</p>
+                <div key={s.n} className={`relative bg-surface-card border rounded-2xl p-6 ${s.highlight ? 'border-brand-red/40' : 'border-surface-line'}`}>
+                  <div className={`text-6xl font-black mb-3 ${s.highlight ? 'text-brand-red' : 'text-ink-faint'}`}>{s.n}</div>
+                  <h3 className="font-bold text-ink text-base mb-2 leading-tight">{s.label}</h3>
+                  <p className="text-ink-subtle text-sm leading-relaxed">{s.sub}</p>
                   {s.n === 3 && (
                     <span className="absolute top-4 right-4 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-semibold">threshold</span>
                   )}
@@ -321,34 +321,34 @@ export default function EsMetodoPage() {
         </section>
 
         {/* SUBTITLES TOOL */}
-        <section className="section-padding bg-dark-secondary border-y border-dark-border relative overflow-hidden">
+        <section className="section-padding bg-surface-alt border-y border-surface-line relative overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-brand-red/8 blur-3xl pointer-events-none" />
           <div className="container mx-auto px-4 relative">
             <div className="text-center mb-12 max-w-3xl mx-auto">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 Herramienta ETT · Subtitles
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
                 Escucha el método de <span className="gradient-text">quien lo creó</span>
               </h2>
-              <p className="text-gray-400 text-lg leading-relaxed">
+              <p className="text-ink-muted text-lg leading-relaxed">
                 No se puede entender la Fórmula Fluente solo leyendo este resumen.
-                Necesitas <strong className="text-white">escuchar a Frank Florida</strong> —
+                Necesitas <strong className="text-ink">escuchar a Frank Florida</strong> —
                 el políglota que ya formó +365.000 brasileños — explicando cada principio.
               </p>
-              <p className="text-gray-500 text-xs mt-3 italic">
+              <p className="text-ink-subtle text-xs mt-3 italic">
                 Nota: las clases originales son en portugués. La herramienta Subtitles te da subtítulos sincronizados PT + EN para estudiar junto.
               </p>
             </div>
 
             <div className="max-w-5xl mx-auto">
-              <div className="bg-dark-card border border-brand-red/30 rounded-3xl overflow-hidden shadow-brand-red">
+              <div className="bg-surface-card border border-brand-red/30 rounded-3xl overflow-hidden shadow-brand-red">
                 <div className="grid md:grid-cols-5 gap-0">
                   <a
                     href={SUBTITLES_TOOL_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="md:col-span-2 relative aspect-video md:aspect-auto bg-gradient-to-br from-dark via-dark-secondary to-brand-red/10 flex items-center justify-center group cursor-pointer overflow-hidden border-b md:border-b-0 md:border-r border-dark-border"
+                    className="md:col-span-2 relative aspect-video md:aspect-auto bg-gradient-to-br from-surface via-surface-alt to-brand-red/10 flex items-center justify-center group cursor-pointer overflow-hidden border-b md:border-b-0 md:border-r border-surface-line"
                   >
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(215, 34, 41,0.15),transparent_60%)]" />
                     <div className="relative flex flex-col items-center text-center px-6">
@@ -356,8 +356,8 @@ export default function EsMetodoPage() {
                         <PlayCircle className="w-12 h-12 text-brand-red" />
                       </div>
                       <div className="text-xs uppercase tracking-widest text-brand-red font-bold mb-2">Clase 1 · Episodio 1</div>
-                      <div className="text-white font-bold text-lg leading-tight mb-1">Fórmula Fluente</div>
-                      <div className="text-gray-400 text-sm">por <strong className="text-white">Frank Florida</strong></div>
+                      <div className="text-ink font-bold text-lg leading-tight mb-1">Fórmula Fluente</div>
+                      <div className="text-ink-muted text-sm">por <strong className="text-ink">Frank Florida</strong></div>
                     </div>
                   </a>
 
@@ -367,31 +367,31 @@ export default function EsMetodoPage() {
                       <span className="text-brand-silver font-semibold text-sm">ETT Subtitles — video + subtítulos interactivos</span>
                     </div>
 
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+                    <h3 className="text-2xl md:text-3xl font-bold text-ink mb-4 leading-tight">
                       Empieza por la clase 1.
                       <br />
                       <span className="gradient-text">30 minutos que cambian tu perspectiva.</span>
                     </h3>
 
-                    <p className="text-gray-400 leading-relaxed mb-6">
-                      Frank explica por qué <em className="text-gray-200 not-italic">método</em> le gana al{' '}
-                      <em className="text-gray-200 not-italic">talento</em>, cuál es el threshold de
+                    <p className="text-ink-muted leading-relaxed mb-6">
+                      Frank explica por qué <em className="text-ink not-italic">método</em> le gana al{' '}
+                      <em className="text-ink not-italic">talento</em>, cuál es el threshold de
                       1.000 palabras, y cómo organizar 30 minutos por día para salir del "sé pero me trabo".
-                      La herramienta te deja <strong className="text-white">pausar, repetir y marcar palabras</strong> mientras escuchas.
+                      La herramienta te deja <strong className="text-ink">pausar, repetir y marcar palabras</strong> mientras escuchas.
                     </p>
 
                     <div className="grid grid-cols-3 gap-3 mb-6">
-                      <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-dark/60 border border-dark-border">
+                      <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-surface/60 border border-surface-line">
                         <MousePointerClick className="w-4 h-4 text-brand-red" />
-                        <span className="text-xs text-gray-300 leading-tight">Click en cualquier palabra</span>
+                        <span className="text-xs text-ink-soft leading-tight">Click en cualquier palabra</span>
                       </div>
-                      <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-dark/60 border border-dark-border">
+                      <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-surface/60 border border-surface-line">
                         <Pause className="w-4 h-4 text-brand-red" />
-                        <span className="text-xs text-gray-300 leading-tight">Pausa y repite la frase</span>
+                        <span className="text-xs text-ink-soft leading-tight">Pausa y repite la frase</span>
                       </div>
-                      <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-dark/60 border border-dark-border">
+                      <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-surface/60 border border-surface-line">
                         <BookOpen className="w-4 h-4 text-brand-red" />
-                        <span className="text-xs text-gray-300 leading-tight">Subtítulos PT + EN sincronizados</span>
+                        <span className="text-xs text-ink-soft leading-tight">Subtítulos PT + EN sincronizados</span>
                       </div>
                     </div>
 
@@ -404,7 +404,7 @@ export default function EsMetodoPage() {
                       Ver la clase 1 ahora
                       <ExternalLink className="w-4 h-4" />
                     </a>
-                    <p className="text-xs text-gray-500 mt-3">Gratis · abre en pestaña nueva · sin registro para empezar</p>
+                    <p className="text-xs text-ink-subtle mt-3">Gratis · abre en pestaña nueva · sin registro para empezar</p>
                   </div>
                 </div>
               </div>
@@ -419,10 +419,10 @@ export default function EsMetodoPage() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 Inmersión
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
                 Inmersión no es solo <span className="gradient-text">viajar</span>
               </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
+              <p className="text-ink-muted max-w-2xl mx-auto">
                 Tres capas, tres oportunidades — y la más poderosa no exige pasaporte.
               </p>
             </div>
@@ -431,12 +431,12 @@ export default function EsMetodoPage() {
               {immersionLayers.map((layer) => {
                 const c = colorMap[layer.color as keyof typeof colorMap]
                 return (
-                  <div key={layer.title} className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover">
+                  <div key={layer.title} className="bg-surface-card border border-surface-line rounded-2xl p-6 card-hover">
                     <div className={`w-12 h-12 rounded-xl ${c.bg} border ${c.border} flex items-center justify-center mb-4`}>
                       <layer.icon className={`w-6 h-6 ${c.icon}`} />
                     </div>
-                    <h3 className="font-bold text-white text-xl mb-3">{layer.title}</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">{layer.desc}</p>
+                    <h3 className="font-bold text-ink text-xl mb-3">{layer.title}</h3>
+                    <p className="text-ink-muted text-sm leading-relaxed">{layer.desc}</p>
                   </div>
                 )
               })}
@@ -445,16 +445,16 @@ export default function EsMetodoPage() {
         </section>
 
         {/* PRINCIPLES */}
-        <section className="section-padding bg-dark-secondary border-y border-dark-border">
+        <section className="section-padding bg-surface-alt border-y border-surface-line">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 Principios Prácticos
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
                 6 mantras para tu <span className="gradient-text">práctica diaria</span>
               </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
+              <p className="text-ink-muted max-w-2xl mx-auto">
                 Cómo organizar una rutina diaria de 1 hora para estudiar inglés de verdad —
                 sin enredarte en apps, series aleatorias o clases que no destraban el habla.
               </p>
@@ -462,12 +462,12 @@ export default function EsMetodoPage() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
               {principles.map((p) => (
-                <div key={p.title} className="bg-dark-card border border-dark-border rounded-2xl p-6">
+                <div key={p.title} className="bg-surface-card border border-surface-line rounded-2xl p-6">
                   <div className="w-10 h-10 rounded-lg bg-brand-red/10 border border-brand-red/20 flex items-center justify-center mb-4">
                     <p.icon className="w-5 h-5 text-brand-red" />
                   </div>
-                  <h3 className="font-bold text-white text-base mb-2 leading-snug">{p.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{p.desc}</p>
+                  <h3 className="font-bold text-ink text-base mb-2 leading-snug">{p.title}</h3>
+                  <p className="text-ink-muted text-sm leading-relaxed">{p.desc}</p>
                 </div>
               ))}
             </div>
@@ -477,7 +477,7 @@ export default function EsMetodoPage() {
         {/* CTA */}
         <section className="section-padding">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center bg-dark-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden">
+            <div className="max-w-3xl mx-auto text-center bg-surface-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 to-brand-silver/8 pointer-events-none" />
               <div className="relative">
                 <div className="inline-flex items-center justify-center gap-3 mb-6">
@@ -493,10 +493,10 @@ export default function EsMetodoPage() {
                   Empieza a practicar
                 </span>
 
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold text-ink mb-5 leading-tight">
                   Participa del <span className="gradient-text">próximo encuentro online gratis</span>
                 </h2>
-                <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-xl mx-auto">
+                <p className="text-ink-muted text-lg leading-relaxed mb-8 max-w-xl mx-auto">
                   Todos los lunes a las 20h BRT (GMT-3) hacemos una sesión estructurada de speaking en inglés.
                   Método + comunidad + práctica. Regístrate y recibe el link de Google Meet.
                 </p>

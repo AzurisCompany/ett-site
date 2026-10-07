@@ -91,7 +91,7 @@ export default function Navbar() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         scrolled
-          ? 'bg-dark/95 backdrop-blur-md border-b border-dark-border shadow-lg'
+          ? 'bg-surface/95 backdrop-blur-md border-b border-surface-line shadow-lg'
           : 'bg-transparent'
       )}
     >
@@ -100,7 +100,7 @@ export default function Navbar() {
         <Link href={homeHref} className="flex items-center shrink-0" aria-label="English Talk Time — início">
           {/* Celular: só o símbolo. A partir de sm: assinatura horizontal completa. */}
           <Image
-            src="/images/ett-simbolo.svg"
+            src="/images/ett-simbolo-positiva.svg"
             alt="English Talk Time"
             width={44}
             height={40}
@@ -108,7 +108,7 @@ export default function Navbar() {
             priority
           />
           <Image
-            src="/images/ett-logo-horizontal-negativa.svg"
+            src="/images/ett-logo-horizontal-positiva.svg"
             alt="English Talk Time — Programa de Aceleração de Inglês"
             width={218}
             height={48}
@@ -123,12 +123,12 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-gray-300 hover:text-brand-red transition-colors text-sm font-medium inline-flex items-baseline gap-0.5"
+              className="text-ink-soft hover:text-brand-red transition-colors text-sm font-medium inline-flex items-baseline gap-0.5"
             >
               {link.label}
               {link.langTag && (
                 <sup
-                  className="text-[9px] font-bold tracking-wider text-gray-500 ml-0.5"
+                  className="text-[9px] font-bold tracking-wider text-ink-subtle ml-0.5"
                   title="Page only available in Portuguese"
                   aria-label="Portuguese"
                 >
@@ -146,14 +146,14 @@ export default function Navbar() {
             <button
               onClick={() => setLangOpen(!langOpen)}
               onBlur={() => setTimeout(() => setLangOpen(false), 150)}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-dark-border text-gray-300 hover:text-brand-red hover:border-brand-red/30 transition-colors text-sm"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-surface-line text-ink-soft hover:text-brand-red hover:border-brand-red/30 transition-colors text-sm"
               aria-label={m.language}
             >
               <Globe className="w-4 h-4" />
               <span className="font-medium">{LOCALE_FLAGS[locale]} {LOCALE_LABELS[locale]}</span>
             </button>
             {langOpen && (
-              <div className="absolute right-0 top-full mt-2 w-32 bg-dark-card border border-dark-border rounded-lg shadow-xl overflow-hidden">
+              <div className="absolute right-0 top-full mt-2 w-32 bg-surface-card border border-surface-line rounded-lg shadow-xl overflow-hidden">
                 {LOCALES.map((loc) => (
                   <Link
                     key={loc}
@@ -163,7 +163,7 @@ export default function Navbar() {
                       'block px-3 py-2 text-sm transition-colors',
                       loc === locale
                         ? 'bg-brand-red/10 text-brand-red'
-                        : 'text-gray-300 hover:bg-dark-border hover:text-white'
+                        : 'text-ink-soft hover:bg-surface-line hover:text-ink'
                     )}
                   >
                     {LOCALE_FLAGS[loc]} {LOCALE_LABELS[loc]}
@@ -186,7 +186,7 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="xl:hidden text-gray-300 hover:text-white transition-colors"
+            className="xl:hidden text-ink-soft hover:text-ink transition-colors"
             aria-label="Menu"
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -196,18 +196,18 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="xl:hidden bg-dark-secondary border-t border-dark-border px-4 py-4 flex flex-col gap-4">
+        <div className="xl:hidden bg-surface-alt border-t border-surface-line px-4 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="text-gray-300 hover:text-brand-red transition-colors text-base font-medium py-1 inline-flex items-baseline gap-1"
+              className="text-ink-soft hover:text-brand-red transition-colors text-base font-medium py-1 inline-flex items-baseline gap-1"
             >
               {link.label}
               {link.langTag && (
                 <sup
-                  className="text-[10px] font-bold tracking-wider text-gray-500"
+                  className="text-[10px] font-bold tracking-wider text-ink-subtle"
                   aria-label="Portuguese"
                 >
                   {link.langTag}
@@ -217,7 +217,7 @@ export default function Navbar() {
           ))}
 
           {/* Language switcher (mobile) */}
-          <div className="flex gap-2 pt-2 border-t border-dark-border">
+          <div className="flex gap-2 pt-2 border-t border-surface-line">
             {LOCALES.map((loc) => (
               <Link
                 key={loc}
@@ -227,7 +227,7 @@ export default function Navbar() {
                   'flex-1 text-center px-3 py-2 rounded-lg text-sm font-medium transition-colors',
                   loc === locale
                     ? 'bg-brand-red/10 text-brand-red border border-brand-red/30'
-                    : 'bg-dark-card text-gray-400 border border-dark-border'
+                    : 'bg-surface-card text-ink-muted border border-surface-line'
                 )}
               >
                 {LOCALE_FLAGS[loc]} {LOCALE_LABELS[loc]}

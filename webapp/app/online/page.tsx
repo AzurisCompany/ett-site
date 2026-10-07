@@ -141,7 +141,7 @@ export default function OnlinePage() {
       />
       <Navbar />
 
-      <main className="bg-dark min-h-screen pt-16">
+      <main className="bg-surface min-h-screen pt-16">
         {/* HERO */}
         <section className="relative section-padding overflow-hidden hero-grid">
           <div className="absolute inset-0 bg-gradient-to-b from-brand-silver/8 via-transparent to-transparent pointer-events-none" />
@@ -151,12 +151,12 @@ export default function OnlinePage() {
                 <Wifi className="w-3.5 h-3.5" />
                 Online · Toda Segunda · 20h
               </span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-ink mb-6 leading-tight">
                 Conversação em Inglês Online —{' '}
                 <span className="gradient-text">Toda Segunda às 20h</span>
               </h1>
-              <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
-                Grupo de conversação semanal <strong className="text-white">gratuito</strong>{' '}
+              <p className="text-ink-soft text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
+                Grupo de conversação semanal <strong className="text-ink">gratuito</strong>{' '}
                 via Google Meet. 1h30 de treino de fala estruturado, com ferramentas de apoio
                 com IA. Aberto a profissionais de tech do Brasil inteiro.
               </p>
@@ -170,25 +170,25 @@ export default function OnlinePage() {
                 </a>
                 <Link
                   href="#datas"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-dark-border text-white font-semibold hover:border-brand-silver/50 hover:bg-dark-card transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-surface-line text-ink font-semibold hover:border-brand-silver/50 hover:bg-surface-card transition-all"
                 >
                   Ver próximas datas
                 </Link>
               </div>
               <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-dark-border bg-dark-card text-sm text-gray-300">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-surface-line bg-surface-card text-sm text-ink-soft">
                   <Clock className="w-4 h-4 text-brand-silver" />
                   20h–21h30
                 </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-dark-border bg-dark-card text-sm text-gray-300">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-surface-line bg-surface-card text-sm text-ink-soft">
                   <Wifi className="w-4 h-4 text-brand-silver" />
                   Google Meet
                 </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-dark-border bg-dark-card text-sm text-gray-300">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-surface-line bg-surface-card text-sm text-ink-soft">
                   <Globe2 className="w-4 h-4 text-brand-silver" />
                   Brasil inteiro
                 </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-dark-border bg-dark-card text-sm text-brand-red font-medium">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-surface-line bg-surface-card text-sm text-brand-red font-medium">
                   Gratuito
                 </div>
               </div>
@@ -197,13 +197,13 @@ export default function OnlinePage() {
         </section>
 
         {/* COMO FUNCIONA */}
-        <section className="section-padding bg-dark-secondary border-y border-dark-border">
+        <section className="section-padding bg-surface-alt border-y border-surface-line">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                 Como funciona o <span className="gradient-text">encontro online</span>
               </h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-ink-muted text-lg">
                 Sem catraca e sem cartão. Você se inscreve, recebe o link, entra na sala
                 e participa.
               </p>
@@ -233,15 +233,15 @@ export default function OnlinePage() {
               ].map((s) => (
                 <div
                   key={s.title}
-                  className="bg-dark-card border border-dark-border rounded-2xl p-5 card-hover relative overflow-hidden"
+                  className="bg-surface-card border border-surface-line rounded-2xl p-5 card-hover relative overflow-hidden"
                 >
                   <span className="absolute top-3 right-4 text-5xl font-black text-brand-silver/15 leading-none select-none">
                     {s.n}
                   </span>
-                  <h3 className="font-bold text-white text-base mb-2 pr-8 relative">
+                  <h3 className="font-bold text-ink text-base mb-2 pr-8 relative">
                     {s.title}
                   </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed relative">{s.body}</p>
+                  <p className="text-ink-muted text-sm leading-relaxed relative">{s.body}</p>
                 </div>
               ))}
             </div>
@@ -249,23 +249,23 @@ export default function OnlinePage() {
         </section>
 
         {/* PROXIMAS DATAS */}
-        <section id="datas" className="section-padding bg-dark">
+        <section id="datas" className="section-padding bg-surface">
           <div className="container mx-auto px-4">
             <div className="text-center mb-10 max-w-3xl mx-auto">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 Próximas Segundas
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                 Próximas datas <span className="gradient-text">online</span>
               </h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-ink-muted text-lg">
                 Todo encontro online segue o mesmo formato: 20h–21h30, Google Meet, treino de fala
                 guiado com tópico anunciado antes.
               </p>
             </div>
 
             {proximosOnline.length === 0 ? (
-              <p className="text-center text-gray-400 max-w-md mx-auto">
+              <p className="text-center text-ink-muted max-w-md mx-auto">
                 Sem datas online confirmadas nos próximos dias.
                 <br />
                 <Link href="/agenda/" className="text-brand-silver underline mt-2 inline-block">
@@ -280,17 +280,17 @@ export default function OnlinePage() {
                   return (
                     <div
                       key={ev.date}
-                      className="relative bg-dark-card border border-brand-silver/20 rounded-xl p-3.5 card-hover"
+                      className="relative bg-surface-card border border-brand-silver/20 rounded-xl p-3.5 card-hover"
                     >
                       <div className="flex items-start gap-3">
                         <div className="shrink-0 w-14 rounded-lg border border-brand-silver/30 bg-brand-silver/5 text-center py-1.5">
                           <div className="text-[10px] uppercase tracking-wider font-bold text-brand-silver">
                             {ev.weekday.slice(0, 3).toLowerCase()}
                           </div>
-                          <div className="text-white font-black text-xl leading-none my-0.5">
+                          <div className="text-ink font-black text-xl leading-none my-0.5">
                             {dayNum}
                           </div>
-                          <div className="text-gray-500 text-[10px] uppercase tracking-wider">
+                          <div className="text-ink-subtle text-[10px] uppercase tracking-wider">
                             {monthAbbr}
                           </div>
                         </div>
@@ -300,15 +300,15 @@ export default function OnlinePage() {
                               <Wifi className="w-2.5 h-2.5" />
                               online
                             </span>
-                            <span className="ml-auto inline-flex items-center gap-1 text-xs text-gray-400">
+                            <span className="ml-auto inline-flex items-center gap-1 text-xs text-ink-muted">
                               <Clock className="w-3 h-3" />
                               {ev.time}
                             </span>
                           </div>
-                          <h3 className="font-bold text-white text-sm leading-snug mb-1 truncate">
+                          <h3 className="font-bold text-ink text-sm leading-snug mb-1 truncate">
                             {ev.title}
                           </h3>
-                          <p className="text-xs text-gray-500 leading-snug truncate">
+                          <p className="text-xs text-ink-subtle leading-snug truncate">
                             Online · Google Meet
                           </p>
                         </div>
@@ -322,7 +322,7 @@ export default function OnlinePage() {
             <div className="text-center mt-8">
               <Link
                 href="/agenda/"
-                className="inline-flex items-center gap-2 text-gray-400 hover:text-brand-red text-sm transition-colors"
+                className="inline-flex items-center gap-2 text-ink-muted hover:text-brand-red text-sm transition-colors"
               >
                 <Calendar className="w-4 h-4" />
                 Ver agenda completa (online + presencial)
@@ -332,15 +332,15 @@ export default function OnlinePage() {
         </section>
 
         {/* POR QUE GRUPO */}
-        <section className="section-padding bg-dark-secondary border-y border-dark-border">
+        <section className="section-padding bg-surface-alt border-y border-surface-line">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-10">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                   Não é aula 1-on-1.{' '}
                   <span className="gradient-text">É grupo. Por isso funciona.</span>
                 </h2>
-                <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                <p className="text-ink-muted text-lg max-w-2xl mx-auto">
                   Pra destravar a conversação, você precisa de coisas que aula individual
                   não entrega.
                 </p>
@@ -366,13 +366,13 @@ export default function OnlinePage() {
                 ].map((b) => (
                   <div
                     key={b.title}
-                    className="bg-dark-card border border-dark-border rounded-2xl p-5"
+                    className="bg-surface-card border border-surface-line rounded-2xl p-5"
                   >
                     <div className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-brand-silver shrink-0 mt-0.5" />
                       <div>
-                        <h3 className="font-bold text-white text-base mb-2">{b.title}</h3>
-                        <p className="text-gray-400 text-sm leading-relaxed">{b.body}</p>
+                        <h3 className="font-bold text-ink text-base mb-2">{b.title}</h3>
+                        <p className="text-ink-muted text-sm leading-relaxed">{b.body}</p>
                       </div>
                     </div>
                   </div>
@@ -383,9 +383,9 @@ export default function OnlinePage() {
         </section>
 
         {/* CROSS-LINK CURITIBA */}
-        <section className="section-padding bg-dark">
+        <section className="section-padding bg-surface">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto bg-dark-card border border-brand-red/30 rounded-3xl p-8 md:p-10">
+            <div className="max-w-3xl mx-auto bg-surface-card border border-brand-red/30 rounded-3xl p-8 md:p-10">
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-12 h-12 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-6 h-6 text-brand-red" />
@@ -394,12 +394,12 @@ export default function OnlinePage() {
                   <div className="text-xs uppercase tracking-wider text-brand-red font-semibold mb-1">
                     Mora em Curitiba?
                   </div>
-                  <h3 className="font-bold text-white text-xl md:text-2xl">
+                  <h3 className="font-bold text-ink text-xl md:text-2xl">
                     Tem presencial também — toda semana
                   </h3>
                 </div>
               </div>
-              <p className="text-gray-400 leading-relaxed mb-5">
+              <p className="text-ink-muted leading-relaxed mb-5">
                 Pra quem está em Curitiba ou região, além do online de segunda, tem encontro
                 presencial semanal em rotação pelo IEP, UTFPR, Hard Rock Cafe e Habitat. Nada
                 te impede de fazer os dois.
@@ -415,16 +415,16 @@ export default function OnlinePage() {
         </section>
 
         {/* CTA FINAL */}
-        <section className="section-padding bg-dark-secondary border-t border-dark-border">
+        <section className="section-padding bg-surface-alt border-t border-surface-line">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center bg-dark-card border border-brand-silver/30 rounded-3xl p-10 md:p-14 relative overflow-hidden">
+            <div className="max-w-3xl mx-auto text-center bg-surface-card border border-brand-silver/30 rounded-3xl p-10 md:p-14 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-brand-silver/8 to-brand-red/8 pointer-events-none" />
               <div className="relative">
                 <Users className="w-10 h-10 text-brand-silver mx-auto mb-5" />
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                   A próxima segunda <span className="gradient-text">vai te encontrar falando</span>
                 </h2>
-                <p className="text-gray-400 text-lg leading-relaxed mb-7 max-w-xl mx-auto">
+                <p className="text-ink-muted text-lg leading-relaxed mb-7 max-w-xl mx-auto">
                   Inscrição grátis em 2 minutos. Recebe o link do Google Meet, a agenda
                   completa e o material de boas-vindas.
                 </p>
@@ -435,7 +435,7 @@ export default function OnlinePage() {
                   Quero o link do próximo encontro online
                   <ArrowRight className="w-5 h-5" />
                 </a>
-                <p className="text-gray-500 text-xs mt-4 italic">
+                <p className="text-ink-subtle text-xs mt-4 italic">
                   Gratuito. Sem compromisso. Sem spam.
                 </p>
               </div>

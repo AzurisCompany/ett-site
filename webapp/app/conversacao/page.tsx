@@ -169,7 +169,7 @@ export default function ConversacaoPage() {
       />
       <Navbar />
 
-      <main className="bg-dark min-h-screen pt-16">
+      <main className="bg-surface min-h-screen pt-16">
         {/* HERO */}
         <section className="relative section-padding overflow-hidden hero-grid">
           <div className="absolute inset-0 bg-gradient-to-b from-brand-red/5 via-transparent to-transparent pointer-events-none" />
@@ -178,12 +178,12 @@ export default function ConversacaoPage() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-6">
                 Grupo de Conversação · Como Funciona
               </span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-ink mb-6 leading-tight">
                 Grupo de Conversação em Inglês —{' '}
                 <span className="gradient-text">com Treino de Fala</span> e Ferramentas de Apoio
               </h1>
-              <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
-                Encontros estruturados pra você <strong className="text-white">falar</strong>,
+              <p className="text-ink-soft text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
+                Encontros estruturados pra você <strong className="text-ink">falar</strong>,
                 não pra você ouvir. Online toda segunda, presencial em Curitiba, e
                 ferramentas com IA que preparam e consolidam entre os encontros.
                 Não é mais um conversation club genérico.
@@ -197,7 +197,7 @@ export default function ConversacaoPage() {
                 </Link>
                 <a
                   href={FORM_URL}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-dark-border text-white font-semibold hover:border-brand-red/50 hover:bg-dark-card transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-surface-line text-ink font-semibold hover:border-brand-red/50 hover:bg-surface-card transition-all"
                 >
                   Quero participar
                 </a>
@@ -207,13 +207,13 @@ export default function ConversacaoPage() {
         </section>
 
         {/* DIFERENCIAL */}
-        <section className="section-padding bg-dark-secondary border-y border-dark-border">
+        <section className="section-padding bg-surface-alt border-y border-surface-line">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                 Não é bate-papo. <span className="gradient-text">É treino de fala.</span>
               </h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-ink-muted text-lg">
                 A diferença entre um conversation club genérico e o ETT está em três coisas:
                 método, comunidade e ferramentas de apoio.
               </p>
@@ -241,35 +241,35 @@ export default function ConversacaoPage() {
               ].map((c) => (
                 <div
                   key={c.title}
-                  className={`bg-dark-card border rounded-2xl p-6 ${
+                  className={`bg-surface-card border rounded-2xl p-6 ${
                     c.tone === 'green'
                       ? 'border-brand-red/30 shadow-brand-red'
-                      : 'border-dark-border'
+                      : 'border-surface-line'
                   }`}
                 >
                   <div
                     className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${
                       c.tone === 'green'
                         ? 'bg-brand-red/10 border border-brand-red/30'
-                        : 'bg-dark-secondary border border-dark-border'
+                        : 'bg-surface-alt border border-surface-line'
                     }`}
                   >
                     <c.icon
                       className={`w-5 h-5 ${
-                        c.tone === 'green' ? 'text-brand-red' : 'text-gray-500'
+                        c.tone === 'green' ? 'text-brand-red' : 'text-ink-subtle'
                       }`}
                     />
                   </div>
                   <h3
                     className={`font-bold text-base mb-2 ${
-                      c.tone === 'green' ? 'text-white' : 'text-gray-400'
+                      c.tone === 'green' ? 'text-ink' : 'text-ink-muted'
                     }`}
                   >
                     {c.title}
                   </h3>
                   <p
                     className={`text-sm leading-relaxed ${
-                      c.tone === 'green' ? 'text-gray-300' : 'text-gray-500'
+                      c.tone === 'green' ? 'text-ink-soft' : 'text-ink-subtle'
                     }`}
                   >
                     {c.body}
@@ -281,16 +281,16 @@ export default function ConversacaoPage() {
         </section>
 
         {/* FORMATO */}
-        <section className="section-padding bg-dark">
+        <section className="section-padding bg-surface">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 max-w-3xl mx-auto">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 Cada encontro
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                 O que acontece em <span className="gradient-text">1h30 de encontro</span>
               </h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-ink-muted text-lg">
                 Tempo dedicado pra você falar — não pra ficar escutando o professor.
               </p>
             </div>
@@ -298,15 +298,15 @@ export default function ConversacaoPage() {
               {formato.map((f) => (
                 <div
                   key={f.title}
-                  className="bg-dark-card border border-dark-border rounded-2xl p-5 card-hover relative overflow-hidden"
+                  className="bg-surface-card border border-surface-line rounded-2xl p-5 card-hover relative overflow-hidden"
                 >
                   <span className="absolute top-3 right-4 text-5xl font-black text-brand-red/15 leading-none select-none">
                     {f.n}
                   </span>
-                  <h3 className="font-bold text-white text-base mb-2 pr-8 relative">
+                  <h3 className="font-bold text-ink text-base mb-2 pr-8 relative">
                     {f.title}
                   </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed relative">
+                  <p className="text-ink-muted text-sm leading-relaxed relative">
                     {f.desc}
                   </p>
                 </div>
@@ -318,18 +318,18 @@ export default function ConversacaoPage() {
         {/* FERRAMENTAS */}
         <section
           id="ferramentas"
-          className="section-padding bg-dark-secondary border-y border-dark-border"
+          className="section-padding bg-surface-alt border-y border-surface-line"
         >
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 max-w-3xl mx-auto">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 Ferramentas de apoio
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                 O encontro é metade do trabalho.{' '}
                 <span className="gradient-text">A outra metade é a sua rotina.</span>
               </h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-ink-muted text-lg">
                 Ferramentas com IA que preparam você antes e consolidam o aprendizado depois
                 — pra você chegar no próximo encontro com mais vocabulário e mais confiança.
               </p>
@@ -338,13 +338,13 @@ export default function ConversacaoPage() {
               {ferramentas.map((t) => (
                 <div
                   key={t.title}
-                  className="bg-dark-card border border-dark-border rounded-2xl p-5 card-hover"
+                  className="bg-surface-card border border-surface-line rounded-2xl p-5 card-hover"
                 >
                   <div className="w-10 h-10 rounded-xl bg-brand-silver/10 border border-brand-silver/30 flex items-center justify-center mb-3">
                     <Cpu className="w-5 h-5 text-brand-silver" />
                   </div>
-                  <h3 className="font-bold text-white text-base mb-2">{t.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{t.desc}</p>
+                  <h3 className="font-bold text-ink text-base mb-2">{t.title}</h3>
+                  <p className="text-ink-muted text-sm leading-relaxed">{t.desc}</p>
                 </div>
               ))}
             </div>
@@ -352,20 +352,20 @@ export default function ConversacaoPage() {
         </section>
 
         {/* ONDE E QUANDO */}
-        <section className="section-padding bg-dark">
+        <section className="section-padding bg-surface">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                 Onde e <span className="gradient-text">quando</span>
               </h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-ink-muted text-lg">
                 Dois canais — você escolhe (ou faz os dois).
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto">
               <Link
                 href="/online/"
-                className="bg-dark-card border border-brand-silver/30 rounded-2xl p-6 card-hover block hover:border-brand-silver/60"
+                className="bg-surface-card border border-brand-silver/30 rounded-2xl p-6 card-hover block hover:border-brand-silver/60"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 rounded-xl bg-brand-silver/10 border border-brand-silver/30 flex items-center justify-center">
@@ -375,10 +375,10 @@ export default function ConversacaoPage() {
                     <div className="text-xs uppercase tracking-wider text-brand-silver font-semibold">
                       Online
                     </div>
-                    <h3 className="font-bold text-white text-lg">Toda segunda · 20h–21h30</h3>
+                    <h3 className="font-bold text-ink text-lg">Toda segunda · 20h–21h30</h3>
                   </div>
                 </div>
-                <p className="text-gray-400 text-sm leading-relaxed mb-3">
+                <p className="text-ink-muted text-sm leading-relaxed mb-3">
                   Encontro semanal via Google Meet, aberto pra todo o Brasil. Treino de fala
                   estruturado em 1h30 — comunidade pequena o suficiente pra todo mundo falar.
                 </p>
@@ -388,7 +388,7 @@ export default function ConversacaoPage() {
               </Link>
               <Link
                 href="/curitiba/"
-                className="bg-dark-card border border-brand-red/30 rounded-2xl p-6 card-hover block hover:border-brand-red/60"
+                className="bg-surface-card border border-brand-red/30 rounded-2xl p-6 card-hover block hover:border-brand-red/60"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center">
@@ -398,10 +398,10 @@ export default function ConversacaoPage() {
                     <div className="text-xs uppercase tracking-wider text-brand-red font-semibold">
                       Presencial
                     </div>
-                    <h3 className="font-bold text-white text-lg">Curitiba · semanal</h3>
+                    <h3 className="font-bold text-ink text-lg">Curitiba · semanal</h3>
                   </div>
                 </div>
-                <p className="text-gray-400 text-sm leading-relaxed mb-3">
+                <p className="text-ink-muted text-sm leading-relaxed mb-3">
                   O IEP Talks, todo sábado das 10h às 12h no IEP. Networking
                   presencial com a comunidade ETT local, prática real e conversação ao vivo.
                 </p>
@@ -413,7 +413,7 @@ export default function ConversacaoPage() {
             <div className="text-center mt-8">
               <Link
                 href="/agenda/"
-                className="inline-flex items-center gap-2 text-gray-400 hover:text-brand-red text-sm transition-colors"
+                className="inline-flex items-center gap-2 text-ink-muted hover:text-brand-red text-sm transition-colors"
               >
                 <Calendar className="w-4 h-4" />
                 Ver agenda completa dos próximos encontros
@@ -423,11 +423,11 @@ export default function ConversacaoPage() {
         </section>
 
         {/* PRA QUEM É */}
-        <section className="section-padding bg-dark-secondary border-y border-dark-border">
+        <section className="section-padding bg-surface-alt border-y border-surface-line">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-10">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4">
                   Pra quem <span className="gradient-text">é o ETT</span>
                 </h2>
               </div>
@@ -435,10 +435,10 @@ export default function ConversacaoPage() {
                 {paraQuem.map((p) => (
                   <li
                     key={p}
-                    className="flex items-start gap-3 bg-dark-card border border-dark-border rounded-xl p-4"
+                    className="flex items-start gap-3 bg-surface-card border border-surface-line rounded-xl p-4"
                   >
                     <CheckCircle2 className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
-                    <span className="text-gray-300 text-base leading-relaxed">{p}</span>
+                    <span className="text-ink-soft text-base leading-relaxed">{p}</span>
                   </li>
                 ))}
               </ul>
@@ -447,15 +447,15 @@ export default function ConversacaoPage() {
         </section>
 
         {/* CTA */}
-        <section className="section-padding bg-dark">
+        <section className="section-padding bg-surface">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center bg-dark-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden">
+            <div className="max-w-3xl mx-auto text-center bg-surface-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 to-brand-silver/8 pointer-events-none" />
               <div className="relative">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                   Próximo encontro <span className="gradient-text">é segunda</span>
                 </h2>
-                <p className="text-gray-400 text-lg leading-relaxed mb-7 max-w-xl mx-auto">
+                <p className="text-ink-muted text-lg leading-relaxed mb-7 max-w-xl mx-auto">
                   Inscrição em 2 minutos. Você recebe o link do Google Meet, a agenda do mês
                   e os primeiros materiais das ferramentas de apoio.
                 </p>
@@ -466,7 +466,7 @@ export default function ConversacaoPage() {
                   Quero participar do grupo de conversação
                   <ArrowRight className="w-5 h-5" />
                 </a>
-                <p className="text-gray-500 text-xs mt-4 italic">
+                <p className="text-ink-subtle text-xs mt-4 italic">
                   Gratuito. Sem compromisso. Sem spam.
                 </p>
               </div>

@@ -19,9 +19,9 @@ export default function ParceirosFaixa() {
   return (
     // O id existe porque o rodapé aponta 4 links pra `/#parceiros`. Sem ele os
     // links não tinham onde ancorar e não faziam nada.
-    <section id="parceiros" className="bg-dark border-y border-dark-border py-12">
+    <section id="parceiros" className="bg-surface border-y border-surface-line py-12">
       <div className="container mx-auto px-4">
-        <p className="text-center text-xs uppercase tracking-widest text-gray-600 mb-8">
+        <p className="text-center text-xs uppercase tracking-widest text-ink-faint mb-8">
           Casas que recebem os encontros e parceiros do programa
         </p>
 
@@ -49,7 +49,7 @@ export default function ParceirosFaixa() {
           ))}
         </motion.div>
 
-        <p className="text-center text-sm text-gray-600 mt-8">
+        <p className="text-center text-sm text-ink-faint mt-8">
           <Link href="/detalhes/#parceiros" className="hover:text-brand-red transition-colors">
             Conhecer cada parceiro →
           </Link>

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-dark">
+    <main className="min-h-screen bg-surface">
       <Navbar />
       <PlanoDetalhe plano={plano} />
       <Footer />

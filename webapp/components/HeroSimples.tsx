@@ -33,7 +33,7 @@ export default function HeroSimples() {
           priority
           quality={70}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-dark/92 via-dark/88 to-dark" />
+        <div className="absolute inset-0 bg-gradient-to-b from-surface/92 via-surface/88 to-surface" />
         <div className="absolute inset-0 hero-grid opacity-60" />
       </div>
 
@@ -57,7 +57,7 @@ export default function HeroSimples() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl mx-auto"
+          className="text-4xl sm:text-5xl md:text-6xl font-bold text-ink mb-6 leading-tight max-w-4xl mx-auto"
         >
           Um grupo pra você{' '}
           <span className="brand-red">falar inglês</span>
@@ -69,11 +69,11 @@ export default function HeroSimples() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-4 leading-relaxed"
+          className="text-lg sm:text-xl text-ink-soft max-w-2xl mx-auto mb-4 leading-relaxed"
         >
-          O <strong className="text-white">English Talk Time</strong> é um grupo de conversação:
-          encontro <strong className="text-white">online toda segunda às 20h</strong> e encontros{' '}
-          <strong className="text-white">presenciais em Curitiba</strong>. Você entra, conversa e
+          O <strong className="text-ink">English Talk Time</strong> é um grupo de conversação:
+          encontro <strong className="text-ink">online toda segunda às 20h</strong> e encontros{' '}
+          <strong className="text-ink">presenciais em Curitiba</strong>. Você entra, conversa e
           treina a fala com um roteiro que puxa a palavra de todo mundo.
         </motion.p>
 
@@ -81,12 +81,12 @@ export default function HeroSimples() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.28 }}
-          className="text-base text-gray-400 max-w-2xl mx-auto mb-10"
+          className="text-base text-ink-muted max-w-2xl mx-auto mb-10"
         >
-          <strong className="text-gray-300">Participar dos encontros é gratuito e vai continuar
+          <strong className="text-ink-soft">Participar dos encontros é gratuito e vai continuar
           sendo.</strong> Quem quiser as ferramentas, o material e a mentoria individual entre um
           encontro e outro entra no programa —{' '}
-          <Link href="#precos" className="text-gray-300 underline underline-offset-4 hover:text-brand-red transition-colors">
+          <Link href="#precos" className="text-ink-soft underline underline-offset-4 hover:text-brand-red transition-colors">
             veja os planos
           </Link>
           .
@@ -97,7 +97,7 @@ export default function HeroSimples() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.45 }}
-          className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm text-gray-400"
+          className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm text-ink-muted"
         >
           {reassurances.map((r) => (
             <li key={r} className="inline-flex items-center gap-1.5">

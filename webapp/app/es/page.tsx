@@ -191,7 +191,7 @@ export default function EsHome() {
       />
       <Navbar />
 
-      <main className="bg-dark min-h-screen">
+      <main className="bg-surface min-h-screen">
         {/* HERO */}
         <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
           <div className="absolute inset-0">
@@ -203,9 +203,9 @@ export default function EsHome() {
               priority
               quality={85}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-dark/85 via-dark/75 to-dark" />
+            <div className="absolute inset-0 bg-gradient-to-b from-surface/85 via-surface/75 to-surface" />
             <div className="absolute inset-0 hero-grid opacity-60" />
-            <div className="absolute inset-0 bg-gradient-to-r from-dark/60 via-transparent to-dark/60" />
+            <div className="absolute inset-0 bg-gradient-to-r from-surface/60 via-transparent to-surface/60" />
           </div>
 
           <div className="relative z-10 container mx-auto px-4 text-center">
@@ -214,20 +214,20 @@ export default function EsHome() {
               <span>+365.000 estudiantes ya acelerados con la Fórmula Fluente</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight max-w-5xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-ink mb-6 leading-tight max-w-5xl mx-auto">
               Del <span className="brand-red">inglés trabado</span>{' '}
               al <span className="brand-silver">inglés funcional</span>{' '}
               <br className="hidden md:block" />
               para el mercado internacional tech
             </h1>
 
-            <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-              <span className="text-white font-semibold">Grupo de conversación en inglés</span> para
+            <p className="text-lg sm:text-xl text-ink-soft max-w-3xl mx-auto mb-10 leading-relaxed">
+              <span className="text-ink font-semibold">Grupo de conversación en inglés</span> para
               profesionales tech que quieren <span className="text-brand-red font-medium">destrabar el habla</span> y{' '}
               <span className="text-brand-silver font-medium">llegar a la fluidez</span>.
               Práctica guiada + herramientas con IA, en una rutina diaria estructurada.
-              Encuentros <span className="text-white">online (todos los lunes)</span> y{' '}
-              <span className="text-white">presenciales en Curitiba, Brasil</span>.
+              Encuentros <span className="text-ink">online (todos los lunes)</span> y{' '}
+              <span className="text-ink">presenciales en Curitiba, Brasil</span>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
@@ -249,11 +249,11 @@ export default function EsHome() {
               {stats.map((stat, i) => (
                 <div
                   key={i}
-                  className="flex flex-col items-center gap-1 px-4 py-3 rounded-xl bg-dark-card/80 border border-dark-border backdrop-blur-sm"
+                  className="flex flex-col items-center gap-1 px-4 py-3 rounded-xl bg-surface-card/80 border border-surface-line backdrop-blur-sm"
                 >
                   <stat.icon className="w-4 h-4 text-brand-red mb-1" />
                   <span className="text-xl font-bold text-brand-red">{stat.value}</span>
-                  <span className="text-xs text-gray-400 text-center">{stat.label}</span>
+                  <span className="text-xs text-ink-muted text-center">{stat.label}</span>
                 </div>
               ))}
             </div>
@@ -261,16 +261,16 @@ export default function EsHome() {
         </section>
 
         {/* ABOUT / VALUE PROPS */}
-        <section id="about" className="section-padding bg-dark-secondary border-y border-dark-border">
+        <section id="about" className="section-padding bg-surface-alt border-y border-surface-line">
           <div className="container mx-auto px-4">
             <div className="text-center mb-14 max-w-3xl mx-auto">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 Por qué ETT
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
                 No es otro curso de inglés. <span className="gradient-text">Es un ecosistema de práctica.</span>
               </h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-ink-muted text-lg">
                 Estudiaste inglés por años. Lo entiendes. Pero cuando es hora de hablar en una reunión
                 o entrevista, te trabas. ETT está diseñado específicamente para ese bloqueo.
               </p>
@@ -278,12 +278,12 @@ export default function EsHome() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
               {valueProps.map((vp, i) => (
-                <div key={i} className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover">
+                <div key={i} className="bg-surface-card border border-surface-line rounded-2xl p-6 card-hover">
                   <div className="w-11 h-11 rounded-xl bg-brand-red/10 border border-brand-red/20 flex items-center justify-center mb-4">
                     <vp.icon className="w-5 h-5 text-brand-red" />
                   </div>
-                  <h3 className="font-bold text-white text-base mb-2 leading-snug">{vp.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{vp.desc}</p>
+                  <h3 className="font-bold text-ink text-base mb-2 leading-snug">{vp.title}</h3>
+                  <p className="text-ink-muted text-sm leading-relaxed">{vp.desc}</p>
                 </div>
               ))}
             </div>
@@ -297,12 +297,12 @@ export default function EsHome() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 El Método
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-ink mb-6 leading-tight">
                 <span className="gradient-text">Threshold + Inmersión = Fluidez</span>
               </h2>
-              <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+              <p className="text-ink-muted text-lg mb-8 leading-relaxed">
                 El método Fórmula Fluente (adaptado de Frank Florida — 13 idiomas, +365.000 estudiantes)
-                dice que la fluidez no es talento. Es alcanzar el <strong className="text-white">threshold de vocabulario (~1.000 palabras)</strong>
+                dice que la fluidez no es talento. Es alcanzar el <strong className="text-ink">threshold de vocabulario (~1.000 palabras)</strong>
                 {' '}donde el subconsciente toma el control, y luego maximizar la exposición. ETT estructura las dos mitades.
               </p>
               <Link
@@ -316,16 +316,16 @@ export default function EsHome() {
         </section>
 
         {/* TOOLS */}
-        <section id="tools" className="section-padding bg-dark-secondary border-y border-dark-border">
+        <section id="tools" className="section-padding bg-surface-alt border-y border-surface-line">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 max-w-3xl mx-auto">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 Herramientas con IA
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
                 10 herramientas con IA para <span className="gradient-text">destrabar el inglés hablado</span>
               </h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-ink-muted text-lg">
                 Diagnóstico de vocabulario, series con subtítulos, audiolibros, simulador con ChatGPT,
                 flashcards inteligentes y más — una rutina diaria de práctica precisa y relevante.
               </p>
@@ -335,10 +335,10 @@ export default function EsHome() {
               {tools.map((tool, i) => (
                 <div
                   key={i}
-                  className={`bg-dark-card rounded-2xl p-5 card-hover flex flex-col ${
+                  className={`bg-surface-card rounded-2xl p-5 card-hover flex flex-col ${
                     tool.highlight
                       ? 'border border-brand-red/30 shadow-brand-red'
-                      : 'border border-dark-border'
+                      : 'border border-surface-line'
                   }`}
                 >
                   <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${
@@ -348,8 +348,8 @@ export default function EsHome() {
                   }`}>
                     <tool.icon className={`w-5 h-5 ${tool.highlight ? 'text-brand-red' : 'text-brand-silver'}`} />
                   </div>
-                  <h3 className="font-bold text-white text-base mb-2">{tool.name}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed flex-1">{tool.desc}</p>
+                  <h3 className="font-bold text-ink text-base mb-2">{tool.name}</h3>
+                  <p className="text-ink-muted text-sm leading-relaxed flex-1">{tool.desc}</p>
                 </div>
               ))}
             </div>
@@ -363,16 +363,16 @@ export default function EsHome() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 Resultados y Datos
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
                 Números que muestran <span className="gradient-text">por qué el método funciona</span>
               </h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-ink-muted text-lg">
                 Metas claras, progreso medible. ETT no vende promesa vaga — entrega un sistema con hitos pedagógicos comprobados.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
               {metrics.map((m, i) => (
-                <div key={i} className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover">
+                <div key={i} className="bg-surface-card border border-surface-line rounded-2xl p-6 card-hover">
                   <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${
                     m.color === 'green' ? 'bg-brand-red/10' : 'bg-brand-silver/10'
                   }`}>
@@ -381,8 +381,8 @@ export default function EsHome() {
                   <div className={`text-4xl font-black mb-1 ${m.color === 'green' ? 'text-brand-red' : 'text-brand-silver'}`}>
                     {m.value}
                   </div>
-                  <div className="font-bold text-white text-sm mb-2">{m.label}</div>
-                  <p className="text-gray-500 text-sm">{m.desc}</p>
+                  <div className="font-bold text-ink text-sm mb-2">{m.label}</div>
+                  <p className="text-ink-subtle text-sm">{m.desc}</p>
                 </div>
               ))}
             </div>
@@ -390,30 +390,30 @@ export default function EsHome() {
         </section>
 
         {/* TESTIMONIALS */}
-        <section className="section-padding bg-dark-secondary border-y border-dark-border">
+        <section className="section-padding bg-surface-alt border-y border-surface-line">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 max-w-3xl mx-auto">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 Testimonios
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
                 Profesionales tech que <span className="gradient-text">dejaron de trabarse</span>
               </h2>
             </div>
             <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
               {testimonials.map((t, i) => (
-                <div key={i} className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover relative">
+                <div key={i} className="bg-surface-card border border-surface-line rounded-2xl p-6 card-hover relative">
                   <Quote className="absolute top-5 right-5 w-8 h-8 text-brand-red/10" />
                   <div className="flex gap-0.5 mb-4">
                     {Array.from({ length: 5 }).map((_, j) => (
                       <Star key={j} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
                     ))}
                   </div>
-                  <p className="text-gray-300 text-sm leading-relaxed mb-5 italic">&ldquo;{t.text}&rdquo;</p>
+                  <p className="text-ink-soft text-sm leading-relaxed mb-5 italic">&ldquo;{t.text}&rdquo;</p>
                   <div className="flex items-center justify-between gap-3 flex-wrap">
                     <div>
-                      <div className="font-bold text-white text-sm">{t.name}</div>
-                      <div className="text-xs text-gray-500">{t.role}</div>
+                      <div className="font-bold text-ink text-sm">{t.name}</div>
+                      <div className="text-xs text-ink-subtle">{t.role}</div>
                     </div>
                     <span className="text-xs px-3 py-1 rounded-full bg-brand-red/10 text-brand-red border border-brand-red/20 font-medium whitespace-nowrap">
                       {t.tag}
@@ -422,7 +422,7 @@ export default function EsHome() {
                 </div>
               ))}
             </div>
-            <p className="text-center text-xs text-gray-600 mt-8 italic max-w-2xl mx-auto">
+            <p className="text-center text-xs text-ink-faint mt-8 italic max-w-2xl mx-auto">
               Testimonios ilustrativos basados en patrones reales de la comunidad.
             </p>
           </div>
@@ -435,10 +435,10 @@ export default function EsHome() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 Socios
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                 Construido con <span className="gradient-text">socios especializados</span>
               </h2>
-              <p className="text-gray-400">
+              <p className="text-ink-muted">
                 BeeTools (base estructurada), Cherry Top (inmersiones), Coders (mentoría de carrera internacional),
                 IEP (sede presencial Curitiba).
               </p>
@@ -459,22 +459,22 @@ export default function EsHome() {
         </section>
 
         {/* HOW IT WORKS */}
-        <section id="how" className="section-padding bg-dark-secondary border-y border-dark-border">
+        <section id="how" className="section-padding bg-surface-alt border-y border-surface-line">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 max-w-3xl mx-auto">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 Cómo funciona
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                 Del registro a las <span className="gradient-text">primeras palabras habladas</span>
               </h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
               {howItWorks.map((s) => (
-                <div key={s.n} className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover">
+                <div key={s.n} className="bg-surface-card border border-surface-line rounded-2xl p-6 card-hover">
                   <div className="text-5xl font-black gradient-text mb-3">{s.n}</div>
-                  <h3 className="font-bold text-white text-base mb-2 leading-tight">{s.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{s.desc}</p>
+                  <h3 className="font-bold text-ink text-base mb-2 leading-tight">{s.title}</h3>
+                  <p className="text-ink-muted text-sm leading-relaxed">{s.desc}</p>
                 </div>
               ))}
             </div>
@@ -484,7 +484,7 @@ export default function EsHome() {
         {/* ONLINE TEASER */}
         <section id="online" className="section-padding">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto bg-dark-card border border-brand-silver/30 rounded-3xl p-8 md:p-10">
+            <div className="max-w-3xl mx-auto bg-surface-card border border-brand-silver/30 rounded-3xl p-8 md:p-10">
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-12 h-12 rounded-xl bg-brand-silver/10 border border-brand-silver/30 flex items-center justify-center flex-shrink-0">
                   <Wifi className="w-6 h-6 text-brand-silver" />
@@ -493,12 +493,12 @@ export default function EsHome() {
                   <div className="text-xs uppercase tracking-wider text-brand-silver font-semibold mb-1">
                     Online — todos los lunes
                   </div>
-                  <h3 className="font-bold text-white text-xl md:text-2xl leading-snug">
+                  <h3 className="font-bold text-ink text-xl md:text-2xl leading-snug">
                     Práctica de speaking desde cualquier lugar — 20h BRT (GMT-3)
                   </h3>
                 </div>
               </div>
-              <p className="text-gray-400 leading-relaxed mb-5">
+              <p className="text-ink-muted leading-relaxed mb-5">
                 Si estás en Buenos Aires, Ciudad de México, Bogotá, Lima, Santiago o Montevideo — no importa.
                 El encuentro online de los lunes está abierto a quien tenga internet y audífonos.
                 90 minutos de práctica de habla estructurada vía Google Meet.
@@ -514,9 +514,9 @@ export default function EsHome() {
         </section>
 
         {/* FLORIDA IMMERSION */}
-        <section className="section-padding bg-dark-secondary border-y border-dark-border">
+        <section className="section-padding bg-surface-alt border-y border-surface-line">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto bg-dark-card border border-brand-red/30 rounded-3xl p-8 md:p-10">
+            <div className="max-w-3xl mx-auto bg-surface-card border border-brand-red/30 rounded-3xl p-8 md:p-10">
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-12 h-12 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center flex-shrink-0">
                   <Plane className="w-6 h-6 text-brand-red" />
@@ -525,12 +525,12 @@ export default function EsHome() {
                   <div className="text-xs uppercase tracking-wider text-brand-red font-semibold mb-1">
                     Inmersión EE.UU. — Florida
                   </div>
-                  <h3 className="font-bold text-white text-xl md:text-2xl leading-snug">
+                  <h3 className="font-bold text-ink text-xl md:text-2xl leading-snug">
                     ¿Quieres inmersión total en inglés? Florida 2027 — 2 cohortes
                   </h3>
                 </div>
               </div>
-              <p className="text-gray-400 leading-relaxed mb-5">
+              <p className="text-ink-muted leading-relaxed mb-5">
                 Inmersión intensiva en inglés en Florida, EE.UU. — en alianza con Cherry Top.
                 Para profesionales tech que apuntan a reubicación internacional o trabajo remoto con clientes en EE.UU.
               </p>
@@ -551,18 +551,18 @@ export default function EsHome() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 FAQ
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                 Preguntas <span className="gradient-text">frecuentes</span>
               </h2>
             </div>
             <div className="max-w-3xl mx-auto space-y-3">
               {faqs.map((f, i) => (
-                <details key={i} className="bg-dark-card border border-dark-border rounded-2xl p-5 group">
-                  <summary className="cursor-pointer font-semibold text-white text-base flex items-start gap-3 list-none">
+                <details key={i} className="bg-surface-card border border-surface-line rounded-2xl p-5 group">
+                  <summary className="cursor-pointer font-semibold text-ink text-base flex items-start gap-3 list-none">
                     <CheckCircle2 className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
                     <span className="flex-1">{f.q}</span>
                   </summary>
-                  <p className="text-gray-400 text-sm leading-relaxed mt-3 ml-8">{f.a}</p>
+                  <p className="text-ink-muted text-sm leading-relaxed mt-3 ml-8">{f.a}</p>
                 </details>
               ))}
             </div>
@@ -570,16 +570,16 @@ export default function EsHome() {
         </section>
 
         {/* CTA / SIGNUP */}
-        <section id="signup" className="section-padding bg-dark-secondary border-t border-dark-border">
+        <section id="signup" className="section-padding bg-surface-alt border-t border-surface-line">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center bg-dark-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden">
+            <div className="max-w-3xl mx-auto text-center bg-surface-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 to-brand-silver/8 pointer-events-none" />
               <div className="relative">
                 <Users className="w-10 h-10 text-brand-red mx-auto mb-5" />
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                   Participa del <span className="gradient-text">próximo encuentro gratis</span>
                 </h2>
-                <p className="text-gray-400 text-lg leading-relaxed mb-7 max-w-xl mx-auto">
+                <p className="text-ink-muted text-lg leading-relaxed mb-7 max-w-xl mx-auto">
                   Registro rápido. Recibes el link del próximo encuentro, el material de bienvenida y
                   acceso a la comunidad.
                 </p>
@@ -592,7 +592,7 @@ export default function EsHome() {
                   Regístrame
                   <ArrowRight className="w-5 h-5" />
                 </a>
-                <p className="text-gray-500 text-xs mt-4 italic">
+                <p className="text-ink-subtle text-xs mt-4 italic">
                   Gratis. Sin compromiso. Sin spam.
                 </p>
               </div>

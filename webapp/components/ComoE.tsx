@@ -37,7 +37,7 @@ const naoE = [
 
 export default function ComoE() {
   return (
-    <section id="como-e" className="section-padding bg-dark relative overflow-hidden">
+    <section id="como-e" className="section-padding bg-surface relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-silver/25 to-transparent" />
 
       <div className="container mx-auto px-4">
@@ -48,10 +48,10 @@ export default function ComoE() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-4">
             Como é um encontro
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-ink-muted max-w-2xl mx-auto text-lg">
             Uma hora e meia no online, duas no presencial — e sempre as mesmas três coisas.
           </p>
         </motion.div>
@@ -64,16 +64,16 @@ export default function ComoE() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-dark-card border border-dark-border rounded-2xl p-6"
+              className="bg-surface-card border border-surface-line rounded-2xl p-6"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-xl bg-brand-red/10 border border-brand-red/20 flex items-center justify-center">
                   <p.icon className="w-5 h-5 text-brand-red" />
                 </div>
-                <span className="text-2xl font-black text-dark-border">{i + 1}</span>
+                <span className="text-2xl font-black text-surface-line">{i + 1}</span>
               </div>
-              <h3 className="font-bold text-white text-lg mb-2">{p.titulo}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{p.texto}</p>
+              <h3 className="font-bold text-ink text-lg mb-2">{p.titulo}</h3>
+              <p className="text-ink-muted text-sm leading-relaxed">{p.texto}</p>
             </motion.div>
           ))}
         </div>
@@ -84,23 +84,23 @@ export default function ComoE() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.5 }}
-          className="max-w-3xl mx-auto bg-dark-card border border-dark-border rounded-2xl p-7"
+          className="max-w-3xl mx-auto bg-surface-card border border-surface-line rounded-2xl p-7"
         >
-          <h3 className="font-bold text-white text-lg mb-5">
+          <h3 className="font-bold text-ink text-lg mb-5">
             Pra deixar claro o que o ETT <em className="text-brand-red not-italic">não</em> é
           </h3>
           <ul className="grid sm:grid-cols-2 gap-3">
             {naoE.map((item) => (
-              <li key={item} className="flex items-start gap-2.5 text-sm text-gray-400">
-                <X className="w-4 h-4 text-gray-600 shrink-0 mt-0.5" />
+              <li key={item} className="flex items-start gap-2.5 text-sm text-ink-muted">
+                <X className="w-4 h-4 text-ink-faint shrink-0 mt-0.5" />
                 {item}
               </li>
             ))}
           </ul>
-          <p className="text-sm text-gray-500 mt-5 pt-5 border-t border-dark-border leading-relaxed">
+          <p className="text-sm text-ink-subtle mt-5 pt-5 border-t border-surface-line leading-relaxed">
             O ETT é mantido pela comunidade{' '}
-            <strong className="text-gray-300">DSSBR &amp; GUBigData IA</strong> junto com casas e
-            escolas parceiras. <strong className="text-gray-300">Aparecer num encontro é grátis e
+            <strong className="text-ink-soft">DSSBR &amp; GUBigData IA</strong> junto com casas e
+            escolas parceiras. <strong className="text-ink-soft">Aparecer num encontro é grátis e
             continua sendo.</strong> Quem quer as ferramentas, o material didático e a mentoria
             individual entre um encontro e outro entra no programa, que é pago — e as imersões e a
             mentoria de carreira são de parceiros. Nada disso é condição pra sentar na roda.

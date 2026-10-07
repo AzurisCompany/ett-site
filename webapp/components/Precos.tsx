@@ -7,7 +7,7 @@ import { cartoesHome, PRECO_ADESAO } from '@/lib/planos'
 
 export default function Precos() {
   return (
-    <section id="precos" className="section-padding bg-dark relative overflow-hidden">
+    <section id="precos" className="section-padding bg-surface relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/25 to-transparent" />
 
       <div className="container mx-auto px-4">
@@ -22,11 +22,11 @@ export default function Precos() {
             <Wallet className="w-3.5 h-3.5" />
             Quanto custa
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-4 leading-tight">
             Adesão ao programa: <span className="brand-red">R$ {PRECO_ADESAO}</span>.
             <br className="hidden sm:block" /> Depois, você escolhe.
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="text-ink-muted max-w-2xl mx-auto text-lg leading-relaxed">
             O encontro de segunda é aberto pra qualquer pessoa, sem cadastro e sem pagar — isso
             não muda. O que tem preço é a plataforma, o material didático e as horas de mentoria
             individual.
@@ -42,8 +42,8 @@ export default function Precos() {
           className="max-w-3xl mx-auto mb-10 flex items-start gap-3 rounded-2xl border border-brand-silver/25 bg-brand-silver/5 px-5 py-4"
         >
           <ShieldCheck className="w-5 h-5 text-brand-silver shrink-0 mt-0.5" />
-          <p className="text-sm text-gray-300 leading-relaxed">
-            <strong className="text-white">
+          <p className="text-sm text-ink-soft leading-relaxed">
+            <strong className="text-ink">
               Quem já está numa trilha gratuita não passa a pagar.
             </strong>{' '}
             Se você se cadastrou antes desta página mudar, sua adesão está isenta. Não existe
@@ -60,8 +60,8 @@ export default function Precos() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: i * 0.06 }}
-              className={`relative bg-dark-card border rounded-2xl p-6 flex flex-col ${
-                c.destaque ? 'border-brand-red/35 shadow-brand-red' : 'border-dark-border'
+              className={`relative bg-surface-card border rounded-2xl p-6 flex flex-col ${
+                c.destaque ? 'border-brand-red/35 shadow-brand-red' : 'border-surface-line'
               }`}
             >
               {c.etiqueta && (
@@ -69,37 +69,37 @@ export default function Precos() {
                   className={`absolute -top-2.5 left-5 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${
                     c.destaque
                       ? 'bg-brand-red-deep text-white'
-                      : 'bg-dark-secondary text-gray-400 border border-dark-border'
+                      : 'bg-surface-alt text-ink-muted border border-surface-line'
                   }`}
                 >
                   {c.etiqueta}
                 </span>
               )}
 
-              <h3 className="font-bold text-white text-lg mb-3 mt-2">{c.nome}</h3>
+              <h3 className="font-bold text-ink text-lg mb-3 mt-2">{c.nome}</h3>
 
               <div className="flex items-baseline gap-2 flex-wrap mb-1">
                 {c.precoAncora && (
-                  <span className="text-gray-600 text-sm line-through">{c.precoAncora}</span>
+                  <span className="text-ink-faint text-sm line-through">{c.precoAncora}</span>
                 )}
                 <span
                   className={`text-3xl font-black ${
-                    c.destaque ? 'text-brand-red' : 'text-gray-100'
+                    c.destaque ? 'text-brand-red' : 'text-ink'
                   }`}
                 >
                   {c.preco}
                 </span>
-                {c.precoNota && <span className="text-gray-500 text-sm">{c.precoNota}</span>}
+                {c.precoNota && <span className="text-ink-subtle text-sm">{c.precoNota}</span>}
               </div>
 
               {c.custoReal && (
-                <p className="text-white text-sm font-semibold mb-2">{c.custoReal}</p>
+                <p className="text-ink text-sm font-semibold mb-2">{c.custoReal}</p>
               )}
-              <p className="text-gray-400 text-sm mb-5 leading-relaxed">{c.paraQuem}</p>
+              <p className="text-ink-muted text-sm mb-5 leading-relaxed">{c.paraQuem}</p>
 
               <ul className="space-y-2.5 mb-5">
                 {c.itens.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-sm text-gray-300">
+                  <li key={item} className="flex items-start gap-2.5 text-sm text-ink-soft">
                     <Check
                       className={`w-4 h-4 shrink-0 mt-0.5 ${
                         c.destaque ? 'text-brand-red' : 'text-brand-silver'
@@ -110,14 +110,14 @@ export default function Precos() {
                 ))}
               </ul>
 
-              <p className="text-xs text-gray-500 leading-relaxed mb-6 mt-auto">{c.rodape}</p>
+              <p className="text-xs text-ink-subtle leading-relaxed mb-6 mt-auto">{c.rodape}</p>
 
               <Link
                 href={c.href}
                 className={`w-full inline-flex items-center justify-center px-5 py-3.5 rounded-lg font-bold text-sm transition-all ${
                   c.destaque
                     ? 'bg-brand-red-deep text-white hover:bg-brand-red-deep/90 hover:shadow-brand-red-lg'
-                    : 'border border-dark-border text-gray-200 hover:border-brand-red/40 hover:text-white'
+                    : 'border border-surface-line text-ink hover:border-brand-red/40 hover:text-ink'
                 }`}
               >
                 {c.cta}
@@ -133,8 +133,8 @@ export default function Precos() {
           transition={{ duration: 0.5 }}
           className="text-center mt-10"
         >
-          <p className="max-w-3xl mx-auto text-sm text-gray-500 leading-relaxed">
-            <strong className="text-gray-300">Não quer nada disso?</strong> Aparecer num encontro
+          <p className="max-w-3xl mx-auto text-sm text-ink-subtle leading-relaxed">
+            <strong className="text-ink-soft">Não quer nada disso?</strong> Aparecer num encontro
             pra ver como é continua livre pra qualquer pessoa, sem cadastro e sem pagar.
           </p>
         </motion.div>

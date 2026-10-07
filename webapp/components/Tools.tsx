@@ -119,7 +119,7 @@ const tools = [
 
 export default function Tools() {
   return (
-    <section id="ferramentas" className="section-padding bg-dark-secondary relative overflow-hidden">
+    <section id="ferramentas" className="section-padding bg-surface-alt relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-silver/30 to-transparent" />
 
       {/* Background glow */}
@@ -139,12 +139,12 @@ export default function Tools() {
           <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
             Ferramentas com IA para Inglês
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-6">
             10 ferramentas com IA pra
             <br />
             <span className="gradient-text">destravar conversação em inglês</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-ink-muted max-w-2xl mx-auto text-lg">
             Diagnóstico de vocabulário, séries com legenda, audiobook, simulação com ChatGPT,
             flashcards inteligentes e mais. Cada ferramenta resolve um bloqueio diferente —
             juntas, viram uma rotina diária de prática precisa, relevante e motivadora.
@@ -159,10 +159,10 @@ export default function Tools() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.5, delay: i * 0.07 }}
-              className={`relative bg-dark-card rounded-2xl p-5 card-hover flex flex-col ${
+              className={`relative bg-surface-card rounded-2xl p-5 card-hover flex flex-col ${
                 tool.highlight
                   ? 'border border-brand-red/30 shadow-brand-red'
-                  : 'border border-dark-border'
+                  : 'border border-surface-line'
               }`}
             >
               {/* Badge */}
@@ -181,13 +181,13 @@ export default function Tools() {
                 <tool.icon className={`w-5 h-5 ${tool.highlight ? 'text-brand-red' : 'text-brand-silver'}`} />
               </div>
 
-              <h3 className="font-bold text-white text-base mb-1">{tool.name}</h3>
+              <h3 className="font-bold text-ink text-base mb-1">{tool.name}</h3>
               <p className={`text-xs font-semibold uppercase tracking-wide mb-3 ${
                 tool.highlight ? 'text-brand-red' : 'text-brand-silver'
               }`}>
                 {tool.tagline}
               </p>
-              <p className="text-gray-400 text-sm leading-relaxed flex-1">
+              <p className="text-ink-muted text-sm leading-relaxed flex-1">
                 {tool.description}
               </p>
             </motion.div>
@@ -202,8 +202,8 @@ export default function Tools() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center mt-12"
         >
-          <p className="text-gray-400 mb-5">
-            Não são planos no papel — <strong className="text-gray-200">já estão no ar no ETT Player</strong>{' '}
+          <p className="text-ink-muted mb-5">
+            Não são planos no papel — <strong className="text-ink">já estão no ar no ETT Player</strong>{' '}
             e são gratuitas pra quem participa do programa. Veja o app funcionando logo abaixo. 👇
           </p>
           <a

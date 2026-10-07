@@ -176,7 +176,7 @@ const jsonLd = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#0A1630',
+  themeColor: '#FFFFFF',
 }
 
 export default function RootLayout({
@@ -192,7 +192,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-dark text-gray-100 antialiased">
+      <body className="bg-surface text-ink antialiased">
         {children}
         <WhatsappFloat />
         <Analytics />

@@ -137,7 +137,7 @@ const colorMap = {
 
 export default function FormulaFluente() {
   return (
-    <main className="bg-dark min-h-screen pt-16">
+    <main className="bg-surface min-h-screen pt-16">
       {/* HERO */}
       <section className="section-padding relative overflow-hidden hero-grid">
         <div className="absolute inset-0 bg-gradient-to-b from-brand-red/5 via-transparent to-transparent pointer-events-none" />
@@ -151,10 +151,10 @@ export default function FormulaFluente() {
             <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-6">
               Metodologia
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-ink mb-6 leading-tight">
               A <span className="gradient-text">Fórmula Fluente</span>
             </h1>
-            <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
+            <p className="text-ink-muted text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
               O método que destila por que algumas pessoas chegam à fluência em meses e outras
               passam anos travadas. Base científica, prática deliberada, threshold + imersão.
             </p>
@@ -166,15 +166,15 @@ export default function FormulaFluente() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="inline-flex flex-wrap items-center justify-center gap-3 sm:gap-5 p-6 sm:p-8 rounded-3xl border border-brand-red/30 bg-brand-red/5 shadow-brand-red"
             >
-              <span className="text-xl sm:text-3xl font-bold text-white">Threshold</span>
+              <span className="text-xl sm:text-3xl font-bold text-ink">Threshold</span>
               <span className="text-xl sm:text-3xl font-bold text-brand-silver">+</span>
-              <span className="text-xl sm:text-3xl font-bold text-white">Imersão</span>
+              <span className="text-xl sm:text-3xl font-bold text-ink">Imersão</span>
               <span className="text-xl sm:text-3xl font-bold text-brand-silver">=</span>
               <span className="text-xl sm:text-3xl font-bold gradient-text">Fluência</span>
             </motion.div>
 
-            <p className="text-gray-500 text-sm mt-6 max-w-xl mx-auto">
-              Adaptado da metodologia de <strong className="text-gray-300">Frank Florida</strong> —
+            <p className="text-ink-subtle text-sm mt-6 max-w-xl mx-auto">
+              Adaptado da metodologia de <strong className="text-ink-soft">Frank Florida</strong> —
               poliglota com 13 idiomas e mais de 365 mil alunos formados.
             </p>
           </motion.div>
@@ -182,7 +182,7 @@ export default function FormulaFluente() {
       </section>
 
       {/* PREMISSA */}
-      <section className="section-padding bg-dark-secondary border-t border-dark-border">
+      <section className="section-padding bg-surface-alt border-t border-surface-line">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto items-start">
             <motion.div
@@ -194,16 +194,16 @@ export default function FormulaFluente() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 A Premissa
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-5 leading-tight">
                 Não é talento.
                 <br />
                 <span className="gradient-text">É método.</span>
               </h2>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-ink-muted leading-relaxed">
                 Quem segue um método errado pode estudar 10 anos e nunca falar. Quem segue
                 o caminho certo chega à fluência funcional em poucos meses, mesmo do zero.
-                A diferença está em <em className="text-white not-italic">o que</em> você
-                pratica e <em className="text-white not-italic">na ordem</em> em que pratica.
+                A diferença está em <em className="text-ink not-italic">o que</em> você
+                pratica e <em className="text-ink not-italic">na ordem</em> em que pratica.
               </p>
             </motion.div>
 
@@ -212,25 +212,25 @@ export default function FormulaFluente() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.5 }}
-              className="bg-dark-card border border-dark-border rounded-2xl p-6"
+              className="bg-surface-card border border-surface-line rounded-2xl p-6"
             >
               <div className="flex items-center gap-3 mb-4">
                 <Layers className="w-6 h-6 text-brand-red" />
-                <h3 className="font-bold text-white text-lg">Idioma = LEGO Linguístico</h3>
+                <h3 className="font-bold text-ink text-lg">Idioma = LEGO Linguístico</h3>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+              <p className="text-ink-muted text-sm leading-relaxed mb-4">
                 Toda língua se reduz a duas peças:
               </p>
               <div className="grid grid-cols-2 gap-3">
                 <div className="p-4 rounded-xl bg-brand-red/5 border border-brand-red/20">
                   <div className="text-xs uppercase tracking-wider text-brand-red font-semibold mb-1">Palavras</div>
-                  <div className="text-white font-bold mb-1">Vocabulário</div>
-                  <div className="text-xs text-gray-500">Lado direito do cérebro · memorizar</div>
+                  <div className="text-ink font-bold mb-1">Vocabulário</div>
+                  <div className="text-xs text-ink-subtle">Lado direito do cérebro · memorizar</div>
                 </div>
                 <div className="p-4 rounded-xl bg-brand-silver/5 border border-brand-silver/20">
                   <div className="text-xs uppercase tracking-wider text-brand-silver font-semibold mb-1">Ordem</div>
-                  <div className="text-white font-bold mb-1">Gramática</div>
-                  <div className="text-xs text-gray-500">Lado esquerdo · entender regras</div>
+                  <div className="text-ink font-bold mb-1">Gramática</div>
+                  <div className="text-xs text-ink-subtle">Lado esquerdo · entender regras</div>
                 </div>
               </div>
             </motion.div>
@@ -251,10 +251,10 @@ export default function FormulaFluente() {
             <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
               Os 4 Pilares
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
               70% do tempo nas <span className="gradient-text">habilidades ativas</span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-ink-muted max-w-2xl mx-auto">
               É a inversão silenciosa que separa quem aprende de quem só estuda. A maioria dos
               cursos foca no que é mais fácil — ler e ouvir — e por isso a maioria das pessoas
               nunca fala.
@@ -271,16 +271,16 @@ export default function FormulaFluente() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-60px' }}
                   transition={{ duration: 0.5, delay: i * 0.08 }}
-                  className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover relative"
+                  className="bg-surface-card border border-surface-line rounded-2xl p-6 card-hover relative"
                 >
                   <div className={`w-11 h-11 rounded-xl ${c.bg} border ${c.border} flex items-center justify-center mb-4`}>
                     <p.icon className={`w-5 h-5 ${c.icon}`} />
                   </div>
                   <div className={`text-xs uppercase tracking-wider ${c.text} font-semibold mb-1`}>{p.type}</div>
-                  <h3 className="text-2xl font-bold text-white mb-3">{p.title}</h3>
+                  <h3 className="text-2xl font-bold text-ink mb-3">{p.title}</h3>
 
                   {/* progress bar */}
-                  <div className="h-2 rounded-full bg-dark-border overflow-hidden mb-2">
+                  <div className="h-2 rounded-full bg-surface-line overflow-hidden mb-2">
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${p.pct}%` }}
@@ -291,10 +291,10 @@ export default function FormulaFluente() {
                   </div>
                   <div className="flex justify-between items-center mb-4">
                     <span className={`text-3xl font-black ${c.text}`}>{p.pct}%</span>
-                    <span className="text-xs text-gray-500 uppercase tracking-wider">do tempo</span>
+                    <span className="text-xs text-ink-subtle uppercase tracking-wider">do tempo</span>
                   </div>
 
-                  <p className="text-gray-400 text-sm leading-relaxed">{p.note}</p>
+                  <p className="text-ink-muted text-sm leading-relaxed">{p.note}</p>
                 </motion.div>
               )
             })}
@@ -305,9 +305,9 @@ export default function FormulaFluente() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mt-10 text-center text-gray-500 text-sm max-w-2xl mx-auto"
+            className="mt-10 text-center text-ink-subtle text-sm max-w-2xl mx-auto"
           >
-            <strong className="text-gray-300">Princípio do grit:</strong> ataque o mais difícil
+            <strong className="text-ink-soft">Princípio do grit:</strong> ataque o mais difícil
             primeiro. Habilidade ativa contém a passiva — quem escreve sabe ler; quem fala entende.
             O contrário não é verdade.
           </motion.div>
@@ -315,7 +315,7 @@ export default function FormulaFluente() {
       </section>
 
       {/* THRESHOLD */}
-      <section className="section-padding bg-dark-secondary border-y border-dark-border relative overflow-hidden">
+      <section className="section-padding bg-surface-alt border-y border-surface-line relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-brand-red/5 blur-3xl pointer-events-none" />
         <div className="container mx-auto px-4 relative">
           <div className="max-w-5xl mx-auto">
@@ -329,10 +329,10 @@ export default function FormulaFluente() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 O Threshold
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
                 O ponto em que o <span className="gradient-text">aprendizado vira automático</span>
               </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
+              <p className="text-ink-muted max-w-2xl mx-auto">
                 O nível mínimo de vocabulário e gramática a partir do qual você consegue
                 manter uma conversa simples — e a partir do qual o subconsciente assume o trabalho.
               </p>
@@ -353,11 +353,11 @@ export default function FormulaFluente() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: '-60px' }}
                     transition={{ duration: 0.5, delay: i * 0.1 }}
-                    className={`bg-dark-card border ${b.highlight ? 'border-brand-red/40 shadow-brand-red' : 'border-dark-border'} rounded-2xl p-6 text-center`}
+                    className={`bg-surface-card border ${b.highlight ? 'border-brand-red/40 shadow-brand-red' : 'border-surface-line'} rounded-2xl p-6 text-center`}
                   >
                     <div className={`text-5xl font-black ${c.text} mb-1`}>{b.num}</div>
-                    <div className="text-xs uppercase tracking-wider text-gray-500 mb-3">{b.label}</div>
-                    <div className="text-gray-300 text-sm">{b.desc}</div>
+                    <div className="text-xs uppercase tracking-wider text-ink-subtle mb-3">{b.label}</div>
+                    <div className="text-ink-soft text-sm">{b.desc}</div>
                     {b.highlight && (
                       <div className="mt-3 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-semibold">
                         <Target className="w-3 h-3" /> threshold
@@ -375,13 +375,13 @@ export default function FormulaFluente() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.5 }}
-                className="bg-dark-card border border-dark-border rounded-2xl p-6"
+                className="bg-surface-card border border-surface-line rounded-2xl p-6"
               >
                 <div className="flex items-center gap-2 mb-4">
                   <AlertTriangle className="w-5 h-5 text-brand-silver" />
-                  <h3 className="font-bold text-white">Antes do threshold</h3>
+                  <h3 className="font-bold text-ink">Antes do threshold</h3>
                 </div>
-                <ul className="space-y-2.5 text-sm text-gray-400">
+                <ul className="space-y-2.5 text-sm text-ink-muted">
                   <li className="flex gap-2"><span className="text-brand-silver">→</span> Estude com cuidado, devagar, no papel.</li>
                   <li className="flex gap-2"><span className="text-brand-silver">→</span> Evite erros — o cérebro grava como um HD.</li>
                   <li className="flex gap-2"><span className="text-brand-silver">→</span> Use traduções controladas e gabaritos.</li>
@@ -394,13 +394,13 @@ export default function FormulaFluente() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.5 }}
-                className="bg-dark-card border border-brand-red/30 rounded-2xl p-6 shadow-brand-red"
+                className="bg-surface-card border border-brand-red/30 rounded-2xl p-6 shadow-brand-red"
               >
                 <div className="flex items-center gap-2 mb-4">
                   <Sparkles className="w-5 h-5 text-brand-red" />
-                  <h3 className="font-bold text-white">Depois do threshold</h3>
+                  <h3 className="font-bold text-ink">Depois do threshold</h3>
                 </div>
-                <ul className="space-y-2.5 text-sm text-gray-300">
+                <ul className="space-y-2.5 text-sm text-ink-soft">
                   <li className="flex gap-2"><span className="text-brand-red">→</span> Solte a língua — fale, erre, fale de novo.</li>
                   <li className="flex gap-2"><span className="text-brand-red">→</span> Multiplique a imersão por 10x.</li>
                   <li className="flex gap-2"><span className="text-brand-red">→</span> O subconsciente classifica os dados sozinho.</li>
@@ -425,10 +425,10 @@ export default function FormulaFluente() {
             <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
               Os 4 Estágios
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
               A escada da <span className="gradient-text">competência</span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-ink-muted max-w-2xl mx-auto">
               A maioria dos métodos tenta pular do estágio 2 direto pro 4 ("aprender intuitivamente").
               Crianças levam 4 anos com imersão 24/7 — você não tem esse tempo. Você precisa do estágio 3.
             </p>
@@ -442,13 +442,13 @@ export default function FormulaFluente() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className={`relative bg-dark-card border rounded-2xl p-6 ${s.highlight ? 'border-brand-red/40' : 'border-dark-border'}`}
+                className={`relative bg-surface-card border rounded-2xl p-6 ${s.highlight ? 'border-brand-red/40' : 'border-surface-line'}`}
               >
-                <div className={`text-6xl font-black mb-3 ${s.highlight ? 'text-brand-red' : 'text-gray-700'}`}>
+                <div className={`text-6xl font-black mb-3 ${s.highlight ? 'text-brand-red' : 'text-ink-faint'}`}>
                   {s.n}
                 </div>
-                <h3 className="font-bold text-white text-base mb-2 leading-tight">{s.label}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{s.sub}</p>
+                <h3 className="font-bold text-ink text-base mb-2 leading-tight">{s.label}</h3>
+                <p className="text-ink-subtle text-sm leading-relaxed">{s.sub}</p>
                 {s.n === 3 && (
                   <span className="absolute top-4 right-4 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-semibold">
                     threshold
@@ -466,7 +466,7 @@ export default function FormulaFluente() {
       </section>
 
       {/* PLANO DE ESTUDOS - 10 PASSOS */}
-      <section className="section-padding bg-dark-secondary border-y border-dark-border">
+      <section className="section-padding bg-surface-alt border-y border-surface-line">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -478,10 +478,10 @@ export default function FormulaFluente() {
             <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
               Plano de Estudos
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
               10 passos por <span className="gradient-text">lição</span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-ink-muted max-w-2xl mx-auto">
               Roteiro repetível, aplicável a qualquer aula ou material. Não é o mais rápido —
               é o que de fato leva à fluência.
             </p>
@@ -495,11 +495,11 @@ export default function FormulaFluente() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.4, delay: (i % 5) * 0.06 }}
-                className="bg-dark-card border border-dark-border rounded-xl p-5 card-hover"
+                className="bg-surface-card border border-surface-line rounded-xl p-5 card-hover"
               >
                 <div className="text-2xl font-black gradient-text mb-2">{step.n}</div>
-                <h3 className="font-bold text-white text-sm mb-2 leading-tight">{step.title}</h3>
-                <p className="text-gray-500 text-xs leading-relaxed">{step.desc}</p>
+                <h3 className="font-bold text-ink text-sm mb-2 leading-tight">{step.title}</h3>
+                <p className="text-ink-subtle text-xs leading-relaxed">{step.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -512,7 +512,7 @@ export default function FormulaFluente() {
             className="mt-10 max-w-2xl mx-auto p-5 rounded-xl border border-brand-silver/20 bg-brand-silver/5 flex items-start gap-3"
           >
             <CheckCircle2 className="w-5 h-5 text-brand-silver shrink-0 mt-0.5" />
-            <p className="text-gray-300 text-sm leading-relaxed">
+            <p className="text-ink-soft text-sm leading-relaxed">
               <strong className="text-brand-silver">Regra do ponto vermelho:</strong> marque
               cada erro. Repita só os errados, no dia seguinte, e nos dias seguintes —
               até o ponto vermelho virar zero.
@@ -535,13 +535,13 @@ export default function FormulaFluente() {
             <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
               Ferramenta ETT · Subtitles
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
               Escute o método na voz de{' '}
               <span className="gradient-text">quem criou</span>
             </h2>
-            <p className="text-gray-400 text-lg leading-relaxed">
+            <p className="text-ink-muted text-lg leading-relaxed">
               Não dá pra entender a Fórmula Fluente de verdade só lendo este resumo.
-              Você precisa <strong className="text-white">ouvir o Frank Florida</strong> —
+              Você precisa <strong className="text-ink">ouvir o Frank Florida</strong> —
               o poliglota que já formou mais de 365 mil brasileiros — explicando cada princípio,
               do jeito que ele explica há 30+ anos.
             </p>
@@ -554,14 +554,14 @@ export default function FormulaFluente() {
             transition={{ duration: 0.6 }}
             className="max-w-5xl mx-auto"
           >
-            <div className="bg-dark-card border border-brand-red/30 rounded-3xl overflow-hidden shadow-brand-red">
+            <div className="bg-surface-card border border-brand-red/30 rounded-3xl overflow-hidden shadow-brand-red">
               <div className="grid md:grid-cols-5 gap-0">
                 {/* Lado esquerdo — player visual */}
                 <a
                   href={SUBTITLES_TOOL_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="md:col-span-2 relative aspect-video md:aspect-auto bg-gradient-to-br from-dark via-dark-secondary to-brand-red/10 flex items-center justify-center group cursor-pointer overflow-hidden border-b md:border-b-0 md:border-r border-dark-border"
+                  className="md:col-span-2 relative aspect-video md:aspect-auto bg-gradient-to-br from-surface via-surface-alt to-brand-red/10 flex items-center justify-center group cursor-pointer overflow-hidden border-b md:border-b-0 md:border-r border-surface-line"
                 >
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(215, 34, 41,0.15),transparent_60%)]" />
                   <div className="relative flex flex-col items-center text-center px-6">
@@ -571,11 +571,11 @@ export default function FormulaFluente() {
                     <div className="text-xs uppercase tracking-widest text-brand-red font-bold mb-2">
                       Aula 1 · Episódio 1
                     </div>
-                    <div className="text-white font-bold text-lg leading-tight mb-1">
+                    <div className="text-ink font-bold text-lg leading-tight mb-1">
                       Fórmula Fluente
                     </div>
-                    <div className="text-gray-400 text-sm">
-                      por <strong className="text-white">Frank Florida</strong>
+                    <div className="text-ink-muted text-sm">
+                      por <strong className="text-ink">Frank Florida</strong>
                     </div>
                   </div>
                 </a>
@@ -589,37 +589,37 @@ export default function FormulaFluente() {
                     </span>
                   </div>
 
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+                  <h3 className="text-2xl md:text-3xl font-bold text-ink mb-4 leading-tight">
                     Comece pela aula 1.
                     <br />
                     <span className="gradient-text">Em 30 minutos você muda de chave.</span>
                   </h3>
 
-                  <p className="text-gray-400 leading-relaxed mb-6">
-                    Frank explica por que <em className="text-gray-200 not-italic">método</em> vence{' '}
-                    <em className="text-gray-200 not-italic">talento</em>, qual é o threshold de
+                  <p className="text-ink-muted leading-relaxed mb-6">
+                    Frank explica por que <em className="text-ink not-italic">método</em> vence{' '}
+                    <em className="text-ink not-italic">talento</em>, qual é o threshold de
                     1.000 palavras, e como organizar 30 minutos por dia pra sair do "sei mas trava".
-                    A ferramenta deixa você <strong className="text-white">pausar, repetir e marcar palavras</strong>{' '}
+                    A ferramenta deixa você <strong className="text-ink">pausar, repetir e marcar palavras</strong>{' '}
                     enquanto ouve.
                   </p>
 
                   {/* Mini-features */}
                   <div className="grid grid-cols-3 gap-3 mb-6">
-                    <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-dark/60 border border-dark-border">
+                    <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-surface/60 border border-surface-line">
                       <MousePointerClick className="w-4 h-4 text-brand-red" />
-                      <span className="text-xs text-gray-300 leading-tight">
+                      <span className="text-xs text-ink-soft leading-tight">
                         Clique em qualquer palavra
                       </span>
                     </div>
-                    <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-dark/60 border border-dark-border">
+                    <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-surface/60 border border-surface-line">
                       <Pause className="w-4 h-4 text-brand-red" />
-                      <span className="text-xs text-gray-300 leading-tight">
+                      <span className="text-xs text-ink-soft leading-tight">
                         Pause e repita a frase
                       </span>
                     </div>
-                    <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-dark/60 border border-dark-border">
+                    <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-surface/60 border border-surface-line">
                       <BookOpen className="w-4 h-4 text-brand-red" />
-                      <span className="text-xs text-gray-300 leading-tight">
+                      <span className="text-xs text-ink-soft leading-tight">
                         Legenda PT + EN sincronizada
                       </span>
                     </div>
@@ -634,7 +634,7 @@ export default function FormulaFluente() {
                     Assistir a aula 1 agora
                     <ExternalLink className="w-4 h-4" />
                   </a>
-                  <p className="text-xs text-gray-500 mt-3">
+                  <p className="text-xs text-ink-subtle mt-3">
                     Gratuito · abre em nova aba · sem cadastro pra começar
                   </p>
                 </div>
@@ -645,7 +645,7 @@ export default function FormulaFluente() {
       </section>
 
       {/* IMERSÃO - 3 CAMADAS */}
-      <section className="section-padding bg-dark-secondary border-y border-dark-border">
+      <section className="section-padding bg-surface-alt border-y border-surface-line">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -657,10 +657,10 @@ export default function FormulaFluente() {
             <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
               Imersão
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
               Imersão não é só <span className="gradient-text">viajar</span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-ink-muted max-w-2xl mx-auto">
               Três camadas, três oportunidades — e a mais poderosa não exige passaporte.
             </p>
           </motion.div>
@@ -675,13 +675,13 @@ export default function FormulaFluente() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-60px' }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover"
+                  className="bg-surface-card border border-surface-line rounded-2xl p-6 card-hover"
                 >
                   <div className={`w-12 h-12 rounded-xl ${c.bg} border ${c.border} flex items-center justify-center mb-4`}>
                     <layer.icon className={`w-6 h-6 ${c.icon}`} />
                   </div>
-                  <h3 className="font-bold text-white text-xl mb-3">{layer.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{layer.desc}</p>
+                  <h3 className="font-bold text-ink text-xl mb-3">{layer.title}</h3>
+                  <p className="text-ink-muted text-sm leading-relaxed">{layer.desc}</p>
                 </motion.div>
               )
             })}
@@ -702,10 +702,10 @@ export default function FormulaFluente() {
             <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
               Princípios Práticos
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
               Os 6 mantras da <span className="gradient-text">prática diária</span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-ink-muted max-w-2xl mx-auto">
               Como organizar uma rotina diária de 1 hora pra estudar inglês de verdade —
               sem se enrolar em apps, séries aleatórias ou aulas que não destravam a fala.
             </p>
@@ -719,13 +719,13 @@ export default function FormulaFluente() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="bg-dark-card border border-dark-border rounded-2xl p-6"
+                className="bg-surface-card border border-surface-line rounded-2xl p-6"
               >
                 <div className="w-10 h-10 rounded-lg bg-brand-red/10 border border-brand-red/20 flex items-center justify-center mb-4">
                   <p.icon className="w-5 h-5 text-brand-red" />
                 </div>
-                <h3 className="font-bold text-white text-base mb-2 leading-snug">{p.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{p.desc}</p>
+                <h3 className="font-bold text-ink text-base mb-2 leading-snug">{p.title}</h3>
+                <p className="text-ink-muted text-sm leading-relaxed">{p.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -740,7 +740,7 @@ export default function FormulaFluente() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center bg-dark-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden"
+            className="max-w-3xl mx-auto text-center bg-surface-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 to-brand-silver/8 pointer-events-none" />
             <div className="relative">
@@ -757,11 +757,11 @@ export default function FormulaFluente() {
                 Inscrição + Ebook gratuito
               </span>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-5 leading-tight">
                 Inscreva-se no <span className="gradient-text">ETT</span> e receba o ebook
                 quando lançarmos
               </h2>
-              <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-xl mx-auto">
+              <p className="text-ink-muted text-lg leading-relaxed mb-8 max-w-xl mx-auto">
                 Garanta sua vaga no programa de aceleração de inglês e receba primeiro
                 o ebook da Fórmula Fluente — método completo, threshold, 4 pilares e os 10 passos
                 por lição.
@@ -777,7 +777,7 @@ export default function FormulaFluente() {
                 <ExternalLink className="w-4 h-4" />
               </a>
 
-              <p className="text-xs text-gray-500 mt-4">
+              <p className="text-xs text-ink-subtle mt-4">
                 Lançamento do ebook em breve — quem se inscrever no ETT recebe primeiro.
               </p>
             </div>

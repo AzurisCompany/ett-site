@@ -10,20 +10,29 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // logo corrigida (06/10/2026): o verde saiu da marca — ação = vermelho, secundária = cinza
+        // Tema CLARO desde 06/10/2026 (logo positiva). Todas as cores semânticas vêm de variáveis
+        // CSS em app/globals.css: o valor claro está em :root e o escuro em .tema-escuro (rodapé,
+        // lightbox, faixas marinhas). Não escrever hex/gray-N/white em componente — usar estes.
+        surface: {
+          DEFAULT: 'rgb(var(--surface) / <alpha-value>)', // fundo da página
+          alt: 'rgb(var(--surface-alt) / <alpha-value>)', // seção alternada
+          card: 'rgb(var(--surface-card) / <alpha-value>)', // card
+          line: 'rgb(var(--surface-line) / <alpha-value>)', // borda/divisória
+        },
+        ink: {
+          DEFAULT: 'rgb(var(--ink) / <alpha-value>)', // títulos (marinho no claro, branco no escuro)
+          soft: 'rgb(var(--ink-soft) / <alpha-value>)', // texto corrido
+          muted: 'rgb(var(--ink-muted) / <alpha-value>)', // texto secundário
+          subtle: 'rgb(var(--ink-subtle) / <alpha-value>)', // legenda/metadado
+          faint: 'rgb(var(--ink-faint) / <alpha-value>)', // placeholder, detalhe mínimo
+        },
         'brand-red': {
-          DEFAULT: '#F05A60', // vermelho da logo clareado p/ texto, borda e tinta em fundo marinho (AA)
+          DEFAULT: 'rgb(var(--accent) / <alpha-value>)', // vermelho de texto/borda/tinta (oficial no claro, clareado no escuro)
           deep: '#D72229', // vermelho oficial da logo — botão/fundo sólido, sempre com texto branco
         },
-        'brand-silver': '#A8A9AC', // cinza da logo ("Time" e 3º balão) — cor secundária
+        'brand-silver': 'rgb(var(--accent-2) / <alpha-value>)', // prata da logo (escurecido no claro pra ler como texto)
         'brand-navy': '#162B4E',
         'brand-gray': '#59595B',
-        'dark': {
-          DEFAULT: '#0A1630',
-          secondary: '#0E1D3C',
-          card: '#132649',
-          border: '#24395F',
-        },
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],

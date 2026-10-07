@@ -18,7 +18,7 @@ import { Mail, ArrowRight } from 'lucide-react'
  */
 export default function CapturaRapida() {
   return (
-    <section className="bg-dark border-y border-dark-border py-10">
+    <section className="bg-surface border-y border-surface-line py-10">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -32,10 +32,10 @@ export default function CapturaRapida() {
           </span>
 
           <div className="flex-1">
-            <h3 className="text-white font-bold text-lg leading-snug mb-1">
+            <h3 className="text-ink font-bold text-lg leading-snug mb-1">
               Quer o link da próxima segunda no seu e-mail?
             </h3>
-            <p className="text-sm text-gray-400 leading-relaxed">
+            <p className="text-sm text-ink-muted leading-relaxed">
               Nome e e-mail, menos de um minuto. Você recebe o link do encontro online, as datas do
               IEP Talks e mais informações sobre o programa — e entramos em contato para tirar suas
               dúvidas. É grátis e não tem nada pra decidir agora.

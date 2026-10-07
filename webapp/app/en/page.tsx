@@ -191,7 +191,7 @@ export default function EnHome() {
       />
       <Navbar />
 
-      <main className="bg-dark min-h-screen">
+      <main className="bg-surface min-h-screen">
         {/* HERO */}
         <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
           <div className="absolute inset-0">
@@ -203,9 +203,9 @@ export default function EnHome() {
               priority
               quality={85}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-dark/85 via-dark/75 to-dark" />
+            <div className="absolute inset-0 bg-gradient-to-b from-surface/85 via-surface/75 to-surface" />
             <div className="absolute inset-0 hero-grid opacity-60" />
-            <div className="absolute inset-0 bg-gradient-to-r from-dark/60 via-transparent to-dark/60" />
+            <div className="absolute inset-0 bg-gradient-to-r from-surface/60 via-transparent to-surface/60" />
           </div>
 
           <div className="relative z-10 container mx-auto px-4 text-center">
@@ -214,20 +214,20 @@ export default function EnHome() {
               <span>+365,000 students already accelerated with the Fluent Formula</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight max-w-5xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-ink mb-6 leading-tight max-w-5xl mx-auto">
               From <span className="brand-red">stuck English</span> to{' '}
               <span className="brand-silver">functional fluency</span>{' '}
               <br className="hidden md:block" />
               for the international tech market
             </h1>
 
-            <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-              <span className="text-white font-semibold">English conversation group</span> for
+            <p className="text-lg sm:text-xl text-ink-soft max-w-3xl mx-auto mb-10 leading-relaxed">
+              <span className="text-ink font-semibold">English conversation group</span> for
               tech professionals who want to <span className="text-brand-red font-medium">unblock speaking</span> and{' '}
               <span className="text-brand-silver font-medium">become fluent</span>.
               Guided speaking practice + AI-powered learning tools, in a structured daily routine.
-              Weekly <span className="text-white">online meetings (every Monday)</span> and{' '}
-              <span className="text-white">in-person sessions in Curitiba, Brazil</span>.
+              Weekly <span className="text-ink">online meetings (every Monday)</span> and{' '}
+              <span className="text-ink">in-person sessions in Curitiba, Brazil</span>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
@@ -249,11 +249,11 @@ export default function EnHome() {
               {stats.map((stat, i) => (
                 <div
                   key={i}
-                  className="flex flex-col items-center gap-1 px-4 py-3 rounded-xl bg-dark-card/80 border border-dark-border backdrop-blur-sm"
+                  className="flex flex-col items-center gap-1 px-4 py-3 rounded-xl bg-surface-card/80 border border-surface-line backdrop-blur-sm"
                 >
                   <stat.icon className="w-4 h-4 text-brand-red mb-1" />
                   <span className="text-xl font-bold text-brand-red">{stat.value}</span>
-                  <span className="text-xs text-gray-400 text-center">{stat.label}</span>
+                  <span className="text-xs text-ink-muted text-center">{stat.label}</span>
                 </div>
               ))}
             </div>
@@ -261,16 +261,16 @@ export default function EnHome() {
         </section>
 
         {/* ABOUT / VALUE PROPS */}
-        <section id="about" className="section-padding bg-dark-secondary border-y border-dark-border">
+        <section id="about" className="section-padding bg-surface-alt border-y border-surface-line">
           <div className="container mx-auto px-4">
             <div className="text-center mb-14 max-w-3xl mx-auto">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 Why ETT
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
                 Not another language course. <span className="gradient-text">A practice ecosystem.</span>
               </h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-ink-muted text-lg">
                 You've studied English for years. You understand it. But when it's time to speak in a
                 meeting or interview, you freeze. ETT is built specifically for that block.
               </p>
@@ -280,13 +280,13 @@ export default function EnHome() {
               {valueProps.map((vp, i) => (
                 <div
                   key={i}
-                  className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover"
+                  className="bg-surface-card border border-surface-line rounded-2xl p-6 card-hover"
                 >
                   <div className="w-11 h-11 rounded-xl bg-brand-red/10 border border-brand-red/20 flex items-center justify-center mb-4">
                     <vp.icon className="w-5 h-5 text-brand-red" />
                   </div>
-                  <h3 className="font-bold text-white text-base mb-2 leading-snug">{vp.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{vp.desc}</p>
+                  <h3 className="font-bold text-ink text-base mb-2 leading-snug">{vp.title}</h3>
+                  <p className="text-ink-muted text-sm leading-relaxed">{vp.desc}</p>
                 </div>
               ))}
             </div>
@@ -300,12 +300,12 @@ export default function EnHome() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 The Method
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-ink mb-6 leading-tight">
                 <span className="gradient-text">Threshold + Immersion = Fluency</span>
               </h2>
-              <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+              <p className="text-ink-muted text-lg mb-8 leading-relaxed">
                 The Fluent Formula method (adapted from Frank Florida — 13 languages spoken, 365,000+ students)
-                says fluency isn't about talent. It's about reaching the <strong className="text-white">vocabulary threshold (~1,000 words)</strong>
+                says fluency isn't about talent. It's about reaching the <strong className="text-ink">vocabulary threshold (~1,000 words)</strong>
                 {' '}where the subconscious takes over, then maximizing exposure. ETT structures both halves.
               </p>
               <Link
@@ -319,16 +319,16 @@ export default function EnHome() {
         </section>
 
         {/* TOOLS */}
-        <section id="tools" className="section-padding bg-dark-secondary border-y border-dark-border">
+        <section id="tools" className="section-padding bg-surface-alt border-y border-surface-line">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 max-w-3xl mx-auto">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 AI-Powered Tools
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
                 10 AI tools to <span className="gradient-text">unblock English speaking</span>
               </h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-ink-muted text-lg">
                 Vocabulary diagnosis, subtitled series, audiobooks, ChatGPT prompt simulator, smart flashcards
                 and more — a daily routine of precise, relevant practice.
               </p>
@@ -338,10 +338,10 @@ export default function EnHome() {
               {tools.map((tool, i) => (
                 <div
                   key={i}
-                  className={`bg-dark-card rounded-2xl p-5 card-hover flex flex-col ${
+                  className={`bg-surface-card rounded-2xl p-5 card-hover flex flex-col ${
                     tool.highlight
                       ? 'border border-brand-red/30 shadow-brand-red'
-                      : 'border border-dark-border'
+                      : 'border border-surface-line'
                   }`}
                 >
                   <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${
@@ -351,8 +351,8 @@ export default function EnHome() {
                   }`}>
                     <tool.icon className={`w-5 h-5 ${tool.highlight ? 'text-brand-red' : 'text-brand-silver'}`} />
                   </div>
-                  <h3 className="font-bold text-white text-base mb-2">{tool.name}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed flex-1">{tool.desc}</p>
+                  <h3 className="font-bold text-ink text-base mb-2">{tool.name}</h3>
+                  <p className="text-ink-muted text-sm leading-relaxed flex-1">{tool.desc}</p>
                 </div>
               ))}
             </div>
@@ -366,16 +366,16 @@ export default function EnHome() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 Results & Data
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
                 Numbers that show <span className="gradient-text">why the method works</span>
               </h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-ink-muted text-lg">
                 Clear goals, measurable progress. ETT doesn't sell vague promises — it delivers a system with proven pedagogical milestones.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
               {metrics.map((m, i) => (
-                <div key={i} className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover">
+                <div key={i} className="bg-surface-card border border-surface-line rounded-2xl p-6 card-hover">
                   <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${
                     m.color === 'green' ? 'bg-brand-red/10' : 'bg-brand-silver/10'
                   }`}>
@@ -384,8 +384,8 @@ export default function EnHome() {
                   <div className={`text-4xl font-black mb-1 ${m.color === 'green' ? 'text-brand-red' : 'text-brand-silver'}`}>
                     {m.value}
                   </div>
-                  <div className="font-bold text-white text-sm mb-2">{m.label}</div>
-                  <p className="text-gray-500 text-sm">{m.desc}</p>
+                  <div className="font-bold text-ink text-sm mb-2">{m.label}</div>
+                  <p className="text-ink-subtle text-sm">{m.desc}</p>
                 </div>
               ))}
             </div>
@@ -393,30 +393,30 @@ export default function EnHome() {
         </section>
 
         {/* TESTIMONIALS */}
-        <section className="section-padding bg-dark-secondary border-y border-dark-border">
+        <section className="section-padding bg-surface-alt border-y border-surface-line">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 max-w-3xl mx-auto">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 Testimonials
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
                 Tech professionals who <span className="gradient-text">stopped freezing</span>
               </h2>
             </div>
             <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
               {testimonials.map((t, i) => (
-                <div key={i} className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover relative">
+                <div key={i} className="bg-surface-card border border-surface-line rounded-2xl p-6 card-hover relative">
                   <Quote className="absolute top-5 right-5 w-8 h-8 text-brand-red/10" />
                   <div className="flex gap-0.5 mb-4">
                     {Array.from({ length: 5 }).map((_, j) => (
                       <Star key={j} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
                     ))}
                   </div>
-                  <p className="text-gray-300 text-sm leading-relaxed mb-5 italic">&ldquo;{t.text}&rdquo;</p>
+                  <p className="text-ink-soft text-sm leading-relaxed mb-5 italic">&ldquo;{t.text}&rdquo;</p>
                   <div className="flex items-center justify-between gap-3 flex-wrap">
                     <div>
-                      <div className="font-bold text-white text-sm">{t.name}</div>
-                      <div className="text-xs text-gray-500">{t.role}</div>
+                      <div className="font-bold text-ink text-sm">{t.name}</div>
+                      <div className="text-xs text-ink-subtle">{t.role}</div>
                     </div>
                     <span className="text-xs px-3 py-1 rounded-full bg-brand-red/10 text-brand-red border border-brand-red/20 font-medium whitespace-nowrap">
                       {t.tag}
@@ -425,7 +425,7 @@ export default function EnHome() {
                 </div>
               ))}
             </div>
-            <p className="text-center text-xs text-gray-600 mt-8 italic max-w-2xl mx-auto">
+            <p className="text-center text-xs text-ink-faint mt-8 italic max-w-2xl mx-auto">
               Illustrative testimonials based on real patterns from the community.
             </p>
           </div>
@@ -438,10 +438,10 @@ export default function EnHome() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 Partners
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                 Built with <span className="gradient-text">specialized partners</span>
               </h2>
-              <p className="text-gray-400">
+              <p className="text-ink-muted">
                 BeeTools (structured base), Cherry Top (immersions), Coders (international career mentorship),
                 IEP (in-person Curitiba host).
               </p>
@@ -462,22 +462,22 @@ export default function EnHome() {
         </section>
 
         {/* HOW IT WORKS */}
-        <section id="how" className="section-padding bg-dark-secondary border-y border-dark-border">
+        <section id="how" className="section-padding bg-surface-alt border-y border-surface-line">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 max-w-3xl mx-auto">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 How It Works
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                 From signup to <span className="gradient-text">first words spoken</span>
               </h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
               {howItWorks.map((s) => (
-                <div key={s.n} className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover">
+                <div key={s.n} className="bg-surface-card border border-surface-line rounded-2xl p-6 card-hover">
                   <div className="text-5xl font-black gradient-text mb-3">{s.n}</div>
-                  <h3 className="font-bold text-white text-base mb-2 leading-tight">{s.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{s.desc}</p>
+                  <h3 className="font-bold text-ink text-base mb-2 leading-tight">{s.title}</h3>
+                  <p className="text-ink-muted text-sm leading-relaxed">{s.desc}</p>
                 </div>
               ))}
             </div>
@@ -487,7 +487,7 @@ export default function EnHome() {
         {/* ONLINE MEETING TEASER */}
         <section id="online" className="section-padding">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto bg-dark-card border border-brand-silver/30 rounded-3xl p-8 md:p-10">
+            <div className="max-w-3xl mx-auto bg-surface-card border border-brand-silver/30 rounded-3xl p-8 md:p-10">
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-12 h-12 rounded-xl bg-brand-silver/10 border border-brand-silver/30 flex items-center justify-center flex-shrink-0">
                   <Wifi className="w-6 h-6 text-brand-silver" />
@@ -496,12 +496,12 @@ export default function EnHome() {
                   <div className="text-xs uppercase tracking-wider text-brand-silver font-semibold mb-1">
                     Online — every Monday
                   </div>
-                  <h3 className="font-bold text-white text-xl md:text-2xl leading-snug">
+                  <h3 className="font-bold text-ink text-xl md:text-2xl leading-snug">
                     Speaking practice from anywhere in the world — 8pm BRT (GMT-3)
                   </h3>
                 </div>
               </div>
-              <p className="text-gray-400 leading-relaxed mb-5">
+              <p className="text-ink-muted leading-relaxed mb-5">
                 If you're in São Paulo, Mexico City, Lisbon, Berlin, or Buenos Aires — doesn't matter.
                 The online meeting on Mondays is open to anyone with internet and headphones.
                 90 minutes of structured speaking practice via Google Meet.
@@ -517,9 +517,9 @@ export default function EnHome() {
         </section>
 
         {/* FLORIDA IMMERSION TEASER */}
-        <section className="section-padding bg-dark-secondary border-y border-dark-border">
+        <section className="section-padding bg-surface-alt border-y border-surface-line">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto bg-dark-card border border-brand-red/30 rounded-3xl p-8 md:p-10">
+            <div className="max-w-3xl mx-auto bg-surface-card border border-brand-red/30 rounded-3xl p-8 md:p-10">
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-12 h-12 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center flex-shrink-0">
                   <Plane className="w-6 h-6 text-brand-red" />
@@ -528,12 +528,12 @@ export default function EnHome() {
                   <div className="text-xs uppercase tracking-wider text-brand-red font-semibold mb-1">
                     USA Immersion — Florida
                   </div>
-                  <h3 className="font-bold text-white text-xl md:text-2xl leading-snug">
+                  <h3 className="font-bold text-ink text-xl md:text-2xl leading-snug">
                     Want full English immersion? Florida 2027 — 2 cohorts
                   </h3>
                 </div>
               </div>
-              <p className="text-gray-400 leading-relaxed mb-5">
+              <p className="text-ink-muted leading-relaxed mb-5">
                 Intensive English immersion in Florida, USA — partnership with Cherry Top.
                 For tech professionals targeting international relocation or remote work with US clients.
               </p>
@@ -554,7 +554,7 @@ export default function EnHome() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 FAQ
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                 Common <span className="gradient-text">questions</span>
               </h2>
             </div>
@@ -562,13 +562,13 @@ export default function EnHome() {
               {faqs.map((f, i) => (
                 <details
                   key={i}
-                  className="bg-dark-card border border-dark-border rounded-2xl p-5 group"
+                  className="bg-surface-card border border-surface-line rounded-2xl p-5 group"
                 >
-                  <summary className="cursor-pointer font-semibold text-white text-base flex items-start gap-3 list-none">
+                  <summary className="cursor-pointer font-semibold text-ink text-base flex items-start gap-3 list-none">
                     <CheckCircle2 className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
                     <span className="flex-1">{f.q}</span>
                   </summary>
-                  <p className="text-gray-400 text-sm leading-relaxed mt-3 ml-8">{f.a}</p>
+                  <p className="text-ink-muted text-sm leading-relaxed mt-3 ml-8">{f.a}</p>
                 </details>
               ))}
             </div>
@@ -576,16 +576,16 @@ export default function EnHome() {
         </section>
 
         {/* CTA / SIGNUP */}
-        <section id="signup" className="section-padding bg-dark-secondary border-t border-dark-border">
+        <section id="signup" className="section-padding bg-surface-alt border-t border-surface-line">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center bg-dark-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden">
+            <div className="max-w-3xl mx-auto text-center bg-surface-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 to-brand-silver/8 pointer-events-none" />
               <div className="relative">
                 <Users className="w-10 h-10 text-brand-red mx-auto mb-5" />
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                   Join the <span className="gradient-text">next free meeting</span>
                 </h2>
-                <p className="text-gray-400 text-lg leading-relaxed mb-7 max-w-xl mx-auto">
+                <p className="text-ink-muted text-lg leading-relaxed mb-7 max-w-xl mx-auto">
                   Quick signup. You'll receive the next meeting link, the welcome material and
                   access to the community.
                 </p>
@@ -598,7 +598,7 @@ export default function EnHome() {
                   Sign me up
                   <ArrowRight className="w-5 h-5" />
                 </a>
-                <p className="text-gray-500 text-xs mt-4 italic">
+                <p className="text-ink-subtle text-xs mt-4 italic">
                   Free. No commitment. No spam.
                 </p>
               </div>

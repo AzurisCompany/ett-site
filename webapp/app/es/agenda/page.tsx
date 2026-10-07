@@ -111,7 +111,7 @@ export default function EsAgendaPage() {
       />
       <Navbar />
 
-      <main className="bg-dark min-h-screen pt-16">
+      <main className="bg-surface min-h-screen pt-16">
         {/* HERO */}
         <section className="relative section-padding overflow-hidden hero-grid">
           <div className="absolute inset-0 bg-gradient-to-b from-brand-silver/8 via-transparent to-transparent pointer-events-none" />
@@ -120,12 +120,12 @@ export default function EsAgendaPage() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-6">
                 Online · todos los lunes
               </span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-ink mb-6 leading-tight">
                 Encuentros online semanales de <span className="gradient-text">conversación en inglés</span>
               </h1>
-              <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
+              <p className="text-ink-soft text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
                 Práctica de habla estructurada y gratuita vía Google Meet — todos los lunes de{' '}
-                <strong className="text-white">20h a 21h30 BRT (GMT-3)</strong>.
+                <strong className="text-ink">20h a 21h30 BRT (GMT-3)</strong>.
                 Abierto a profesionales tech de toda LATAM. Te registras y te enviamos el link.
               </p>
               <a
@@ -142,28 +142,28 @@ export default function EsAgendaPage() {
         </section>
 
         {/* INFO BAR */}
-        <section className="bg-dark-secondary border-y border-dark-border py-8">
+        <section className="bg-surface-alt border-y border-surface-line py-8">
           <div className="container mx-auto px-4">
             <div className="grid sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
-              <div className="flex items-start gap-3 bg-dark-card border border-dark-border rounded-xl p-4">
+              <div className="flex items-start gap-3 bg-surface-card border border-surface-line rounded-xl p-4">
                 <Clock className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
                 <div>
-                  <div className="font-bold text-white text-sm">Horario</div>
-                  <div className="text-gray-400 text-sm">Lunes · 20h–21h30 BRT (GMT-3)</div>
+                  <div className="font-bold text-ink text-sm">Horario</div>
+                  <div className="text-ink-muted text-sm">Lunes · 20h–21h30 BRT (GMT-3)</div>
                 </div>
               </div>
-              <div className="flex items-start gap-3 bg-dark-card border border-dark-border rounded-xl p-4">
+              <div className="flex items-start gap-3 bg-surface-card border border-surface-line rounded-xl p-4">
                 <Wifi className="w-5 h-5 text-brand-silver shrink-0 mt-0.5" />
                 <div>
-                  <div className="font-bold text-white text-sm">Formato</div>
-                  <div className="text-gray-400 text-sm">Google Meet · 90 minutos</div>
+                  <div className="font-bold text-ink text-sm">Formato</div>
+                  <div className="text-ink-muted text-sm">Google Meet · 90 minutos</div>
                 </div>
               </div>
-              <div className="flex items-start gap-3 bg-dark-card border border-dark-border rounded-xl p-4">
+              <div className="flex items-start gap-3 bg-surface-card border border-surface-line rounded-xl p-4">
                 <Globe className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
                 <div>
-                  <div className="font-bold text-white text-sm">Abierto a</div>
-                  <div className="text-gray-400 text-sm">Cualquier lugar del mundo</div>
+                  <div className="font-bold text-ink text-sm">Abierto a</div>
+                  <div className="text-ink-muted text-sm">Cualquier lugar del mundo</div>
                 </div>
               </div>
             </div>
@@ -174,16 +174,16 @@ export default function EsAgendaPage() {
         <section className="section-padding">
           <div className="container mx-auto px-4">
             <div className="text-center mb-10 max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                 Próximos <span className="gradient-text">encuentros online</span>
               </h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-ink-muted text-lg">
                 Marca en tu calendario. Cada lunes una nueva sesión — mismo horario, mismo link de Google Meet luego del registro.
               </p>
             </div>
 
             {onlineEvents.length === 0 ? (
-              <p className="text-center text-gray-400 max-w-md mx-auto">
+              <p className="text-center text-ink-muted max-w-md mx-auto">
                 No hay encuentros online confirmados en los próximos días. Regístrate para recibir aviso del próximo.
               </p>
             ) : (
@@ -194,17 +194,17 @@ export default function EsAgendaPage() {
                   return (
                     <div
                       key={e.date}
-                      className="bg-dark-card border border-brand-silver/20 rounded-xl p-4 card-hover"
+                      className="bg-surface-card border border-brand-silver/20 rounded-xl p-4 card-hover"
                     >
                       <div className="flex items-start gap-3">
                         <div className="shrink-0 w-16 rounded-lg border border-brand-silver/30 bg-brand-silver/5 text-center py-2">
                           <div className="text-[10px] uppercase tracking-wider font-bold text-brand-silver">
                             {weekdayEs(e.weekday).slice(0, 3)}
                           </div>
-                          <div className="text-white font-black text-xl leading-none my-0.5">
+                          <div className="text-ink font-black text-xl leading-none my-0.5">
                             {day}
                           </div>
-                          <div className="text-gray-500 text-[10px] uppercase tracking-wider">
+                          <div className="text-ink-subtle text-[10px] uppercase tracking-wider">
                             {monthEs}
                           </div>
                         </div>
@@ -214,15 +214,15 @@ export default function EsAgendaPage() {
                               <Wifi className="w-2.5 h-2.5" />
                               online
                             </span>
-                            <span className="ml-auto inline-flex items-center gap-1 text-xs text-gray-400">
+                            <span className="ml-auto inline-flex items-center gap-1 text-xs text-ink-muted">
                               <Clock className="w-3 h-3" />
                               20h BRT
                             </span>
                           </div>
-                          <h3 className="font-bold text-white text-sm leading-snug mb-1">
+                          <h3 className="font-bold text-ink text-sm leading-snug mb-1">
                             Encuentro Online ETT
                           </h3>
-                          <p className="text-xs text-gray-500 leading-snug">
+                          <p className="text-xs text-ink-subtle leading-snug">
                             Google Meet · 90 min · gratis
                           </p>
                         </div>
@@ -249,9 +249,9 @@ export default function EsAgendaPage() {
 
         {/* IN-PERSON MENTION */}
         {inPersonCount > 0 && (
-          <section className="section-padding bg-dark-secondary border-y border-dark-border">
+          <section className="section-padding bg-surface-alt border-y border-surface-line">
             <div className="container mx-auto px-4">
-              <div className="max-w-3xl mx-auto bg-dark-card border border-brand-red/20 rounded-2xl p-6 md:p-8">
+              <div className="max-w-3xl mx-auto bg-surface-card border border-brand-red/20 rounded-2xl p-6 md:p-8">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-12 h-12 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-6 h-6 text-brand-red" />
@@ -260,12 +260,12 @@ export default function EsAgendaPage() {
                     <div className="text-xs uppercase tracking-wider text-brand-red font-semibold mb-1">
                       Presencial — Curitiba, Brasil
                     </div>
-                    <h3 className="font-bold text-white text-lg md:text-xl leading-snug">
+                    <h3 className="font-bold text-ink text-lg md:text-xl leading-snug">
                       ¿Estás en Curitiba? También nos juntamos en persona, semanalmente.
                     </h3>
                   </div>
                 </div>
-                <p className="text-gray-400 leading-relaxed mb-4 text-sm">
+                <p className="text-ink-muted leading-relaxed mb-4 text-sm">
                   Rotamos entre 4 sedes en Curitiba (IEP, UTFPR, Hard Rock Cafe, Habitat / FIEP).
                   Los encuentros presenciales están descritos en portugués — la agenda en PT tiene todos los detalles y direcciones.
                 </p>
@@ -283,14 +283,14 @@ export default function EsAgendaPage() {
         {/* CTA */}
         <section className="section-padding">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center bg-dark-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden">
+            <div className="max-w-3xl mx-auto text-center bg-surface-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 to-brand-silver/8 pointer-events-none" />
               <div className="relative">
                 <Users className="w-10 h-10 text-brand-red mx-auto mb-5" />
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                   No te pierdas <span className="gradient-text">el próximo encuentro</span>
                 </h2>
-                <p className="text-gray-400 text-lg leading-relaxed mb-7 max-w-xl mx-auto">
+                <p className="text-ink-muted text-lg leading-relaxed mb-7 max-w-xl mx-auto">
                   Registro rápido — recibes el link de Google Meet, el material de bienvenida y acceso
                   a la comunidad.
                 </p>
@@ -303,7 +303,7 @@ export default function EsAgendaPage() {
                   Regístrame
                   <ArrowRight className="w-5 h-5" />
                 </a>
-                <p className="text-gray-500 text-xs mt-4 italic">
+                <p className="text-ink-subtle text-xs mt-4 italic">
                   Gratis. Sin compromiso. Sin spam.
                 </p>
               </div>

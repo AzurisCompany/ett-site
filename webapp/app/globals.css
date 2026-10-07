@@ -2,14 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Tema CLARO (padrão desde 06/10/2026, alinhado à versão positiva da logo).
+ * Valores em "R G B" pra o Tailwind aplicar opacidade (bg-ink/5, border-surface-line/50...).
+ * Qualquer trecho com a classe .tema-escuro volta às cores do tema marinho anterior
+ * (rodapé, lightbox) — os componentes não mudam, só as variáveis.
+ */
 :root {
-  --brand-red: #F05A60;      /* vermelho da logo clareado: texto/link sobre marinho (AA) */
-  --brand-red-deep: #D72229; /* vermelho oficial da logo: preenchimentos */
-  --brand-silver: #A8A9AC;   /* cinza da logo ("Time", 3º balão): cor secundária */
-  --brand-navy: #162B4E;
-  --bg-dark: #0A1630;
-  --bg-card: #132649;
-  --border-subtle: #24395F;
+  --surface: 255 255 255;      /* #FFFFFF */
+  --surface-alt: 243 245 249;  /* #F3F5F9 */
+  --surface-card: 247 249 252; /* #F7F9FC */
+  --surface-line: 220 225 234; /* #DCE1EA */
+  --ink: 22 43 78;             /* #162B4E marinho da logo */
+  --ink-soft: 45 55 72;        /* #2D3748 */
+  --ink-muted: 75 85 99;       /* #4B5563 */
+  --ink-subtle: 95 104 119;    /* #5F6877 */
+  --ink-faint: 96 104 118;     /* #606876 */
+  --accent: 188 30 36;         /* #BC1E24 — vermelho da logo um tom abaixo: texto AA até sobre a tinta /15 (o oficial #D72229 fica pros fundos sólidos) */
+  --accent-2: 94 96 101;       /* #5E6065 prata escurecido — AA até sobre a tinta /15 */
+  --grad-a: #E0393F;
+  --grad-b: #B91C22;
+  color-scheme: light;
+}
+
+.tema-escuro {
+  --surface: 10 22 48;         /* #0A1630 */
+  --surface-alt: 14 29 60;     /* #0E1D3C */
+  --surface-card: 19 38 73;    /* #132649 */
+  --surface-line: 36 57 95;    /* #24395F */
+  --ink: 255 255 255;
+  --ink-soft: 209 213 219;
+  --ink-muted: 156 163 175;
+  --ink-subtle: 140 149 163;
+  --ink-faint: 148 156 170;
+  --accent: 240 90 96;         /* #F05A60 — vermelho clareado, AA sobre marinho */
+  --accent-2: 168 169 172;     /* #A8A9AC prata da logo */
+  --grad-a: #FF8A8E;
+  --grad-b: #F05A60;
+  color-scheme: dark;
+  color: rgb(var(--ink-soft));
 }
 
 html {
@@ -17,8 +48,8 @@ html {
 }
 
 body {
-  background-color: var(--bg-dark);
-  color: #E0E0E0;
+  background-color: rgb(var(--surface));
+  color: rgb(var(--ink-soft));
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -28,10 +59,10 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+  background: rgb(var(--surface-alt));
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border-subtle);
+  background: rgb(var(--surface-line));
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -40,12 +71,12 @@ body {
 
 /* Neon text effects */
 .brand-red {
-  color: var(--brand-red);
+  color: rgb(var(--accent));
   text-shadow: none;
 }
 
 .brand-silver {
-  color: var(--brand-silver);
+  color: rgb(var(--accent-2));
   text-shadow: none;
 }
 
@@ -67,7 +98,7 @@ body {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #FF8A8E 0%, #F05A60 100%);
+  background: linear-gradient(135deg, var(--grad-a) 0%, var(--grad-b) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -88,24 +119,24 @@ body {
 
 /* Focus visible */
 *:focus-visible {
-  outline: 2px solid var(--brand-red);
+  outline: 2px solid rgb(var(--accent));
   outline-offset: 2px;
 }
 
 /* Selection */
 ::selection {
-  background: rgba(215, 34, 41, 0.2);
-  color: white;
+  background: rgb(var(--accent) / 0.18);
+  color: rgb(var(--ink));
 }
 
 /* Blog article prose */
 .prose-blog {
-  color: #D1D5DB;
+  color: rgb(var(--ink-soft));
   font-size: 1.0625rem;
   line-height: 1.75;
 }
 .prose-blog h2 {
-  color: #fff;
+  color: rgb(var(--ink));
   font-size: 1.75rem;
   font-weight: 700;
   line-height: 1.25;
@@ -116,7 +147,7 @@ body {
   margin-top: 0;
 }
 .prose-blog h3 {
-  color: #fff;
+  color: rgb(var(--ink));
   font-size: 1.25rem;
   font-weight: 700;
   margin-top: 1.75rem;
@@ -140,36 +171,36 @@ body {
   margin-bottom: 0.5rem;
 }
 .prose-blog li::marker {
-  color: var(--brand-red);
+  color: rgb(var(--accent));
 }
 .prose-blog strong {
-  color: #fff;
+  color: rgb(var(--ink));
   font-weight: 600;
 }
 .prose-blog em {
-  color: #E5E7EB;
+  color: rgb(var(--ink-soft));
   font-style: italic;
 }
 .prose-blog a {
-  color: var(--brand-red);
+  color: rgb(var(--accent));
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: rgba(240, 90, 96, 0.45);
+  text-decoration-color: rgb(var(--accent) / 0.45);
   transition: text-decoration-color 0.2s;
 }
 .prose-blog a:hover {
-  text-decoration-color: var(--brand-red);
+  text-decoration-color: rgb(var(--accent));
 }
 .prose-blog blockquote {
-  border-left: 3px solid var(--brand-red);
+  border-left: 3px solid rgb(var(--accent));
   padding-left: 1.25rem;
   margin: 1.75rem 0;
-  color: #E5E7EB;
+  color: rgb(var(--ink-muted));
   font-style: italic;
 }
 .prose-blog hr {
   border: none;
   height: 1px;
-  background: var(--border-subtle);
+  background: rgb(var(--surface-line));
   margin: 2.5rem 0;
 }

@@ -79,7 +79,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="como-funciona" className="section-padding bg-dark-secondary relative overflow-hidden">
+    <section id="como-funciona" className="section-padding bg-surface-alt relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-silver/30 to-transparent" />
 
       <div className="container mx-auto px-4">
@@ -93,12 +93,12 @@ export default function HowItWorks() {
           <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
             Jornada do Aluno
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-6">
             Como funciona na prática:
             <br />
             <span className="gradient-text">7 passos do iniciante ao global</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-ink-muted max-w-2xl mx-auto text-lg">
             A jornada não é linear para todos, mas estruturada o suficiente para que ninguém
             fique sem saber qual é o próximo passo.
           </p>
@@ -128,8 +128,8 @@ export default function HowItWorks() {
                   <div className="hidden sm:flex absolute left-1/2 -translate-x-1/2 top-4 z-10">
                     <div className={`w-10 h-10 rounded-full border-2 flex items-center justify-center font-black text-sm ${
                       isGreen
-                        ? 'border-brand-red bg-dark text-brand-red'
-                        : 'border-brand-silver bg-dark text-brand-silver'
+                        ? 'border-brand-red bg-surface text-brand-red'
+                        : 'border-brand-silver bg-surface text-brand-silver'
                     }`}>
                       {step.number}
                     </div>
@@ -137,7 +137,7 @@ export default function HowItWorks() {
 
                   {/* Card — takes half width on desktop */}
                   <div className={`w-full sm:w-[calc(50%-2.5rem)] ${isEven ? 'sm:pr-6' : 'sm:pl-6'}`}>
-                    <div className={`bg-dark-card border rounded-2xl p-5 card-hover ${
+                    <div className={`bg-surface-card border rounded-2xl p-5 card-hover ${
                       isGreen ? 'border-brand-red/15' : 'border-brand-silver/15'
                     }`}>
                       {/* Mobile step number */}
@@ -163,7 +163,7 @@ export default function HowItWorks() {
                           <step.icon className={`w-5 h-5 ${isGreen ? 'text-brand-red' : 'text-brand-silver'}`} />
                         </div>
                         <div>
-                          <h3 className="font-bold text-white text-base">{step.title}</h3>
+                          <h3 className="font-bold text-ink text-base">{step.title}</h3>
                           <span className={`hidden sm:inline-flex text-xs font-medium px-2 py-0.5 rounded-full ${
                             isGreen ? 'bg-brand-red/10 text-brand-red' : 'bg-brand-silver/10 text-brand-silver'
                           }`}>
@@ -171,7 +171,7 @@ export default function HowItWorks() {
                           </span>
                         </div>
                       </div>
-                      <p className="text-gray-400 text-sm leading-relaxed">{step.description}</p>
+                      <p className="text-ink-muted text-sm leading-relaxed">{step.description}</p>
                     </div>
                   </div>
 

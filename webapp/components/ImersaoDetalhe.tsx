@@ -48,17 +48,17 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
   const [lightbox, setLightbox] = useState<string | null>(null)
 
   return (
-    <main className="bg-dark min-h-screen">
+    <main className="bg-surface min-h-screen">
       {/* HERO */}
       <section className="relative pt-32 pb-12 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-red/5 via-dark to-dark" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-red/5 via-surface to-surface" />
         <div className="absolute top-20 right-0 w-96 h-96 bg-brand-red/10 rounded-full blur-3xl" />
         <div className="absolute top-40 left-0 w-96 h-96 bg-brand-silver/10 rounded-full blur-3xl" />
 
         <div className="container mx-auto px-4 relative">
           <Link
             href="/imersoes"
-            className="inline-flex items-center gap-1.5 text-gray-400 hover:text-brand-red text-sm mb-6 transition-colors"
+            className="inline-flex items-center gap-1.5 text-ink-muted hover:text-brand-red text-sm mb-6 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Voltar para imersões
@@ -73,14 +73,14 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
             <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
               {props.eyebrow}
             </span>
-            <div className="flex items-center gap-2 text-gray-400 text-sm mb-3">
+            <div className="flex items-center gap-2 text-ink-muted text-sm mb-3">
               <MapPin className="w-4 h-4" />
               {props.city}, {props.uf}
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-ink mb-6 leading-tight">
               {props.headline}
             </h1>
-            <p className="text-gray-300 text-lg md:text-xl leading-relaxed">
+            <p className="text-ink-soft text-lg md:text-xl leading-relaxed">
               {props.intro}
             </p>
           </motion.div>
@@ -88,16 +88,16 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
       </section>
 
       {/* PARCERIA CHERRY TOP — banner de autoridade */}
-      <section className="bg-dark-secondary border-y border-dark-border">
+      <section className="bg-surface-alt border-y border-surface-line">
         <div className="container mx-auto px-4 py-6">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="flex flex-col md:flex-row items-center gap-5 md:gap-8 bg-dark-card border border-brand-red/20 rounded-2xl p-5 md:p-6"
+            className="flex flex-col md:flex-row items-center gap-5 md:gap-8 bg-surface-card border border-brand-red/20 rounded-2xl p-5 md:p-6"
           >
-            <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-white/5 border border-dark-border flex-shrink-0">
+            <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-ink/5 border border-surface-line flex-shrink-0">
               <Image
                 src="/images/logo-cherrytop.jpeg"
                 alt="Cherry Top — parceira oficial ETT"
@@ -110,12 +110,12 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
               <div className="text-xs uppercase tracking-widest text-brand-red font-semibold mb-1">
                 Imersão em parceria com
               </div>
-              <div className="text-xl font-bold text-white mb-1">
+              <div className="text-xl font-bold text-ink mb-1">
                 Cherry Top Business Communication
               </div>
-              <p className="text-gray-400 text-sm">
-                <strong className="text-white">40+ anos</strong> formando profissionais fluentes ·
-                metodologia <strong className="text-white">Bonding + Native-like</strong> ·
+              <p className="text-ink-muted text-sm">
+                <strong className="text-ink">40+ anos</strong> formando profissionais fluentes ·
+                metodologia <strong className="text-ink">Bonding + Native-like</strong> ·
                 fluência até <strong className="text-brand-red">10× mais rápido</strong>
               </p>
             </div>
@@ -123,7 +123,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
               href="https://cherrytop.com.br"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-gray-400 hover:text-brand-red inline-flex items-center gap-1.5 transition-colors whitespace-nowrap"
+              className="text-sm text-ink-muted hover:text-brand-red inline-flex items-center gap-1.5 transition-colors whitespace-nowrap"
             >
               cherrytop.com.br <ArrowRight className="w-3.5 h-3.5" />
             </a>
@@ -132,16 +132,16 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
       </section>
 
       {/* TURMAS / DATAS */}
-      <section className="section-padding pt-8 bg-dark">
+      <section className="section-padding pt-8 bg-surface">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-6">
             {/* Coluna principal */}
             <div className="lg:col-span-2 space-y-6">
               {/* Turmas */}
-              <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+              <div className="bg-surface-card border border-surface-line rounded-2xl p-6">
                 <div className="flex items-center gap-2 mb-4">
                   <Calendar className="w-5 h-5 text-brand-red" />
-                  <h2 className="text-xl font-bold text-white">
+                  <h2 className="text-xl font-bold text-ink">
                     {props.turmas.length > 1 ? 'Turmas previstas' : 'Quando'}
                   </h2>
                 </div>
@@ -149,16 +149,16 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
                   {props.turmas.map((t, i) => (
                     <div
                       key={i}
-                      className="p-4 rounded-xl bg-dark border border-dark-border hover:border-brand-red/30 transition-colors"
+                      className="p-4 rounded-xl bg-surface border border-surface-line hover:border-brand-red/30 transition-colors"
                     >
                       <div className="flex items-start justify-between gap-3 flex-wrap">
                         <div>
-                          <div className="font-semibold text-white">{t.label}</div>
+                          <div className="font-semibold text-ink">{t.label}</div>
                           <div className="text-brand-red text-sm font-medium mt-0.5">
                             {t.when}
                           </div>
                           {t.detalhe && (
-                            <div className="text-gray-400 text-xs mt-1">{t.detalhe}</div>
+                            <div className="text-ink-muted text-xs mt-1">{t.detalhe}</div>
                           )}
                         </div>
                       </div>
@@ -168,14 +168,14 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
               </div>
 
               {/* Highlights */}
-              <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+              <div className="bg-surface-card border border-surface-line rounded-2xl p-6">
                 <div className="flex items-center gap-2 mb-4">
                   <GraduationCap className="w-5 h-5 text-brand-red" />
-                  <h2 className="text-xl font-bold text-white">Destaques desta imersão</h2>
+                  <h2 className="text-xl font-bold text-ink">Destaques desta imersão</h2>
                 </div>
                 <ul className="space-y-2.5">
                   {props.highlights.map((h) => (
-                    <li key={h} className="flex items-start gap-2 text-gray-300">
+                    <li key={h} className="flex items-start gap-2 text-ink-soft">
                       <CheckCircle2 className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
                       <span>{h}</span>
                     </li>
@@ -185,24 +185,24 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
 
               {/* O que está incluído */}
               <div className="grid sm:grid-cols-2 gap-4">
-                <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
-                  <h3 className="font-bold text-white mb-3 flex items-center gap-2">
+                <div className="bg-surface-card border border-surface-line rounded-2xl p-6">
+                  <h3 className="font-bold text-ink mb-3 flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-brand-red" />
                     Incluso
                   </h3>
-                  <ul className="space-y-1.5 text-gray-400 text-sm">
+                  <ul className="space-y-1.5 text-ink-muted text-sm">
                     {props.inclusos.map((i) => (
                       <li key={i}>· {i}</li>
                     ))}
                   </ul>
                 </div>
                 {props.naoInclusos && (
-                  <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
-                    <h3 className="font-bold text-white mb-3 flex items-center gap-2">
+                  <div className="bg-surface-card border border-surface-line rounded-2xl p-6">
+                    <h3 className="font-bold text-ink mb-3 flex items-center gap-2">
                       <X className="w-4 h-4 text-red-400" />
                       Não incluso
                     </h3>
-                    <ul className="space-y-1.5 text-gray-400 text-sm">
+                    <ul className="space-y-1.5 text-ink-muted text-sm">
                       {props.naoInclusos.map((i) => (
                         <li key={i}>· {i}</li>
                       ))}
@@ -214,16 +214,16 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
 
             {/* Sidebar — info + CTA */}
             <aside className="space-y-4 lg:sticky lg:top-24 lg:self-start">
-              <div className="bg-gradient-to-br from-brand-red/10 via-dark-card to-brand-silver/10 border border-brand-red/30 rounded-2xl p-6">
-                <div className="text-xs text-gray-400 uppercase tracking-wider mb-1">
+              <div className="bg-gradient-to-br from-brand-red/10 via-surface-card to-brand-silver/10 border border-brand-red/30 rounded-2xl p-6">
+                <div className="text-xs text-ink-muted uppercase tracking-wider mb-1">
                   Investimento
                 </div>
-                <div className="text-2xl font-bold text-white mb-1">Sob consulta</div>
-                <div className="text-gray-400 text-sm mb-5">
+                <div className="text-2xl font-bold text-ink mb-1">Sob consulta</div>
+                <div className="text-ink-muted text-sm mb-5">
                   Vaga garantida com taxa de pré-inscrição
                 </div>
                 {props.vagasInfo && (
-                  <div className="flex items-center gap-2 text-gray-300 text-sm mb-5 pb-5 border-b border-dark-border">
+                  <div className="flex items-center gap-2 text-ink-soft text-sm mb-5 pb-5 border-b border-surface-line">
                     <Users className="w-4 h-4 text-brand-silver" />
                     {props.vagasInfo}
                   </div>
@@ -237,18 +237,18 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
                   {props.ctaLabel}
                   <ArrowRight className="w-4 h-4" />
                 </a>
-                <p className="text-gray-500 text-xs italic text-center mt-3">
+                <p className="text-ink-subtle text-xs italic text-center mt-3">
                   Sem compromisso. Sem spam.
                 </p>
               </div>
 
-              <div className="bg-dark-card border border-dark-border rounded-2xl p-6 space-y-3 text-sm">
+              <div className="bg-surface-card border border-surface-line rounded-2xl p-6 space-y-3 text-sm">
                 <div className="flex items-start gap-2">
                   <Building2 className="w-4 h-4 text-brand-silver shrink-0 mt-0.5" />
                   <div>
-                    <div className="text-white font-semibold">{props.local.name}</div>
+                    <div className="text-ink font-semibold">{props.local.name}</div>
                     {props.local.address && (
-                      <div className="text-gray-400 text-xs mt-0.5">
+                      <div className="text-ink-muted text-xs mt-0.5">
                         {props.local.address}
                       </div>
                     )}
@@ -256,16 +256,16 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
                 </div>
                 <div className="flex items-start gap-2">
                   <Users className="w-4 h-4 text-brand-silver shrink-0 mt-0.5" />
-                  <div className="text-gray-300">{props.format}</div>
+                  <div className="text-ink-soft">{props.format}</div>
                 </div>
                 {props.lideranca && (
                   <div className="flex items-start gap-2">
                     <GraduationCap className="w-4 h-4 text-brand-silver shrink-0 mt-0.5" />
-                    <div className="text-gray-300">{props.lideranca}</div>
+                    <div className="text-ink-soft">{props.lideranca}</div>
                   </div>
                 )}
-                <div className="pt-3 border-t border-dark-border text-gray-400 text-xs">
-                  Metodologia: <span className="text-white">{props.metodologia}</span>
+                <div className="pt-3 border-t border-surface-line text-ink-muted text-xs">
+                  Metodologia: <span className="text-ink">{props.metodologia}</span>
                 </div>
               </div>
             </aside>
@@ -274,7 +274,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
       </section>
 
       {/* GALERIA DAS FOTOS DA PASTA */}
-      <section className="section-padding bg-dark-secondary border-y border-dark-border">
+      <section className="section-padding bg-surface-alt border-y border-surface-line">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -283,12 +283,12 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
             transition={{ duration: 0.5 }}
             className="max-w-3xl mb-10"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+            <h2 className="text-3xl md:text-4xl font-bold text-ink mb-3">
               {props.fotos.length > 0
                 ? `${props.fotos.length} fotos da imersão`
                 : 'Primeira edição — você pode estar aqui'}
             </h2>
-            <p className="text-gray-400 text-lg">{props.fotosLegenda}</p>
+            <p className="text-ink-muted text-lg">{props.fotosLegenda}</p>
           </motion.div>
 
           {props.fotos.length > 0 ? (
@@ -301,7 +301,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
                   viewport={{ once: true, margin: '-40px' }}
                   transition={{ duration: 0.35, delay: (i % 8) * 0.04 }}
                   onClick={() => setLightbox(src)}
-                  className="relative aspect-square rounded-xl overflow-hidden bg-dark-card border border-dark-border hover:border-brand-red/40 transition-all group cursor-pointer"
+                  className="relative aspect-square rounded-xl overflow-hidden bg-surface-card border border-surface-line hover:border-brand-red/40 transition-all group cursor-pointer"
                 >
                   <Image
                     src={src}
@@ -310,14 +310,14 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                     sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   />
-                  <div className="absolute inset-0 bg-dark/0 group-hover:bg-dark/30 transition-colors" />
+                  <div className="absolute inset-0 bg-surface/0 group-hover:bg-surface/30 transition-colors" />
                 </motion.button>
               ))}
             </div>
           ) : (
-            <div className="bg-dark-card border border-dashed border-brand-red/30 rounded-2xl p-10 text-center max-w-2xl mx-auto">
+            <div className="bg-surface-card border border-dashed border-brand-red/30 rounded-2xl p-10 text-center max-w-2xl mx-auto">
               <div className="text-5xl mb-3">📸</div>
-              <p className="text-gray-300 text-lg">
+              <p className="text-ink-soft text-lg">
                 Galeria desta edição será publicada após a realização.
               </p>
               <Link
@@ -332,14 +332,14 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
       </section>
 
       {/* CTA FINAL */}
-      <section className="section-padding bg-dark">
+      <section className="section-padding bg-surface">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4">
               Vaga garantida com{' '}
               <span className="gradient-text">pré-inscrição.</span>
             </h2>
-            <p className="text-gray-400 text-lg mb-8">
+            <p className="text-ink-muted text-lg mb-8">
               Preencha o formulário em 2 minutos. A gente entra em contato com os
               detalhes da imersão e como confirmar sua vaga.
             </p>
@@ -355,7 +355,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
             <div className="mt-8">
               <Link
                 href="/imersoes"
-                className="text-gray-400 hover:text-brand-red text-sm transition-colors inline-flex items-center gap-1.5"
+                className="text-ink-muted hover:text-brand-red text-sm transition-colors inline-flex items-center gap-1.5"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
                 Ver todas as imersões
@@ -369,11 +369,11 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
       {lightbox && (
         <div
           onClick={() => setLightbox(null)}
-          className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 cursor-zoom-out"
+          className="fixed inset-0 z-[100] bg-black/95 tema-escuro backdrop-blur-sm flex items-center justify-center p-4 cursor-zoom-out"
         >
           <button
             onClick={() => setLightbox(null)}
-            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-dark-card border border-dark-border text-white hover:bg-dark hover:border-brand-red/40 transition-all flex items-center justify-center"
+            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-surface-card border border-surface-line text-ink hover:bg-surface hover:border-brand-red/40 transition-all flex items-center justify-center"
             aria-label="Fechar"
           >
             <X className="w-5 h-5" />

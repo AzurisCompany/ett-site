@@ -64,7 +64,7 @@ export default function Agenda() {
       : 'próximas semanas'
 
   return (
-    <main className="bg-dark min-h-screen pt-16">
+    <main className="bg-surface min-h-screen pt-16">
       {/* HERO */}
       <section className="section-padding relative overflow-hidden hero-grid">
         <div className="absolute inset-0 bg-gradient-to-b from-brand-silver/5 via-transparent to-transparent pointer-events-none" />
@@ -78,10 +78,10 @@ export default function Agenda() {
             <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-6">
               Próximos 30 dias
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-ink mb-6 leading-tight">
               <span className="gradient-text">Agenda</span> ETT
             </h1>
-            <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
+            <p className="text-ink-muted text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
               Online toda segunda. Presencial uma vez por semana, alternando entre IEP, UTFPR,
               Hard Rock e Habitat. Veja a próxima data e marque na sua agenda.
             </p>
@@ -90,18 +90,18 @@ export default function Agenda() {
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
               <div className="flex items-center gap-2 px-4 py-2 rounded-xl border border-brand-silver/30 bg-brand-silver/5">
                 <Wifi className="w-5 h-5 text-brand-silver" />
-                <span className="text-white font-bold text-lg">{onlineCount}</span>
-                <span className="text-gray-400 text-sm">online</span>
+                <span className="text-ink font-bold text-lg">{onlineCount}</span>
+                <span className="text-ink-muted text-sm">online</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 rounded-xl border border-brand-red/30 bg-brand-red/5">
                 <Users className="w-5 h-5 text-brand-red" />
-                <span className="text-white font-bold text-lg">{presencialCount}</span>
-                <span className="text-gray-400 text-sm">presenciais</span>
+                <span className="text-ink font-bold text-lg">{presencialCount}</span>
+                <span className="text-ink-muted text-sm">presenciais</span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-xl border border-dark-border bg-dark-card">
-                <Calendar className="w-5 h-5 text-gray-400" />
-                <span className="text-white font-bold text-lg">{events?.length ?? 0}</span>
-                <span className="text-gray-400 text-sm">encontros</span>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-xl border border-surface-line bg-surface-card">
+                <Calendar className="w-5 h-5 text-ink-muted" />
+                <span className="text-ink font-bold text-lg">{events?.length ?? 0}</span>
+                <span className="text-ink-muted text-sm">encontros</span>
               </div>
             </div>
           </motion.div>
@@ -109,7 +109,7 @@ export default function Agenda() {
       </section>
 
       {/* RECORRÊNCIAS */}
-      <section className="section-padding bg-dark-secondary border-t border-dark-border">
+      <section className="section-padding bg-surface-alt border-t border-surface-line">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             <motion.div
@@ -117,7 +117,7 @@ export default function Agenda() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.5 }}
-              className="bg-dark-card border border-brand-silver/30 rounded-2xl p-6"
+              className="bg-surface-card border border-brand-silver/30 rounded-2xl p-6"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-xl bg-brand-silver/10 border border-brand-silver/30 flex items-center justify-center">
@@ -125,14 +125,14 @@ export default function Agenda() {
                 </div>
                 <div>
                   <div className="text-xs uppercase tracking-wider text-brand-silver font-semibold">Recorrente</div>
-                  <h3 className="font-bold text-white text-lg">Online · todas as segundas</h3>
+                  <h3 className="font-bold text-ink text-lg">Online · todas as segundas</h3>
                 </div>
               </div>
-              <div className="flex items-center gap-2 text-gray-400 text-sm mb-2">
+              <div className="flex items-center gap-2 text-ink-muted text-sm mb-2">
                 <Clock className="w-4 h-4" />
                 <span>20h às 21h30</span>
               </div>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <p className="text-ink-subtle text-sm leading-relaxed">
                 Sessão síncrona toda segunda à noite — prática de conversação ao vivo
                 e suporte da comunidade.
               </p>
@@ -143,7 +143,7 @@ export default function Agenda() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.5 }}
-              className="bg-dark-card border border-brand-red/30 rounded-2xl p-6"
+              className="bg-surface-card border border-brand-red/30 rounded-2xl p-6"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center">
@@ -151,14 +151,14 @@ export default function Agenda() {
                 </div>
                 <div>
                   <div className="text-xs uppercase tracking-wider text-brand-red font-semibold">Semanal</div>
-                  <h3 className="font-bold text-white text-lg">Presencial · quartas ou quintas</h3>
+                  <h3 className="font-bold text-ink text-lg">Presencial · quartas ou quintas</h3>
                 </div>
               </div>
-              <div className="flex items-center gap-2 text-gray-400 text-sm mb-2">
+              <div className="flex items-center gap-2 text-ink-muted text-sm mb-2">
                 <MapPin className="w-4 h-4" />
                 <span>4 locais em rotação · Curitiba/PR</span>
               </div>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <p className="text-ink-subtle text-sm leading-relaxed">
                 Um encontro por semana em local diferente: IEP, UTFPR, Hard Rock e Habitat.
                 Networking, role-play e conversação ao vivo.
               </p>
@@ -180,7 +180,7 @@ export default function Agenda() {
             <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
               Cronograma
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
               Encontros de <span className="gradient-text">{periodo}</span>
             </h2>
           </motion.div>
@@ -190,7 +190,7 @@ export default function Agenda() {
               ? Array.from({ length: 4 }).map((_, i) => (
                   <div
                     key={`skeleton-${i}`}
-                    className="h-[96px] rounded-xl border border-dark-border bg-dark-card animate-pulse"
+                    className="h-[96px] rounded-xl border border-surface-line bg-surface-card animate-pulse"
                   />
                 ))
               : events.map((ev, i) => {
@@ -206,7 +206,7 @@ export default function Agenda() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-30px' }}
                   transition={{ duration: 0.3, delay: (i % 4) * 0.04 }}
-                  className={`relative bg-dark-card border rounded-xl p-3.5 card-hover ${
+                  className={`relative bg-surface-card border rounded-xl p-3.5 card-hover ${
                     isOnline ? 'border-brand-silver/20' : 'border-brand-red/20'
                   } ${ev.highlight ? 'shadow-brand-red' : ''}`}
                 >
@@ -224,10 +224,10 @@ export default function Agenda() {
                       }`}>
                         {weekdayAbbr}
                       </div>
-                      <div className="text-white font-black text-xl leading-none my-0.5">
+                      <div className="text-ink font-black text-xl leading-none my-0.5">
                         {dayNum}
                       </div>
-                      <div className="text-gray-500 text-[10px] uppercase tracking-wider">
+                      <div className="text-ink-subtle text-[10px] uppercase tracking-wider">
                         {monthAbbr}
                       </div>
                     </div>
@@ -250,24 +250,24 @@ export default function Agenda() {
                             {ev.partner}
                           </span>
                         )}
-                        <span className="ml-auto inline-flex items-center gap-1 text-xs text-gray-400">
+                        <span className="ml-auto inline-flex items-center gap-1 text-xs text-ink-muted">
                           <Clock className="w-3 h-3" />
                           {ev.time}
                         </span>
                       </div>
 
-                      <h3 className="font-bold text-white text-sm leading-snug mb-1 truncate">
+                      <h3 className="font-bold text-ink text-sm leading-snug mb-1 truncate">
                         {ev.title}
                       </h3>
 
-                      <p className="text-xs text-gray-500 leading-snug truncate">
+                      <p className="text-xs text-ink-subtle leading-snug truncate">
                         {ev.location}
-                        {ev.city && <span className="text-gray-600"> · {ev.city}</span>}
+                        {ev.city && <span className="text-ink-faint"> · {ev.city}</span>}
                       </p>
 
                       {ev.timeNote && (
                         <p className={`text-[11px] mt-1 leading-tight ${
-                          ev.highlight ? 'text-brand-red/80' : 'text-gray-500'
+                          ev.highlight ? 'text-brand-red/80' : 'text-ink-subtle'
                         }`}>
                           {ev.timeNote}
                         </p>
@@ -299,7 +299,7 @@ export default function Agenda() {
       </section>
 
       {/* LOCAIS PRESENCIAIS */}
-      <section className="section-padding bg-dark-secondary border-y border-dark-border">
+      <section className="section-padding bg-surface-alt border-y border-surface-line">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -311,10 +311,10 @@ export default function Agenda() {
             <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
               4 Locais
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
               Nossos pontos de <span className="gradient-text">encontro</span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-ink-muted max-w-2xl mx-auto">
               A rotação semanal expõe a comunidade a contextos diferentes — acadêmico,
               corporativo, descontraído e local.
             </p>
@@ -328,13 +328,13 @@ export default function Agenda() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover"
+                className="bg-surface-card border border-surface-line rounded-2xl p-6 card-hover"
               >
                 <div className="w-11 h-11 rounded-xl bg-brand-red/10 border border-brand-red/20 flex items-center justify-center mb-4">
                   <v.icon className="w-5 h-5 text-brand-red" />
                 </div>
-                <h3 className="font-bold text-white text-lg mb-2">{v.name}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{v.desc}</p>
+                <h3 className="font-bold text-ink text-lg mb-2">{v.name}</h3>
+                <p className="text-ink-subtle text-sm leading-relaxed">{v.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -349,7 +349,7 @@ export default function Agenda() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center bg-dark-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden"
+            className="max-w-3xl mx-auto text-center bg-surface-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 to-brand-silver/8 pointer-events-none" />
             <div className="relative">
@@ -366,10 +366,10 @@ export default function Agenda() {
                 Gratuito
               </span>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-5 leading-tight">
                 Quer receber as datas dos <span className="gradient-text">próximos encontros</span>?
               </h2>
-              <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-xl mx-auto">
+              <p className="text-ink-muted text-lg leading-relaxed mb-8 max-w-xl mx-auto">
                 Deixe nome e e-mail e a gente avisa quando tiver encontro novo — online ou
                 presencial. Aparecer para conhecer continua livre, sem cadastro.
               </p>
@@ -382,7 +382,7 @@ export default function Agenda() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
-              <p className="text-xs text-gray-500 mt-4">
+              <p className="text-xs text-ink-subtle mt-4">
                 Sem custo. Sem venda no fim.
               </p>
             </div>

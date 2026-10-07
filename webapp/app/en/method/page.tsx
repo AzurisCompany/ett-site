@@ -92,7 +92,7 @@ export default function EnMethodPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Navbar />
 
-      <main className="bg-dark min-h-screen pt-16">
+      <main className="bg-surface min-h-screen pt-16">
         {/* HERO */}
         <section className="section-padding relative overflow-hidden hero-grid">
           <div className="absolute inset-0 bg-gradient-to-b from-brand-red/5 via-transparent to-transparent pointer-events-none" />
@@ -101,24 +101,24 @@ export default function EnMethodPage() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-6">
                 Methodology
               </span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-ink mb-6 leading-tight">
                 The <span className="gradient-text">Fluent Formula</span>
               </h1>
-              <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
+              <p className="text-ink-muted text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
                 The method that distills why some learners reach fluency in months while others stay
                 stuck for years. Science-based, deliberate practice, threshold + immersion.
               </p>
 
               <div className="inline-flex flex-wrap items-center justify-center gap-3 sm:gap-5 p-6 sm:p-8 rounded-3xl border border-brand-red/30 bg-brand-red/5 shadow-brand-red">
-                <span className="text-xl sm:text-3xl font-bold text-white">Threshold</span>
+                <span className="text-xl sm:text-3xl font-bold text-ink">Threshold</span>
                 <span className="text-xl sm:text-3xl font-bold text-brand-silver">+</span>
-                <span className="text-xl sm:text-3xl font-bold text-white">Immersion</span>
+                <span className="text-xl sm:text-3xl font-bold text-ink">Immersion</span>
                 <span className="text-xl sm:text-3xl font-bold text-brand-silver">=</span>
                 <span className="text-xl sm:text-3xl font-bold gradient-text">Fluency</span>
               </div>
 
-              <p className="text-gray-500 text-sm mt-6 max-w-xl mx-auto">
-                Adapted from the methodology of <strong className="text-gray-300">Frank Florida</strong> —
+              <p className="text-ink-subtle text-sm mt-6 max-w-xl mx-auto">
+                Adapted from the methodology of <strong className="text-ink-soft">Frank Florida</strong> —
                 polyglot with 13 languages and 365,000+ students trained.
               </p>
             </div>
@@ -126,43 +126,43 @@ export default function EnMethodPage() {
         </section>
 
         {/* PREMISE */}
-        <section className="section-padding bg-dark-secondary border-t border-dark-border">
+        <section className="section-padding bg-surface-alt border-t border-surface-line">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto items-start">
               <div>
                 <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                   The Premise
                 </span>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold text-ink mb-5 leading-tight">
                   Not talent.
                   <br />
                   <span className="gradient-text">Method.</span>
                 </h2>
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-ink-muted leading-relaxed">
                   Following the wrong method, you can study for 10 years and never speak. Following the
                   right path, you reach functional fluency in months — even from zero. The difference
-                  is in <em className="text-white not-italic">what</em> you practice and <em className="text-white not-italic">in what order</em>.
+                  is in <em className="text-ink not-italic">what</em> you practice and <em className="text-ink not-italic">in what order</em>.
                 </p>
               </div>
 
-              <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+              <div className="bg-surface-card border border-surface-line rounded-2xl p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <Layers className="w-6 h-6 text-brand-red" />
-                  <h3 className="font-bold text-white text-lg">Language = Linguistic LEGO</h3>
+                  <h3 className="font-bold text-ink text-lg">Language = Linguistic LEGO</h3>
                 </div>
-                <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                <p className="text-ink-muted text-sm leading-relaxed mb-4">
                   Every language reduces to two pieces:
                 </p>
                 <div className="grid grid-cols-2 gap-3">
                   <div className="p-4 rounded-xl bg-brand-red/5 border border-brand-red/20">
                     <div className="text-xs uppercase tracking-wider text-brand-red font-semibold mb-1">Words</div>
-                    <div className="text-white font-bold mb-1">Vocabulary</div>
-                    <div className="text-xs text-gray-500">Right brain · memorize</div>
+                    <div className="text-ink font-bold mb-1">Vocabulary</div>
+                    <div className="text-xs text-ink-subtle">Right brain · memorize</div>
                   </div>
                   <div className="p-4 rounded-xl bg-brand-silver/5 border border-brand-silver/20">
                     <div className="text-xs uppercase tracking-wider text-brand-silver font-semibold mb-1">Order</div>
-                    <div className="text-white font-bold mb-1">Grammar</div>
-                    <div className="text-xs text-gray-500">Left brain · understand rules</div>
+                    <div className="text-ink font-bold mb-1">Grammar</div>
+                    <div className="text-xs text-ink-subtle">Left brain · understand rules</div>
                   </div>
                 </div>
               </div>
@@ -177,10 +177,10 @@ export default function EnMethodPage() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 The 4 Pillars
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
                 70% of time on <span className="gradient-text">active skills</span>
               </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
+              <p className="text-ink-muted max-w-2xl mx-auto">
                 It's the silent inversion that separates who learns from who only studies. Most courses focus on what's easier — reading and listening — and that's why most people never speak.
               </p>
             </div>
@@ -189,34 +189,34 @@ export default function EnMethodPage() {
               {pillars.map((p) => {
                 const c = colorMap[p.color as keyof typeof colorMap]
                 return (
-                  <div key={p.title} className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover">
+                  <div key={p.title} className="bg-surface-card border border-surface-line rounded-2xl p-6 card-hover">
                     <div className={`w-11 h-11 rounded-xl ${c.bg} border ${c.border} flex items-center justify-center mb-4`}>
                       <p.icon className={`w-5 h-5 ${c.icon}`} />
                     </div>
                     <div className={`text-xs uppercase tracking-wider ${c.text} font-semibold mb-1`}>{p.type}</div>
-                    <h3 className="text-2xl font-bold text-white mb-3">{p.title}</h3>
-                    <div className="h-2 rounded-full bg-dark-border overflow-hidden mb-2">
+                    <h3 className="text-2xl font-bold text-ink mb-3">{p.title}</h3>
+                    <div className="h-2 rounded-full bg-surface-line overflow-hidden mb-2">
                       <div className={`h-full ${c.bar}`} style={{ width: `${p.pct}%` }} />
                     </div>
                     <div className="flex justify-between items-center mb-4">
                       <span className={`text-3xl font-black ${c.text}`}>{p.pct}%</span>
-                      <span className="text-xs text-gray-500 uppercase tracking-wider">of time</span>
+                      <span className="text-xs text-ink-subtle uppercase tracking-wider">of time</span>
                     </div>
-                    <p className="text-gray-400 text-sm leading-relaxed">{p.note}</p>
+                    <p className="text-ink-muted text-sm leading-relaxed">{p.note}</p>
                   </div>
                 )
               })}
             </div>
 
-            <p className="mt-10 text-center text-gray-500 text-sm max-w-2xl mx-auto">
-              <strong className="text-gray-300">Grit principle:</strong> attack the hardest first.
+            <p className="mt-10 text-center text-ink-subtle text-sm max-w-2xl mx-auto">
+              <strong className="text-ink-soft">Grit principle:</strong> attack the hardest first.
               Active skill contains the passive — who writes can read; who speaks understands. The reverse isn't true.
             </p>
           </div>
         </section>
 
         {/* THRESHOLD */}
-        <section className="section-padding bg-dark-secondary border-y border-dark-border relative overflow-hidden">
+        <section className="section-padding bg-surface-alt border-y border-surface-line relative overflow-hidden">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-brand-red/5 blur-3xl pointer-events-none" />
           <div className="container mx-auto px-4 relative">
             <div className="max-w-5xl mx-auto">
@@ -224,10 +224,10 @@ export default function EnMethodPage() {
                 <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                   The Threshold
                 </span>
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
                   The point where <span className="gradient-text">learning becomes automatic</span>
                 </h2>
-                <p className="text-gray-400 max-w-2xl mx-auto">
+                <p className="text-ink-muted max-w-2xl mx-auto">
                   The minimum vocabulary and grammar level from which you can hold a simple conversation —
                   and from which the subconscious takes over the work.
                 </p>
@@ -241,10 +241,10 @@ export default function EnMethodPage() {
                 ].map((b, i) => {
                   const c = colorMap[b.color as keyof typeof colorMap]
                   return (
-                    <div key={i} className={`bg-dark-card border ${b.highlight ? 'border-brand-red/40 shadow-brand-red' : 'border-dark-border'} rounded-2xl p-6 text-center`}>
+                    <div key={i} className={`bg-surface-card border ${b.highlight ? 'border-brand-red/40 shadow-brand-red' : 'border-surface-line'} rounded-2xl p-6 text-center`}>
                       <div className={`text-5xl font-black ${c.text} mb-1`}>{b.num}</div>
-                      <div className="text-xs uppercase tracking-wider text-gray-500 mb-3">{b.label}</div>
-                      <div className="text-gray-300 text-sm">{b.desc}</div>
+                      <div className="text-xs uppercase tracking-wider text-ink-subtle mb-3">{b.label}</div>
+                      <div className="text-ink-soft text-sm">{b.desc}</div>
                       {b.highlight && (
                         <div className="mt-3 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-semibold">
                           <Target className="w-3 h-3" /> threshold
@@ -256,24 +256,24 @@ export default function EnMethodPage() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-5">
-                <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+                <div className="bg-surface-card border border-surface-line rounded-2xl p-6">
                   <div className="flex items-center gap-2 mb-4">
                     <AlertTriangle className="w-5 h-5 text-brand-silver" />
-                    <h3 className="font-bold text-white">Before threshold</h3>
+                    <h3 className="font-bold text-ink">Before threshold</h3>
                   </div>
-                  <ul className="space-y-2.5 text-sm text-gray-400">
+                  <ul className="space-y-2.5 text-sm text-ink-muted">
                     <li className="flex gap-2"><span className="text-brand-silver">→</span> Study carefully, slowly, on paper.</li>
                     <li className="flex gap-2"><span className="text-brand-silver">→</span> Avoid errors — brain records like a hard drive.</li>
                     <li className="flex gap-2"><span className="text-brand-silver">→</span> Use controlled translations and answer keys.</li>
                     <li className="flex gap-2"><span className="text-brand-silver">→</span> Build context — puzzle pieces.</li>
                   </ul>
                 </div>
-                <div className="bg-dark-card border border-brand-red/30 rounded-2xl p-6 shadow-brand-red">
+                <div className="bg-surface-card border border-brand-red/30 rounded-2xl p-6 shadow-brand-red">
                   <div className="flex items-center gap-2 mb-4">
                     <Sparkles className="w-5 h-5 text-brand-red" />
-                    <h3 className="font-bold text-white">After threshold</h3>
+                    <h3 className="font-bold text-ink">After threshold</h3>
                   </div>
-                  <ul className="space-y-2.5 text-sm text-gray-300">
+                  <ul className="space-y-2.5 text-sm text-ink-soft">
                     <li className="flex gap-2"><span className="text-brand-red">→</span> Let the tongue loose — speak, err, speak again.</li>
                     <li className="flex gap-2"><span className="text-brand-red">→</span> Multiply immersion by 10x.</li>
                     <li className="flex gap-2"><span className="text-brand-red">→</span> The subconscious classifies data on its own.</li>
@@ -292,10 +292,10 @@ export default function EnMethodPage() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 The 4 Stages
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
                 The <span className="gradient-text">competence ladder</span>
               </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
+              <p className="text-ink-muted max-w-2xl mx-auto">
                 Most methods try to jump from stage 2 straight to 4 ("learn intuitively").
                 Kids take 4 years with 24/7 immersion — you don't have that time. You need stage 3.
               </p>
@@ -303,10 +303,10 @@ export default function EnMethodPage() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
               {stages.map((s) => (
-                <div key={s.n} className={`relative bg-dark-card border rounded-2xl p-6 ${s.highlight ? 'border-brand-red/40' : 'border-dark-border'}`}>
-                  <div className={`text-6xl font-black mb-3 ${s.highlight ? 'text-brand-red' : 'text-gray-700'}`}>{s.n}</div>
-                  <h3 className="font-bold text-white text-base mb-2 leading-tight">{s.label}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{s.sub}</p>
+                <div key={s.n} className={`relative bg-surface-card border rounded-2xl p-6 ${s.highlight ? 'border-brand-red/40' : 'border-surface-line'}`}>
+                  <div className={`text-6xl font-black mb-3 ${s.highlight ? 'text-brand-red' : 'text-ink-faint'}`}>{s.n}</div>
+                  <h3 className="font-bold text-ink text-base mb-2 leading-tight">{s.label}</h3>
+                  <p className="text-ink-subtle text-sm leading-relaxed">{s.sub}</p>
                   {s.n === 3 && (
                     <span className="absolute top-4 right-4 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-semibold">threshold</span>
                   )}
@@ -320,34 +320,34 @@ export default function EnMethodPage() {
         </section>
 
         {/* SUBTITLES TOOL */}
-        <section className="section-padding bg-dark-secondary border-y border-dark-border relative overflow-hidden">
+        <section className="section-padding bg-surface-alt border-y border-surface-line relative overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-brand-red/8 blur-3xl pointer-events-none" />
           <div className="container mx-auto px-4 relative">
             <div className="text-center mb-12 max-w-3xl mx-auto">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 ETT Tool · Subtitles
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
                 Hear the method from <span className="gradient-text">the one who created it</span>
               </h2>
-              <p className="text-gray-400 text-lg leading-relaxed">
+              <p className="text-ink-muted text-lg leading-relaxed">
                 You can't fully grasp the Fluent Formula just by reading this summary.
-                You need to <strong className="text-white">hear Frank Florida</strong> —
+                You need to <strong className="text-ink">hear Frank Florida</strong> —
                 the polyglot who has trained 365,000+ Brazilian students — explaining each principle himself.
               </p>
-              <p className="text-gray-500 text-xs mt-3 italic">
+              <p className="text-ink-subtle text-xs mt-3 italic">
                 Note: original lectures are in Portuguese. The Subtitles tool gives you sync'd PT + EN subtitles to study along.
               </p>
             </div>
 
             <div className="max-w-5xl mx-auto">
-              <div className="bg-dark-card border border-brand-red/30 rounded-3xl overflow-hidden shadow-brand-red">
+              <div className="bg-surface-card border border-brand-red/30 rounded-3xl overflow-hidden shadow-brand-red">
                 <div className="grid md:grid-cols-5 gap-0">
                   <a
                     href={SUBTITLES_TOOL_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="md:col-span-2 relative aspect-video md:aspect-auto bg-gradient-to-br from-dark via-dark-secondary to-brand-red/10 flex items-center justify-center group cursor-pointer overflow-hidden border-b md:border-b-0 md:border-r border-dark-border"
+                    className="md:col-span-2 relative aspect-video md:aspect-auto bg-gradient-to-br from-surface via-surface-alt to-brand-red/10 flex items-center justify-center group cursor-pointer overflow-hidden border-b md:border-b-0 md:border-r border-surface-line"
                   >
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(215, 34, 41,0.15),transparent_60%)]" />
                     <div className="relative flex flex-col items-center text-center px-6">
@@ -355,8 +355,8 @@ export default function EnMethodPage() {
                         <PlayCircle className="w-12 h-12 text-brand-red" />
                       </div>
                       <div className="text-xs uppercase tracking-widest text-brand-red font-bold mb-2">Lesson 1 · Episode 1</div>
-                      <div className="text-white font-bold text-lg leading-tight mb-1">Fluent Formula</div>
-                      <div className="text-gray-400 text-sm">by <strong className="text-white">Frank Florida</strong></div>
+                      <div className="text-ink font-bold text-lg leading-tight mb-1">Fluent Formula</div>
+                      <div className="text-ink-muted text-sm">by <strong className="text-ink">Frank Florida</strong></div>
                     </div>
                   </a>
 
@@ -366,31 +366,31 @@ export default function EnMethodPage() {
                       <span className="text-brand-silver font-semibold text-sm">ETT Subtitles — video + interactive subtitles</span>
                     </div>
 
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+                    <h3 className="text-2xl md:text-3xl font-bold text-ink mb-4 leading-tight">
                       Start with lesson 1.
                       <br />
                       <span className="gradient-text">30 minutes that change your perspective.</span>
                     </h3>
 
-                    <p className="text-gray-400 leading-relaxed mb-6">
-                      Frank explains why <em className="text-gray-200 not-italic">method</em> beats{' '}
-                      <em className="text-gray-200 not-italic">talent</em>, what the 1,000-word threshold is,
+                    <p className="text-ink-muted leading-relaxed mb-6">
+                      Frank explains why <em className="text-ink not-italic">method</em> beats{' '}
+                      <em className="text-ink not-italic">talent</em>, what the 1,000-word threshold is,
                       and how to structure 30 minutes a day to go from "I know but I freeze" to fluent.
-                      The tool lets you <strong className="text-white">pause, repeat and mark words</strong> as you watch.
+                      The tool lets you <strong className="text-ink">pause, repeat and mark words</strong> as you watch.
                     </p>
 
                     <div className="grid grid-cols-3 gap-3 mb-6">
-                      <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-dark/60 border border-dark-border">
+                      <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-surface/60 border border-surface-line">
                         <MousePointerClick className="w-4 h-4 text-brand-red" />
-                        <span className="text-xs text-gray-300 leading-tight">Click any word</span>
+                        <span className="text-xs text-ink-soft leading-tight">Click any word</span>
                       </div>
-                      <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-dark/60 border border-dark-border">
+                      <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-surface/60 border border-surface-line">
                         <Pause className="w-4 h-4 text-brand-red" />
-                        <span className="text-xs text-gray-300 leading-tight">Pause and repeat the phrase</span>
+                        <span className="text-xs text-ink-soft leading-tight">Pause and repeat the phrase</span>
                       </div>
-                      <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-dark/60 border border-dark-border">
+                      <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-surface/60 border border-surface-line">
                         <BookOpen className="w-4 h-4 text-brand-red" />
-                        <span className="text-xs text-gray-300 leading-tight">Sync'd PT + EN subtitles</span>
+                        <span className="text-xs text-ink-soft leading-tight">Sync'd PT + EN subtitles</span>
                       </div>
                     </div>
 
@@ -403,7 +403,7 @@ export default function EnMethodPage() {
                       Watch lesson 1 now
                       <ExternalLink className="w-4 h-4" />
                     </a>
-                    <p className="text-xs text-gray-500 mt-3">Free · opens in new tab · no signup required to start</p>
+                    <p className="text-xs text-ink-subtle mt-3">Free · opens in new tab · no signup required to start</p>
                   </div>
                 </div>
               </div>
@@ -418,10 +418,10 @@ export default function EnMethodPage() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
                 Immersion
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
                 Immersion isn't just <span className="gradient-text">traveling</span>
               </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
+              <p className="text-ink-muted max-w-2xl mx-auto">
                 Three layers, three opportunities — and the most powerful one needs no passport.
               </p>
             </div>
@@ -430,12 +430,12 @@ export default function EnMethodPage() {
               {immersionLayers.map((layer) => {
                 const c = colorMap[layer.color as keyof typeof colorMap]
                 return (
-                  <div key={layer.title} className="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover">
+                  <div key={layer.title} className="bg-surface-card border border-surface-line rounded-2xl p-6 card-hover">
                     <div className={`w-12 h-12 rounded-xl ${c.bg} border ${c.border} flex items-center justify-center mb-4`}>
                       <layer.icon className={`w-6 h-6 ${c.icon}`} />
                     </div>
-                    <h3 className="font-bold text-white text-xl mb-3">{layer.title}</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">{layer.desc}</p>
+                    <h3 className="font-bold text-ink text-xl mb-3">{layer.title}</h3>
+                    <p className="text-ink-muted text-sm leading-relaxed">{layer.desc}</p>
                   </div>
                 )
               })}
@@ -444,16 +444,16 @@ export default function EnMethodPage() {
         </section>
 
         {/* PRINCIPLES */}
-        <section className="section-padding bg-dark-secondary border-y border-dark-border">
+        <section className="section-padding bg-surface-alt border-y border-surface-line">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
                 Practical Principles
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
                 6 mantras for your <span className="gradient-text">daily practice</span>
               </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
+              <p className="text-ink-muted max-w-2xl mx-auto">
                 How to structure a 1-hour daily routine to study English for real —
                 without getting lost in apps, random series or classes that never unblock your speaking.
               </p>
@@ -461,12 +461,12 @@ export default function EnMethodPage() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
               {principles.map((p) => (
-                <div key={p.title} className="bg-dark-card border border-dark-border rounded-2xl p-6">
+                <div key={p.title} className="bg-surface-card border border-surface-line rounded-2xl p-6">
                   <div className="w-10 h-10 rounded-lg bg-brand-red/10 border border-brand-red/20 flex items-center justify-center mb-4">
                     <p.icon className="w-5 h-5 text-brand-red" />
                   </div>
-                  <h3 className="font-bold text-white text-base mb-2 leading-snug">{p.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{p.desc}</p>
+                  <h3 className="font-bold text-ink text-base mb-2 leading-snug">{p.title}</h3>
+                  <p className="text-ink-muted text-sm leading-relaxed">{p.desc}</p>
                 </div>
               ))}
             </div>
@@ -476,7 +476,7 @@ export default function EnMethodPage() {
         {/* CTA */}
         <section className="section-padding">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center bg-dark-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden">
+            <div className="max-w-3xl mx-auto text-center bg-surface-card border border-brand-red/30 rounded-3xl p-10 md:p-14 shadow-brand-red relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 to-brand-silver/8 pointer-events-none" />
               <div className="relative">
                 <div className="inline-flex items-center justify-center gap-3 mb-6">
@@ -492,10 +492,10 @@ export default function EnMethodPage() {
                   Start practicing
                 </span>
 
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold text-ink mb-5 leading-tight">
                   Join the <span className="gradient-text">next free online meeting</span>
                 </h2>
-                <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-xl mx-auto">
+                <p className="text-ink-muted text-lg leading-relaxed mb-8 max-w-xl mx-auto">
                   Every Monday at 8pm BRT (GMT-3) we host a structured English speaking session.
                   Method + community + practice. Sign up to get the Google Meet link.
                 </p>

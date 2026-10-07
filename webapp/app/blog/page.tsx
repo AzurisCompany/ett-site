@@ -146,7 +146,7 @@ export default function BlogIndexPage() {
       />
       <Navbar />
 
-      <main className="bg-dark min-h-screen pt-16">
+      <main className="bg-surface min-h-screen pt-16">
         {/* HERO */}
         <section className="relative section-padding overflow-hidden hero-grid">
           <div className="absolute inset-0 bg-gradient-to-b from-brand-silver/5 via-transparent to-transparent pointer-events-none" />
@@ -155,11 +155,11 @@ export default function BlogIndexPage() {
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-6">
                 Blog ETT
               </span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-5 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-ink mb-5 leading-tight">
                 Como praticar, treinar e <span className="gradient-text">destravar</span> o seu
                 inglês
               </h1>
-              <p className="text-gray-400 text-lg leading-relaxed">
+              <p className="text-ink-muted text-lg leading-relaxed">
                 Artigos práticos sobre conversação em inglês, treino de fala, onde praticar em
                 Curitiba e online, e como escolher entre grupo de conversação, aula particular
                 ou app.
@@ -169,17 +169,17 @@ export default function BlogIndexPage() {
         </section>
 
         {/* POSTS LIST */}
-        <section className="section-padding bg-dark-secondary border-y border-dark-border">
+        <section className="section-padding bg-surface-alt border-y border-surface-line">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto space-y-5">
               {allCards.map((p) => (
                 <Link
                   key={p.href}
                   href={p.href}
-                  className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-7 bg-dark-card border border-dark-border rounded-2xl p-6 md:p-8 card-hover hover:border-brand-red/30 transition-all group"
+                  className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-7 bg-surface-card border border-surface-line rounded-2xl p-6 md:p-8 card-hover hover:border-brand-red/30 transition-all group"
                 >
                   <div className="flex-1 min-w-0 order-2 sm:order-1">
-                    <div className="flex flex-wrap items-center gap-3 mb-3 text-xs text-gray-400">
+                    <div className="flex flex-wrap items-center gap-3 mb-3 text-xs text-ink-muted">
                       <span
                         className={
                           p.isPartner
@@ -199,10 +199,10 @@ export default function BlogIndexPage() {
                         {p.readMinutes} min
                       </span>
                     </div>
-                    <h2 className="text-xl md:text-2xl font-bold text-white mb-3 leading-snug group-hover:text-brand-red transition-colors">
+                    <h2 className="text-xl md:text-2xl font-bold text-ink mb-3 leading-snug group-hover:text-brand-red transition-colors">
                       {p.title}
                     </h2>
-                    <p className="text-gray-400 leading-relaxed mb-4">{p.excerpt}</p>
+                    <p className="text-ink-muted leading-relaxed mb-4">{p.excerpt}</p>
                     <span className="inline-flex items-center gap-1.5 text-brand-red text-sm font-semibold">
                       {p.isPartner ? 'Ver indicação' : 'Ler artigo'}{' '}
                       <ArrowRight className="w-4 h-4" />
@@ -220,7 +220,7 @@ export default function BlogIndexPage() {
                           className="h-10 sm:h-14 w-auto"
                         />
                       </span>
-                      <span className="text-[11px] font-semibold uppercase tracking-wider text-brand-silver/80">
+                      <span className="text-[11px] font-semibold uppercase tracking-wider text-brand-silver">
                         via {p.partnerName}
                       </span>
                     </div>

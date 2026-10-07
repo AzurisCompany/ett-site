@@ -29,12 +29,12 @@ export default function CookieConsent() {
       role="dialog"
       aria-live="polite"
       aria-label="Aviso de cookies"
-      className="fixed bottom-3 left-3 right-3 md:left-auto md:right-4 md:bottom-4 md:max-w-md z-[60] bg-dark-card border border-brand-red/30 rounded-2xl p-5 shadow-2xl backdrop-blur-md"
+      className="fixed bottom-3 left-3 right-3 md:left-auto md:right-4 md:bottom-4 md:max-w-md z-[60] bg-surface-card border border-brand-red/30 rounded-2xl p-5 shadow-2xl backdrop-blur-md"
     >
       <button
         onClick={handleReject}
         aria-label="Fechar (rejeitar)"
-        className="absolute top-3 right-3 text-gray-500 hover:text-white transition-colors"
+        className="absolute top-3 right-3 text-ink-subtle hover:text-ink transition-colors"
       >
         <X className="w-4 h-4" />
       </button>
@@ -44,10 +44,10 @@ export default function CookieConsent() {
           <Cookie className="w-5 h-5 text-brand-red" />
         </div>
         <div>
-          <h3 className="font-bold text-white text-base leading-snug mb-1">
+          <h3 className="font-bold text-ink text-base leading-snug mb-1">
             Cookies &amp; Privacidade
           </h3>
-          <p className="text-sm text-gray-400 leading-relaxed">
+          <p className="text-sm text-ink-muted leading-relaxed">
             Usamos cookies de analytics (Google Analytics 4) pra entender de forma agregada
             como o site é usado e melhorar a experiência. Você pode aceitar ou recusar — o
             site funciona normalmente em qualquer caso.
@@ -55,7 +55,7 @@ export default function CookieConsent() {
         </div>
       </div>
 
-      <p className="text-xs text-gray-500 mb-4 pl-13 sm:pl-0">
+      <p className="text-xs text-ink-subtle mb-4 pl-13 sm:pl-0">
         Saiba mais na nossa{' '}
         <Link
           href="/politica-privacidade/"
@@ -69,7 +69,7 @@ export default function CookieConsent() {
       <div className="flex flex-col-reverse sm:flex-row gap-2">
         <button
           onClick={handleReject}
-          className="px-4 py-2 rounded-lg border border-dark-border text-gray-300 text-sm font-medium hover:border-brand-red/30 hover:bg-dark-secondary transition-colors"
+          className="px-4 py-2 rounded-lg border border-surface-line text-ink-soft text-sm font-medium hover:border-brand-red/30 hover:bg-surface-alt transition-colors"
         >
           Rejeitar
         </button>

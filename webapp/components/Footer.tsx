@@ -86,7 +86,7 @@ export default function Footer({ locale = 'pt-BR' }: FooterProps) {
   const privacyHref = '/politica-privacidade/'
   const termsHref = '/termos-uso/'
   return (
-    <footer className="bg-dark-secondary border-t border-dark-border pt-16 pb-8">
+    <footer className="tema-escuro bg-surface-alt border-t border-surface-line pt-16 pb-8">
       <div className="container mx-auto px-4">
         {/* Top row */}
         <div className="grid md:grid-cols-4 gap-10 mb-14">
@@ -101,7 +101,7 @@ export default function Footer({ locale = 'pt-BR' }: FooterProps) {
                 className="h-20 w-auto"
               />
             </div>
-            <p className="text-gray-500 text-sm leading-relaxed mb-5">
+            <p className="text-ink-subtle text-sm leading-relaxed mb-5">
               {m.tagline}
             </p>
             <div className="flex gap-3">
@@ -114,7 +114,7 @@ export default function Footer({ locale = 'pt-BR' }: FooterProps) {
                   key={label}
                   href="#"
                   aria-label={label}
-                  className="w-9 h-9 rounded-lg border border-dark-border flex items-center justify-center text-gray-500 hover:text-brand-red hover:border-brand-red/30 transition-colors"
+                  className="w-9 h-9 rounded-lg border border-surface-line flex items-center justify-center text-ink-subtle hover:text-brand-red hover:border-brand-red/30 transition-colors"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -125,7 +125,7 @@ export default function Footer({ locale = 'pt-BR' }: FooterProps) {
           {/* Link columns */}
           {links.map((col) => (
             <div key={col.title}>
-              <h4 className="font-semibold text-white text-sm mb-4 uppercase tracking-wide">
+              <h4 className="font-semibold text-ink text-sm mb-4 uppercase tracking-wide">
                 {col.title}
               </h4>
               <ul className="space-y-2.5">
@@ -133,7 +133,7 @@ export default function Footer({ locale = 'pt-BR' }: FooterProps) {
                   <li key={item.label}>
                     <Link
                       href={item.href}
-                      className="text-gray-500 text-sm hover:text-brand-red transition-colors"
+                      className="text-ink-subtle text-sm hover:text-brand-red transition-colors"
                     >
                       {item.label}
                     </Link>
@@ -145,8 +145,8 @@ export default function Footer({ locale = 'pt-BR' }: FooterProps) {
         </div>
 
         {/* Partner logos row */}
-        <div className="border-t border-dark-border pt-10 mb-8">
-          <p className="text-xs text-gray-600 text-center uppercase tracking-widest mb-6">
+        <div className="border-t border-surface-line pt-10 mb-8">
+          <p className="text-xs text-ink-faint text-center uppercase tracking-widest mb-6">
             {m.partnersOfficial}
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8">
@@ -169,15 +169,15 @@ export default function Footer({ locale = 'pt-BR' }: FooterProps) {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-dark-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-600">
+        <div className="border-t border-surface-line pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink-faint">
           <span>
             © {new Date().getFullYear()} English Talk Time (ETT) — DSSBR & GUBigData IA. {m.rights}
           </span>
           <div className="flex gap-4">
-            <Link href={privacyHref} className="hover:text-gray-400 transition-colors">
+            <Link href={privacyHref} className="hover:text-ink-muted transition-colors">
               {m.privacy}
             </Link>
-            <Link href={termsHref} className="hover:text-gray-400 transition-colors">
+            <Link href={termsHref} className="hover:text-ink-muted transition-colors">
               {m.terms}
             </Link>
           </div>

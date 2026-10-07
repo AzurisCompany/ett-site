@@ -42,15 +42,15 @@ export const metadata: Metadata = {
 
 export default function DetalhesPage() {
   return (
-    <main className="bg-dark min-h-screen">
+    <main className="bg-surface min-h-screen">
       <Navbar />
       <HeroDetalhes />
 
       {/* Contexto: esta é a versão longa; a home é a versão curta */}
-      <section className="bg-dark-secondary border-y border-dark-border">
+      <section className="bg-surface-alt border-y border-surface-line">
         <div className="container mx-auto px-4 py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <p className="text-sm text-gray-400">
-            Esta é a <strong className="text-gray-200">descrição completa do programa</strong> —
+          <p className="text-sm text-ink-muted">
+            Esta é a <strong className="text-ink">descrição completa do programa</strong> —
             metodologia, ferramentas, jornada e parceiros. Se você só quer participar do próximo
             encontro, o caminho curto está na home.
           </p>
