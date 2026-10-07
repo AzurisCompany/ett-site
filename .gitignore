@@ -48,3 +48,4 @@ next-env.d.ts
 # Python (geradores de arte dos kits)
 __pycache__/
 *.pyc
+webapp/scripts/tema/contraste.json

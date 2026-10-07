@@ -62,6 +62,15 @@ metade); **não** juntar `transform:none` ao override (zera o `scale-110` do fun
 layout inteiro); e janela alta **não** captura a página toda — o hero é `min-h-[92vh]`, então uma
 janela de 5200px estica o hero pra ~4800px e o resto some do enquadramento.
 
+**Conferir contraste (depois de mexer em cor):** `node webapp/scripts/tema/auditar-contraste.mjs <url>`
+roda em todas as rotas do `webapp/out/` (local, servindo o `out/` numa porta) ou na produção, mede
+a cor real de cada texto contra o fundo efetivo e lista o que fica abaixo de AA (saída em
+`scripts/tema/contraste.json`, ignorado pelo git). Em 07/10/2026 o resultado esperado é só os
+numerais decorativos gigantes e o botão do WhatsApp. Usa o mesmo Playwright do gerador de logos
+(`/mnt/d/2026/01-enrequecimento/node_modules/playwright`, caminho da máquina do Alessandro).
+**Na produção, sempre com cache-buster** (o script já põe `?v=`): o Hostinger serve HTML velho por
+alguns minutos depois do deploy.
+
 **Apagou uma rota?** O `npx tsc --noEmit` vai falhar com `TS2307: Cannot find module .../page.js`
 apontando pra `.next/types/` — é tipo gerado obsoleto, não erro real. Rodar `npm run build` antes
 (que regenera) e só então o typecheck.
