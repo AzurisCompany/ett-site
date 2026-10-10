@@ -50,7 +50,7 @@ só lista rotas do app, então `public/` já fica de fora.)
 **Imagens:**
 
 - **JPEG ou PNG, nunca `.webp`** — vários clientes de e-mail não renderizam webp.
-- **URL absoluta** de produção (`https://englishtalktime.com.br/divulgacao/...`). Consequência: a imagem só carrega **depois do pull no Hostinger** — não disparar o e-mail antes disso.
+- **URL absoluta** de produção (`https://englishtalktime.com.br/divulgacao/...`). Consequência: a imagem só carrega **depois que o deploy publicou** (Auto Deployment do Hostinger, ~2 min após o push) — conferir a URL com `curl` antes de disparar o e-mail.
 - Largura real 2× a exibida (ex.: 1200px de largura pra exibir a 600px), comprimida pra ~120 KB.
 - **Nome de arquivo novo a cada versão.** O hosting serve imagem com `max-age` de 7 dias; reaproveitar o nome faz o RD Station puxar a imagem velha.
 - O original em alta resolução vai arquivado em `novoConteudo/<campanha>/`, não aqui.

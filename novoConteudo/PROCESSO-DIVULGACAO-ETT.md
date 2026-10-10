@@ -33,10 +33,14 @@ projeto:            ETT — English Talk Time
 dominio:            https://englishtalktime.com.br
 repo_local:         /home/binhara/ett/ett-site
 kits_em:            webapp/public/divulgacao/{slug}/     # NUNCA na raiz do repo
-logo_png:           webapp/public/images/Logo-ETT.png    # 212x132, sem alpha — ver §4.4
-fundo:              #050510        cor_painel:  #0B0F1F   borda: #1D2438
-primaria (neon):    #00FF9D        secundaria:  #00BFFF (tech blue)
-texto:              #E8ECF5        muted:       #95A0B8
+# Identidade NOVA (desde 06/10/2026 — logo sem verde). Os 2 primeiros kits ainda usam a antiga (neon).
+logo_svg:           webapp/public/images/ett-logo-horizontal-negativa.svg  # sobre fundo escuro
+                    webapp/public/images/ett-logo-horizontal-positiva.svg  # sobre fundo claro
+fundo:              #0A1630        cor_painel:  #0E1D3C   borda: #24395F
+primaria (ação):    #D72229 (vermelho oficial; texto vermelho em fundo escuro: #F05A60)
+secundaria:         #A8A9AC (prata)  marinho da marca: #162B4E
+texto:              #F3F5F9        muted:       #A8B0C0
+# legado (kits antigos): fundo #050510, neon #00FF9D, tech blue #00BFFF, Logo-ETT.png 212x132
 fonte:              Inter (webapp/scripts/fonts/Inter-*.ttf — versionada p/ o PIL)
 encontro_online:    toda segunda, 20h–21h30 (horário de Brasília)
 sala:               https://ett-speak.vercel.app/
@@ -108,8 +112,8 @@ ser renomeada**, porque e-mails já disparados apontam pra imagem que está dent
 6. **Preencher o `index.html`** — placeholders, badge, fatos, links. **Manter o noindex.**
 7. **`email.html`** (§6), quando a campanha tiver e-mail.
 8. **Card no hub** `webapp/public/divulgacao/index.html`, **sempre em primeiro**.
-9. **Build + verificação visual** (§7), depois `./deploy.sh` e **avisar do pull manual no
-   Hostinger** — sem esse passo nada aparece em produção.
+9. **Build + verificação visual** (§7), depois `./deploy.sh`. O Hostinger tem Auto Deployment
+   (desde 02/08/2026): o push publica em ~2 min — conferir com `curl` (§7).
 
 ---
 
@@ -167,6 +171,21 @@ Regras aprendidas fazendo o kit piloto:
 - **Story 9:16:** conteúdo dentro dos 90% centrais; rodapé sobe pra ~0.895H.
 - **Inspecionar as 5 artes com o próprio olho** ao final. Gerar não é validar.
 
+### 4.3b Nível 3 — arte em HTML/CSS fotografada no Chromium (o padrão desde 10/10/2026)
+
+Kit `lancamento-dssbr-2026`: `node webapp/scripts/kits/build_lancamento_dssbr.mjs`. Cada formato é
+uma página HTML (Inter de `scripts/fonts/` via `@font-face`, logo **SVG** negativa, fotos de
+`public/images/`) e o Playwright tira o screenshot no tamanho exato. Vantagens sobre o PIL: usa a
+logo vetorial e a identidade nova direto, texto quebra sozinho, ajuste é CSS. Mesmas regras de
+layout: medidas em frações da largura (`u = W/100`), layout próprio por proporção (`wide`, `square`,
+`tall`, `story`). O Chromium não exporta webp: `banner.webp` e o JPEG do e-mail saem pelo PIL
+(comando no topo do script). Playwright: `/mnt/d/2026/01-enrequecimento/node_modules/playwright`
+(máquina do Alessandro). **Kit novo = copiar este script**, não os de PIL.
+
+Aprendido nesse kit: no 1:1 não cabe a linha extra embaixo da fileira de rostos (encosta) — omitir;
+no 9:16 a fileira de rostos deixa um vazio grande no meio — usar a **lista** de palestrantes
+(avatar + nome + organização + hora) em escala maior.
+
 ### 4.4 Ambiente (WSL)
 
 | Item | Situação |
@@ -223,7 +242,8 @@ JPEG/PNG (nunca webp) com URL absoluta**, **nome de arquivo novo a cada versão*
 7 dias no hosting), e comentário no topo com o passo a passo + sugestões de assunto.
 O bloco de descadastro é inserido pela RD — não duplicar.
 
-⚠️ As imagens do e-mail só carregam **depois do pull no Hostinger**. Não disparar antes.
+⚠️ As imagens do e-mail só carregam **depois que o deploy publicou** (~2 min após o push).
+Conferir a URL da imagem com `curl` antes de disparar.
 
 ---
 
@@ -232,7 +252,7 @@ O bloco de descadastro é inserido pela RD — não duplicar.
 ```bash
 cd webapp && npm run build          # confere que o kit aparece em webapp/out/divulgacao/
 cd .. && ./deploy.sh "feat(divulgacao): kit {slug}"
-# depois: pull manual em hpanel.hostinger.com  ← sem isso, produção não muda
+# Auto Deployment do Hostinger publica em ~2 min. Se não mudar: hpanel.hostinger.com → Reimplantar
 ```
 
 Checklist antes de entregar o link:
@@ -243,14 +263,18 @@ Checklist antes de entregar o link:
 - [ ] Botões **Baixar** apontam pra arquivos que existem
 - [ ] `<meta name="robots" content="noindex, nofollow">` presente
 - [ ] Card no hub `/divulgacao/`, em primeiro
-- [ ] ⚠️ **`git status` limpo de arquivo solto na raiz** antes do deploy (ver abaixo)
+- [ ] ⚠️ **`git status` conferido** antes do deploy: arquivo/pasta untracked que não é desta sessão
+      é do Alessandro — **perguntar** antes de publicar, nunca mover (ver abaixo)
 
 ### Armadilhas do ETT
 
 - **Arquivo solto num diretório da raiz é APAGADO pelo `./deploy.sh`.** A pasta
   `divulgacao/` da raiz é cópia de build: o deploy faz `rm -rf` e recria a partir de
   `webapp/out/`. Já custou um banner (2026-07-26). Asset novo vai **sempre** em
-  `webapp/public/...`, e ao mover um arquivo do usuário, **dizer explicitamente pra onde**.
+  `webapp/public/...`.
+- **Material que o Alessandro solta (ex.: `lancamento/` na raiz) é só leitura** — regra dele desde
+  10/10/2026. Não mover, renomear, editar nem apagar (nem `:Zone.Identifier`); gerar cópia derivada
+  em `webapp/public/...` e deixar o original. Outras sessões podem estar usando a mesma pasta.
 - **O sitemap é gerado por `webapp/app/sitemap.ts`**, que só lista rotas do app — kits em
   `public/` ficam fora automaticamente. O `noindex` no HTML é a segunda trava.
 - **`robots.txt` tem `Allow: /`** — não adicionar `Disallow: /divulgacao/`: isso impediria
@@ -264,6 +288,8 @@ Checklist antes de entregar o link:
 |---|---|
 | `convitesegunda20h` — encontro online | ✅ piloto, feito |
 | `cherrytop-business-meal` — atividade da Cherry Top, 01/08/2026 | ✅ feito (arte tipográfica, sem foto; usa `ett_kit.py`) |
+| `lancamento-dssbr-2026` — lançamento do ETT no DSSBR, 27/10/2026 | ✅ feito em 10/10 (identidade nova, gerador HTML §4.3b, + lembrete da véspera; falta a foto da Maria Leonardo) |
+| Refazer `convitesegunda20h` na identidade nova | pendente (e-mails já disparados apontam pra `EmailTopNovo.jpg` — não apagar) |
 | Encontro presencial de Curitiba | ⛔ bloqueado: `agenda-events.ts` parado em 2026-06-04 |
 | `ett-player` / `ett-speak` — ferramentas | pronto pra fazer (já tem screenshot real) |
 | Parceiros (BeeTools, Cherry Top, Coders, IEP) | precisa alinhar o que cada acordo permite anunciar |
@@ -272,4 +298,4 @@ Checklist antes de entregar o link:
 
 ---
 
-*Escrito em 2026-07-27, a partir do playbook do DSSBR e do kit piloto do ETT.*
+*Escrito em 2026-07-27, a partir do playbook do DSSBR e do kit piloto do ETT. Atualizado em 2026-10-10 (identidade nova, gerador HTML, deploy automático, regra de material do usuário).*
