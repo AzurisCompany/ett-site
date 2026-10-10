@@ -1,0 +1,287 @@
+<!doctype html>
+<!--
+  =====================================================================
+  ETT — KIT DE DIVULGAÇÃO: Lançamento do ETT no Congresso DSSBR 2026
+  Terça, 27/10/2026, 13h30–17h15 · Auditório do IEP, Curitiba · gratuito, 60 lugares
+
+  Inscrição SÓ pelo Google Forms (decisão do Alessandro, 10/10/2026).
+  Artes: node webapp/scripts/kits/build_lancamento_dssbr.mjs (HTML → PNG no Chromium,
+         identidade nova). Textos: mesma fonte do textos.md.
+  E-mail HTML pro RD Station: ./email.html
+  Processo: novoConteudo/PROCESSO-DIVULGACAO-ETT.md
+  noindex de propósito (kit é material de trabalho, fora do sitemap).
+  =====================================================================
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kit de divulgação — Lançamento do ETT · DSSBR 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* identidade 2026: marinho / vermelho / prata */
+  :root{
+    --bg:#0A1630; --panel:#0E1D3C; --panel2:#132649; --border:#24395F;
+    --text:#F3F5F9; --muted:#A8B0C0; --red:#D72229; --red-soft:#F05A60; --silver:#A8A9AC;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+       line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:var(--red-soft)}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--border);background:
+    radial-gradient(900px 320px at 90% -10%, rgba(215,34,41,.22), transparent 60%),
+    linear-gradient(180deg,#0E1D3C,#0A1630)}
+  .top{display:flex;align-items:center;gap:16px;padding:22px 0}
+  .top img{height:38px}
+  .top span{font-size:13px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+  .badge{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.1em;
+    text-transform:uppercase;color:#fff;background:var(--red);border-radius:999px;padding:6px 14px}
+  h1{font-size:clamp(28px,4.4vw,44px);line-height:1.1;margin:16px 0 10px;font-weight:800;letter-spacing:-.02em}
+  .lede{color:var(--muted);max-width:64ch;margin:0 0 22px}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;padding-bottom:26px}
+  .fact{background:var(--panel);border:1px solid var(--border);border-radius:10px;
+    padding:8px 14px;font-size:14px;color:#D1D5DB}
+  .fact b{color:#fff}
+  h2{font-size:20px;margin:40px 0 6px;font-weight:800;letter-spacing:-.01em}
+  h2 .n{color:var(--red-soft);font-size:13px;letter-spacing:.14em;display:block;margin-bottom:6px}
+  .hint{color:var(--muted);font-size:14px;margin:0 0 18px;max-width:72ch}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+  .art{background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;
+    display:flex;flex-direction:column}
+  .art .ph{background:#071025;display:flex;align-items:center;justify-content:center;
+    min-height:150px;padding:10px}
+  .art .ph img{max-width:100%;max-height:230px;display:block;border-radius:6px}
+  .art .meta{padding:12px 14px 14px;border-top:1px solid var(--border)}
+  .art .meta strong{display:block;font-size:14px}
+  .art .meta small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+  .btn{display:inline-block;margin-top:10px;background:var(--red);color:#fff;
+    font-weight:800;font-size:13px;text-decoration:none;border:0;border-radius:8px;
+    padding:9px 14px;cursor:pointer;font-family:inherit}
+  .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
+  .btn:hover{filter:brightness(1.1)}
+  .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+  .txt{background:var(--panel);border:1px solid var(--border);border-radius:14px;
+    padding:16px 18px;margin-bottom:16px}
+  .txt .head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+  .txt .head strong{font-size:15px}
+  .txt .head em{color:var(--muted);font-style:normal;font-size:12.5px;flex:1}
+  pre{white-space:pre-wrap;word-wrap:break-word;background:var(--panel2);
+    border:1px solid var(--border);border-radius:10px;padding:14px;margin:0;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;color:#E5E9F2}
+  .note{background:rgba(168,169,172,.08);border:1px solid rgba(168,169,172,.3);
+    border-radius:12px;padding:14px 16px;color:#E5E7EB;font-size:14px;margin:24px 0}
+  .warn{background:rgba(240,90,96,.08);border:1px solid rgba(240,90,96,.35);
+    border-radius:12px;padding:14px 16px;color:#FBD5D6;font-size:14px;margin:24px 0}
+  footer{border-top:1px solid var(--border);margin-top:56px;padding:26px 0 60px;
+    color:var(--muted);font-size:13px}
+  @media(max-width:560px){.art .ph img{max-height:180px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="top">
+      <img src="/images/ett-logo-horizontal-negativa.svg" alt="English Talk Time">
+      <span>Kit de divulgação</span>
+    </div>
+    <span class="badge">Lançamento oficial · DSSBR 2026</span>
+    <h1>Lançamento do English Talk Time</h1>
+    <p class="lede">
+      Uma tarde sobre destravar o inglês, no auditório do IEP, dentro do Congresso DSSBR 2026:
+      lançamento do ETT, palestras da Unicamp, Cherry Top e Silicon Valley Brasil, IEP Talks e
+      sorteio de prêmios. Aqui estão as artes, os textos por rede, o e-mail e o lembrete da véspera.
+    </p>
+    <div class="facts">
+      <div class="fact"><b>Quando:</b> terça, 27/10/2026, 13h30 às 17h15</div>
+      <div class="fact"><b>Onde:</b> Auditório do IEP · Rua Emiliano Perneta, 174 · Curitiba</div>
+      <div class="fact"><b>Quanto:</b> gratuito, com inscrição</div>
+      <div class="fact"><b>Lugares:</b> 60 abertos ao público</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <h2><span class="n">01</span>Links oficiais</h2>
+  <p class="hint">
+    O <b>formulário</b> é onde a pessoa se inscreve. O <b>site</b> é o link que se cola quando a
+    ideia é mostrar a programação: no LinkedIn e no WhatsApp ele aparece com a arte do lançamento.
+    Não cole o link deste kit nas redes — ele é <code>noindex</code> e não gera prévia.
+  </p>
+  <div class="links">
+    <a class="btn" href="https://forms.gle/aTbkieevUxouRU6e8" target="_blank" rel="noopener">Formulário de inscrição ↗</a>
+    <a class="btn ghost" href="https://englishtalktime.com.br/" target="_blank" rel="noopener">Site (programação) ↗</a>
+    <a class="btn ghost" href="./email.html" target="_blank">E-mail HTML (RD Station) ↗</a>
+    <a class="btn ghost" href="./textos.md" target="_blank">textos.md ↗</a>
+  </div>
+
+  <div class="warn">
+    <b>Antes de postar:</b> as hashtags são sugestão — <code>#EnglishTalkTime</code> ainda não foi
+    confirmada como oficial. E a Maria Leonardo Aparecida aparece com a logo da Cherry Top porque
+    ainda não temos a foto dela; quando chegar, as artes são regeradas com um comando.
+  </div>
+
+  <h2><span class="n">02</span>Artes</h2>
+  <p class="hint">
+    Identidade nova (marinho, vermelho e prata). A prévia 1200×630 é a mesma que aparece quando
+    alguém compartilha o link do site.
+  </p>
+  <div class="grid">
+    <div class="art">
+      <div class="ph"><img src="./assets/banner.png" alt="Banner 16:9"></div>
+      <div class="meta"><strong>Banner 16:9</strong><small>1920×1080 · capa de post, LinkedIn</small>
+        <a class="btn" href="./assets/banner.png" download>Baixar PNG</a> <a class="btn ghost" href="./assets/banner.webp" download>WebP</a></div>
+    </div>
+    <div class="art">
+      <div class="ph"><img src="./assets/og-1200x630.png" alt="Prévia de link"></div>
+      <div class="meta"><strong>Prévia de link</strong><small>1200×630 · já é a prévia da home</small>
+        <a class="btn" href="./assets/og-1200x630.png" download>Baixar PNG</a></div>
+    </div>
+    <div class="art">
+      <div class="ph"><img src="./assets/feed-1080x1080.png" alt="Feed 1:1"></div>
+      <div class="meta"><strong>Feed 1:1</strong><small>1080×1080 · quadrado</small>
+        <a class="btn" href="./assets/feed-1080x1080.png" download>Baixar PNG</a></div>
+    </div>
+    <div class="art">
+      <div class="ph"><img src="./assets/feed-1080x1350.png" alt="Feed 4:5"></div>
+      <div class="meta"><strong>Feed 4:5</strong><small>1080×1350 · maior alcance no Instagram</small>
+        <a class="btn" href="./assets/feed-1080x1350.png" download>Baixar PNG</a></div>
+    </div>
+    <div class="art">
+      <div class="ph"><img src="./assets/story-1080x1920.png" alt="Story 9:16"></div>
+      <div class="meta"><strong>Story 9:16</strong><small>1080×1920 · stories e status do WhatsApp</small>
+        <a class="btn" href="./assets/story-1080x1920.png" download>Baixar PNG</a></div>
+    </div>
+  </div>
+
+  <h2><span class="n">03</span>Textos prontos</h2>
+  <p class="hint">
+    Só fatos: data, local, quem fala, entrada gratuita e os 60 lugares — sem "últimas vagas" nem
+    promessa de resultado. O último bloco é o lembrete pra mandar aos inscritos no dia 26/10.
+  </p>
+
+  <div class="txt">
+    <div class="head"><strong>LinkedIn</strong><em>institucional · o link do site gera a prévia com a arte</em>
+      <button class="btn" data-copy="t1">Copiar</button></div>
+<pre id="t1">🎤 Terça, 27 de outubro, 13h30: lançamento oficial do English Talk Time, no auditório do IEP, em Curitiba — dentro do Congresso DSSBR 2026.
+
+Uma tarde sobre por que a gente trava pra falar inglês e o que ajuda a destravar:
+
+• 13h30 — Lançamento do ETT, com Alessandro Binhara
+• 14h00 — Rubens Queiroz (Unicamp, criador do portal Aprendendo Inglês): Por que você desiste do inglês?
+• 14h45 — Maria Leonardo Aparecida (Cherry Top): Seu inglês está pronto para o mundo?
+• 15h30 — José Motta Filho (Silicon Valley Brasil): AI para além dos prompts
+• 16h30 — IEP Talks, com Miguel Donizete (IEP · UTFPR)
+
+No encerramento, a apresentação da plataforma do ETT e sorteio de prêmios.
+
+A entrada é gratuita, com inscrição: são 60 lugares abertos ao público. Quem já está inscrito no DSSBR também está convidado.
+
+Inscrição: https://forms.gle/aTbkieevUxouRU6e8
+Programação completa: https://englishtalktime.com.br
+
+#EnglishTalkTime #DSSBR #inglês #Curitiba #inglesparatech</pre>
+  </div>
+  <div class="txt">
+    <div class="head"><strong>Instagram</strong><em>feed · link na bio</em>
+      <button class="btn" data-copy="t2">Copiar</button></div>
+<pre id="t2">🎤 27/10 tem lançamento do English Talk Time — e você está convidado.
+
+Uma tarde no auditório do IEP, em Curitiba, sobre destravar o inglês: Rubens Queiroz (Unicamp), Maria Leonardo Aparecida (Cherry Top), José Motta Filho (Silicon Valley Brasil) e o IEP Talks com Miguel Donizete. No fim, a plataforma do ETT ao vivo e sorteio de prêmios.
+
+📅 Terça, 27/10, 13h30 às 17h15
+📍 Auditório do IEP · Rua Emiliano Perneta, 174 · Centro
+🎟️ Entrada gratuita com inscrição · 60 lugares abertos ao público
+
+Inscrição pelo link na bio.
+.
+.
+#EnglishTalkTime #DSSBR #inglês #Curitiba #inglesemcuritiba #praticaringlês #inglesparatech</pre>
+  </div>
+  <div class="txt">
+    <div class="head"><strong>WhatsApp / Telegram</strong><em>encaminhável</em>
+      <button class="btn" data-copy="t3">Copiar</button></div>
+<pre id="t3">🎤 *Lançamento do English Talk Time — terça, 27/10, 13h30*
+
+Uma tarde sobre destravar o inglês, no auditório do IEP (Curitiba), dentro do Congresso DSSBR 2026. Palestras da Unicamp, Cherry Top e Silicon Valley Brasil, IEP Talks e sorteio de prêmios.
+
+Entrada gratuita, 60 lugares abertos ao público.
+Inscrição: https://forms.gle/aTbkieevUxouRU6e8
+Programação: https://englishtalktime.com.br</pre>
+  </div>
+  <div class="txt">
+    <div class="head"><strong>X / Twitter</strong><em>dentro dos 280</em>
+      <button class="btn" data-copy="t4">Copiar</button></div>
+<pre id="t4">🎤 27/10, 13h30: lançamento do English Talk Time no auditório do IEP, em Curitiba (Congresso DSSBR 2026). Uma tarde sobre destravar o inglês + sorteio de prêmios. Entrada gratuita, 60 lugares. Inscrição: https://forms.gle/aTbkieevUxouRU6e8 #EnglishTalkTime</pre>
+  </div>
+  <div class="txt">
+    <div class="head"><strong>Repost</strong><em>1ª pessoa · palestrantes, parceiros e equipe</em>
+      <button class="btn" data-copy="t5">Copiar</button></div>
+<pre id="t5">Dia 27 de outubro vou estar no lançamento do English Talk Time, no auditório do IEP, em Curitiba — dentro do Congresso DSSBR 2026.
+
+É uma tarde inteira sobre por que a gente trava no inglês e o que ajuda a destravar, com palestras, o IEP Talks e sorteio de prêmios no fim. A entrada é gratuita, com inscrição (60 lugares abertos ao público).
+
+Se você está em Curitiba, vem: https://forms.gle/aTbkieevUxouRU6e8</pre>
+  </div>
+  <div class="txt">
+    <div class="head"><strong>Lembrete da véspera</strong><em>26/10 · pros inscritos do Google Forms, por WhatsApp ou e-mail</em>
+      <button class="btn" data-copy="t6">Copiar</button></div>
+<pre id="t6">📍 *É amanhã: lançamento do English Talk Time*
+
+Terça, 27/10, a partir das 13h30, no auditório do IEP — Rua Emiliano Perneta, 174, Centro, Curitiba.
+
+13h30 Lançamento do ETT · 14h00 Rubens Queiroz · 14h45 Maria Leonardo Aparecida · 15h30 José Motta Filho · 16h30 IEP Talks
+
+No encerramento: apresentação da plataforma do ETT e sorteio de prêmios.
+
+Como chegar: https://www.google.com/maps/search/?api=1&amp;query=Instituto+de+Engenharia+do+Paran%C3%A1+Rua+Emiliano+Perneta+174+Curitiba
+
+Até amanhã!</pre>
+  </div>
+
+  <h2><span class="n">04</span>E-mail (RD Station)</h2>
+  <p class="hint">
+    Abra <a href="./email.html" target="_blank">email.html</a>, use “ver código-fonte”, copie tudo e
+    cole em <b>RD Station → E-mails → Criar e-mail → Código HTML</b>. Sugestões de assunto no
+    comentário do topo do arquivo. O descadastro é inserido pela RD — não duplique.
+  </p>
+  <div class="note">
+    <b>Pra quem mandar:</b> a base da RD é o público mais quente pra encher os 60 lugares — quem
+    já pediu informações sobre o ETT. Os inscritos no lançamento ficam só no Google Forms; o
+    lembrete da véspera (bloco acima) vai pra eles por fora da RD.
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    ETT · English Talk Time — material de divulgação interno. Lançamento dentro do Congresso
+    DSSBR 2026, no IEP — Instituto de Engenharia do Paraná. Página <code>noindex</code>, fora do sitemap.
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('[data-copy]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var txt = document.getElementById(b.dataset.copy).innerText;
+      var done = function () { var o = b.textContent; b.textContent = 'Copiado ✓';
+        setTimeout(function () { b.textContent = o }, 1600) };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(txt).then(done);
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = txt; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done() } catch (e) { alert('Selecione e copie manualmente.') }
+        document.body.removeChild(ta);
+      }
+    });
+  });
+</script>
+</body>
+</html>
