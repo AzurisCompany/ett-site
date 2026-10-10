@@ -12,7 +12,7 @@ const INSCRICAO_URL = 'https://forms.gle/aTbkieevUxouRU6e8'
 
 /* Depois do evento a seção some sozinha. Checado no navegador, não no build:
    o export estático pode ficar semanas sem rodar. */
-const FIM_DO_EVENTO = new Date('2026-10-27T16:30:00-03:00')
+const FIM_DO_EVENTO = new Date('2026-10-27T17:15:00-03:00')
 
 const programacao = [
   {
@@ -21,6 +21,7 @@ const programacao = [
     org: 'English Talk Time',
     titulo: 'Lançamento do ETT: do inglês travado ao inglês funcional',
     foto: null,
+    logo: '/images/ett-simbolo-positiva.svg',
   },
   {
     hora: '14h00',
@@ -30,16 +31,32 @@ const programacao = [
     foto: '/images/lancamento/rubens-queiroz.webp',
   },
   {
+    hora: '14h45',
+    nome: 'Maria Leonarda Aparecida',
+    org: 'Cherry Top',
+    titulo: 'Seu inglês está pronto para o mundo? Imersão no Brasil e no exterior',
+    foto: null,
+    logo: '/images/logo-cherrytop.jpeg',
+  },
+  {
     hora: '15h30',
     nome: 'José Motta Filho',
     org: 'Silicon Valley Brasil',
     titulo: 'AI para além dos prompts: uma conversa franca sobre os novos tempos da Educação',
     foto: '/images/lancamento/jose-motta.webp',
   },
+  {
+    hora: '16h30',
+    nome: 'Miguel Donizete',
+    org: 'IEP · UTFPR',
+    titulo: 'IEP Talks: o grupo de conversação do IEP, com leitura guiada e debate em inglês',
+    foto: null,
+    logo: '/images/logoiep.jpg',
+  },
 ]
 
 const fatos = [
-  { icon: CalendarDays, texto: 'Terça, 27 de outubro · 13h30 às 16h30' },
+  { icon: CalendarDays, texto: 'Terça, 27 de outubro · 13h30 às 17h15' },
   { icon: MapPin, texto: 'Auditório do IEP · Rua Emiliano Perneta, 174 — Centro, Curitiba' },
   { icon: Users, texto: '60 lugares abertos ao público · entrada gratuita com inscrição' },
 ]
@@ -77,9 +94,10 @@ export default function LancamentoDSSBR() {
               </h2>
 
               <p className="text-ink-soft leading-relaxed mb-6">
-                Uma tarde sobre aprender inglês de verdade: o lançamento do English Talk Time e
-                duas palestras convidadas. Ao final, apresentação completa da plataforma do ETT e
-                sorteio de prêmios. Quem já está inscrito no DSSBR também está convidado.
+                Uma tarde sobre aprender inglês de verdade: o lançamento do English Talk Time,
+                palestras da Unicamp, da Cherry Top e do Silicon Valley Brasil, e o IEP Talks no
+                fechamento. Ao final, apresentação completa da plataforma do ETT e sorteio de
+                prêmios. Quem já está inscrito no DSSBR também está convidado.
               </p>
 
               <ul className="space-y-3 mb-8">
@@ -119,15 +137,16 @@ export default function LancamentoDSSBR() {
                     className="flex gap-4 rounded-2xl bg-surface-card border border-surface-line p-4"
                   >
                     <div className="relative w-14 h-14 rounded-full overflow-hidden shrink-0 bg-white border border-surface-line">
+                      {/* sem foto da pessoa, vai a logo da organização */}
                       {p.foto ? (
                         <Image src={p.foto} alt={p.nome} fill sizes="56px" className="object-cover" />
                       ) : (
                         <Image
-                          src="/images/ett-simbolo-positiva.svg"
-                          alt="English Talk Time"
+                          src={p.logo!}
+                          alt={p.org}
                           fill
                           sizes="56px"
-                          className="object-contain p-2.5"
+                          className="object-contain p-2"
                         />
                       )}
                     </div>
