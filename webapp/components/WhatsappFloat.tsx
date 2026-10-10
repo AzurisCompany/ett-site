@@ -13,7 +13,7 @@ export default function WhatsappFloat() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar com o time ETT no WhatsApp"
-      className="fixed bottom-6 right-6 z-50 group flex items-center gap-2 pl-3 pr-4 py-3 rounded-full bg-[#25D366] text-white shadow-xl hover:bg-[#1ebe57] hover:scale-105 transition-all"
+      className="whatsapp-float fixed bottom-6 right-6 z-50 group flex items-center gap-2 pl-3 pr-4 py-3 rounded-full bg-[#25D366] text-white shadow-xl hover:bg-[#1ebe57] hover:scale-105 transition-all"
     >
       <svg
         viewBox="0 0 24 24"

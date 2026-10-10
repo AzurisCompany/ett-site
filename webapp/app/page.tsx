@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import Navbar from '@/components/Navbar'
-import HeroSimples from '@/components/HeroSimples'
+import HeroHome from '@/components/HeroHome'
 import LancamentoDSSBR from '@/components/LancamentoDSSBR'
+import { LancamentoChamadaFinal, LancamentoBarraCelular } from '@/components/LancamentoChamadas'
 import ProximosEncontros from '@/components/ProximosEncontros'
 import CapturaRapida from '@/components/CapturaRapida'
 import ComoE from '@/components/ComoE'
@@ -32,7 +33,8 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Navbar />
-      <HeroSimples />
+      {/* Até 27/10/2026 a home é a página do lançamento (lib/lancamento.ts); depois volta sozinha. */}
+      <HeroHome />
       <LancamentoDSSBR />
       <ProximosEncontros />
       <CapturaRapida />
@@ -49,6 +51,7 @@ export default function Home() {
         }
         subtitle="Sem letra miúda. Se ficar faltando alguma, é só perguntar no encontro."
       />
+      <LancamentoChamadaFinal />
       <LeadForm />
 
       {/* Ponte para a versão longa do programa */}
@@ -73,6 +76,7 @@ export default function Home() {
       </section>
 
       <Footer />
+      <LancamentoBarraCelular />
     </main>
   )
 }

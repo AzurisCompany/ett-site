@@ -204,3 +204,10 @@ body {
   background: rgb(var(--surface-line));
   margin: 2.5rem 0;
 }
+
+/* Barra fixa do lançamento no celular (LancamentoChamadas.tsx): o botão do WhatsApp sobe acima dela. */
+@media (max-width: 767px) {
+  html[data-barra-lancamento='1'] .whatsapp-float {
+    bottom: 5.5rem;
+  }
+}
