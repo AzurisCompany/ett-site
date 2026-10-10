@@ -32,7 +32,7 @@ const programacao = [
   },
   {
     hora: '14h45',
-    nome: 'Maria Leonarda Aparecida',
+    nome: 'Maria Leonardo Aparecida',
     org: 'Cherry Top',
     titulo: 'Seu inglês está pronto para o mundo? Imersão no Brasil e no exterior',
     foto: null,
@@ -50,7 +50,7 @@ const programacao = [
     nome: 'Miguel Donizete',
     org: 'IEP · UTFPR',
     titulo: 'IEP Talks: o grupo de conversação do IEP, com leitura guiada e debate em inglês',
-    foto: null,
+    foto: '/images/lancamento/miguel-donizete.webp',
     logo: '/images/logoiep.jpg',
   },
 ]
