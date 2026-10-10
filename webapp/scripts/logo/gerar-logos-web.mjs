@@ -40,8 +40,11 @@ for (const [src, dst, mode] of jobs) {
     if (mode === 'symbol') {
       // balões = formas cuja borda direita fica à esquerda do início do texto
       const boxes = shapes.map((s) => [s, s.getBBox()]);
+      // critério relativo ao maior balão, não ao viewBox: na positiva (viewBox de 165 de altura) as letras
+      // têm 50 e passavam no antigo "30% da altura" — o símbolo saía com a assinatura inteira.
       const widest = boxes.reduce((m, [, b]) => Math.max(m, b.width), 0);
-      const balloons = boxes.filter(([, b]) => b.width > widest * 0.5 || b.height > vb.height * 0.3);
+      const tallest = boxes.reduce((m, [, b]) => Math.max(m, b.height), 0);
+      const balloons = boxes.filter(([, b]) => b.width > widest * 0.5 || b.height > tallest * 0.6);
       const right = Math.max(...balloons.map(([, b]) => b.x + b.width));
       for (const [s, b] of boxes) if (b.x >= right - 1) s.remove();
     }

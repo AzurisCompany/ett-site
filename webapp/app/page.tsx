@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import HeroSimples from '@/components/HeroSimples'
+import LancamentoDSSBR from '@/components/LancamentoDSSBR'
 import ProximosEncontros from '@/components/ProximosEncontros'
 import CapturaRapida from '@/components/CapturaRapida'
 import ComoE from '@/components/ComoE'
@@ -32,6 +33,7 @@ export default function Home() {
       />
       <Navbar />
       <HeroSimples />
+      <LancamentoDSSBR />
       <ProximosEncontros />
       <CapturaRapida />
       <ComoE />
