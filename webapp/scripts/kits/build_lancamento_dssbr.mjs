@@ -27,7 +27,7 @@ const font = (w) => 'file://' + path.join(WEBAPP, 'scripts', 'fonts', `Inter-${w
 const palestrantes = [
   { nome: 'Alessandro Binhara', curto: 'Alessandro', org: 'English Talk Time', hora: '13h30', img: url('images/ett-simbolo-positiva.svg'), logo: true },
   { nome: 'Rubens Queiroz', curto: 'Rubens', org: 'Unicamp · Aprendendo Inglês', hora: '14h00', img: url('images/lancamento/rubens-queiroz.webp') },
-  { nome: 'Maria Leonardo Aparecida', curto: 'Maria Leonardo', org: 'Cherry Top', hora: '14h45', img: url('images/logo-cherrytop.jpeg'), logo: true },
+  { nome: 'Maria Leonardo Aparecida', curto: 'Maria Leonardo', org: 'Cherry Top', hora: '14h45', img: url('images/lancamento/maria-leonardo.webp') },
   { nome: 'José Motta Filho', curto: 'José Motta', org: 'Silicon Valley Brasil', hora: '15h30', img: url('images/lancamento/jose-motta.webp') },
   { nome: 'Miguel Donizete', curto: 'Miguel', org: 'IEP · UTFPR', hora: '16h30', img: url('images/lancamento/miguel-donizete.webp') },
 ]

@@ -60,8 +60,7 @@ export const programacao: Atracao[] = [
     nome: 'Maria Leonardo Aparecida',
     org: 'Cherry Top',
     titulo: 'Seu inglês está pronto para o mundo? Imersão no Brasil e no exterior',
-    foto: null,
-    logo: '/images/logo-cherrytop.jpeg',
+    foto: '/images/lancamento/maria-leonardo.webp',
   },
   {
     hora: '15h30',
