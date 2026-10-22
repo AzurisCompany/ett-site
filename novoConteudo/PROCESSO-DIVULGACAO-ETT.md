@@ -186,6 +186,11 @@ Aprendido nesse kit: no 1:1 não cabe a linha extra embaixo da fileira de rostos
 no 9:16 a fileira de rostos deixa um vazio grande no meio — usar a **lista** de palestrantes
 (avatar + nome + organização + hora) em escala maior.
 
+Trocar uma foto de palestrante (21/10, Maria Leonardo): recorte quadrado do rosto → 320×320 webp em
+`public/images/lancamento/`; atualizar **os dois** — `lib/lancamento.ts` (`foto`, tirar `logo`) e o array
+`palestrantes` do script (`img`, tirar `logo: true`); rodar o script + o comando PIL do topo com **nome novo**
+pro JPEG do e-mail; trocar o nome no `email.html` (2 ocorrências) e manter o JPEG antigo publicado.
+
 ### 4.4 Ambiente (WSL)
 
 | Item | Situação |
@@ -288,7 +293,7 @@ Checklist antes de entregar o link:
 |---|---|
 | `convitesegunda20h` — encontro online | ✅ piloto, feito |
 | `cherrytop-business-meal` — atividade da Cherry Top, 01/08/2026 | ✅ feito (arte tipográfica, sem foto; usa `ett_kit.py`) |
-| `lancamento-dssbr-2026` — lançamento do ETT no DSSBR, 27/10/2026 | ✅ feito em 10/10 (identidade nova, gerador HTML §4.3b, + lembrete da véspera; falta a foto da Maria Leonardo) |
+| `lancamento-dssbr-2026` — lançamento do ETT no DSSBR, 27/10/2026 | ✅ feito em 10/10 (identidade nova, gerador HTML §4.3b, + lembrete da véspera); foto da Maria Leonardo entrou em 21/10, e-mail com topo `EmailLancamento-1021.jpg` |
 | Refazer `convitesegunda20h` na identidade nova | pendente (e-mails já disparados apontam pra `EmailTopNovo.jpg` — não apagar) |
 | Encontro presencial de Curitiba | ⛔ bloqueado: `agenda-events.ts` parado em 2026-06-04 |
 | `ett-player` / `ett-speak` — ferramentas | pronto pra fazer (já tem screenshot real) |
