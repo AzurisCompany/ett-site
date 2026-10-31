@@ -206,3 +206,5 @@ Validação: typecheck e build ok. Contraste nas 33 rotas = baseline (só os num
 - `lib/agenda-events.ts` (eventos passados nos locais antigos, que são filtrados e não aparecem).
 
 **Inconsistência encontrada:** os anos de experiência da Cherry Top ("30+" em `Partners`, "40+" em `Imersoes`). Tirei o número dos dois lados até confirmar.
+
+**Atualização 31/10, noite:** **publicado** (deploy `dfc9c9a`, 19:09 UTC) e conferido em produção. Não há seção 13+: o briefing era só aquilo. Pendente: Fase 7 (EN/ES) e a lista "fora do escopo" acima. Handoff em `CONTEXTO-SESSAO-2026-10-31.md`.
