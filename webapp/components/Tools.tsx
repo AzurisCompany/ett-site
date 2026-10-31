@@ -1,218 +1,107 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { Hammer } from 'lucide-react'
 import {
-  BarChart3,
-  Repeat2,
-  Film,
-  Headphones,
-  Radio,
-  BookOpen,
-  Printer,
-  Database,
-  Bot,
-  Trophy,
-} from 'lucide-react'
+  ferramentas,
+  ferramentasDisponiveis,
+  emConstrucao,
+  rotuloGrupo,
+  rotuloStatus,
+  type StatusFerramenta,
+} from '@/lib/ferramentas'
+import { cn } from '@/lib/utils'
 
-const tools = [
-  {
-    id: 'fluente-level',
-    icon: BarChart3,
-    name: 'ETT FluenteLevel',
-    tagline: 'Diagnóstico de Vocabulário',
-    description:
-      'Identifica o que você já sabe, o que ainda não sabe e o que precisa ser priorizado. Gera um plano de estudo personalizado com base em listas Longman, Oxford e palavras de alta frequência. Foca nos 20% que geram 80% dos resultados.',
-    highlight: true,
-    badge: 'Ferramenta #1',
-  },
-  {
-    id: 'pontos',
-    icon: Repeat2,
-    name: 'Técnica dos Pontinhos',
-    tagline: 'Revisão Inteligente',
-    description:
-      '10 palavras novas por dia + revisão seletiva das palavras difíceis do dia anterior. Alinhado ao Farol da Fluência: foco nas palavras relevantes com repetição que combina avanço e consolidação. 10 meses para fluência.',
-    highlight: false,
-    badge: null,
-  },
-  {
-    id: 'subtitle-series',
-    icon: Film,
-    name: 'ETT SubtitleSeries',
-    tagline: 'Séries, Legendas e SRT',
-    description:
-      'Estude com episódios selecionados por nível: marque palavras desconhecidas, repita frases e treine escuta e fala com apoio visual. 20–30 minutos de seriado por dia com vocabulário preparado antes do episódio.',
-    highlight: true,
-    badge: 'Destaque',
-  },
-  {
-    id: 'audiobook',
-    icon: BookOpen,
-    name: 'ETT AudioBook',
-    tagline: 'Leitura Guiada + Áudio',
-    description:
-      'Módulo de leitura com audiobooks do Lit2Go (Universidade da Flórida): biblioteca completa de clássicos com áudio profissional. O ETT indica o livro ideal para seu nível, com as palavras desconhecidas mapeadas previamente.',
-    highlight: false,
-    badge: null,
-  },
-  {
-    id: 'audio-hub',
-    icon: Radio,
-    name: 'ETT AudioHub',
-    tagline: 'Hub de Áudio Contínuo',
-    description:
-      'Rádios, notícias e talk shows em inglês para níveis intermediário e avançado. Exposição contínua durante o dia — trânsito, fila, academia. Treina entonação, contexto e compreensão sem necessidade de tradução.',
-    highlight: false,
-    badge: null,
-  },
-  {
-    id: 'diario',
-    icon: Headphones,
-    name: 'Diário ETT',
-    tagline: 'Diário Escrito, Falado e de Sentimentos',
-    description:
-      'Transforme vocabulário em expressão pessoal. Escreva ou grave o que fez ontem, o que vai fazer hoje, como está se sentindo — em inglês. Aproxima o idioma da sua identidade e gera retenção muito mais profunda.',
-    highlight: false,
-    badge: null,
-  },
-  {
-    id: 'material-impresso',
-    icon: Printer,
-    name: 'Material Personalizado',
-    tagline: 'Impresso + QR Code',
-    description:
-      'Cadernos, listas de palavras, apostilas de vocabulário, planos de estudo diários, etiquetas e atividades "Tell me about..." — conectados via QR Code para apoio nos encontros. O processo tátil de escrever reforça a memória.',
-    highlight: false,
-    badge: null,
-  },
-  {
-    id: 'sistema-inteligente',
-    icon: Database,
-    name: 'Sistema de Recomendação',
-    tagline: 'ClickHouse + IA',
-    description:
-      'Usa dados de uso, palavras clicadas, erros e contexto profissional para gerar flashcards, exercícios e prioridades personalizadas. Relatórios compartilháveis com professores e parceiros para coaching preciso.',
-    highlight: true,
-    badge: 'Destaque',
-  },
-  {
-    id: 'ai-prompt',
-    icon: Bot,
-    name: 'ETT AI Prompt',
-    tagline: 'Simulação com IA',
-    description:
-      'Gera prompts de engenharia profissional para que o ChatGPT simule situações reais: imigração, hotel, entrevista, reunião, restaurante, viagem. Personalizado às lacunas do aluno — treino adicional inteligente fora dos encontros.',
-    highlight: true,
-    badge: 'IA Generativa',
-  },
-  {
-    id: 'gamificacao',
-    icon: Trophy,
-    name: 'ETT GameZone',
-    tagline: 'Gamificação & Ranking',
-    description:
-      'Sistema de níveis (Novato → Intermediário → Avançado → Fluente → Global Pro), pontos, badges, leaderboard semanal e jackpot mensal. Constância ganha recompensas. Ranking por comunidade para motivação coletiva.',
-    highlight: false,
-    badge: 'Novo',
-  },
-]
+/* Ferramentas em /detalhes/ — versão completa (com exemplo de uso).
+   Dados em lib/ferramentas.ts, espelho do ETT Player. Até 31/10/2026 esta
+   lista anunciava Diário, AI Prompt, Sistema de Recomendação e GameZone como
+   prontos; agora eles aparecem só pelo nome, em "Em construção". */
+
+const estiloStatus: Record<StatusFerramenta, string> = {
+  disponivel: 'bg-brand-red/10 text-brand-red border-brand-red/25',
+  poc: 'bg-brand-silver/10 text-brand-silver border-brand-silver/30',
+  'em-breve': 'bg-surface-alt text-ink-subtle border-surface-line',
+}
 
 export default function Tools() {
   return (
     <section id="ferramentas" className="section-padding bg-surface-alt relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-silver/30 to-transparent" />
 
-      {/* Background glow */}
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl pointer-events-none opacity-5"
-        style={{ background: 'radial-gradient(circle, #D72229 0%, transparent 70%)' }}
-      />
-
       <div className="container mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 max-w-3xl mx-auto"
         >
           <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
-            Ferramentas com IA para Inglês
+            Ferramentas · {ferramentasDisponiveis.length} no ar
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-6">
-            10 ferramentas com IA pra
-            <br />
-            <span className="gradient-text">destravar conversação em inglês</span>
+            As ferramentas, uma a uma
           </h2>
-          <p className="text-ink-muted max-w-2xl mx-auto text-lg">
-            Diagnóstico de vocabulário, séries com legenda, audiobook, simulação com ChatGPT,
-            flashcards inteligentes e mais. Cada ferramenta resolve um bloqueio diferente —
-            juntas, viram uma rotina diária de prática precisa, relevante e motivadora.
+          <p className="text-ink-muted text-lg leading-relaxed">
+            Cada uma cuida de um pedaço da prática: diagnóstico, rotina, vocabulário, escuta e
+            fala. Juntas, ajudam a manter contato frequente com o idioma — no seu ritmo.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {tools.map((tool, i) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+          {ferramentas.map((f, i) => (
             <motion.div
-              key={tool.id}
-              initial={{ opacity: 0, y: 25 }}
+              key={f.id}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.5, delay: i * 0.07 }}
-              className={`relative bg-surface-card rounded-2xl p-5 card-hover flex flex-col ${
-                tool.highlight
-                  ? 'border border-brand-red/30 shadow-brand-red'
-                  : 'border border-surface-line'
-              }`}
-            >
-              {/* Badge */}
-              {tool.badge && (
-                <span className="absolute top-4 right-4 px-2 py-0.5 rounded-full text-xs font-bold bg-brand-red/15 text-brand-red border border-brand-red/25">
-                  {tool.badge}
-                </span>
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.4, delay: (i % 3) * 0.06 }}
+              className={cn(
+                'bg-surface-card border border-surface-line rounded-2xl p-5 flex flex-col',
+                f.status !== 'disponivel' && 'border-dashed'
               )}
-
-              {/* Icon */}
-              <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${
-                tool.highlight
-                  ? 'bg-brand-red/15 border border-brand-red/30'
-                  : 'bg-brand-silver/10 border border-brand-silver/20'
-              }`}>
-                <tool.icon className={`w-5 h-5 ${tool.highlight ? 'text-brand-red' : 'text-brand-silver'}`} />
+            >
+              <div className="flex items-start justify-between gap-3 mb-1">
+                <h3 className="font-bold text-ink text-base">{f.nome}</h3>
+                <span
+                  className={cn(
+                    'shrink-0 px-2 py-0.5 rounded-full text-[11px] font-semibold border',
+                    estiloStatus[f.status]
+                  )}
+                >
+                  {rotuloStatus[f.status]}
+                </span>
               </div>
-
-              <h3 className="font-bold text-ink text-base mb-1">{tool.name}</h3>
-              <p className={`text-xs font-semibold uppercase tracking-wide mb-3 ${
-                tool.highlight ? 'text-brand-red' : 'text-brand-silver'
-              }`}>
-                {tool.tagline}
+              <p className="text-xs font-semibold uppercase tracking-wide text-brand-silver mb-3">
+                {rotuloGrupo[f.grupo]}
               </p>
-              <p className="text-ink-muted text-sm leading-relaxed flex-1">
-                {tool.description}
-              </p>
+              <p className="text-sm font-medium text-ink-soft mb-1.5">{f.finalidade}</p>
+              <p className="text-sm text-ink-muted leading-relaxed flex-1">{f.oQueFaz}</p>
+              {f.status !== 'em-breve' && (
+                <p className="text-xs text-ink-subtle mt-3 pt-3 border-t border-surface-line leading-relaxed">
+                  <span className="font-semibold text-ink-muted">Na prática:</span> {f.exemplo}
+                </p>
+              )}
             </motion.div>
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-center mt-12"
-        >
-          <p className="text-ink-muted mb-5">
-            Não são planos no papel — <strong className="text-ink">já estão no ar no ETT Player</strong>{' '}
-            e são gratuitas pra quem participa do programa. Veja o app funcionando logo abaixo. 👇
-          </p>
+        <div className="max-w-6xl mx-auto mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-ink-subtle">
+          <span className="inline-flex items-center gap-1.5 font-semibold text-ink-muted">
+            <Hammer className="w-4 h-4" />
+            Em construção:
+          </span>
+          {emConstrucao.join(' · ')}
+        </div>
+
+        <div className="text-center mt-10">
           <a
             href="#player"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg"
           >
-            Ver o ETT Player em ação
+            Ver o ETT Player
           </a>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

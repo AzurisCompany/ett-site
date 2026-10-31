@@ -13,7 +13,8 @@ import {
   Check,
 } from 'lucide-react'
 
-const PLAYER_URL = 'https://ett-player.vercel.app/'
+import Link from 'next/link'
+import { PLAYER_URL } from '@/lib/ferramentas'
 
 const modules = [
   { icon: MessageSquare, label: 'Speak', desc: 'Conversa guiada com correção na hora' },
@@ -21,7 +22,7 @@ const modules = [
   { icon: Film, label: 'Legendas & Séries', desc: 'Estudo por episódio, palavra a palavra' },
   { icon: Headphones, label: 'AudioBook & Rádio', desc: 'Escuta contínua em inglês real' },
   { icon: BarChart3, label: 'Level Check & Learning DNA', desc: 'Diagnóstico do seu nível e estilo' },
-  { icon: Sparkles, label: 'Voice Agent Lab', desc: 'Prática de fala com IA' },
+  { icon: Sparkles, label: 'Voice Agent Lab', desc: 'Conversa por voz com IA — prova de conceito' },
 ]
 
 export default function PlayerShowcase() {
@@ -48,16 +49,16 @@ export default function PlayerShowcase() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red-deep opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-red-deep" />
             </span>
-            As ferramentas já estão no ar
+            O app das ferramentas
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-6">
-            Não é promessa. É o{' '}
-            <span className="gradient-text">ETT Player</span> — e já está funcionando.
+            Tudo reunido no{' '}
+            <span className="gradient-text">ETT Player</span>
           </h2>
           <p className="text-ink-muted max-w-2xl mx-auto text-lg">
-            Todas as ferramentas com IA reunidas em um só lugar. Metodologia, conversação,
-            flashcards, séries, audiobook e simulação com IA — o app lembra exatamente
-            onde você parou e continua de lá.
+            Diagnóstico, plano diário, conversa guiada, flashcards, séries, audiolivro e rádio
+            num lugar só. O app lembra onde você parou e continua de lá. Algumas ferramentas
+            estão em versão beta.
           </p>
         </motion.div>
 
@@ -85,7 +86,7 @@ export default function PlayerShowcase() {
             </div>
             <Image
               src="/images/ett-player.webp"
-              alt="ETT Player — app com as ferramentas de inglês com IA: Fórmula Fluente, Meet, Speak e Daily"
+              alt="Tela inicial do ETT Player com as ferramentas Fórmula Fluente, Meet, Speak e Daily"
               width={1600}
               height={1000}
               className="w-full h-auto"
@@ -117,9 +118,9 @@ export default function PlayerShowcase() {
               <p className="flex items-start gap-2 text-ink-soft text-sm mb-5">
                 <Check className="w-5 h-5 text-brand-red flex-shrink-0" />
                 <span>
-                  <strong className="text-ink">Acesso gratuito</strong> pra quem participa do
-                  programa. Cadastre-se para receber seu login e um{' '}
-                  <strong className="text-ink">plano de estudos personalizado</strong> ao seu nível.
+                  <strong className="text-ink">Todas as ferramentas abertas por 30 dias</strong>,
+                  sem cartão. Depois, o acesso continua numa das trilhas — e os encontros de
+                  conversação seguem gratuitos de qualquer jeito.
                 </span>
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
@@ -132,12 +133,12 @@ export default function PlayerShowcase() {
                   Explorar o ETT Player
                   <ArrowUpRight className="w-4 h-4" />
                 </a>
-                <a
-                  href="#inscricao"
+                <Link
+                  href="/planos/conhecer/"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-brand-silver/50 text-brand-silver font-bold text-sm hover:bg-brand-silver/10 hover:border-brand-silver transition-all"
                 >
-                  Quero meu acesso grátis
-                </a>
+                  Ver o teste de 30 dias
+                </Link>
               </div>
             </div>
           </motion.div>

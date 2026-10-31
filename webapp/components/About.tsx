@@ -1,152 +1,114 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Target, Users, Lightbulb, Globe2 } from 'lucide-react'
+import { Target, Users, Lightbulb, Compass } from 'lucide-react'
 
+/* "Sobre" de /detalhes/. O nome histórico "Programa de Aceleração de Inglês"
+   continua (está na logo e nos e-mails antigos), mas contextualizado: acelerar
+   é praticar com mais frequência e organização, não um atalho prometido. */
 const highlights = [
   {
     icon: Target,
     title: 'Objetivo claro',
-    text: 'Inglês funcional para o mercado internacional — não perfeição, mas capacidade real de comunicar, entrevistar e colaborar.',
+    text: 'Inglês funcional: conseguir conversar, explicar um projeto e participar de uma entrevista — não perfeição gramatical.',
   },
   {
     icon: Users,
     title: 'Comunidade de prática',
-    text: 'Nascido no ecossistema DSSBR & GUBigData IA, com comunidade ativa de profissionais de tech para prática real.',
+    text: 'Nasceu na comunidade DSSBR & GUBigData IA, com encontros semanais abertos a qualquer pessoa.',
   },
   {
     icon: Lightbulb,
-    title: 'Metodologia com ciência',
-    text: 'Base na Fórmula Fluente (Frank Florida, +365 mil alunos): pequenos blocos, vocabulário relevante, repetição inteligente.',
+    title: 'Método de organização',
+    text: 'As ferramentas seguem a Fórmula Fluente: blocos curtos, vocabulário relevante e repetição orientada.',
   },
   {
-    icon: Globe2,
-    title: 'Foco em carreira',
-    text: 'O inglês como instrumento concreto de mobilidade profissional — entrevistas, reuniões, networking e relocação internacional.',
+    icon: Compass,
+    title: 'Você escolhe o caminho',
+    text: 'Ferramentas, encontros e parceiros se combinam conforme o seu objetivo e o seu tempo — sem grade obrigatória.',
   },
 ]
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay: i * 0.12 },
-  }),
-}
 
 export default function About() {
   return (
     <section id="sobre" className="section-padding bg-surface-alt relative overflow-hidden">
-      {/* Subtle background accent */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/30 to-transparent" />
 
       <div className="container mx-auto px-4">
-        {/* Section header */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
-          variants={fadeUp}
-          custom={0}
-          className="text-center mb-14"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 max-w-3xl mx-auto"
         >
           <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
             Sobre o ETT
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-6 leading-tight">
-            Não é mais um curso de inglês.
-            <br />
-            <span className="gradient-text">É um ecossistema de aceleração.</span>
+            Uma plataforma de apoio à prática do inglês
           </h2>
-          <p className="text-ink-muted max-w-3xl mx-auto text-lg leading-relaxed">
-            O <strong className="text-ink">English Talk Time (ETT)</strong> é um programa de aceleração
-            criado para encurtar a distância entre duas realidades muito comuns: o profissional que
-            estuda há anos, entende razoavelmente, mas <strong className="text-brand-red">trava para falar</strong>;
-            e o profissional que precisa usar inglês de forma funcional para{' '}
-            <strong className="text-brand-silver">entrevistas, reuniões, networking e trabalho remoto</strong>.
+          <p className="text-ink-muted text-lg leading-relaxed">
+            O <strong className="text-ink">English Talk Time</strong> reúne ferramentas digitais,
+            encontros de conversação e uma rede de parceiros educacionais. Ele não substitui um
+            curso nem um professor: ajuda você a praticar entre uma aula e outra, a organizar a
+            rotina e a aproveitar melhor cada oportunidade de usar o idioma.
           </p>
         </motion.div>
 
-        {/* Main content */}
-        <div className="grid md:grid-cols-2 gap-10 items-start mb-16">
+        <div className="grid md:grid-cols-2 gap-10 items-start mb-14 max-w-5xl mx-auto text-ink-soft leading-relaxed">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-80px' }}
-            variants={fadeUp}
-            custom={1}
-            className="space-y-5 text-ink-soft leading-relaxed text-base"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.5 }}
+            className="space-y-4"
           >
+            <h3 className="font-bold text-ink text-lg">Por que &quot;aceleração&quot;</h3>
             <p>
-              O projeto nasce com foco especial em profissionais e estudantes de{' '}
-              <span className="text-brand-silver font-medium">Negócios, Tecnologia, Dados, IA, BI, Cloud e áreas correlatas</span>,
-              porque esse público já sente de forma muito concreta a pressão de atuar em contextos
-              globais — e ao mesmo tempo costuma ter dificuldade de transformar estudo solto em
-              comunicação real.
+              O projeto nasceu com o nome de <strong className="text-ink">Programa de Aceleração
+              de Inglês</strong>, e o nome continua na nossa assinatura. Acelerar, aqui, quer
+              dizer praticar com mais frequência e mais organização — não um atalho com prazo
+              garantido.
             </p>
             <p>
-              A proposta central do ETT é simples, mas poderosa:{' '}
-              <strong className="text-ink">não oferecer mais um curso de inglês</strong>, e sim
-              uma metodologia aplicada onde se aprende a <em>aprender</em>, seguindo o ditado:{' '}
-              <em className="text-brand-red">"Dê um peixe a um homem e você o alimentará por um dia; ensine-o a pescar e você o alimentará por toda a vida."</em>
-            </p>
-            <p>
-              O ETT articula curadoria, rotina, prática guiada, imersão, ferramentas inteligentes
-              de acompanhamento e conexão com objetivos de carreira — tudo em um único ecossistema
-              estruturado para gerar{' '}
-              <strong className="text-ink">constância, exposição diária ao idioma e uso em situações reais</strong>.
+              O público de origem são profissionais e estudantes de tecnologia, dados, IA e
+              negócios que estudaram inglês, entendem razoavelmente e travam na hora de falar.
+              Mas os encontros e as ferramentas servem a qualquer pessoa que queira praticar mais.
             </p>
           </motion.div>
 
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-80px' }}
-            variants={fadeUp}
-            custom={2}
-            className="space-y-5 text-ink-soft leading-relaxed text-base"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="space-y-4"
           >
+            <h3 className="font-bold text-ink text-lg">O que é &quot;inglês funcional&quot;</h3>
             <p>
-              O objetivo principal é levar o participante do zero (ou do nível travado) até um{' '}
-              <strong className="text-brand-red">inglês funcional para o mercado internacional</strong>,
-              com atenção especial às necessidades de profissionais de tecnologia e dados.
+              Não é perfeição gramatical nem sotaque nativo. É conseguir{' '}
+              <strong className="text-ink">sustentar uma conversa, explicar um projeto,
+              participar de uma entrevista e circular em networking</strong> — e continuar
+              evoluindo com autonomia.
             </p>
             <p>
-              "Inglês funcional" aqui não significa perfeição gramatical nem fala nativa. Significa
-              que a pessoa consegue{' '}
-              <strong className="text-ink">sustentar uma conversa, participar de uma entrevista, explicar um projeto, circular em networking internacional</strong>{' '}
-              e continuar evoluindo com autonomia.
+              Cada pessoa define a própria meta de prática e acompanha a evolução ao longo do
+              tempo. O ETT ajuda a organizar e a manter a constância; o ritmo de aprendizado é de
+              cada um.
             </p>
-            <div className="mt-6 grid grid-cols-3 gap-4">
-              {[
-                { n: '~300h', l: 'de jornada estruturada' },
-                { n: '3.000', l: 'palavras-meta' },
-                { n: '1h/dia', l: 'de rotina diária' },
-              ].map((s) => (
-                <div
-                  key={s.n}
-                  className="bg-surface-card border border-surface-line rounded-xl p-4 text-center"
-                >
-                  <div className="text-2xl font-bold text-brand-red">{s.n}</div>
-                  <div className="text-xs text-ink-subtle mt-1">{s.l}</div>
-                </div>
-              ))}
-            </div>
           </motion.div>
         </div>
 
-        {/* Highlights grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
           {highlights.map((h, i) => (
             <motion.div
               key={h.title}
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
-              variants={fadeUp}
-              custom={i + 3}
-              className="bg-surface-card border border-surface-line rounded-2xl p-6 card-hover"
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className="bg-surface-card border border-surface-line rounded-2xl p-6"
             >
               <div className="w-11 h-11 rounded-xl bg-brand-red/10 border border-brand-red/20 flex items-center justify-center mb-4">
                 <h.icon className="w-5 h-5 text-brand-red" />
@@ -157,8 +119,6 @@ export default function About() {
           ))}
         </div>
       </div>
-
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-surface-line to-transparent" />
     </section>
   )
 }

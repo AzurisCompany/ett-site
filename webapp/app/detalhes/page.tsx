@@ -18,23 +18,23 @@ import Footer from '@/components/Footer'
 const SITE_URL = 'https://englishtalktime.com.br'
 
 export const metadata: Metadata = {
-  title: 'O programa ETT em detalhes — metodologia, ferramentas e jornada completa',
+  title: 'Como o ETT ajuda você a acelerar sua prática de inglês',
   description:
-    'A descrição completa do English Talk Time: os 6 pilares da metodologia, as ferramentas de apoio com IA, a jornada em 7 passos, os parceiros e as camadas opcionais de imersão e carreira internacional.',
+    'O English Talk Time em detalhes: as ferramentas de prática do ETT Player, os encontros de conversação, a rotina sugerida, as metas de referência e os parceiros de ensino, imersão, conteúdo e carreira.',
   alternates: { canonical: '/detalhes/' },
   openGraph: {
     type: 'article',
     locale: 'pt_BR',
-    title: 'O programa ETT em detalhes',
+    title: 'Como o ETT ajuda você a acelerar sua prática de inglês',
     description:
-      'Metodologia, ferramentas de apoio com IA, jornada completa e parceiros do English Talk Time.',
+      'Ferramentas, conversação, rotina e parceiros — o English Talk Time em detalhes.',
     url: `${SITE_URL}/detalhes/`,
     images: [
       {
         url: '/images/og-ett-2026.png',
         width: 1200,
         height: 630,
-        alt: 'English Talk Time — o programa em detalhes',
+        alt: 'English Talk Time em detalhes',
       },
     ],
   },
@@ -50,9 +50,9 @@ export default function DetalhesPage() {
       <section className="bg-surface-alt border-y border-surface-line">
         <div className="container mx-auto px-4 py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <p className="text-sm text-ink-muted">
-            Esta é a <strong className="text-ink">descrição completa do programa</strong> —
-            metodologia, ferramentas, jornada e parceiros. Se você só quer participar do próximo
-            encontro, o caminho curto está na home.
+            Esta é a <strong className="text-ink">versão completa</strong> — método,
+            ferramentas, rotina e parceiros. Se você só quer participar do próximo encontro, o
+            caminho curto está na home.
           </p>
           <Link
             href="/"
@@ -72,7 +72,14 @@ export default function DetalhesPage() {
       <ImersoesTeaser />
       <HowItWorks />
       <Results />
-      <FAQ />
+      <FAQ
+        title={
+          <>
+            Perguntas sobre <span className="gradient-text">o ETT</span>
+          </>
+        }
+        subtitle="Plataforma, encontros, ferramentas e parceiros — sem letra miúda."
+      />
       <LeadForm />
       <Footer />
     </main>

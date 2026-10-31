@@ -15,64 +15,64 @@ const steps = [
   {
     number: 1,
     icon: DoorOpen,
-    title: 'Entrada Gratuita',
+    title: 'Um encontro, de graça',
     description:
-      'Participe de um encontro gratuito — online toda segunda ou o IEP Talks presencial aos sábados, em Curitiba. Conheça a metodologia, experimente o ambiente e comece a construir vínculo com a comunidade DSSBR & GUBigData.',
+      'Venha a um encontro — online toda segunda ou o IEP Talks presencial aos sábados, em Curitiba. Não precisa de cadastro nem de plano. É o jeito mais simples de conhecer o ETT.',
     tag: 'Online ou presencial',
     color: 'brand-red',
   },
   {
     number: 2,
     icon: ScanLine,
-    title: 'Nivelamento ETT FluenteLevel',
+    title: 'Diagnóstico pra começar',
     description:
-      'Diagnóstico de vocabulário para entender exatamente onde você está, o que precisa reforçar e quais recursos fazem mais sentido. Para alguns começa pela base (BeeTools), para outros direto à prática.',
-    tag: 'Personalizado',
+      'O Level Check estima seu nível e seu vocabulário e sugere por onde começar. É apoio à personalização, não certificação de proficiência. Quem precisa de base pode começar por um curso de parceiro (BeeTools).',
+    tag: 'Ponto de partida',
     color: 'brand-silver',
   },
   {
     number: 3,
     icon: Clock,
-    title: 'Rotina Diária de 1 Hora',
+    title: 'Uma rotina que caiba no dia',
     description:
-      'Divisão clara: vocabulário (pontinhos), série/legenda, audiobook e diário. 1 hora por dia dividida em pequenos blocos — sem precisar de grandes janelas de tempo.',
-    tag: '1h/dia',
+      'A sugestão é cerca de 1 hora por dia em blocos curtos: flashcards, um episódio com legenda, um capítulo de audiolivro, uma conversa guiada. O Daily organiza o que fazer em cada dia — a meta é sua.',
+    tag: 'Sugestão: 1h/dia',
     color: 'brand-red',
   },
   {
     number: 4,
     icon: MessageSquare,
-    title: 'Encontros English Talk Time',
+    title: 'Encontros de conversação',
     description:
-      'Conversas guiadas, simulações, storytelling, role-play e noites temáticas. Ambiente seguro para tirar o conhecimento do campo passivo e colocá-lo em uso real.',
+      'Conversa com tema, perguntas e rodadas, em grupos pequenos. É onde o que você praticou sozinho vira conversa de verdade — e continua gratuito.',
     tag: 'Prática real',
     color: 'brand-silver',
   },
   {
     number: 5,
     icon: Cpu,
-    title: 'Ferramentas com IA',
+    title: 'Ferramentas entre os encontros',
     description:
-      'O sistema inteligente do ETT mapeia suas lacunas, gera flashcards personalizados, cria prompts para simulação com IA e mantém seu progresso visível e motivador.',
-    tag: 'IA + dados',
+      'O ETT Player reúne diagnóstico, plano diário, flashcards, séries, audiolivro, rádio e conversa guiada, e lembra onde você parou. Abertas por 30 dias sem cartão.',
+    tag: 'ETT Player',
     color: 'brand-red',
   },
   {
     number: 6,
     icon: Plane,
-    title: 'Imersão Cherry Top',
+    title: 'Imersão, se quiser',
     description:
-      'Para quem quer o salto de nível mais rápido: programas intensivos no Brasil e nos EUA. Sair de iniciante para intermediário — ou de intermediário para avançado — em poucas semanas.',
-    tag: 'Opcional / aceleração',
+      'Pra quem quer um período de contato intenso com o idioma: imersões no Brasil e nos EUA oferecidas pela Cherry Top, com programa, preço e condições dela.',
+    tag: 'Opcional · parceiro',
     color: 'brand-silver',
   },
   {
     number: 7,
     icon: Briefcase,
-    title: 'Carreira Internacional com Coders',
+    title: 'Carreira, se for o seu objetivo',
     description:
-      'Currículo, LinkedIn, entrevistas em inglês, estratégia de posicionamento e suporte para relocação. Transforme seu inglês em mobilidade profissional concreta e salários até 5x maiores.',
-    tag: 'Objetivo final',
+      'Pra quem quer trabalhar em inglês ou fora do país: a mentoria de carreira (currículo, LinkedIn, entrevistas) é oferecida pela Coders, com condições próprias.',
+    tag: 'Opcional · parceiro',
     color: 'brand-red',
   },
 ]
@@ -91,16 +91,16 @@ export default function HowItWorks() {
           className="text-center mb-14"
         >
           <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
-            Jornada do Aluno
+            Jornada de prática
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-6">
-            Como funciona na prática:
+            Uma jornada de prática
             <br />
-            <span className="gradient-text">7 passos do iniciante ao global</span>
+            <span className="gradient-text">montada por você</span>
           </h2>
           <p className="text-ink-muted max-w-2xl mx-auto text-lg">
-            A jornada não é linear para todos, mas estruturada o suficiente para que ninguém
-            fique sem saber qual é o próximo passo.
+            Não é uma grade de curso. São recursos que você combina conforme seus objetivos — e
+            pode parar, voltar ou pular qualquer um deles.
           </p>
         </motion.div>
 

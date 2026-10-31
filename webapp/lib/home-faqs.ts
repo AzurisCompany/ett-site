@@ -38,41 +38,46 @@ export const homeFaqsCurtas: HomeFaq[] = [
   },
 ]
 
+/** FAQ longa — usada em /detalhes/. Revisada em 31/10/2026 (reposicionamento). */
 export const homeFaqs: HomeFaq[] = [
   {
-    q: 'O que é o ETT e como funciona o grupo de conversação em inglês?',
-    a: 'O ETT (English Talk Time) é um grupo de conversação em inglês com treino de fala guiado e ferramentas de apoio com IA. Não é bate-papo solto: cada encontro tem estrutura (simulações, role-play, storytelling, situações reais) pra fazer você falar de fato — e entre os encontros, as ferramentas digitais consolidam o vocabulário e a pronúncia.',
+    q: 'O que é o ETT?',
+    a: 'O English Talk Time é uma plataforma de apoio à prática do inglês. Reúne ferramentas digitais (no ETT Player), encontros de conversação gratuitos e uma rede de parceiros que oferecem cursos, imersões e mentoria de carreira. Não é uma escola nem um curso com grade: você combina os recursos conforme seus objetivos.',
   },
   {
-    q: 'Como faço pra praticar inglês com vocês — online ou em Curitiba?',
-    a: 'Toda segunda às 20h–21h30 tem encontro online via Google Meet, aberto pra quem está em qualquer lugar do Brasil. O presencial é o IEP Talks, todo sábado das 10h às 12h no IEP (Instituto de Engenharia do Paraná), em Curitiba. Veja a agenda atualizada e marque a próxima data.',
+    q: 'Substitui um curso ou um professor?',
+    a: 'Não. O ETT complementa: dá pra usar as ferramentas e vir aos encontros enquanto faz um curso, tem aulas particulares ou estuda por conta própria. Quem precisa de base estruturada pode fazer um curso com um parceiro de ensino, como a BeeTools.',
   },
   {
-    q: 'Preciso pagar pra participar dos encontros de conversação?',
-    a: 'Não. Os encontros (online de segunda e IEP Talks de sábado) são gratuitos e abertos — você nem precisa se cadastrar pra aparecer, e o cadastro serve só pra receber o link e as datas por e-mail. O que é pago é o programa, pra quem quer o que acontece entre um encontro e outro: adesão única de R$ 67 com duas horas de mentoria individual, material didático e os 30 primeiros dias inclusos, e depois R$ 37/mês na Trilha de Dedicação ou R$ 0 na Trilha de Aceleração, mantendo a rotina. Imersões (Cherry Top) e mentoria de carreira internacional (Coders) são programas de parceiros, à parte.',
+    q: 'Como faço pra praticar — online ou em Curitiba?',
+    a: 'Toda segunda, das 20h às 21h30, tem encontro online, aberto pra quem está em qualquer lugar. O presencial é o IEP Talks, todo sábado das 10h às 12h no IEP (Instituto de Engenharia do Paraná), em Curitiba. As datas ficam na agenda.',
   },
   {
-    q: 'Qual o nível mínimo de inglês pra participar do grupo de conversação?',
-    a: 'A partir de A2 (básico-intermediário) já dá pra entrar e aproveitar. Mesmo quem está bem travado consegue acompanhar — os encontros são desenhados pra você falar, não pra ser avaliado. Quem está no zero absoluto a gente direciona pra base estruturada da BeeTools primeiro, e depois entra na conversação ao vivo.',
+    q: 'O que é gratuito e o que é pago?',
+    a: 'Os encontros são gratuitos e abertos, sem cadastro. As ferramentas ficam abertas por 30 dias sem cartão. A ativação acompanhada custa R$ 67, uma vez, e inclui duas sessões individuais de 1 hora de orientação, material personalizado e os 30 primeiros dias. Depois, o acesso às ferramentas continua na Trilha de Dedicação (R$ 37/mês) ou na Trilha de Aceleração, sem mensalidade pra quem mantém 20 dias válidos de prática no mês. Cursos, imersões e mentoria de carreira são dos parceiros, com preços próprios.',
   },
   {
-    q: 'O que diferencia o ETT de um conversation club comum?',
-    a: 'Três coisas: (1) método — Fórmula Fluente, baseada em ciência (vocabulário de alta frequência + threshold + imersão distribuída); (2) ferramentas de apoio com IA — diagnóstico de vocabulário, plano de estudos personalizado, séries com legenda, simulações de entrevista, audiobooks; (3) foco em tech — vocabulário e simulações são pensados pra profissionais de Tecnologia, Dados, IA, BI e Cloud.',
+    q: 'As sessões individuais da ativação são aulas particulares?',
+    a: 'Não. São orientação de uso da plataforma: rodar o diagnóstico com você, montar o plano de prática, configurar a rotina e ativar as ferramentas com conteúdo do seu nível. Aula de inglês, se você quiser, é com um curso ou professor.',
+  },
+  {
+    q: 'O diagnóstico é uma certificação de nível?',
+    a: 'Não. O Level Check estima seu nível e seu vocabulário pra ajudar a escolher o que praticar primeiro. Não substitui um exame de proficiência.',
+  },
+  {
+    q: 'Qual o nível mínimo pra participar dos encontros?',
+    a: 'A partir de um básico-intermediário (A2) já dá pra acompanhar. Quem está bem travado também aproveita: os encontros são feitos pra você falar, não pra ser avaliado. Quem está no zero absoluto costuma aproveitar mais começando por um curso de base.',
   },
   {
     q: 'Funciona pra quem trava na hora de falar mesmo entendendo bem?',
-    a: 'É exatamente pra esse perfil. O bloqueio de fala é o público-alvo número 1 do ETT — pessoas que estudaram anos, entendem, mas travam na hora H. A combinação de comunidade segura (você fala errado e ninguém julga), simulação de situações reais (entrevista, daily, demo, networking) e suporte das ferramentas de IA destrava isso de forma sistemática.',
+    a: 'É o perfil mais comum nos encontros: pessoas que estudaram, entendem, mas travam na hora de falar. A conversa em grupo pequeno, sem correção em público, e a conversa guiada no Speak ajudam a ganhar confiança. O ritmo de cada um é diferente — não prometemos prazo.',
   },
   {
-    q: 'Vocês ajudam a preparar entrevista internacional em inglês para tech?',
-    a: 'Sim. A preparação de entrevista é um dos cenários de role-play recorrentes nos encontros (entrevista técnica, self-pitch, system design discussion em inglês, salary negotiation). A ferramenta ETT AI Prompt também gera prompts de simulação pro ChatGPT pra você treinar entrevistas reais entre os encontros. Pra um aprofundamento maior, a camada de Coders (parceiro) oferece mentoria 1:1 de carreira internacional (CV, LinkedIn profissional em inglês, entrevistas).',
+    q: 'Dá pra treinar entrevista e inglês de trabalho?',
+    a: 'Sim. Entrevista, apresentação de projeto e conversa de trabalho são temas recorrentes nos encontros, e o Speak permite ensaiar conversas guiadas. Pra mentoria de carreira (currículo, LinkedIn, entrevistas internacionais), a Coders é parceira, com condições próprias.',
   },
   {
-    q: 'Tem material específico pra inglês de Data Engineer, BI, DevOps ou AI Engineer?',
-    a: 'Sim, o vocabulário e as simulações são desenhados pra profissionais de Tecnologia, Dados, IA e BI. Os tópicos dos encontros incluem "explaining a bug to a senior dev", "presenting a dashboard", "discussing a data pipeline", "model evaluation review", "incident retro". A ferramenta de Diagnóstico de Vocabulário também ajusta o plano de estudos ao seu cargo — Data Engineer, BI Analyst, DevOps, AI Engineer ou similar.',
-  },
-  {
-    q: 'Como funciona a rotina diária de 1 hora de estudo proposta pelo ETT?',
-    a: 'A rotina ETT distribui ~1 hora por dia entre 4 blocos curtos: 10–15 min de vocabulário (técnica dos pontinhos), 20–30 min de input rico (séries com legenda ou audiobook), 10–15 min de produção ativa (diário escrito ou falado) e 5–10 min de revisão. O encontro semanal de conversação é o "exame prático" da rotina. As ferramentas com IA estruturam tudo automaticamente conforme seu nível e bloqueios.',
+    q: 'Como seria uma rotina de 1 hora por dia?',
+    a: 'Uma sugestão: 10 a 15 minutos de flashcards, 20 a 30 de um episódio com legenda ou capítulo de audiolivro, 10 a 15 de conversa guiada e alguns minutos de revisão. O Daily organiza o que fazer em cada dia. É uma sugestão — a meta é sua.',
   },
 ]

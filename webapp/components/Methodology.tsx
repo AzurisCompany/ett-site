@@ -14,56 +14,56 @@ const pillars = [
   {
     number: '01',
     icon: Users,
-    title: 'Comprometimento, Constância e Comunidade',
+    title: 'Constância e comunidade',
     description:
-      'Sem rotina, o inglês vira intenção. Com rotina, vira competência. A comunidade de prática do ETT reduz o isolamento, gera pertencimento e transforma o estudo em prática social — com desafios, rankings, badges e evolução coletiva.',
+      'Sem rotina, o inglês vira intenção. A comunidade de prática do ETT reduz o isolamento e transforma o estudo em prática social: encontros toda semana e gente praticando junto.',
     color: 'brand-red',
     partner: 'Ecossistema DSSBR & GUBigData',
   },
   {
     number: '02',
     icon: BookOpen,
-    title: 'Base Estruturada de Aprendizagem',
+    title: 'Base estruturada, com parceiros',
     description:
-      'Nem todo aluno começa pela conversação. O ETT oferece nivelamento, trilha personalizada e integração com parceiros pedagógicos para os níveis A0 a B1, garantindo que ninguém fique sem saber o próximo passo.',
+      'Nem todo mundo começa pela conversação. Quem precisa de base pode fazer um curso com um parceiro de ensino; o ETT indica o caminho e oferece as ferramentas e os encontros pra praticar junto.',
     color: 'brand-silver',
-    partner: 'BeeTools (IA, RV, gamificação)',
+    partner: 'Curso oferecido pela BeeTools',
   },
   {
     number: '03',
     icon: MessageSquare,
-    title: 'Prática Real e Conversação Guiada',
+    title: 'Prática real e conversação guiada',
     description:
-      'O idioma só se torna utilizável quando você fala, escuta, responde e se corrige. Board games, storytelling, role-play, simulações e noites temáticas criam o espaço seguro para o conhecimento sair do campo passivo para o ativo.',
+      'O idioma só se torna utilizável quando você fala, escuta e responde. Os encontros têm tema, perguntas e rodadas pra todo mundo falar, e o Speak permite ensaiar conversas guiadas entre um encontro e outro.',
     color: 'brand-red',
-    partner: 'English Talk Time (sessões online + presenciais)',
+    partner: 'Encontros do ETT (online e IEP Talks) + Speak',
   },
   {
     number: '04',
     icon: Plane,
-    title: 'Imersão Intensiva e Contínua',
+    title: 'Imersão, com parceiros',
     description:
-      'Há um tipo de crescimento que só acontece quando o aluno usa o inglês de forma mais contínua e intensa. Programas de imersão no Brasil e nos EUA criam o salto de nível que o estudo regular não consegue sozinho.',
+      'Há quem queira um período de contato intenso com o idioma. As imersões no Brasil e nos EUA são oferecidas pela Cherry Top, com condições próprias; o ETT divulga e complementa com prática antes e depois.',
     color: 'brand-silver',
-    partner: 'Cherry Top (30+ anos de imersão)',
+    partner: 'Imersões oferecidas pela Cherry Top',
   },
   {
     number: '05',
     icon: Briefcase,
-    title: 'Empregabilidade Internacional',
+    title: 'Inglês para a carreira, com parceiros',
     description:
-      'O ETT não quer apenas melhorar o inglês — quer ajudar o participante a transformar isso em movimento de carreira. Currículo, LinkedIn, entrevistas, estratégia de posicionamento e aspectos contratuais para o mercado global.',
+      'Pra quem quer usar o inglês no trabalho ou trabalhar fora: os encontros servem pra treinar entrevista e conversa profissional, e a mentoria de carreira (currículo, LinkedIn, entrevistas) é oferecida pela Coders.',
     color: 'brand-red',
-    partner: 'Coders (vagas no exterior em 30-45 dias)',
+    partner: 'Mentoria oferecida pela Coders',
   },
   {
     number: '06',
     icon: BrainCircuit,
-    title: 'Inteligência, Dados e Personalização',
+    title: 'Diagnóstico e personalização',
     description:
-      'Cada clique, erro, palavra desconhecida e legenda marcada alimenta um sistema inteligente que identifica lacunas reais e sugere prioridades sob medida. O estudo passa a ser mais preciso, não apenas mais intenso.',
+      'O diagnóstico de nível e de vocabulário e o perfil de aprendizagem ajudam a escolher o que praticar primeiro. Um sistema de recomendação mais completo está em construção.',
     color: 'brand-silver',
-    partner: 'Sistema ETT + ClickHouse + IA',
+    partner: 'Level Check + Learning DNA (ETT Player)',
   },
 ]
 
@@ -98,17 +98,17 @@ export default function Methodology() {
           className="text-center mb-14"
         >
           <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
-            Metodologia & Pilares
+            Método
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-6">
-            6 pilares para ir do travado
+            Seis frentes de prática,
             <br />
-            <span className="gradient-text">ao fluente e empregável</span>
+            <span className="gradient-text">combinadas do seu jeito</span>
           </h2>
           <p className="text-ink-muted max-w-2xl mx-auto text-lg">
-            Baseado na{' '}
-            <strong className="text-ink">Fórmula Fluente de Frank Florida</strong> (+365 mil alunos):
-            estudo em pequenos blocos, vocabulário relevante, habilidades ativas e imersão distribuída.
+            Nenhuma é obrigatória e não há ordem fixa. As ferramentas seguem a{' '}
+            <strong className="text-ink">Fórmula Fluente</strong>, de Frank Florida: estudo em
+            pequenos blocos, vocabulário relevante e repetição orientada.
           </p>
         </motion.div>
 
@@ -124,9 +124,11 @@ export default function Methodology() {
             <BrainCircuit className="w-6 h-6 text-brand-red" />
           </div>
           <p className="text-ink-soft text-sm leading-relaxed text-center sm:text-left">
-            <strong className="text-brand-red">Base científica — Fórmula Fluente:</strong>{' '}
-            250 palavras mais comuns cobrem ~60% de qualquer texto. Com 1.000 palavras + cognatos,
-            você compreende 90–95% de uma conversa. Aprender 10 palavras/dia = fluência em 10 meses.{' '}
+            <strong className="text-brand-red">A ideia da Fórmula Fluente:</strong>{' '}
+            segundo o método, um grupo pequeno de palavras muito frequentes cobre boa parte do que
+            se lê e se ouve no dia a dia. Por isso as ferramentas priorizam vocabulário de alta
+            frequência — e uma meta comum é algo como 10 palavras novas por dia, como organização
+            da rotina, não como prazo garantido.{' '}
             <strong className="text-ink">Você não precisa estudar tudo — precisa estudar o que gera mais retorno.</strong>
           </p>
         </motion.div>

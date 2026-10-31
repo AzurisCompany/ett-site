@@ -12,7 +12,7 @@ export default function ImersoesTeaser() {
   const sep = useImersoesSeparadas()
 
   return (
-    <section className="section-padding bg-surface-alt border-y border-surface-line">
+    <section className="section-padding bg-surface border-y border-surface-line">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

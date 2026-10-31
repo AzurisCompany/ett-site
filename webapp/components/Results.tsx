@@ -1,196 +1,85 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
-import { useRef, useState, useEffect } from 'react'
-import { TrendingUp, Clock, BookOpen, Target, Zap, Trophy } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { Clock, BookOpen, Target, Info } from 'lucide-react'
 
-function CountUp({ end, suffix = '', duration = 2 }: { end: number; suffix?: string; duration?: number }) {
-  const [count, setCount] = useState(0)
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true })
-
-  useEffect(() => {
-    if (!inView) return
-    let start = 0
-    const step = end / (duration * 60)
-    const timer = setInterval(() => {
-      start += step
-      if (start >= end) {
-        setCount(end)
-        clearInterval(timer)
-      } else {
-        setCount(Math.floor(start))
-      }
-    }, 1000 / 60)
-    return () => clearInterval(timer)
-  }, [inView, end, duration])
-
-  return <span ref={ref}>{count.toLocaleString('pt-BR')}{suffix}</span>
-}
-
-const metrics = [
+/* /detalhes/ — "metas de referência". Até 31/10/2026 esta seção se chamava
+   "Números que mostram por que o método funciona" e trazia "10 palavras por
+   dia = fluência", "salários até 5x maiores" e uma gamificação (ranking,
+   jackpot) que não existe no Player. Os números que ficaram são metas de
+   ORGANIZAÇÃO da rotina, sempre com o aviso de que não são garantia. */
+const metas = [
   {
     icon: Clock,
-    value: 300,
-    suffix: 'h',
-    label: 'Jornada estruturada completa',
-    description: 'De inglês travado a funcional com método e constância',
-    color: 'brand-red',
+    valor: '~1h por dia',
+    titulo: 'Rotina sugerida',
+    texto: 'Em blocos curtos, ao longo do dia. É uma sugestão pra manter constância — ajuste ao seu tempo.',
   },
   {
     icon: BookOpen,
-    value: 3000,
-    suffix: '',
-    label: 'Palavras-meta de vocabulário',
-    description: 'As 3.000 palavras mais relevantes para a sua carreira',
-    color: 'brand-silver',
+    valor: '10 a 20 palavras',
+    titulo: 'Vocabulário novo por dia',
+    texto: 'Um ritmo comum na Fórmula Fluente, com revisão das palavras difíceis. Serve pra organizar, não pra prometer prazo.',
   },
   {
     icon: Target,
-    value: 60,
-    suffix: '%',
-    label: 'de qualquer texto coberto',
-    description: 'Com apenas as 250 palavras mais comuns do inglês',
-    color: 'brand-red',
+    valor: '3.000 palavras',
+    titulo: 'Horizonte de vocabulário',
+    texto: 'As listas de alta frequência (Longman 3000, Oxford 5000) que o Level Check usa como referência pra mostrar sua evolução.',
   },
-  {
-    icon: Zap,
-    value: 95,
-    suffix: '%',
-    label: 'de compreensão de conversas',
-    description: 'Com 1.000 palavras + cognatos em contexto real',
-    color: 'brand-silver',
-  },
-  {
-    icon: TrendingUp,
-    value: 10,
-    suffix: 'x',
-    label: 'Palavras por dia = fluência',
-    description: '10 meses com 10 palavras/dia. 5 meses com 20 palavras/dia',
-    color: 'brand-red',
-  },
-  {
-    icon: Trophy,
-    value: 5,
-    suffix: 'x',
-    label: 'Potencial de aumento salarial',
-    description: 'Salários até 5x maiores em vagas internacionais (dados Coders)',
-    color: 'brand-silver',
-  },
-]
-
-const gamificationLevels = [
-  { level: 'Novato', range: '0–500 pts', color: 'text-ink-muted', bg: 'bg-ink/5' },
-  { level: 'Intermediário', range: '501–1.500 pts', color: 'text-amber-800', bg: 'bg-amber-500/10' },
-  { level: 'Avançado', range: '1.501–3.000 pts', color: 'text-orange-800', bg: 'bg-orange-500/10' },
-  { level: 'Fluente', range: '3.001–6.000 pts', color: 'text-brand-silver', bg: 'bg-brand-silver/10' },
-  { level: 'Global Pro', range: '6.001+ pts', color: 'text-brand-red', bg: 'bg-brand-red/10' },
 ]
 
 export default function Results() {
   return (
-    <section id="resultados" className="section-padding bg-surface relative overflow-hidden">
+    <section id="metas" className="section-padding bg-surface relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/20 to-transparent" />
 
       <div className="container mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 max-w-3xl mx-auto"
         >
           <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
-            Resultados & Dados
+            Metas de referência
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-6">
-            Números que mostram
-            <br />
-            <span className="gradient-text">por que o método funciona</span>
+            Defina metas de prática e{' '}
+            <span className="gradient-text">acompanhe sua evolução</span>
           </h2>
-          <p className="text-ink-muted max-w-2xl mx-auto text-lg">
-            Metas claras, progresso mensurável. O ETT não vende promessa vaga —
-            entrega um sistema com marcos pedagógicos comprovados.
+          <p className="text-ink-muted text-lg leading-relaxed">
+            Estes números ajudam a organizar a rotina. Cada pessoa avança no próprio ritmo.
           </p>
         </motion.div>
 
-        {/* Metrics grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
-          {metrics.map((m, i) => (
+        <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto mb-8">
+          {metas.map((m, i) => (
             <motion.div
-              key={m.label}
-              initial={{ opacity: 0, y: 25 }}
+              key={m.titulo}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-surface-card border border-surface-line rounded-2xl p-6 card-hover"
+              className="bg-surface-card border border-surface-line rounded-2xl p-6"
             >
-              <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${
-                m.color === 'brand-red' ? 'bg-brand-red/10' : 'bg-brand-silver/10'
-              }`}>
-                <m.icon className={`w-5 h-5 ${m.color === 'brand-red' ? 'text-brand-red' : 'text-brand-silver'}`} />
-              </div>
-              <div className={`text-4xl font-black mb-1 ${m.color === 'brand-red' ? 'text-brand-red' : 'text-brand-silver'}`}>
-                <CountUp end={m.value} suffix={m.suffix} />
-              </div>
-              <div className="font-bold text-ink text-sm mb-2">{m.label}</div>
-              <p className="text-ink-subtle text-sm">{m.description}</p>
+              <m.icon className="w-5 h-5 text-brand-red mb-4" />
+              <div className="text-3xl font-black text-ink mb-1">{m.valor}</div>
+              <div className="font-bold text-ink-soft text-sm mb-2">{m.titulo}</div>
+              <p className="text-ink-muted text-sm leading-relaxed">{m.texto}</p>
             </motion.div>
           ))}
         </div>
 
-        {/* Gamification section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6 }}
-          className="bg-surface-card border border-surface-line rounded-2xl p-8"
-        >
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-ink mb-2 flex items-center justify-center gap-2">
-              <Trophy className="w-6 h-6 text-brand-red" />
-              Sistema de Gamificação ETT
-            </h3>
-            <p className="text-ink-muted">
-              Pontos, badges e ranking — porque constância precisa de motivação.
-              Jackpot mensal para os mais consistentes.
-            </p>
-          </div>
-
-          {/* Level progression */}
-          <div className="flex flex-col sm:flex-row items-stretch gap-2 mb-6">
-            {gamificationLevels.map((lvl, i) => (
-              <div
-                key={lvl.level}
-                className={`flex-1 ${lvl.bg} border border-surface-line rounded-xl p-4 text-center relative`}
-              >
-                {i < gamificationLevels.length - 1 && (
-                  <div className="hidden sm:block absolute -right-1 top-1/2 -translate-y-1/2 z-10 text-ink-faint">
-                    →
-                  </div>
-                )}
-                <div className={`font-bold text-sm ${lvl.color}`}>{lvl.level}</div>
-                <div className="text-xs text-ink-subtle mt-1">{lvl.range}</div>
-              </div>
-            ))}
-          </div>
-
-          <div className="grid sm:grid-cols-3 gap-4 text-center text-sm text-ink-muted">
-            <div className="bg-surface/50 rounded-xl p-4 border border-surface-line">
-              <div className="text-brand-red font-bold text-base mb-1">Pontos diários</div>
-              Estudo, check-in, palavras revisadas e encontros = pontos acumulados
-            </div>
-            <div className="bg-surface/50 rounded-xl p-4 border border-surface-line">
-              <div className="text-brand-silver font-bold text-base mb-1">Badges & conquistas</div>
-              Primeiro episódio, semana perfeita, nível desbloqueado — cada marco é reconhecido
-            </div>
-            <div className="bg-surface/50 rounded-xl p-4 border border-surface-line">
-              <div className="text-brand-red font-bold text-base mb-1">Jackpot mensal</div>
-              Os participantes mais constantes do mês concorrem a prêmios e benefícios exclusivos
-            </div>
-          </div>
-        </motion.div>
+        <div className="max-w-3xl mx-auto flex items-start gap-3 rounded-2xl border border-brand-silver/30 bg-brand-silver/5 px-5 py-4">
+          <Info className="w-5 h-5 text-brand-silver shrink-0 mt-0.5" />
+          <p className="text-sm text-ink-soft leading-relaxed">
+            <strong className="text-ink">Não são resultados garantidos.</strong> O ETT não promete
+            fluência em prazo nenhum. O que as ferramentas fazem é registrar sua prática — palavras
+            revisadas, episódios, conversas — pra você ver a evolução ao longo do tempo.
+          </p>
+        </div>
       </div>
     </section>
   )
