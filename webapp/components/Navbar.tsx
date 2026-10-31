@@ -6,7 +6,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Globe } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { INSCRICAO_URL, rastrearInscricao, useLancamentoAtivo } from '@/lib/lancamento'
 import {
   nav,
   localeFromPath,
@@ -80,7 +79,6 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
-  const lancamento = useLancamentoAtivo() && locale === 'pt-BR'
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20)
@@ -175,26 +173,14 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* CTA — em pt-BR, até o lançamento (27/10/2026), leva direto pra inscrição do evento */}
+          {/* CTA */}
           <div className="hidden md:block">
-            {lancamento ? (
-              <a
-                href={INSCRICAO_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => rastrearInscricao('menu')}
-                className="px-4 py-2 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red whitespace-nowrap"
-              >
-                Lançamento 27/10 · grátis
-              </a>
-            ) : (
-              <Link
-                href={ctaHref(locale)}
-                className="px-4 py-2 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red whitespace-nowrap"
-              >
-                {m.cta}
-              </Link>
-            )}
+            <Link
+              href={ctaHref(locale)}
+              className="px-4 py-2 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red whitespace-nowrap"
+            >
+              {m.cta}
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -249,28 +235,13 @@ export default function Navbar() {
             ))}
           </div>
 
-          {lancamento ? (
-            <a
-              href={INSCRICAO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => {
-                rastrearInscricao('menu-celular')
-                setMobileOpen(false)
-              }}
-              className="mt-2 px-4 py-3 rounded-lg bg-brand-red-deep text-white font-bold text-sm text-center hover:bg-brand-red-deep/90 transition-all"
-            >
-              Inscrição no lançamento · 27/10 · grátis
-            </a>
-          ) : (
-            <Link
-              href={ctaHref(locale)}
-              onClick={() => setMobileOpen(false)}
-              className="mt-2 px-4 py-3 rounded-lg bg-brand-red-deep text-white font-bold text-sm text-center hover:bg-brand-red-deep/90 transition-all"
-            >
-              {m.cta}
-            </Link>
-          )}
+          <Link
+            href={ctaHref(locale)}
+            onClick={() => setMobileOpen(false)}
+            className="mt-2 px-4 py-3 rounded-lg bg-brand-red-deep text-white font-bold text-sm text-center hover:bg-brand-red-deep/90 transition-all"
+          >
+            {m.cta}
+          </Link>
         </div>
       )}
     </nav>

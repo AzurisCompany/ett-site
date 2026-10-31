@@ -23,7 +23,7 @@ const OUT = path.join(PUB, 'divulgacao', 'lancamento-dssbr-2026', 'assets')
 const url = (p) => 'file://' + path.join(PUB, p)
 const font = (w) => 'file://' + path.join(WEBAPP, 'scripts', 'fonts', `Inter-${w}.ttf`)
 
-// Mesmos dados de lib/lancamento.ts (fonte de verdade do site).
+// Mesmos dados que viviam em lib/lancamento.ts (apagado em 31/10/2026, depois do evento).
 const palestrantes = [
   { nome: 'Alessandro Binhara', curto: 'Alessandro', org: 'English Talk Time', hora: '13h30', img: url('images/ett-simbolo-positiva.svg'), logo: true },
   { nome: 'Rubens Queiroz', curto: 'Rubens', org: 'Unicamp · Aprendendo Inglês', hora: '14h00', img: url('images/lancamento/rubens-queiroz.webp') },
