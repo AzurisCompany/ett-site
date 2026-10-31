@@ -68,10 +68,16 @@ export default function ProximosEncontros() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-4">
-            Os próximos encontros
+            Inglês se desenvolve praticando. <span className="brand-red">Venha conversar.</span>
           </h2>
-          <p className="text-ink-muted max-w-2xl mx-auto text-lg">
-            Acontecem toda semana, sempre. Escolha o formato que cabe na sua rotina.
+          <p className="text-ink-muted max-w-3xl mx-auto text-lg leading-relaxed">
+            Os encontros de conversação do English Talk Time criam oportunidades para praticar
+            inglês com outras pessoas, compartilhar experiências e ganhar confiança na
+            comunicação. Eles complementam o estudo individual, os cursos e as atividades com
+            ferramentas digitais.
+          </p>
+          <p className="text-ink-soft max-w-3xl mx-auto mt-4 font-semibold">
+            Gratuitos e abertos a qualquer pessoa: não precisa de cadastro nem de plano.
           </p>
         </motion.div>
 

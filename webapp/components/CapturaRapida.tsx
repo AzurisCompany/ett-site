@@ -37,7 +37,7 @@ export default function CapturaRapida() {
             </h3>
             <p className="text-sm text-ink-muted leading-relaxed">
               Nome e e-mail, menos de um minuto. Você recebe o link do encontro online, as datas do
-              IEP Talks e mais informações sobre o programa — e entramos em contato para tirar suas
+              IEP Talks e mais informações sobre a plataforma — e entramos em contato para tirar suas
               dúvidas. É grátis e não tem nada pra decidir agora.
             </p>
           </div>

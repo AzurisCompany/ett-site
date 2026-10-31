@@ -9,12 +9,16 @@ export interface HomeFaq {
  */
 export const homeFaqsCurtas: HomeFaq[] = [
   {
-    q: 'Quanto custa para participar?',
-    a: 'Entrar nos encontros de conversação — o online de segunda e o IEP Talks de sábado — é gratuito, sem cadastro e sem cartão. Isso não muda. O que é pago é o programa, para quem quer as ferramentas, o material didático e a mentoria individual entre um encontro e outro: são 30 dias de teste sem cartão, depois uma adesão única de R$ 67 (que já inclui os 30 primeiros dias e duas horas de mentoria individual) e, a partir do dia 31, R$ 37 por mês na Trilha de Dedicação — ou R$ 0 na Trilha de Aceleração, para quem mantém a rotina de 20 dias válidos no mês.',
+    q: 'O ETT é um curso de inglês?',
+    a: 'Não. O ETT é uma plataforma de apoio à prática do inglês: reúne ferramentas digitais, encontros de conversação e parceiros que oferecem cursos e imersões. Não tem grade, turma nem professor próprio dando aula. Dá pra usar junto com o curso que você já faz, com um professor particular ou por conta própria.',
   },
   {
-    q: 'É aula de inglês?',
-    a: 'Não. Não tem professor explicando gramática na frente da sala, não tem matrícula e não tem prova. É uma roda de conversação com roteiro: tema, perguntas e rodadas para que todo mundo fale. Você pratica a fala com outras pessoas, não assiste a alguém falando.',
+    q: 'Quanto custa para participar?',
+    a: 'Os encontros de conversação — o online de segunda e o IEP Talks de sábado — são gratuitos, sem cadastro e sem cartão. Isso não muda. As ferramentas ficam abertas por 30 dias sem cartão. Quem quiser orientação individual faz a ativação acompanhada: R$ 67, uma vez, com duas sessões de 1 hora, material personalizado e os 30 primeiros dias de ferramentas. Depois, o acesso às ferramentas continua na Trilha de Dedicação (R$ 37 por mês) ou na Trilha de Aceleração, que troca a mensalidade por 20 dias válidos de prática no mês.',
+  },
+  {
+    q: 'Quem oferece os cursos e as imersões?',
+    a: 'Os parceiros. A BeeTools oferece cursos, a Cherry Top oferece as imersões e a Coders, a mentoria de carreira — cada um com preços, regras e condições próprios. O ETT divulga, encaminha quem tem interesse e oferece as ferramentas e os encontros pra praticar antes, durante e depois.',
   },
   {
     q: 'Qual nível de inglês eu preciso ter?',

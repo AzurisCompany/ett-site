@@ -119,7 +119,7 @@ export default function LeadForm() {
               Deixe seu nome e e-mail. Ao se inscrever você{' '}
               <strong className="text-ink">começa a receber informações por e-mail</strong> — o
               link do encontro online de segunda, as datas do IEP Talks em Curitiba e as novidades
-              do programa — e{' '}
+              da plataforma — e{' '}
               <strong className="text-ink">entramos em contato para tirar suas dúvidas</strong>.
               É grátis e você não precisa decidir nada agora.
             </p>
@@ -165,7 +165,7 @@ export default function LeadForm() {
                   <p className="text-ink-soft leading-relaxed max-w-sm mx-auto">
                     Você vai receber o{' '}
                     <strong className="text-brand-red">link do encontro de segunda</strong> e as
-                    datas do IEP Talks. A partir daí chegam mais informações sobre o programa por
+                    datas do IEP Talks. A partir daí chegam mais informações sobre a plataforma por
                     e-mail, e{' '}
                     <strong className="text-ink">entraremos em contato</strong> para tirar suas
                     dúvidas. Confira seu e-mail.
@@ -173,7 +173,7 @@ export default function LeadForm() {
                   <p className="text-ink-subtle text-sm leading-relaxed max-w-sm mx-auto mt-5 pt-5 border-t border-surface-line">
                     Quer também as{' '}
                     <strong className="text-ink-soft">ferramentas do ETT Player</strong>, o
-                    material didático e a mentoria individual? Isso é o programa — e dá pra testar
+                    material personalizado e a orientação individual? Dá pra começar pelas ferramentas —
                     30 dias sem cartão.
                   </p>
                   <Link
@@ -291,7 +291,7 @@ export default function LeadForm() {
 
                   <p className="text-xs text-ink-faint text-center">
                     Só os dois primeiros campos são obrigatórios. Você vai receber e-mails com as
-                    datas dos encontros e mais informações sobre o programa, e podemos entrar em
+                    datas dos encontros e mais informações sobre a plataforma, e podemos entrar em
                     contato para tirar dúvidas — sem spam, e pode descadastrar a qualquer momento.
                   </p>
 

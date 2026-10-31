@@ -1,118 +1,139 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, ArrowUpRight, MessageSquare, Layers, Film, Headphones } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Hammer } from 'lucide-react'
+import {
+  ferramentas,
+  ferramentasDisponiveis,
+  emConstrucao,
+  rotuloGrupo,
+  rotuloStatus,
+  PLAYER_URL,
+  type GrupoFerramenta,
+  type StatusFerramenta,
+} from '@/lib/ferramentas'
+import { cn } from '@/lib/utils'
 
-/* O link é público de propósito: o Player tem portão de e-mail na entrada, então
-   expor a URL não entrega o que os planos vendem. Fica como CTA secundário — o
-   primário continua sendo o cadastro/teste, pra não mandar o visitante embora
-   antes de converter. Ver PLANO-REVISAO-MARKETING-2026-08-01.md, decisão #3. */
-const PLAYER_URL = 'https://ett-player.vercel.app/'
+/* As ferramentas são o centro da proposta, não acessório de curso
+   (PLANO-REPOSICIONAMENTO-PLATAFORMA-2026-10-31.md, §6). Tudo vem de
+   lib/ferramentas.ts, que espelha o ETT Player em produção — não escrever
+   ferramenta à mão aqui. CTA primário = teste de 30 dias; Player = secundário
+   (decisão #3 de 01/08). */
 
-const modulos = [
-  { icon: MessageSquare, label: 'Treino de fala com IA' },
-  { icon: Layers, label: 'Flashcards de vocabulário' },
-  { icon: Film, label: 'Séries com legenda' },
-  { icon: Headphones, label: 'Audiobook e rádio' },
-]
+const ordemGrupos: GrupoFerramenta[] = ['organizar', 'vocabulario', 'escuta', 'fala', 'comunidade']
+
+const estiloStatus: Record<StatusFerramenta, string> = {
+  disponivel: 'bg-brand-red/10 text-brand-red border-brand-red/25',
+  poc: 'bg-brand-silver/10 text-brand-silver border-brand-silver/30',
+  'em-breve': 'bg-surface-alt text-ink-subtle border-surface-line',
+}
 
 export default function FerramentasResumo() {
   return (
-    <section id="ferramentas" className="section-padding bg-surface-alt relative overflow-hidden">
+    <section id="ferramentas" className="section-padding bg-surface relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/25 to-transparent" />
 
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          {/* Texto */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.5 }}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 max-w-3xl mx-auto"
+        >
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-5">
+            ETT Player · {ferramentasDisponiveis.length} ferramentas no ar
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-5 leading-tight">
+            Ferramentas para praticar <span className="brand-red">no seu ritmo</span>
+          </h2>
+          <p className="text-ink-muted text-lg leading-relaxed">
+            Use ferramentas para praticar vocabulário, escuta, pronúncia e comunicação no seu
+            próprio ritmo. Estão todas reunidas no{' '}
+            <strong className="text-ink">ETT Player</strong>, que lembra onde você parou e
+            organiza o que praticar a cada dia.
+          </p>
+        </motion.div>
+
+        <div className="max-w-6xl mx-auto space-y-10">
+          {ordemGrupos.map((g) => {
+            const doGrupo = ferramentas.filter((f) => f.grupo === g)
+            return (
+              <div key={g}>
+                <h3 className="text-xs font-semibold uppercase tracking-widest text-ink-subtle mb-4">
+                  {rotuloGrupo[g]}
+                </h3>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {doGrupo.map((f, i) => (
+                    <motion.div
+                      key={f.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: '-40px' }}
+                      transition={{ duration: 0.4, delay: i * 0.06 }}
+                      className={cn(
+                        'bg-surface-card border border-surface-line rounded-2xl p-5 flex flex-col',
+                        f.status !== 'disponivel' && 'border-dashed'
+                      )}
+                    >
+                      <div className="flex items-start justify-between gap-3 mb-2">
+                        <h4 className="font-bold text-ink text-base">{f.nome}</h4>
+                        <span
+                          className={cn(
+                            'shrink-0 px-2 py-0.5 rounded-full text-[11px] font-semibold border',
+                            estiloStatus[f.status]
+                          )}
+                        >
+                          {rotuloStatus[f.status]}
+                        </span>
+                      </div>
+                      <p className="text-sm font-medium text-ink-soft mb-1.5">{f.finalidade}</p>
+                      <p className="text-sm text-ink-muted leading-relaxed flex-1">{f.oQueFaz}</p>
+                      {f.status !== 'em-breve' && (
+                        <p className="text-xs text-ink-subtle mt-3 pt-3 border-t border-surface-line leading-relaxed">
+                          <span className="font-semibold text-ink-muted">Na prática:</span>{' '}
+                          {f.exemplo}
+                        </p>
+                      )}
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            )
+          })}
+        </div>
+
+        {/* Em construção — só o nome (decisão de 31/10/2026) */}
+        <div className="max-w-6xl mx-auto mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-ink-subtle">
+          <span className="inline-flex items-center gap-1.5 font-semibold text-ink-muted">
+            <Hammer className="w-4 h-4" />
+            Em construção:
+          </span>
+          {emConstrucao.join(' · ')}
+        </div>
+
+        <p className="max-w-6xl mx-auto mt-3 text-xs text-ink-subtle">
+          Algumas ferramentas estão em versão beta e podem mudar enquanto melhoram.
+        </p>
+
+        <div className="max-w-6xl mx-auto mt-10 flex flex-col sm:flex-row gap-3 justify-center">
+          <Link
+            href="/planos/conhecer/"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg hover:-translate-y-0.5"
           >
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-5">
-              Já está no ar
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-ink mb-5 leading-tight">
-              E entre um encontro e outro,
-              <br />
-              você tem as ferramentas.
-            </h2>
-            <p className="text-ink-muted text-lg leading-relaxed mb-6">
-              O <strong className="text-ink">ETT Player</strong> reúne o material de apoio dos
-              participantes num app só. Não é promessa de roadmap — está no ar e em uso, dá pra
-              abrir e ver por dentro. É onde seu diagnóstico, seu plano de estudo e sua evolução
-              ficam registrados.
-            </p>
-
-            <ul className="grid sm:grid-cols-2 gap-3 mb-8">
-              {modulos.map((m) => (
-                <li key={m.label} className="flex items-center gap-3 text-sm text-ink-soft">
-                  <span className="w-9 h-9 rounded-lg bg-brand-red/10 border border-brand-red/20 flex items-center justify-center shrink-0">
-                    <m.icon className="w-4 h-4 text-brand-red" />
-                  </span>
-                  {m.label}
-                </li>
-              ))}
-            </ul>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Link
-                href="/planos/conhecer/"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg hover:-translate-y-0.5"
-              >
-                Ver por dentro — teste de 30 dias
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <a
-                href={PLAYER_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-surface-line text-ink-soft font-semibold text-sm hover:border-brand-red/40 hover:text-ink transition-all"
-              >
-                Abrir o ETT Player
-                <ArrowUpRight className="w-4 h-4" />
-              </a>
-            </div>
-
-            <Link
-              href="/detalhes/#ferramentas"
-              className="inline-block mt-4 text-sm text-ink-subtle hover:text-brand-red underline underline-offset-4 transition-colors"
-            >
-              Ver todas as ferramentas, uma a uma
-            </Link>
-          </motion.div>
-
-          {/* Screenshot */}
-          <motion.a
+            Usar as ferramentas por 30 dias, sem cartão
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+          <a
             href={PLAYER_URL}
             target="_blank"
             rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="group block rounded-2xl border border-surface-line bg-surface-card overflow-hidden shadow-2xl hover:border-brand-red/40 transition-all"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-surface-line text-ink-soft font-semibold text-sm hover:border-brand-red/40 hover:text-ink transition-all"
           >
-            <div className="flex items-center gap-2 px-4 py-3 bg-surface border-b border-surface-line">
-              <span className="w-3 h-3 rounded-full bg-red-500/70" />
-              <span className="w-3 h-3 rounded-full bg-yellow-500/70" />
-              <span className="w-3 h-3 rounded-full bg-green-500/70" />
-              <span className="ml-3 flex-1 truncate text-xs text-ink-subtle font-mono">
-                ett-player.vercel.app
-              </span>
-              <ArrowUpRight className="w-4 h-4 text-ink-subtle group-hover:text-brand-red transition-colors" />
-            </div>
-            <Image
-              src="/images/ett-player.webp"
-              alt="ETT Player — app com as ferramentas de apoio dos participantes do ETT"
-              width={1600}
-              height={1000}
-              className="w-full h-auto"
-            />
-          </motion.a>
+            Abrir o ETT Player
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </section>

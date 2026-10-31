@@ -5,6 +5,9 @@ import HeroSimples from '@/components/HeroSimples'
 import ProximosEncontros from '@/components/ProximosEncontros'
 import CapturaRapida from '@/components/CapturaRapida'
 import ComoE from '@/components/ComoE'
+import TresPilares from '@/components/TresPilares'
+import ComoFunciona from '@/components/ComoFunciona'
+import ParaEducadores from '@/components/ParaEducadores'
 import FerramentasResumo from '@/components/FerramentasResumo'
 import ParceirosFaixa from '@/components/ParceirosFaixa'
 import Precos from '@/components/Precos'
@@ -31,12 +34,17 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Navbar />
+      {/* Ordem = as 6 perguntas do visitante (PLANO-REPOSICIONAMENTO-PLATAFORMA-2026-10-31.md §4):
+          o que é → o que encontro (ferramentas, encontros, parceiros) → como funciona →
+          grátis × pago → para quem promove o inglês → como começo. */}
       <HeroSimples />
-      <ProximosEncontros />
-      <CapturaRapida />
-      <ComoE />
+      <TresPilares />
       <FerramentasResumo />
+      <ProximosEncontros />
+      <ComoE />
+      <CapturaRapida />
       <ParceirosFaixa />
+      <ComoFunciona />
       <Precos />
       <FAQ
         faqs={homeFaqsCurtas}
@@ -47,24 +55,25 @@ export default function Home() {
         }
         subtitle="Sem letra miúda. Se ficar faltando alguma, é só perguntar no encontro."
       />
+      <ParaEducadores />
       <LeadForm />
 
       {/* Ponte para a versão longa do programa */}
       <section className="bg-surface-alt border-t border-surface-line py-14">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-ink mb-3">
-            Quer entender o programa inteiro?
+            Quer ver tudo com calma?
           </h2>
           <p className="text-ink-muted max-w-2xl mx-auto mb-7 leading-relaxed">
-            A metodologia completa, as ferramentas uma a uma, a jornada de estudo e os parceiros
-            estão na página de detalhes. Mas você não precisa ler nada disso pra aparecer no
-            encontro de segunda.
+            A página de detalhes explica como o ETT ajuda você a organizar a prática: o método
+            por trás das ferramentas, a rotina sugerida e os parceiros. Mas você não precisa ler
+            nada disso pra aparecer no encontro de segunda.
           </p>
           <Link
             href="/detalhes/"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-surface-line text-ink-soft font-semibold text-sm hover:border-brand-red/40 hover:text-ink transition-all"
           >
-            Ver o programa em detalhes
+            Ver os detalhes
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

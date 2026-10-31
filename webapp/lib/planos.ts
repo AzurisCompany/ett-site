@@ -51,8 +51,8 @@ export const portas: Porta[] = [
     precoNota: '30 dias · sem cartão',
     paraQuem: 'Pra quem não vai decidir nada antes de ver por dentro.',
     itens: [
-      'Plataforma completa por 30 dias',
-      'Diagnóstico ETT FluenteLevel',
+      'Todas as ferramentas do ETT Player por 30 dias',
+      'Diagnóstico de nível e vocabulário (Level Check)',
       'Vídeos de demonstração das ferramentas',
       '30 minutos de apresentação, individuais',
       'Acompanhamento e feedback das ferramentas',
@@ -63,19 +63,20 @@ export const portas: Porta[] = [
   },
   {
     id: 'entrar',
-    nome: 'Quero entrar',
+    nome: 'Ativação acompanhada',
     preco: `R$ ${PRECO_ADESAO}`,
-    precoNota: 'uma vez',
-    paraQuem: 'Pra quem já decidiu e quer começar com o plano montado.',
+    precoNota: 'adesão única',
+    paraQuem:
+      'Pra quem quer orientação individual pra conhecer as ferramentas, organizar a rotina de prática e configurar atividades pros seus objetivos.',
     itens: [
-      '2 encontros de 1 hora, individuais',
-      'Material didático personalizado',
-      'Entrada nos encontros de conversação',
+      '2 sessões individuais de 1 hora de orientação',
+      'Diagnóstico e plano de prática montados com você',
+      'Material de prática personalizado',
       'Conta no ETT Player e sala do ETT Speak',
-      'Os 30 primeiros dias de plataforma já inclusos',
+      'Os 30 primeiros dias de ferramentas já inclusos',
     ],
     rodape:
-      'São duas horas de mentoria individual. Cobrado uma vez — não vira mensalidade.',
+      'Orientação de uso da plataforma, não aula particular. Cobrado uma vez, não vira mensalidade. Os encontros continuam abertos a todos.',
     cta: 'Fazer minha adesão',
     destaque: true,
   },
@@ -105,7 +106,7 @@ export const trilhas: Trilha[] = [
     preco: `R$ ${PRECO_MENSAL}/mês`,
     custoReal: 'Sem rotina obrigatória — 1h de dedicação por dia.',
     descricao:
-      'Player completo, plano personalizado e acompanhamento, no ritmo que você quiser. O sistema registra sua evolução e devolve feedback das ferramentas.',
+      'Modalidade de acesso às ferramentas: Player completo, plano personalizado e acompanhamento, no ritmo que você quiser. O sistema registra sua evolução e devolve feedback das ferramentas.',
     condicao: `Cancela quando quiser, direto no checkout. Anual por R$ ${PRECO_ANUAL}.`,
     href: '/planos/dedicacao/',
   },
@@ -115,7 +116,7 @@ export const trilhas: Trilha[] = [
     preco: 'R$ 0',
     precoAncora: `R$ ${PRECO_MENSAL}/mês`,
     custoReal: 'Custa 1h da sua dedicação por dia.',
-    descricao: `Enquanto você mantiver presença nos encontros e ${META_DIAS} dias válidos por mês, não paga mensalidade. O sistema acompanha e registra sua evolução — não é na confiança.`,
+    descricao: `Modalidade de acesso às ferramentas sem mensalidade: enquanto você mantiver presença nos encontros e ${META_DIAS} dias válidos por mês, não paga. O sistema acompanha e registra sua evolução — não é na confiança.`,
     condicao:
       'Se parar, sua bolsa entra em pausa e você escolhe o mensal. Sem multa e sem cobrança retroativa.',
     href: '/planos/aceleracao/',
@@ -166,7 +167,7 @@ export const cartoesHome: CartaoHome[] = [
     paraQuem: portas[1].paraQuem,
     itens: portas[1].itens,
     rodape: portas[1].rodape,
-    cta: 'Ver a adesão',
+    cta: 'Ver a ativação acompanhada',
     href: '/planos/adesao/',
     destaque: true,
   },
@@ -177,10 +178,10 @@ export const cartoesHome: CartaoHome[] = [
     preco: `R$ ${PRECO_MENSAL}`,
     precoNota: 'por mês',
     custoReal: 'Sem rotina obrigatória — 1h de dedicação por dia.',
-    paraQuem: 'Pra quem quer tudo no próprio ritmo.',
+    paraQuem: 'Acesso às ferramentas no seu próprio ritmo.',
     itens: [
       'ETT Player completo — todas as ferramentas',
-      'Encontros online e presenciais',
+      'Plano de prática personalizado',
       'O sistema acompanha e registra sua evolução',
       'Acompanhamento e feedback das ferramentas',
       `Anual por R$ ${PRECO_ANUAL} — dois meses de desconto`,
@@ -196,10 +197,10 @@ export const cartoesHome: CartaoHome[] = [
     preco: 'R$ 0',
     precoAncora: `R$ ${PRECO_MENSAL}/mês`,
     custoReal: 'Custa 1h da sua dedicação por dia.',
-    paraQuem: 'Pra quem topa manter a rotina e não quer pagar mensalidade.',
+    paraQuem: 'Acesso às ferramentas pra quem topa manter a rotina e não quer pagar mensalidade.',
     itens: [
       'ETT Player completo — todas as ferramentas',
-      'Encontros online e presenciais',
+      'Presença nos encontros conta pra meta',
       'O sistema acompanha e registra sua evolução',
       'Acompanhamento e feedback das ferramentas',
       'Um prêmio a cada mês de meta batida',
@@ -247,12 +248,12 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
       {
         titulo: 'Começa por um diagnóstico, não por uma aula',
         texto:
-          'O ETT FluenteLevel mede o seu nível e mapeia quais palavras faltam pro inglês que você precisa usar no trabalho. O resultado não é uma nota — é um plano de estudos com o que estudar primeiro.',
+          'O Level Check estima o seu nível e mapeia quais palavras faltam pro inglês que você precisa usar. O resultado não é uma nota nem uma certificação: é um plano de prática com o que priorizar.',
       },
       {
-        titulo: 'As 10 ferramentas ficam abertas',
+        titulo: 'As ferramentas do ETT Player ficam abertas',
         texto:
-          'Revisão inteligente de vocabulário, séries com legenda, audiobook, rádio e notícias, diário falado e escrito, simulações com IA. Tudo liberado, sem versão reduzida e sem trava por ferramenta.',
+          'Flashcards de vocabulário, séries com legenda, audiolivro, rádio, conversa guiada com correção e o plano diário. Tudo liberado, sem versão reduzida e sem trava por ferramenta.',
       },
       {
         titulo: 'E tem gente do outro lado',
@@ -274,33 +275,33 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
 
   adesao: {
     slug: 'adesao',
-    etiqueta: 'Adesão ao programa',
-    nome: 'Quero entrar',
+    etiqueta: 'Adesão única',
+    nome: 'Ativação acompanhada',
     preco: `R$ ${PRECO_ADESAO}`,
     precoNota: 'cobrança única',
-    intro: `R$ ${PRECO_ADESAO}, uma vez só. É a sua adesão ao programa: duas horas de mentoria individual, o material didático e a entrada nos encontros de conversação.`,
-    videoTitulo: 'Como funcionam os dois encontros da adesão',
+    intro: `R$ ${PRECO_ADESAO}, uma vez só. É a ativação acompanhada da plataforma: duas sessões individuais de uma hora pra conhecer as ferramentas, organizar sua rotina de prática e configurar atividades adequadas aos seus objetivos — mais o material personalizado e os 30 primeiros dias de ferramentas.`,
+    videoTitulo: 'Como funcionam as duas sessões da ativação',
     videoId: 'C9WizsadjSM',
     blocos: [
       {
-        titulo: 'Dois encontros de uma hora, só seus',
+        titulo: 'Duas sessões individuais de uma hora',
         texto:
-          'No primeiro, a gente roda o diagnóstico junto, monta o seu plano de estudos e configura a sua rotina diária. Uma semana depois vem o segundo, pra ajustar o que travou de verdade e ativar as ferramentas com conteúdo do seu nível — a sua série, o seu livro, a sua simulação.',
+          'É orientação de uso da plataforma, não aula particular de inglês. Na primeira, a gente roda o diagnóstico junto, monta o seu plano de estudos e configura a sua rotina diária. Uma semana depois vem o segundo, pra ajustar o que travou de verdade e ativar as ferramentas com conteúdo do seu nível — a sua série, o seu livro, a sua simulação.',
       },
       {
-        titulo: 'Material didático personalizado',
+        titulo: 'Material de prática personalizado',
         texto:
           'O material é gerado a partir do seu diagnóstico: as palavras que faltam pra você, no contexto que você usa. Não é apostila genérica de curso — muda de pessoa pra pessoa, e muda de mês pra mês conforme você avança.',
       },
       {
-        titulo: 'Entrada nos encontros de conversação',
+        titulo: 'Os encontros continuam abertos',
         texto:
-          'Encontro online toda segunda, 20h, e o IEP Talks presencial todo sábado, 10h, em Curitiba. Você entra com o plano montado e sabendo o que praticar, em vez de aparecer e torcer.',
+          'O encontro online de segunda, 20h, e o IEP Talks de sábado, 10h, em Curitiba, são abertos a todos, com ou sem adesão. A diferença é que você chega com o plano montado e sabendo o que praticar.',
       },
       {
         titulo: 'Os 30 primeiros dias já estão inclusos',
         texto:
-          'A adesão não é uma taxa — ela já vem com o primeiro mês de plataforma completa. Só a partir do dia 31 é que você escolhe entre a Trilha de Dedicação e a Trilha de Aceleração.',
+          'A adesão não é uma taxa — ela já vem com o primeiro mês de ferramentas. Só a partir do dia 31 é que você escolhe entre a Trilha de Dedicação e a Trilha de Aceleração.',
       },
     ],
     inclui: portas[1].itens,
@@ -317,13 +318,13 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
     precoNota: 'por mês',
     destaqueFrase: 'Sem rotina obrigatória — 1h de dedicação por dia.',
     intro:
-      'A plataforma inteira no seu ritmo, com acompanhamento. A dedicação sugerida é de uma hora por dia, mas ninguém mede e ninguém cobra meta de você.',
+      'Uma modalidade de acesso às ferramentas, no seu ritmo, com acompanhamento. A dedicação sugerida é de uma hora por dia, mas ninguém mede e ninguém cobra meta de você.',
     videoTitulo: 'O que você recebe na Trilha de Dedicação',
     blocos: [
       {
-        titulo: 'As 10 ferramentas, sem trava',
+        titulo: 'Todas as ferramentas, sem trava',
         texto:
-          'ETT Player completo: revisão inteligente de vocabulário, séries com legenda, audiobook, rádio e notícias, diário, simulações com IA, material personalizado e o resto. Nada fica bloqueado.',
+          'ETT Player completo: diagnóstico, plano diário, flashcards, séries com legenda, audiolivro, rádio e conversa guiada. Nada fica bloqueado.',
       },
       {
         titulo: 'O sistema acompanha e registra sua evolução',
@@ -331,9 +332,9 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
           'Cada palavra revisada, cada episódio, cada simulação entra no seu histórico. As ferramentas devolvem feedback do que você está acertando e do que precisa voltar — você não estuda no escuro.',
       },
       {
-        titulo: 'Encontros online e presenciais',
+        titulo: 'Os encontros continuam abertos',
         texto:
-          'Encontro online toda segunda e o IEP Talks presencial todo sábado, além das turmas por nível. A conversa é onde o vocabulário sai do papel.',
+          'O encontro online de segunda e o IEP Talks de sábado são abertos a todos — a assinatura não é o que dá acesso a eles. É na conversa que o vocabulário sai do papel.',
       },
       {
         titulo: 'Sem amarras',
@@ -345,7 +346,6 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
       'Plano de estudos personalizado',
       'O sistema acompanha e registra sua evolução',
       'Acompanhamento e feedback das ferramentas',
-      'Encontros online e presenciais',
       `Anual por R$ ${PRECO_ANUAL} — dois meses de desconto`,
     ],
     observacao: `A Trilha de Dedicação começa no dia 31, depois dos 30 dias inclusos na adesão de R$ ${PRECO_ADESAO}. Nota fiscal emitida pela Azuris.`,
@@ -361,7 +361,7 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
     precoAncora: `R$ ${PRECO_MENSAL}/mês`,
     destaqueFrase: 'Custa 1h da sua dedicação por dia.',
     intro:
-      'Aqui você não paga mensalidade. Paga com uma hora da sua dedicação por dia — e o sistema acompanha isso por você.',
+      'Uma modalidade de acesso às ferramentas sem mensalidade. Você paga com uma hora da sua dedicação por dia — e o sistema acompanha isso por você.',
     videoTitulo: 'Como a meta funciona na prática',
     blocos: [
       {
@@ -389,14 +389,14 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
       'Plano de estudos personalizado',
       'O sistema acompanha e registra sua evolução',
       'Acompanhamento e feedback das ferramentas',
-      'Encontros online e presenciais',
+      'Presença nos encontros conta pra meta',
       'Um prêmio a cada mês de meta batida',
     ],
     observacao:
       'Perder a bolsa nunca tira o seu acesso aos encontros. Eles são abertos de qualquer forma.',
-    ctaLabel: `Fazer a adesão e começar — R$ ${PRECO_ADESAO}`,
+    ctaLabel: `Fazer a ativação e começar — R$ ${PRECO_ADESAO}`,
     ctaHref: CHECKOUT_ADESAO,
-    ctaNota: `A Aceleração começa depois da adesão ao programa, como todo mundo. A mensalidade é que fica em R$ 0 enquanto você mantiver a meta.`,
+    ctaNota: `A Aceleração começa depois da ativação acompanhada (adesão única), como todo mundo. A mensalidade é que fica em R$ 0 enquanto você mantiver a meta.`,
   },
 }
 

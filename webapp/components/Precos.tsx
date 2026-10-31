@@ -2,12 +2,42 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Check, Wallet, ShieldCheck } from 'lucide-react'
-import { cartoesHome, PRECO_ADESAO } from '@/lib/planos'
+import { Check, Wallet, ShieldCheck, MessagesSquare, Smartphone, UserRound, Handshake } from 'lucide-react'
+import { cartoesHome, PRECO_ADESAO, PRECO_MENSAL } from '@/lib/planos'
+
+/* Quatro coisas diferentes, com quatro regras diferentes. Separadas pra que
+   ninguém leia que paga pelo encontro (que é aberto) nem que o ETT vende o
+   curso do parceiro. Valores só de lib/planos.ts. */
+const blocos = [
+  {
+    icon: MessagesSquare,
+    titulo: 'Encontros de conversação',
+    preco: 'Gratuito',
+    texto: 'Online toda segunda, 20h, e IEP Talks aos sábados, 10h, em Curitiba. Aberto a qualquer pessoa, sem cadastro e sem plano.',
+  },
+  {
+    icon: Smartphone,
+    titulo: 'Acesso às ferramentas',
+    preco: '30 dias sem cartão',
+    texto: `Depois, a Trilha de Dedicação (R$ ${PRECO_MENSAL}/mês) ou a Trilha de Aceleração, que troca a mensalidade por 1h da sua dedicação por dia.`,
+  },
+  {
+    icon: UserRound,
+    titulo: 'Orientação e personalização',
+    preco: `R$ ${PRECO_ADESAO}, uma vez`,
+    texto: 'Ativação acompanhada: duas sessões individuais de 1h pra configurar as ferramentas e a rotina, material personalizado e os 30 primeiros dias.',
+  },
+  {
+    icon: Handshake,
+    titulo: 'Cursos e imersões dos parceiros',
+    preco: 'Condições de cada parceiro',
+    texto: 'Ofertas independentes, com fornecedor, preço, regras e condições próprios. O ETT divulga e encaminha.',
+  },
+]
 
 export default function Precos() {
   return (
-    <section id="precos" className="section-padding bg-surface relative overflow-hidden">
+    <section id="precos" className="section-padding bg-surface-alt relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/25 to-transparent" />
 
       <div className="container mx-auto px-4">
@@ -23,15 +53,35 @@ export default function Precos() {
             Quanto custa
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-4 leading-tight">
-            Adesão ao programa: <span className="brand-red">R$ {PRECO_ADESAO}</span>.
-            <br className="hidden sm:block" /> Depois, você escolhe.
+            O que é gratuito <span className="brand-red">e o que é pago</span>
           </h2>
           <p className="text-ink-muted max-w-2xl mx-auto text-lg leading-relaxed">
-            O encontro de segunda é aberto pra qualquer pessoa, sem cadastro e sem pagar — isso
-            não muda. O que tem preço é a plataforma, o material didático e as horas de mentoria
-            individual.
+            Conversar nos encontros não custa nada. O que tem preço é o acesso contínuo às
+            ferramentas e a orientação individual, e você só paga se quiser.
           </p>
         </motion.div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto mb-12">
+          {blocos.map((b, i) => (
+            <motion.div
+              key={b.titulo}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+              className={`rounded-2xl p-5 border ${i === 0 ? 'border-brand-red/30 bg-brand-red/5' : 'border-surface-line bg-surface-card'}`}
+            >
+              <b.icon className="w-5 h-5 text-brand-red mb-3" />
+              <h3 className="font-bold text-ink mb-1">{b.titulo}</h3>
+              <p className="text-sm font-semibold text-brand-red mb-2">{b.preco}</p>
+              <p className="text-sm text-ink-muted leading-relaxed">{b.texto}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <h3 className="text-center text-xl sm:text-2xl font-bold text-ink mb-8">
+          Ferramentas e orientação: as opções
+        </h3>
 
         {/* Quem já está numa trilha gratuita não passa a pagar */}
         <motion.div

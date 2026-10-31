@@ -29,10 +29,10 @@ const passos = [
    contradizer. O que é gratuito é o ENCONTRO; o programa é pago. Ver
    PLANO-REVISAO-MARKETING-2026-08-01.md antes de mexer. */
 const naoE = [
-  'Não é aula: não tem professor na frente explicando gramática',
-  'Não é curso: não tem matrícula, turma fechada nem fidelidade',
+  'Não é aula: não tem professor explicando gramática na frente',
+  'Não tem matrícula, turma fechada nem prova de nível na porta',
   'Não tem venda no encontro: ninguém vai te oferecer nada lá dentro',
-  'Não tem prova: ninguém mede seu nível na porta',
+  'Não depende de plano: o encontro é aberto, pagando ou não',
 ]
 
 export default function ComoE() {
@@ -87,7 +87,7 @@ export default function ComoE() {
           className="max-w-3xl mx-auto bg-surface-card border border-surface-line rounded-2xl p-7"
         >
           <h3 className="font-bold text-ink text-lg mb-5">
-            Pra deixar claro o que o ETT <em className="text-brand-red not-italic">não</em> é
+            O que o encontro <em className="text-brand-red not-italic">não</em> é
           </h3>
           <ul className="grid sm:grid-cols-2 gap-3">
             {naoE.map((item) => (
@@ -99,11 +99,11 @@ export default function ComoE() {
           </ul>
           <p className="text-sm text-ink-subtle mt-5 pt-5 border-t border-surface-line leading-relaxed">
             O ETT é mantido pela comunidade{' '}
-            <strong className="text-ink-soft">DSSBR &amp; GUBigData IA</strong> junto com casas e
-            escolas parceiras. <strong className="text-ink-soft">Aparecer num encontro é grátis e
-            continua sendo.</strong> Quem quer as ferramentas, o material didático e a mentoria
-            individual entre um encontro e outro entra no programa, que é pago — e as imersões e a
-            mentoria de carreira são de parceiros. Nada disso é condição pra sentar na roda.
+            <strong className="text-ink-soft">DSSBR &amp; GUBigData IA</strong>, e o IEP Talks
+            acontece no IEP, em Curitiba. <strong className="text-ink-soft">Participar dos
+            encontros é gratuito e continua sendo.</strong> As ferramentas e a orientação
+            individual são opcionais e ficam à parte; os cursos e as imersões são dos parceiros.
+            Nada disso é condição para entrar na roda.
           </p>
         </motion.div>
       </div>
