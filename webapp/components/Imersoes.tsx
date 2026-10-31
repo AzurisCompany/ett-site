@@ -8,168 +8,72 @@ import {
   MapPin,
   Calendar,
   Users,
-  Plane,
-  Building2,
-  GraduationCap,
   ArrowRight,
+  ArrowUpRight,
   CheckCircle2,
   X,
+  Gauge,
+  MessagesSquare,
+  Layers,
+  Film,
 } from 'lucide-react'
+import { faqsImersoes } from '@/lib/imersoes'
+import { useImersoesSeparadas } from '@/lib/useImersoes'
+
+/* /imersoes/ é uma vitrine de experiências OFERECIDAS PELA CHERRY TOP.
+   O ETT não opera imersão: divulga, encaminha o interesse e oferece ferramentas
+   e encontros pra praticar antes e depois (PLANO-REPOSICIONAMENTO-PLATAFORMA-
+   2026-10-31.md, §9). Dados e datas em lib/imersoes.ts; atual × encerrada é
+   calculado no navegador. Nada de "10× mais rápido" nem "vagas limitadas". */
 
 const FORM_URL = 'https://forms.gle/E4dV7dhEwASzVE4m6'
-
-type Imersao = {
-  id: string
-  city: string
-  uf: string
-  tag: string
-  tagColor: 'green' | 'blue' | 'purple'
-  when: string
-  whenDetail: string
-  format: string
-  bullets: string[]
-  highlight: string
-  ctaLabel: string
-  thumbs: string[]
-  cover: string
-  badge?: string
-  detalheUrl?: string
-}
-
-const imersoes: Imersao[] = [
-  {
-    id: 'curitiba-2026',
-    city: 'Curitiba',
-    uf: 'PR',
-    tag: 'Próxima a acontecer',
-    tagColor: 'green',
-    when: '29/jul — 02/ago 2026',
-    whenDetail: '5 dias de imersão presencial — formato Cherry Top',
-    format: '5 dias — imersão presencial',
-    bullets: [
-      'Primeira edição ETT em Curitiba',
-      'Em parceria com IEP — apoio institucional',
-      'Foco em profissionais de tech do PR',
-      'Vagas extremamente limitadas',
-    ],
-    highlight: 'Primeira edição local',
-    ctaLabel: 'Garantir minha vaga em Curitiba',
-    thumbs: [],
-    cover: '/images/ETT-top01.webp',
-    badge: '1ª EDIÇÃO',
-    detalheUrl: '/imersoes/curitiba',
-  },
-  {
-    id: 'belo-horizonte-2026',
-    city: 'Belo Horizonte',
-    uf: 'MG',
-    tag: 'Múltiplas turmas • 5 dias • 8 vagas',
-    tagColor: 'blue',
-    when: 'Setembro · Outubro · Novembro 2026',
-    whenDetail: '3 turmas confirmadas: 03–07/set · 08–12/out · 18–22/nov',
-    format: '5 dias com hospedagem e refeições inclusas',
-    bullets: [
-      'Immersion Village Brazil — sede oficial Cherry Top',
-      'Certificado de 90 horas',
-      'Apenas 8 vagas por turma',
-      '20 km do aeroporto de Confins/BH',
-    ],
-    highlight: 'Sede oficial Cherry Top',
-    ctaLabel: 'Quero participar da imersão em BH',
-    thumbs: [
-      '/imersoes/bh-2026/01.jpeg',
-      '/imersoes/bh-2026/05.jpeg',
-      '/imersoes/bh-2026/10.jpeg',
-    ],
-    cover: '/imersoes/bh-2026/01.jpeg',
-    detalheUrl: '/imersoes/belo-horizonte',
-  },
-  {
-    id: 'florida-2027',
-    city: 'Flórida',
-    uf: 'EUA',
-    tag: '2 turmas em 2027 • Hospedagem em resort • Vagas limitadas',
-    tagColor: 'purple',
-    when: 'Janeiro / Fevereiro 2027',
-    whenDetail: 'Turma 1: 10–27 jan (18 dias)  ·  Turma 2: 29/jan–01/mar (30+ dias)',
-    format: 'Imersão internacional — 100% em inglês 24h por dia',
-    bullets: [
-      'Windsor Cay Resort — Flórida, EUA',
-      'Liderada por Leonarda Flyhigher (Cherry Top)',
-      'Metodologia Bonding + Native-like',
-      'Passagem aérea e visto americano não inclusos',
-    ],
-    highlight: 'A experiência mais transformadora',
-    ctaLabel: 'Entrar na lista de interesse — Flórida 2027',
-    thumbs: [
-      '/imersoes/florida-2027/cover.jpeg',
-      '/imersoes/florida-2027/03.jpeg',
-      '/imersoes/florida-2027/07.jpeg',
-    ],
-    cover: '/imersoes/florida-2027/cover.jpeg',
-    detalheUrl: '/imersoes/florida',
-  },
-]
-
-const tagColorMap = {
-  green: 'bg-brand-red/15 text-brand-red border-brand-red/30',
-  blue: 'bg-brand-silver/15 text-brand-silver border-brand-silver/30',
-  purple: 'bg-ink/10 text-ink border-ink/30',
-}
+const CHERRY_URL = 'https://cherrytop.com.br'
 
 const galeriaEua: string[] = [
-  // 01-13, 15, 16 — .jpg
   ...Array.from({ length: 16 }, (_, i) => i + 1)
     .filter((n) => n !== 14)
     .map((n) => `/imersoes/galeria-eua/${String(n).padStart(2, '0')}.jpg`),
-  // 20, 21 — .jpeg
   '/imersoes/galeria-eua/20.jpeg',
   '/imersoes/galeria-eua/21.jpeg',
-  // 22-31 — .jpg
-  ...Array.from({ length: 10 }, (_, i) => i + 22).map(
-    (n) => `/imersoes/galeria-eua/${n}.jpg`
-  ),
+  ...Array.from({ length: 10 }, (_, i) => i + 22).map((n) => `/imersoes/galeria-eua/${n}.jpg`),
 ]
 
-const faqs = [
+/* Antes, durante e depois — só com ferramentas DISPONÍVEIS no Player. */
+const complemento = [
   {
-    q: 'Qual o nível mínimo de inglês pra participar?',
-    a: 'Depende da imersão. Curitiba e Belo Horizonte aceitam a partir de A2 (básico-intermediário) — fazemos nivelamento antes. A Flórida exige B1+ porque é 100% em inglês 24h. Não sabe seu nível? A gente faz o teste antes da inscrição.',
+    quando: 'Antes',
+    icon: Gauge,
+    texto:
+      'Faça o diagnóstico de nível no Level Check e revise vocabulário nos Flashcards pra chegar com mais repertório.',
   },
   {
-    q: 'Quanto custa?',
-    a: 'Valores sob consulta. Preenche o formulário e o time do ETT te manda a proposta completa com tudo o que está incluído. Cada imersão tem condição específica — a gente alinha por conversa.',
+    quando: 'Antes e durante',
+    icon: Film,
+    texto: 'Séries com legenda, audiolivro e rádio em inglês ajudam a acostumar o ouvido.',
   },
   {
-    q: 'Como eu garanto minha vaga?',
-    a: 'Vagas são confirmadas com uma taxa de pré-inscrição, que sinaliza seu compromisso real e segura sua posição na turma. Sem pré-inscrição, a vaga fica aberta — e elas costumam esgotar rápido. O valor da pré-inscrição é informado quando o time entra em contato.',
+    quando: 'Depois',
+    icon: MessagesSquare,
+    texto:
+      'Os encontros de conversação gratuitos (online às segundas e IEP Talks aos sábados) mantêm o inglês em uso quando a imersão termina.',
   },
   {
-    q: 'O que está incluído em cada imersão?',
-    a: 'Curitiba (Jun/26): programa + materiais + coffee breaks + certificado. BH (Q3/Q4 2026): programa de 5 dias + materiais + hospedagem + refeições + certificado de 90h. Flórida (Jan–Mar/27): programa + hospedagem em resort + atividades culturais + certificado. Passagem aérea e visto americano não estão inclusos na Flórida.',
-  },
-  {
-    q: 'Imersão internacional — preciso de visto?',
-    a: 'Sim, precisa de visto americano B1/B2 válido. A Cherry Top orienta o processo, mas a obtenção é responsabilidade do aluno. Quem já tem visto B1/B2 está liberado direto.',
-  },
-  {
-    q: 'Funciona pra quem nunca fez imersão antes?',
-    a: 'Sim — e geralmente é exatamente quem mais ganha. Imersão é projetada pra gente que tá travada. O ambiente faz o trabalho de tirar você da zona de conforto sem te jogar no fundo do poço. Suporte 100% do tempo.',
+    quando: 'Depois',
+    icon: Layers,
+    texto: 'Conversa guiada no Speak e o plano diário no Daily ajudam a manter a rotina de prática.',
   },
 ]
 
 export default function Imersoes() {
   const [lightbox, setLightbox] = useState<string | null>(null)
   const [openFaq, setOpenFaq] = useState<number | null>(0)
+  const sep = useImersoesSeparadas()
 
   return (
     <main className="bg-surface min-h-screen">
       {/* HERO */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-32 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-brand-red/5 via-surface to-surface" />
-        <div className="absolute top-20 right-0 w-96 h-96 bg-brand-red/10 rounded-full blur-3xl" />
-        <div className="absolute top-40 left-0 w-96 h-96 bg-brand-silver/10 rounded-full blur-3xl" />
-
         <div className="container mx-auto px-4 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -178,463 +82,308 @@ export default function Imersoes() {
             className="max-w-4xl mx-auto text-center"
           >
             <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-6">
-              Imersão • em parceria com Cherry Top
+              Oferecidas pela Cherry Top
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-ink mb-6 leading-tight">
-              Você sabe inglês.
-              <br />
-              <span className="gradient-text">Falta só destravar.</span>
+              Imersões em inglês oferecidas{' '}
+              <span className="gradient-text">por nossos parceiros</span>
             </h1>
             <p className="text-ink-soft text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
-              Em <strong className="text-ink">5 dias no Brasil ou até 30+ dias na Flórida</strong>,
-              a gente arranca seu inglês do papel e coloca na sua boca — em reuniões,
-              demos, entrevistas e no networking internacional. ETT +{' '}
-              <strong className="text-ink">Cherry Top</strong>,{' '}
-              <em className="text-brand-red not-italic">40+ anos</em> formando
-              profissionais fluentes pela metodologia{' '}
-              <strong className="text-ink">Bonding + Native-like</strong>.
+              Conheça experiências de imersão que ajudam você a ampliar o contato com o idioma. O
+              ETT complementa essas oportunidades com ferramentas de prática e encontros de
+              conversação.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
-                href={FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#proximas"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red"
               >
-                Quero participar de uma imersão
+                Ver as próximas turmas
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="#galeria-eua"
+                href={CHERRY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-surface-line text-ink font-semibold hover:border-brand-red/50 hover:bg-surface-card transition-all"
               >
-                Ver fotos das imersões
+                Conhecer a Cherry Top
+                <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* PARCERIA CHERRY TOP — banner de autoridade */}
+      {/* QUEM FAZ O QUÊ */}
       <section className="bg-surface-alt border-y border-surface-line">
-        <div className="container mx-auto px-4 py-6">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="flex flex-col md:flex-row items-center gap-5 md:gap-8 bg-surface-card border border-brand-red/20 rounded-2xl p-5 md:p-6"
-          >
-            <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-ink/5 border border-surface-line flex-shrink-0">
+        <div className="container mx-auto px-4 py-8">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-[auto_1fr_1fr] gap-6 items-center bg-surface-card border border-surface-line rounded-2xl p-6">
+            <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-surface-card border border-surface-line mx-auto">
               <Image
                 src="/images/logo-cherrytop.jpeg"
-                alt="Cherry Top — parceira oficial ETT"
+                alt="Logo da Cherry Top"
                 fill
                 className="object-contain p-1"
                 sizes="80px"
               />
             </div>
-            <div className="flex-1 text-center md:text-left">
-              <div className="text-xs uppercase tracking-widest text-brand-red font-semibold mb-1">
-                Imersões em parceria com
+            <div>
+              <div className="text-xs uppercase tracking-widest text-ink-subtle font-semibold mb-1">
+                Oferecido por
               </div>
-              <div className="text-xl font-bold text-ink mb-1">
-                Cherry Top Business Communication
-              </div>
-              <p className="text-ink-muted text-sm">
-                <strong className="text-ink">40+ anos</strong> formando profissionais fluentes ·
-                metodologia <strong className="text-ink">Bonding + Native-like</strong> ·
-                fluência até <strong className="text-brand-red">10× mais rápido</strong>
+              <div className="text-lg font-bold text-ink mb-1">Cherry Top Business Communication</div>
+              <p className="text-ink-muted text-sm leading-relaxed">
+                Programa, condução, inscrição, investimento e condições. Método Bonding +
+                Native-like.
               </p>
             </div>
-            <a
-              href="https://cherrytop.com.br"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-ink-muted hover:text-brand-red inline-flex items-center gap-1.5 transition-colors whitespace-nowrap"
-            >
-              cherrytop.com.br <ArrowRight className="w-3.5 h-3.5" />
-            </a>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* POR QUE IMERSÃO */}
-      <section className="section-padding bg-surface-alt border-y border-surface-line">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12 max-w-3xl mx-auto"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4">
-              Por que imersão funciona — quando aula online não destrava
-            </h2>
-            <p className="text-ink-muted text-lg">
-              Aula tradicional ensina inglês. Imersão te obriga a{' '}
-              <em className="text-ink not-italic">usar</em>.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                icon: GraduationCap,
-                title: 'Você não traduz mais, você usa',
-                desc: 'Imersão obriga seu cérebro a sair do modo "como se diz X em inglês?" e entrar no modo "X." É o salto que separa quem sabe inglês de quem fala inglês.',
-              },
-              {
-                icon: Building2,
-                title: 'Vocabulário tech, situação real',
-                desc: 'Você não vai falar sobre o tempo — você vai apresentar uma arquitetura, revisar um PR em inglês, conduzir uma daily, negociar uma oferta. Tudo simulado, com feedback.',
-              },
-              {
-                icon: Plane,
-                title: 'Até 10× mais rápido',
-                desc: 'Metodologia Bonding + Native-like da Cherry Top, validada em 40+ anos. Alunos saltam de nível em dias de imersão total — não em meses de aula tradicional.',
-              },
-            ].map((pilar, i) => (
-              <motion.div
-                key={pilar.title}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-surface-card border border-surface-line rounded-2xl p-6 card-hover"
-              >
-                <div className="w-12 h-12 rounded-xl bg-brand-red/15 border border-brand-red/30 flex items-center justify-center mb-4">
-                  <pilar.icon className="w-6 h-6 text-brand-red" />
-                </div>
-                <h3 className="text-xl font-bold text-ink mb-3">{pilar.title}</h3>
-                <p className="text-ink-muted leading-relaxed text-sm">{pilar.desc}</p>
-              </motion.div>
-            ))}
+            <div>
+              <div className="text-xs uppercase tracking-widest text-brand-red font-semibold mb-1">
+                Apoio do ETT
+              </div>
+              <p className="text-ink-muted text-sm leading-relaxed">
+                Divulga as turmas, encaminha quem tem interesse e oferece ferramentas e encontros
+                de conversação pra praticar antes e depois.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* PRÓXIMAS IMERSÕES */}
+      {/* OPORTUNIDADES ATUAIS */}
       <section id="proximas" className="section-padding bg-surface">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-14"
-          >
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
-              Próximas imersões
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4">
-              Escolha sua <span className="gradient-text">próxima virada</span>
-            </h2>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4">Próximas turmas</h2>
             <p className="text-ink-muted max-w-2xl mx-auto text-lg">
-              Três formatos, três cidades, uma metodologia.
-              Comece pelo Brasil, termine nos Estados Unidos.
+              No Brasil e no exterior. Só aparecem aqui as turmas que ainda vão acontecer.
             </p>
-          </motion.div>
+          </div>
 
-          <div className="grid lg:grid-cols-3 gap-6">
-            {imersoes.map((im, i) => (
-              <motion.div
-                key={im.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group bg-surface-card border border-surface-line rounded-2xl overflow-hidden flex flex-col hover:border-brand-red/30 transition-all"
-              >
-                {/* Cover (clicável quando tem página de detalhe) */}
-                {im.detalheUrl ? (
-                  <Link href={im.detalheUrl} className="relative aspect-[16/10] bg-surface-alt overflow-hidden block">
-                    <Image
-                      src={im.cover}
-                      alt={`Imersão ${im.city}`}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 1024px) 100vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent" />
-                    {im.badge && (
-                      <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand-red-deep text-white">
-                        {im.badge}
+          <div className="grid lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {sep === null
+              ? Array.from({ length: 2 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="h-[520px] rounded-2xl bg-surface-card border border-surface-line animate-pulse"
+                  />
+                ))
+              : sep.atuais.map((im) => (
+                  <div
+                    key={im.id}
+                    className="group bg-surface-card border border-surface-line rounded-2xl overflow-hidden flex flex-col hover:border-brand-red/30 transition-all"
+                  >
+                    <Link href={im.detalheUrl} className="relative aspect-[16/9] bg-surface-alt overflow-hidden block">
+                      <Image
+                        src={im.capa}
+                        alt={`Imersão em ${im.cidade}`}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                      />
+                      <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-brand-red-deep text-white">
+                        {im.uf === 'EUA' ? 'No exterior' : 'No Brasil'}
                       </span>
-                    )}
-                    <div className="absolute bottom-3 left-3 right-3">
-                      <span
-                        className={`inline-block px-2.5 py-1 rounded-full text-[11px] font-semibold border ${tagColorMap[im.tagColor]}`}
-                      >
-                        {im.tag}
-                      </span>
-                    </div>
-                  </Link>
-                ) : (
-                  <div className="relative aspect-[16/10] bg-surface-alt overflow-hidden">
-                    <Image
-                      src={im.cover}
-                      alt={`Imersão ${im.city}`}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 1024px) 100vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent" />
-                    {im.badge && (
-                      <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand-red-deep text-white">
-                        {im.badge}
-                      </span>
-                    )}
-                    <div className="absolute bottom-3 left-3 right-3">
-                      <span
-                        className={`inline-block px-2.5 py-1 rounded-full text-[11px] font-semibold border ${tagColorMap[im.tagColor]}`}
-                      >
-                        {im.tag}
-                      </span>
-                    </div>
-                  </div>
-                )}
-
-                {/* Body */}
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-center gap-2 text-ink-muted text-xs mb-2">
-                    <MapPin className="w-3.5 h-3.5" />
-                    {im.city}, {im.uf}
-                  </div>
-                  {im.detalheUrl ? (
-                    <Link href={im.detalheUrl} className="hover:text-brand-red transition-colors">
-                      <h3 className="text-2xl font-bold text-ink mb-3 hover:text-brand-red transition-colors">
-                        {im.city}
-                      </h3>
                     </Link>
-                  ) : (
-                    <h3 className="text-2xl font-bold text-ink mb-3">
-                      {im.city}
-                    </h3>
-                  )}
 
-                  <div className="space-y-2 mb-4 text-sm">
-                    <div className="flex items-start gap-2 text-ink-soft">
-                      <Calendar className="w-4 h-4 text-brand-red shrink-0 mt-0.5" />
-                      <div>
-                        <div className="font-semibold">{im.when}</div>
-                        <div className="text-ink-subtle text-xs">{im.whenDetail}</div>
+                    <div className="p-6 flex flex-col flex-1">
+                      <div className="flex items-center gap-2 text-ink-muted text-xs mb-2">
+                        <MapPin className="w-3.5 h-3.5" />
+                        {im.local}
+                      </div>
+                      <Link href={im.detalheUrl}>
+                        <h3 className="text-2xl font-bold text-ink mb-1 hover:text-brand-red transition-colors">
+                          {im.cidade}
+                        </h3>
+                      </Link>
+                      <p className="text-sm text-ink-soft mb-4">
+                        <span className="text-ink-subtle">Oferecido por</span>{' '}
+                        <strong className="text-ink">{im.oferecidoPor}</strong>
+                      </p>
+
+                      <div className="space-y-2 mb-4 text-sm">
+                        <div className="flex items-start gap-2 text-ink-soft">
+                          <Calendar className="w-4 h-4 text-brand-red shrink-0 mt-0.5" />
+                          <div>
+                            {im.turmas.map((t) => (
+                              <div key={t.inicio} className="font-semibold">
+                                {t.rotulo}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-2 text-ink-soft">
+                          <Users className="w-4 h-4 text-brand-silver shrink-0 mt-0.5" />
+                          <div>{im.formato}</div>
+                        </div>
+                      </div>
+
+                      <ul className="space-y-1.5 mb-5 text-sm text-ink-muted">
+                        {im.destaques.map((d) => (
+                          <li key={d} className="flex items-start gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-brand-red/70 shrink-0 mt-0.5" />
+                            <span>{d}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <p className="text-xs text-ink-subtle mb-5 pb-5 border-b border-surface-line">
+                        <strong className="text-ink-soft">Investimento e inscrição:</strong>{' '}
+                        definidos pela Cherry Top.
+                      </p>
+
+                      <div className="mt-auto flex flex-col sm:flex-row gap-3">
+                        <Link
+                          href={im.detalheUrl}
+                          className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-brand-red-deep text-white font-semibold text-sm hover:bg-brand-red-deep/90 transition-all"
+                        >
+                          Ver detalhes
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                        <a
+                          href={FORM_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-surface-line text-ink-soft font-semibold text-sm hover:border-brand-red/40 transition-all"
+                        >
+                          Tenho interesse
+                        </a>
                       </div>
                     </div>
-                    <div className="flex items-start gap-2 text-ink-soft">
-                      <Users className="w-4 h-4 text-brand-silver shrink-0 mt-0.5" />
-                      <div>{im.format}</div>
-                    </div>
                   </div>
+                ))}
+          </div>
 
-                  <ul className="space-y-1.5 mb-5 text-sm text-ink-muted">
-                    {im.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-brand-red/70 shrink-0 mt-0.5" />
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
+          {sep && sep.atuais.length === 0 && (
+            <p className="text-center text-ink-muted max-w-xl mx-auto">
+              Nenhuma turma aberta no momento. Deixe seu interesse no{' '}
+              <a href={FORM_URL} target="_blank" rel="noopener noreferrer" className="text-brand-red underline">
+                formulário
+              </a>{' '}
+              ou acompanhe direto no site da Cherry Top.
+            </p>
+          )}
 
-                  <div className="text-xs text-ink-subtle mb-5 pb-5 border-b border-surface-line">
-                    <strong className="text-ink-soft">Investimento:</strong>{' '}
-                    sob consulta · vaga garantida com taxa de pré-inscrição
-                  </div>
+          <p className="text-center text-xs text-ink-subtle mt-8 max-w-2xl mx-auto">
+            O formulário é do ETT: encaminhamos seu interesse à Cherry Top, que entra em contato
+            com a proposta. Se preferir, fale direto com eles em{' '}
+            <a href={CHERRY_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-brand-red">
+              cherrytop.com.br
+            </a>
+            .
+          </p>
+        </div>
+      </section>
 
-                  {im.detalheUrl && (
-                    <Link
-                      href={im.detalheUrl}
-                      className="mt-auto w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-brand-red-deep text-white font-semibold text-sm hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red text-center"
-                    >
-                      Ver detalhes do evento
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  )}
+      {/* ANTES, DURANTE E DEPOIS */}
+      <section className="section-padding bg-surface-alt border-y border-surface-line">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4">
+              Como o ETT complementa a imersão
+            </h2>
+            <p className="text-ink-muted text-lg">
+              Nada disso é obrigatório pra fazer a imersão. É o que você pode usar pra aproveitar
+              mais.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            {complemento.map((c) => (
+              <div key={c.texto} className="bg-surface-card border border-surface-line rounded-2xl p-5">
+                <c.icon className="w-5 h-5 text-brand-red mb-3" />
+                <div className="text-xs font-semibold uppercase tracking-widest text-brand-red mb-2">
+                  {c.quando}
                 </div>
-              </motion.div>
+                <p className="text-sm text-ink-muted leading-relaxed">{c.texto}</p>
+              </div>
             ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/#ferramentas" className="text-sm font-semibold text-brand-red hover:underline">
+              Ver todas as ferramentas →
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* GALERIA EUA — PROVA SOCIAL */}
+      {/* TURMAS ENCERRADAS */}
+      {sep && sep.encerradas.length > 0 && (
+        <section className="py-12 bg-surface">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <h2 className="text-sm font-bold uppercase tracking-widest text-ink-subtle mb-4">
+              Turmas encerradas
+            </h2>
+            <ul className="divide-y divide-surface-line border border-surface-line rounded-2xl bg-surface-card">
+              {sep.encerradas.map((im) => (
+                <li key={im.id} className="flex flex-wrap items-center justify-between gap-2 px-5 py-4 text-sm">
+                  <span className="text-ink-soft">
+                    <strong className="text-ink">{im.cidade}</strong> · {im.turmas.map((t) => t.rotulo).join(' · ')}
+                  </span>
+                  <span className="text-ink-subtle">Oferecido por {im.oferecidoPor}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* GALERIA */}
       <section id="galeria-eua" className="section-padding bg-surface-alt border-y border-surface-line">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12 max-w-3xl mx-auto"
-          >
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
-              Prova social
-            </span>
+          <div className="text-center mb-12 max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4">
-              Já fizemos história nos Estados Unidos
+              Imersões da Cherry Top nos Estados Unidos
             </h2>
             <p className="text-ink-muted text-lg">
-              {galeriaEua.length} fotos. Uma conclusão: <strong className="text-ink">imersão funciona.</strong>
-              <br />
-              Profissionais brasileiros que viveram a imersão Cherry Top nos EUA —
-              a mesma operação que vai receber a turma ETT em 2027.
+              Fotos de participantes de edições anteriores da Cherry Top nos EUA — a mesma
+              operação que recebe as turmas de 2027.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             {galeriaEua.map((src, i) => (
-              <motion.button
+              <button
                 key={src}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.4, delay: (i % 8) * 0.05 }}
                 onClick={() => setLightbox(src)}
-                className="relative aspect-square rounded-xl overflow-hidden bg-surface-card border border-surface-line hover:border-brand-red/40 transition-all group cursor-pointer"
+                className="relative aspect-square rounded-xl overflow-hidden bg-surface-card border border-surface-line hover:border-brand-red/40 transition-all group cursor-zoom-in"
               >
                 <Image
                   src={src}
-                  alt={`Imersão Cherry Top EUA — foto ${i + 1}`}
+                  alt={`Imersão Cherry Top nos EUA — foto ${i + 1}`}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                   sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
-                <div className="absolute inset-0 bg-surface/0 group-hover:bg-surface/30 transition-colors" />
-              </motion.button>
+              </button>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* SOBRE CHERRY TOP */}
-      <section className="section-padding bg-surface">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto bg-gradient-to-br from-surface-card via-surface-card to-surface-alt border border-surface-line rounded-3xl p-8 md:p-12"
-          >
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
-              Parceria estratégica
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-ink mb-6">
-              Por que <span className="gradient-text">ETT + Cherry Top</span> é a combinação certa
-            </h2>
-            <div className="space-y-4 text-ink-soft text-base md:text-lg leading-relaxed">
-              <p>
-                A <strong className="text-ink">Cherry Top Business Communication</strong> tem{' '}
-                <strong className="text-brand-red">40+ anos</strong> de know-how e um método validado:{' '}
-                <strong className="text-ink">Bonding + Native-like</strong>. Não é curso de gramática
-                — é imersão vivencial que acelera a fluência em até{' '}
-                <strong className="text-brand-red">10× mais rápido</strong>, com foco em executivos,
-                C-Levels e profissionais que precisam falar inglês no mercado global. Sede oficial no
-                Brasil: <strong className="text-ink">Immersion Village Brazil</strong> (Lagoa Santa/MG).
-              </p>
-              <p>
-                O <strong className="text-ink">ETT</strong> organiza o ecossistema: comunidade tech,
-                ferramentas inteligentes, mentoria de carreira internacional via Coders e diagnóstico
-                personalizado. A imersão Cherry Top é o{' '}
-                <strong className="text-ink">acelerador</strong> da trilha ETT — onde você sai do
-                modo &quot;estudo&quot; pro modo &quot;uso real&quot;.
-              </p>
-              <p className="text-ink font-semibold text-xl pt-2">
-                Você não escolhe entre o ETT e a Cherry Top.{' '}
-                <span className="gradient-text">Você ganha os dois.</span>
-              </p>
-            </div>
-            <div className="mt-6 pt-6 border-t border-surface-line">
-              <a
-                href="https://cherrytop.com.br"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-ink-muted hover:text-brand-red text-sm transition-colors inline-flex items-center gap-1.5"
-              >
-                Conhecer cherrytop.com.br <ArrowRight className="w-3.5 h-3.5" />
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA FINAL */}
-      <section className="section-padding bg-gradient-to-b from-surface via-surface-alt to-surface border-t border-surface-line">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4">
-              Vagas são limitadas.
-              <br />
-              <span className="gradient-text">Imersões esgotam.</span>
-            </h2>
-            <p className="text-ink-muted text-lg mb-8">
-              Preenche o formulário em 2 minutos. A gente te liga (ou WhatsApp, você escolhe)
-              e te ajuda a entender qual imersão faz mais sentido pra você.
-            </p>
-            <a
-              href={FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-red-deep text-white font-bold text-lg hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red"
-            >
-              Quero falar com o time ETT
-              <ArrowRight className="w-5 h-5" />
-            </a>
-            <p className="text-ink-subtle text-xs mt-4 italic">
-              Sem compromisso. Sem pressão. Sem spam.
-            </p>
-          </motion.div>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="section-padding bg-surface">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-ink mb-8 text-center">
-              Perguntas <span className="gradient-text">frequentes</span>
-            </h2>
-            <div className="space-y-3">
-              {faqs.map((faq, i) => (
-                <div
-                  key={faq.q}
-                  className="bg-surface-card border border-surface-line rounded-xl overflow-hidden"
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-ink mb-8 text-center">
+            Perguntas sobre as imersões
+          </h2>
+          <div className="space-y-3">
+            {faqsImersoes.map((f, i) => (
+              <div key={f.q} className="bg-surface-card border border-surface-line rounded-xl overflow-hidden">
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left"
+                  aria-expanded={openFaq === i}
                 >
-                  <button
-                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full px-5 py-4 text-left flex items-center justify-between gap-4 hover:bg-surface-alt transition-colors"
-                  >
-                    <span className="font-semibold text-ink text-base">{faq.q}</span>
-                    <span
-                      className={`text-brand-red text-2xl leading-none transition-transform ${
-                        openFaq === i ? 'rotate-45' : ''
-                      }`}
-                    >
-                      +
-                    </span>
-                  </button>
-                  {openFaq === i && (
-                    <div className="px-5 pb-5 text-ink-muted leading-relaxed text-sm border-t border-surface-line pt-4">
-                      {faq.a}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </motion.div>
+                  <span className="font-semibold text-ink">{f.q}</span>
+                  <span className="text-brand-red text-xl leading-none">{openFaq === i ? '−' : '+'}</span>
+                </button>
+                {openFaq === i && (
+                  <p className="px-5 pb-5 text-ink-muted text-sm leading-relaxed">{f.a}</p>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -652,13 +401,7 @@ export default function Imersoes() {
             <X className="w-5 h-5" />
           </button>
           <div className="relative w-full max-w-5xl aspect-[4/3]">
-            <Image
-              src={lightbox}
-              alt="Foto imersão"
-              fill
-              className="object-contain"
-              sizes="100vw"
-            />
+            <Image src={lightbox} alt="Foto de imersão da Cherry Top" fill className="object-contain" sizes="100vw" />
           </div>
         </div>
       )}

@@ -1,7 +1,3 @@
-'use client'
-
-import { useEffect, useState } from 'react'
-
 /**
  * Imersões dos parceiros — fonte única de /imersoes/.
  *
@@ -11,7 +7,7 @@ import { useEffect, useState } from 'react'
  * pra praticar antes e depois.
  *
  * ⚠️ Datas em ISO. Atual × encerrada é calculado NO NAVEGADOR
- * (`useImersoesSeparadas`), igual à agenda: o build pode ficar semanas sem
+ * (`useImersoesSeparadas`, em lib/useImersoes.ts), igual à agenda: o build pode ficar semanas sem
  * rodar, e "próxima a acontecer" escrito à mão já ficou vencido uma vez
  * (Curitiba, jul/2026, ainda era "próxima" em outubro).
  */
@@ -104,16 +100,30 @@ export function separarImersoes(agora: Date): ImersoesSeparadas {
   return { atuais, encerradas }
 }
 
-/** `null` até montar no navegador — renderizar skeleton nesse meio-tempo. */
-export function useImersoesSeparadas(): ImersoesSeparadas | null {
-  const [sep, setSep] = useState<ImersoesSeparadas | null>(null)
-  useEffect(() => setSep(separarImersoes(new Date())), [])
-  return sep
-}
-
-/** Uma imersão específica tem turma futura? (`null` até montar.) */
-export function useImersaoAberta(id: string): boolean | null {
-  const sep = useImersoesSeparadas()
-  if (!sep) return null
-  return sep.atuais.some((im) => im.id === id)
-}
+/** FAQ de /imersoes/ — a mesma lista alimenta a página e o JSON-LD. */
+export const faqsImersoes = [
+  {
+    q: 'Quem oferece as imersões?',
+    a: 'A Cherry Top. Programa, inscrição, investimento, taxa de pré-inscrição, contrato e condições são definidos por ela. O ETT divulga as turmas, encaminha quem tem interesse e oferece as ferramentas e os encontros de conversação pra praticar antes e depois.',
+  },
+  {
+    q: 'Qual o nível mínimo de inglês?',
+    a: 'Depende da turma, e quem define é a Cherry Top. Como referência: no Brasil há turmas a partir do básico, organizadas por nível; na Flórida o mínimo é B1+, porque tudo acontece em inglês. Se quiser ter uma ideia do seu nível antes de conversar com eles, o diagnóstico do ETT Player ajuda.',
+  },
+  {
+    q: 'Quanto custa?',
+    a: 'O investimento é informado pela Cherry Top. Preencha o formulário: o ETT encaminha seu interesse e a Cherry Top entra em contato com a proposta e o que está incluído em cada turma.',
+  },
+  {
+    q: 'O que está incluído?',
+    a: 'Belo Horizonte: programa de 5 dias, hospedagem, refeições, material e certificado de 90 horas emitido pela Cherry Top. Flórida: programa, hospedagem em resort, atividades culturais e mentor residente; passagem aérea e visto americano não estão inclusos. Os detalhes finais são confirmados pela Cherry Top.',
+  },
+  {
+    q: 'Imersão na Flórida — preciso de visto?',
+    a: 'Sim, visto americano B1/B2 válido. A Cherry Top orienta o processo, mas a obtenção é responsabilidade de cada participante.',
+  },
+  {
+    q: 'Preciso usar o ETT pra fazer uma imersão?',
+    a: 'Não. A imersão é da Cherry Top e não depende de nenhum plano do ETT. Os encontros de conversação são gratuitos e abertos, e as ferramentas podem ser testadas por 30 dias sem cartão, se você quiser praticar antes ou depois.',
+  },
+]

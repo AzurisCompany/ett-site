@@ -24,7 +24,7 @@ const flTurmas = [
     startDate: '2027-01-10T09:00:00-05:00',
     endDate: '2027-01-27T18:00:00-05:00',
     description:
-      '18 dias de imersão internacional em inglês no Windsor Cay Resort, Flórida. Treino de fala 24h por dia com método Bonding + Native-like. Liderada por Leonarda Flyhigher (Cherry Top).',
+      '18 dias de imersão internacional em inglês no Windsor Cay Resort, Flórida. Oferecida pela Cherry Top, método Bonding + Native-like. Conduzida por Leonarda Flyhigher (Cherry Top).',
   },
   {
     slug: 'turma-2-jan-mar-2027',
@@ -32,7 +32,7 @@ const flTurmas = [
     startDate: '2027-01-29T09:00:00-05:00',
     endDate: '2027-03-01T18:00:00-05:00',
     description:
-      '30+ dias de imersão internacional em inglês no Windsor Cay Resort, Flórida. Versão estendida para o salto Native-like. Liderada por Leonarda Flyhigher (Cherry Top).',
+      '30+ dias de imersão internacional em inglês no Windsor Cay Resort, Flórida. Versão estendida, oferecida pela Cherry Top. Conduzida por Leonarda Flyhigher (Cherry Top).',
   },
 ]
 
@@ -91,14 +91,14 @@ const jsonLd = {
 
 export const metadata: Metadata = {
   title:
-    'Imersão em Inglês na Flórida 2027 — 18 ou 30 Dias | ETT',
+    'Imersão em Inglês na Flórida 2027 — Cherry Top · 18 ou 30 dias',
   description:
-    'Imersão internacional no Windsor Cay Resort (Flórida, EUA) — até 30 dias de treino de fala em inglês 24h por dia. 2 turmas em 2027: 10–27/jan (18 dias) e 29/jan–01/mar (30+ dias). Liderada por Leonarda Flyhigher (Cherry Top). Método Bonding + Native-like.',
+    'Imersão internacional oferecida pela Cherry Top no Windsor Cay Resort (Flórida, EUA), 100% em inglês. Turmas em 2027: 10–27/jan (18 dias) e 29/jan–01/mar. Conduzida por Leonarda Flyhigher. Divulgada pelo English Talk Time.',
   keywords: [
     'imersão em inglês Flórida',
     'imersão em inglês EUA',
     'imersão internacional inglês',
-    'curso de inglês nos Estados Unidos',
+    'imersão em inglês nos Estados Unidos',
     'treino de fala em inglês imersão',
     'Windsor Cay Resort imersão',
     'Cherry Top Flórida',
@@ -111,9 +111,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    title: 'Imersão em Inglês na Flórida 2027 — ETT × Cherry Top',
+    title: 'Imersão em Inglês na Flórida 2027 — Cherry Top',
     description:
-      'Até 30 dias em resort na Flórida, em inglês 24h por dia. 2 turmas em 2027.',
+      'Imersão da Cherry Top em resort na Flórida, 100% em inglês. Turmas em 2027.',
     url: 'https://englishtalktime.com.br/imersoes/florida/',
     images: [
       {
@@ -145,18 +145,20 @@ export default function FloridaPage() {
         eyebrow="Imersão Internacional • Cherry Top"
         city="Flórida"
         uf="EUA"
-        headline="A experiência mais transformadora da trilha ETT."
-        intro="Você vive em um resort completo na Flórida, com a turma, em inglês 24 horas por dia — refeições juntos, atividades culturais, simulações profissionais, dias inteiros sem voltar para o português. Em até 30+ dias, sua fluência salta para o patamar Native-like. Liderada por Leonarda Flyhigher (Cherry Top), com mentor residente nos EUA."
+        headline="Imersão internacional da Cherry Top na Flórida."
+        intro="A turma convive num resort na Flórida usando o inglês o dia inteiro — refeições juntos, atividades culturais e dias inteiros sem voltar para o português. A imersão é oferecida e conduzida pela Cherry Top, com Leonarda Flyhigher e um mentor residente nos EUA; o ETT divulga e oferece ferramentas e encontros pra praticar antes e depois."
         turmas={[
           {
             label: 'Turma 1 — 18 dias',
             when: '10 a 27 de janeiro de 2027',
             detalhe: 'Versão intensiva — quarto individual ou compartilhado',
+            fim: '2027-01-27',
           },
           {
             label: 'Turma 2 — 30+ dias',
             when: '29 de janeiro a 01 de março de 2027',
-            detalhe: 'Versão estendida — máxima imersão para o salto Native-like',
+            detalhe: 'Versão estendida',
+            fim: '2027-03-01',
           },
         ]}
         format="Imersão internacional — 100% em inglês 24h por dia"
@@ -169,9 +171,8 @@ export default function FloridaPage() {
         highlights={[
           '2 turmas em 2027 — você escolhe a duração que faz sentido',
           'Windsor Cay Resort — infraestrutura completa, "férias em grande estilo"',
-          'Inglês 24 horas por dia — convivência intensa acelera fluência em até 10×',
-          'Liderança Cherry Top com 40+ anos de experiência em imersão',
-          'Turma pequena — alto contato individual',
+          'Inglês o dia inteiro, em convivência com a turma',
+          'Conduzida pela equipe da Cherry Top',
           'Acompanhantes permitidos com nível mínimo pré-intermediário (regra english only)',
         ]}
         inclusos={[
@@ -190,7 +191,7 @@ export default function FloridaPage() {
         fotos={fotosFlorida}
         fotosLegenda="Fotos do Windsor Cay Resort e de edições Cherry Top anteriores nos Estados Unidos."
         ctaLabel="Entrar na lista de interesse — Flórida 2027"
-        vagasInfo="Vagas extremamente limitadas (capacidade do resort)"
+        vagasInfo="Vagas limitadas à capacidade do resort"
       />
       <Footer />
     </>

@@ -24,7 +24,7 @@ const bhTurmas = [
     startDate: '2026-09-03T09:00:00-03:00',
     endDate: '2026-09-07T18:00:00-03:00',
     description:
-      '5 dias de treino intensivo de fala em inglês na Immersion Village Brazil (Lagoa Santa/MG). Advanced + Upper Intermediate + Intermediate. Hospedagem, refeições e certificado de 90h inclusos.',
+      '5 dias de imersão em inglês da Cherry Top na Immersion Village Brazil (Lagoa Santa/MG). Advanced + Upper Intermediate + Intermediate. Hospedagem, refeições e certificado de 90h inclusos.',
   },
   {
     slug: 'gama-delta-out-2026',
@@ -32,7 +32,7 @@ const bhTurmas = [
     startDate: '2026-10-08T09:00:00-03:00',
     endDate: '2026-10-12T18:00:00-03:00',
     description:
-      '5 dias de treino intensivo de fala em inglês na Immersion Village Brazil. Pré-Intermediate + Intermediate + Advanced. Hospedagem, refeições e certificado de 90h inclusos.',
+      '5 dias de imersão em inglês da Cherry Top na Immersion Village Brazil. Pré-Intermediate + Intermediate + Advanced. Hospedagem, refeições e certificado de 90h inclusos.',
   },
   {
     slug: 'alpha-beta-nov-2026',
@@ -40,7 +40,7 @@ const bhTurmas = [
     startDate: '2026-11-18T09:00:00-03:00',
     endDate: '2026-11-22T18:00:00-03:00',
     description:
-      '5 dias de treino intensivo de fala em inglês na Immersion Village Brazil. Elementary + iniciantes (com onboarding online prévio). Hospedagem, refeições e certificado de 90h inclusos.',
+      '5 dias de imersão em inglês da Cherry Top na Immersion Village Brazil. Elementary + iniciantes (com onboarding online prévio). Hospedagem, refeições e certificado de 90h inclusos.',
   },
 ]
 
@@ -100,9 +100,9 @@ const jsonLd = {
 
 export const metadata: Metadata = {
   title:
-    'Imersão em Inglês em BH 2026 — 3 Turmas Set/Out/Nov | ETT',
+    'Imersão em Inglês em BH 2026 — Cherry Top · Immersion Village',
   description:
-    '5 dias de treino intensivo de fala em inglês na Immersion Village Brazil (Lagoa Santa/MG). 3 turmas em 2026: 03–07/set, 08–12/out e 18–22/nov. 90h de certificado, 8 vagas por turma, hospedagem e refeições inclusas. Bonding + Native-like.',
+    'Imersão em inglês oferecida pela Cherry Top na Immersion Village Brazil (Lagoa Santa/MG): 5 dias com hospedagem e refeições, até 8 pessoas por turma, certificado de 90h. Turmas em 2026: 03–07/set, 08–12/out e 18–22/nov. Divulgada pelo English Talk Time.',
   keywords: [
     'imersão em inglês Belo Horizonte',
     'imersão em inglês BH',
@@ -119,9 +119,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    title: 'Imersão em Inglês em BH 2026 — ETT × Cherry Top',
+    title: 'Imersão em Inglês em BH 2026 — Cherry Top',
     description:
-      '5 dias de imersão total na sede oficial Cherry Top do Brasil. 3 turmas em set, out e nov 2026.',
+      '5 dias de imersão na sede da Cherry Top no Brasil. Turmas em set, out e nov de 2026.',
     url: 'https://englishtalktime.com.br/imersoes/belo-horizonte/',
     images: [
       {
@@ -151,23 +151,26 @@ export default function BeloHorizontePage() {
         eyebrow="Imersão Belo Horizonte • Cherry Top"
         city="Belo Horizonte"
         uf="MG"
-        headline="5 dias na sede oficial Cherry Top. Inglês 24 horas por dia."
-        intro="Você desloca-se até a Immersion Village Brazil, em Lagoa Santa/MG, e vive em inglês com até 8 colegas durante 5 dias seguidos — hospedagem, refeições e atividades inclusas. Sai com certificado de 90 horas e a fluência acelerada pela metodologia Bonding + Native-like, validada em 40+ anos de Cherry Top."
+        headline="5 dias na sede da Cherry Top, usando inglês o dia inteiro."
+        intro="A Cherry Top recebe até 8 pessoas por turma na Immersion Village Brazil, em Lagoa Santa/MG, por 5 dias seguidos em inglês — com hospedagem, refeições e atividades inclusas e certificado de 90 horas emitido pela Cherry Top. A imersão é oferecida e conduzida pela Cherry Top; o ETT divulga e oferece ferramentas e encontros pra praticar antes e depois."
         turmas={[
           {
             label: 'Turma 1 — OMEGA / ZETA',
             when: '03 a 07 de setembro de 2026',
             detalhe: 'Advanced + Upper Intermediate + Intermediate',
+            fim: '2026-09-07',
           },
           {
             label: 'Turma 2 — GAMA / DELTA',
             when: '08 a 12 de outubro de 2026',
             detalhe: 'Pré-Intermediate + Intermediate + Advanced',
+            fim: '2026-10-12',
           },
           {
             label: 'Turma 3 — ALPHA / BETA',
             when: '18 a 22 de novembro de 2026',
             detalhe: 'Elementary + iniciantes (com onboarding online prévio)',
+            fim: '2026-11-22',
           },
         ]}
         format="5 dias de imersão presencial — formato Cherry Top"
@@ -178,12 +181,11 @@ export default function BeloHorizontePage() {
         lideranca="Equipe Cherry Top na Immersion Village Brazil"
         metodologia="Bonding + Native-like"
         highlights={[
-          'Sede oficial Cherry Top — 40+ anos de história em imersão',
-          'Apenas 8 vagas por turma — alto contato e feedback individual',
+          'Sede da Cherry Top no Brasil',
+          'Até 8 pessoas por turma',
           'Inglês 24 horas por dia — regra "english only" durante toda a imersão',
-          'Foco em tech: devs, dados, IA, BI e cloud',
-          '3 turmas confirmadas (set, out, nov) — você escolhe a melhor para seu nível',
-          'Certificado de 90 horas reconhecido Cherry Top',
+          'Turmas organizadas por nível',
+          'Certificado de 90 horas emitido pela Cherry Top',
         ]}
         inclusos={[
           'Programa completo de 5 dias',
@@ -197,9 +199,9 @@ export default function BeloHorizontePage() {
           'Gastos pessoais',
         ]}
         fotos={fotosBH}
-        fotosLegenda="Fotos da Immersion Village Brazil e edições anteriores Cherry Top — o ambiente que vai te receber."
+        fotosLegenda="Fotos da Immersion Village Brazil e de edições anteriores da Cherry Top."
         ctaLabel="Quero participar da imersão em BH"
-        vagasInfo="8 vagas por turma — 3 turmas (set · out · nov 2026)"
+        vagasInfo="Até 8 pessoas por turma"
       />
       <Footer />
     </>

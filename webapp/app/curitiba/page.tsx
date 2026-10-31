@@ -365,24 +365,23 @@ export default function CuritibaPage() {
                 </div>
                 <div>
                   <div className="text-xs uppercase tracking-wider text-brand-red font-semibold mb-1">
-                    Imersão presencial em Curitiba
+                    Imersões de parceiros
                   </div>
                   <h3 className="font-bold text-ink text-xl md:text-2xl leading-snug">
-                    Quer ir além do encontro semanal? Imersão Curitiba — 29/jul a 02/ago 2026
+                    Quer ir além do encontro semanal? Conheça as imersões da Cherry Top
                   </h3>
                 </div>
               </div>
               <p className="text-ink-muted leading-relaxed mb-5">
-                5 dias intensivos de treino de fala em inglês, em parceria com{' '}
-                <strong className="text-ink">Cherry Top</strong> e{' '}
-                <strong className="text-ink">IEP</strong>. Primeira edição local pra
-                profissionais de tech — vagas extremamente limitadas.
+                Turmas no Brasil e nos Estados Unidos, oferecidas pela{' '}
+                <strong className="text-ink">Cherry Top</strong>, com programa, preço e condições
+                definidos por ela. O ETT divulga e complementa com ferramentas e encontros.
               </p>
               <Link
-                href="/imersoes/curitiba/"
+                href="/imersoes/"
                 className="inline-flex items-center gap-2 text-brand-red font-semibold hover:text-brand-red/80 transition-colors"
               >
-                Ver detalhes da imersão em Curitiba <ArrowRight className="w-4 h-4" />
+                Ver as imersões <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>

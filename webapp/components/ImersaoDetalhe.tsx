@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   ArrowLeft,
   ArrowRight,
@@ -22,6 +22,12 @@ export type Turma = {
   label: string
   when: string
   detalhe?: string
+  /** Último dia da turma (ISO). Com ele, a turma vira "Encerrada" sozinha no navegador. */
+  fim?: string
+}
+
+function turmaPassou(t: Turma, agora: Date | null) {
+  return !!(agora && t.fim && new Date(`${t.fim}T23:59:59-03:00`) < agora)
 }
 
 export type ImersaoDetalheProps = {
@@ -46,6 +52,10 @@ export type ImersaoDetalheProps = {
 
 export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
   const [lightbox, setLightbox] = useState<string | null>(null)
+  // Data só no navegador: o build pode ficar semanas sem rodar (mesma regra da agenda).
+  const [agora, setAgora] = useState<Date | null>(null)
+  useEffect(() => setAgora(new Date()), [])
+  const todasEncerradas = props.turmas.length > 0 && props.turmas.every((t) => turmaPassou(t, agora))
 
   return (
     <main className="bg-surface min-h-screen">
@@ -100,7 +110,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
             <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-ink/5 border border-surface-line flex-shrink-0">
               <Image
                 src="/images/logo-cherrytop.jpeg"
-                alt="Cherry Top — parceira oficial ETT"
+                alt="Logo da Cherry Top"
                 fill
                 className="object-contain p-1"
                 sizes="80px"
@@ -108,15 +118,18 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
             </div>
             <div className="flex-1 text-center md:text-left">
               <div className="text-xs uppercase tracking-widest text-brand-red font-semibold mb-1">
-                Imersão em parceria com
+                Oferecido por
               </div>
               <div className="text-xl font-bold text-ink mb-1">
                 Cherry Top Business Communication
               </div>
               <p className="text-ink-muted text-sm">
-                <strong className="text-ink">40+ anos</strong> formando profissionais fluentes ·
-                metodologia <strong className="text-ink">Bonding + Native-like</strong> ·
-                fluência até <strong className="text-brand-red">10× mais rápido</strong>
+                Método <strong className="text-ink">Bonding + Native-like</strong> · inscrição,
+                investimento e condições definidos pela Cherry Top
+              </p>
+              <p className="text-ink-muted text-sm mt-1">
+                <strong className="text-brand-red">Apoio do ETT:</strong> divulgação, encaminhamento
+                do seu interesse e as ferramentas e os encontros pra praticar antes e depois.
               </p>
             </div>
             <a
@@ -146,10 +159,22 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
                   </h2>
                 </div>
                 <div className="space-y-3">
+                  {todasEncerradas && (
+                    <div className="p-4 rounded-xl bg-brand-silver/10 border border-brand-silver/30 text-sm text-ink-soft">
+                      <strong className="text-ink">Esta imersão já aconteceu.</strong> Veja as
+                      turmas abertas na{' '}
+                      <Link href="/imersoes/#proximas" className="text-brand-red underline underline-offset-2">
+                        página de imersões
+                      </Link>
+                      .
+                    </div>
+                  )}
                   {props.turmas.map((t, i) => (
                     <div
                       key={i}
-                      className="p-4 rounded-xl bg-surface border border-surface-line hover:border-brand-red/30 transition-colors"
+                      className={`p-4 rounded-xl bg-surface border border-surface-line transition-colors ${
+                        turmaPassou(t, agora) ? 'opacity-60' : 'hover:border-brand-red/30'
+                      }`}
                     >
                       <div className="flex items-start justify-between gap-3 flex-wrap">
                         <div>
@@ -161,6 +186,11 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
                             <div className="text-ink-muted text-xs mt-1">{t.detalhe}</div>
                           )}
                         </div>
+                        {turmaPassou(t, agora) && (
+                          <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold border border-surface-line text-ink-subtle">
+                            Encerrada
+                          </span>
+                        )}
                       </div>
                     </div>
                   ))}
@@ -220,7 +250,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
                 </div>
                 <div className="text-2xl font-bold text-ink mb-1">Sob consulta</div>
                 <div className="text-ink-muted text-sm mb-5">
-                  Vaga garantida com taxa de pré-inscrição
+                  Inscrição, taxa de pré-inscrição e condições definidas pela Cherry Top
                 </div>
                 {props.vagasInfo && (
                   <div className="flex items-center gap-2 text-ink-soft text-sm mb-5 pb-5 border-b border-surface-line">
@@ -229,16 +259,15 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
                   </div>
                 )}
                 <a
-                  href={FORM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={todasEncerradas ? '/imersoes/#proximas' : FORM_URL}
+                  {...(todasEncerradas ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
                   className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red"
                 >
-                  {props.ctaLabel}
+                  {todasEncerradas ? 'Ver as próximas imersões' : props.ctaLabel}
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <p className="text-ink-subtle text-xs italic text-center mt-3">
-                  Sem compromisso. Sem spam.
+                  O ETT encaminha seu interesse à Cherry Top.
                 </p>
               </div>
 
@@ -286,7 +315,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
             <h2 className="text-3xl md:text-4xl font-bold text-ink mb-3">
               {props.fotos.length > 0
                 ? `${props.fotos.length} fotos da imersão`
-                : 'Primeira edição — você pode estar aqui'}
+                : 'Fotos'}
             </h2>
             <p className="text-ink-muted text-lg">{props.fotosLegenda}</p>
           </motion.div>
@@ -318,7 +347,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
             <div className="bg-surface-card border border-dashed border-brand-red/30 rounded-2xl p-10 text-center max-w-2xl mx-auto">
               <div className="text-5xl mb-3">📸</div>
               <p className="text-ink-soft text-lg">
-                Galeria desta edição será publicada após a realização.
+                Ainda não temos fotos desta edição.
               </p>
               <Link
                 href="/imersoes#galeria-eua"
@@ -336,20 +365,23 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4">
-              Vaga garantida com{' '}
-              <span className="gradient-text">pré-inscrição.</span>
+              {todasEncerradas ? (
+                <>Quer participar <span className="gradient-text">da próxima?</span></>
+              ) : (
+                <>Quer participar <span className="gradient-text">desta imersão?</span></>
+              )}
             </h2>
             <p className="text-ink-muted text-lg mb-8">
-              Preencha o formulário em 2 minutos. A gente entra em contato com os
-              detalhes da imersão e como confirmar sua vaga.
+              {todasEncerradas
+                ? 'Veja as turmas abertas da Cherry Top na página de imersões.'
+                : 'Preencha o formulário em 2 minutos. O ETT encaminha seu interesse à Cherry Top, que entra em contato com os detalhes, o investimento e as condições de inscrição.'}
             </p>
             <a
-              href={FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={todasEncerradas ? '/imersoes/#proximas' : FORM_URL}
+              {...(todasEncerradas ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-red-deep text-white font-bold text-lg hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red"
             >
-              {props.ctaLabel}
+              {todasEncerradas ? 'Ver as próximas imersões' : props.ctaLabel}
               <ArrowRight className="w-5 h-5" />
             </a>
             <div className="mt-8">

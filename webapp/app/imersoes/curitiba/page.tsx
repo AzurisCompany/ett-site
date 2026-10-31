@@ -30,9 +30,9 @@ const jsonLd = {
     {
       '@type': 'Event',
       '@id': `${SITE_URL}/imersoes/curitiba/#event-jul-2026`,
-      name: 'Imersão em Inglês em Curitiba — ETT × Cherry Top',
+      name: 'Imersão em Inglês em Curitiba — Cherry Top, com apoio do IEP',
       description:
-        '5 dias de treino intensivo de fala em inglês em Curitiba, em parceria com Cherry Top e IEP. Primeira edição ETT na capital paranaense — método Bonding + Native-like para profissionais de tech.',
+        '5 dias de imersão presencial em inglês em Curitiba, oferecida pela Cherry Top com apoio do IEP — método Bonding + Native-like. Divulgação: English Talk Time.',
       startDate: '2026-07-29T09:00:00-03:00',
       endDate: '2026-08-02T18:00:00-03:00',
       eventStatus: 'https://schema.org/EventScheduled',
@@ -71,9 +71,9 @@ const jsonLd = {
 
 export const metadata: Metadata = {
   title:
-    'Imersão em Inglês em Curitiba — Jul/2026 | ETT × Cherry Top',
+    'Imersão em Inglês em Curitiba — Jul/2026 | Cherry Top',
   description:
-    'Primeira imersão ETT em Curitiba: 5 dias presenciais (29/07 a 02/08/2026) de treino intensivo de fala em inglês, em parceria com Cherry Top e IEP. Para profissionais de tech. Vagas extremamente limitadas.',
+    'Imersão em inglês da Cherry Top em Curitiba: 5 dias presenciais (29/07 a 02/08/2026), com apoio do IEP. Divulgada pelo English Talk Time.',
   keywords: [
     'imersão em inglês Curitiba',
     'curso intensivo de inglês Curitiba',
@@ -91,14 +91,14 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     title: 'Imersão em Inglês em Curitiba — 29/jul a 02/ago 2026',
     description:
-      'Primeira edição ETT × Cherry Top em Curitiba. 5 dias presenciais de treino intensivo de fala em inglês com o IEP.',
+      'Imersão da Cherry Top em Curitiba, com apoio do IEP: 5 dias presenciais em inglês.',
     url: 'https://englishtalktime.com.br/imersoes/curitiba/',
     images: [
       {
         url: '/images/og-ett-2026.png',
         width: 1200,
         height: 630,
-        alt: 'Imersão em inglês em Curitiba — ETT × Cherry Top × IEP',
+        alt: 'Imersão em inglês em Curitiba — Cherry Top, com apoio do IEP',
       },
     ],
   },
@@ -113,16 +113,17 @@ export default function CuritibaPage() {
       />
       <Navbar />
       <ImersaoDetalhe
-        eyebrow="Primeira edição em Curitiba • Cherry Top"
+        eyebrow="Cherry Top · apoio IEP"
         city="Curitiba"
         uf="PR"
-        headline="Primeira edição ETT em Curitiba — você pode estar aqui."
-        intro="A imersão chega à capital paranaense em parceria com a Cherry Top e o IEP (Instituto de Engenharia do Paraná). Profissionais de tech do PR e arredores vão viver dias seguidos em inglês, com simulações reais de reuniões, demos e entrevistas internacionais — sem precisar viajar. Turma pequena, alto contato, vagas extremamente limitadas."
+        headline="Imersão da Cherry Top em Curitiba."
+        intro="Primeira edição em Curitiba da imersão presencial da Cherry Top, com apoio do IEP (Instituto de Engenharia do Paraná): dias seguidos usando o inglês, sem precisar viajar. A imersão é oferecida e conduzida pela Cherry Top; o ETT divulga e oferece ferramentas e encontros pra praticar antes e depois."
         turmas={[
           {
             label: 'Turma única — Primeira edição',
             when: '29 de julho a 02 de agosto de 2026',
-            detalhe: '5 dias de imersão presencial — formato Cherry Top, perfil tech',
+            detalhe: '5 dias de imersão presencial — formato Cherry Top',
+            fim: '2026-08-02',
           },
         ]}
         format="5 dias de imersão presencial — formato Cherry Top"
@@ -133,11 +134,11 @@ export default function CuritibaPage() {
         lideranca="Equipe Cherry Top — facilitadores trazidos de BH"
         metodologia="Bonding + Native-like"
         highlights={[
-          'Primeira edição em Curitiba — vagas extremamente limitadas',
+          'Primeira edição em Curitiba',
           'Em parceria com o IEP, instituição centenária da engenharia paranaense',
-          'Metodologia Cherry Top — Bonding + Native-like, até 10× mais rápido',
+          'Método da Cherry Top: Bonding + Native-like',
           'Foco em profissionais de tech: devs, dados, IA, BI, cloud',
-          'Networking presencial com a comunidade ETT de Curitiba',
+          'Os encontros do IEP Talks continuam aos sábados, pra seguir praticando depois',
           'Sem precisar viajar — você dorme em casa, vive em inglês durante o dia',
         ]}
         inclusos={[
@@ -152,9 +153,8 @@ export default function CuritibaPage() {
           'Refeições principais',
         ]}
         fotos={[]}
-        fotosLegenda="Esta é a primeira edição em Curitiba — fotos serão publicadas após a realização. Veja as imersões já realizadas pela Cherry Top na página principal de imersões."
-        ctaLabel="Garantir minha vaga em Curitiba"
-        vagasInfo="Vagas extremamente limitadas — primeira edição"
+        fotosLegenda="Veja fotos de imersões da Cherry Top na página principal de imersões."
+        ctaLabel="Tenho interesse numa próxima edição"
       />
       <Footer />
     </>

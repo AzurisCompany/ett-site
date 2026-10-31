@@ -3,42 +3,14 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowRight, Calendar, MapPin } from 'lucide-react'
+import { useImersoesSeparadas } from '@/lib/useImersoes'
 
-const imersoes = [
-  {
-    city: 'Curitiba',
-    uf: 'PR',
-    when: '29/jul — 02/ago 2026',
-    detail: '5 dias presenciais · 1ª edição local',
-    href: '/imersoes/curitiba/',
-    badge: '1ª EDIÇÃO',
-    accent: 'brand-red',
-  },
-  {
-    city: 'Belo Horizonte',
-    uf: 'MG',
-    when: 'Set · Out · Nov 2026',
-    detail: '3 turmas · 5 dias · hospedagem inclusa',
-    href: '/imersoes/belo-horizonte/',
-    accent: 'brand-silver',
-  },
-  {
-    city: 'Flórida',
-    uf: 'EUA',
-    when: 'Jan / Fev 2027',
-    detail: '18 ou 30+ dias · resort completo',
-    href: '/imersoes/florida/',
-    accent: 'purple',
-  },
-]
-
-const accentMap = {
-  'brand-red': 'border-brand-red/30 hover:border-brand-red/60 text-brand-red',
-  'brand-silver': 'border-brand-silver/30 hover:border-brand-silver/60 text-brand-silver',
-  purple: 'border-ink/30 hover:border-ink/60 text-ink',
-}
-
+/* Teaser de /detalhes/. Lê lib/imersoes.ts e mostra só turmas futuras,
+   calculadas no navegador — a versão anterior tinha as datas à mão e
+   anunciava Curitiba (jul/2026) como "1ª edição" meses depois. */
 export default function ImersoesTeaser() {
+  const sep = useImersoesSeparadas()
+
   return (
     <section className="section-padding bg-surface-alt border-y border-surface-line">
       <div className="container mx-auto px-4">
@@ -50,56 +22,47 @@ export default function ImersoesTeaser() {
           className="text-center mb-12 max-w-3xl mx-auto"
         >
           <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
-            Imersões 2026/2027 · em parceria com Cherry Top
+            Oferecidas pela Cherry Top
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
-            Acelere com uma{' '}
-            <span className="gradient-text">imersão presencial</span>
+            Imersões de <span className="gradient-text">parceiros</span>
           </h2>
           <p className="text-ink-muted text-lg">
-            5 dias no Brasil ou até 30 dias na Flórida — treino intensivo de fala em
-            inglês com a metodologia <strong className="text-ink">Bonding +
-            Native-like</strong> da Cherry Top (40+ anos formando profissionais
-            fluentes).
+            Experiências intensivas no Brasil e nos Estados Unidos, com programa, preço e
+            condições da Cherry Top. O ETT divulga e complementa com ferramentas e encontros.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
-          {imersoes.map((im, i) => (
-            <motion.div
-              key={im.city}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
-              <Link
-                href={im.href}
-                className={`block bg-surface-card border rounded-2xl p-6 transition-all card-hover ${accentMap[im.accent as keyof typeof accentMap]}`}
-              >
-                {im.badge && (
-                  <span className="inline-block mb-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand-red-deep text-white">
-                    {im.badge}
-                  </span>
-                )}
-                <div className="flex items-center gap-1.5 text-ink-muted text-xs mb-2">
-                  <MapPin className="w-3.5 h-3.5" />
-                  {im.city}, {im.uf}
-                </div>
-                <h3 className="text-2xl font-bold text-ink mb-3">{im.city}</h3>
-                <div className="flex items-start gap-2 mb-2 text-sm">
-                  <Calendar className="w-4 h-4 shrink-0 mt-0.5" />
-                  <div>
-                    <div className="font-semibold text-ink">{im.when}</div>
-                    <div className="text-ink-subtle text-xs mt-0.5">{im.detail}</div>
+        <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+          {sep === null
+            ? Array.from({ length: 2 }).map((_, i) => (
+                <div key={i} className="h-44 rounded-2xl bg-surface-card border border-surface-line animate-pulse" />
+              ))
+            : sep.atuais.map((im) => (
+                <Link
+                  key={im.id}
+                  href={im.detalheUrl}
+                  className="block bg-surface-card border border-surface-line hover:border-brand-red/40 rounded-2xl p-6 transition-all card-hover"
+                >
+                  <div className="flex items-center gap-1.5 text-ink-muted text-xs mb-2">
+                    <MapPin className="w-3.5 h-3.5" />
+                    {im.cidade}, {im.uf}
                   </div>
-                </div>
-                <div className="mt-5 pt-5 border-t border-surface-line inline-flex items-center gap-1.5 text-sm font-semibold">
-                  Ver detalhes <ArrowRight className="w-3.5 h-3.5" />
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+                  <h3 className="text-2xl font-bold text-ink mb-1">{im.cidade}</h3>
+                  <p className="text-xs text-ink-subtle mb-3">Oferecido por {im.oferecidoPor}</p>
+                  <div className="flex items-start gap-2 text-sm text-ink-soft">
+                    <Calendar className="w-4 h-4 shrink-0 mt-0.5 text-brand-red" />
+                    <div>
+                      {im.turmas.map((t) => (
+                        <div key={t.inicio}>{t.rotulo}</div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="mt-5 pt-5 border-t border-surface-line inline-flex items-center gap-1.5 text-sm font-semibold text-brand-red">
+                    Ver detalhes <ArrowRight className="w-3.5 h-3.5" />
+                  </div>
+                </Link>
+              ))}
         </div>
 
         <div className="text-center mt-10">
