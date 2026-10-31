@@ -69,7 +69,7 @@ export const nav: Record<Locale, NavMessages> = {
     cta: 'Tenho Interesse',
     language: 'Idioma',
     pricing: 'Preços',
-    program: 'O programa',
+    program: 'Como funciona',
     conversation: 'Conversação',
   },
   en: {
@@ -109,7 +109,7 @@ export const nav: Record<Locale, NavMessages> = {
 export const footer: Record<Locale, FooterMessages> = {
   'pt-BR': {
     tagline:
-      'Programa de aceleração de inglês para profissionais de Tecnologia, Dados, IA e BI. Ecossistema DSSBR & GUBigData IA.',
+      'Plataforma de apoio à prática do inglês: ferramentas, encontros de conversação e parceiros. Mantida pela comunidade DSSBR & GUBigData IA.',
     whereToPractice: {
       title: 'Onde Praticar',
       conversation: 'Grupo de Conversação',
@@ -118,10 +118,10 @@ export const footer: Record<Locale, FooterMessages> = {
       agendaFull: 'Agenda completa',
     },
     program: {
-      title: 'Programa',
+      title: 'O ETT',
       about: 'Sobre o ETT',
       methodology: 'Metodologia · Fórmula Fluente',
-      immersions: 'Imersões com Cherry Top',
+      immersions: 'Imersões de parceiros',
       blog: 'Blog ETT',
     },
     partners: {

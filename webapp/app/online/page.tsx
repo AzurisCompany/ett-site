@@ -401,8 +401,8 @@ export default function OnlinePage() {
               </div>
               <p className="text-ink-muted leading-relaxed mb-5">
                 Pra quem está em Curitiba ou região, além do online de segunda, tem encontro
-                presencial semanal em rotação pelo IEP, UTFPR, Hard Rock Cafe e Habitat. Nada
-                te impede de fazer os dois.
+                presencial todo sábado, das 10h às 12h, no IEP Talks. Nada te impede de fazer os
+                dois.
               </p>
               <Link
                 href="/curitiba/"

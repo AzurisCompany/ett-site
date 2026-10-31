@@ -13,9 +13,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://englishtalktime.com.br'),
-  title: 'ETT — Grupo de Conversação em Inglês e Treino de Fala | Curitiba & Online',
+  title: 'English Talk Time — Ferramentas, conversação e parceiros para praticar inglês',
   description:
-    'Grupo de conversação em inglês com treino de fala guiado e ferramentas de apoio com IA. Encontros semanais online (toda segunda, 20h) e presenciais em Curitiba (IEP Talks, sábados 10h). Para profissionais de Tecnologia, Dados, IA e BI.',
+    'Plataforma de apoio à prática do inglês: ferramentas digitais com IA, encontros de conversação gratuitos — online toda segunda, 20h, e IEP Talks em Curitiba aos sábados, 10h — e parceiros que oferecem cursos e imersões.',
   keywords: [
     // intenção: praticar / treinar a fala
     'grupo de conversação em inglês',
@@ -52,6 +52,8 @@ export const metadata: Metadata = {
     // ferramentas / método
     'praticar inglês com IA',
     'ferramentas para aprender inglês',
+    'plataforma para praticar inglês',
+    'ferramentas para praticar inglês',
     'Fórmula Fluente',
     // marca
     'English Talk Time',
@@ -76,23 +78,23 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     url: 'https://englishtalktime.com.br',
     siteName: 'English Talk Time – ETT',
-    title: 'ETT — Grupo de Conversação em Inglês | Treino de Fala com Ferramentas de IA',
+    title: 'English Talk Time — Pratique mais inglês com ferramentas, conversação e parceiros',
     description:
-      'Encontros semanais para treinar a fala em inglês — online toda segunda e presenciais em Curitiba. Método Fórmula Fluente + ferramentas com IA + comunidade DSSBR & GUBigData.',
+      'Ferramentas digitais para a prática diária, encontros de conversação gratuitos (online e em Curitiba) e parceiros com cursos e imersões.',
     images: [
       {
         url: '/images/og-ett-2026.png',
         width: 1200,
         height: 630,
-        alt: 'English Talk Time — Grupo de Conversação em Inglês em Curitiba e Online',
+        alt: 'English Talk Time — ferramentas, conversação e parceiros para praticar inglês',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ETT — Grupo de Conversação em Inglês | Treino de Fala com Ferramentas',
+    title: 'English Talk Time — Pratique mais inglês',
     description:
-      'Treine a fala em inglês em encontros semanais online e presenciais em Curitiba — com método, ferramentas de IA e comunidade tech.',
+      'Ferramentas de prática, encontros de conversação gratuitos e parceiros com cursos e imersões.',
     images: ['/images/og-ett-2026.png'],
   },
   robots: {
@@ -119,8 +121,8 @@ const jsonLd = {
       name: 'English Talk Time – ETT',
       alternateName: ['ETT', 'English Talk Time'],
       description:
-        'Grupo de conversação em inglês e treino de fala com ferramentas de apoio com IA. Encontros semanais online e presenciais em Curitiba para profissionais de Tecnologia, Dados, IA e BI.',
-      slogan: 'Do inglês travado ao inglês funcional para o mercado internacional',
+        'Plataforma de apoio à prática do inglês: ferramentas digitais com IA, encontros de conversação gratuitos (online e presenciais em Curitiba) e uma rede de parceiros que oferecem cursos e imersões.',
+      slogan: 'Tecnologia, conversação e parceiros para você praticar mais inglês',
       url: SITE_URL,
       logo: {
         '@type': 'ImageObject',
@@ -152,8 +154,6 @@ const jsonLd = {
       sameAs: [],
       keywords:
         'grupo de conversação em inglês, treino de fala em inglês, praticar inglês Curitiba, conversação online, encontros para falar inglês, destravar inglês, falar inglês fluente, rotina diária para estudar inglês, English speaking club, English conversation group Brazil, conversation club Curitiba, speaking practice, inglês para tech, inglês para Data Engineer, inglês para BI, inglês para DevOps, inglês para AI Engineer, role play entrevista inglês, preparar entrevista inglês tech, LinkedIn inglês profissional, ferramentas com IA para inglês, prompts ChatGPT inglês, séries com legenda inglês, audiobook inglês, Fórmula Fluente',
-      educationalCredentialAwarded:
-        'Certificado de Inglês Funcional para o Mercado Internacional',
       teaches: [
         'English conversation practice',
         'Speaking training in English',
@@ -168,7 +168,7 @@ const jsonLd = {
       url: SITE_URL,
       name: 'English Talk Time',
       description:
-        'Grupo de conversação em inglês com treino de fala e ferramentas de apoio com IA.',
+        'Plataforma de apoio à prática do inglês: ferramentas, conversação e parceiros.',
       publisher: { '@id': `${SITE_URL}/#organization` },
       inLanguage: 'pt-BR',
     },

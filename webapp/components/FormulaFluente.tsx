@@ -155,8 +155,9 @@ export default function FormulaFluente() {
               A <span className="gradient-text">Fórmula Fluente</span>
             </h1>
             <p className="text-ink-muted text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
-              O método que destila por que algumas pessoas chegam à fluência em meses e outras
-              passam anos travadas. Base científica, prática deliberada, threshold + imersão.
+              O método de Frank Florida para organizar o estudo do inglês: vocabulário relevante,
+              prática deliberada, threshold + imersão. É a base de como as ferramentas do ETT
+              organizam a rotina.
             </p>
 
             {/* Equation */}
@@ -762,8 +763,8 @@ export default function FormulaFluente() {
                 quando lançarmos
               </h2>
               <p className="text-ink-muted text-lg leading-relaxed mb-8 max-w-xl mx-auto">
-                Garanta sua vaga no programa de aceleração de inglês e receba primeiro
-                o ebook da Fórmula Fluente — método completo, threshold, 4 pilares e os 10 passos
+                Deixe seu e-mail pra receber as novidades do ETT e o ebook da Fórmula Fluente
+                quando ele sair — método completo, threshold, 4 pilares e os 10 passos
                 por lição.
               </p>
 

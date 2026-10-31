@@ -20,9 +20,7 @@ export const metadata: Metadata = {
     'meetup inglês Curitiba',
     'conversação em inglês online grátis',
     'IEP Curitiba inglês',
-    'UTFPR inglês',
-    'Hard Rock Curitiba inglês',
-    'Habitat Curitiba inglês',
+    'IEP Talks',
   ],
   alternates: {
     canonical: '/agenda/',
@@ -38,7 +36,7 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     title: 'Agenda ETT — Próximos encontros de conversação em inglês',
     description:
-      'Online toda segunda + presencial semanal em Curitiba (IEP, UTFPR, Hard Rock, Habitat). Treino de fala em inglês com ferramentas de apoio.',
+      'Online toda segunda, 20h, e IEP Talks presencial todo sábado, 10h, em Curitiba. Encontros de conversação em inglês, gratuitos e abertos.',
     url: 'https://englishtalktime.com.br/agenda/',
     images: [
       {

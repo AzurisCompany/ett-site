@@ -173,7 +173,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
                     <div
                       key={i}
                       className={`p-4 rounded-xl bg-surface border border-surface-line transition-colors ${
-                        turmaPassou(t, agora) ? 'opacity-60' : 'hover:border-brand-red/30'
+                        turmaPassou(t, agora) ? 'bg-surface-alt' : 'hover:border-brand-red/30'
                       }`}
                     >
                       <div className="flex items-start justify-between gap-3 flex-wrap">
@@ -187,7 +187,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
                           )}
                         </div>
                         {turmaPassou(t, agora) && (
-                          <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold border border-surface-line text-ink-subtle">
+                          <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold border border-surface-line text-ink-muted">
                             Encerrada
                           </span>
                         )}

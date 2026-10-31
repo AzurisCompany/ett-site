@@ -9,10 +9,7 @@ import {
   MapPin,
   Wifi,
   Users,
-  Building2,
   GraduationCap,
-  Music,
-  Home,
   ExternalLink,
   ArrowRight,
   Lightbulb,
@@ -22,26 +19,13 @@ import { eventosFuturos, type AgendaEvent } from '@/lib/agenda-events'
 
 const SEMANAS = 4
 
+/* Só o IEP Talks (decisão #2 de 01/08/2026, reconfirmada em 31/10): UTFPR,
+   Hard Rock e Habitat saíram da copy. */
 const venues = [
   {
     icon: GraduationCap,
     name: 'IEP',
-    desc: 'Instituto de Ensino e Pesquisa — parceiro pedagógico do ETT em Curitiba.',
-  },
-  {
-    icon: Building2,
-    name: 'UTFPR',
-    desc: 'Universidade Tecnológica Federal do Paraná — alcance ao público universitário de TI.',
-  },
-  {
-    icon: Music,
-    name: 'Hard Rock',
-    desc: 'Hard Rock Cafe — encontro descontraído fora do ambiente acadêmico.',
-  },
-  {
-    icon: Home,
-    name: 'Habitat',
-    desc: 'Espaço Habitat — comunidade local, networking e prática de conversação.',
+    desc: 'Instituto de Engenharia do Paraná — recebe o IEP Talks todo sábado, das 10h às 12h.',
   },
 ]
 
@@ -82,8 +66,8 @@ export default function Agenda() {
               <span className="gradient-text">Agenda</span> ETT
             </h1>
             <p className="text-ink-muted text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
-              Online toda segunda. Presencial uma vez por semana, alternando entre IEP, UTFPR,
-              Hard Rock e Habitat. Veja a próxima data e marque na sua agenda.
+              Online toda segunda, 20h. Presencial todo sábado, 10h, no IEP Talks, em Curitiba.
+              Gratuito e aberto. Veja a próxima data e marque na sua agenda.
             </p>
 
             {/* Quick stats */}
@@ -156,11 +140,11 @@ export default function Agenda() {
               </div>
               <div className="flex items-center gap-2 text-ink-muted text-sm mb-2">
                 <MapPin className="w-4 h-4" />
-                <span>4 locais em rotação · Curitiba/PR</span>
+                <span>IEP Talks · sábados 10h · Curitiba/PR</span>
               </div>
               <p className="text-ink-subtle text-sm leading-relaxed">
-                Um encontro por semana em local diferente: IEP, UTFPR, Hard Rock e Habitat.
-                Networking, role-play e conversação ao vivo.
+                Todo sábado, das 10h às 12h, no IEP (Instituto de Engenharia do Paraná).
+                Conversa com tema, perguntas e rodadas — e entrada franca.
               </p>
             </motion.div>
           </div>

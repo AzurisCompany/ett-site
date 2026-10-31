@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { ferramentasDisponiveis } from '@/lib/ferramentas'
 
 const SITE_URL = 'https://englishtalktime.com.br'
 const ORG_ID = `${SITE_URL}/#organization`
@@ -124,32 +125,11 @@ const formato = [
   },
 ]
 
-const ferramentas = [
-  {
-    title: 'Diagnóstico de Vocabulário',
-    desc: 'Mapeia o que você sabe e o que falta. Plano personalizado pra fechar gaps nas 3.000 palavras-meta.',
-  },
-  {
-    title: 'Pontinhos · Revisão Inteligente',
-    desc: '10–20 palavras/dia com repetição espaçada. Novas + revisão das fracas. 5 minutos/dia, sem culpa.',
-  },
-  {
-    title: 'Séries com Legenda',
-    desc: 'Estudo de séries via SRT, marcação de palavras desconhecidas, audio loop nos trechos difíceis.',
-  },
-  {
-    title: 'Simulação com IA',
-    desc: 'Prompts prontos pra simular entrevistas, reuniões, dailies e demos com ChatGPT ou similar.',
-  },
-  {
-    title: 'Audiobook + Reading',
-    desc: 'Leitura guiada com áudio de fontes em domínio público — listening prático em contexto.',
-  },
-  {
-    title: 'Diário Falado',
-    desc: 'Você grava 1 minuto/dia falando sobre qualquer coisa. Ativa vocabulário passivo, mata o medo.',
-  },
-]
+/* Vem de lib/ferramentas.ts (espelho do ETT Player). Até 31/10/2026 esta lista
+   era escrita à mão e anunciava Diário Falado e Simulação com IA, que não existem. */
+const ferramentas = ferramentasDisponiveis
+  .filter((f) => f.grupo !== 'comunidade')
+  .map((f) => ({ title: f.nome, desc: f.oQueFaz }))
 
 const paraQuem = [
   'Profissionais de Tech (Data, AI, BI, Cloud, Dev) que precisam usar inglês no trabalho',
@@ -330,8 +310,9 @@ export default function ConversacaoPage() {
                 <span className="gradient-text">A outra metade é a sua rotina.</span>
               </h2>
               <p className="text-ink-muted text-lg">
-                Ferramentas com IA que preparam você antes e consolidam o aprendizado depois
-                — pra você chegar no próximo encontro com mais vocabulário e mais confiança.
+                As ferramentas do ETT Player ajudam a praticar entre um encontro e outro — pra você
+                chegar no próximo com mais vocabulário e mais confiança. Abertas por 30 dias sem
+                cartão; o encontro continua gratuito de qualquer jeito.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">

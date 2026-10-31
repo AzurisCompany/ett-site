@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     title: 'Fórmula Fluente — Metodologia do treino de fala em inglês do ETT',
     description:
-      'Threshold + Imersão = Fluência. O método que explica por que algumas pessoas chegam à fluência em meses e outras passam anos travadas.',
+      'Threshold + Imersão. O método de Frank Florida que organiza o estudo em blocos curtos, vocabulário relevante e repetição orientada — a base das ferramentas do ETT.',
     url: 'https://englishtalktime.com.br/ff/',
     images: [
       {

@@ -7,8 +7,8 @@ import { Video, MapPin, ArrowUpRight, CalendarDays } from 'lucide-react'
 
 const SPEAK_URL = 'https://ett-speak.vercel.app/'
 
-/* O presencial semanal é o IEP Talks, no IEP. UTFPR, Hard Rock e Habitat são
-   casas parceiras que recebem edições especiais — não é rodízio semanal.
+/* O presencial semanal é o IEP Talks, no IEP. UTFPR, Hard Rock e Habitat saíram
+   da copy (decisão #2 de 01/08/2026, reconfirmada em 31/10) — não é rodízio.
    Ver PLANO-REVISAO-MARKETING-2026-08-01.md, decisão #2. */
 const detalhesPresencial = [
   'Sábados, das 10h às 12h',

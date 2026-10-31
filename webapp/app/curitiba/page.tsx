@@ -69,24 +69,6 @@ const venues = [
     logo: '/images/logoiep.jpg',
     href: 'https://iep.org.br/',
   },
-  {
-    name: 'UTFPR — Universidade Tecnológica Federal do Paraná',
-    desc: 'Universidade pública federal com foco em tecnologia. Alcance ao público universitário de TI e engenharia — comunidade jovem, mente aberta, foco internacional.',
-    logo: '/images/utfpr-logo.svg',
-    href: 'https://www.utfpr.edu.br/',
-  },
-  {
-    name: 'Hard Rock Cafe Curitiba',
-    desc: 'Encontro descontraído fora do ambiente acadêmico. Networking informal, conversação em ambiente real (música ao vivo, bar) — ótimo pra praticar small talk e socialização.',
-    logo: '/images/hardrock-logo.jpg',
-    href: 'https://www.hardrockcafe.com/location/curitiba/',
-  },
-  {
-    name: 'Habitat — Sistema FIEP / Parque Tecnológico',
-    desc: 'Espaço de inovação e mobilidade ligado ao Sistema FIEP. Ambiente corporativo de inovação tech — conversação em contexto de negócios e startups.',
-    logo: '/images/habitat-mobilidade-logo.png',
-    href: 'https://www.sistemafiep.org.br/',
-  },
 ]
 
 
@@ -228,18 +210,17 @@ export default function CuritibaPage() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 max-w-3xl mx-auto">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-silver/30 text-brand-silver bg-brand-silver/5 mb-4">
-                Casas parceiras · Curitiba
+                Onde acontece · Curitiba
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
-                Nossos pontos de <span className="gradient-text">encontro</span>
+                O ponto de <span className="gradient-text">encontro</span>
               </h2>
               <p className="text-ink-muted text-lg">
-                O encontro semanal é no IEP. As outras casas recebem edições especiais — e
-                cada uma coloca a conversa num contexto diferente: universitário, descontraído
-                e corporativo.
+                O IEP Talks acontece todo sábado, das 10h às 12h, no Instituto de Engenharia do
+                Paraná. Entrada franca, sem cadastro.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 gap-5 max-w-5xl mx-auto">
+            <div className="grid gap-5 max-w-2xl mx-auto">
               {venues.map((v) => (
                 <a
                   key={v.name}
