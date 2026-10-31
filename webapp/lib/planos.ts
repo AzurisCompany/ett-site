@@ -376,7 +376,7 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
       },
       {
         titulo: 'Cada mês de meta batida tem um prêmio',
-        texto: `No primeiro, o seu material didático impresso (R$ ${PRECO_APOSTILA}), entregue em mãos no IEP Talks ou enviado pra sua casa. Nos meses seguintes ele se refaz com o seu vocabulário atual — muda porque você mudou.`,
+        texto: `No primeiro, o seu material de prática impresso (R$ ${PRECO_APOSTILA}), entregue em mãos no IEP Talks ou enviado pra sua casa. Nos meses seguintes ele se refaz com o seu vocabulário atual — muda porque você mudou.`,
       },
       {
         titulo: 'E se eu não bater a meta?',
@@ -411,7 +411,7 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
 export const premios = [
   {
     marco: 'No primeiro mês',
-    premio: `Seu material didático impresso (R$ ${PRECO_APOSTILA}), entregue em mãos no IEP Talks ou enviado pra sua casa.`,
+    premio: `Seu material de prática impresso (R$ ${PRECO_APOSTILA}), entregue em mãos no IEP Talks ou enviado pra sua casa.`,
   },
   {
     marco: 'Nos meses seguintes',
@@ -432,7 +432,7 @@ export const faqCobranca = [
   },
   {
     pergunta: `A adesão de R$ ${PRECO_ADESAO} vira mensalidade?`,
-    resposta: `Não. É cobrança única. Ela inclui os dois encontros individuais de 1 hora, o material didático e os 30 primeiros dias de plataforma. Só a partir do dia 31 é que existe mensalidade — e só se você escolher a Trilha de Dedicação.`,
+    resposta: `Não. É cobrança única. Ela é a ativação acompanhada: inclui as duas sessões individuais de 1 hora, o material personalizado e os 30 primeiros dias de ferramentas. Só a partir do dia 31 é que existe mensalidade — e só se você escolher a Trilha de Dedicação.`,
   },
   {
     pergunta: 'E se eu não bater a meta da Aceleração?',
@@ -456,6 +456,6 @@ export const faqCobranca = [
   },
   {
     pergunta: 'Quem emite a nota fiscal?',
-    resposta: 'A Azuris, empresa responsável pelo programa.',
+    resposta: 'A Azuris, empresa responsável pela plataforma.',
   },
 ]
