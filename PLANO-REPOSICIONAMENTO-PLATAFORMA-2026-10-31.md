@@ -185,3 +185,24 @@ Tabela original:
 | D4 | EN/ES entram agora ou numa rodada separada? | Rodada separada, depois que a versão pt-BR estiver aprovada. |
 | D5 | Categorias dos parceiros (proposta): **Ensino** BeeTools · **Imersão** Cherry Top · **Conteúdo** Aprendendo Inglês, Fórmula Fluente · **Institucional e comunidade** IEP, DSSBR & GUBigData · Coders = **Carreira** (categoria que o briefing não prevê). UTFPR, Hard Rock e Habitat saem. | Como proposto. |
 | D6 | O briefing parou na seção 12. Há seções 13+ (SEO, critérios de aceite…)? | Mandar o resto antes da Fase 6. |
+
+---
+
+## 5. Status (31/10/2026, fim do dia)
+
+Fases 0–6 feitas. A Fase 0 está no ar (`9ce9301`). As Fases 1–6 estão **commitadas no branch `reposicionamento-plataforma`, ainda sem deploy**:
+`4f6c768` dados · `fb52b2e` home · `c8e7858` imersões · `c28c751` detalhes · `b86e256` planos · `62dc124` varredura global.
+Validação: typecheck e build ok. Contraste nas 33 rotas = baseline (só os numerais decorativos e o botão do WhatsApp). Screenshots de desktop e de 390px conferidos.
+
+**Pendente:**
+1. O resto do briefing (seções 13+), que o Alessandro vai colar.
+2. Aprovação visual e depois merge no `main` + `./deploy.sh`.
+3. Fase 7 (EN/ES), numa rodada separada.
+
+**Fora do escopo, de propósito:**
+- posts do blog já publicados (citam UTFPR/Hard Rock/Habitat e "fluência em N meses");
+- Termos de Uso e Política de Privacidade (citam os locais antigos);
+- `components/Hero.tsx`, código morto com 300h/3.000;
+- `lib/agenda-events.ts` (eventos passados nos locais antigos, que são filtrados e não aparecem).
+
+**Inconsistência encontrada:** os anos de experiência da Cherry Top ("30+" em `Partners`, "40+" em `Imersoes`). Tirei o número dos dois lados até confirmar.
