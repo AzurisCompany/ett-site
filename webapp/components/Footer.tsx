@@ -59,6 +59,7 @@ function buildLinks(locale: Locale) {
       items: [
         // A seção "Sobre" saiu da home em 26/07 e vive em /detalhes/.
         { label: m.program.about, href: '/detalhes/#sobre' },
+        { label: 'Ferramentas', href: '/ferramentas/' },
         { label: m.program.methodology, href: '/ff/' },
         { label: m.program.immersions, href: '/imersoes/' },
         { label: m.program.blog, href: '/blog/' },

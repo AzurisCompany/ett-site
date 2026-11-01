@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { blogPosts } from '@/lib/blog-posts'
 import { partnerPosts } from '@/lib/partner-posts'
+import { paginasFerramentas } from '@/lib/ferramentas-paginas'
 
 const BASE_URL = 'https://englishtalktime.com.br'
 
@@ -125,6 +126,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    {
+      url: `${BASE_URL}/ferramentas/`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    ...paginasFerramentas.map((p) => ({
+      url: `${BASE_URL}/ferramentas/${p.id}/`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.75,
+    })),
     {
       url: `${BASE_URL}/ff/`,
       lastModified: now,

@@ -13,6 +13,7 @@ import {
   type GrupoFerramenta,
   type StatusFerramenta,
 } from '@/lib/ferramentas'
+import { idsComPagina } from '@/lib/ferramentas-paginas'
 import { cn } from '@/lib/utils'
 
 /* As ferramentas são o centro da proposta, não acessório de curso
@@ -51,8 +52,11 @@ export default function FerramentasResumo() {
           <p className="text-ink-muted text-lg leading-relaxed">
             Use ferramentas para praticar vocabulário, escuta, pronúncia e comunicação no seu
             próprio ritmo. Estão todas reunidas no{' '}
-            <strong className="text-ink">ETT Player</strong>, que lembra onde você parou e
-            organiza o que praticar a cada dia.
+            <strong className="text-ink">ETT Player</strong>.{' '}
+            <Link href="/ferramentas/" className="text-brand-red font-semibold hover:underline">
+              Veja cada uma em detalhe
+            </Link>
+            .
           </p>
         </motion.div>
 
@@ -95,6 +99,15 @@ export default function FerramentasResumo() {
                           <span className="font-semibold text-ink-muted">Na prática:</span>{' '}
                           {f.exemplo}
                         </p>
+                      )}
+                      {idsComPagina.has(f.id) && (
+                        <Link
+                          href={`/ferramentas/${f.id}/`}
+                          className="mt-3 text-sm font-semibold text-brand-red hover:underline inline-flex items-center gap-1"
+                        >
+                          Ver como funciona
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
                       )}
                     </motion.div>
                   ))}

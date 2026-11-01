@@ -6,6 +6,10 @@
  * que o próprio Player dá a cada app. Ferramenta nova entra quando aparecer no
  * Player — não antes. Recurso planejado vai em `emConstrucao`, só com o nome.
  *
+ * Textos conferidos contra o código de cada app em 01/11/2026
+ * (novoConteudo/ferramentas/LEVANTAMENTO-FERRAMENTAS-2026-11-01.md). A versão
+ * longa de cada uma vive em lib/ferramentas-paginas.ts.
+ *
  * O Player não tem link profundo por app: todos os links levam à raiz (que tem
  * portão de e-mail — ver PLANO-REVISAO-MARKETING-2026-08-01.md, decisão #3).
  */
@@ -48,10 +52,10 @@ export const ferramentas: Ferramenta[] = [
     id: 'level-check',
     nome: 'Level Check',
     grupo: 'organizar',
-    finalidade: 'Diagnóstico de nível e de vocabulário.',
+    finalidade: 'Diagnóstico de vocabulário.',
     oQueFaz:
-      'Estima seu nível e quantas palavras você já usa, com base nas listas Longman 3000 e Oxford 5000, e monta um plano de 90 dias a partir disso.',
-    exemplo: 'Ver que você está em B1+ e acompanhar o plano no "dia 23 de 90".',
+      'Você marca as palavras que não conhece numa lista de cerca de 3.000 palavras frequentes (Longman 3000) e recebe o nível estimado, a lista do que falta e um plano de estudo.',
+    exemplo: 'Descobrir quais palavras de uso diário ainda faltam e estudá-las 10 por dia.',
     status: 'disponivel',
   },
   {
@@ -60,7 +64,7 @@ export const ferramentas: Ferramenta[] = [
     grupo: 'organizar',
     finalidade: 'Seu perfil de aprendizagem.',
     oQueFaz:
-      'Mostra se você aprende mais vendo, ouvindo ou fazendo, pra escolher as ferramentas que combinam com você.',
+      'Questionário de 30 afirmações que mostra se você prefere estudar vendo, ouvindo ou fazendo, com sugestões de estratégia para cada perfil.',
     exemplo: 'Descobrir que seu perfil é visual-auditivo e priorizar séries e audiolivros.',
     status: 'disponivel',
   },
@@ -68,9 +72,10 @@ export const ferramentas: Ferramenta[] = [
     id: 'daily',
     nome: 'Daily',
     grupo: 'organizar',
-    finalidade: 'Organizar a prática do dia.',
-    oQueFaz: 'Planner do participante: lista o que praticar hoje e registra o progresso ao longo das semanas.',
-    exemplo: 'Abrir o Daily de manhã e saber exatamente o que fazer em uma hora.',
+    finalidade: 'Planner de prática falada.',
+    oQueFaz:
+      'Versão digital do planner do ETT: diário de 30 dias, cartões de conversa e pitch cronometrado. Você responde falando e o app transcreve.',
+    exemplo: 'Falar sobre o seu dia na página do diário, em vez de escrever.',
     status: 'disponivel',
   },
   {
@@ -78,17 +83,19 @@ export const ferramentas: Ferramenta[] = [
     nome: 'Flashcards',
     grupo: 'vocabulario',
     finalidade: 'Revisão de vocabulário.',
-    oQueFaz: 'Revisa as palavras no momento certo de cada uma e mostra quantas cartas estão pendentes no dia.',
-    exemplo: 'Revisar 23 cartas do baralho de vocabulário de tecnologia em uns 12 minutos.',
+    oQueFaz:
+      'Cartões com pronúncia, imagem, significado e exemplo, tudo com áudio. As palavras que você erra voltam até você acertar em dois dias seguidos.',
+    exemplo: 'Fazer a sessão do dia com 20 palavras novas em poucos minutos.',
     status: 'disponivel',
   },
   {
     id: 'formula-fluente',
     nome: 'Fórmula Fluente',
     grupo: 'vocabulario',
-    finalidade: 'O guia de como organizar o estudo.',
-    oQueFaz: 'Leitura em capítulos sobre como escolher o que estudar e montar uma rotina que se sustenta.',
-    exemplo: 'Ler o capítulo "Escolha de palavras que importam" antes de montar seu baralho.',
+    finalidade: 'As aulas do método, em vídeo.',
+    oQueFaz:
+      'As 83 aulas do Farol da Fluência, de Frank Florida, em português e com transcrição, sobre como organizar o estudo de um idioma.',
+    exemplo: 'Assistir à aula sobre as primeiras 1.000 palavras antes de montar sua rotina.',
     status: 'disponivel',
   },
   {
@@ -96,17 +103,18 @@ export const ferramentas: Ferramenta[] = [
     nome: 'AudioBook',
     grupo: 'vocabulario',
     finalidade: 'Leitura acompanhada de áudio.',
-    oQueFaz: 'Ouve e lê livros em inglês por capítulo, retomando de onde parou.',
-    exemplo: 'Seguir no capítulo 4 de um livro de não ficção no trajeto pro trabalho.',
+    oQueFaz: 'Clássicos da literatura em inglês com o texto acompanhando o áudio, frase a frase. Clique numa palavra para salvá-la.',
+    exemplo: 'Ouvir um capítulo de Peter Pan acompanhando o texto no trajeto pro trabalho.',
     status: 'disponivel',
   },
   {
     id: 'legendas',
     nome: 'Legendas',
     grupo: 'escuta',
-    finalidade: 'Séries com legenda.',
-    oQueFaz: 'Assiste episódios com legenda em inglês e continua no minuto em que parou.',
-    exemplo: 'Ver um episódio de série de tecnologia com a legenda em inglês ligada.',
+    finalidade: 'Vídeos com legenda interativa.',
+    oQueFaz:
+      'Assiste vídeos com legenda em inglês, salva as palavras que não conhece, repete as falas e continua no minuto em que parou.',
+    exemplo: 'Repetir três vezes uma fala difícil e salvar as palavras novas.',
     status: 'disponivel',
   },
   {
@@ -115,26 +123,27 @@ export const ferramentas: Ferramenta[] = [
     grupo: 'escuta',
     finalidade: 'Inglês ao vivo, o dia todo.',
     oQueFaz: 'Rádios e noticiários em inglês transmitindo ao vivo.',
-    exemplo: 'Deixar um noticiário de Nova York tocando enquanto cozinha.',
+    exemplo: 'Deixar uma rádio americana tocando enquanto cozinha.',
     status: 'disponivel',
   },
   {
     id: 'speak',
     nome: 'Speak',
-    grupo: 'fala',
-    finalidade: 'Conversa guiada.',
-    oQueFaz: 'Você fala em inglês seguindo um roteiro e recebe correção na hora.',
-    exemplo: 'Ensaiar uma apresentação de projeto antes da reunião de verdade.',
+    grupo: 'comunidade',
+    finalidade: 'A sala dos encontros de conversação.',
+    oQueFaz:
+      'Sala online com moderador, salas menores e cartões de tema. É onde acontece o encontro de segunda, às 20h.',
+    exemplo: 'Entrar na sala às 20h de segunda e conversar em grupos pequenos.',
     status: 'disponivel',
   },
   {
     id: 'voice-agent-lab',
     nome: 'Voice Agent Lab',
     grupo: 'fala',
-    finalidade: 'Conversa por voz com um agente de IA.',
+    finalidade: 'Conversa por voz em cenários.',
     oQueFaz:
-      'Experimento de conversa falada com uma IA em inglês. É prova de conceito e pode mudar a qualquer momento.',
-    exemplo: 'Testar uma conversa curta por voz, sem roteiro.',
+      'Experimento de conversa por voz em cenários como hotel e entrevista. Está em modo demonstração e pode mudar a qualquer momento.',
+    exemplo: 'Testar uma conversa curta no cenário de check-in de hotel.',
     status: 'poc',
   },
   {
@@ -150,9 +159,9 @@ export const ferramentas: Ferramenta[] = [
     id: 'meet',
     nome: 'Meet',
     grupo: 'comunidade',
-    finalidade: 'Os encontros de conversação.',
+    finalidade: 'A agenda dos encontros da comunidade.',
     oQueFaz: 'Mostra os encontros gratuitos do English Talk Time e onde participar — ou propor o seu.',
-    exemplo: 'Ver o link do encontro de segunda e entrar às 20h.',
+    exemplo: 'Propor um encontro, convidar duas pessoas e acompanhar as confirmações.',
     status: 'disponivel',
   },
 ]

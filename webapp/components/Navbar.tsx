@@ -55,7 +55,7 @@ function buildLinks(locale: Locale): NavLink[] {
   return [
     { href: '/agenda', label: m.agenda },
     { href: '/conversacao/', label: m.conversation },
-    { href: '/#ferramentas', label: m.tools },
+    { href: '/ferramentas/', label: m.tools },
     { href: '/detalhes/', label: m.program },
     { href: '/ff/', label: m.formulafluente },
     { href: '/imersoes', label: m.immersions },

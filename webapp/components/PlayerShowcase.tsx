@@ -17,12 +17,12 @@ import Link from 'next/link'
 import { PLAYER_URL } from '@/lib/ferramentas'
 
 const modules = [
-  { icon: MessageSquare, label: 'Speak', desc: 'Conversa guiada com correção na hora' },
-  { icon: Layers, label: 'Flashcards', desc: 'Vocabulário com repetição espaçada' },
-  { icon: Film, label: 'Legendas & Séries', desc: 'Estudo por episódio, palavra a palavra' },
+  { icon: MessageSquare, label: 'Speak', desc: 'A sala dos encontros de conversação' },
+  { icon: Layers, label: 'Flashcards', desc: 'Vocabulário com áudio, imagem e exemplo' },
+  { icon: Film, label: 'Legendas & Séries', desc: 'Vídeos com legenda clicável, palavra a palavra' },
   { icon: Headphones, label: 'AudioBook & Rádio', desc: 'Escuta contínua em inglês real' },
   { icon: BarChart3, label: 'Level Check & Learning DNA', desc: 'Diagnóstico do seu nível e estilo' },
-  { icon: Sparkles, label: 'Voice Agent Lab', desc: 'Conversa por voz com IA — prova de conceito' },
+  { icon: Sparkles, label: 'Voice Agent Lab', desc: 'Conversa por voz em cenários — prova de conceito' },
 ]
 
 export default function PlayerShowcase() {
@@ -56,9 +56,8 @@ export default function PlayerShowcase() {
             <span className="gradient-text">ETT Player</span>
           </h2>
           <p className="text-ink-muted max-w-2xl mx-auto text-lg">
-            Diagnóstico, plano diário, conversa guiada, flashcards, séries, audiolivro e rádio
-            num lugar só. O app lembra onde você parou e continua de lá. Algumas ferramentas
-            estão em versão beta.
+            Diagnóstico, planner de fala, conversa guiada, flashcards, vídeos com legenda, audiolivro e rádio
+            num lugar só. Algumas ferramentas estão em versão beta.
           </p>
         </motion.div>
 

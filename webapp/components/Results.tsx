@@ -25,7 +25,7 @@ const metas = [
     icon: Target,
     valor: '3.000 palavras',
     titulo: 'Horizonte de vocabulário',
-    texto: 'As listas de alta frequência (Longman 3000, Oxford 5000) que o Level Check usa como referência pra mostrar sua evolução.',
+    texto: 'A lista de alta frequência (Longman 3000) que o Level Check usa pra mostrar quais palavras você já conhece e quais faltam.',
   },
 ]
 
