@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, ArrowUpRight, Hammer } from 'lucide-react'
 import {
   ferramentas,
@@ -10,6 +11,7 @@ import {
   rotuloGrupo,
   rotuloStatus,
   PLAYER_URL,
+  telaFerramenta,
   type GrupoFerramenta,
   type StatusFerramenta,
 } from '@/lib/ferramentas'
@@ -77,10 +79,21 @@ export default function FerramentasResumo() {
                       viewport={{ once: true, margin: '-40px' }}
                       transition={{ duration: 0.4, delay: i * 0.06 }}
                       className={cn(
-                        'bg-surface-card border border-surface-line rounded-2xl p-5 flex flex-col',
+                        'bg-surface-card border border-surface-line rounded-2xl p-5 flex flex-col overflow-hidden',
                         f.status !== 'disponivel' && 'border-dashed'
                       )}
                     >
+                      {telaFerramenta[f.id] && (
+                        <div className="-mx-5 -mt-5 mb-4 aspect-[16/10] overflow-hidden border-b border-surface-line bg-surface-alt">
+                          <Image
+                            src={telaFerramenta[f.id]!}
+                            alt={`Tela do ETT ${f.nome}`}
+                            width={900}
+                            height={562}
+                            className="w-full h-full object-cover object-top"
+                          />
+                        </div>
+                      )}
                       <div className="flex items-start justify-between gap-3 mb-2">
                         <h4 className="font-bold text-ink text-base">{f.nome}</h4>
                         <span

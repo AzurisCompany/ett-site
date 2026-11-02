@@ -6,6 +6,7 @@ import ProximosEncontros from '@/components/ProximosEncontros'
 import CapturaRapida from '@/components/CapturaRapida'
 import ComoE from '@/components/ComoE'
 import TresPilares from '@/components/TresPilares'
+import VideoInstitucional from '@/components/VideoInstitucional'
 import ComoFunciona from '@/components/ComoFunciona'
 import ParaEducadores from '@/components/ParaEducadores'
 import FerramentasResumo from '@/components/FerramentasResumo'
@@ -38,6 +39,7 @@ export default function Home() {
           o que é → o que encontro (ferramentas, encontros, parceiros) → como funciona →
           grátis × pago → para quem promove o inglês → como começo. */}
       <HeroSimples />
+      <VideoInstitucional />
       <TresPilares />
       <FerramentasResumo />
       <ProximosEncontros />

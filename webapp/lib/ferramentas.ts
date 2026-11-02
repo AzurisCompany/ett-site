@@ -181,3 +181,24 @@ export const emConstrucao = [
   'Gamificação e ranking',
   'Técnica dos Pontinhos',
 ]
+
+/**
+ * Tela de cada ferramenta nos cartões da home (FerramentasResumo). São as
+ * capturas usadas no vídeo institucional (D:\2026\31-videoETT\storyboard\
+ * assets\telas — material do Alessandro, só leitura; aqui vão cópias
+ * derivadas em webp). Nome com versão (-v1): o hosting faz cache de imagem
+ * por 7 dias, então tela nova = nome novo. Level Check com o nome do usuário
+ * desfocado; Flashcards sem a barra do navegador e a barra de tarefas.
+ */
+export const telaFerramenta: Partial<Record<string, string>> = {
+  'level-check': '/images/ferramentas/cards/level-check-v1.webp',
+  'learning-dna': '/images/ferramentas/cards/learning-dna-v1.webp',
+  daily: '/images/ferramentas/cards/daily-v1.webp',
+  flashcards: '/images/ferramentas/cards/flashcards-v1.webp',
+  'formula-fluente': '/images/ferramentas/cards/formula-fluente-v1.webp',
+  audiobook: '/images/ferramentas/cards/audiobook-v1.webp',
+  legendas: '/images/ferramentas/cards/legendas-v1.webp',
+  radio: '/images/ferramentas/cards/radio-v1.webp',
+  speak: '/images/ferramentas/cards/speak-v1.webp',
+  meet: '/images/ferramentas/cards/meet-v1.webp',
+}
