@@ -294,6 +294,7 @@ Checklist antes de entregar o link:
 | `convitesegunda20h` — encontro online | ✅ piloto, feito |
 | `cherrytop-business-meal` — atividade da Cherry Top, 01/08/2026 | ✅ feito (arte tipográfica, sem foto; usa `ett_kit.py`) |
 | `lancamento-dssbr-2026` — lançamento do ETT no DSSBR, 27/10/2026 | ✅ feito em 10/10 (identidade nova, gerador HTML §4.3b, + lembrete da véspera); foto da Maria Leonardo entrou em 21/10, e-mail com topo `EmailLancamento-1021.jpg` |
+| `cherrytop-business-school` — curso da Cherry Top, Curitiba, 04–06/12/2026 | ✅ feito em 09/11 (gerador `build_cherrytop_business_school.mjs`, foto = quadro dos reels recortado acima das legendas; sem preço; local a confirmar) |
 | Refazer `convitesegunda20h` na identidade nova | pendente (e-mails já disparados apontam pra `EmailTopNovo.jpg` — não apagar) |
 | Encontro presencial de Curitiba | ⛔ bloqueado: `agenda-events.ts` parado em 2026-06-04 |
 | `ett-player` / `ett-speak` — ferramentas | pronto pra fazer (já tem screenshot real) |

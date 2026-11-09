@@ -21,133 +21,50 @@ export interface AgendaEvent {
   partner?: string
 }
 
-export const agendaEvents: AgendaEvent[] = [
-  {
-    date: '2026-05-11',
-    startTime: '20:00',
-    endTime: '21:30',
-    weekday: 'Segunda',
-    dateLabel: '11 de maio',
-    type: 'online',
-    title: 'Encontro Online ETT',
-    location: 'Online · Google Meet',
-    time: '20h às 21h30',
-  },
-  {
-    date: '2026-05-14',
-    startTime: '19:00',
-    endTime: '21:30',
-    weekday: 'Quinta',
-    dateLabel: '14 de maio',
-    type: 'presencial',
-    title: 'English Talk Time · IEP',
-    location: 'IEP — Instituto de Engenharia do Paraná',
-    city: 'Curitiba/PR',
-    venueAddress: 'Instituto de Engenharia do Paraná, Curitiba, PR, Brasil',
-    time: '19h às 21h30',
-    timeNote: 'horário a confirmar',
-    venueIcon: 'iep',
-  },
-  {
-    date: '2026-05-18',
-    startTime: '20:00',
-    endTime: '21:30',
-    weekday: 'Segunda',
-    dateLabel: '18 de maio',
-    type: 'online',
-    title: 'Encontro Online ETT',
-    location: 'Online · Google Meet',
-    time: '20h às 21h30',
-  },
-  {
-    date: '2026-05-21',
-    startTime: '19:00',
-    endTime: '21:30',
-    weekday: 'Quinta',
-    dateLabel: '21 de maio',
-    type: 'presencial',
-    title: 'English Talk Time · UTFPR',
-    location: 'UTFPR — Universidade Tecnológica Federal do Paraná',
-    city: 'Curitiba/PR',
-    venueAddress: 'Curitiba, PR, Brasil',
-    time: '19h às 21h30',
-    timeNote: 'horário a confirmar',
-    venueIcon: 'utfpr',
-  },
-  {
-    date: '2026-05-25',
-    startTime: '20:00',
-    endTime: '21:30',
-    weekday: 'Segunda',
-    dateLabel: '25 de maio',
-    type: 'online',
-    title: 'Encontro Online ETT',
-    location: 'Online · Google Meet',
-    time: '20h às 21h30',
-  },
-  {
-    date: '2026-05-27',
-    startTime: '19:00',
-    endTime: '21:30',
-    weekday: 'Quarta',
-    dateLabel: '27 de maio',
-    type: 'presencial',
-    title: 'English Talk Time · Hard Rock',
-    location: 'Hard Rock Cafe',
-    city: 'Curitiba/PR',
-    venueAddress: 'Hard Rock Cafe Curitiba, Curitiba, PR, Brasil',
-    time: '19h às 21h30',
-    timeNote: 'quarta excepcional — quinta 28 indisponível',
-    venueIcon: 'hardrock',
-    highlight: true,
-  },
-  {
-    date: '2026-06-01',
-    startTime: '20:00',
-    endTime: '21:30',
-    weekday: 'Segunda',
-    dateLabel: '1 de junho',
-    type: 'online',
-    title: 'Encontro Online ETT',
-    location: 'Online · Google Meet',
-    time: '20h às 21h30',
-  },
-  {
-    date: '2026-06-04',
-    startTime: '19:00',
-    endTime: '21:30',
-    weekday: 'Quinta',
-    dateLabel: '4 de junho',
-    type: 'presencial',
-    title: 'English Talk Time · Habitat',
-    location: 'Habitat — Sistema FIEP / Parque Tecnológico',
-    city: 'Curitiba/PR',
-    venueAddress: 'Habitat, Sistema FIEP, Curitiba, PR, Brasil',
-    time: '19h às 21h30',
-    timeNote: 'horário a confirmar',
-    venueIcon: 'habitat',
-  },
-  {
-    date: '2026-08-01',
-    startTime: '12:00',
-    endTime: '13:00',
-    weekday: 'Sábado',
-    dateLabel: '1 de agosto',
-    type: 'online',
-    title: 'CherryTop Business Meal',
-    location: 'Online · realização Cherry Top',
-    time: '12h às 13h',
-    timeNote: 'Negotiation, networking e team building · one-to-one à tarde pra quem está no grupo',
-    highlight: true,
-    partner: 'Cherry Top',
-    links: [
-      { url: 'https://ett-speak.vercel.app/r/cherrytop', label: 'Abrir a sala' },
-      { url: 'https://chat.whatsapp.com/LEpi3Cm9cWv20kBHg5xjdb', label: 'Grupo de WhatsApp' },
-    ],
-  },
-]
+/**
+ * Eventos datados, escritos à mão (edições especiais, cancelamentos, parceiros).
+ * Um evento datado tem precedência sobre o recorrente do mesmo dia e tipo.
+ * Os de mai–ago/2026 (UTFPR, Hard Rock, Habitat, CherryTop Business Meal) já
+ * passaram e foram retirados em 09/11/2026.
+ */
+export const agendaEvents: AgendaEvent[] = []
+
+/**
+ * Volta dos encontros depois da pausa (decisão do Alessandro, 09/11/2026):
+ * nenhuma data recorrente aparece antes disso. Pra uma pausa futura, é só
+ * mudar estas datas.
+ */
+export const REINICIO = { online: '2026-11-16', presencial: '2026-11-21' }
+
+/** Até quando a home anuncia o reinício (faixa no topo + selo "Voltamos"). */
+export const ANUNCIO_REINICIO_ATE = '2026-11-30'
+
+/** Contato do IEP Talks: WhatsApp do Miguel Donizete (IEP · UTFPR). */
+export const CONTATO_IEP_TALKS = {
+  nome: 'Miguel',
+  whatsapp:
+    'https://wa.me/5513991511656?text=' +
+    encodeURIComponent('Olá, Miguel! Vi o IEP Talks no site do English Talk Time e tenho uma dúvida.'),
+}
+
+export const IEP_ENDERECO = 'Rua Emiliano Perneta, 174 · Centro · Curitiba/PR'
+export const IEP_MAPA =
+  'https://www.google.com/maps/search/?api=1&query=' +
+  encodeURIComponent('Instituto de Engenharia do Paraná, Rua Emiliano Perneta 174, Curitiba')
+
+/** O anúncio do reinício ainda vale hoje? (calcular no navegador) */
+export function anuncioReinicioAtivo(hoje = new Date()): boolean {
+  return new Date(`${ANUNCIO_REINICIO_ATE}T23:59:59-03:00`) >= hoje
+}
 
 const DIA_MS = 24 * 60 * 60 * 1000
+
+/** Se o encontro ainda não recomeçou, as datas contam a partir do dia da volta. */
+function aPartirDe(hoje: Date, inicioIso: string): Date {
+  const [a, m, d] = inicioIso.split('-').map(Number)
+  const inicio = new Date(a, m - 1, d)
+  return hoje < inicio ? inicio : hoje
+}
 
 function labelData(d: Date): string {
   return d.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long' })
@@ -196,7 +113,7 @@ function proximosDiasDaSemana(
  * passou das 22h, hoje conta).
  */
 export function encontrosOnlineRecorrentes(quantidade: number, hoje = new Date()): AgendaEvent[] {
-  return proximosDiasDaSemana(1, quantidade, hoje, 22).map((dia) => ({
+  return proximosDiasDaSemana(1, quantidade, aPartirDe(hoje, REINICIO.online), 22).map((dia) => ({
     date: iso(dia),
     startTime: '20:00',
     endTime: '21:30',
@@ -220,7 +137,7 @@ export function encontrosPresenciaisRecorrentes(
   quantidade: number,
   hoje = new Date(),
 ): AgendaEvent[] {
-  return proximosDiasDaSemana(6, quantidade, hoje, 12).map((dia) => ({
+  return proximosDiasDaSemana(6, quantidade, aPartirDe(hoje, REINICIO.presencial), 12).map((dia) => ({
     date: iso(dia),
     startTime: '10:00',
     endTime: '12:00',
@@ -230,9 +147,13 @@ export function encontrosPresenciaisRecorrentes(
     title: 'IEP Talks',
     location: 'IEP — Instituto de Engenharia do Paraná',
     city: 'Curitiba/PR',
-    venueAddress: 'Instituto de Engenharia do Paraná, Curitiba, PR, Brasil',
+    venueAddress: IEP_ENDERECO,
     time: '10h às 12h',
     venueIcon: 'iep',
+    links: [
+      { url: CONTATO_IEP_TALKS.whatsapp, label: `Dúvidas? Fale com o ${CONTATO_IEP_TALKS.nome}` },
+      { url: IEP_MAPA, label: 'Como chegar' },
+    ],
   }))
 }
 
@@ -245,7 +166,9 @@ export function encontrosPresenciaisRecorrentes(
  * assim que se cancela ou se substitui uma ocorrência específica.
  */
 export function eventosFuturos(semanas = 4, hoje = new Date()): AgendaEvent[] {
-  const limite = new Date(hoje.getTime() + semanas * 7 * DIA_MS)
+  // A janela começa no reinício, se ele ainda não chegou (senão a agenda mostraria menos semanas).
+  const base = aPartirDe(hoje, [REINICIO.online, REINICIO.presencial].sort()[0])
+  const limite = new Date(base.getTime() + semanas * 7 * DIA_MS)
   const hojeIso = iso(hoje)
   const limiteIso = iso(limite)
 

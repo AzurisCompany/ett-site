@@ -3,7 +3,14 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Video, MapPin, ArrowUpRight, CalendarDays } from 'lucide-react'
+import { Video, MapPin, ArrowUpRight, CalendarDays, MessageCircle, PartyPopper } from 'lucide-react'
+import {
+  CONTATO_IEP_TALKS,
+  REINICIO,
+  anuncioReinicioAtivo,
+  encontrosOnlineRecorrentes,
+  encontrosPresenciaisRecorrentes,
+} from '@/lib/agenda-events'
 
 const SPEAK_URL = 'https://ett-speak.vercel.app/'
 
@@ -16,43 +23,22 @@ const detalhesPresencial = [
   'Entrada franca, é só chegar',
 ]
 
-/**
- * Próximas segundas-feiras, calculadas no navegador.
- * Feito no cliente de propósito: o site é export estático e o build pode ser
- * antigo — datas calculadas no build apareceriam vencidas para o visitante.
- */
-function proximasSegundas(quantidade: number): Date[] {
-  const agora = new Date()
-  const dia = new Date(agora.getFullYear(), agora.getMonth(), agora.getDate())
+const curta = (iso: string) => `${iso.slice(8, 10)}/${iso.slice(5, 7)}`
 
-  // Se hoje é segunda e o encontro ainda não terminou (21h30), hoje conta.
-  const hojeEhSegundaEAindaVale = agora.getDay() === 1 && agora.getHours() < 22
-  if (!hojeEhSegundaEAindaVale) {
-    do {
-      dia.setDate(dia.getDate() + 1)
-    } while (dia.getDay() !== 1)
-  }
-
-  const datas: Date[] = []
-  for (let i = 0; i < quantidade; i++) {
-    datas.push(new Date(dia))
-    dia.setDate(dia.getDate() + 7)
-  }
-  return datas
-}
-
-function formatar(data: Date): string {
-  return data.toLocaleDateString('pt-BR', {
-    day: 'numeric',
-    month: 'long',
-  })
-}
+/* As datas vêm dos geradores de lib/agenda-events.ts (os mesmos da /agenda/), que já
+   respeitam a data de volta dos encontros (REINICIO). Calculadas no navegador: o site
+   é export estático e o build pode ser antigo. */
 
 export default function ProximosEncontros() {
-  const [datas, setDatas] = useState<Date[] | null>(null)
+  const [datas, setDatas] = useState<{ iso: string; label: string }[] | null>(null)
+  const [proxIep, setProxIep] = useState<string | null>(null)
+  const [anuncio, setAnuncio] = useState(false)
 
   useEffect(() => {
-    setDatas(proximasSegundas(3))
+    const hoje = new Date()
+    setDatas(encontrosOnlineRecorrentes(3, hoje).map((e) => ({ iso: e.date, label: e.dateLabel })))
+    setProxIep(encontrosPresenciaisRecorrentes(1, hoje)[0]?.dateLabel ?? null)
+    setAnuncio(anuncioReinicioAtivo(hoje))
   }, [])
 
   return (
@@ -67,6 +53,12 @@ export default function ProximosEncontros() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
+          {anuncio && (
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-red-deep text-white text-sm font-bold mb-5">
+              <PartyPopper className="w-4 h-4" />
+              Voltamos! Online a partir de {curta(REINICIO.online)} · IEP Talks a partir de {curta(REINICIO.presencial)}
+            </span>
+          )}
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-4">
             Inglês se desenvolve praticando. <span className="brand-red">Venha conversar.</span>
           </h2>
@@ -109,7 +101,7 @@ export default function ProximosEncontros() {
               {datas
                 ? datas.map((d, i) => (
                     <div
-                      key={d.toISOString()}
+                      key={d.iso}
                       className={`flex items-center justify-between rounded-xl px-4 py-3 border ${
                         i === 0
                           ? 'bg-brand-red/5 border-brand-red/30'
@@ -120,7 +112,7 @@ export default function ProximosEncontros() {
                         <CalendarDays
                           className={`w-4 h-4 ${i === 0 ? 'text-brand-red' : 'text-ink-faint'}`}
                         />
-                        Segunda, {formatar(d)}
+                        Segunda, {d.label}
                       </span>
                       {i === 0 && (
                         <span className="text-xs font-bold text-brand-red uppercase tracking-wide">
@@ -176,7 +168,12 @@ export default function ProximosEncontros() {
             </div>
 
             <p className="text-ink-muted text-sm leading-relaxed mb-5">
-              Todo sábado, no mesmo lugar — sem precisar conferir onde é dessa vez:
+              Todo sábado, no mesmo lugar.{' '}
+              {proxIep && (
+                <>
+                  Próximo: <strong className="text-ink">sábado, {proxIep}</strong>.
+                </>
+              )}
             </p>
 
             <ul className="space-y-2 mb-6">
@@ -191,12 +188,21 @@ export default function ProximosEncontros() {
               ))}
             </ul>
 
-            <div className="mt-auto">
+            <div className="mt-auto flex flex-col sm:flex-row gap-3">
+              <a
+                href={CONTATO_IEP_TALKS.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all"
+              >
+                <MessageCircle className="w-4 h-4" />
+                Fale com o {CONTATO_IEP_TALKS.nome}
+              </a>
               <Link
                 href="/agenda/"
-                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-brand-silver/50 text-brand-silver font-bold text-sm hover:bg-brand-silver/10 hover:border-brand-silver transition-all"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-brand-silver/50 text-brand-silver font-bold text-sm hover:bg-brand-silver/10 hover:border-brand-silver transition-all"
               >
-                Ver datas e locais na agenda
+                Ver a agenda
               </Link>
             </div>
           </motion.div>

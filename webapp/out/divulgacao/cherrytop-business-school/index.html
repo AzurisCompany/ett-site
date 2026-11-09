@@ -1,0 +1,272 @@
+<!doctype html>
+<!--
+  =====================================================================
+  ETT — KIT DE DIVULGAÇÃO: Cherry Top Business School
+  04 a 06/12/2026, sexta a domingo, 8h–18h · Curitiba/PR (local a confirmar)
+  Oferecido pela Cherry Top. Sem preço (decisão do Alessandro, 09/11/2026).
+
+  Artes: node webapp/scripts/kits/build_cherrytop_business_school.mjs
+  Textos: mesma fonte do textos.md. E-mail HTML pro RD Station: ./email.html
+  Processo: novoConteudo/PROCESSO-DIVULGACAO-ETT.md
+  noindex de propósito (kit é material de trabalho, fora do sitemap).
+  =====================================================================
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kit de divulgação — Cherry Top Business School · Curitiba, dez/2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* identidade 2026: marinho / vermelho / prata */
+  :root{
+    --bg:#0A1630; --panel:#0E1D3C; --panel2:#132649; --border:#24395F;
+    --text:#F3F5F9; --muted:#A8B0C0; --red:#D72229; --red-soft:#F05A60; --silver:#A8A9AC;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+       line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:var(--red-soft)}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--border);background:
+    radial-gradient(900px 320px at 90% -10%, rgba(215,34,41,.22), transparent 60%),
+    linear-gradient(180deg,#0E1D3C,#0A1630)}
+  .top{display:flex;align-items:center;gap:16px;padding:22px 0}
+  .top img{height:38px}
+  .top span{font-size:13px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+  .badge{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.1em;
+    text-transform:uppercase;color:#fff;background:var(--red);border-radius:999px;padding:6px 14px}
+  h1{font-size:clamp(28px,4.4vw,44px);line-height:1.1;margin:16px 0 10px;font-weight:800;letter-spacing:-.02em}
+  .lede{color:var(--muted);max-width:64ch;margin:0 0 22px}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;padding-bottom:26px}
+  .fact{background:var(--panel);border:1px solid var(--border);border-radius:10px;
+    padding:8px 14px;font-size:14px;color:#D1D5DB}
+  .fact b{color:#fff}
+  h2{font-size:20px;margin:40px 0 6px;font-weight:800;letter-spacing:-.01em}
+  h2 .n{color:var(--red-soft);font-size:13px;letter-spacing:.14em;display:block;margin-bottom:6px}
+  .hint{color:var(--muted);font-size:14px;margin:0 0 18px;max-width:72ch}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+  .art{background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;
+    display:flex;flex-direction:column}
+  .art .ph{background:#071025;display:flex;align-items:center;justify-content:center;
+    min-height:150px;padding:10px}
+  .art .ph img{max-width:100%;max-height:230px;display:block;border-radius:6px}
+  .art .meta{padding:12px 14px 14px;border-top:1px solid var(--border)}
+  .art .meta strong{display:block;font-size:14px}
+  .art .meta small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+  .btn{display:inline-block;margin-top:10px;background:var(--red);color:#fff;
+    font-weight:800;font-size:13px;text-decoration:none;border:0;border-radius:8px;
+    padding:9px 14px;cursor:pointer;font-family:inherit}
+  .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
+  .btn:hover{filter:brightness(1.1)}
+  .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+  .txt{background:var(--panel);border:1px solid var(--border);border-radius:14px;
+    padding:16px 18px;margin-bottom:16px}
+  .txt .head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+  .txt .head strong{font-size:15px}
+  .txt .head em{color:var(--muted);font-style:normal;font-size:12.5px;flex:1}
+  pre{white-space:pre-wrap;word-wrap:break-word;background:var(--panel2);
+    border:1px solid var(--border);border-radius:10px;padding:14px;margin:0;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;color:#E5E9F2}
+  .note{background:rgba(168,169,172,.08);border:1px solid rgba(168,169,172,.3);
+    border-radius:12px;padding:14px 16px;color:#E5E7EB;font-size:14px;margin:24px 0}
+  .warn{background:rgba(240,90,96,.08);border:1px solid rgba(240,90,96,.35);
+    border-radius:12px;padding:14px 16px;color:#FBD5D6;font-size:14px;margin:24px 0}
+  footer{border-top:1px solid var(--border);margin-top:56px;padding:26px 0 60px;
+    color:var(--muted);font-size:13px}
+  @media(max-width:560px){.art .ph img{max-height:180px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="top">
+      <img src="/images/ett-logo-horizontal-negativa.svg" alt="English Talk Time">
+      <span>Kit de divulgação</span>
+    </div>
+    <span class="badge">Imersão · Cherry Top</span>
+    <h1>Cherry Top Business School</h1>
+    <p class="lede">
+      Três dias presenciais em Curitiba treinando o inglês dos negócios: reunião, negociação,
+      apresentação, business plan e cases em equipe, com apresentação final e feedback. Oferecido
+      pela Cherry Top, parceira do ETT. Aqui estão as artes, os textos por rede e o e-mail.
+    </p>
+    <div class="facts">
+      <div class="fact"><b>Quando:</b> 04 a 06/12/2026, sexta a domingo, 8h às 18h</div>
+      <div class="fact"><b>Onde:</b> Curitiba/PR · local a confirmar</div>
+      <div class="fact"><b>Carga:</b> 50h (presencial + online + estudo orientado)</div>
+      <div class="fact"><b>Níveis:</b> turma bilíngue (básico) · imersão total (intermediário ao avançado)</div>
+      <div class="fact"><b>Investimento:</b> definido pela Cherry Top</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <h2><span class="n">01</span>Links oficiais</h2>
+  <p class="hint">
+    A <b>página do curso</b> é o link que se cola nas redes: no LinkedIn e no WhatsApp ela aparece
+    com a arte. O <b>formulário</b> é onde a pessoa deixa o interesse (o ETT encaminha à Cherry Top).
+    Não cole o link deste kit nas redes: ele é <code>noindex</code> e não gera prévia.
+  </p>
+  <div class="links">
+    <a class="btn" href="https://englishtalktime.com.br/imersoes/business-school/" target="_blank" rel="noopener">Página do curso ↗</a>
+    <a class="btn ghost" href="https://forms.gle/E4dV7dhEwASzVE4m6" target="_blank" rel="noopener">Formulário de interesse ↗</a>
+    <a class="btn ghost" href="./email.html" target="_blank">E-mail HTML (RD Station) ↗</a>
+    <a class="btn ghost" href="./textos.md" target="_blank">textos.md ↗</a>
+  </div>
+
+  <div class="warn">
+    <b>Antes de postar:</b> o <b>local em Curitiba ainda não foi confirmado</b>, por isso nenhum texto
+    traz endereço. As hashtags são sugestão: <code>#EnglishTalkTime</code> ainda não foi confirmada
+    como oficial. Preço não entra no material: quem informa é a Cherry Top.
+  </div>
+
+  <h2><span class="n">02</span>Artes</h2>
+  <p class="hint">
+    Identidade nova do ETT, com a logo da Cherry Top como quem oferece. A foto é um quadro dos
+    vídeos da própria Cherry Top. A prévia 1200×630 é a mesma que aparece quando alguém
+    compartilha a página do curso.
+  </p>
+  <div class="grid">
+    <div class="art">
+      <div class="ph"><img src="./assets/banner.png" alt="Banner 16:9"></div>
+      <div class="meta"><strong>Banner 16:9</strong><small>1920×1080 · capa de post, LinkedIn</small>
+        <a class="btn" href="./assets/banner.png" download>Baixar PNG</a> <a class="btn ghost" href="./assets/banner.webp" download>WebP</a></div>
+    </div>
+    <div class="art">
+      <div class="ph"><img src="./assets/og-1200x630.png" alt="Prévia de link"></div>
+      <div class="meta"><strong>Prévia de link</strong><small>1200×630 · é a prévia da página do curso</small>
+        <a class="btn" href="./assets/og-1200x630.png" download>Baixar PNG</a></div>
+    </div>
+    <div class="art">
+      <div class="ph"><img src="./assets/feed-1080x1080.png" alt="Feed 1:1"></div>
+      <div class="meta"><strong>Feed 1:1</strong><small>1080×1080 · quadrado</small>
+        <a class="btn" href="./assets/feed-1080x1080.png" download>Baixar PNG</a></div>
+    </div>
+    <div class="art">
+      <div class="ph"><img src="./assets/feed-1080x1350.png" alt="Feed 4:5"></div>
+      <div class="meta"><strong>Feed 4:5</strong><small>1080×1350 · maior alcance no Instagram</small>
+        <a class="btn" href="./assets/feed-1080x1350.png" download>Baixar PNG</a></div>
+    </div>
+    <div class="art">
+      <div class="ph"><img src="./assets/story-1080x1920.png" alt="Story 9:16"></div>
+      <div class="meta"><strong>Story 9:16</strong><small>1080×1920 · stories e status do WhatsApp</small>
+        <a class="btn" href="./assets/story-1080x1920.png" download>Baixar PNG</a></div>
+    </div>
+  </div>
+
+  <h2><span class="n">03</span>Textos prontos</h2>
+  <p class="hint">
+    Só fatos: datas, horário, carga horária, níveis e certificado. Sem preço, sem "últimas vagas" e
+    sem promessa de resultado. O curso aparece sempre como da Cherry Top.
+  </p>
+
+  <div class="txt">
+    <div class="head"><strong>LinkedIn</strong><em>institucional · o link da página gera a prévia com a arte</em>
+      <button class="btn" data-copy="t1">Copiar</button></div>
+<pre id="t1">🍒 De 4 a 6 de dezembro, em Curitiba: Cherry Top Business School, três dias treinando o inglês dos negócios.
+
+Muita gente estudou inglês por anos e trava quando alguém pergunta &quot;So, what do you think?&quot; numa reunião. A proposta da Cherry Top, parceira do ETT nas imersões, é treinar justamente essas situações: reunião, negociação e apresentação, com business plan, case studies e trabalho em equipe. No último dia, cada participante apresenta o seu projeto e recebe feedback na hora.
+
+Não precisa ser fluente: quem está no básico tem turma bilíngue, e do intermediário ao avançado é imersão total em inglês. São 3 dias presenciais, das 8h às 18h, mais pré-imersão online e estudo orientado, com certificado de 50 horas emitido pela Cherry Top.
+
+O curso é oferecido pela Cherry Top, que define investimento e inscrição. O ETT divulga e encaminha quem tiver interesse.
+
+Detalhes: https://englishtalktime.com.br/imersoes/business-school/
+
+#EnglishTalkTime #CherryTop #businessenglish #inglesdenegocios #Curitiba</pre>
+  </div>
+  <div class="txt">
+    <div class="head"><strong>Instagram</strong><em>feed · link na bio</em>
+      <button class="btn" data-copy="t2">Copiar</button></div>
+<pre id="t2">🍒 Gramática você tem. Falta treinar o inglês dos negócios.
+
+Cherry Top Business School: três dias em Curitiba vivendo situações reais de empresa, como reunião, negociação, apresentação, business plan e cases em equipe. No último dia, você apresenta o seu projeto e recebe feedback.
+
+📅 4 a 6 de dezembro, sexta a domingo, das 8h às 18h
+📍 Curitiba/PR, presencial
+🎓 Certificado de 50 horas, emitido pela Cherry Top
+🗣️ Turma bilíngue para o básico · imersão total do intermediário ao avançado
+
+Oferecido pela Cherry Top, parceira do ETT. Detalhes pelo link na bio.
+.
+.
+#EnglishTalkTime #CherryTop #businessenglish #inglesdenegocios #inglesparatrabalho #Curitiba #imersaoemingles</pre>
+  </div>
+  <div class="txt">
+    <div class="head"><strong>WhatsApp / Telegram</strong><em>encaminhável</em>
+      <button class="btn" data-copy="t3">Copiar</button></div>
+<pre id="t3">🍒 *Cherry Top Business School: 4 a 6/dez, em Curitiba*
+
+Três dias presenciais (8h às 18h) treinando inglês de negócios: reunião, negociação e apresentação. Turma bilíngue para o básico e imersão total do intermediário ao avançado. Certificado de 50h. Oferecido pela Cherry Top, parceira do ETT.
+
+Detalhes: https://englishtalktime.com.br/imersoes/business-school/</pre>
+  </div>
+  <div class="txt">
+    <div class="head"><strong>X / Twitter</strong><em>261 caracteres (URL conta 23)</em>
+      <button class="btn" data-copy="t4">Copiar</button></div>
+<pre id="t4">🍒 4 a 6/dez, em Curitiba: Cherry Top Business School, 3 dias treinando inglês de negócios (reunião, negociação, apresentação). Turma bilíngue para o básico, imersão total do intermediário ao avançado. Certificado de 50h. https://englishtalktime.com.br/imersoes/business-school/ #EnglishTalkTime</pre>
+  </div>
+  <div class="txt">
+    <div class="head"><strong>Repost</strong><em>1ª pessoa · Cherry Top, equipe e participantes</em>
+      <button class="btn" data-copy="t5">Copiar</button></div>
+<pre id="t5">Em dezembro tem Cherry Top Business School em Curitiba: três dias, de 4 a 6/12, treinando o inglês das reuniões, das negociações e das apresentações. E tem turma bilíngue para quem está começando.
+
+Se você trava na hora de falar inglês no trabalho, vale dar uma olhada: https://englishtalktime.com.br/imersoes/business-school/</pre>
+  </div>
+
+  <h2><span class="n">04</span>Vídeos da Cherry Top</h2>
+  <p class="hint">
+    Os 3 reels do curso, em versão leve, para repostar nos stories ou no status do WhatsApp.
+  </p>
+  <div class="links">
+    <a class="btn ghost" href="/videos/cherrytop-bs-reel1-v1.mp4" download>Reel 1 · “Quem apresentou foi outro”</a>
+    <a class="btn ghost" href="/videos/cherrytop-bs-reel2-v1.mp4" download>Reel 2 · “A cabeça trava”</a>
+    <a class="btn ghost" href="/videos/cherrytop-bs-reel3-v1.mp4" download>Reel 3 · “Decorar o manual”</a>
+  </div>
+
+  <h2><span class="n">05</span>E-mail (RD Station)</h2>
+  <p class="hint">
+    Abra <a href="./email.html" target="_blank">email.html</a>, use “ver código-fonte”, copie tudo e
+    cole em <b>RD Station → E-mails → Criar e-mail → Código HTML</b>. Sugestões de assunto no
+    comentário do topo do arquivo. O descadastro é inserido pela RD: não duplique.
+  </p>
+  <div class="note">
+    <b>Pra quem mandar:</b> a base da RD (quem pediu informações sobre o ETT). O botão leva à página
+    do curso, e de lá ao formulário de interesse, que o ETT encaminha à Cherry Top.
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    ETT · English Talk Time — material de divulgação interno. Curso oferecido pela Cherry Top Global
+    Business School; o ETT divulga. Página <code>noindex</code>, fora do sitemap.
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('[data-copy]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var txt = document.getElementById(b.dataset.copy).innerText;
+      var done = function () { var o = b.textContent; b.textContent = 'Copiado ✓';
+        setTimeout(function () { b.textContent = o }, 1600) };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(txt).then(done);
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = txt; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done() } catch (e) { alert('Selecione e copie manualmente.') }
+        document.body.removeChild(ta);
+      }
+    });
+  });
+</script>
+</body>
+</html>

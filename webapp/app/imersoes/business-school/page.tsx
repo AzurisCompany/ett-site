@@ -78,9 +78,9 @@ export const metadata: Metadata = {
     url: URL,
     images: [
       {
-        url: '/imersoes/business-school-2026/capa-v1.jpg',
-        width: 1600,
-        height: 900,
+        url: '/images/og-cherrytop-business-school.png',
+        width: 1200,
+        height: 630,
         alt: 'Cherry Top Business School — imersão em inglês de negócios em Curitiba',
       },
     ],

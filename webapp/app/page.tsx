@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import HeroSimples from '@/components/HeroSimples'
+import AnuncioReinicio from '@/components/AnuncioReinicio'
 import ProximosEncontros from '@/components/ProximosEncontros'
 import CapturaRapida from '@/components/CapturaRapida'
 import ComoE from '@/components/ComoE'
@@ -38,6 +39,8 @@ export default function Home() {
       {/* Ordem = as 6 perguntas do visitante (PLANO-REPOSICIONAMENTO-PLATAFORMA-2026-10-31.md §4):
           o que é → o que encontro (ferramentas, encontros, parceiros) → como funciona →
           grátis × pago → para quem promove o inglês → como começo. */}
+      {/* Faixa da volta dos encontros: some sozinha depois de ANUNCIO_REINICIO_ATE (lib/agenda-events.ts). */}
+      <AnuncioReinicio />
       <HeroSimples />
       <VideoInstitucional />
       <TresPilares />
