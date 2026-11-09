@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import PlanoDetalhe from '@/components/PlanoDetalhe'
+import AdesaoDetalhe from '@/components/planos/AdesaoDetalhe'
 import { detalhesPlanos } from '@/lib/planos'
 
+/* Layout próprio desde 09/11/2026 (components/planos/AdesaoDetalhe.tsx).
+   As outras páginas de plano continuam no PlanoDetalhe genérico. */
 const plano = detalhesPlanos.adesao
 
 export const metadata: Metadata = {
@@ -23,7 +25,7 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-surface">
       <Navbar />
-      <PlanoDetalhe plano={plano} />
+      <AdesaoDetalhe />
       <Footer />
     </main>
   )

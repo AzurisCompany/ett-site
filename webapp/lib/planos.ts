@@ -228,7 +228,6 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
     precoNota: 'seu 1º mês · cobrança única',
     intro: `R$ ${PRECO_ADESAO}, uma vez só, e você entra na plataforma: 30 dias com todas as ferramentas do ETT Player abertas e duas sessões individuais de uma hora pra conhecer as ferramentas, organizar sua rotina de prática e configurar atividades adequadas aos seus objetivos — mais o diagnóstico e o material personalizado.`,
     videoTitulo: 'Como funcionam as duas sessões da ativação',
-    videoId: 'C9WizsadjSM',
     blocos: [
       {
         titulo: 'Duas sessões individuais de uma hora',
