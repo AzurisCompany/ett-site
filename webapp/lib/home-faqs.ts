@@ -14,7 +14,7 @@ export const homeFaqsCurtas: HomeFaq[] = [
   },
   {
     q: 'Quanto custa para participar?',
-    a: 'Os encontros de conversação — o online de segunda e o IEP Talks de sábado — são gratuitos, sem cadastro e sem cartão. Isso não muda. As ferramentas ficam abertas por 30 dias sem cartão. Quem quiser orientação individual faz a ativação acompanhada: R$ 67, uma vez, com duas sessões de 1 hora, material personalizado e os 30 primeiros dias de ferramentas. Depois, o acesso às ferramentas continua na Trilha de Dedicação (R$ 37 por mês) ou na Trilha de Aceleração, que troca a mensalidade por 20 dias válidos de prática no mês.',
+    a: 'Os encontros de conversação — o online de segunda e o IEP Talks de sábado — são gratuitos, sem cadastro e sem cartão. Isso não muda. As ferramentas começam com a ativação acompanhada: R$ 97, uma vez, com 30 dias de todas as ferramentas, duas sessões individuais de 1 hora, diagnóstico e material personalizado. Depois, o acesso às ferramentas continua na Trilha de Dedicação (R$ 37 por mês) ou na Trilha de Aceleração, que troca a mensalidade por 20 dias válidos de prática no mês.',
   },
   {
     q: 'Quem oferece os cursos e as imersões?',
@@ -54,7 +54,7 @@ export const homeFaqs: HomeFaq[] = [
   },
   {
     q: 'O que é gratuito e o que é pago?',
-    a: 'Os encontros são gratuitos e abertos, sem cadastro. As ferramentas ficam abertas por 30 dias sem cartão. A ativação acompanhada custa R$ 67, uma vez, e inclui duas sessões individuais de 1 hora de orientação, material personalizado e os 30 primeiros dias. Depois, o acesso às ferramentas continua na Trilha de Dedicação (R$ 37/mês) ou na Trilha de Aceleração, sem mensalidade pra quem mantém 20 dias válidos de prática no mês. Cursos, imersões e mentoria de carreira são dos parceiros, com preços próprios.',
+    a: 'Os encontros são gratuitos e abertos, sem cadastro. As ferramentas começam com a ativação acompanhada: R$ 97, uma vez, com 30 dias de todas as ferramentas, duas sessões individuais de 1 hora de orientação e material personalizado. Depois, o acesso às ferramentas continua na Trilha de Dedicação (R$ 37/mês) ou na Trilha de Aceleração, sem mensalidade pra quem mantém 20 dias válidos de prática no mês. Cursos, imersões e mentoria de carreira são dos parceiros, com preços próprios.',
   },
   {
     q: 'As sessões individuais da ativação são aulas particulares?',

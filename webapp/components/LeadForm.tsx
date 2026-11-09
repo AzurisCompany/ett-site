@@ -173,14 +173,14 @@ export default function LeadForm() {
                   <p className="text-ink-subtle text-sm leading-relaxed max-w-sm mx-auto mt-5 pt-5 border-t border-surface-line">
                     Quer também as{' '}
                     <strong className="text-ink-soft">ferramentas do ETT Player</strong>, o
-                    material personalizado e a orientação individual? Dá pra começar pelas ferramentas —
-                    30 dias sem cartão.
+                    material personalizado e a orientação individual? Tudo isso vem na ativação
+                    acompanhada, com 30 dias de acesso.
                   </p>
                   <Link
-                    href="/planos/conhecer/"
+                    href="/planos/adesao/"
                     className="inline-flex items-center justify-center mt-4 px-6 py-3 rounded-lg border border-brand-red/40 text-brand-red font-bold text-sm hover:bg-brand-red/10 transition-all"
                   >
-                    Ver o teste de 30 dias
+                    Ver a ativação acompanhada
                   </Link>
                 </motion.div>
               ) : (

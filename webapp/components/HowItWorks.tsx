@@ -53,7 +53,7 @@ const steps = [
     icon: Cpu,
     title: 'Ferramentas entre os encontros',
     description:
-      'O ETT Player reúne diagnóstico de vocabulário, planner de fala, flashcards, vídeos com legenda, audiolivros e rádio. Abertas por 30 dias sem cartão.',
+      'O ETT Player reúne diagnóstico de vocabulário, planner de fala, flashcards, vídeos com legenda, audiolivros e rádio. Vêm na ativação acompanhada, com 30 dias de acesso.',
     tag: 'ETT Player',
     color: 'brand-red',
   },

@@ -96,7 +96,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Páginas de cada plano. Não existe mais índice em `/planos/` — a
     // comparação vive na seção `#precos` da home. O checkout é externo
     // (gateway próprio em azuris.com.br), então não entra aqui.
-    ...['conhecer', 'adesao', 'dedicacao', 'aceleracao'].map((slug) => ({
+    ...['adesao', 'dedicacao', 'aceleracao'].map((slug) => ({
       url: `${BASE_URL}/planos/${slug}/`,
       lastModified: now,
       changeFrequency: 'monthly' as const,

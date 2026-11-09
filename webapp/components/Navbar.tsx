@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Globe } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { CHECKOUT_ADESAO, PRECO_ADESAO } from '@/lib/planos'
 import {
   nav,
   localeFromPath,
@@ -173,14 +174,27 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* CTA */}
-          <div className="hidden md:block">
+          {/* CTA — em pt-BR, dois botões: interesse (formulário) e checkout da ativação */}
+          <div className="hidden md:flex items-center gap-2">
             <Link
               href={ctaHref(locale)}
-              className="px-4 py-2 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red whitespace-nowrap"
+              className={cn(
+                'px-4 py-2 rounded-lg font-bold text-sm transition-all whitespace-nowrap',
+                locale === 'pt-BR'
+                  ? 'border border-surface-line text-ink-soft hover:border-brand-red/40 hover:text-ink xl:hidden 2xl:inline-block'
+                  : 'bg-brand-red-deep text-white hover:bg-brand-red-deep/90 hover:shadow-brand-red'
+              )}
             >
               {m.cta}
             </Link>
+            {locale === 'pt-BR' && (
+              <a
+                href={CHECKOUT_ADESAO}
+                className="px-4 py-2 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red whitespace-nowrap"
+              >
+                Começar — R$ {PRECO_ADESAO}
+              </a>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -235,10 +249,24 @@ export default function Navbar() {
             ))}
           </div>
 
+          {locale === 'pt-BR' && (
+            <a
+              href={CHECKOUT_ADESAO}
+              onClick={() => setMobileOpen(false)}
+              className="mt-2 px-4 py-3 rounded-lg bg-brand-red-deep text-white font-bold text-sm text-center hover:bg-brand-red-deep/90 transition-all"
+            >
+              Começar na plataforma — R$ {PRECO_ADESAO}
+            </a>
+          )}
           <Link
             href={ctaHref(locale)}
             onClick={() => setMobileOpen(false)}
-            className="mt-2 px-4 py-3 rounded-lg bg-brand-red-deep text-white font-bold text-sm text-center hover:bg-brand-red-deep/90 transition-all"
+            className={cn(
+              'px-4 py-3 rounded-lg font-bold text-sm text-center transition-all',
+              locale === 'pt-BR'
+                ? 'border border-surface-line text-ink-soft hover:border-brand-red/40'
+                : 'mt-2 bg-brand-red-deep text-white hover:bg-brand-red-deep/90'
+            )}
           >
             {m.cta}
           </Link>

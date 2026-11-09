@@ -153,17 +153,18 @@ export default function FerramentasPage() {
         <section className="section-padding bg-surface">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-2xl md:text-3xl font-bold text-ink mb-3">Experimente sem compromisso</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-ink mb-3">Comece com orientação</h2>
               <p className="text-ink-muted leading-relaxed mb-6">
-                As ferramentas ficam abertas por 30 dias, sem cartão. Algumas estão em versão beta e
-                podem mudar enquanto melhoram.
+                A ativação acompanhada abre todas as ferramentas por 30 dias, com duas sessões
+                individuais pra configurar tudo pros seus objetivos. Algumas ferramentas estão em versão
+                beta e podem mudar enquanto melhoram.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link
-                  href="/planos/conhecer/"
+                  href="/planos/adesao/"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all"
                 >
-                  Usar as ferramentas por 30 dias, sem cartão
+                  Começar na plataforma
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a

@@ -143,6 +143,6 @@ export const faqsImersoes = [
   },
   {
     q: 'Preciso usar o ETT pra fazer uma imersão?',
-    a: 'Não. A imersão é da Cherry Top e não depende de nenhum plano do ETT. Os encontros de conversação são gratuitos e abertos, e as ferramentas podem ser testadas por 30 dias sem cartão, se você quiser praticar antes ou depois.',
+    a: 'Não. A imersão é da Cherry Top e não depende de nenhum plano do ETT. Os encontros de conversação são gratuitos e abertos, e as ferramentas do ETT Player estão disponíveis na ativação acompanhada, se você quiser praticar antes ou depois.',
   },
 ]

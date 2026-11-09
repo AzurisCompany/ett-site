@@ -22,7 +22,12 @@
 export const CHECKOUT_ADESAO = 'https://azuris.com.br/ett/adesao'
 export const CHECKOUT_DEDICACAO = 'https://azuris.com.br/ett/assinatura'
 
-export const PRECO_ADESAO = 67
+/**
+ * Desde 09/11/2026 a ativação é a ÚNICA porta de entrada (o teste grátis de 30
+ * dias, "Quero conhecer", foi removido e fundido nela). R$ 67 → R$ 97.
+ * ⚠️ O valor cobrado mora no gateway (azuris.com.br/ett/adesao): mudar lá também.
+ */
+export const PRECO_ADESAO = 97
 export const PRECO_MENSAL = 37
 export const PRECO_ANUAL = 370
 /** Dias válidos por mês que revalidam a bolsa da Aceleração. */
@@ -31,7 +36,7 @@ export const META_DIAS = 20
 export const PRECO_APOSTILA = 50
 
 export type Porta = {
-  id: 'conhecer' | 'entrar'
+  id: 'entrar'
   nome: string
   preco: string
   precoNota: string
@@ -42,41 +47,26 @@ export type Porta = {
   destaque?: boolean
 }
 
-/** A decisão da página: olhar ou entrar. */
+/** A porta de entrada: a ativação acompanhada (única, desde 09/11/2026). */
 export const portas: Porta[] = [
-  {
-    id: 'conhecer',
-    nome: 'Quero conhecer',
-    preco: 'R$ 0',
-    precoNota: '30 dias · sem cartão',
-    paraQuem: 'Pra quem não vai decidir nada antes de ver por dentro.',
-    itens: [
-      'Todas as ferramentas do ETT Player por 30 dias',
-      'Diagnóstico de nível e vocabulário (Level Check)',
-      'Vídeos de demonstração das ferramentas',
-      '30 minutos de apresentação, individuais',
-      'Acompanhamento e feedback das ferramentas',
-    ],
-    rodape:
-      'No dia 31 as ferramentas fecham. Seu diagnóstico e seu plano continuam visíveis, e os encontros continuam livres.',
-    cta: 'Começar o teste',
-  },
   {
     id: 'entrar',
     nome: 'Ativação acompanhada',
     preco: `R$ ${PRECO_ADESAO}`,
     precoNota: 'adesão única',
     paraQuem:
-      'Pra quem quer orientação individual pra conhecer as ferramentas, organizar a rotina de prática e configurar atividades pros seus objetivos.',
+      'Sua entrada na plataforma: 30 dias com todas as ferramentas e orientação individual pra conhecer tudo, organizar a rotina de prática e configurar atividades pros seus objetivos.',
     itens: [
+      'Todas as ferramentas do ETT Player por 30 dias',
       '2 sessões individuais de 1 hora de orientação',
-      'Diagnóstico e plano de prática montados com você',
+      'Diagnóstico de nível e vocabulário (Level Check) e plano de prática montados com você',
       'Material de prática personalizado',
+      'Vídeos de demonstração das ferramentas',
       'Conta no ETT Player e sala do ETT Speak',
-      'Os 30 primeiros dias de ferramentas já inclusos',
+      'Acompanhamento e feedback das ferramentas',
     ],
     rodape:
-      'Orientação de uso da plataforma, não aula particular. Cobrado uma vez, não vira mensalidade. Os encontros continuam abertos a todos.',
+      'Orientação de uso da plataforma, não aula particular. Cobrado uma vez, não vira mensalidade. No dia 31 você escolhe uma trilha. Os encontros continuam abertos a todos.',
     cta: 'Fazer minha adesão',
     destaque: true,
   },
@@ -142,12 +132,12 @@ export type CartaoHome = {
 }
 
 /**
- * As 4 opções como cartões cheios, na ordem do funil. Cada botão leva à página
+ * As 3 opções como cartões cheios, na ordem do funil (ativação → trilhas). Cada botão leva à página
  * do plano, que explica e termina no checkout.
  */
 export const cartoesHome: CartaoHome[] = [
   {
-    id: 'conhecer',
+    id: 'entrar',
     etiqueta: 'Comece por aqui',
     nome: portas[0].nome,
     preco: portas[0].preco,
@@ -155,18 +145,6 @@ export const cartoesHome: CartaoHome[] = [
     paraQuem: portas[0].paraQuem,
     itens: portas[0].itens,
     rodape: portas[0].rodape,
-    cta: 'Conhecer o teste de 30 dias',
-    href: '/planos/conhecer/',
-  },
-  {
-    id: 'entrar',
-    etiqueta: 'Comece por aqui',
-    nome: portas[1].nome,
-    preco: portas[1].preco,
-    precoNota: portas[1].precoNota,
-    paraQuem: portas[1].paraQuem,
-    itens: portas[1].itens,
-    rodape: portas[1].rodape,
     cta: 'Ver a ativação acompanhada',
     href: '/planos/adesao/',
     destaque: true,
@@ -234,52 +212,13 @@ export type DetalhePlano = {
 }
 
 export const detalhesPlanos: Record<string, DetalhePlano> = {
-  conhecer: {
-    slug: 'conhecer',
-    etiqueta: 'Comece por aqui',
-    nome: 'Quero conhecer',
-    preco: 'R$ 0',
-    precoNota: '30 dias · sem cartão',
-    intro:
-      'Trinta dias com a plataforma inteira aberta, sem cartão e sem compromisso. Existe pra você ver por dentro antes de decidir qualquer coisa.',
-    videoTitulo: 'Um tour de 3 minutos pela plataforma',
-    videoId: 'bG_YZD9tT_s',
-    blocos: [
-      {
-        titulo: 'Começa por um diagnóstico, não por uma aula',
-        texto:
-          'O Level Check estima o seu nível e mapeia quais palavras faltam pro inglês que você precisa usar. O resultado não é uma nota nem uma certificação: é um plano de prática com o que priorizar.',
-      },
-      {
-        titulo: 'As ferramentas do ETT Player ficam abertas',
-        texto:
-          'Flashcards de vocabulário, séries com legenda, audiolivro, rádio, conversa guiada com correção e o plano diário. Tudo liberado, sem versão reduzida e sem trava por ferramenta.',
-      },
-      {
-        titulo: 'E tem gente do outro lado',
-        texto:
-          'Você agenda 30 minutos individuais com alguém do ETT pra passear pela plataforma e tirar dúvidas. Os vídeos de demonstração ficam disponíveis pra assistir quando quiser, quantas vezes quiser.',
-      },
-      {
-        titulo: 'O que acontece no dia 31',
-        texto:
-          'As ferramentas fecham, mas o seu diagnóstico e o seu plano continuam visíveis. E os encontros de conversação continuam livres, como sempre foram — eles nunca dependeram de plano.',
-      },
-    ],
-    inclui: portas[0].itens,
-    observacao:
-      'Não pedimos cartão de crédito. Não existe cobrança automática no fim dos 30 dias.',
-    ctaLabel: 'Começar o teste de 30 dias',
-    ctaHref: '/#inscricao',
-  },
-
   adesao: {
     slug: 'adesao',
     etiqueta: 'Adesão única',
     nome: 'Ativação acompanhada',
     preco: `R$ ${PRECO_ADESAO}`,
     precoNota: 'cobrança única',
-    intro: `R$ ${PRECO_ADESAO}, uma vez só. É a ativação acompanhada da plataforma: duas sessões individuais de uma hora pra conhecer as ferramentas, organizar sua rotina de prática e configurar atividades adequadas aos seus objetivos — mais o material personalizado e os 30 primeiros dias de ferramentas.`,
+    intro: `R$ ${PRECO_ADESAO}, uma vez só, e você entra na plataforma: 30 dias com todas as ferramentas do ETT Player abertas e duas sessões individuais de uma hora pra conhecer as ferramentas, organizar sua rotina de prática e configurar atividades adequadas aos seus objetivos — mais o diagnóstico e o material personalizado.`,
     videoTitulo: 'Como funcionam as duas sessões da ativação',
     videoId: 'C9WizsadjSM',
     blocos: [
@@ -287,6 +226,11 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
         titulo: 'Duas sessões individuais de uma hora',
         texto:
           'É orientação de uso da plataforma, não aula particular de inglês. Na primeira, a gente roda o diagnóstico junto, monta o seu plano de estudos e configura a sua rotina diária. Uma semana depois vem o segundo, pra ajustar o que travou de verdade e ativar as ferramentas com conteúdo do seu nível — a sua série, o seu livro, a sua simulação.',
+      },
+      {
+        titulo: 'Todas as ferramentas abertas por 30 dias',
+        texto:
+          'O Level Check estima o seu nível e mapeia quais palavras faltam. A partir daí, flashcards de vocabulário, séries com legenda, audiolivro, rádio, conversa guiada com correção e o plano diário ficam liberados, sem versão reduzida e sem trava por ferramenta. Os vídeos de demonstração ficam disponíveis pra assistir quando quiser.',
       },
       {
         titulo: 'Material de prática personalizado',
@@ -299,12 +243,12 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
           'O encontro online de segunda, 20h, e o IEP Talks de sábado, 10h, em Curitiba, são abertos a todos, com ou sem adesão. A diferença é que você chega com o plano montado e sabendo o que praticar.',
       },
       {
-        titulo: 'Os 30 primeiros dias já estão inclusos',
+        titulo: 'No dia 31, você escolhe sua trilha',
         texto:
-          'A adesão não é uma taxa — ela já vem com o primeiro mês de ferramentas. Só a partir do dia 31 é que você escolhe entre a Trilha de Dedicação e a Trilha de Aceleração.',
+          'Depois de 30 dias usando as ferramentas e participando dos encontros online e presenciais, você já sabe como a plataforma encaixa na sua rotina. Aí escolhe: a Trilha de Dedicação, no seu ritmo, ou a Trilha de Aceleração, sem mensalidade pra quem mantém a meta.',
       },
     ],
-    inclui: portas[1].itens,
+    inclui: portas[0].itens,
     observacao: `Cobrança única — não vira mensalidade. PIX ou cartão em até 3x. Compra pela internet tem 7 dias de arrependimento garantidos por lei. Nota fiscal emitida pela Azuris.`,
     ctaLabel: `Fazer minha adesão — R$ ${PRECO_ADESAO}`,
     ctaHref: CHECKOUT_ADESAO,
@@ -432,7 +376,7 @@ export const faqCobranca = [
   },
   {
     pergunta: `A adesão de R$ ${PRECO_ADESAO} vira mensalidade?`,
-    resposta: `Não. É cobrança única. Ela é a ativação acompanhada: inclui as duas sessões individuais de 1 hora, o material personalizado e os 30 primeiros dias de ferramentas. Só a partir do dia 31 é que existe mensalidade — e só se você escolher a Trilha de Dedicação.`,
+    resposta: `Não. É cobrança única. Ela é a ativação acompanhada: inclui os 30 primeiros dias com todas as ferramentas, as duas sessões individuais de 1 hora, o diagnóstico e o material personalizado. Só a partir do dia 31 é que existe mensalidade — e só se você escolher a Trilha de Dedicação.`,
   },
   {
     pergunta: 'E se eu não bater a meta da Aceleração?',

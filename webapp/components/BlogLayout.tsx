@@ -96,8 +96,8 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
                 </h2>
                 <p className="text-ink-muted leading-relaxed mb-6">
                   Online toda segunda às 20h ou no IEP Talks, sábados às 10h, em Curitiba. Os
-                  encontros são gratuitos e abertos; as ferramentas do ETT Player ficam abertas por
-                  30 dias sem cartão.
+                  encontros são gratuitos e abertos; as ferramentas do ETT Player vêm na ativação
+                  acompanhada, com 30 dias de acesso e orientação individual.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a

@@ -311,8 +311,8 @@ export default function ConversacaoPage() {
               </h2>
               <p className="text-ink-muted text-lg">
                 As ferramentas do ETT Player ajudam a praticar entre um encontro e outro — pra você
-                chegar no próximo com mais vocabulário e mais confiança. Abertas por 30 dias sem
-                cartão; o encontro continua gratuito de qualquer jeito.
+                chegar no próximo com mais vocabulário e mais confiança. Elas vêm na ativação
+                acompanhada; o encontro continua gratuito de qualquer jeito.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">

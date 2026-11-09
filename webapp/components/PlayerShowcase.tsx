@@ -117,8 +117,8 @@ export default function PlayerShowcase() {
               <p className="flex items-start gap-2 text-ink-soft text-sm mb-5">
                 <Check className="w-5 h-5 text-brand-red flex-shrink-0" />
                 <span>
-                  <strong className="text-ink">Todas as ferramentas abertas por 30 dias</strong>,
-                  sem cartão. Depois, o acesso continua numa das trilhas — e os encontros de
+                  <strong className="text-ink">Todas as ferramentas abertas por 30 dias</strong>
+                  na ativação acompanhada. Depois, o acesso continua numa das trilhas — e os encontros de
                   conversação seguem gratuitos de qualquer jeito.
                 </span>
               </p>
@@ -133,10 +133,10 @@ export default function PlayerShowcase() {
                   <ArrowUpRight className="w-4 h-4" />
                 </a>
                 <Link
-                  href="/planos/conhecer/"
+                  href="/planos/adesao/"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-brand-silver/50 text-brand-silver font-bold text-sm hover:bg-brand-silver/10 hover:border-brand-silver transition-all"
                 >
-                  Ver o teste de 30 dias
+                  Ver a ativação acompanhada
                 </Link>
               </div>
             </div>

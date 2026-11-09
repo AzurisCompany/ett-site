@@ -21,7 +21,7 @@ import { cn } from '@/lib/utils'
 /* As ferramentas são o centro da proposta, não acessório de curso
    (PLANO-REPOSICIONAMENTO-PLATAFORMA-2026-10-31.md, §6). Tudo vem de
    lib/ferramentas.ts, que espelha o ETT Player em produção — não escrever
-   ferramenta à mão aqui. CTA primário = teste de 30 dias; Player = secundário
+   ferramenta à mão aqui. CTA primário = ativação acompanhada (/planos/adesao/); Player = secundário
    (decisão #3 de 01/08). */
 
 const ordemGrupos: GrupoFerramenta[] = ['organizar', 'vocabulario', 'escuta', 'fala', 'comunidade']
@@ -145,10 +145,10 @@ export default function FerramentasResumo() {
 
         <div className="max-w-6xl mx-auto mt-10 flex flex-col sm:flex-row gap-3 justify-center">
           <Link
-            href="/planos/conhecer/"
+            href="/planos/adesao/"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg hover:-translate-y-0.5"
           >
-            Usar as ferramentas por 30 dias, sem cartão
+            Começar na plataforma
             <ArrowRight className="w-4 h-4" />
           </Link>
           <a

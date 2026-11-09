@@ -18,14 +18,14 @@ const blocos = [
   {
     icon: Smartphone,
     titulo: 'Acesso às ferramentas',
-    preco: '30 dias sem cartão',
+    preco: '30 dias inclusos na ativação',
     texto: `Depois, a Trilha de Dedicação (R$ ${PRECO_MENSAL}/mês) ou a Trilha de Aceleração, que troca a mensalidade por 1h da sua dedicação por dia.`,
   },
   {
     icon: UserRound,
     titulo: 'Orientação e personalização',
     preco: `R$ ${PRECO_ADESAO}, uma vez`,
-    texto: 'Ativação acompanhada: duas sessões individuais de 1h pra configurar as ferramentas e a rotina, material personalizado e os 30 primeiros dias.',
+    texto: 'Ativação acompanhada: sua entrada na plataforma, com 30 dias de ferramentas, duas sessões individuais de 1h pra configurar tudo e material personalizado.',
   },
   {
     icon: Handshake,
@@ -101,8 +101,8 @@ export default function Precos() {
           </p>
         </motion.div>
 
-        {/* Box de escolha: as 4 opções, na ordem do funil */}
-        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-5 max-w-7xl mx-auto items-stretch">
+        {/* Box de escolha: as 3 opções, na ordem do funil */}
+        <div className="grid md:grid-cols-3 gap-5 max-w-6xl mx-auto items-stretch">
           {cartoesHome.map((c, i) => (
             <motion.div
               key={c.id}

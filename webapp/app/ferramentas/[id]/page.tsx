@@ -10,7 +10,7 @@ import { paginasFerramentas, getPaginaFerramenta } from '@/lib/ferramentas-pagin
 
 /* Página de uma ferramenta. Conteúdo em lib/ferramentas-paginas.ts (escrito a
    partir do código de cada app — só o que existe); nome, grupo e status vêm de
-   lib/ferramentas.ts. CTA primário = teste de 30 dias; abrir a ferramenta =
+   lib/ferramentas.ts. CTA primário = ativação acompanhada (/planos/adesao/); abrir a ferramenta =
    secundário (decisão #3 de 01/08). */
 
 const SITE_URL = 'https://englishtalktime.com.br'
@@ -129,10 +129,10 @@ export default function FerramentaPage({ params }: { params: { id: string } }) {
                   </Link>
                 ) : (
                   <Link
-                    href="/planos/conhecer/"
+                    href="/planos/adesao/"
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all"
                   >
-                    Usar as ferramentas por 30 dias, sem cartão
+                    Começar na plataforma
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 )}

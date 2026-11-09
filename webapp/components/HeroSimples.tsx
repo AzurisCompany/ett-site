@@ -8,11 +8,12 @@ import { ArrowRight, Check } from 'lucide-react'
 /* Posicionamento desde 31/10/2026: o ETT é uma PLATAFORMA de prática
    (ferramentas + conversação + parceiros), não um curso. Ver
    PLANO-REPOSICIONAMENTO-PLATAFORMA-2026-10-31.md antes de mexer na copy.
-   Os três fatos de preço continuam juntos: encontro grátis, teste de 30 dias
-   sem cartão, parceiros com condições próprias. */
+   Os três fatos de preço continuam juntos: encontro grátis, ativação com 30
+   dias de ferramentas (desde 09/11/2026 não há mais teste grátis), parceiros
+   com condições próprias. */
 const reassurances = [
   'Encontros de conversação gratuitos, sem cadastro',
-  'Ferramentas abertas por 30 dias, sem cartão',
+  'Ferramentas com orientação individual na ativação',
   'Cursos e imersões oferecidos por parceiros',
 ]
 

@@ -10,7 +10,7 @@ const passos = [
     icon: Compass,
     titulo: 'Conheça a plataforma',
     texto:
-      'Venha a um encontro de conversação, que é aberto, ou abra as ferramentas por 30 dias sem cartão.',
+      'Venha a um encontro de conversação, que é aberto, ou comece pela ativação acompanhada: 30 dias de ferramentas com orientação individual.',
   },
   {
     icon: Gauge,
