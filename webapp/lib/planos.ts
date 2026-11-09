@@ -53,7 +53,7 @@ export const portas: Porta[] = [
     id: 'entrar',
     nome: 'Ativação acompanhada',
     preco: `R$ ${PRECO_ADESAO}`,
-    precoNota: 'adesão única',
+    precoNota: 'seu 1º mês · pagamento único',
     paraQuem:
       'Sua entrada na plataforma: 30 dias com todas as ferramentas e orientação individual pra conhecer tudo, organizar a rotina de prática e configurar atividades pros seus objetivos.',
     itens: [
@@ -129,6 +129,8 @@ export type CartaoHome = {
   cta: string
   href: string
   destaque?: boolean
+  /** Pré-requisito em destaque no cartão (as trilhas exigem a ativação antes). */
+  requisito?: string
 }
 
 /**
@@ -151,7 +153,8 @@ export const cartoesHome: CartaoHome[] = [
   },
   {
     id: 'dedicacao',
-    etiqueta: 'A partir do dia 31',
+    etiqueta: 'Depois da ativação',
+    requisito: `Pra entrar nesta trilha, primeiro você faz a ativação acompanhada de R$ ${PRECO_ADESAO}, que é o seu 1º mês. A trilha começa no dia 31.`,
     nome: 'Trilha de Dedicação',
     preco: `R$ ${PRECO_MENSAL}`,
     precoNota: 'por mês',
@@ -170,7 +173,8 @@ export const cartoesHome: CartaoHome[] = [
   },
   {
     id: 'aceleracao',
-    etiqueta: 'A partir do dia 31',
+    etiqueta: 'Depois da ativação',
+    requisito: `Pra entrar nesta trilha, primeiro você faz a ativação acompanhada de R$ ${PRECO_ADESAO}, que é o seu 1º mês. A trilha começa no dia 31.`,
     nome: 'Trilha de Aceleração',
     preco: 'R$ 0',
     precoAncora: `R$ ${PRECO_MENSAL}/mês`,
@@ -209,15 +213,19 @@ export type DetalhePlano = {
   ctaHref: string
   /** Aviso acima do botão final, quando o plano depende de outra coisa. */
   ctaNota?: string
+  /** Pré-requisito mostrado logo abaixo do preço, no topo da página. */
+  requisito?: string
+  /** Link menor abaixo do botão (ex.: quem já fez a ativação assina direto). */
+  ctaSecundario?: { texto: string; label: string; href: string }
 }
 
 export const detalhesPlanos: Record<string, DetalhePlano> = {
   adesao: {
     slug: 'adesao',
-    etiqueta: 'Adesão única',
+    etiqueta: 'Comece por aqui',
     nome: 'Ativação acompanhada',
     preco: `R$ ${PRECO_ADESAO}`,
-    precoNota: 'cobrança única',
+    precoNota: 'seu 1º mês · cobrança única',
     intro: `R$ ${PRECO_ADESAO}, uma vez só, e você entra na plataforma: 30 dias com todas as ferramentas do ETT Player abertas e duas sessões individuais de uma hora pra conhecer as ferramentas, organizar sua rotina de prática e configurar atividades adequadas aos seus objetivos — mais o diagnóstico e o material personalizado.`,
     videoTitulo: 'Como funcionam as duas sessões da ativação',
     videoId: 'C9WizsadjSM',
@@ -256,10 +264,11 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
 
   dedicacao: {
     slug: 'dedicacao',
-    etiqueta: 'A partir do dia 31',
+    etiqueta: 'Depois da ativação',
     nome: 'Trilha de Dedicação',
     preco: `R$ ${PRECO_MENSAL}`,
-    precoNota: 'por mês',
+    precoNota: 'por mês, a partir do 2º mês',
+    requisito: `Pra assinar a Dedicação, primeiro você faz a ativação acompanhada de R$ ${PRECO_ADESAO}, que é o seu 1º mês. A mensalidade de R$ ${PRECO_MENSAL} começa no dia 31.`,
     destaqueFrase: 'Sem rotina obrigatória — 1h de dedicação por dia.',
     intro:
       'Uma modalidade de acesso às ferramentas, no seu ritmo, com acompanhamento. A dedicação sugerida é de uma hora por dia, mas ninguém mede e ninguém cobra meta de você.',
@@ -293,16 +302,23 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
       `Anual por R$ ${PRECO_ANUAL} — dois meses de desconto`,
     ],
     observacao: `A Trilha de Dedicação começa no dia 31, depois dos 30 dias inclusos na adesão de R$ ${PRECO_ADESAO}. Nota fiscal emitida pela Azuris.`,
-    ctaLabel: `Assinar — R$ ${PRECO_MENSAL}/mês`,
-    ctaHref: CHECKOUT_DEDICACAO,
+    ctaLabel: `Começar pela ativação — R$ ${PRECO_ADESAO}`,
+    ctaHref: CHECKOUT_ADESAO,
+    ctaNota: `Todo mundo começa pela ativação acompanhada: R$ ${PRECO_ADESAO}, uma vez, que é o seu primeiro mês, com todas as ferramentas e duas sessões de orientação. No fim dos 30 dias, você assina a Trilha de Dedicação por R$ ${PRECO_MENSAL}/mês.`,
+    ctaSecundario: {
+      texto: 'Já fez a ativação?',
+      label: `Assinar a Dedicação — R$ ${PRECO_MENSAL}/mês`,
+      href: CHECKOUT_DEDICACAO,
+    },
   },
 
   aceleracao: {
     slug: 'aceleracao',
-    etiqueta: 'A partir do dia 31',
+    etiqueta: 'Depois da ativação',
     nome: 'Trilha de Aceleração',
     preco: 'R$ 0',
     precoAncora: `R$ ${PRECO_MENSAL}/mês`,
+    requisito: `Pra entrar na Aceleração, primeiro você faz a ativação acompanhada de R$ ${PRECO_ADESAO}, que é o seu 1º mês. A partir do dia 31, a mensalidade fica em R$ 0 enquanto você mantiver a meta.`,
     destaqueFrase: 'Custa 1h da sua dedicação por dia.',
     intro:
       'Uma modalidade de acesso às ferramentas sem mensalidade. Você paga com uma hora da sua dedicação por dia — e o sistema acompanha isso por você.',
@@ -340,7 +356,7 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
       'Perder a bolsa nunca tira o seu acesso aos encontros. Eles são abertos de qualquer forma.',
     ctaLabel: `Fazer a ativação e começar — R$ ${PRECO_ADESAO}`,
     ctaHref: CHECKOUT_ADESAO,
-    ctaNota: `A Aceleração começa depois da ativação acompanhada (adesão única), como todo mundo. A mensalidade é que fica em R$ 0 enquanto você mantiver a meta.`,
+    ctaNota: `Todo mundo começa pela ativação acompanhada: R$ ${PRECO_ADESAO}, uma vez, que é o seu primeiro mês. A partir do dia 31, a mensalidade da Aceleração fica em R$ 0 enquanto você mantiver a meta.`,
   },
 }
 

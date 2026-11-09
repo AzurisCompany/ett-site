@@ -42,6 +42,15 @@ export default function PlanoDetalhe({ plano }: { plano: DetalhePlano }) {
               )}
             </div>
 
+            {plano.requisito && (
+              <div className="flex items-start gap-3 rounded-xl border border-brand-red/30 bg-brand-red/5 px-4 py-3 mb-4">
+                <Info className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
+                <p className="text-sm text-ink-soft leading-relaxed">
+                  <strong className="text-ink">Antes da trilha, a ativação.</strong> {plano.requisito}
+                </p>
+              </div>
+            )}
+
             {plano.destaqueFrase && (
               <p className="text-ink font-semibold text-lg mb-4">{plano.destaqueFrase}</p>
             )}
@@ -138,6 +147,15 @@ export default function PlanoDetalhe({ plano }: { plano: DetalhePlano }) {
           >
             {plano.ctaLabel}
           </Link>
+
+          {plano.ctaSecundario && (
+            <p className="text-sm text-ink-muted mt-4">
+              {plano.ctaSecundario.texto}{' '}
+              <a href={plano.ctaSecundario.href} className="font-semibold text-brand-red hover:underline">
+                {plano.ctaSecundario.label}
+              </a>
+            </p>
+          )}
 
           <p className="text-ink-subtle text-xs leading-relaxed mt-6">{plano.observacao}</p>
 

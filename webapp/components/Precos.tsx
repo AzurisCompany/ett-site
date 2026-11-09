@@ -101,6 +101,25 @@ export default function Precos() {
           </p>
         </motion.div>
 
+        {/* O caminho, em 2 passos: ninguém entra numa trilha sem a ativação */}
+        <div className="max-w-4xl mx-auto mb-10 grid sm:grid-cols-[1fr_auto_1fr] items-center gap-3 sm:gap-4">
+          <div className="rounded-2xl border border-brand-red/35 bg-brand-red/5 px-5 py-4">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-brand-red mb-1">Passo 1 · seu 1º mês</p>
+            <p className="text-sm text-ink-soft leading-relaxed">
+              <strong className="text-ink">Ativação acompanhada, R$ {PRECO_ADESAO}.</strong> 30 dias com todas as
+              ferramentas, duas sessões de orientação e os encontros.
+            </p>
+          </div>
+          <span className="hidden sm:block text-brand-red text-2xl font-bold" aria-hidden>→</span>
+          <div className="rounded-2xl border border-surface-line bg-surface-card px-5 py-4">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-ink-muted mb-1">Passo 2 · a partir do dia 31</p>
+            <p className="text-sm text-ink-soft leading-relaxed">
+              <strong className="text-ink">Você escolhe uma trilha:</strong> Dedicação (R$ {PRECO_MENSAL}/mês) ou
+              Aceleração (R$ 0 com a meta de 1h por dia).
+            </p>
+          </div>
+        </div>
+
         {/* Box de escolha: as 3 opções, na ordem do funil */}
         <div className="grid md:grid-cols-3 gap-5 max-w-6xl mx-auto items-stretch">
           {cartoesHome.map((c, i) => (
@@ -160,7 +179,13 @@ export default function Precos() {
                 ))}
               </ul>
 
-              <p className="text-xs text-ink-subtle leading-relaxed mb-6 mt-auto">{c.rodape}</p>
+              <p className="text-xs text-ink-subtle leading-relaxed mb-4 mt-auto">{c.rodape}</p>
+
+              {c.requisito && (
+                <p className="text-xs text-ink-soft leading-relaxed mb-4 rounded-lg border border-brand-red/25 bg-brand-red/5 px-3 py-2.5">
+                  <strong className="text-ink">Antes, a ativação.</strong> {c.requisito}
+                </p>
+              )}
 
               <Link
                 href={c.href}
