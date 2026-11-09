@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import ImersaoDetalhe from '@/components/ImersaoDetalhe'
+import BusinessSchoolDetalhe from '@/components/imersoes/BusinessSchoolDetalhe'
 
 /**
  * Cherry Top Business School — Curitiba, 04 a 06/dez/2026.
@@ -87,104 +87,12 @@ export const metadata: Metadata = {
   },
 }
 
-const videos = [
-  {
-    src: '/videos/cherrytop-bs-reel1-v1.mp4',
-    capa: '/videos/cherrytop-bs-reel1-v1-capa.jpg',
-    titulo: '"Quem apresentou foi outro"',
-  },
-  {
-    src: '/videos/cherrytop-bs-reel2-v1.mp4',
-    capa: '/videos/cherrytop-bs-reel2-v1-capa.jpg',
-    titulo: '"A cabeça trava"',
-  },
-  {
-    src: '/videos/cherrytop-bs-reel3-v1.mp4',
-    capa: '/videos/cherrytop-bs-reel3-v1-capa.jpg',
-    titulo: '"Decorar o manual"',
-  },
-]
-
 export default function BusinessSchoolPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Navbar />
-      <ImersaoDetalhe
-        eyebrow="Business School • Cherry Top"
-        city="Curitiba"
-        uf="PR"
-        headline="Três dias treinando o inglês das reuniões, negociações e apresentações."
-        intro="A Cherry Top Business School é um treino presencial em situações reais de negócio: você participa de reuniões, defende um business plan, resolve cases em equipe e, no último dia, apresenta o seu projeto e recebe feedback na hora. Não precisa ser fluente: quem está no básico tem turma bilíngue, e do intermediário ao avançado é tudo em inglês. O curso é oferecido e conduzido pela Cherry Top; o ETT divulga e oferece ferramentas e encontros para praticar antes e depois."
-        parceiroNome="Cherry Top Global Business School"
-        videos={videos}
-        videosTitulo="Gramática você tem. Falta treinar o inglês dos negócios."
-        videosTexto="Muita gente estudou inglês por anos e trava quando alguém pergunta “So, what do you think?” numa reunião. A proposta da Business School é errar entre colegas, num ambiente de treino, para chegar mais preparado às reuniões de verdade."
-        turmas={[
-          {
-            label: 'Turma de dezembro',
-            when: '04 a 06 de dezembro de 2026 (sexta a domingo), das 8h às 18h',
-            detalhe: 'Básico: turma bilíngue · Intermediário e avançado: imersão total em inglês',
-            fim: '2026-12-06',
-          },
-        ]}
-        cronogramaTitulo="Carga horária: 50 horas"
-        cronograma={[
-          {
-            bloco: 'The Passport: pré-imersão online (10h)',
-            detalhe: 'Programa de upgrade antes do presencial, para chegar à Business School com um inglês mais afiado.',
-          },
-          { bloco: 'Day 1, sexta 04/12 (10h)', detalhe: 'Presencial, das 8h às 18h.' },
-          { bloco: 'Day 2, sábado 05/12 (10h)', detalhe: 'Presencial, das 8h às 18h.' },
-          { bloco: 'Day 3, domingo 06/12 (10h)', detalhe: 'Presencial, das 8h às 18h, com a apresentação final dos projetos.' },
-          { bloco: 'Day 4: estudo orientado (10h)', detalhe: 'Estudo guiado depois do presencial.' },
-        ]}
-        format="3 dias presenciais + 20h de atividades orientadas (online e estudo guiado)"
-        local={{ name: 'Curitiba/PR', address: 'Local a confirmar pela Cherry Top' }}
-        lideranca="Fundada por Leonarda Flyhigher, Business Strategist"
-        metodologia="Strategic Business Communication"
-        highlights={[
-          'Situações reais de negócio: reunião, negociação e apresentação',
-          'Business plan, case studies, design thinking, reports e team building, em equipe',
-          'Apresentação final do seu projeto, com feedback na hora',
-          'Turma bilíngue para quem está começando; imersão total do intermediário ao avançado',
-          'Networking com outros profissionais',
-          'Certificado de 50 horas emitido pela Cherry Top',
-        ]}
-        inclusos={[
-          'The Passport: 10h de pré-imersão online',
-          '3 dias presenciais, das 8h às 18h',
-          '10h de estudo orientado',
-          'Almoço nos dias presenciais',
-          'Certificado de 50 horas',
-        ]}
-        naoInclusos={['Passagens aéreas', 'Hospedagem', 'Traslado']}
-        sobreParceiro={{
-          titulo: 'Quem oferece: Cherry Top Global Business School',
-          intro:
-            'A Cherry Top trabalha com comunicação empresarial em inglês desde 1985. Abaixo, como ela mesma se apresenta.',
-          itens: [
-            { rotulo: 'Desde 1985', texto: 'Fundada por Leonarda Flyhigher, Business Strategist.' },
-            { rotulo: 'Nosso negócio', texto: 'Business Communication.' },
-            {
-              rotulo: 'Missão',
-              texto: 'Acelerar o crescimento e a expansão de grandes negócios internacionais.',
-            },
-            { rotulo: 'Visão', texto: 'Ser o Global Business Hub mais eficiente e top of mind.' },
-            {
-              rotulo: 'Estratégia',
-              texto: 'Strategic Business Communication e conexão de marcas líderes globalmente.',
-            },
-            {
-              rotulo: 'Slogan',
-              texto: '“Empowering Fluent 007 Elite Speakers for Proficient Business Communication.”',
-            },
-          ],
-        }}
-        fotos={[]}
-        fotosLegenda=""
-        ctaLabel="Quero participar da Business School"
-      />
+      <BusinessSchoolDetalhe />
       <Footer />
     </>
   )

@@ -14,8 +14,6 @@ import {
   GraduationCap,
   CheckCircle2,
   X,
-  Clock,
-  Shuffle,
 } from 'lucide-react'
 
 const FORM_URL = 'https://forms.gle/E4dV7dhEwASzVE4m6'
@@ -30,57 +28,6 @@ export type Turma = {
 
 function turmaPassou(t: Turma, agora: Date | null) {
   return !!(agora && t.fim && new Date(`${t.fim}T23:59:59-03:00`) < agora)
-}
-
-export type VideoImersao = { src: string; capa: string; titulo: string }
-
-/** Um dos vídeos, sorteado a cada visita. O sorteio roda no navegador (o HTML é estático). */
-function VideoSorteado({ videos, titulo, texto }: { videos: VideoImersao[]; titulo: string; texto: string }) {
-  const [i, setI] = useState<number | null>(null)
-  useEffect(() => setI(Math.floor(Math.random() * videos.length)), [videos.length])
-  const v = i === null ? null : videos[i]
-
-  return (
-    <section className="pt-12 pb-2 bg-surface">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-[minmax(0,320px)_1fr] gap-8 items-center max-w-4xl mx-auto">
-          <div className="mx-auto w-full max-w-[320px]">
-            <div className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-surface-alt border border-surface-line">
-              {v ? (
-                <video
-                  key={v.src}
-                  src={v.src}
-                  poster={v.capa}
-                  controls
-                  playsInline
-                  preload="none"
-                  className="absolute inset-0 w-full h-full object-cover bg-black"
-                  aria-label={v.titulo}
-                />
-              ) : (
-                <div className="absolute inset-0 animate-pulse" />
-              )}
-            </div>
-            {videos.length > 1 && (
-              <button
-                type="button"
-                onClick={() => setI((atual) => ((atual ?? 0) + 1) % videos.length)}
-                className="mt-3 w-full inline-flex items-center justify-center gap-2 text-sm text-ink-muted hover:text-brand-red transition-colors"
-              >
-                <Shuffle className="w-4 h-4" />
-                Ver outro vídeo ({(i ?? 0) + 1} de {videos.length})
-              </button>
-            )}
-          </div>
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-ink mb-3">{titulo}</h2>
-            <p className="text-ink-soft text-lg leading-relaxed">{texto}</p>
-            {v && <p className="text-ink-subtle text-sm mt-4">Vídeo da Cherry Top: {v.titulo}</p>}
-          </div>
-        </div>
-      </div>
-    </section>
-  )
 }
 
 export type ImersaoDetalheProps = {
@@ -101,17 +48,6 @@ export type ImersaoDetalheProps = {
   fotosLegenda: string
   ctaLabel: string
   vagasInfo?: string
-  /** Vídeos do parceiro: um é sorteado por visita. */
-  videos?: VideoImersao[]
-  videosTitulo?: string
-  videosTexto?: string
-  /** Nome do parceiro no banner "Oferecido por". */
-  parceiroNome?: string
-  /** Carga horária bloco a bloco. */
-  cronograma?: { bloco: string; detalhe: string }[]
-  cronogramaTitulo?: string
-  /** Bloco institucional do parceiro (texto dele, atribuído a ele). */
-  sobreParceiro?: { titulo: string; intro: string; itens: { rotulo: string; texto: string }[] }
 }
 
 export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
@@ -185,7 +121,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
                 Oferecido por
               </div>
               <div className="text-xl font-bold text-ink mb-1">
-                {props.parceiroNome ?? 'Cherry Top Business Communication'}
+                Cherry Top Business Communication
               </div>
               <p className="text-ink-muted text-sm">
                 Método <strong className="text-ink">{props.metodologia}</strong> · inscrição,
@@ -207,14 +143,6 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
           </motion.div>
         </div>
       </section>
-
-      {props.videos && props.videos.length > 0 && (
-        <VideoSorteado
-          videos={props.videos}
-          titulo={props.videosTitulo ?? 'Assista'}
-          texto={props.videosTexto ?? ''}
-        />
-      )}
 
       {/* TURMAS / DATAS */}
       <section className="section-padding pt-8 bg-surface">
@@ -268,26 +196,6 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
                   ))}
                 </div>
               </div>
-
-              {props.cronograma && (
-                <div className="bg-surface-card border border-surface-line rounded-2xl p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <Clock className="w-5 h-5 text-brand-red" />
-                    <h2 className="text-xl font-bold text-ink">{props.cronogramaTitulo ?? 'Carga horária'}</h2>
-                  </div>
-                  <ol className="space-y-3">
-                    {props.cronograma.map((c) => (
-                      <li key={c.bloco} className="flex items-start gap-3">
-                        <span className="shrink-0 mt-1.5 w-2 h-2 rounded-full bg-brand-red" />
-                        <div>
-                          <div className="font-semibold text-ink">{c.bloco}</div>
-                          <div className="text-ink-muted text-sm">{c.detalhe}</div>
-                        </div>
-                      </li>
-                    ))}
-                  </ol>
-                </div>
-              )}
 
               {/* Highlights */}
               <div className="bg-surface-card border border-surface-line rounded-2xl p-6">
@@ -394,27 +302,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
         </div>
       </section>
 
-      {props.sobreParceiro && (
-        <section className="section-padding bg-surface-alt border-y border-surface-line">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-ink mb-3">{props.sobreParceiro.titulo}</h2>
-            <p className="text-ink-muted text-lg mb-8 max-w-3xl">{props.sobreParceiro.intro}</p>
-            <div className="grid sm:grid-cols-2 gap-4">
-              {props.sobreParceiro.itens.map((it) => (
-                <div key={it.rotulo} className="bg-surface-card border border-surface-line rounded-2xl p-5">
-                  <div className="text-xs font-semibold uppercase tracking-widest text-brand-red mb-2">
-                    {it.rotulo}
-                  </div>
-                  <p className="text-ink-soft">{it.texto}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* GALERIA DAS FOTOS DA PASTA (some quando não há foto e a página tem vídeo) */}
-      {(props.fotos.length > 0 || !props.videos?.length) && (
+      {/* GALERIA DAS FOTOS DA PASTA */}
       <section className="section-padding bg-surface-alt border-y border-surface-line">
         <div className="container mx-auto px-4">
           <motion.div
@@ -471,7 +359,6 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
           )}
         </div>
       </section>
-      )}
 
       {/* CTA FINAL */}
       <section className="section-padding bg-surface">
