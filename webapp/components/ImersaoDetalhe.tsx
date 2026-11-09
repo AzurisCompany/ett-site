@@ -267,7 +267,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <p className="text-ink-subtle text-xs italic text-center mt-3">
-                  O ETT encaminha seu interesse à Cherry Top.
+                  Você deixa seu contato e a Cherry Top fala com você.
                 </p>
               </div>
 
@@ -374,7 +374,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
             <p className="text-ink-muted text-lg mb-8">
               {todasEncerradas
                 ? 'Veja as turmas abertas da Cherry Top na página de imersões.'
-                : 'Preencha o formulário em 2 minutos. O ETT encaminha seu interesse à Cherry Top, que entra em contato com os detalhes, o investimento e as condições de inscrição.'}
+                : 'Preencha o formulário em 2 minutos. Nós repassamos seu contato para a Cherry Top, que fala com você sobre detalhes, valores e condições de inscrição.'}
             </p>
             <a
               href={todasEncerradas ? '/imersoes/#proximas' : FORM_URL}

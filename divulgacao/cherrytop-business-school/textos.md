@@ -4,7 +4,7 @@ Kit: https://englishtalktime.com.br/divulgacao/cherrytop-business-school/
 **Página do curso (é este link que se cola nas redes):** https://englishtalktime.com.br/imersoes/business-school/
 **Formulário de interesse:** https://forms.gle/E4dV7dhEwASzVE4m6
 
-**Quem oferece: Cherry Top.** O ETT divulga e encaminha o interesse. Investimento e inscrição são da Cherry
+**Quem oferece: Cherry Top.** O ETT divulga e repassa o contato de quem preenche o formulário. Investimento e inscrição são da Cherry
 Top, e o preço **não** aparece no kit (decisão do Alessandro, 09/11/2026). Não escrever "patrocinado por" nem
 tratar o curso como do ETT.
 
@@ -28,7 +28,7 @@ Muita gente estudou inglês por anos e trava quando alguém pergunta "So, what d
 
 Não precisa ser fluente: quem está no básico tem turma bilíngue, e do intermediário ao avançado é imersão total em inglês. São 3 dias presenciais, das 8h às 18h, mais pré-imersão online e estudo orientado, com certificado de 50 horas emitido pela Cherry Top.
 
-O curso é oferecido pela Cherry Top, que define investimento e inscrição. O ETT divulga e encaminha quem tiver interesse.
+O curso é da Cherry Top, que cuida de valores e inscrição. Quem tiver interesse deixa o contato no formulário da página, e nós repassamos para a Cherry Top falar com você.
 
 Detalhes: https://englishtalktime.com.br/imersoes/business-school/
 

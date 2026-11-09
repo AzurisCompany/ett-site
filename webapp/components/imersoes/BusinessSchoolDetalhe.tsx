@@ -161,8 +161,8 @@ export default function BusinessSchoolDetalhe() {
                 </a>
               </div>
               <p className="text-ink-subtle text-sm mt-4">
-                Oferecido pela <strong className="text-ink-soft">Cherry Top</strong>, que define investimento e
-                inscrição. O ETT encaminha o seu interesse.
+                Oferecido pela <strong className="text-ink-soft">Cherry Top</strong>, que cuida de valores e
+                inscrição. Você deixa seu contato aqui e nós repassamos para ela.
               </p>
             </div>
 
@@ -311,7 +311,7 @@ export default function BusinessSchoolDetalhe() {
                 {cta.label}
                 <ArrowRight className="w-4 h-4" />
               </a>
-              <p className="text-ink-subtle text-xs text-center mt-3">O ETT encaminha seu interesse à Cherry Top.</p>
+              <p className="text-ink-subtle text-xs text-center mt-3">Você deixa seu contato e a Cherry Top fala com você.</p>
             </div>
           </div>
         </div>
@@ -381,7 +381,7 @@ export default function BusinessSchoolDetalhe() {
           <p className="text-ink-muted text-lg mb-8">
             {encerrada
               ? 'Veja as turmas abertas da Cherry Top na página de imersões.'
-              : 'Preencha o formulário em 2 minutos. O ETT encaminha seu interesse à Cherry Top, que entra em contato com os detalhes, o investimento e as condições de inscrição.'}
+              : 'Preencha o formulário em 2 minutos. Nós repassamos seu contato para a Cherry Top, que fala com você sobre detalhes, valores e condições de inscrição.'}
           </p>
           <a
             href={cta.href}
