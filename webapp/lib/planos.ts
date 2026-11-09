@@ -19,8 +19,10 @@
  * recriar. Se um dia o gateway cair, o certo é tirar o botão do ar, não simular
  * um checkout.
  */
-export const CHECKOUT_ADESAO = 'https://azuris.com.br/ett/adesao'
+// Links atualizados em 09/11/2026 (adesao → ativacao; aceleracao ganhou checkout próprio).
+export const CHECKOUT_ADESAO = 'https://azuris.com.br/ett/ativacao'
 export const CHECKOUT_DEDICACAO = 'https://azuris.com.br/ett/assinatura'
+export const CHECKOUT_ACELERACAO = 'https://azuris.com.br/ett/aceleracao'
 
 /**
  * Desde 09/11/2026 a ativação é a ÚNICA porta de entrada (o teste grátis de 30
@@ -353,8 +355,13 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
     ],
     observacao:
       'Perder a bolsa nunca tira o seu acesso aos encontros. Eles são abertos de qualquer forma.',
-    ctaLabel: `Fazer a ativação e começar — R$ ${PRECO_ADESAO}`,
+    ctaLabel: `Começar pela ativação — R$ ${PRECO_ADESAO}`,
     ctaHref: CHECKOUT_ADESAO,
+    ctaSecundario: {
+      texto: 'Já fez a ativação?',
+      label: 'Entrar na Trilha de Aceleração',
+      href: CHECKOUT_ACELERACAO,
+    },
     ctaNota: `Todo mundo começa pela ativação acompanhada: R$ ${PRECO_ADESAO}, uma vez, que é o seu primeiro mês. A partir do dia 31, a mensalidade da Aceleração fica em R$ 0 enquanto você mantiver a meta.`,
   },
 }
