@@ -22,7 +22,7 @@ import VideoSorteado, { type VideoVertical } from '@/components/VideoSorteado'
 /**
  * Layout próprio da Cherry Top Business School (Curitiba, dez/2026).
  * Conteúdo: reels da Cherry Top + mensagens do Prof. Leo (31/10/2026).
- * Preço NÃO aparece (decisão do Alessandro, 09/11). Local a confirmar.
+ * Preço NÃO aparece (decisão do Alessandro, 09/11). Local: IEP (confirmado em 09/11).
  */
 
 const FORM_URL = 'https://forms.gle/E4dV7dhEwASzVE4m6'
@@ -36,7 +36,7 @@ const videos: VideoVertical[] = [
 
 const fatos = [
   { icon: Calendar, titulo: '04 a 06 de dezembro', sub: 'sexta a domingo, 2026' },
-  { icon: MapPin, titulo: 'Curitiba/PR', sub: 'local a confirmar' },
+  { icon: MapPin, titulo: 'IEP · Curitiba/PR', sub: 'Rua Emiliano Perneta, 174 · Centro' },
   { icon: Clock, titulo: '50 horas', sub: '3 dias presenciais, 8h às 18h' },
   { icon: Award, titulo: 'Certificado de 50h', sub: 'emitido pela Cherry Top' },
 ]

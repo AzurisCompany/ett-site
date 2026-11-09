@@ -45,7 +45,7 @@ function html(W, H, kind) {
 
   const chips = situacoes.map((c) => `<span class="chip">${c}</span>`).join('')
   const quando = `<div class="quando"><div class="dia"><small>DEZ</small><strong>04–06</strong></div>
-      <div class="info"><b>Sexta a domingo · 8h às 18h</b><br>Curitiba/PR · presencial</div></div>`
+      <div class="info"><b>Sexta a domingo · 8h às 18h</b><br>IEP · Curitiba/PR · presencial</div></div>`
   const cabeca = `
       <span class="badge">Imersão · Cherry Top</span>
       <h1>Três dias treinando o <em>inglês dos negócios</em>.</h1>`

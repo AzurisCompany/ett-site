@@ -10,8 +10,8 @@ import BusinessSchoolDetalhe from '@/components/imersoes/BusinessSchoolDetalhe'
  * novoConteudo/NovoCursoCherrytop/ (transcrição em
  * novoConteudo/cherrytop-business-school/TRANSCRICAO-REELS-2026-11-09.md).
  * Preço NÃO é publicado (decisão do Alessandro, 09/11): segue a regra das
- * outras imersões, "investimento informado pela Cherry Top". Local em
- * Curitiba ainda a confirmar.
+ * outras imersões, "investimento informado pela Cherry Top". Local: IEP —
+ * Instituto de Engenharia do Paraná (confirmado pelo Alessandro em 09/11).
  */
 
 const SITE_URL = 'https://englishtalktime.com.br'
@@ -41,8 +41,14 @@ const jsonLd = {
       eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
       location: {
         '@type': 'Place',
-        name: 'Curitiba',
-        address: { '@type': 'PostalAddress', addressLocality: 'Curitiba', addressRegion: 'PR', addressCountry: 'BR' },
+        name: 'IEP — Instituto de Engenharia do Paraná',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Rua Emiliano Perneta, 174',
+          addressLocality: 'Curitiba',
+          addressRegion: 'PR',
+          addressCountry: 'BR',
+        },
       },
       organizer: { '@id': ORG_ID },
       performer: {
@@ -60,7 +66,7 @@ const jsonLd = {
 export const metadata: Metadata = {
   title: 'Cherry Top Business School em Curitiba — inglês de negócios, 04 a 06/dez',
   description:
-    'Imersão de 3 dias em inglês de negócios oferecida pela Cherry Top em Curitiba, de 04 a 06 de dezembro de 2026: reunião, negociação, apresentação, business plan e cases em equipe. Turma bilíngue para o básico, imersão total do intermediário ao avançado, certificado de 50 horas. Divulgada pelo English Talk Time.',
+    'Imersão de 3 dias em inglês de negócios oferecida pela Cherry Top no IEP (Instituto de Engenharia do Paraná), em Curitiba, de 04 a 06 de dezembro de 2026: reunião, negociação, apresentação, business plan e cases em equipe. Turma bilíngue para o básico, imersão total do intermediário ao avançado, certificado de 50 horas. Divulgada pelo English Talk Time.',
   keywords: [
     'inglês para negócios Curitiba',
     'imersão em inglês Curitiba',

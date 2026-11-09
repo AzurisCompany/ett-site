@@ -64,7 +64,7 @@ export const imersoes: ImersaoParceiro[] = [
     cidade: 'Curitiba',
     uf: 'PR',
     oferecidoPor: 'Cherry Top Global Business School',
-    local: 'Curitiba/PR (local a confirmar)',
+    local: 'IEP (Instituto de Engenharia do Paraná), Curitiba/PR',
     formato: '3 dias presenciais (8h às 18h) + pré-imersão online e estudo orientado',
     turmas: [{ inicio: '2026-12-04', fim: '2026-12-06', rotulo: '04 a 06/dez de 2026' }],
     destaques: [
