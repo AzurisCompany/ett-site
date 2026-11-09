@@ -16,6 +16,8 @@ export type Turma = { inicio: string; fim: string; rotulo: string }
 
 export type ImersaoParceiro = {
   id: string
+  /** Nome do curso no cartão; sem ele, o cartão usa a cidade. */
+  titulo?: string
   cidade: string
   uf: string
   oferecidoPor: string
@@ -55,6 +57,23 @@ export const imersoes: ImersaoParceiro[] = [
     destaques: ['Sede da Cherry Top no Brasil', 'Até 8 pessoas por turma', 'Certificado de 90 horas, emitido pela Cherry Top'],
     capa: '/imersoes/bh-2026/01.jpeg',
     detalheUrl: '/imersoes/belo-horizonte/',
+  },
+  {
+    id: 'business-school-curitiba-2026',
+    titulo: 'Cherry Top Business School',
+    cidade: 'Curitiba',
+    uf: 'PR',
+    oferecidoPor: 'Cherry Top Global Business School',
+    local: 'Curitiba/PR (local a confirmar)',
+    formato: '3 dias presenciais (8h às 18h) + pré-imersão online e estudo orientado',
+    turmas: [{ inicio: '2026-12-04', fim: '2026-12-06', rotulo: '04 a 06/dez de 2026' }],
+    destaques: [
+      'Inglês de negócios: reunião, negociação e apresentação',
+      'Turma bilíngue para o básico; imersão total do intermediário ao avançado',
+      'Certificado de 50 horas, emitido pela Cherry Top',
+    ],
+    capa: '/imersoes/business-school-2026/capa-v1.jpg',
+    detalheUrl: '/imersoes/business-school/',
   },
   {
     id: 'florida-2027',
@@ -116,7 +135,7 @@ export const faqsImersoes = [
   },
   {
     q: 'O que está incluído?',
-    a: 'Belo Horizonte: programa de 5 dias, hospedagem, refeições, material e certificado de 90 horas emitido pela Cherry Top. Flórida: programa, hospedagem em resort, atividades culturais e mentor residente; passagem aérea e visto americano não estão inclusos. Os detalhes finais são confirmados pela Cherry Top.',
+    a: 'Belo Horizonte: programa de 5 dias, hospedagem, refeições, material e certificado de 90 horas emitido pela Cherry Top. Business School (Curitiba, dez/2026): 10h de pré-imersão online (The Passport), 3 dias presenciais das 8h às 18h, 10h de estudo orientado, almoço nos dias presenciais e certificado de 50 horas; passagem, hospedagem e traslado ficam por conta do participante. Flórida: programa, hospedagem em resort, atividades culturais e mentor residente; passagem aérea e visto americano não estão inclusos. Os detalhes finais são confirmados pela Cherry Top.',
   },
   {
     q: 'Imersão na Flórida — preciso de visto?',

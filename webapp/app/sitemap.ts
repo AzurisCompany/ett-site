@@ -121,6 +121,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${BASE_URL}/imersoes/business-school/`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: `${BASE_URL}/imersoes/florida/`,
       lastModified: now,
       changeFrequency: 'weekly',

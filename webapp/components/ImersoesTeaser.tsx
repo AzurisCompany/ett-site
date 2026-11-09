@@ -48,7 +48,7 @@ export default function ImersoesTeaser() {
                     <MapPin className="w-3.5 h-3.5" />
                     {im.cidade}, {im.uf}
                   </div>
-                  <h3 className="text-2xl font-bold text-ink mb-1">{im.cidade}</h3>
+                  <h3 className="text-2xl font-bold text-ink mb-1">{im.titulo ?? im.cidade}</h3>
                   <p className="text-xs text-ink-subtle mb-3">Oferecido por {im.oferecidoPor}</p>
                   <div className="flex items-start gap-2 text-sm text-ink-soft">
                     <Calendar className="w-4 h-4 shrink-0 mt-0.5 text-brand-red" />

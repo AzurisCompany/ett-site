@@ -177,7 +177,7 @@ export default function Imersoes() {
                     <Link href={im.detalheUrl} className="relative aspect-[16/9] bg-surface-alt overflow-hidden block">
                       <Image
                         src={im.capa}
-                        alt={`Imersão em ${im.cidade}`}
+                        alt={im.titulo ? `${im.titulo}, em ${im.cidade}` : `Imersão em ${im.cidade}`}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                         sizes="(max-width: 1024px) 100vw, 50vw"
@@ -194,7 +194,7 @@ export default function Imersoes() {
                       </div>
                       <Link href={im.detalheUrl}>
                         <h3 className="text-2xl font-bold text-ink mb-1 hover:text-brand-red transition-colors">
-                          {im.cidade}
+                          {im.titulo ?? im.cidade}
                         </h3>
                       </Link>
                       <p className="text-sm text-ink-soft mb-4">
@@ -318,7 +318,7 @@ export default function Imersoes() {
               {sep.encerradas.map((im) => (
                 <li key={im.id} className="flex flex-wrap items-center justify-between gap-2 px-5 py-4 text-sm">
                   <span className="text-ink-soft">
-                    <strong className="text-ink">{im.cidade}</strong> · {im.turmas.map((t) => t.rotulo).join(' · ')}
+                    <strong className="text-ink">{im.titulo ? `${im.titulo} (${im.cidade})` : im.cidade}</strong> · {im.turmas.map((t) => t.rotulo).join(' · ')}
                   </span>
                   <span className="text-ink-subtle">Oferecido por {im.oferecidoPor}</span>
                 </li>
