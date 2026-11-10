@@ -5,6 +5,7 @@ import HeroSimples from '@/components/HeroSimples'
 import AnuncioReinicio from '@/components/AnuncioReinicio'
 import ProximosEncontros from '@/components/ProximosEncontros'
 import CapturaRapida from '@/components/CapturaRapida'
+import DesafioChamada from '@/components/desafio/DesafioChamada'
 import ComoE from '@/components/ComoE'
 import TresPilares from '@/components/TresPilares'
 import VideoInstitucional from '@/components/VideoInstitucional'
@@ -42,6 +43,8 @@ export default function Home() {
       {/* Faixa da volta dos encontros: some sozinha depois de ANUNCIO_REINICIO_ATE (lib/agenda-events.ts). */}
       <AnuncioReinicio />
       <HeroSimples />
+      {/* Desafio de 7 dias: isca gratuita com o Miguel no WhatsApp (09/11/2026). */}
+      <DesafioChamada />
       <VideoInstitucional />
       <TresPilares />
       <FerramentasResumo />

@@ -2,7 +2,7 @@
  * Modelo de cobrança do ETT — fonte única de verdade dos planos.
  *
  * A home (`components/Precos.tsx`), a `/planos/` (`components/Planos.tsx`) e as
- * páginas de cada plano (`components/PlanoDetalhe.tsx`) leem daqui pra não
+ * páginas de cada plano (`components/planos/*Detalhe.tsx`) leem daqui pra não
  * divergirem. Especificação completa (economia, prêmios, migração) em
  * `novoConteudo/MODELO-COBRANCA-ETT.md`.
  */

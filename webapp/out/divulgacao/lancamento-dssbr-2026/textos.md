@@ -24,7 +24,7 @@ Uma tarde sobre por que a gente trava pra falar inglês e o que ajuda a destrava
 
 • 13h30 — Lançamento do ETT, com Alessandro Binhara
 • 14h00 — Rubens Queiroz (Unicamp, criador do portal Aprendendo Inglês): Por que você desiste do inglês?
-• 14h45 — Maria Leonardo Aparecida (Cherry Top): Seu inglês está pronto para o mundo?
+• 14h45 — Leonarda Flyhigher (Cherry Top): Seu inglês está pronto para o mundo?
 • 15h30 — José Motta Filho (Silicon Valley Brasil): AI para além dos prompts
 • 16h30 — IEP Talks, com Miguel Donizete (IEP · UTFPR)
 
@@ -47,7 +47,7 @@ _feed · link na bio_
 ```
 🎤 27/10 tem lançamento do English Talk Time — e você está convidado.
 
-Uma tarde no auditório do IEP, em Curitiba, sobre destravar o inglês: Rubens Queiroz (Unicamp), Maria Leonardo Aparecida (Cherry Top), José Motta Filho (Silicon Valley Brasil) e o IEP Talks com Miguel Donizete. No fim, a plataforma do ETT ao vivo e sorteio de prêmios.
+Uma tarde no auditório do IEP, em Curitiba, sobre destravar o inglês: Rubens Queiroz (Unicamp), Leonarda Flyhigher (Cherry Top), José Motta Filho (Silicon Valley Brasil) e o IEP Talks com Miguel Donizete. No fim, a plataforma do ETT ao vivo e sorteio de prêmios.
 
 📅 Terça, 27/10, 13h30 às 17h15
 📍 Auditório do IEP · Rua Emiliano Perneta, 174 · Centro
@@ -110,7 +110,7 @@ _26/10 · pros inscritos do Google Forms, por WhatsApp ou e-mail_
 
 Terça, 27/10, a partir das 13h30, no auditório do IEP — Rua Emiliano Perneta, 174, Centro, Curitiba.
 
-13h30 Lançamento do ETT · 14h00 Rubens Queiroz · 14h45 Maria Leonardo Aparecida · 15h30 José Motta Filho · 16h30 IEP Talks
+13h30 Lançamento do ETT · 14h00 Rubens Queiroz · 14h45 Leonarda Flyhigher · 15h30 José Motta Filho · 16h30 IEP Talks
 
 No encerramento: apresentação da plataforma do ETT e sorteio de prêmios.
 

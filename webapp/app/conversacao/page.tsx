@@ -99,26 +99,26 @@ const jsonLd = {
   ],
 }
 
-/* Os blocos somam 90 min (o encontro é de 1h30). Até 09/11/2026 somavam 95. */
+/* Etapas do encontro de 1h30, sem minutagem (decisão do Alessandro, 09/11/2026). */
 const formato = [
   {
     n: '1',
-    title: 'Warm-up · 10 min',
+    title: 'Warm-up',
     desc: 'Apresentações rápidas, quebra-gelo e algumas palavras-chave do tema. Todo mundo já entra falando.',
   },
   {
     n: '2',
-    title: 'Tema do dia · 50 min',
+    title: 'Tema do dia',
     desc: 'Conversa sobre um tema ou situação do dia a dia e do trabalho: apresentar-se, viagem, reunião, entrevista, opinião sobre um assunto.',
   },
   {
     n: '3',
-    title: 'Pares · 20 min',
+    title: 'Pares',
     desc: 'Conversas em duplas ou trios pra todo mundo ter tempo de falar — não é palco com plateia.',
   },
   {
     n: '4',
-    title: 'Fechamento · 10 min',
+    title: 'Fechamento',
     desc: 'Volta pro grupo: o que funcionou, palavras e expressões que apareceram e o tema da próxima semana.',
   },
 ]

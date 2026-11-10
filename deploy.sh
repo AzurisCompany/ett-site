@@ -62,6 +62,11 @@ for entry in "$OUT"/*; do
 done
 shopt -u nullglob
 
+# 2c) Dotfiles do export (o glob acima nao pega): .htaccess da pagina 404.
+if [[ -f "$OUT/.htaccess" ]]; then
+  cp "$OUT/.htaccess" "$ROOT/.htaccess"
+fi
+
 # -------------------------------------------------------------------
 # 3. STAGE + COMMIT
 # -------------------------------------------------------------------

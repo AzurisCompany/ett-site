@@ -1,0 +1,2 @@
+# Página de erro em pt-BR (app/not-found.tsx -> 404.html). Copiado pra raiz pelo deploy.sh.
+ErrorDocument 404 /404.html

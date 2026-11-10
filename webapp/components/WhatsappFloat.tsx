@@ -2,13 +2,15 @@
 
 import { usePathname } from 'next/navigation'
 import { localeFromPath, type Locale } from '@/lib/i18n/messages'
+import { WHATSAPP_MIGUEL } from '@/lib/desafio'
 
-const WHATSAPP_NUMBER = '5541998003687'
+/* Desde 09/11/2026 o atendimento do site é o WhatsApp do Miguel (antes: 5541998003687). */
+const WHATSAPP_NUMBER = WHATSAPP_MIGUEL
 
 /** Texto por idioma (09/11/2026). O atendimento é em português — EN/ES avisam. */
 const TEXTO: Record<Locale, { message: string; aria: string; label: string }> = {
   'pt-BR': {
-    message: 'Olá! Vim do site ETT — quero saber mais sobre as imersões em inglês.',
+    message: 'Olá, Miguel! Vim pelo site do English Talk Time e tenho uma dúvida.',
     aria: 'Falar com o time ETT no WhatsApp',
     label: 'Falar no WhatsApp',
   },
