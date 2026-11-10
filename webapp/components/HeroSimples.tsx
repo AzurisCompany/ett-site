@@ -1,9 +1,10 @@
 'use client'
 
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Check } from 'lucide-react'
+import { ArrowRight, Check, Volume2, VolumeX } from 'lucide-react'
 
 /* Posicionamento desde 31/10/2026: o ETT é uma PLATAFORMA de prática
    (ferramentas + conversação + parceiros), não um curso. Ver
@@ -16,6 +17,81 @@ const reassurances = [
   'Ferramentas do ETT Player abertas pra experimentar',
   'Cursos e imersões oferecidos por parceiros',
 ]
+
+/* Vídeo institucional no lugar da tela do Player (10/11/2026; antes era a
+   seção VideoInstitucional abaixo do hero). Corte de 92 s, sem o trecho do
+   DSSBR — ver a nota de origem em git log de components/VideoInstitucional.tsx.
+   Navegador só permite autoplay MUDO: abre tocando sem som e o botão
+   "Ativar som" volta pro começo com áudio. Quem pede menos movimento
+   (prefers-reduced-motion) recebe o vídeo parado na capa.
+   Vídeo novo = nome de arquivo novo (o hosting faz cache de 7 dias). */
+const VIDEO = '/videos/ett-institucional-v05-site.mp4'
+const CAPA = '/videos/ett-institucional-v05-capa.jpg'
+
+function HeroVideo() {
+  const ref = useRef<HTMLVideoElement>(null)
+  const [mudo, setMudo] = useState(true)
+
+  useEffect(() => {
+    const v = ref.current
+    if (!v) return
+    const reduzir = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reduzir) {
+      v.pause()
+      return
+    }
+    // React não garante a propriedade `muted` na hidratação; sem ela o play() é recusado.
+    v.muted = true
+    v.play().catch(() => {})
+    const sync = () => setMudo(v.muted)
+    v.addEventListener('volumechange', sync)
+    return () => v.removeEventListener('volumechange', sync)
+  }, [])
+
+  const alternarSom = () => {
+    const v = ref.current
+    if (!v) return
+    if (v.muted) {
+      v.muted = false
+      v.currentTime = 0
+      v.play().catch(() => {})
+    } else {
+      v.muted = true
+    }
+  }
+
+  return (
+    <div className="relative">
+      <video
+        ref={ref}
+        autoPlay
+        muted
+        playsInline
+        controls
+        preload="metadata"
+        poster={CAPA}
+        className="w-full h-auto aspect-video block bg-brand-navy"
+        aria-label="Vídeo institucional do English Talk Time"
+      >
+        <source src={VIDEO} type="video/mp4" />
+        Seu navegador não reproduz vídeo.{' '}
+        <a href={VIDEO} className="underline">
+          Baixe o vídeo
+        </a>
+        .
+      </video>
+      <button
+        type="button"
+        onClick={alternarSom}
+        className="absolute top-3 right-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/65 text-white text-xs font-semibold backdrop-blur hover:bg-black/80 transition-colors"
+        aria-label={mudo ? 'Ativar o som do vídeo' : 'Tirar o som do vídeo'}
+      >
+        {mudo ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+        {mudo ? 'Ativar som' : 'Sem som'}
+      </button>
+    </div>
+  )
+}
 
 export default function HeroSimples() {
   return (
@@ -122,7 +198,7 @@ export default function HeroSimples() {
             </motion.ul>
           </div>
 
-          {/* Visual — tela real do ETT Player, não foto de sala de aula */}
+          {/* Visual — vídeo institucional (tocando mudo ao abrir) */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -135,17 +211,10 @@ export default function HeroSimples() {
                 <span className="w-3 h-3 rounded-full bg-yellow-500/70" />
                 <span className="w-3 h-3 rounded-full bg-green-500/70" />
                 <span className="ml-3 flex-1 truncate text-xs text-ink-subtle font-mono">
-                  ETT Player
+                  Conheça o ETT em um minuto e meio
                 </span>
               </div>
-              <Image
-                src="/images/ett-player.webp"
-                alt="Tela inicial do ETT Player, com as ferramentas de prática: diário de fala, encontros, flashcards, séries e audiolivro"
-                width={1600}
-                height={1000}
-                className="w-full h-auto"
-                priority
-              />
+              <HeroVideo />
             </div>
             <div className="absolute -bottom-5 left-4 sm:left-6 right-4 sm:right-auto flex flex-wrap gap-2">
               {['Ferramentas', 'Conversação', 'Parceiros'].map((t) => (

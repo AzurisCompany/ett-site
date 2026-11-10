@@ -8,7 +8,6 @@ import CapturaRapida from '@/components/CapturaRapida'
 import DesafioChamada from '@/components/desafio/DesafioChamada'
 import ComoE from '@/components/ComoE'
 import TresPilares from '@/components/TresPilares'
-import VideoInstitucional from '@/components/VideoInstitucional'
 import ComoFunciona from '@/components/ComoFunciona'
 import ParaEducadores from '@/components/ParaEducadores'
 import FerramentasResumo from '@/components/FerramentasResumo'
@@ -45,7 +44,6 @@ export default function Home() {
       <HeroSimples />
       {/* Desafio de 7 dias: isca gratuita com o Miguel no WhatsApp (09/11/2026). */}
       <DesafioChamada />
-      <VideoInstitucional />
       <TresPilares />
       <FerramentasResumo />
       <ProximosEncontros />
