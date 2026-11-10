@@ -6,7 +6,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Globe } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { CHECKOUT_ADESAO } from '@/lib/planos'
 import {
   nav,
   localeFromPath,
@@ -173,7 +172,7 @@ export default function Navbar() {
             </Link>
             {locale === 'pt-BR' && (
               <a
-                href={CHECKOUT_ADESAO}
+                href="/#precos"
                 className="px-4 py-2 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red whitespace-nowrap"
               >
                 Quero começar
@@ -235,7 +234,7 @@ export default function Navbar() {
 
           {locale === 'pt-BR' && (
             <a
-              href={CHECKOUT_ADESAO}
+              href="/#precos"
               onClick={() => setMobileOpen(false)}
               className="mt-2 px-4 py-3 rounded-lg bg-brand-red-deep text-white font-bold text-sm text-center hover:bg-brand-red-deep/90 transition-all"
             >
