@@ -7,18 +7,25 @@ export interface BlogPostMeta {
   readMinutes: number
   category: string
   tags: string[]
+  /**
+   * Post de evento que já aconteceu (YYYY-MM-DD do evento). O post continua no ar,
+   * ganha a faixa "Evento realizado em dd/mm/aaaa", desce pro fim da listagem e sai
+   * do "Continue lendo".
+   */
+  realizado?: string
 }
 
 export const blogPosts: BlogPostMeta[] = [
   {
     slug: 'cherrytop-business-meal',
     title:
-      'CherryTop Business Meal: uma hora de inglês de negócios, online e gratuita (sábado, 1º de agosto)',
+      'CherryTop Business Meal: uma hora de inglês de negócios, online e gratuita (realizado em 1º de agosto)',
     description:
-      'A Cherry Top, parceira do ETT nas imersões, realiza no sábado 01/08/2026, das 12h às 13h, uma experiência online gratuita pra praticar negotiation, networking e team building em inglês. Entrada pelo grupo de WhatsApp da atividade.',
+      'Evento realizado. A Cherry Top, parceira que oferece as imersões divulgadas pelo ETT, fez no sábado 01/08/2026, das 12h às 13h, uma experiência online gratuita pra praticar negotiation, networking e team building em inglês.',
     excerpt:
-      'Sábado, 1º de agosto, meio-dia: uma hora praticando inglês em situações de negócio — negociação, networking e trabalho em equipe. Online, gratuito, realização da Cherry Top. À tarde tem dinâmica one-to-one pra quem estiver no grupo.',
+      'Evento realizado em 1º de agosto: uma hora praticando inglês em situações de negócio — negociação, networking e trabalho em equipe. Online, gratuito, realização da Cherry Top.',
     date: '2026-07-27',
+    realizado: '2026-08-01',
     readMinutes: 4,
     category: 'Encontros',
     tags: ['inglês de negócios', 'Cherry Top', 'networking', 'encontro online'],
@@ -40,9 +47,9 @@ export const blogPosts: BlogPostMeta[] = [
     title:
       'Como Destravar a Conversação em Inglês (Quando Você Entende, Mas Trava na Hora de Falar)',
     description:
-      'O bloqueio de fala em inglês não é falta de gramática — é falta de prática real e estruturada. Veja por que você trava e o caminho concreto pra começar a falar em 60 dias.',
+      'O bloqueio de fala em inglês não é falta de gramática — é falta de prática real e estruturada. Veja por que você trava e o que costuma ajudar a começar a falar.',
     excerpt:
-      'Você estudou anos, entende um podcast, lê documentação técnica… mas na primeira reunião em inglês trava. Não é problema de vocabulário. É outra coisa — e tem solução prática.',
+      'Você estudou anos, entende um podcast, lê documentação técnica… mas na primeira reunião em inglês trava. Não é problema de vocabulário. É outra coisa — e dá pra trabalhar nisso com prática.',
     date: '2026-05-12',
     readMinutes: 8,
     category: 'Conversação',
@@ -51,13 +58,13 @@ export const blogPosts: BlogPostMeta[] = [
   {
     slug: 'praticar-ingles-em-curitiba-gratis',
     title:
-      'Praticar Inglês em Curitiba: 4 Locais Onde Você Pode Conversar Toda Semana (Grátis)',
+      'Praticar Inglês em Curitiba de Graça: o IEP Talks, Todo Sábado às 10h (e o Online de Segunda)',
     description:
-      'Onde praticar inglês em Curitiba presencialmente e sem pagar nada. Os 4 locais oficiais do ETT — IEP, UTFPR, Hard Rock Cafe e Habitat — e como funciona cada um.',
+      'Onde praticar inglês em Curitiba sem pagar: o IEP Talks, encontro de conversação presencial do ETT todo sábado, das 10h às 12h, no IEP (Rua Emiliano Perneta, 174). Entrada franca, sem cadastro. E, pra quem não pode ir, o encontro online de segunda às 20h.',
     excerpt:
-      'Não adianta saber inglês na teoria se você não fala. E em Curitiba sobram cursos pra estudar e faltam lugares pra praticar. Aqui está o mapa dos 4 pontos de encontro grátis.',
+      'Em Curitiba sobram cursos pra estudar e faltam lugares pra praticar a fala. O IEP Talks é um deles: todo sábado de manhã, no Centro, aberto a qualquer pessoa, sem cadastro e sem pagar.',
     date: '2026-05-08',
-    readMinutes: 6,
+    readMinutes: 5,
     category: 'Curitiba',
     tags: ['Curitiba', 'praticar inglês', 'conversação em inglês Curitiba'],
   },
@@ -81,5 +88,5 @@ export function getBlogPost(slug: string): BlogPostMeta | undefined {
 }
 
 export function getRelatedPosts(currentSlug: string, limit = 2): BlogPostMeta[] {
-  return blogPosts.filter((p) => p.slug !== currentSlug).slice(0, limit)
+  return blogPosts.filter((p) => p.slug !== currentSlug && !p.realizado).slice(0, limit)
 }

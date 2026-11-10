@@ -91,7 +91,7 @@ export const paginasFerramentas: PaginaFerramenta[] = [
       'O nível mostrado é uma estimativa calculada a partir da porcentagem de palavras conhecidas. Serve como referência para orientar o estudo, não como certificação.',
     ],
     bomSaber: [
-      'Está em versão de teste (alfa) e pode mudar.',
+      'Já está disponível, em versão de teste (alfa), e pode mudar.',
       'Feito para computador ou notebook: o próprio app avisa que não é otimizado para celular.',
       'A interface abre em inglês, com opção de português.',
     ],
@@ -408,7 +408,7 @@ export const paginasFerramentas: PaginaFerramenta[] = [
     comoFunciona: [
       'Você abre a sala e informa nome, e-mail, cargo e, se quiser, seu nível de inglês.',
       'Entra na sala principal com vídeo, microfone e chat.',
-      'O moderador divide a turma em salas menores, para cada um falar mais, e envia cartões com o tema e o tempo da conversa.',
+      'O moderador divide o grupo em salas menores, para cada um falar mais, e envia cartões com o tema e o tempo da conversa.',
       'No fim, você responde um bilhete de saída rápido: como foi sua confiança e qual palavra nova levou.',
     ],
     recursos: [
@@ -452,21 +452,21 @@ export const paginasFerramentas: PaginaFerramenta[] = [
     id: 'meet',
     titulo: 'Meet: a agenda dos encontros de conversação da comunidade',
     descricao:
-      'No ETT Meet a comunidade propõe encontros de conversação em inglês, online ou presenciais, confirma presença e acompanha a agenda.',
+      'No ETT Meet a comunidade propõe encontros extras de conversação em inglês, confirma presença e acompanha a agenda deles.',
     resumo:
-      'O ETT Meet é a agenda dos encontros de conversação. Você vê os encontros marcados e também pode propor o seu: quando gente suficiente confirma presença, o encontro entra na agenda oficial.',
+      'O ETT Meet é a agenda dos encontros de conversação. Você vê os encontros marcados e também pode propor o seu: quando gente suficiente confirma presença, o encontro é confirmado no Meet. Os encontros fixos do ETT (online às segundas e IEP Talks aos sábados) ficam na agenda do site.',
     paraQuem:
       'Para quem quer achar um encontro de conversação, online ou presencial, ou reunir pessoas para conversar em inglês num horário que funciona para você.',
     comoFunciona: [
       'Você vê no calendário os encontros marcados e o status de cada um.',
       'Para propor um encontro, cria uma conta, escolhe tema, data e formato e convida duas pessoas novas.',
       'Os convidados confirmam pelo link que recebem por e-mail.',
-      'Com 4 confirmações (online) ou 6 (presencial), ou com a aprovação do ETT, o encontro entra na agenda oficial.',
+      'Com 4 confirmações (online) ou 6 (presencial), ou com a aprovação do ETT, o encontro proposto é confirmado no Meet.',
     ],
     recursos: [
       {
         titulo: 'Calendário por status',
-        texto: 'Aguardando confirmações, quórum atingido e agenda oficial, em visão de mês ou de semana.',
+        texto: 'Aguardando confirmações, quórum atingido e confirmado, em visão de mês ou de semana.',
       },
       {
         titulo: 'Avisos por e-mail',

@@ -13,6 +13,7 @@ import {
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { partnerPosts, getPartnerPost } from '@/lib/partner-posts'
+import ProximasDatas from '@/components/blog/ProximasDatas'
 
 const SITE_URL = 'https://englishtalktime.com.br'
 const ORG_ID = `${SITE_URL}/#organization`
@@ -72,6 +73,8 @@ export default function PartnerPostPage({
 }) {
   const post = getPartnerPost(params.slug)
   if (!post) notFound()
+  const ehVideo = post.formato === 'video'
+  const conteudo = ehVideo ? 'vídeo' : 'artigo'
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -182,7 +185,7 @@ export default function PartnerPostPage({
                     {post.partnerAuthor ? ` · ${post.partnerAuthor}` : ''}
                   </span>
                   <span className="text-xs text-ink-subtle">
-                    Curadoria ETT · artigo publicado em {formatDate(post.partnerDate)}
+                    Curadoria ETT · {conteudo} publicado em {formatDate(post.partnerDate)}
                   </span>
                 </span>
               </a>
@@ -194,7 +197,7 @@ export default function PartnerPostPage({
         <article className="bg-surface-alt border-y border-surface-line">
           <div className="container mx-auto px-4 py-10 md:py-14">
             <div className="max-w-3xl mx-auto prose-blog">
-              <h2>O que o artigo diz</h2>
+              <h2>O que o {conteudo} diz</h2>
               {post.summary.map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
@@ -221,7 +224,7 @@ export default function PartnerPostPage({
                   </a>
                   <div>
                     <p className="text-ink font-semibold leading-snug">
-                      Leia o artigo completo no {post.partnerName}
+                      {ehVideo ? 'Assista ao vídeo completo' : 'Leia o artigo completo'} no {post.partnerName}
                     </p>
                     <p className="text-ink-muted text-sm mt-1 leading-relaxed">
                       “{post.partnerTitle}”
@@ -235,7 +238,7 @@ export default function PartnerPostPage({
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-navy !text-white !no-underline font-bold text-sm hover:bg-brand-navy/90 transition-all"
                 >
-                  Ler no site do parceiro <ExternalLink className="w-4 h-4" />
+                  {ehVideo ? 'Assistir' : 'Ler'} no site do parceiro <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
             </div>
@@ -254,23 +257,24 @@ export default function PartnerPostPage({
                 <h2 className="text-2xl md:text-3xl font-bold text-ink mb-3 leading-tight">
                   Da teoria pra prática: venha falar inglês
                 </h2>
-                <p className="text-ink-muted leading-relaxed mb-6">
-                  Online toda segunda às 20h ou no IEP Talks, sábados às 10h, em Curitiba. Os
-                  encontros são gratuitos e abertos; as ferramentas do ETT Player vêm na ativação
-                  acompanhada, com 30 dias de acesso e orientação individual.
+                <p className="text-ink-muted leading-relaxed mb-3">
+                  Online às segundas, às 20h, na sala do ETT Speak, ou no IEP Talks, aos sábados
+                  às 10h, no IEP (Rua Emiliano Perneta, 174, Curitiba). Os encontros são
+                  gratuitos, abertos a qualquer pessoa e sem cadastro: é só aparecer.
                 </p>
+                <ProximasDatas />
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href={FORM_URL}
+                  <Link
+                    href="/agenda/"
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all"
                   >
-                    Quero participar <ArrowRight className="w-4 h-4" />
-                  </a>
+                    Ver a agenda dos encontros <ArrowRight className="w-4 h-4" />
+                  </Link>
                   <Link
-                    href="/conversacao/"
+                    href={FORM_URL}
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-surface-line text-ink font-semibold text-sm hover:border-brand-red/40 hover:bg-surface-card transition-all"
                   >
-                    Saber como funciona
+                    Receber as datas por e-mail
                   </Link>
                 </div>
               </div>

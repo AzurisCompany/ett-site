@@ -56,7 +56,7 @@ export default function PlayerShowcase() {
             <span className="gradient-text">ETT Player</span>
           </h2>
           <p className="text-ink-muted max-w-2xl mx-auto text-lg">
-            Diagnóstico, planner de fala, conversa guiada, flashcards, vídeos com legenda, audiolivro e rádio
+            Diagnóstico, diário de fala, flashcards, vídeos com legenda, audiolivro e rádio
             num lugar só. Algumas ferramentas estão em versão beta.
           </p>
         </motion.div>
@@ -117,8 +117,8 @@ export default function PlayerShowcase() {
               <p className="flex items-start gap-2 text-ink-soft text-sm mb-5">
                 <Check className="w-5 h-5 text-brand-red flex-shrink-0" />
                 <span>
-                  <strong className="text-ink">Todas as ferramentas abertas por 30 dias</strong>
-                  na ativação acompanhada. Depois, o acesso continua numa das trilhas — e os encontros de
+                  <strong className="text-ink">As ferramentas são abertas pra experimentar.</strong>{' '}
+                  Quem quiser orientação faz a ativação acompanhada — e os encontros de
                   conversação seguem gratuitos de qualquer jeito.
                 </span>
               </p>

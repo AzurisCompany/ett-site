@@ -98,8 +98,8 @@ export default function Post() {
         </figure>
 
         <p>
-          O English Talk Time — Programa de Aceleração de Inglês para o Mercado Internacional —
-          acaba de firmar uma parceria com o portal{' '}
+          O English Talk Time — plataforma de apoio à prática do inglês, com ferramentas,
+          encontros de conversação e parceiros — firmou em junho de 2026 uma parceria com o portal{' '}
           <a href={PARTNER_URL} target="_blank" rel="noopener noreferrer">
             Aprendendo Inglês
           </a>
@@ -144,7 +144,7 @@ export default function Post() {
 
         <h2>Por que essa parceria é importante para o ETT?</h2>
         <p>
-          No ETT, acreditamos que inglês não se desenvolve apenas assistindo aulas. É preciso
+          No ETT, acreditamos que inglês não se desenvolve apenas estudando. É preciso
           criar rotina, praticar, errar, repetir, ouvir, falar e se expor ao idioma de forma
           constante.
         </p>
@@ -159,10 +159,9 @@ export default function Post() {
           reuniões, entrevistas, networking, apresentações e oportunidades internacionais.
         </p>
         <p>
-          Em breve, também anunciaremos novidades sobre uma nova iniciativa de formação em
-          parceria. Enquanto isso, você já pode conferir as nossas{' '}
-          <Link href="/blog/">indicações de leitura do Aprendendo Inglês aqui no blog</Link> —
-          resumimos os melhores artigos do parceiro com o nosso ângulo pra quem é de tech.
+          Você pode conferir as nossas{' '}
+          <Link href="/blog/">indicações do Aprendendo Inglês aqui no blog</Link> — resumimos
+          conteúdos do parceiro com o nosso ângulo e o link pro original no site dele.
         </p>
         <p>
           <a href={PARTNER_URL} target="_blank" rel="noopener noreferrer">

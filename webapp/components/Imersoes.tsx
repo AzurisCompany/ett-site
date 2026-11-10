@@ -44,12 +44,12 @@ const complemento = [
     quando: 'Antes',
     icon: Gauge,
     texto:
-      'Faça o diagnóstico de nível no Level Check e revise vocabulário nos Flashcards pra chegar com mais repertório.',
+      'Faça o diagnóstico de vocabulário no Level Check e revise palavras nos Flashcards pra chegar com mais repertório. As ferramentas estão abertas pra experimentar no ETT Player.',
   },
   {
     quando: 'Antes e durante',
     icon: Film,
-    texto: 'Séries com legenda, audiolivro e rádio em inglês ajudam a acostumar o ouvido.',
+    texto: 'Vídeos com legenda (Legendas), audiolivro (AudioBook) e rádio em inglês (Radio), no ETT Player, ajudam a acostumar o ouvido.',
   },
   {
     quando: 'Depois',
@@ -60,7 +60,7 @@ const complemento = [
   {
     quando: 'Depois',
     icon: Layers,
-    texto: 'Conversa guiada no Speak e o plano diário no Daily ajudam a manter a rotina de prática.',
+    texto: 'O Daily, planner de prática falada do ETT Player (diário, cartões de conversa e pitch respondidos em voz alta), ajuda a manter a rotina entre um encontro e outro.',
   },
 ]
 
@@ -132,7 +132,7 @@ export default function Imersoes() {
               <div className="text-xs uppercase tracking-widest text-ink-subtle font-semibold mb-1">
                 Oferecido por
               </div>
-              <div className="text-lg font-bold text-ink mb-1">Cherry Top Business Communication</div>
+              <div className="text-lg font-bold text-ink mb-1">Cherry Top</div>
               <p className="text-ink-muted text-sm leading-relaxed">
                 Programa, condução, inscrição, investimento e condições. Método Bonding +
                 Native-like.
@@ -143,8 +143,9 @@ export default function Imersoes() {
                 Apoio do ETT
               </div>
               <p className="text-ink-muted text-sm leading-relaxed">
-                Divulga as turmas, encaminha quem tem interesse e oferece ferramentas e encontros
-                de conversação pra praticar antes e depois.
+                Divulga as turmas e repassa o contato de quem tem interesse. Pra praticar antes e
+                depois: encontros de conversação gratuitos e as ferramentas do ETT Player, abertas
+                pra experimentar.
               </p>
             </div>
           </div>
@@ -300,7 +301,7 @@ export default function Imersoes() {
             ))}
           </div>
           <div className="text-center mt-8">
-            <Link href="/#ferramentas" className="text-sm font-semibold text-brand-red hover:underline">
+            <Link href="/ferramentas/" className="text-sm font-semibold text-brand-red hover:underline">
               Ver todas as ferramentas →
             </Link>
           </div>

@@ -49,7 +49,17 @@ export type Porta = {
   destaque?: boolean
 }
 
-/** A porta de entrada: a ativação acompanhada (única, desde 09/11/2026). */
+/**
+ * A porta de entrada: a ativação acompanhada (única, desde 09/11/2026).
+ *
+ * Decisões de 09/11/2026 (AUDITORIA-CONTEUDO-2026-11-09.md): o ETT Player
+ * continua ABERTO pra experimentar — a ativação NÃO vende acesso às
+ * ferramentas, vende orientação, plano, material e acompanhamento. Não
+ * prometer conta, histórico, contador nem selo: as ferramentas guardam o
+ * progresso só no navegador. Speak/Meet são a sala e a agenda dos encontros
+ * gratuitos — nunca entram como item pago. Vídeos de demonstração ainda não
+ * existem (fora da lista até serem gravados).
+ */
 export const portas: Porta[] = [
   {
     id: 'entrar',
@@ -57,19 +67,18 @@ export const portas: Porta[] = [
     preco: `R$ ${PRECO_ADESAO}`,
     precoNota: 'seu 1º mês · pagamento único',
     paraQuem:
-      'Sua entrada na plataforma: 30 dias com todas as ferramentas e orientação individual pra conhecer tudo, organizar a rotina de prática e configurar atividades pros seus objetivos.',
+      'Seu primeiro mês com orientação individual: alguém do ETT monta com você o plano de prática e configura as ferramentas do ETT Player pros seus objetivos.',
     itens: [
-      'Todas as ferramentas do ETT Player por 30 dias',
       '2 sessões individuais de 1 hora de orientação',
-      'Diagnóstico de nível e vocabulário (Level Check) e plano de prática montados com você',
+      'Diagnóstico de nível e vocabulário feito com você',
+      'Plano de prática montado pros seus objetivos',
       'Material de prática personalizado',
-      'Vídeos de demonstração das ferramentas',
-      'Conta no ETT Player e sala do ETT Speak',
-      'Acompanhamento e feedback das ferramentas',
+      'Ferramentas do ETT Player configuradas pra sua rotina',
+      'Acompanhamento durante os 30 dias',
     ],
     rodape:
-      'Orientação de uso da plataforma, não aula particular. Cobrado uma vez, não vira mensalidade. No dia 31 você escolhe uma trilha. Os encontros continuam abertos a todos.',
-    cta: 'Fazer minha adesão',
+      'Orientação de uso da plataforma, não aula particular. Cobrado uma vez, não vira mensalidade. As ferramentas do Player são abertas pra experimentar e os encontros são gratuitos pra todos. No dia 31 você escolhe uma trilha.',
+    cta: 'Fazer minha ativação',
     destaque: true,
   },
 ]
@@ -87,18 +96,22 @@ export type Trilha = {
   href: string
 }
 
+/** Definição única da meta da Aceleração — repetir igual em todo lugar. */
+export const DIA_VALIDO = `dia em que você fez a prática do seu plano (cerca de 1 hora), nas ferramentas ou num encontro de conversação`
+
 /**
- * O que acontece depois dos 30 dias. A Dedicação vem primeiro: é a opção
- * padrão, e a Aceleração é a exceção pra quem topa a rotina medida.
+ * O que acontece depois dos 30 dias. Desde 09/11/2026 as trilhas vendem a
+ * CONTINUIDADE do acompanhamento (plano revisado, material atualizado,
+ * feedback do ETT), não acesso às ferramentas — que continuam abertas.
  */
 export const trilhas: Trilha[] = [
   {
     id: 'dedicacao',
     nome: 'Trilha de Dedicação',
     preco: `R$ ${PRECO_MENSAL}/mês`,
-    custoReal: 'Sem rotina obrigatória — 1h de dedicação por dia.',
+    custoReal: 'Sem meta: pratique no seu ritmo.',
     descricao:
-      'Modalidade de acesso às ferramentas: Player completo, plano personalizado e acompanhamento, no ritmo que você quiser. O sistema registra sua evolução e devolve feedback das ferramentas.',
+      'O acompanhamento continua todo mês: plano de prática revisado, material personalizado atualizado e feedback do ETT, sem meta obrigatória.',
     condicao: `Cancela quando quiser, direto no checkout. Anual por R$ ${PRECO_ANUAL}.`,
     href: '/planos/dedicacao/',
   },
@@ -108,7 +121,7 @@ export const trilhas: Trilha[] = [
     preco: 'R$ 0',
     precoAncora: `R$ ${PRECO_MENSAL}/mês`,
     custoReal: 'Custa 1h da sua dedicação por dia.',
-    descricao: `Modalidade de acesso às ferramentas sem mensalidade: enquanto você mantiver presença nos encontros e ${META_DIAS} dias válidos por mês, não paga. O sistema acompanha e registra sua evolução — não é na confiança.`,
+    descricao: `O mesmo acompanhamento da Dedicação, sem mensalidade, enquanto você mantiver ${META_DIAS} dias válidos de prática por mês.`,
     condicao:
       'Se parar, sua bolsa entra em pausa e você escolhe o mensal. Sem multa e sem cobrança retroativa.',
     href: '/planos/aceleracao/',
@@ -135,6 +148,14 @@ export type CartaoHome = {
   requisito?: string
 }
 
+const REQUISITO_TRILHA = `Pra entrar nesta trilha, primeiro você faz a ativação acompanhada de R$ ${PRECO_ADESAO}, que é o seu 1º mês. A trilha começa no dia 31.`
+
+const ITENS_ACOMPANHAMENTO = [
+  'Plano de prática revisado todo mês',
+  'Material personalizado atualizado com o seu vocabulário',
+  'Acompanhamento e feedback do ETT',
+]
+
 /**
  * As 3 opções como cartões cheios, na ordem do funil (ativação → trilhas). Cada botão leva à página
  * do plano, que explica e termina no checkout.
@@ -156,19 +177,13 @@ export const cartoesHome: CartaoHome[] = [
   {
     id: 'dedicacao',
     etiqueta: 'Depois da ativação',
-    requisito: `Pra entrar nesta trilha, primeiro você faz a ativação acompanhada de R$ ${PRECO_ADESAO}, que é o seu 1º mês. A trilha começa no dia 31.`,
+    requisito: REQUISITO_TRILHA,
     nome: 'Trilha de Dedicação',
     preco: `R$ ${PRECO_MENSAL}`,
     precoNota: 'por mês',
-    custoReal: 'Sem rotina obrigatória — 1h de dedicação por dia.',
-    paraQuem: 'Acesso às ferramentas no seu próprio ritmo.',
-    itens: [
-      'ETT Player completo — todas as ferramentas',
-      'Plano de prática personalizado',
-      'O sistema acompanha e registra sua evolução',
-      'Acompanhamento e feedback das ferramentas',
-      `Anual por R$ ${PRECO_ANUAL} — dois meses de desconto`,
-    ],
+    custoReal: 'Sem meta: pratique no seu ritmo.',
+    paraQuem: 'O acompanhamento continua todo mês, sem meta obrigatória.',
+    itens: [...ITENS_ACOMPANHAMENTO, `Anual por R$ ${PRECO_ANUAL} — dois meses de desconto`],
     rodape: 'Cancela quando quiser, direto no checkout.',
     cta: 'Ver a Trilha de Dedicação',
     href: '/planos/dedicacao/',
@@ -176,18 +191,16 @@ export const cartoesHome: CartaoHome[] = [
   {
     id: 'aceleracao',
     etiqueta: 'Depois da ativação',
-    requisito: `Pra entrar nesta trilha, primeiro você faz a ativação acompanhada de R$ ${PRECO_ADESAO}, que é o seu 1º mês. A trilha começa no dia 31.`,
+    requisito: REQUISITO_TRILHA,
     nome: 'Trilha de Aceleração',
     preco: 'R$ 0',
     precoAncora: `R$ ${PRECO_MENSAL}/mês`,
     custoReal: 'Custa 1h da sua dedicação por dia.',
-    paraQuem: 'Acesso às ferramentas pra quem topa manter a rotina e não quer pagar mensalidade.',
+    paraQuem: `O mesmo acompanhamento, sem mensalidade, pra quem mantém ${META_DIAS} dias válidos de prática por mês.`,
     itens: [
-      'ETT Player completo — todas as ferramentas',
-      'Presença nos encontros conta pra meta',
-      'O sistema acompanha e registra sua evolução',
-      'Acompanhamento e feedback das ferramentas',
-      'Um prêmio a cada mês de meta batida',
+      ...ITENS_ACOMPANHAMENTO,
+      'Encontros de conversação contam como dia válido',
+      'Material impresso no primeiro mês de meta batida',
     ],
     rodape: `${META_DIAS} dias válidos por mês. Se parar, sua bolsa entra em pausa — sem multa e sem cobrança retroativa.`,
     cta: 'Ver a Trilha de Aceleração',
@@ -228,38 +241,33 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
     nome: 'Ativação acompanhada',
     preco: `R$ ${PRECO_ADESAO}`,
     precoNota: 'seu 1º mês · cobrança única',
-    intro: `R$ ${PRECO_ADESAO}, uma vez só, e você entra na plataforma: 30 dias com todas as ferramentas do ETT Player abertas e duas sessões individuais de uma hora pra conhecer as ferramentas, organizar sua rotina de prática e configurar atividades adequadas aos seus objetivos — mais o diagnóstico e o material personalizado.`,
+    intro: `R$ ${PRECO_ADESAO}, uma vez só: seu primeiro mês com duas sessões individuais de uma hora pra montar o seu plano de prática, configurar as ferramentas do ETT Player pros seus objetivos e organizar a sua rotina, mais o material personalizado e o acompanhamento durante os 30 dias.`,
     videoTitulo: 'Como funcionam as duas sessões da ativação',
     blocos: [
       {
         titulo: 'Duas sessões individuais de uma hora',
         texto:
-          'É orientação de uso da plataforma, não aula particular de inglês. Na primeira, a gente roda o diagnóstico junto, monta o seu plano de estudos e configura a sua rotina diária. Uma semana depois vem o segundo, pra ajustar o que travou de verdade e ativar as ferramentas com conteúdo do seu nível — a sua série, o seu livro, a sua simulação.',
-      },
-      {
-        titulo: 'Todas as ferramentas abertas por 30 dias',
-        texto:
-          'O Level Check estima o seu nível e mapeia quais palavras faltam. A partir daí, flashcards de vocabulário, séries com legenda, audiolivro, rádio, conversa guiada com correção e o plano diário ficam liberados, sem versão reduzida e sem trava por ferramenta. Os vídeos de demonstração ficam disponíveis pra assistir quando quiser.',
+          'É orientação de uso da plataforma, não aula particular de inglês. Na primeira, vocês fazem o diagnóstico juntos, montam o seu plano de prática e configuram a sua rotina. Na segunda, ajustam o que travou e escolhem conteúdo do seu nível nas ferramentas: a sua série, o seu livro, a sua rádio.',
       },
       {
         titulo: 'Material de prática personalizado',
         texto:
-          'O material é gerado a partir do seu diagnóstico: as palavras que faltam pra você, no contexto que você usa. Não é apostila genérica de curso — muda de pessoa pra pessoa, e muda de mês pra mês conforme você avança.',
+          'O material é gerado a partir do seu diagnóstico: as palavras que faltam pra você, no contexto que você usa. Não é apostila genérica de curso.',
       },
       {
-        titulo: 'Os encontros continuam abertos',
+        titulo: 'As ferramentas e os encontros são abertos',
         texto:
-          'O encontro online de segunda, 20h, e o IEP Talks de sábado, 10h, em Curitiba, são abertos a todos, com ou sem adesão. A diferença é que você chega com o plano montado e sabendo o que praticar.',
+          'As ferramentas do ETT Player ficam abertas pra experimentar, e os encontros de conversação são gratuitos pra todos. A ativação não é o que dá acesso a eles: é o que te ajuda a usar tudo isso com um plano.',
       },
       {
         titulo: 'No dia 31, você escolhe sua trilha',
         texto:
-          'Depois de 30 dias usando as ferramentas e participando dos encontros online e presenciais, você já sabe como a plataforma encaixa na sua rotina. Aí escolhe: a Trilha de Dedicação, no seu ritmo, ou a Trilha de Aceleração, sem mensalidade pra quem mantém a meta.',
+          'Se quiser que o acompanhamento continue, escolhe a Trilha de Dedicação, no seu ritmo, ou a Trilha de Aceleração, sem mensalidade pra quem mantém a meta.',
       },
     ],
     inclui: portas[0].itens,
     observacao: `Cobrança única — não vira mensalidade. PIX ou cartão em até 3x. Compra pela internet tem 7 dias de arrependimento garantidos por lei. Nota fiscal emitida pela Azuris.`,
-    ctaLabel: `Fazer minha adesão — R$ ${PRECO_ADESAO}`,
+    ctaLabel: `Fazer minha ativação — R$ ${PRECO_ADESAO}`,
     ctaHref: CHECKOUT_ADESAO,
   },
 
@@ -270,42 +278,36 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
     preco: `R$ ${PRECO_MENSAL}`,
     precoNota: 'por mês, a partir do 2º mês',
     requisito: `Pra assinar a Dedicação, primeiro você faz a ativação acompanhada de R$ ${PRECO_ADESAO}, que é o seu 1º mês. A mensalidade de R$ ${PRECO_MENSAL} começa no dia 31.`,
-    destaqueFrase: 'Sem rotina obrigatória — 1h de dedicação por dia.',
+    destaqueFrase: 'Sem meta: pratique no seu ritmo.',
     intro:
-      'Uma modalidade de acesso às ferramentas, no seu ritmo, com acompanhamento. A dedicação sugerida é de uma hora por dia, mas ninguém mede e ninguém cobra meta de você.',
+      'O acompanhamento da ativação continua todo mês: plano de prática revisado, material atualizado e feedback do ETT. A sugestão é praticar cerca de uma hora por dia, mas ninguém cobra meta de você.',
     videoTitulo: 'O que você recebe na Trilha de Dedicação',
     blocos: [
       {
-        titulo: 'Todas as ferramentas, sem trava',
+        titulo: 'Plano revisado todo mês',
         texto:
-          'ETT Player completo: diagnóstico, plano diário, flashcards, séries com legenda, audiolivro, rádio e conversa guiada. Nada fica bloqueado.',
+          'O seu plano de prática é revisto conforme você avança: o que já ficou fácil sai, o que ainda trava entra.',
       },
       {
-        titulo: 'O sistema acompanha e registra sua evolução',
+        titulo: 'Material que acompanha o seu vocabulário',
         texto:
-          'Cada palavra revisada, cada episódio, cada simulação entra no seu histórico. As ferramentas devolvem feedback do que você está acertando e do que precisa voltar — você não estuda no escuro.',
+          'O material personalizado se refaz com as palavras que você ainda precisa, no contexto que você usa.',
       },
       {
-        titulo: 'Os encontros continuam abertos',
+        titulo: 'As ferramentas e os encontros continuam abertos',
         texto:
-          'O encontro online de segunda e o IEP Talks de sábado são abertos a todos — a assinatura não é o que dá acesso a eles. É na conversa que o vocabulário sai do papel.',
+          'As ferramentas do ETT Player são abertas pra experimentar, e o encontro online de segunda e o IEP Talks de sábado são gratuitos pra todos. A assinatura não é o que dá acesso a eles.',
       },
       {
         titulo: 'Sem amarras',
         texto: `Cancela quando quiser, direto no checkout, sem multa e sem precisar falar com ninguém. Se preferir pagar de uma vez, o anual sai por R$ ${PRECO_ANUAL} — dois meses de desconto.`,
       },
     ],
-    inclui: [
-      'ETT Player completo — todas as ferramentas',
-      'Plano de estudos personalizado',
-      'O sistema acompanha e registra sua evolução',
-      'Acompanhamento e feedback das ferramentas',
-      `Anual por R$ ${PRECO_ANUAL} — dois meses de desconto`,
-    ],
-    observacao: `A Trilha de Dedicação começa no dia 31, depois dos 30 dias inclusos na adesão de R$ ${PRECO_ADESAO}. Nota fiscal emitida pela Azuris.`,
+    inclui: [...ITENS_ACOMPANHAMENTO, `Anual por R$ ${PRECO_ANUAL} — dois meses de desconto`],
+    observacao: `A Trilha de Dedicação começa no dia 31, depois do primeiro mês incluído na ativação de R$ ${PRECO_ADESAO}. Nota fiscal emitida pela Azuris.`,
     ctaLabel: `Começar pela ativação — R$ ${PRECO_ADESAO}`,
     ctaHref: CHECKOUT_ADESAO,
-    ctaNota: `Todo mundo começa pela ativação acompanhada: R$ ${PRECO_ADESAO}, uma vez, que é o seu primeiro mês, com todas as ferramentas e duas sessões de orientação. No fim dos 30 dias, você assina a Trilha de Dedicação por R$ ${PRECO_MENSAL}/mês.`,
+    ctaNota: `Todo mundo começa pela ativação acompanhada: R$ ${PRECO_ADESAO}, uma vez, que é o seu primeiro mês, com duas sessões de orientação. No fim dos 30 dias, você assina a Trilha de Dedicação por R$ ${PRECO_MENSAL}/mês.`,
     ctaSecundario: {
       texto: 'Já fez a ativação?',
       label: `Assinar a Dedicação — R$ ${PRECO_MENSAL}/mês`,
@@ -321,23 +323,21 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
     precoAncora: `R$ ${PRECO_MENSAL}/mês`,
     requisito: `Pra entrar na Aceleração, primeiro você faz a ativação acompanhada de R$ ${PRECO_ADESAO}, que é o seu 1º mês. A partir do dia 31, a mensalidade fica em R$ 0 enquanto você mantiver a meta.`,
     destaqueFrase: 'Custa 1h da sua dedicação por dia.',
-    intro:
-      'Uma modalidade de acesso às ferramentas sem mensalidade. Você paga com uma hora da sua dedicação por dia — e o sistema acompanha isso por você.',
+    intro: `O mesmo acompanhamento da Trilha de Dedicação, sem mensalidade. Você paga com prática: ${META_DIAS} dias válidos por mês.`,
     videoTitulo: 'Como a meta funciona na prática',
     blocos: [
       {
         titulo: `A meta: ${META_DIAS} dias válidos por mês`,
-        texto:
-          'É cerca de uma hora por dia, cinco dias por semana. O que conta não é tempo de tela: é dia válido — o dia em que as tarefas daquele dia foram concluídas. Fim de semana livre, e sobra margem pra semana ruim.',
+        texto: `Dia válido é o ${DIA_VALIDO}. Dá cerca de cinco dias por semana: fim de semana livre e margem pra semana ruim.`,
       },
       {
-        titulo: 'O sistema acompanha e registra sua evolução',
+        titulo: 'Como a meta é acompanhada',
         texto:
-          'O contador fica visível o tempo todo no Player, então você sempre sabe onde está. Não é na confiança e não existe discussão sobre se a hora contou — é o mesmo histórico que devolve o feedback das ferramentas.',
+          'Hoje você registra os seus dias de prática e o ETT confere no acompanhamento. A medição automática dentro do ETT Player ainda está em construção.',
       },
       {
-        titulo: 'Cada mês de meta batida tem um prêmio',
-        texto: `No primeiro, o seu material de prática impresso (R$ ${PRECO_APOSTILA}), entregue em mãos no IEP Talks ou enviado pra sua casa. Nos meses seguintes ele se refaz com o seu vocabulário atual — muda porque você mudou.`,
+        titulo: 'Prêmio no primeiro mês de meta batida',
+        texto: `O seu material de prática impresso (R$ ${PRECO_APOSTILA}), entregue em mãos no IEP Talks ou enviado pra sua casa.`,
       },
       {
         titulo: 'E se eu não bater a meta?',
@@ -346,15 +346,12 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
       },
     ],
     inclui: [
-      'ETT Player completo — todas as ferramentas',
-      'Plano de estudos personalizado',
-      'O sistema acompanha e registra sua evolução',
-      'Acompanhamento e feedback das ferramentas',
-      'Presença nos encontros conta pra meta',
-      'Um prêmio a cada mês de meta batida',
+      ...ITENS_ACOMPANHAMENTO,
+      'Encontros de conversação contam como dia válido',
+      'Material impresso no primeiro mês de meta batida',
     ],
     observacao:
-      'Perder a bolsa nunca tira o seu acesso aos encontros. Eles são abertos de qualquer forma.',
+      'Perder a bolsa nunca tira o seu acesso aos encontros nem às ferramentas abertas do ETT Player.',
     ctaLabel: `Começar pela ativação — R$ ${PRECO_ADESAO}`,
     ctaHref: CHECKOUT_ADESAO,
     ctaSecundario: {
@@ -372,21 +369,13 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
  * ⚠️ Só entra aqui prêmio que já existe. Os prêmios de parceiro (aula
  * particular no IEP, revisão de currículo com a Coders, vaga em imersão da
  * Cherry Top) ficam FORA até os acordos estarem por escrito — prometer prêmio
- * de terceiro sem acordo é dívida publicada.
+ * de terceiro sem acordo é dívida publicada. O "selo de sequência no Player"
+ * saiu em 09/11/2026: o Player não tem conta.
  */
 export const premios = [
   {
     marco: 'No primeiro mês',
     premio: `Seu material de prática impresso (R$ ${PRECO_APOSTILA}), entregue em mãos no IEP Talks ou enviado pra sua casa.`,
-  },
-  {
-    marco: 'Nos meses seguintes',
-    premio:
-      'O material se refaz com o seu vocabulário atual — ele muda porque você mudou.',
-  },
-  {
-    marco: 'Sempre',
-    premio: 'Selo de sequência no Player, com os meses acumulados ao lado do seu nome.',
   },
 ]
 
@@ -394,11 +383,16 @@ export const faqCobranca = [
   {
     pergunta: 'Preciso pagar pra ir nos encontros?',
     resposta:
-      'Não. O encontro online de segunda, 20h, é aberto pra qualquer pessoa, sem cadastro e sem pagar. Isso não muda. Os planos existem pra quem quer as ferramentas e o acompanhamento entre um encontro e outro.',
+      'Não. O encontro online de segunda, 20h, e o IEP Talks de sábado, 10h, são abertos pra qualquer pessoa, sem cadastro e sem pagar. Isso não muda. A ativação e as trilhas são pra quem quer orientação e acompanhamento entre um encontro e outro.',
   },
   {
-    pergunta: `A adesão de R$ ${PRECO_ADESAO} vira mensalidade?`,
-    resposta: `Não. É cobrança única. Ela é a ativação acompanhada: inclui os 30 primeiros dias com todas as ferramentas, as duas sessões individuais de 1 hora, o diagnóstico e o material personalizado. Só a partir do dia 31 é que existe mensalidade — e só se você escolher a Trilha de Dedicação.`,
+    pergunta: `A ativação de R$ ${PRECO_ADESAO} vira mensalidade?`,
+    resposta: `Não. É cobrança única e cobre o seu primeiro mês: as duas sessões individuais de 1 hora, o diagnóstico, o plano e o material personalizado. Só a partir do dia 31 existe mensalidade, e só se você escolher a Trilha de Dedicação.`,
+  },
+  {
+    pergunta: 'Preciso pagar pra usar as ferramentas do ETT Player?',
+    resposta:
+      'Não. As ferramentas do ETT Player são abertas pra experimentar. O que a ativação acrescenta é a orientação individual, o plano de prática e o material personalizado pra você usar as ferramentas com método.',
   },
   {
     pergunta: 'E se eu não bater a meta da Aceleração?',
@@ -416,9 +410,9 @@ export const faqCobranca = [
       'Pode. Compra pela internet tem 7 dias de arrependimento garantidos pelo Código de Defesa do Consumidor (art. 49). Dentro desse prazo, devolvemos o valor integral.',
   },
   {
-    pergunta: 'Eu já me cadastrei antes numa trilha gratuita. Vou passar a pagar?',
+    pergunta: 'Eu já tinha ativado o teste gratuito. Vou passar a pagar?',
     resposta:
-      'Não. Quem se cadastrou antes desta página mudar fica isento da adesão. Não existe cobrança retroativa.',
+      'Não. Quem ativou o teste gratuito de 30 dias até 09/11/2026 está isento da ativação. Não existe cobrança retroativa.',
   },
   {
     pergunta: 'Quem emite a nota fiscal?',

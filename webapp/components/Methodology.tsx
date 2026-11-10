@@ -34,7 +34,7 @@ const pillars = [
     icon: MessageSquare,
     title: 'Prática real e conversação guiada',
     description:
-      'O idioma só se torna utilizável quando você fala, escuta e responde. Os encontros têm tema, perguntas e rodadas pra todo mundo falar, e o Speak permite ensaiar conversas guiadas entre um encontro e outro.',
+      'O idioma só se torna utilizável quando você fala, escuta e responde. Os encontros têm tema, perguntas e rodadas pra todo mundo falar, e entre um encontro e outro o Daily traz um exercício de fala por dia.',
     color: 'brand-red',
     partner: 'Encontros do ETT (online e IEP Talks) + Speak',
   },

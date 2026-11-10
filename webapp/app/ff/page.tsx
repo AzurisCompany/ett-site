@@ -21,9 +21,9 @@ const jsonLd = {
 
 export const metadata: Metadata = {
   title:
-    'Fórmula Fluente — Como Treinar Fala em Inglês com Método | Metodologia ETT',
+    'Fórmula Fluente — o Método de Frank Florida para Organizar o Estudo de Inglês | ETT',
   description:
-    'A metodologia que sustenta o treino de fala do ETT: Threshold + Imersão = Fluência. Os 4 pilares (escrever, falar, ouvir, ler), os 4 estágios da competência, plano em 10 passos e as 3 camadas de imersão. Adaptado de Frank Florida — +365 mil alunos.',
+    'Resumo do método da Fórmula Fluente, de Frank Florida, parceira do ETT: Threshold + Imersão = Fluência. Os 4 pilares (escrever, falar, ouvir, ler), os 4 estágios da competência, o plano em 10 passos e as 3 camadas de imersão.',
   keywords: [
     'como treinar fala em inglês',
     'metodologia para destravar inglês',
@@ -38,24 +38,22 @@ export const metadata: Metadata = {
     canonical: '/ff/',
     languages: {
       'pt-BR': `${SITE_URL}/ff/`,
-      en: `${SITE_URL}/en/method/`,
-      es: `${SITE_URL}/es/metodo/`,
       'x-default': `${SITE_URL}/ff/`,
     },
   },
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    title: 'Fórmula Fluente — Metodologia do treino de fala em inglês do ETT',
+    title: 'Fórmula Fluente — o método de Frank Florida, parceiro do ETT',
     description:
-      'Threshold + Imersão. O método de Frank Florida que organiza o estudo em blocos curtos, vocabulário relevante e repetição orientada — a base das ferramentas do ETT.',
+      'Threshold + Imersão. O método de Frank Florida, da Fórmula Fluente, que organiza o estudo em blocos curtos, vocabulário relevante e repetição orientada. O ETT usa e apoia o método.',
     url: 'https://englishtalktime.com.br/ff/',
     images: [
       {
         url: '/images/og-ett-2026.png',
         width: 1200,
         height: 630,
-        alt: 'Fórmula Fluente — metodologia de treino de fala em inglês do ETT',
+        alt: 'Fórmula Fluente — método de Frank Florida, parceiro do ETT',
       },
     ],
   },

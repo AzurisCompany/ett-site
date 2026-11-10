@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock, Tag } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { type BlogPostMeta, getRelatedPosts } from '@/lib/blog-posts'
+import ProximasDatas from '@/components/blog/ProximasDatas'
 
 const SITE_URL = 'https://englishtalktime.com.br'
 /* Captura oficial: formulário do próprio site (RD Station). */
@@ -30,6 +31,11 @@ function formatDate(iso: string) {
     'dez',
   ]
   return `${parseInt(d, 10)} ${meses[parseInt(m, 10) - 1]} ${y}`
+}
+
+function formatDateBR(iso: string) {
+  const [y, m, d] = iso.split('-')
+  return `${d}/${m}/${y}`
 }
 
 export default function BlogLayout({ post, children }: BlogLayoutProps) {
@@ -71,6 +77,15 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
                 {post.title}
               </h1>
               <p className="text-ink-soft text-lg leading-relaxed">{post.description}</p>
+              {post.realizado && (
+                <p
+                  role="note"
+                  className="mt-6 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-surface-line bg-surface-card text-ink font-semibold text-sm"
+                >
+                  <Calendar className="w-4 h-4 text-brand-red" />
+                  Evento realizado em {formatDateBR(post.realizado)}
+                </p>
+              )}
             </div>
           </div>
         </header>
@@ -92,25 +107,26 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
                   Próximo passo
                 </span>
                 <h2 className="text-2xl md:text-3xl font-bold text-ink mb-3 leading-tight">
-                  Entre no grupo de conversação ETT
+                  Venha para um encontro de conversação do ETT
                 </h2>
-                <p className="text-ink-muted leading-relaxed mb-6">
-                  Online toda segunda às 20h ou no IEP Talks, sábados às 10h, em Curitiba. Os
-                  encontros são gratuitos e abertos; as ferramentas do ETT Player vêm na ativação
-                  acompanhada, com 30 dias de acesso e orientação individual.
+                <p className="text-ink-muted leading-relaxed mb-3">
+                  Online às segundas, às 20h, na sala do ETT Speak, ou no IEP Talks, aos sábados
+                  às 10h, no IEP (Rua Emiliano Perneta, 174, Curitiba). Os encontros são
+                  gratuitos, abertos a qualquer pessoa e sem cadastro: é só aparecer.
                 </p>
+                <ProximasDatas />
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href={FORM_URL}
+                  <Link
+                    href="/agenda/"
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all"
                   >
-                    Quero participar <ArrowRight className="w-4 h-4" />
-                  </a>
+                    Ver a agenda dos encontros <ArrowRight className="w-4 h-4" />
+                  </Link>
                   <Link
-                    href="/conversacao/"
+                    href={FORM_URL}
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-surface-line text-ink font-semibold text-sm hover:border-brand-red/40 hover:bg-surface-card transition-all"
                   >
-                    Saber como funciona
+                    Receber as datas por e-mail
                   </Link>
                 </div>
               </div>

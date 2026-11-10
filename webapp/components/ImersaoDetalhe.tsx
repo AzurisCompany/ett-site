@@ -48,6 +48,8 @@ export type ImersaoDetalheProps = {
   fotosLegenda: string
   ctaLabel: string
   vagasInfo?: string
+  /** Chamada pra outra turma/curso relacionado (ex.: Curitiba → Business School). Sempre visível. */
+  relacionada?: { texto: string; href: string; label: string }
 }
 
 export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
@@ -121,7 +123,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
                 Oferecido por
               </div>
               <div className="text-xl font-bold text-ink mb-1">
-                Cherry Top Business Communication
+                Cherry Top
               </div>
               <p className="text-ink-muted text-sm">
                 Método <strong className="text-ink">{props.metodologia}</strong> · inscrição,
@@ -129,7 +131,8 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
               </p>
               <p className="text-ink-muted text-sm mt-1">
                 <strong className="text-brand-red">Apoio do ETT:</strong> divulgação, encaminhamento
-                do seu interesse e as ferramentas e os encontros pra praticar antes e depois.
+                do seu interesse, os encontros de conversação gratuitos e as ferramentas do ETT
+                Player, abertas pra experimentar, pra praticar antes e depois.
               </p>
             </div>
             <a
@@ -194,6 +197,17 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
                       </div>
                     </div>
                   ))}
+                  {props.relacionada && (
+                    <div className="p-4 rounded-xl bg-brand-red/5 border border-brand-red/20 text-sm text-ink-soft">
+                      {props.relacionada.texto}{' '}
+                      <Link
+                        href={props.relacionada.href}
+                        className="text-brand-red font-semibold underline underline-offset-2"
+                      >
+                        {props.relacionada.label}
+                      </Link>
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -246,11 +260,12 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
             <aside className="space-y-4 lg:sticky lg:top-24 lg:self-start">
               <div className="bg-gradient-to-br from-brand-red/10 via-surface-card to-brand-silver/10 border border-brand-red/30 rounded-2xl p-6">
                 <div className="text-xs text-ink-muted uppercase tracking-wider mb-1">
-                  Investimento
+                  Investimento da imersão
                 </div>
                 <div className="text-2xl font-bold text-ink mb-1">Sob consulta</div>
                 <div className="text-ink-muted text-sm mb-5">
-                  Inscrição, taxa de pré-inscrição e condições definidas pela Cherry Top
+                  Inscrição, taxa de pré-inscrição e condições definidas pela Cherry Top. Não tem
+                  relação com os planos do ETT.
                 </div>
                 {props.vagasInfo && (
                   <div className="flex items-center gap-2 text-ink-soft text-sm mb-5 pb-5 border-b border-surface-line">
@@ -374,7 +389,7 @@ export default function ImersaoDetalhe(props: ImersaoDetalheProps) {
             <p className="text-ink-muted text-lg mb-8">
               {todasEncerradas
                 ? 'Veja as turmas abertas da Cherry Top na página de imersões.'
-                : 'Preencha o formulário em 2 minutos. Nós repassamos seu contato para a Cherry Top, que fala com você sobre detalhes, valores e condições de inscrição.'}
+                : 'Preencha o formulário. Nós repassamos seu contato para a Cherry Top, que fala com você sobre detalhes, valores e condições de inscrição.'}
             </p>
             <a
               href={todasEncerradas ? '/imersoes/#proximas' : FORM_URL}

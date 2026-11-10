@@ -155,16 +155,16 @@ export default function FerramentasPage() {
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl md:text-3xl font-bold text-ink mb-3">Comece com orientação</h2>
               <p className="text-ink-muted leading-relaxed mb-6">
-                A ativação acompanhada abre todas as ferramentas por 30 dias, com duas sessões
-                individuais pra configurar tudo pros seus objetivos. Algumas ferramentas estão em versão
-                beta e podem mudar enquanto melhoram.
+                As ferramentas do ETT Player são abertas pra experimentar. Quem quiser usar com um
+                plano faz a ativação acompanhada: duas sessões individuais pra configurar tudo pros seus
+                objetivos. Algumas ferramentas estão em versão beta e podem mudar enquanto melhoram.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link
                   href="/planos/adesao/"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all"
                 >
-                  Começar na plataforma
+                  Orientação individual — R$ 97
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a

@@ -148,7 +148,7 @@ export default function FerramentasResumo() {
             href="/planos/adesao/"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg hover:-translate-y-0.5"
           >
-            Começar na plataforma
+            Orientação individual — R$ 97
             <ArrowRight className="w-4 h-4" />
           </Link>
           <a

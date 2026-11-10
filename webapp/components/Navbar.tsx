@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Globe } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { CHECKOUT_ADESAO, PRECO_ADESAO } from '@/lib/planos'
+import { CHECKOUT_ADESAO } from '@/lib/planos'
 import {
   nav,
   localeFromPath,
@@ -25,30 +25,14 @@ interface NavLink {
 
 function buildLinks(locale: Locale): NavLink[] {
   const m = nav[locale]
-  if (locale === 'en') {
+  // Menu EN/ES (09/11/2026): a versão em inglês/espanhol é uma página curta
+  // só, então o menu tem apenas as âncoras dela.
+  if (locale === 'en' || locale === 'es') {
+    const base = LOCALE_HOMES[locale]
     return [
-      { href: '/en/#about', label: m.about },
-      { href: '/en/#method', label: m.methodology },
-      { href: '/en/method/', label: m.formulafluente },
-      { href: '/imersoes', label: m.immersions, langTag: 'PT' },
-      { href: '/en/schedule/', label: m.agenda },
-      { href: '/en/#tools', label: m.tools },
-      { href: '/en/#partners', label: m.partners },
-      { href: '/en/#how', label: m.howItWorks },
-      { href: '/blog', label: m.blog, langTag: 'PT' },
-    ]
-  }
-  if (locale === 'es') {
-    return [
-      { href: '/es/#about', label: m.about },
-      { href: '/es/#method', label: m.methodology },
-      { href: '/es/metodo/', label: m.formulafluente },
-      { href: '/imersoes', label: m.immersions, langTag: 'PT' },
-      { href: '/es/agenda/', label: m.agenda },
-      { href: '/es/#tools', label: m.tools },
-      { href: '/es/#partners', label: m.partners },
-      { href: '/es/#how', label: m.howItWorks },
-      { href: '/blog', label: m.blog, langTag: 'PT' },
+      { href: `${base}#online`, label: m.online },
+      { href: `${base}#in-person`, label: m.inPerson },
+      { href: `${base}#faq`, label: m.faq },
     ]
   }
   // Menu pt-BR enxuto: a home simplificada não tem mais as âncoras #sobre,
@@ -65,8 +49,8 @@ function buildLinks(locale: Locale): NavLink[] {
 }
 
 function ctaHref(locale: Locale): string {
-  if (locale === 'en') return '/en/#signup'
-  if (locale === 'es') return '/es/#signup'
+  // EN/ES: leva à seção do encontro online, onde está o botão da sala.
+  if (locale === 'en' || locale === 'es') return `${LOCALE_HOMES[locale]}#online`
   return '/#inscricao'
 }
 
@@ -110,7 +94,7 @@ export default function Navbar() {
           />
           <Image
             src="/images/ett-logo-horizontal-positiva.svg"
-            alt="English Talk Time — Programa de Aceleração de Inglês"
+            alt="English Talk Time — plataforma de apoio à prática do inglês"
             width={218}
             height={48}
             className="hidden sm:block h-10 w-auto"
@@ -192,7 +176,7 @@ export default function Navbar() {
                 href={CHECKOUT_ADESAO}
                 className="px-4 py-2 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red whitespace-nowrap"
               >
-                Começar — R$ {PRECO_ADESAO}
+                Quero começar
               </a>
             )}
           </div>
@@ -255,7 +239,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
               className="mt-2 px-4 py-3 rounded-lg bg-brand-red-deep text-white font-bold text-sm text-center hover:bg-brand-red-deep/90 transition-all"
             >
-              Começar na plataforma — R$ {PRECO_ADESAO}
+              Quero começar
             </a>
           )}
           <Link

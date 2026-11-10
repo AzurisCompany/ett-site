@@ -43,6 +43,8 @@ export interface PartnerPost {
   summary: string[]
   /** por que o ETT recomenda / pra quem é (um parágrafo) */
   whyRead: string
+  /** formato do conteúdo do parceiro; muda os rótulos da página ("artigo" × "vídeo"). Padrão: 'artigo' */
+  formato?: 'artigo' | 'video'
 }
 
 export const partnerPosts: PartnerPost[] = [
@@ -55,6 +57,7 @@ export const partnerPosts: PartnerPost[] = [
     partnerLogo: '/images/aprendendoingles-logo.png',
     partnerAuthor: 'Steve Kaufmann (via Aprendendo Inglês)',
     partnerTitle: 'Why SLOW IS BETTER in language learning',
+    formato: 'video',
     title: 'Aprender inglês devagar é o que te faz chegar mais rápido',
     description:
       'Promessas de "fluência em 3 meses" vendem pressa, não resultado. Steve Kaufmann, que fala mais de 20 idiomas, defende o caminho oposto: aceitar que aprender leva tempo é justamente o que acelera. Resumo do vídeo indicado pelo parceiro Aprendendo Inglês + o ângulo do ETT.',

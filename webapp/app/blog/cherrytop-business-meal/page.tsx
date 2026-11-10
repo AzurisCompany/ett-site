@@ -7,8 +7,8 @@ import { getBlogPost } from '@/lib/blog-posts'
 const SLUG = 'cherrytop-business-meal'
 const SITE_URL = 'https://englishtalktime.com.br'
 const ORG_ID = `${SITE_URL}/#organization`
-const SALA_URL = 'https://ett-speak.vercel.app/r/cherrytop'
-const GRUPO_URL = 'https://chat.whatsapp.com/LEpi3Cm9cWv20kBHg5xjdb'
+// Evento realizado em 01/08/2026: os links da sala e do grupo de WhatsApp foram
+// retirados da página de propósito (decisão de 09/11/2026).
 const COVER = '/images/cherrytop-business-meal.webp'
 const post = getBlogPost(SLUG)!
 
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
         url: COVER,
         width: 1200,
         height: 630,
-        alt: 'CherryTop Business Meal — sábado, 1º de agosto, 12h, online e gratuito',
+        alt: 'CherryTop Business Meal — realizado no sábado, 1º de agosto de 2026, online e gratuito',
       },
     ],
   },
@@ -65,7 +65,7 @@ const jsonLd = {
       headline: post.title,
       description: post.description,
       datePublished: `${post.date}T18:00:00-03:00`,
-      dateModified: `${post.date}T18:00:00-03:00`,
+      dateModified: '2026-11-09T12:00:00-03:00',
       author: { '@id': ORG_ID },
       publisher: { '@id': ORG_ID },
       mainEntityOfPage: `${SITE_URL}/blog/${SLUG}/`,
@@ -81,7 +81,7 @@ const jsonLd = {
       '@type': 'Event',
       name: 'CherryTop Business Meal',
       description:
-        'Experiência imersiva online para praticar inglês de negócios — negotiation, networking e team building. Realização Cherry Top Business Communication, divulgação English Talk Time.',
+        'Experiência imersiva online para praticar inglês de negócios — negotiation, networking e team building. Realização Cherry Top, divulgação English Talk Time. Evento realizado em 01/08/2026.',
       startDate: '2026-08-01T12:00:00-03:00',
       endDate: '2026-08-01T13:00:00-03:00',
       eventStatus: 'https://schema.org/EventScheduled',
@@ -91,17 +91,9 @@ const jsonLd = {
         url: `${SITE_URL}/blog/${SLUG}/`,
         name: 'Online',
       },
-      organizer: { '@type': 'Organization', name: 'Cherry Top Business Communication' },
+      organizer: { '@type': 'Organization', name: 'Cherry Top', url: 'https://cherrytop.com.br' },
       isAccessibleForFree: true,
       inLanguage: ['pt-BR', 'en'],
-      offers: {
-        '@type': 'Offer',
-        price: '0',
-        priceCurrency: 'BRL',
-        availability: 'https://schema.org/InStock',
-        url: `${SITE_URL}/blog/${SLUG}/`,
-        validFrom: '2026-07-27T00:00:00-03:00',
-      },
       image: `${SITE_URL}${COVER}`,
       url: `${SITE_URL}/blog/${SLUG}/`,
     },
@@ -119,7 +111,7 @@ export default function Post() {
         <figure className="mb-8 overflow-hidden rounded-2xl border border-surface-line">
           <Image
             src={COVER}
-            alt="CherryTop Business Meal — sábado, 1º de agosto, 12h às 13h, online e gratuito"
+            alt="CherryTop Business Meal — realizado no sábado, 1º de agosto de 2026, online e gratuito"
             width={1200}
             height={630}
             className="w-full h-auto"
@@ -128,22 +120,21 @@ export default function Post() {
         </figure>
 
         <p>
-          No <strong>sábado, 1º de agosto de 2026, das 12h às 13h</strong> (horário de Brasília),
-          acontece o <strong>CherryTop Business Meal</strong> — uma experiência imersiva online
-          pra praticar inglês em situações de negócio. É gratuito, e no dia é só entrar na sala
-          no horário.
+          <strong>Este evento já aconteceu</strong> no <strong>sábado, 1º de agosto de 2026, das
+          12h às 13h</strong> (horário de Brasília). Deixamos o post no ar como registro do que
+          foi o <strong>CherryTop Business Meal</strong>: uma experiência imersiva online, gratuita,
+          pra praticar inglês em situações de negócio.
         </p>
         <p>
-          A realização é da <strong>Cherry Top Business Communication</strong>, parceira do ETT
-          nas imersões. O English Talk Time está divulgando pra comunidade — quem participa dos
-          nossos encontros de segunda tem aqui uma hora extra de prática, com um recorte
-          diferente.
+          A realização foi da <strong>Cherry Top</strong>, a parceira que oferece as imersões
+          divulgadas pelo ETT. O English Talk Time divulgou pra comunidade, como uma hora extra de
+          prática com um recorte diferente dos nossos encontros.
         </p>
 
-        <h2>O que se pratica</h2>
+        <h2>O que se praticou</h2>
         <p>
-          O foco não é gramática. São três situações que aparecem no trabalho de quem usa inglês
-          profissionalmente:
+          O foco não era gramática. Eram três situações que aparecem no trabalho de quem usa
+          inglês profissionalmente:
         </p>
         <ul>
           <li>
@@ -165,58 +156,31 @@ export default function Post() {
           de negócios.
         </p>
 
-        <h2>Como participar</h2>
+        <h2>Próximas atividades da Cherry Top</h2>
         <p>
-          No sábado, ao meio-dia, é só abrir a sala do encontro:
-        </p>
-        <p>
-          <a href={SALA_URL} target="_blank" rel="noopener noreferrer">
-            Entrar na sala do CherryTop Business Meal →
-          </a>
-        </p>
-        <p>
-          Vale entrar também no <strong>grupo de WhatsApp da atividade</strong> — é por lá que a
-          equipe da Cherry Top organiza as vagas e avisa qualquer mudança. E tem um detalhe que
-          faz diferença: na <strong>tarde de sábado</strong>, a equipe dá assistência online{' '}
-          <strong>one-to-one</strong> somente para quem estiver no grupo.
-        </p>
-        <p>
-          <a href={GRUPO_URL} target="_blank" rel="noopener noreferrer">
-            Entrar no grupo de WhatsApp do CherryTop Business Meal
-          </a>
-        </p>
-
-        <h2>“Meu inglês de negócios não é bom o suficiente”</h2>
-        <p>
-          É exatamente pra isso que serve. A sala é de gente treinando, não de gente exibindo
-          fluência — a mesma lógica dos encontros do ETT: ninguém é corrigido em público e
-          ninguém mede seu nível na porta.
+          As imersões e os cursos são da Cherry Top: ela define inscrição, valores e condições, e o
+          ETT divulga e repassa o contato de quem tem interesse. As turmas atuais estão em{' '}
+          <Link href="/imersoes/">imersões</Link>.
         </p>
 
         <h2>E os encontros do ETT?</h2>
         <p>
-          Seguem normalmente. O <strong>encontro de conversação do ETT é toda segunda, das 20h
-          às 21h30</strong>, online e gratuito — e uma vez por semana tem presencial em Curitiba,
-          alternando entre IEP, UTFPR, Hard Rock Cafe e Habitat. Dá pra ver as próximas datas
-          na <Link href="/agenda/">agenda</Link>.
-        </p>
-        <p>
-          O Business Meal de sábado é um extra: mesmo público, tema mais específico, realização
-          do parceiro.
+          Os encontros de conversação do ETT são gratuitos, abertos a qualquer pessoa e sem
+          cadastro: <strong>online às segundas, das 20h às 21h30</strong>, na sala do ETT Speak, e
+          o <strong>IEP Talks, aos sábados, das 10h às 12h</strong>, no IEP (Rua Emiliano Perneta,
+          174, Curitiba). As próximas datas ficam na <Link href="/agenda/">agenda</Link>.
         </p>
 
         <h2>Quer receber os próximos encontros por e-mail?</h2>
         <p>
           Se você prefere ser avisado em vez de ficar acompanhando o site, deixe nome e e-mail —
-          são os dois únicos campos obrigatórios. A gente avisa quando tiver encontro novo,
-          online ou presencial.
+          são os dois únicos campos obrigatórios. A gente manda o link do encontro e a agenda.
         </p>
         <p>
           <Link href="/#inscricao">Tenho interesse — quero receber as datas dos encontros →</Link>
         </p>
         <p>
-          Sem custo e sem venda no fim. Aparecer pra conhecer um encontro continua livre, sem
-          cadastro nenhum.
+          Aparecer pra conhecer um encontro continua livre, sem cadastro nenhum.
         </p>
       </BlogLayout>
     </>

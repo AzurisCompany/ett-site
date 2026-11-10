@@ -49,3 +49,6 @@ next-env.d.ts
 __pycache__/
 *.pyc
 webapp/scripts/tema/contraste.json
+
+# Rascunhos jurídicos com placeholders (revisão do advogado) — não publicar
+novoConteudo/juridico/

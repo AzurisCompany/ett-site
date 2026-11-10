@@ -8,12 +8,12 @@ import { ArrowRight, Check } from 'lucide-react'
 /* Posicionamento desde 31/10/2026: o ETT é uma PLATAFORMA de prática
    (ferramentas + conversação + parceiros), não um curso. Ver
    PLANO-REPOSICIONAMENTO-PLATAFORMA-2026-10-31.md antes de mexer na copy.
-   Os três fatos de preço continuam juntos: encontro grátis, ativação com 30
-   dias de ferramentas (desde 09/11/2026 não há mais teste grátis), parceiros
-   com condições próprias. */
+   Os três fatos de preço continuam juntos: encontro grátis, ferramentas
+   abertas pra experimentar (orientação paga na ativação, desde 09/11/2026),
+   parceiros com condições próprias. */
 const reassurances = [
   'Encontros de conversação gratuitos, sem cadastro',
-  'Ferramentas com orientação individual na ativação',
+  'Ferramentas do ETT Player abertas pra experimentar',
   'Cursos e imersões oferecidos por parceiros',
 ]
 
@@ -140,7 +140,7 @@ export default function HeroSimples() {
               </div>
               <Image
                 src="/images/ett-player.webp"
-                alt="Tela inicial do ETT Player, com as ferramentas de prática: plano diário, encontros, conversa guiada, flashcards, séries e audiolivro"
+                alt="Tela inicial do ETT Player, com as ferramentas de prática: diário de fala, encontros, flashcards, séries e audiolivro"
                 width={1600}
                 height={1000}
                 className="w-full h-auto"

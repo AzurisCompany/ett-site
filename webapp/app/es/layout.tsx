@@ -2,28 +2,16 @@ import type { Metadata } from 'next'
 
 const SITE_URL = 'https://englishtalktime.com.br'
 
+const TITLE = 'English Talk Time (ETT) — encuentros de conversación en inglés gratuitos desde Brasil'
+const DESCRIPTION =
+  'Plataforma brasileña de apoyo a la práctica del inglés: herramientas digitales, encuentros de conversación gratuitos y socios. Encuentro online todos los lunes, 20:00–21:30 hora de Brasilia — gratuito, abierto a todos, sin registro.'
+
 export const metadata: Metadata = {
-  title: 'ETT — Grupo de Conversación en Inglés para Profesionales Tech | Online y Curitiba',
-  description:
-    'Grupo de conversación en inglés con práctica de habla guiada y herramientas de aprendizaje con IA. Encuentros online semanales (todos los lunes) y presenciales en Curitiba, Brasil. Para profesionales de Tecnología, Datos, IA y BI de toda LATAM.',
-  keywords: [
-    'grupo de conversación en inglés',
-    'club de conversación en inglés',
-    'práctica de speaking en inglés',
-    'inglés para profesionales tech',
-    'inglés para data engineer',
-    'inglés para desarrolladores',
-    'inglés para AI engineer',
-    'grupo de inglés online LATAM',
-    'practicar inglés online gratis',
-    'herramientas IA aprender inglés',
-    'destrabar inglés hablado',
-    'programa fluidez en inglés',
-    'inglés mercado laboral internacional',
-    'Fórmula Fluente',
-    'English Talk Time',
-    'ETT',
-  ],
+  title: TITLE,
+  description: DESCRIPTION,
+  // Substitui as keywords pt-BR herdadas do layout raiz.
+  keywords: ['encuentro de conversación en inglés', 'practicar inglés online', 'grupo de conversación en inglés gratis', 'English Talk Time'],
+  // hreflang só entre as três páginas equivalentes: /, /en/ e /es/.
   alternates: {
     canonical: `${SITE_URL}/es/`,
     languages: {
@@ -35,30 +23,37 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'es_419',
+    locale: 'es_ES',
     url: `${SITE_URL}/es/`,
     siteName: 'English Talk Time – ETT',
-    title: 'ETT — Grupo de Conversación en Inglés para Profesionales Tech',
-    description:
-      'Encuentros semanales online + herramientas de aprendizaje con IA. Diseñado para profesionales de Tecnología, Datos, IA y BI de LATAM que apuntan al mercado internacional.',
-    images: [
-      {
-        url: '/images/og-ett-2026.png',
-        width: 1200,
-        height: 630,
-        alt: 'English Talk Time — Grupo de conversación en inglés para profesionales tech',
-      },
-    ],
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [{ url: '/images/og-ett-2026.png', width: 1200, height: 630, alt: 'English Talk Time' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ETT — Grupo de Conversación en Inglés para Profesionales Tech',
-    description:
-      'Práctica de speaking online todos los lunes + herramientas de IA. Para tech, datos, IA y BI.',
+    title: TITLE,
+    description: DESCRIPTION,
     images: ['/images/og-ett-2026.png'],
   },
 }
 
+/**
+ * <html lang>: o layout raiz (app/layout.tsx) fixa lang="pt-BR" pra todo o
+ * site, e separar os idiomas em root layouts próprios exigiria reestruturar o
+ * app inteiro (route groups) — risco alto pra 2 páginas. Contorno: este script
+ * inline troca o atributo assim que o HTML é lido.
+ * LIMITAÇÃO: o HTML estático servido ainda diz lang="pt-BR"; leitores de tela e
+ * navegadores pegam o valor corrigido (o script roda antes da pintura), mas
+ * robôs que não executam JS veem pt-BR — o hreflang e o og:locale compensam.
+ */
+const SET_LANG = "document.documentElement.lang='es'"
+
 export default function EsLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  return (
+    <>
+      <script dangerouslySetInnerHTML={{ __html: SET_LANG }} />
+      {children}
+    </>
+  )
 }

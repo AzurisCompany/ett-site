@@ -62,7 +62,7 @@ const jsonLd = {
       headline: post.title,
       description: post.description,
       datePublished: `${post.date}T09:00:00-03:00`,
-      dateModified: `${post.date}T09:00:00-03:00`,
+      dateModified: '2026-11-09T09:00:00-03:00',
       author: { '@id': ORG_ID },
       publisher: { '@id': ORG_ID },
       mainEntityOfPage: `${SITE_URL}/blog/${SLUG}/`,
@@ -94,18 +94,18 @@ export default function Post() {
         </p>
         <p>
           Boa notícia: o problema não é falta de gramática nem de vocabulário. O bloqueio de
-          fala é específico — e tem solução prática. Esse artigo explica por que você trava e
-          o caminho concreto pra destravar em 60 dias.
+          fala é específico — e dá pra trabalhar nele com prática. Esse artigo explica por que
+          você trava e o que costuma ajudar a destravar.
         </p>
 
         <h2>Por que você entende, mas não consegue falar</h2>
         <p>
           A diferença entre entender e falar tem nome técnico:{' '}
           <strong>vocabulário passivo</strong> (recognition) vs.{' '}
-          <strong>vocabulário ativo</strong> (production). Pesquisas de linguística aplicada
-          mostram que a maioria dos adultos estudando inglês tem vocabulário passivo de
-          5–10x o ativo. Você reconhece milhares de palavras quando ouve/lê — mas só consegue
-          puxar centenas pra falar.
+          <strong>vocabulário ativo</strong> (production). Em quem aprende uma língua
+          estrangeira, o vocabulário que a pessoa reconhece costuma ser bem maior do que o que
+          ela consegue usar. Você reconhece muitas palavras quando ouve ou lê — mas só uma
+          parte delas sai na hora de falar.
         </p>
         <p>
           Some isso a três fatores que pioram o quadro:
@@ -152,7 +152,7 @@ export default function Post() {
           </li>
         </ul>
 
-        <h2>O que destrava (validado pela ciência e prática)</h2>
+        <h2>O que costuma ajudar</h2>
         <p>
           O caminho que funciona combina quatro elementos:
         </p>
@@ -170,9 +170,9 @@ export default function Post() {
         <h3>2. Repetição espaçada de vocabulário ATIVO</h3>
         <p>
           Em vez de flashcards passivos, você revisa palavras{' '}
-          <em>usando elas em frases novas todo dia</em>. 10–20 palavras por dia, com produção
-          obrigatória. Em 90 dias isso vira 1.000 palavras ativas — o suficiente pra
-          conversação fluente em qualquer assunto comum.
+          <em>usando elas em frases novas todo dia</em>: poucas palavras por dia, sempre com
+          produção — dizer ou escrever uma frase sua com cada uma. É assim que uma palavra
+          passa de reconhecida a usada.
         </p>
         <h3>3. Simulação de situações reais</h3>
         <p>
@@ -185,58 +185,58 @@ export default function Post() {
         <p>
           Sozinho, ninguém pratica. Aula individual é fácil de cancelar (&quot;tava
           cansado&quot;). Grupo gera compromisso — &quot;a galera vai estar lá&quot;. Hábito
-          é o motor invisível: quem pratica 1h/dia por 90 dias destrava. Quem pratica 3h
-          uma vez por semana, não.
+          é o motor invisível: um pouco todo dia costuma render mais do que muito de vez em
+          quando.
         </p>
 
-        <h2>Caminho concreto: 60 dias até falar com mais segurança</h2>
+        <h2>Um roteiro possível pras primeiras semanas</h2>
         <p>
-          Aqui está um esqueleto prático que a gente vê funcionar com a comunidade do ETT:
+          Não existe prazo garantido — cada pessoa parte de um ponto e tem uma rotina. Mas dá pra
+          organizar o começo assim:
         </p>
         <ul>
           <li>
-            <strong>Semanas 1-2 — diagnóstico e primeiro encontro.</strong> Você faz o
-            diagnóstico de vocabulário (saber exatamente onde estão suas lacunas) e participa
-            do primeiro encontro de conversação. Quase ninguém fala muito no primeiro — é
-            normal. O objetivo é só estar lá e ouvir como o grupo funciona.
+            <strong>Primeiras semanas — diagnóstico e primeiro encontro.</strong> Descubra onde
+            estão suas lacunas de vocabulário (o Level Check, aberto pra experimentar no{' '}
+            <Link href="/ferramentas/">ETT Player</Link>, faz esse diagnóstico) e vá ao primeiro
+            encontro de conversação. Quase ninguém fala muito no primeiro — é normal. O objetivo é
+            estar lá e ver como o grupo funciona.
           </li>
           <li>
-            <strong>Semanas 3-4 — rotina diária + simulações.</strong> 1h/dia dividida em
-            vocabulário (15 min), série com legenda (20 min), diário falado (5 min) e
-            preparo do próximo encontro (20 min). No encontro, você começa a falar em pares
-            primeiro — onde é seguro errar.
+            <strong>Depois — uma rotina diária curta.</strong> Um pouco de vocabulário, um vídeo
+            com legenda em inglês e alguns minutos falando sozinho em voz alta sobre o seu dia.
+            No encontro, comece falando em pares ou em grupo pequeno, onde é mais tranquilo errar.
           </li>
           <li>
-            <strong>Mês 2 — imersão em contexto.</strong> Você simula situações da sua área:
-            daily, demo técnica, entrevista. As ferramentas de IA do programa geram prompts
-            específicos pro seu nível. Você sai do encontro com um set novo de frases prontas
-            pra reusar na semana.
-          </li>
-          <li>
-            <strong>Marca dos 60 dias.</strong> Não vai ser fluência total — mas vai ser{' '}
-            <em>conforto suficiente pra puxar conversa, pedir esclarecimento e responder
-            sem travar.</em> A partir daí o ganho é exponencial.
+            <strong>Com o tempo — situações da sua área.</strong> Leve pro encontro os temas que
+            você vai precisar no trabalho: uma reunião, uma apresentação, uma entrevista. Saia de
+            cada encontro com algumas frases novas pra reusar na semana.
           </li>
         </ul>
+        <p>
+          O que muda primeiro, pra muita gente, é o conforto: puxar conversa, pedir
+          esclarecimento e responder sem congelar. Isso vem da prática acumulada, não de um
+          número mágico de dias.
+        </p>
 
         <h2>Por onde começar agora</h2>
         <p>
-          Se você está em Curitiba, dá pra começar essa semana mesmo — tem{' '}
-          <Link href="/curitiba/">encontros presenciais semanais em 4 locais</Link> (IEP, UTFPR,
-          Hard Rock e Habitat). Se está em outra cidade, o{' '}
-          <Link href="/online/">encontro online é toda segunda às 20h</Link> via Google
-          Meet, aberto pra todo o Brasil.
+          Se você está em Curitiba, tem o <strong>IEP Talks</strong>, encontro presencial todo
+          sábado, das 10h às 12h, no IEP (Rua Emiliano Perneta, 174, Centro). Se está em outra
+          cidade, o <strong>encontro online é toda segunda, das 20h às 21h30</strong>, na sala do
+          ETT Speak, direto no navegador.
         </p>
         <p>
-          Em qualquer um dos formatos, você entra no grupo, pega a agenda, recebe os
-          materiais das ferramentas e começa a treinar a fala com método. Os encontros são
-          gratuitos. A inscrição leva 2 minutos.
+          Os dois são gratuitos, abertos a qualquer pessoa e sem cadastro: é só aparecer. As
+          próximas datas estão na <Link href="/agenda/">agenda</Link>. As ferramentas do ETT
+          Player também estão abertas pra experimentar; se quiser orientação individual, um plano
+          e material, existe a <Link href="/planos/adesao/">ativação acompanhada</Link>.
         </p>
         <p>
           <em>
-            O bloqueio de fala não se resolve sozinho — mas se resolve. Quase todo profissional
-            que destravou começou exatamente onde você está agora: entendendo bem, mas
-            travando na hora. A diferença é o ambiente e o método.
+            O bloqueio de fala não se resolve sozinho — mas dá pra trabalhar nele. Muita gente
+            que hoje fala com mais segurança começou exatamente onde você está: entendendo bem,
+            mas travando na hora. A diferença costuma ser ter onde praticar, com regularidade.
           </em>
         </p>
       </BlogLayout>

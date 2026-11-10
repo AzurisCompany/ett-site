@@ -11,23 +11,25 @@ import {
   CheckCircle2,
   Users,
   GraduationCap,
+  MessageCircle,
 } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import AvisoPausa from '@/components/encontros/AvisoPausa'
+import { CONTATO_IEP_TALKS, IEP_ENDERECO, IEP_MAPA } from '@/lib/agenda-events'
 
 const SITE_URL = 'https://englishtalktime.com.br'
 const ORG_ID = `${SITE_URL}/#organization`
-/* Captura oficial é o formulário do próprio site (RD Station), na home.
-   Antes estas landings mandavam pra um Google Form externo — dois caminhos de
-   captura, campos diferentes e tráfego saindo do site. Ver
-   PLANO-REVISAO-MARKETING-2026-08-01.md. */
+/* O IEP Talks é entrada franca, sem cadastro: o CTA é a agenda, o mapa e o
+   WhatsApp do Miguel. O formulário da home (RD Station) fica só como lembrete
+   opcional das datas por e-mail. Ver AUDITORIA-CONTEUDO-2026-11-09.md (A7, B10). */
 const FORM_URL = '/#inscricao'
 
 export const metadata: Metadata = {
   title:
     'Praticar Inglês em Curitiba — Grupo de Conversação Semanal | English Talk Time',
   description:
-    'Onde praticar inglês em Curitiba: o IEP Talks, grupo de conversação presencial todo sábado das 10h às 12h no Instituto de Engenharia do Paraná. Treino de fala guiado, gratuito e aberto a profissionais de tech.',
+    'Onde praticar inglês em Curitiba: o IEP Talks, grupo de conversação presencial todo sábado das 10h às 12h no Instituto de Engenharia do Paraná. Gratuito, aberto a qualquer pessoa e sem cadastro.',
   keywords: [
     'praticar inglês em Curitiba',
     'onde treinar inglês Curitiba',
@@ -35,9 +37,8 @@ export const metadata: Metadata = {
     'conversação em inglês Curitiba',
     'encontro de inglês Curitiba',
     'meetup inglês Curitiba',
-    'aulas de conversação Curitiba',
+    'grupo de inglês Curitiba',
     'inglês Curitiba grátis',
-    'inglês para tech Curitiba',
     'conversation club Curitiba',
     'english conversation group Curitiba',
     'speaking practice Curitiba',
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     title: 'Praticar Inglês em Curitiba — Grupo de Conversação Semanal',
     description:
-      'IEP Talks: encontro presencial de conversação todo sábado, 10h–12h, no IEP em Curitiba. Treino de fala em inglês gratuito.',
+      'IEP Talks: encontro presencial de conversação em inglês todo sábado, 10h–12h, no IEP (Rua Emiliano Perneta, 174, Centro). Gratuito e sem cadastro.',
     url: `${SITE_URL}/curitiba/`,
     images: [
       {
@@ -65,7 +66,7 @@ export const metadata: Metadata = {
 const venues = [
   {
     name: 'IEP — Instituto de Engenharia do Paraná',
-    desc: 'Instituição centenária da engenharia paranaense. Parceiro institucional do ETT. Espaço acadêmico, ideal pra conversação técnica com profissionais de tech.',
+    desc: 'Instituição centenária da engenharia paranaense e parceiro institucional do ETT. É lá que o IEP Talks acontece todo sábado.',
     logo: '/images/logoiep.jpg',
     href: 'https://iep.org.br/',
   },
@@ -92,12 +93,13 @@ const jsonLd = {
       '@id': `${SITE_URL}/curitiba/#local`,
       name: 'English Talk Time — Grupo de Conversação em Inglês em Curitiba',
       description:
-        'Grupo de conversação em inglês em Curitiba: o IEP Talks acontece todo sábado, das 10h às 12h, no Instituto de Engenharia do Paraná. Gratuito, para profissionais e estudantes de tech.',
+        'Grupo de conversação em inglês em Curitiba: o IEP Talks acontece todo sábado, das 10h às 12h, no Instituto de Engenharia do Paraná. Gratuito, aberto a qualquer pessoa e sem cadastro.',
       url: `${SITE_URL}/curitiba/`,
       image: `${SITE_URL}/images/og-ett-2026.png`,
       parentOrganization: { '@id': ORG_ID },
       address: {
         '@type': 'PostalAddress',
+        streetAddress: 'Rua Emiliano Perneta, 174',
         addressLocality: 'Curitiba',
         addressRegion: 'PR',
         addressCountry: 'BR',
@@ -121,7 +123,7 @@ const jsonLd = {
         price: '0',
         priceCurrency: 'BRL',
         availability: 'https://schema.org/InStock',
-        url: FORM_URL,
+        url: `${SITE_URL}/curitiba/`,
       },
     },
   ],
@@ -154,24 +156,48 @@ export default function CuritibaPage() {
                 <strong className="text-ink">todo sábado, das 10h às 12h</strong>, no Instituto
                 de Engenharia do Paraná — o{' '}
                 <strong className="text-ink">conversation club de Curitiba</strong> pra
-                profissionais de tech e estudantes que querem destravar a fala em inglês.
-                Entrar não custa nada.
+                quem quer praticar a fala em inglês. Gratuito, aberto a qualquer pessoa e sem
+                cadastro: é só chegar.
               </p>
+              <p className="text-ink-muted text-base mb-6 inline-flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-brand-red shrink-0" />
+                {IEP_ENDERECO}
+              </p>
+              <div>
+                <AvisoPausa tipo="presencial" className="mb-6" />
+              </div>
               <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-                <a
-                  href={FORM_URL}
+                <Link
+                  href="/agenda/"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red"
                 >
-                  Garantir lugar no próximo encontro
+                  Ver a agenda
                   <ArrowRight className="w-4 h-4" />
-                </a>
-                <Link
-                  href="#proximos"
+                </Link>
+                <a
+                  href={IEP_MAPA}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-surface-line text-ink font-semibold hover:border-brand-red/50 hover:bg-surface-card transition-all"
                 >
-                  Ver próximas datas
-                </Link>
+                  <MapPin className="w-4 h-4" />
+                  Como chegar
+                </a>
               </div>
+              <p className="text-ink-subtle text-sm mt-4">
+                <a
+                  href={CONTATO_IEP_TALKS.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-brand-red"
+                >
+                  Dúvidas? Fale com o {CONTATO_IEP_TALKS.nome}
+                </a>
+                {' · '}
+                <a href={FORM_URL} className="underline hover:text-brand-red">
+                  Receber lembrete das datas por e-mail
+                </a>
+              </p>
             </div>
           </div>
         </section>
@@ -187,8 +213,9 @@ export default function CuritibaPage() {
                 Próximos encontros presenciais
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
-                Veja onde é o próximo <span className="gradient-text">e marque na agenda</span>
+                Próximos sábados <span className="gradient-text">no IEP</span>
               </h2>
+              <AvisoPausa tipo="presencial" />
             </div>
 
             <ProximosPresenciais quantidade={4} />
@@ -219,6 +246,37 @@ export default function CuritibaPage() {
                 O IEP Talks acontece todo sábado, das 10h às 12h, no Instituto de Engenharia do
                 Paraná. Entrada franca, sem cadastro.
               </p>
+            </div>
+            <div className="max-w-2xl mx-auto mb-5 bg-surface-card border border-brand-red/30 rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center gap-4">
+              <div className="flex items-start gap-3 flex-1">
+                <MapPin className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-bold text-ink text-base leading-snug">{IEP_ENDERECO}</p>
+                  <p className="text-ink-muted text-sm flex items-center gap-1.5 mt-1">
+                    <Clock className="w-3.5 h-3.5" />
+                    Sábados, das 10h às 12h
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <a
+                  href={IEP_MAPA}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-surface-line text-ink font-semibold text-sm hover:border-brand-red/50 transition-all"
+                >
+                  Ver no mapa
+                </a>
+                <a
+                  href={CONTATO_IEP_TALKS.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  Dúvidas? Fale com o {CONTATO_IEP_TALKS.nome}
+                </a>
+              </div>
             </div>
             <div className="grid gap-5 max-w-2xl mx-auto">
               {venues.map((v) => (
@@ -259,27 +317,27 @@ export default function CuritibaPage() {
                   Como é o encontro <span className="gradient-text">presencial em Curitiba</span>
                 </h2>
                 <p className="text-ink-muted text-lg max-w-2xl mx-auto">
-                  Chega, conversa, sai falando inglês — sem aula chata, sem ninguém te
-                  julgando por sotaque.
+                  Chega e conversa — não é aula, e ninguém julga ninguém por sotaque. Qualquer
+                  nível pode participar; rende mais a partir do A2.
                 </p>
               </div>
               <div className="grid md:grid-cols-2 gap-5">
                 {[
                   {
                     title: 'Chegada e warm-up',
-                    body: 'Você chega 10 minutos antes. Apresentação rápida em inglês (nome, área, cidade) — quebra-gelo descontraído pra todo mundo já entrar falando.',
+                    body: 'Vale chegar uns minutos antes. Apresentação rápida em inglês (nome, o que faz, de onde é) — quebra-gelo descontraído pra todo mundo já entrar falando.',
                   },
                   {
                     title: 'Conversação guiada',
-                    body: 'Tópico do dia anunciado antes (ex.: "interview self-pitch", "explaining a bug to a senior dev", "negotiating a salary offer"). Roteiro flexível, foco em fala.',
+                    body: 'Um tema puxa a conversa (ex.: "talking about your job", "travel plans", "a job interview"). Roteiro flexível, foco em fala.',
                   },
                   {
                     title: 'Simulação em pares',
-                    body: 'Sub-sessões em duplas com cenários específicos. Quem é mais avançado ajuda quem está começando. Ninguém fica calado.',
+                    body: 'Conversas em duplas ou trios pra todo mundo ter tempo de falar. Quem tem mais prática ajuda quem está começando.',
                   },
                   {
-                    title: 'Networking pós-encontro',
-                    body: 'Sempre tem alguém que fica pra continuar a conversa — networking presencial real com a comunidade ETT local de devs e profissionais de dados.',
+                    title: 'Depois do encontro',
+                    body: 'Costuma ter quem fique pra continuar a conversa. Dá pra conhecer gente de Curitiba que também quer praticar.',
                   },
                 ].map((item) => (
                   <div
@@ -323,8 +381,8 @@ export default function CuritibaPage() {
               </div>
               <p className="text-ink-muted leading-relaxed mb-5">
                 Se a agenda dessa semana não bate, ou você mora fora de Curitiba, o encontro
-                online é toda segunda às 20h–21h30 via Google Meet — mesma estrutura, mesma
-                comunidade.
+                online é toda segunda às 20h–21h30, na sala do ETT Speak, direto no navegador —
+                também gratuito e sem cadastro.
               </p>
               <Link
                 href="/online/"
@@ -378,19 +436,35 @@ export default function CuritibaPage() {
                 <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                   Vem praticar inglês <span className="gradient-text">com a gente em Curitiba</span>
                 </h2>
-                <p className="text-ink-muted text-lg leading-relaxed mb-7 max-w-xl mx-auto">
-                  Inscrição rápida. Você recebe a agenda do mês, o endereço do próximo
-                  encontro e o link da comunidade.
+                <p className="text-ink-muted text-lg leading-relaxed mb-5 max-w-xl mx-auto">
+                  Sábado, das 10h às 12h, no IEP ({IEP_ENDERECO}). Não precisa de inscrição: é só
+                  chegar.
                 </p>
-                <a
-                  href={FORM_URL}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg"
-                >
-                  Quero participar em Curitiba
-                  <ArrowRight className="w-5 h-5" />
-                </a>
-                <p className="text-ink-subtle text-xs mt-4 italic">
-                  Gratuito. Sem compromisso. Sem spam.
+                <AvisoPausa tipo="presencial" className="mb-6" />
+                <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+                  <Link
+                    href="/agenda/"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg"
+                  >
+                    Ver a agenda
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                  <a
+                    href={CONTATO_IEP_TALKS.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-surface-line text-ink font-semibold hover:border-brand-red/50 transition-all"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    Dúvidas? Fale com o {CONTATO_IEP_TALKS.nome}
+                  </a>
+                </div>
+                <p className="text-ink-subtle text-sm mt-5">
+                  Prefere ser avisado?{' '}
+                  <a href={FORM_URL} className="underline hover:text-brand-red">
+                    Receber lembrete das datas por e-mail
+                  </a>{' '}
+                  (você recebe as datas dos encontros).
                 </p>
               </div>
             </div>

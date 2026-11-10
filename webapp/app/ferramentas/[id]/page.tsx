@@ -132,7 +132,7 @@ export default function FerramentaPage({ params }: { params: { id: string } }) {
                     href="/planos/adesao/"
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all"
                   >
-                    Começar na plataforma
+                    Orientação individual — R$ 97
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 )}

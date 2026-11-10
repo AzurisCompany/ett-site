@@ -44,7 +44,7 @@ export const imersoes: ImersaoParceiro[] = [
   },
   {
     id: 'belo-horizonte-2026',
-    cidade: 'Belo Horizonte',
+    cidade: 'Lagoa Santa (região de BH)',
     uf: 'MG',
     oferecidoPor: 'Cherry Top',
     local: 'Immersion Village Brazil, Lagoa Santa/MG (20 km do aeroporto de Confins)',
@@ -63,7 +63,7 @@ export const imersoes: ImersaoParceiro[] = [
     titulo: 'Cherry Top Business School',
     cidade: 'Curitiba',
     uf: 'PR',
-    oferecidoPor: 'Cherry Top Global Business School',
+    oferecidoPor: 'Cherry Top',
     local: 'IEP (Instituto de Engenharia do Paraná), Curitiba/PR',
     formato: '3 dias presenciais (8h às 18h) + pré-imersão online e estudo orientado',
     turmas: [{ inicio: '2026-12-04', fim: '2026-12-06', rotulo: '04 a 06/dez de 2026' }],
@@ -123,11 +123,11 @@ export function separarImersoes(agora: Date): ImersoesSeparadas {
 export const faqsImersoes = [
   {
     q: 'Quem oferece as imersões?',
-    a: 'A Cherry Top. Programa, inscrição, investimento, taxa de pré-inscrição, contrato e condições são definidos por ela. O ETT divulga as turmas, encaminha quem tem interesse e oferece as ferramentas e os encontros de conversação pra praticar antes e depois.',
+    a: 'A Cherry Top. Programa, inscrição, investimento, taxa de pré-inscrição, contrato e condições são definidos por ela. O ETT divulga as turmas e repassa o contato de quem tem interesse; pra praticar antes e depois, os encontros de conversação são gratuitos e as ferramentas do ETT Player estão abertas pra experimentar.',
   },
   {
     q: 'Qual o nível mínimo de inglês?',
-    a: 'Depende da turma, e quem define é a Cherry Top. Como referência: no Brasil há turmas a partir do básico, organizadas por nível; na Flórida o mínimo é B1+, porque tudo acontece em inglês. Se quiser ter uma ideia do seu nível antes de conversar com eles, o diagnóstico do ETT Player ajuda.',
+    a: 'Depende da turma, e quem define é a Cherry Top. Como referência: no Brasil há turmas a partir do básico, organizadas por nível; na Flórida o mínimo é B1+ (intermediário), inclusive pra acompanhantes, porque tudo acontece em inglês. Se quiser ter uma ideia do seu vocabulário antes de conversar com eles, o Level Check, aberto pra experimentar no ETT Player, ajuda.',
   },
   {
     q: 'Quanto custa?',
@@ -135,7 +135,7 @@ export const faqsImersoes = [
   },
   {
     q: 'O que está incluído?',
-    a: 'Belo Horizonte: programa de 5 dias, hospedagem, refeições, material e certificado de 90 horas emitido pela Cherry Top. Business School (Curitiba, dez/2026): 10h de pré-imersão online (The Passport), 3 dias presenciais das 8h às 18h, 10h de estudo orientado, almoço nos dias presenciais e certificado de 50 horas; passagem, hospedagem e traslado ficam por conta do participante. Flórida: programa, hospedagem em resort, atividades culturais e mentor residente; passagem aérea e visto americano não estão inclusos. Os detalhes finais são confirmados pela Cherry Top.',
+    a: 'Lagoa Santa (região de BH): programa de 5 dias, hospedagem, refeições, material e certificado de 90 horas emitido pela Cherry Top. Business School (Curitiba, dez/2026): 10h de pré-imersão online (The Passport), 3 dias presenciais das 8h às 18h, 10h de estudo orientado, almoço nos dias presenciais e certificado de 50 horas; deslocamento e hospedagem, se vier de fora, ficam por conta do participante. Flórida: programa, hospedagem em resort, atividades culturais e mentor residente; passagem aérea e visto americano não estão inclusos. Os detalhes finais são confirmados pela Cherry Top.',
   },
   {
     q: 'Imersão na Flórida — preciso de visto?',
@@ -143,6 +143,6 @@ export const faqsImersoes = [
   },
   {
     q: 'Preciso usar o ETT pra fazer uma imersão?',
-    a: 'Não. A imersão é da Cherry Top e não depende de nenhum plano do ETT. Os encontros de conversação são gratuitos e abertos, e as ferramentas do ETT Player estão disponíveis na ativação acompanhada, se você quiser praticar antes ou depois.',
+    a: 'Não. A imersão é da Cherry Top e não depende de nenhum plano do ETT. Os encontros de conversação são gratuitos e abertos, e as ferramentas do ETT Player estão abertas pra experimentar, se você quiser praticar antes ou depois. Se quiser orientação individual, plano e material, existe a ativação acompanhada do ETT — à parte da imersão.',
   },
 ]

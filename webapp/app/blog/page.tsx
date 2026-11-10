@@ -10,7 +10,8 @@ import { partnerPosts } from '@/lib/partner-posts'
 const SITE_URL = 'https://englishtalktime.com.br'
 const ORG_ID = `${SITE_URL}/#organization`
 
-// Lista unificada: posts próprios + indicações de parceiros, do mais novo pro mais antigo.
+// Lista unificada: posts próprios + indicações de parceiros, do mais novo pro mais antigo
+// (posts de evento já realizado ficam no fim).
 interface BlogCard {
   slug: string
   href: string
@@ -22,9 +23,12 @@ interface BlogCard {
   isPartner: boolean
   partnerName?: string
   partnerLogo?: string
+  /** evento já realizado: vai pro fim da lista */
+  realizado?: boolean
 }
 
-const allCards: BlogCard[] = [
+const allCards: BlogCard[] = (
+  [
   ...blogPosts.map((p) => ({
     slug: p.slug,
     href: `/blog/${p.slug}/`,
@@ -34,6 +38,7 @@ const allCards: BlogCard[] = [
     readMinutes: p.readMinutes,
     category: p.category,
     isPartner: false,
+    realizado: Boolean(p.realizado),
   })),
   ...partnerPosts.map((p) => ({
     slug: p.slug,
@@ -47,7 +52,12 @@ const allCards: BlogCard[] = [
     partnerName: p.partnerName,
     partnerLogo: p.partnerLogo,
   })),
-].sort((a, b) => (a.date < b.date ? 1 : -1))
+  ] as BlogCard[]
+).sort((a, b) => {
+  // Eventos já realizados descem pro fim (continuam no ar, com a faixa de "realizado").
+  if (Boolean(a.realizado) !== Boolean(b.realizado)) return a.realizado ? 1 : -1
+  return a.date < b.date ? 1 : -1
+})
 
 export const metadata: Metadata = {
   title: 'Blog ETT — Como Praticar Inglês, Conversação e Treino de Fala',
@@ -190,6 +200,11 @@ export default function BlogIndexPage() {
                         <Tag className="w-3 h-3" />
                         {p.category}
                       </span>
+                      {p.realizado && (
+                        <span className="inline-flex items-center px-2.5 py-1 rounded-full border border-surface-line text-ink-muted bg-surface-alt font-semibold uppercase tracking-wider">
+                          Evento realizado
+                        </span>
+                      )}
                       <span className="inline-flex items-center gap-1">
                         <Calendar className="w-3.5 h-3.5" />
                         {formatDate(p.date)}

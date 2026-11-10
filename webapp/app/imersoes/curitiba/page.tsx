@@ -4,7 +4,9 @@ import Footer from '@/components/Footer'
 import ImersaoDetalhe from '@/components/ImersaoDetalhe'
 
 const SITE_URL = 'https://englishtalktime.com.br'
-const ORG_ID = `${SITE_URL}/#organization`
+// Quem organiza é a Cherry Top (ela define inscrição, preço e condições). Sem `offers`:
+// o preço é sob consulta com ela, e o ETT não publica faixa de valores.
+const CHERRY_TOP = { '@type': 'Organization', name: 'Cherry Top', url: 'https://cherrytop.com.br' }
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -30,11 +32,12 @@ const jsonLd = {
     {
       '@type': 'Event',
       '@id': `${SITE_URL}/imersoes/curitiba/#event-jul-2026`,
-      name: 'Imersão em Inglês em Curitiba — Cherry Top, com apoio do IEP',
+      name: 'Imersão em Inglês em Curitiba — edição de jul/2026 (realizada) — Cherry Top, com apoio do IEP',
       description:
-        '5 dias de imersão presencial em inglês em Curitiba, oferecida pela Cherry Top com apoio do IEP — método Bonding + Native-like. Divulgação: English Talk Time.',
+        'Edição realizada de 29/07 a 02/08/2026: 5 dias de imersão presencial em inglês em Curitiba, oferecida pela Cherry Top com apoio do IEP — método Bonding + Native-like. Divulgação: English Talk Time.',
       startDate: '2026-07-29T09:00:00-03:00',
       endDate: '2026-08-02T18:00:00-03:00',
+      // Já aconteceu, na data prevista: schema.org não tem "EventCompleted"; Scheduled + datas passadas é o correto.
       eventStatus: 'https://schema.org/EventScheduled',
       eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
       location: {
@@ -42,26 +45,13 @@ const jsonLd = {
         name: 'IEP — Instituto de Engenharia do Paraná',
         address: {
           '@type': 'PostalAddress',
+          streetAddress: 'Rua Emiliano Perneta, 174',
           addressLocality: 'Curitiba',
           addressRegion: 'PR',
           addressCountry: 'BR',
         },
       },
-      organizer: { '@id': ORG_ID },
-      performer: {
-        '@type': 'Organization',
-        name: 'Cherry Top Business Communication',
-        url: 'https://cherrytop.com.br',
-      },
-      offers: {
-        '@type': 'AggregateOffer',
-        priceCurrency: 'BRL',
-        lowPrice: '3000',
-        highPrice: '6000',
-        availability: 'https://schema.org/LimitedAvailability',
-        url: `${SITE_URL}/imersoes/curitiba/`,
-        validFrom: '2026-01-01T00:00:00-03:00',
-      },
+      organizer: CHERRY_TOP,
       inLanguage: ['en', 'pt-BR'],
       image: `${SITE_URL}/images/og-ett-2026.png`,
       url: `${SITE_URL}/imersoes/curitiba/`,
@@ -71,9 +61,9 @@ const jsonLd = {
 
 export const metadata: Metadata = {
   title:
-    'Imersão em Inglês em Curitiba — Jul/2026 | Cherry Top',
+    'Imersão em Inglês em Curitiba — edição de jul/2026 (realizada) | Cherry Top',
   description:
-    'Imersão em inglês da Cherry Top em Curitiba: 5 dias presenciais (29/07 a 02/08/2026), com apoio do IEP. Divulgada pelo English Talk Time.',
+    'Edição realizada: a imersão em inglês da Cherry Top em Curitiba teve 5 dias presenciais (29/07 a 02/08/2026), com apoio do IEP. Em dez/2026 tem a Cherry Top Business School, também no IEP. Divulgada pelo English Talk Time.',
   keywords: [
     'imersão em inglês Curitiba',
     'curso intensivo de inglês Curitiba',
@@ -89,9 +79,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    title: 'Imersão em Inglês em Curitiba — 29/jul a 02/ago 2026',
+    title: 'Imersão em Inglês em Curitiba — edição de jul/2026 (realizada)',
     description:
-      'Imersão da Cherry Top em Curitiba, com apoio do IEP: 5 dias presenciais em inglês.',
+      'Edição realizada da imersão da Cherry Top em Curitiba, com apoio do IEP. Próxima atividade em Curitiba: Cherry Top Business School, dez/2026.',
     url: 'https://englishtalktime.com.br/imersoes/curitiba/',
     images: [
       {
@@ -117,10 +107,10 @@ export default function CuritibaPage() {
         city="Curitiba"
         uf="PR"
         headline="Imersão da Cherry Top em Curitiba."
-        intro="Primeira edição em Curitiba da imersão presencial da Cherry Top, com apoio do IEP (Instituto de Engenharia do Paraná): dias seguidos usando o inglês, sem precisar viajar. A imersão é oferecida e conduzida pela Cherry Top; o ETT divulga e oferece ferramentas e encontros pra praticar antes e depois."
+        intro="Edição realizada de 29/07 a 02/08/2026. Foi a primeira edição em Curitiba da imersão presencial da Cherry Top, com apoio do IEP (Instituto de Engenharia do Paraná): dias seguidos usando o inglês, sem precisar viajar. A imersão foi oferecida e conduzida pela Cherry Top; o ETT divulgou e repassou o contato de quem tinha interesse."
         turmas={[
           {
-            label: 'Turma única — Primeira edição',
+            label: 'Turma única — Primeira edição (realizada)',
             when: '29 de julho a 02 de agosto de 2026',
             detalhe: '5 dias de imersão presencial — formato Cherry Top',
             fim: '2026-08-02',
@@ -155,6 +145,12 @@ export default function CuritibaPage() {
         fotos={[]}
         fotosLegenda="Veja fotos de imersões da Cherry Top na página principal de imersões."
         ctaLabel="Tenho interesse numa próxima edição"
+        relacionada={{
+          texto:
+            'Em Curitiba, a próxima atividade da Cherry Top é a Business School, de 04 a 06 de dezembro de 2026, no IEP.',
+          href: '/imersoes/business-school/',
+          label: 'Conhecer a Business School →',
+        }}
       />
       <Footer />
     </>

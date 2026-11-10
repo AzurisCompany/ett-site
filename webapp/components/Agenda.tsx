@@ -383,7 +383,7 @@ export default function Agenda() {
                 Tenho interesse
                 <ArrowRight className="w-4 h-4" />
               </Link>
-              <p className="text-xs text-ink-subtle mt-4">Sem custo. Sem venda no fim.</p>
+              <p className="text-xs text-ink-subtle mt-4">Sem custo e sem compromisso.</p>
             </div>
           </div>
         </div>

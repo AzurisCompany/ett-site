@@ -95,7 +95,7 @@ export const parceiros: Parceiro[] = [
     logo: null,
     oferece:
       'Método de organização do estudo criado por Frank Florida: blocos curtos, vocabulário relevante e repetição orientada.',
-    apoioEtt: 'É a base de como as ferramentas do ETT organizam a rotina, e o livro está dentro do ETT Player.',
+    apoioEtt: 'É a base de como as ferramentas do ETT organizam a rotina, e as aulas em vídeo estão dentro do ETT Player.',
     url: '/ff/',
   },
   {

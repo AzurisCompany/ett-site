@@ -35,7 +35,7 @@ const steps = [
     icon: Clock,
     title: 'Uma rotina que caiba no dia',
     description:
-      'A sugestão é cerca de 1 hora por dia em blocos curtos: flashcards, um episódio com legenda, um capítulo de audiolivro, uma conversa guiada. O Daily organiza o que fazer em cada dia — a meta é sua.',
+      'A sugestão é cerca de 1 hora por dia em blocos curtos: flashcards, um episódio com legenda, um capítulo de audiolivro, alguns minutos falando no Daily. A meta é sua.',
     tag: 'Sugestão: 1h/dia',
     color: 'brand-red',
   },
@@ -53,7 +53,7 @@ const steps = [
     icon: Cpu,
     title: 'Ferramentas entre os encontros',
     description:
-      'O ETT Player reúne diagnóstico de vocabulário, planner de fala, flashcards, vídeos com legenda, audiolivros e rádio. Vêm na ativação acompanhada, com 30 dias de acesso.',
+      'O ETT Player reúne diagnóstico de vocabulário, planner de fala, flashcards, vídeos com legenda, audiolivros e rádio. Abertas pra experimentar; a ativação acompanhada traz orientação pra usar com um plano.',
     tag: 'ETT Player',
     color: 'brand-red',
   },

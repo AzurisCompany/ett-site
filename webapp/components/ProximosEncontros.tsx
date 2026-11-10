@@ -56,7 +56,7 @@ export default function ProximosEncontros() {
           {anuncio && (
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-red-deep text-white text-sm font-bold mb-5">
               <PartyPopper className="w-4 h-4" />
-              Voltamos! Online a partir de {curta(REINICIO.online)} · IEP Talks a partir de {curta(REINICIO.presencial)}
+              Estamos voltando! Online a partir de {curta(REINICIO.online)} · IEP Talks a partir de {curta(REINICIO.presencial)}
             </span>
           )}
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink mb-4">

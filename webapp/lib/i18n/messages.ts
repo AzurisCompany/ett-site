@@ -42,6 +42,10 @@ export interface NavMessages {
   pricing: string
   program: string
   conversation: string
+  /** Âncoras da página curta EN/ES (/en/, /es/) — 09/11/2026. */
+  online: string
+  inPerson: string
+  faq: string
 }
 
 export interface FooterMessages {
@@ -69,8 +73,11 @@ export const nav: Record<Locale, NavMessages> = {
     cta: 'Tenho Interesse',
     language: 'Idioma',
     pricing: 'Preços',
-    program: 'Como funciona',
+    program: 'Sobre o ETT',
     conversation: 'Conversação',
+    online: 'Encontro online',
+    inPerson: 'Presencial',
+    faq: 'Perguntas',
   },
   en: {
     about: 'About',
@@ -82,11 +89,14 @@ export const nav: Record<Locale, NavMessages> = {
     partners: 'Partners',
     howItWorks: 'How It Works',
     blog: 'Blog',
-    cta: 'I want in',
+    cta: 'Join the room',
     language: 'Language',
     pricing: 'Pricing',
     program: 'The program',
     conversation: 'Conversation',
+    online: 'Online meeting',
+    inPerson: 'In person',
+    faq: 'FAQ',
   },
   es: {
     about: 'Sobre',
@@ -98,11 +108,14 @@ export const nav: Record<Locale, NavMessages> = {
     partners: 'Socios',
     howItWorks: 'Cómo funciona',
     blog: 'Blog',
-    cta: 'Quiero participar',
+    cta: 'Entrar a la sala',
     language: 'Idioma',
     pricing: 'Precios',
     program: 'El programa',
     conversation: 'Conversación',
+    online: 'Encuentro online',
+    inPerson: 'Presencial',
+    faq: 'Preguntas',
   },
 }
 
@@ -138,20 +151,20 @@ export const footer: Record<Locale, FooterMessages> = {
   },
   en: {
     tagline:
-      'English acceleration program for Tech, Data, AI and BI professionals. Part of the DSSBR & GUBigData IA ecosystem.',
+      'A Brazilian platform that supports English practice: tools, conversation meetings and partners. Run by the DSSBR & GUBigData IA community.',
     whereToPractice: {
       title: 'Where to practice',
-      conversation: 'Conversation Group',
-      curitiba: 'In-person in Curitiba (BR)',
-      online: 'Online conversation (Mondays)',
-      agendaFull: 'Full schedule',
+      conversation: 'What ETT is',
+      curitiba: 'In person in Curitiba (PT)',
+      online: 'Online meeting (Mondays)',
+      agendaFull: 'Full schedule (PT)',
     },
     program: {
-      title: 'Program',
+      title: 'ETT',
       about: 'About ETT',
-      methodology: 'Method · Fluent Formula',
-      immersions: 'Immersions with Cherry Top',
-      blog: 'ETT Blog',
+      methodology: 'Fórmula Fluente (PT)',
+      immersions: 'Partner immersions (PT)',
+      blog: 'ETT Blog (PT)',
     },
     partners: {
       title: 'Partners',
@@ -167,20 +180,20 @@ export const footer: Record<Locale, FooterMessages> = {
   },
   es: {
     tagline:
-      'Programa de aceleración de inglés para profesionales de Tecnología, Datos, IA y BI. Ecosistema DSSBR & GUBigData IA.',
+      'Plataforma brasileña de apoyo a la práctica del inglés: herramientas, encuentros de conversación y socios. Mantenida por la comunidad DSSBR & GUBigData IA.',
     whereToPractice: {
       title: 'Dónde practicar',
-      conversation: 'Grupo de Conversación',
-      curitiba: 'Presencial en Curitiba (BR)',
-      online: 'Conversación online (lunes)',
-      agendaFull: 'Agenda completa',
+      conversation: 'Qué es ETT',
+      curitiba: 'Presencial en Curitiba (PT)',
+      online: 'Encuentro online (lunes)',
+      agendaFull: 'Agenda completa (PT)',
     },
     program: {
-      title: 'Programa',
+      title: 'ETT',
       about: 'Sobre ETT',
-      methodology: 'Metodología · Fórmula Fluente',
-      immersions: 'Inmersiones con Cherry Top',
-      blog: 'Blog ETT',
+      methodology: 'Fórmula Fluente (PT)',
+      immersions: 'Inmersiones de socios (PT)',
+      blog: 'Blog ETT (PT)',
     },
     partners: {
       title: 'Socios',

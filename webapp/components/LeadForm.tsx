@@ -161,7 +161,7 @@ export default function LeadForm() {
                   <div className="w-16 h-16 rounded-full bg-brand-red/15 border border-brand-red/30 flex items-center justify-center mx-auto mb-6">
                     <CheckCircle2 className="w-8 h-8 text-brand-red" />
                   </div>
-                  <h3 className="text-2xl font-bold text-ink mb-3">Pronto, você está dentro!</h3>
+                  <h3 className="text-2xl font-bold text-ink mb-3">Pronto, recebemos seus dados!</h3>
                   <p className="text-ink-soft leading-relaxed max-w-sm mx-auto">
                     Você vai receber o{' '}
                     <strong className="text-brand-red">link do encontro de segunda</strong> e as
@@ -171,10 +171,10 @@ export default function LeadForm() {
                     dúvidas. Confira seu e-mail.
                   </p>
                   <p className="text-ink-subtle text-sm leading-relaxed max-w-sm mx-auto mt-5 pt-5 border-t border-surface-line">
-                    Quer também as{' '}
-                    <strong className="text-ink-soft">ferramentas do ETT Player</strong>, o
-                    material personalizado e a orientação individual? Tudo isso vem na ativação
-                    acompanhada, com 30 dias de acesso.
+                    As{' '}
+                    <strong className="text-ink-soft">ferramentas do ETT Player</strong> são abertas
+                    pra experimentar. Quer orientação individual, plano e material personalizado? Isso
+                    vem na ativação acompanhada.
                   </p>
                   <Link
                     href="/planos/adesao/"
@@ -246,7 +246,7 @@ export default function LeadForm() {
                     <label htmlFor="rd-telefone" className="block text-sm font-medium text-ink-soft mb-2">
                       Telefone{' '}
                       <span className="text-ink-subtle text-xs font-normal">
-                        (opcional — para o lembrete no WhatsApp e o contato da equipe)
+                        (opcional — para a equipe falar com você pelo WhatsApp)
                       </span>
                     </label>
                     <input

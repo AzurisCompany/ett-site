@@ -4,7 +4,9 @@ import Footer from '@/components/Footer'
 import ImersaoDetalhe from '@/components/ImersaoDetalhe'
 
 const SITE_URL = 'https://englishtalktime.com.br'
-const ORG_ID = `${SITE_URL}/#organization`
+// Quem organiza é a Cherry Top (ela define inscrição, preço e condições). Sem `offers`:
+// o preço é sob consulta com ela, e o ETT não publica faixa de valores.
+const CHERRY_TOP = { '@type': 'Organization', name: 'Cherry Top', url: 'https://cherrytop.com.br' }
 
 const bhLocation = {
   '@type': 'Place',
@@ -20,7 +22,7 @@ const bhLocation = {
 const bhTurmas = [
   {
     slug: 'omega-zeta-set-2026',
-    name: 'Imersão em Inglês em BH — Turma OMEGA / ZETA (set/2026)',
+    name: 'Imersão em Inglês em Lagoa Santa (região de BH) — Turma OMEGA / ZETA (set/2026, realizada)',
     startDate: '2026-09-03T09:00:00-03:00',
     endDate: '2026-09-07T18:00:00-03:00',
     description:
@@ -28,7 +30,7 @@ const bhTurmas = [
   },
   {
     slug: 'gama-delta-out-2026',
-    name: 'Imersão em Inglês em BH — Turma GAMA / DELTA (out/2026)',
+    name: 'Imersão em Inglês em Lagoa Santa (região de BH) — Turma GAMA / DELTA (out/2026, realizada)',
     startDate: '2026-10-08T09:00:00-03:00',
     endDate: '2026-10-12T18:00:00-03:00',
     description:
@@ -36,7 +38,7 @@ const bhTurmas = [
   },
   {
     slug: 'alpha-beta-nov-2026',
-    name: 'Imersão em Inglês em BH — Turma ALPHA / BETA (nov/2026)',
+    name: 'Imersão em Inglês em Lagoa Santa (região de BH) — Turma ALPHA / BETA (nov/2026)',
     startDate: '2026-11-18T09:00:00-03:00',
     endDate: '2026-11-22T18:00:00-03:00',
     description:
@@ -72,25 +74,12 @@ const jsonLd = {
       description: t.description,
       startDate: t.startDate,
       endDate: t.endDate,
+      // Turmas passadas continuam Scheduled (aconteceram na data); o nome diz "realizada".
       eventStatus: 'https://schema.org/EventScheduled',
       eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
       location: bhLocation,
-      organizer: { '@id': ORG_ID },
-      performer: {
-        '@type': 'Organization',
-        name: 'Cherry Top Business Communication',
-        url: 'https://cherrytop.com.br',
-      },
+      organizer: CHERRY_TOP,
       maximumAttendeeCapacity: 8,
-      offers: {
-        '@type': 'AggregateOffer',
-        priceCurrency: 'BRL',
-        lowPrice: '7000',
-        highPrice: '12000',
-        availability: 'https://schema.org/LimitedAvailability',
-        url: `${SITE_URL}/imersoes/belo-horizonte/`,
-        validFrom: '2026-01-01T00:00:00-03:00',
-      },
       inLanguage: ['en', 'pt-BR'],
       image: `${SITE_URL}/imersoes/bh-2026/01.jpeg`,
       url: `${SITE_URL}/imersoes/belo-horizonte/`,
@@ -100,9 +89,9 @@ const jsonLd = {
 
 export const metadata: Metadata = {
   title:
-    'Imersão em Inglês em BH 2026 — Cherry Top · Immersion Village',
+    'Imersão em Inglês em Lagoa Santa (região de BH) — Cherry Top · Immersion Village',
   description:
-    'Imersão em inglês oferecida pela Cherry Top na Immersion Village Brazil (Lagoa Santa/MG): 5 dias com hospedagem e refeições, até 8 pessoas por turma, certificado de 90h. Turmas em 2026: 03–07/set, 08–12/out e 18–22/nov. Divulgada pelo English Talk Time.',
+    'Imersão em inglês oferecida pela Cherry Top na Immersion Village Brazil, em Lagoa Santa (região de BH): 5 dias com hospedagem e refeições, até 8 pessoas por turma, certificado de 90h. Turmas de set e out/2026 realizadas; turma de 18–22/nov/2026. Divulgada pelo English Talk Time.',
   keywords: [
     'imersão em inglês Belo Horizonte',
     'imersão em inglês BH',
@@ -119,16 +108,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    title: 'Imersão em Inglês em BH 2026 — Cherry Top',
+    title: 'Imersão em Inglês em Lagoa Santa (região de BH) — Cherry Top',
     description:
-      '5 dias de imersão na sede da Cherry Top no Brasil. Turmas em set, out e nov de 2026.',
+      '5 dias de imersão na sede da Cherry Top no Brasil, em Lagoa Santa (região de BH). Turmas de set e out/2026 realizadas; turma de nov/2026.',
     url: 'https://englishtalktime.com.br/imersoes/belo-horizonte/',
     images: [
       {
         url: '/imersoes/bh-2026/01.jpeg',
         width: 1200,
         height: 630,
-        alt: 'Imersão em inglês em Belo Horizonte — Immersion Village Brazil',
+        alt: 'Imersão em inglês em Lagoa Santa (região de BH) — Immersion Village Brazil',
       },
     ],
   },
@@ -148,11 +137,11 @@ export default function BeloHorizontePage() {
       />
       <Navbar />
       <ImersaoDetalhe
-        eyebrow="Imersão Belo Horizonte • Cherry Top"
-        city="Belo Horizonte"
+        eyebrow="Imersão Lagoa Santa (região de BH) • Cherry Top"
+        city="Lagoa Santa (região de BH)"
         uf="MG"
         headline="5 dias na sede da Cherry Top, usando inglês o dia inteiro."
-        intro="A Cherry Top recebe até 8 pessoas por turma na Immersion Village Brazil, em Lagoa Santa/MG, por 5 dias seguidos em inglês — com hospedagem, refeições e atividades inclusas e certificado de 90 horas emitido pela Cherry Top. A imersão é oferecida e conduzida pela Cherry Top; o ETT divulga e oferece ferramentas e encontros pra praticar antes e depois."
+        intro="A Cherry Top recebe até 8 pessoas por turma na Immersion Village Brazil, em Lagoa Santa (região de BH), por 5 dias seguidos em inglês — com hospedagem, refeições e atividades inclusas e certificado de 90 horas emitido pela Cherry Top. A imersão é oferecida e conduzida pela Cherry Top; o ETT divulga e repassa o contato de quem tem interesse. Pra praticar antes e depois, os encontros do ETT são gratuitos e as ferramentas do ETT Player estão abertas pra experimentar."
         turmas={[
           {
             label: 'Turma 1 — OMEGA / ZETA',
@@ -200,7 +189,7 @@ export default function BeloHorizontePage() {
         ]}
         fotos={fotosBH}
         fotosLegenda="Fotos da Immersion Village Brazil e de edições anteriores da Cherry Top."
-        ctaLabel="Quero participar da imersão em BH"
+        ctaLabel="Quero participar da imersão em Lagoa Santa (região de BH)"
         vagasInfo="Até 8 pessoas por turma"
       />
       <Footer />

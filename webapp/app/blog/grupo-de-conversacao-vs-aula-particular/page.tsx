@@ -61,7 +61,7 @@ const jsonLd = {
       headline: post.title,
       description: post.description,
       datePublished: `${post.date}T09:00:00-03:00`,
-      dateModified: `${post.date}T09:00:00-03:00`,
+      dateModified: '2026-11-09T09:00:00-03:00',
       author: { '@id': ORG_ID },
       publisher: { '@id': ORG_ID },
       mainEntityOfPage: `${SITE_URL}/blog/${SLUG}/`,
@@ -87,7 +87,7 @@ export default function Post() {
           Cambly, Preply, Tandem, professor próprio, conversation club, app de fluência —
           todo mundo promete a mesma coisa: você vai falar inglês. Mas a verdade prática é
           que <strong>cada formato resolve um problema diferente</strong>. Escolher o errado
-          é caro (em dinheiro e em meses perdidos). Esse artigo compara o que cada um
+          custa dinheiro e tempo. Esse artigo compara o que cada um
           realmente entrega — sem patrocínio, com base no que a gente vê na comunidade.
         </p>
 
@@ -100,13 +100,13 @@ export default function Post() {
           (TOEFL, IELTS) ou tem dúvida técnica de gramática.
         </p>
         <p>
-          <strong>Faz mal:</strong> tempo de produção. Em 50 minutos de aula, o aluno fala
-          em média 15-20 minutos. O resto é professor explicando, corrigindo, dando exemplo.
-          Pra destravar a fala você precisa de tempo de produção alto — não baixo.
+          <strong>Faz mal:</strong> tempo de produção. Numa aula, boa parte do tempo costuma ir
+          pro professor explicando, corrigindo e dando exemplo. Pra destravar a fala você
+          precisa de tempo de produção alto — não baixo.
         </p>
         <p>
-          <strong>E o custo:</strong> R$ 50–150 por sessão. Pra criar hábito (3-5 sessões por
-          semana) você gasta R$ 1.000–3.000/mês. Insustentável pra maioria.
+          <strong>E o custo:</strong> paga-se por sessão. Pra criar hábito com várias sessões por
+          semana, a conta mensal fica alta pra boa parte das pessoas.
         </p>
 
         <h3>Apps de fluência (Duolingo, Babbel, Cake)</h3>
@@ -123,20 +123,20 @@ export default function Post() {
 
         <h3>Imersão (intercâmbio, programa intensivo)</h3>
         <p>
-          <strong>Faz bem:</strong> salto de nível rápido. 30 dias de imersão equivalem a
-          6-12 meses de estudo regular pra quem já tem base. É de longe o método mais
-          eficiente em ganho-por-dia.
+          <strong>Faz bem:</strong> concentração. Você passa dias inteiros usando o idioma,
+          com uma intensidade difícil de reproduzir na rotina — especialmente pra quem já tem
+          alguma base.
         </p>
         <p>
-          <strong>Faz mal:</strong> acesso. Custa caro (R$ 8k–30k+) e exige tempo de
-          deslocamento. Não é uma rotina — é um evento. Se você não criar prática contínua
-          depois, parte do ganho some em 3 meses.
+          <strong>Faz mal:</strong> acesso. Costuma ser o formato mais caro e exige tempo e
+          deslocamento. Não é uma rotina — é um evento. Sem prática contínua depois, parte do
+          que se ganhou tende a se perder.
         </p>
         <p>
           <strong>Observação:</strong> imersão funciona melhor depois de um período de
-          conversação regular. Quem entra na imersão já tendo praticado fala num grupo
-          aproveita 3-5x mais. Pelo nosso lado, a gente trabalha com a Cherry Top exatamente
-          nessa lógica — veja{' '}
+          conversação regular: quem chega já acostumado a falar em grupo tende a aproveitar
+          mais. É por isso que o ETT divulga as imersões oferecidas pela Cherry Top, nossa
+          parceira — veja{' '}
           <Link href="/imersoes/">englishtalktime.com.br/imersoes</Link>.
         </p>
 
@@ -155,19 +155,19 @@ export default function Post() {
         <h3>Grupo de conversação estruturado (ETT e similares)</h3>
         <p>
           <strong>Faz bem:</strong> combina o que cada um dos outros formatos faz pela
-          metade — tempo de fala em grupo (não em monólogo), método e progressão de
-          vocabulário, simulação de situação real, e custo baixo ou zero. É a opção que
-          mais destrava por real gasto.
+          metade — tempo de fala em grupo (não em monólogo), roteiro e tema em cada encontro,
+          situações reais, e custo baixo ou zero. Pra quem quer praticar a fala gastando pouco,
+          é um ótimo ponto de partida.
         </p>
         <p>
           <strong>Faz mal:</strong> não substitui correção individual detalhada. Pra quem
-          tem prova de proficiência marcada em 2 meses, precisa também de aula 1-on-1 em
-          paralelo. Mas pra destravar a fala pro mercado, é o método dominante.
+          tem prova de proficiência marcada para breve, vale ter aula 1-on-1 em paralelo.
         </p>
 
         <h2>Tabela de comparação rápida</h2>
         <p>
-          Para o objetivo de <strong>destravar a fala em inglês pro trabalho</strong>:
+          Na nossa leitura (é opinião da equipe do ETT, não resultado de pesquisa), para o
+          objetivo de <strong>destravar a fala em inglês pro trabalho</strong>:
         </p>
         <ul>
           <li>
@@ -194,52 +194,50 @@ export default function Post() {
 
         <h2>Como combinar de forma inteligente</h2>
         <p>
-          A maioria das pessoas que destravou bem combina pelo menos dois formatos:
+          Muita gente combina pelo menos dois formatos. Alguns exemplos:
         </p>
         <ul>
           <li>
-            <strong>Stack barato e eficaz:</strong> grupo de conversação estruturado
-            (2-3x/semana) + app de vocabulário (15 min/dia). Custo: ~R$ 0–50/mês. Funciona
-            pra quase todo mundo.
+            <strong>Combinação barata:</strong> grupo de conversação estruturado (uma ou duas
+            vezes por semana) + um app ou ferramenta de vocabulário alguns minutos por dia.
           </li>
           <li>
-            <strong>Stack pra prova específica:</strong> grupo de conversação + aula 1-on-1
-            focada (1-2x/semana) na prova. Custo: ~R$ 400–800/mês.
+            <strong>Combinação pra prova específica:</strong> grupo de conversação + aula 1-on-1
+            focada na prova.
           </li>
           <li>
-            <strong>Stack pra salto de nível rápido:</strong> grupo de conversação 3
-            meses antes + imersão de 1-4 semanas + grupo de conversação 3 meses depois.
-            Custo: depende da imersão.
+            <strong>Combinação com imersão:</strong> grupo de conversação antes, a imersão, e
+            grupo de conversação depois, pra manter o inglês em uso.
           </li>
         </ul>
 
         <h2>O ETT está em qual quadrante</h2>
         <p>
           O English Talk Time é grupo de conversação{' '}
-          <strong>estruturado</strong> — não bate-papo. Cada encontro tem tópico anunciado
-          antes, simulação real (entrevista, daily, demo, negociação), e ferramentas de IA
-          que preparam você antes e consolidam depois. Encontros são gratuitos, online
-          toda segunda e presenciais em Curitiba.{' '}
-          <Link href="/conversacao/">Veja como funciona em detalhe</Link>.
+          <strong>estruturado</strong> — não bate-papo. Cada encontro tem tema, perguntas e
+          rodadas, em grupos pequenos, pra todo mundo falar. Os encontros são gratuitos, abertos
+          a qualquer pessoa e sem cadastro: online toda segunda às 20h, na sala do ETT Speak, e o
+          IEP Talks, presencial, aos sábados às 10h, no IEP, em Curitiba. Entre um encontro e
+          outro, as ferramentas do <Link href="/ferramentas/">ETT Player</Link> estão abertas pra
+          experimentar.{' '}
+          <Link href="/agenda/">Veja as próximas datas na agenda</Link>.
         </p>
         <p>
-          Pra quem quer o salto de nível, a gente trabalha com a Cherry Top em imersões
-          intensivas — formato &quot;grupo + imersão&quot; descrito acima.{' '}
-          <Link href="/imersoes/">Confira as próximas imersões</Link>.
+          Pra quem quer uma imersão, o ETT divulga as imersões oferecidas pela Cherry Top —
+          inscrição, valores e condições são definidos por ela.{' '}
+          <Link href="/imersoes/">Confira as turmas</Link>.
         </p>
 
         <h2>Resumindo: por onde começar?</h2>
         <p>
           Se você tem orçamento curto e o objetivo é destravar pro mercado:{' '}
-          <strong>grupo de conversação estruturado</strong> é o melhor ponto de partida.
-          É grátis, tem comunidade, tem método, e o ganho por hora investida é o mais alto
-          do mercado. Depois de 60-90 dias, dá pra avaliar se quer adicionar aula
-          individual, imersão ou seguir só com o grupo.
+          <strong>grupo de conversação estruturado</strong> é um bom ponto de partida. É
+          grátis, tem comunidade e tem roteiro. Depois de algumas semanas de prática, dá pra
+          avaliar se quer adicionar aula individual, imersão ou seguir só com o grupo.
         </p>
         <p>
-          A pior decisão é gastar 6 meses tentando destravar sozinho com app —{' '}
-          <em>isso não funciona</em> pra adulto que já entende inglês. Você precisa de
-          gente.
+          O que raramente funciona pra adulto que já entende inglês é tentar destravar a fala
+          só com app, sozinho. Pra conversar, você precisa de gente.
         </p>
       </BlogLayout>
     </>

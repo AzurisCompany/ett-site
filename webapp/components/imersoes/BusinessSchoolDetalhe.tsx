@@ -76,7 +76,7 @@ const inclusos = [
   'Almoço nos dias presenciais',
   'Certificado de 50 horas',
 ]
-const naoInclusos = ['Passagens aéreas', 'Hospedagem', 'Traslado']
+const naoInclusos = ['Deslocamento e hospedagem, se vier de fora']
 
 const cherryTop = [
   { rotulo: 'Nosso negócio', texto: 'Business Communication.' },
@@ -298,10 +298,11 @@ export default function BusinessSchoolDetalhe() {
               </ul>
             </div>
             <div className="rounded-2xl p-6 bg-gradient-to-br from-brand-red/10 via-surface-card to-brand-silver/10 border border-brand-red/30 flex flex-col">
-              <div className="text-xs text-ink-muted uppercase tracking-wider mb-1">Investimento</div>
+              <div className="text-xs text-ink-muted uppercase tracking-wider mb-1">Investimento do curso</div>
               <div className="text-2xl font-bold text-ink mb-2">Sob consulta</div>
               <p className="text-ink-muted text-sm mb-6">
-                Valores, formas de pagamento e inscrição são definidos pela Cherry Top.
+                Valores, formas de pagamento e inscrição são definidos pela Cherry Top. Não tem
+                relação com os planos do ETT.
               </p>
               <a
                 href={cta.href}
@@ -328,7 +329,7 @@ export default function BusinessSchoolDetalhe() {
                 </div>
                 <div>
                   <div className="text-xs uppercase tracking-widest text-brand-red font-semibold">Oferecido por</div>
-                  <div className="text-xl font-bold text-ink">Cherry Top Global Business School</div>
+                  <div className="text-xl font-bold text-ink">Cherry Top</div>
                 </div>
               </div>
               <p className="text-ink-soft text-lg mb-4">
@@ -361,7 +362,8 @@ export default function BusinessSchoolDetalhe() {
           <div className="mt-10 p-5 rounded-2xl bg-surface-card border border-surface-line text-ink-soft">
             <strong className="text-brand-red">Apoio do ETT:</strong> divulgação, encaminhamento do seu interesse e,
             se quiser praticar antes e depois, as{' '}
-            <Link href="/ferramentas/" className="text-brand-red underline underline-offset-2">ferramentas</Link> e os{' '}
+            <Link href="/ferramentas/" className="text-brand-red underline underline-offset-2">ferramentas do ETT Player</Link> (abertas
+            pra experimentar) e os{' '}
             <Link href="/agenda/" className="text-brand-red underline underline-offset-2">encontros de conversação</Link>{' '}
             (abertos e gratuitos).
           </div>
@@ -381,7 +383,7 @@ export default function BusinessSchoolDetalhe() {
           <p className="text-ink-muted text-lg mb-8">
             {encerrada
               ? 'Veja as turmas abertas da Cherry Top na página de imersões.'
-              : 'Preencha o formulário em 2 minutos. Nós repassamos seu contato para a Cherry Top, que fala com você sobre detalhes, valores e condições de inscrição.'}
+              : 'Preencha o formulário. Nós repassamos seu contato para a Cherry Top, que fala com você sobre detalhes, valores e condições de inscrição.'}
           </p>
           <a
             href={cta.href}

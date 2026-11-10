@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Github, Linkedin, Instagram } from 'lucide-react'
 import { footer as footerMessages, type Locale } from '@/lib/i18n/messages'
+import { parceiros } from '@/lib/parceiros'
 
 const partnerLogos = [
   { src: '/images/logobeetools.webp', alt: 'BeeTools', width: 100 },
@@ -67,12 +67,8 @@ function buildLinks(locale: Locale) {
     },
     {
       title: m.partners.title,
-      items: [
-        { label: m.partners.beetools, href: '/#parceiros' },
-        { label: m.partners.cherrytop, href: '/#parceiros' },
-        { label: m.partners.coders, href: '/#parceiros' },
-        { label: m.partners.iep, href: '/#parceiros' },
-      ],
+      // Lista completa de lib/parceiros.ts (antes eram só 4, todos pro mesmo /#parceiros).
+      items: parceiros.map((p) => ({ label: p.nome, href: p.url ?? '/#parceiros' })),
     },
   ]
 }
@@ -96,7 +92,7 @@ export default function Footer({ locale = 'pt-BR' }: FooterProps) {
             <div className="mb-5">
               <Image
                 src="/images/ett-logo-institucional-negativa.svg"
-                alt="English Talk Time — Programa de Aceleração de Inglês"
+                alt="English Talk Time — plataforma de apoio à prática do inglês"
                 width={160}
                 height={84}
                 className="h-20 w-auto"
@@ -105,22 +101,7 @@ export default function Footer({ locale = 'pt-BR' }: FooterProps) {
             <p className="text-ink-subtle text-sm leading-relaxed mb-5">
               {m.tagline}
             </p>
-            <div className="flex gap-3">
-              {[
-                { Icon: Linkedin, label: 'LinkedIn' },
-                { Icon: Instagram, label: 'Instagram' },
-                { Icon: Github, label: 'GitHub' },
-              ].map(({ Icon, label }) => (
-                <a
-                  key={label}
-                  href="#"
-                  aria-label={label}
-                  className="w-9 h-9 rounded-lg border border-surface-line flex items-center justify-center text-ink-subtle hover:text-brand-red hover:border-brand-red/30 transition-colors"
-                >
-                  <Icon className="w-4 h-4" />
-                </a>
-              ))}
-            </div>
+            {/* Ícones de redes removidos em 09/11/2026: não há perfis do ETT ainda. */}
           </div>
 
           {/* Link columns */}

@@ -15,7 +15,6 @@ import BusinessSchoolDetalhe from '@/components/imersoes/BusinessSchoolDetalhe'
  */
 
 const SITE_URL = 'https://englishtalktime.com.br'
-const ORG_ID = `${SITE_URL}/#organization`
 const URL = `${SITE_URL}/imersoes/business-school/`
 
 const jsonLd = {
@@ -50,12 +49,8 @@ const jsonLd = {
           addressCountry: 'BR',
         },
       },
-      organizer: { '@id': ORG_ID },
-      performer: {
-        '@type': 'Organization',
-        name: 'Cherry Top Global Business School',
-        url: 'https://cherrytop.com.br',
-      },
+      // Quem organiza é a Cherry Top. Sem `offers`: valor sob consulta com ela.
+      organizer: { '@type': 'Organization', name: 'Cherry Top', url: 'https://cherrytop.com.br' },
       inLanguage: ['en', 'pt-BR'],
       image: `${SITE_URL}/imersoes/business-school-2026/capa-v1.jpg`,
       url: URL,

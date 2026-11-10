@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import {
   ArrowRight,
+  ArrowUpRight,
   Wifi,
   Calendar,
   Clock,
@@ -9,24 +10,27 @@ import {
   CheckCircle2,
   MapPin,
   Globe2,
+  Bell,
 } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { agendaEvents } from '@/lib/agenda-events'
+import AvisoPausa from '@/components/encontros/AvisoPausa'
+import ProximosOnline from '@/components/encontros/ProximosOnline'
+import { SPEAK_URL } from '@/components/encontros/speak'
+import { REINICIO } from '@/lib/agenda-events'
 
 const SITE_URL = 'https://englishtalktime.com.br'
 const ORG_ID = `${SITE_URL}/#organization`
-/* Captura oficial é o formulário do próprio site (RD Station), na home.
-   Antes estas landings mandavam pra um Google Form externo — dois caminhos de
-   captura, campos diferentes e tráfego saindo do site. Ver
-   PLANO-REVISAO-MARKETING-2026-08-01.md. */
+/* O encontro é aberto e sem cadastro: o CTA primário é a sala (ETT Speak) e a agenda.
+   O formulário da home (RD Station) fica só como lembrete opcional das datas por e-mail.
+   Ver AUDITORIA-CONTEUDO-2026-11-09.md (A6–A9). */
 const FORM_URL = '/#inscricao'
 
 export const metadata: Metadata = {
   title:
     'Conversação em Inglês Online Grátis — Toda Segunda às 20h | English Talk Time',
   description:
-    'Grupo de conversação em inglês online e gratuito, toda segunda às 20h–21h30 via Google Meet. Treino de fala estruturado para profissionais de tech do Brasil inteiro. Entrar no encontro não custa nada.',
+    'Encontro de conversação em inglês online e gratuito, toda segunda das 20h às 21h30, na sala do ETT Speak, direto no navegador. Aberto a qualquer pessoa, sem cadastro e sem pagar.',
   keywords: [
     'praticar inglês online',
     'praticar inglês online grátis',
@@ -35,9 +39,8 @@ export const metadata: Metadata = {
     'conversação em inglês online segunda',
     'treino de fala em inglês online',
     'grupo para falar inglês online',
-    'inglês online via Google Meet',
     'english speaking club online',
-    'inglês para tech online',
+    'encontro de inglês online gratuito',
   ],
   alternates: { canonical: '/online/' },
   openGraph: {
@@ -45,24 +48,21 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     title: 'Conversação em Inglês Online — Toda Segunda 20h | ETT',
     description:
-      'Grupo de conversação semanal online e gratuito. Treino de fala estruturado com ferramentas de apoio com IA. Aberto a todo o Brasil.',
+      'Encontro semanal de conversação em inglês, online e gratuito, na sala do ETT Speak. Aberto a qualquer pessoa, sem cadastro.',
     url: `${SITE_URL}/online/`,
     images: [
       {
         url: '/images/og-ett-2026.png',
         width: 1200,
         height: 630,
-        alt: 'Conversação em inglês online toda segunda — grupo ETT',
+        alt: 'Conversação em inglês online toda segunda — English Talk Time',
       },
     ],
   },
 }
 
-const today = new Date().toISOString().slice(0, 10)
-const proximosOnline = agendaEvents
-  .filter((e) => e.type === 'online' && e.date >= today)
-  .slice(0, 8)
-
+/* Sem datas no JSON-LD: o build pode ficar semanas sem rodar e uma data escrita
+   no build vira data vencida. O encontro vai como série semanal (eventSchedule). */
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -81,54 +81,57 @@ const jsonLd = {
     {
       '@type': 'Service',
       '@id': `${SITE_URL}/online/#service`,
-      serviceType: 'Grupo de Conversação em Inglês Online',
+      serviceType: 'Encontro de Conversação em Inglês Online',
       name: 'Conversação em Inglês Online — Toda Segunda 20h',
       description:
-        'Encontros online semanais, gratuitos e estruturados de treino de fala em inglês via Google Meet. Para profissionais de Tecnologia, Dados, IA e BI de todo o Brasil.',
+        'Encontros online semanais e gratuitos de conversação em inglês, na sala do ETT Speak, direto no navegador. Abertos a qualquer pessoa, sem cadastro.',
       provider: { '@id': ORG_ID },
       areaServed: { '@type': 'Country', name: 'Brasil' },
-      audience: {
-        '@type': 'Audience',
-        audienceType:
-          'Profissionais e estudantes de Tecnologia, Dados, IA, BI e Cloud',
-      },
       offers: {
         '@type': 'Offer',
         price: '0',
         priceCurrency: 'BRL',
         availability: 'https://schema.org/InStock',
-        url: FORM_URL,
+        url: `${SITE_URL}/online/`,
       },
       url: `${SITE_URL}/online/`,
     },
-    ...proximosOnline.slice(0, 4).map((e) => ({
+    {
       '@type': 'Event',
-      name: 'Encontro Online ETT — Grupo de Conversação em Inglês',
+      name: 'Encontro Online ETT — Conversação em Inglês',
       description:
-        'Encontro semanal online de conversação em inglês via Google Meet — treino de fala guiado com a comunidade ETT. Gratuito e aberto.',
-      startDate: `${e.date}T${e.startTime}:00-03:00`,
-      endDate: `${e.date}T${e.endTime}:00-03:00`,
+        'Encontro semanal online de conversação em inglês na sala do ETT Speak. Gratuito, aberto a qualquer pessoa, sem cadastro.',
+      startDate: `${REINICIO.online}T20:00:00-03:00`,
+      endDate: `${REINICIO.online}T21:30:00-03:00`,
+      eventSchedule: {
+        '@type': 'Schedule',
+        byDay: 'https://schema.org/Monday',
+        repeatFrequency: 'P1W',
+        startDate: REINICIO.online,
+        startTime: '20:00',
+        endTime: '21:30',
+        scheduleTimezone: 'America/Sao_Paulo',
+      },
       eventStatus: 'https://schema.org/EventScheduled',
       eventAttendanceMode: 'https://schema.org/OnlineEventAttendanceMode',
       location: {
         '@type': 'VirtualLocation',
-        url: `${SITE_URL}/online/`,
-        name: 'Online · Google Meet',
+        url: SPEAK_URL,
+        name: 'Online · sala do ETT Speak',
       },
       organizer: { '@id': ORG_ID },
       isAccessibleForFree: true,
-      inLanguage: ['pt-BR', 'en'],
+      inLanguage: ['en', 'pt-BR'],
       offers: {
         '@type': 'Offer',
         price: '0',
         priceCurrency: 'BRL',
         availability: 'https://schema.org/InStock',
         url: `${SITE_URL}/online/`,
-        validFrom: '2026-01-01T00:00:00-03:00',
       },
       image: `${SITE_URL}/images/og-ett-2026.png`,
       url: `${SITE_URL}/online/`,
-    })),
+    },
   ],
 }
 
@@ -155,26 +158,36 @@ export default function OnlinePage() {
                 Conversação em Inglês Online —{' '}
                 <span className="gradient-text">Toda Segunda às 20h</span>
               </h1>
-              <p className="text-ink-soft text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
-                Grupo de conversação semanal <strong className="text-ink">gratuito</strong>{' '}
-                via Google Meet. 1h30 de treino de fala estruturado, com ferramentas de apoio
-                com IA. Aberto a profissionais de tech do Brasil inteiro.
+              <p className="text-ink-soft text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-6">
+                Encontro semanal de conversação, <strong className="text-ink">gratuito</strong>, na
+                sala do <strong className="text-ink">ETT Speak</strong>, direto no navegador. 1h30
+                pra praticar a fala com outras pessoas. Aberto a qualquer pessoa, de qualquer lugar,
+                sem cadastro.
               </p>
+              <AvisoPausa tipo="online" className="mb-6" />
               <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
                 <a
-                  href={FORM_URL}
+                  href={SPEAK_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red"
                 >
-                  Receber o link do próximo encontro
-                  <ArrowRight className="w-4 h-4" />
+                  Entrar na sala
+                  <ArrowUpRight className="w-4 h-4" />
                 </a>
                 <Link
-                  href="#datas"
+                  href="/agenda/"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-surface-line text-ink font-semibold hover:border-brand-silver/50 hover:bg-surface-card transition-all"
                 >
-                  Ver próximas datas
+                  Ver a agenda
                 </Link>
               </div>
+              <p className="text-ink-subtle text-sm mt-4">
+                A sala pede nome e e-mail na entrada, sem criar conta.{' '}
+                <a href={FORM_URL} className="underline hover:text-brand-red">
+                  Receber lembrete das datas por e-mail
+                </a>
+              </p>
               <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-surface-line bg-surface-card text-sm text-ink-soft">
                   <Clock className="w-4 h-4 text-brand-silver" />
@@ -182,11 +195,11 @@ export default function OnlinePage() {
                 </div>
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-surface-line bg-surface-card text-sm text-ink-soft">
                   <Wifi className="w-4 h-4 text-brand-silver" />
-                  Google Meet
+                  ETT Speak, no navegador
                 </div>
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-surface-line bg-surface-card text-sm text-ink-soft">
                   <Globe2 className="w-4 h-4 text-brand-silver" />
-                  Brasil inteiro
+                  De qualquer lugar
                 </div>
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-surface-line bg-surface-card text-sm text-brand-red font-medium">
                   Gratuito
@@ -204,31 +217,30 @@ export default function OnlinePage() {
                 Como funciona o <span className="gradient-text">encontro online</span>
               </h2>
               <p className="text-ink-muted text-lg">
-                Sem catraca e sem cartão. Você se inscreve, recebe o link, entra na sala
-                e participa.
+                Sem inscrição, sem catraca e sem cartão. É só entrar na sala no horário.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
               {[
                 {
                   n: '1',
-                  title: 'Inscrição',
-                  body: 'Preenche o formulário com nome e e-mail. Demora menos de um minuto.',
+                  title: 'Veja a data',
+                  body: 'Toda segunda, das 20h às 21h30 (horário de Brasília). As próximas datas estão logo abaixo e na agenda.',
                 },
                 {
                   n: '2',
-                  title: 'Recebe o link',
-                  body: 'A gente manda o link do Google Meet + a agenda do mês + materiais iniciais das ferramentas.',
+                  title: 'Abra a sala',
+                  body: 'No horário, clique em "Entrar na sala". O ETT Speak abre direto no navegador, sem instalar nada.',
                 },
                 {
                   n: '3',
-                  title: 'Entra na sala',
-                  body: 'Segunda às 20h, abre o Meet. Grupo pequeno (15-25 pessoas) — todo mundo fala.',
+                  title: 'Diga quem é',
+                  body: 'A sala pede nome e e-mail na entrada. Não precisa criar conta nem pagar.',
                 },
                 {
                   n: '4',
-                  title: 'Treina e volta',
-                  body: '1h30 de conversação guiada. Sai com o vocabulário do dia anotado e a tarefa pro próximo encontro.',
+                  title: 'Converse',
+                  body: '1h30 de conversa em inglês com outras pessoas. Qualquer nível pode participar; rende mais a partir do A2.',
                 },
               ].map((s) => (
                 <div
@@ -259,67 +271,14 @@ export default function OnlinePage() {
                 Próximas datas <span className="gradient-text">online</span>
               </h2>
               <p className="text-ink-muted text-lg">
-                Todo encontro online segue o mesmo formato: 20h–21h30, Google Meet, treino de fala
-                guiado com tópico anunciado antes.
+                Todo encontro online segue o mesmo formato: 20h–21h30, na sala do ETT Speak.
               </p>
+              <AvisoPausa tipo="online" className="mt-5" />
             </div>
 
-            {proximosOnline.length === 0 ? (
-              <p className="text-center text-ink-muted max-w-md mx-auto">
-                Sem datas online confirmadas nos próximos dias.
-                <br />
-                <Link href="/agenda/" className="text-brand-silver underline mt-2 inline-block">
-                  Ver agenda completa
-                </Link>
-              </p>
-            ) : (
-              <div className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-3">
-                {proximosOnline.map((ev) => {
-                  const dayNum = ev.dateLabel.split(' ')[0]
-                  const monthAbbr = ev.dateLabel.split(' de ')[1].slice(0, 3)
-                  return (
-                    <div
-                      key={ev.date}
-                      className="relative bg-surface-card border border-brand-silver/20 rounded-xl p-3.5 card-hover"
-                    >
-                      <div className="flex items-start gap-3">
-                        <div className="shrink-0 w-14 rounded-lg border border-brand-silver/30 bg-brand-silver/5 text-center py-1.5">
-                          <div className="text-[10px] uppercase tracking-wider font-bold text-brand-silver">
-                            {ev.weekday.slice(0, 3).toLowerCase()}
-                          </div>
-                          <div className="text-ink font-black text-xl leading-none my-0.5">
-                            {dayNum}
-                          </div>
-                          <div className="text-ink-subtle text-[10px] uppercase tracking-wider">
-                            {monthAbbr}
-                          </div>
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-1.5 mb-1">
-                            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-brand-silver/10 text-brand-silver border border-brand-silver/30">
-                              <Wifi className="w-2.5 h-2.5" />
-                              online
-                            </span>
-                            <span className="ml-auto inline-flex items-center gap-1 text-xs text-ink-muted">
-                              <Clock className="w-3 h-3" />
-                              {ev.time}
-                            </span>
-                          </div>
-                          <h3 className="font-bold text-ink text-sm leading-snug mb-1 truncate">
-                            {ev.title}
-                          </h3>
-                          <p className="text-xs text-ink-subtle leading-snug truncate">
-                            Online · Google Meet
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
-            )}
+            <ProximosOnline quantidade={4} />
 
-            <div className="text-center mt-8">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mt-8">
               <Link
                 href="/agenda/"
                 className="inline-flex items-center gap-2 text-ink-muted hover:text-brand-red text-sm transition-colors"
@@ -327,6 +286,13 @@ export default function OnlinePage() {
                 <Calendar className="w-4 h-4" />
                 Ver agenda completa (online + presencial)
               </Link>
+              <a
+                href={FORM_URL}
+                className="inline-flex items-center gap-2 text-ink-muted hover:text-brand-red text-sm transition-colors"
+              >
+                <Bell className="w-4 h-4" />
+                Receber lembrete das datas por e-mail
+              </a>
             </div>
           </div>
         </section>
@@ -337,31 +303,30 @@ export default function OnlinePage() {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-10">
                 <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
-                  Não é aula 1-on-1.{' '}
-                  <span className="gradient-text">É grupo. Por isso funciona.</span>
+                  Não é aula. <span className="gradient-text">É conversa em grupo.</span>
                 </h2>
                 <p className="text-ink-muted text-lg max-w-2xl mx-auto">
-                  Pra destravar a conversação, você precisa de coisas que aula individual
-                  não entrega.
+                  O encontro complementa o estudo individual e os cursos: é o espaço pra usar o
+                  inglês com outras pessoas.
                 </p>
               </div>
               <div className="grid md:grid-cols-2 gap-5">
                 {[
                   {
-                    title: 'Múltiplos sotaques e vocabulários',
-                    body: 'Em grupo você ouve gente diferente — sotaque do nordeste, do sul, profissional de dados, de UX, de cloud. É o que você vai encontrar no mercado real.',
+                    title: 'Vozes e sotaques diferentes',
+                    body: 'Em grupo você ouve gente de áreas, cidades e níveis diferentes, cada um com seu jeito de falar.',
                   },
                   {
-                    title: 'Turn-taking de verdade',
-                    body: 'Interromper educadamente, concordar, discordar, mudar de assunto, pedir esclarecimento. Em aula 1-on-1 o professor te dá espaço. Em grupo, você toma o espaço — como na vida real.',
+                    title: 'Revezar a fala de verdade',
+                    body: 'Interromper com educação, concordar, discordar, mudar de assunto, pedir esclarecimento: coisas que só se praticam com mais de uma pessoa na conversa.',
                   },
                   {
-                    title: 'Networking internacional',
-                    body: 'Os participantes do ETT são profissionais e estudantes de tech do Brasil inteiro. Sai um job remoto, sai uma indicação, sai um colega pra praticar fora dos encontros.',
+                    title: 'Gente pra praticar junto',
+                    body: 'Os encontros reúnem pessoas que também querem praticar. Dá pra combinar conversa fora do encontro com quem você conhecer lá.',
                   },
                   {
-                    title: 'Hábito comunitário',
-                    body: 'Quem pratica em grupo cria rotina. Aula 1-on-1 é fácil de cancelar — "tava cansado". Grupo gera compromisso ("a galera vai estar lá").',
+                    title: 'Hábito semanal',
+                    body: 'Dia e hora fixos ajudam a criar rotina: toda segunda às 20h tem um lugar pra falar inglês.',
                   },
                 ].map((b) => (
                   <div
@@ -400,8 +365,8 @@ export default function OnlinePage() {
                 </div>
               </div>
               <p className="text-ink-muted leading-relaxed mb-5">
-                Pra quem está em Curitiba ou região, além do online de segunda, tem encontro
-                presencial todo sábado, das 10h às 12h, no IEP Talks. Nada te impede de fazer os
+                Pra quem está em Curitiba ou região, além do online de segunda, tem o IEP Talks:
+                encontro presencial todo sábado, das 10h às 12h, no IEP. Nada te impede de fazer os
                 dois.
               </p>
               <Link
@@ -422,21 +387,35 @@ export default function OnlinePage() {
               <div className="relative">
                 <Users className="w-10 h-10 text-brand-silver mx-auto mb-5" />
                 <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
-                  A próxima segunda <span className="gradient-text">vai te encontrar falando</span>
+                  Segunda, 20h: <span className="gradient-text">venha conversar</span>
                 </h2>
-                <p className="text-ink-muted text-lg leading-relaxed mb-7 max-w-xl mx-auto">
-                  Inscrição grátis em 2 minutos. Recebe o link do Google Meet, a agenda
-                  completa e o material de boas-vindas.
+                <p className="text-ink-muted text-lg leading-relaxed mb-5 max-w-xl mx-auto">
+                  Não precisa de inscrição. No horário, é só abrir a sala do ETT Speak.
                 </p>
-                <a
-                  href={FORM_URL}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg"
-                >
-                  Quero o link do próximo encontro online
-                  <ArrowRight className="w-5 h-5" />
-                </a>
-                <p className="text-ink-subtle text-xs mt-4 italic">
-                  Gratuito. Sem compromisso. Sem spam.
+                <AvisoPausa tipo="online" className="mb-6" />
+                <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+                  <a
+                    href={SPEAK_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-red-deep text-white font-bold text-base hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg"
+                  >
+                    Entrar na sala
+                    <ArrowUpRight className="w-5 h-5" />
+                  </a>
+                  <Link
+                    href="/agenda/"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-surface-line text-ink font-semibold hover:border-brand-silver/50 transition-all"
+                  >
+                    Ver a agenda
+                  </Link>
+                </div>
+                <p className="text-ink-subtle text-sm mt-5">
+                  Prefere ser avisado?{' '}
+                  <a href={FORM_URL} className="underline hover:text-brand-red">
+                    Receber lembrete das datas por e-mail
+                  </a>{' '}
+                  (você recebe o link da sala e as datas dos encontros).
                 </p>
               </div>
             </div>

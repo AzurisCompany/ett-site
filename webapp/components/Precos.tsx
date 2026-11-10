@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Check, Wallet, ShieldCheck, MessagesSquare, Smartphone, UserRound, Handshake } from 'lucide-react'
-import { cartoesHome, PRECO_ADESAO, PRECO_MENSAL } from '@/lib/planos'
+import { Check, Wallet, MessagesSquare, Smartphone, UserRound, Handshake } from 'lucide-react'
+import { cartoesHome, PRECO_ADESAO, PRECO_MENSAL, META_DIAS } from '@/lib/planos'
 
 /* Quatro coisas diferentes, com quatro regras diferentes. Separadas pra que
    ninguém leia que paga pelo encontro (que é aberto) nem que o ETT vende o
@@ -17,15 +17,15 @@ const blocos = [
   },
   {
     icon: Smartphone,
-    titulo: 'Acesso às ferramentas',
-    preco: '30 dias inclusos na ativação',
-    texto: `Depois, a Trilha de Dedicação (R$ ${PRECO_MENSAL}/mês) ou a Trilha de Aceleração, que troca a mensalidade por 1h da sua dedicação por dia.`,
+    titulo: 'Ferramentas do ETT Player',
+    preco: 'Abertas pra experimentar',
+    texto: 'Level Check, flashcards, séries com legenda, audiolivro, rádio e outras. Algumas em versão beta.',
   },
   {
     icon: UserRound,
-    titulo: 'Orientação e personalização',
-    preco: `R$ ${PRECO_ADESAO}, uma vez`,
-    texto: 'Ativação acompanhada: sua entrada na plataforma, com 30 dias de ferramentas, duas sessões individuais de 1h pra configurar tudo e material personalizado.',
+    titulo: 'Orientação e acompanhamento',
+    preco: `R$ ${PRECO_ADESAO} no 1º mês`,
+    texto: `Ativação acompanhada: duas sessões individuais de 1h, plano e material personalizados. Depois, a Trilha de Dedicação (R$ ${PRECO_MENSAL}/mês) ou a de Aceleração, sem mensalidade com a meta.`,
   },
   {
     icon: Handshake,
@@ -56,8 +56,8 @@ export default function Precos() {
             O que é gratuito <span className="brand-red">e o que é pago</span>
           </h2>
           <p className="text-ink-muted max-w-2xl mx-auto text-lg leading-relaxed">
-            Conversar nos encontros não custa nada. O que tem preço é o acesso contínuo às
-            ferramentas e a orientação individual, e você só paga se quiser.
+            Os encontros são gratuitos e as ferramentas do ETT Player são abertas pra experimentar.
+            O que tem preço é a orientação individual e o acompanhamento, e você só paga se quiser.
           </p>
         </motion.div>
 
@@ -80,34 +80,16 @@ export default function Precos() {
         </div>
 
         <h3 className="text-center text-xl sm:text-2xl font-bold text-ink mb-8">
-          Ferramentas e orientação: as opções
+          Orientação e acompanhamento: as opções
         </h3>
-
-        {/* Quem já está numa trilha gratuita não passa a pagar */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-          className="max-w-3xl mx-auto mb-10 flex items-start gap-3 rounded-2xl border border-brand-silver/25 bg-brand-silver/5 px-5 py-4"
-        >
-          <ShieldCheck className="w-5 h-5 text-brand-silver shrink-0 mt-0.5" />
-          <p className="text-sm text-ink-soft leading-relaxed">
-            <strong className="text-ink">
-              Quem já está numa trilha gratuita não passa a pagar.
-            </strong>{' '}
-            Se você se cadastrou antes desta página mudar, sua adesão está isenta. Não existe
-            cobrança retroativa.
-          </p>
-        </motion.div>
 
         {/* O caminho, em 2 passos: ninguém entra numa trilha sem a ativação */}
         <div className="max-w-4xl mx-auto mb-10 grid sm:grid-cols-[1fr_auto_1fr] items-center gap-3 sm:gap-4">
           <div className="rounded-2xl border border-brand-red/35 bg-brand-red/5 px-5 py-4">
             <p className="text-[11px] font-bold uppercase tracking-widest text-brand-red mb-1">Passo 1 · seu 1º mês</p>
             <p className="text-sm text-ink-soft leading-relaxed">
-              <strong className="text-ink">Ativação acompanhada, R$ {PRECO_ADESAO}.</strong> 30 dias com todas as
-              ferramentas, duas sessões de orientação e os encontros.
+              <strong className="text-ink">Ativação acompanhada, R$ {PRECO_ADESAO}.</strong> Duas sessões individuais
+              de orientação, plano e material personalizados e acompanhamento por 30 dias.
             </p>
           </div>
           <span className="hidden sm:block text-brand-red text-2xl font-bold" aria-hidden>→</span>
@@ -115,7 +97,7 @@ export default function Precos() {
             <p className="text-[11px] font-bold uppercase tracking-widest text-ink-muted mb-1">Passo 2 · a partir do dia 31</p>
             <p className="text-sm text-ink-soft leading-relaxed">
               <strong className="text-ink">Você escolhe uma trilha:</strong> Dedicação (R$ {PRECO_MENSAL}/mês) ou
-              Aceleração (R$ 0 com a meta de 1h por dia).
+              Aceleração (R$ 0 com {META_DIAS} dias válidos de prática por mês).
             </p>
           </div>
         </div>

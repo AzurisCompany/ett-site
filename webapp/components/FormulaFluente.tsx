@@ -19,16 +19,12 @@ import {
   CheckCircle2,
   AlertTriangle,
   Zap,
-  BookMarked,
   ExternalLink,
   PlayCircle,
   Subtitles,
   MousePointerClick,
   Pause,
 } from 'lucide-react'
-
-const ETT_PROGRAM_URL =
-  'https://gubigdata.com.br/programa-de-aceleracao-do-ingles-para-mercado-internacional/'
 
 const SUBTITLES_TOOL_URL =
   'https://ett-subtitles.vercel.app/study?series=formulafluente&season=1&episode=1'
@@ -99,7 +95,7 @@ const immersionLayers = [
     icon: MapPin,
     title: 'No Brasil',
     color: 'brand-silver',
-    desc: 'Intercâmbio de idiomas, Meetup, hostels, Couchsurfing, aulas online, comunidade de prática. No ETT, é o coração dos encontros mensais.',
+    desc: 'Intercâmbio de idiomas, Meetup, hostels, Couchsurfing, aulas online, comunidade de prática. No ETT, é o papel dos encontros semanais de conversação, gratuitos e abertos.',
   },
   {
     icon: Brain,
@@ -149,15 +145,15 @@ export default function FormulaFluente() {
             className="max-w-4xl mx-auto text-center"
           >
             <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-6">
-              Metodologia
+              Método do parceiro Fórmula Fluente
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-ink mb-6 leading-tight">
               A <span className="gradient-text">Fórmula Fluente</span>
             </h1>
             <p className="text-ink-muted text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
-              O método de Frank Florida para organizar o estudo do inglês: vocabulário relevante,
-              prática deliberada, threshold + imersão. É a base de como as ferramentas do ETT
-              organizam a rotina.
+              O método de Frank Florida, da Fórmula Fluente, para organizar o estudo de um idioma:
+              vocabulário relevante, prática deliberada, threshold + imersão. A Fórmula Fluente é
+              parceira do ETT, e o ETT usa e apoia o método na rotina de prática.
             </p>
 
             {/* Equation */}
@@ -175,8 +171,8 @@ export default function FormulaFluente() {
             </motion.div>
 
             <p className="text-ink-subtle text-sm mt-6 max-w-xl mx-auto">
-              Adaptado da metodologia de <strong className="text-ink-soft">Frank Florida</strong> —
-              poliglota com 13 idiomas e mais de 365 mil alunos formados.
+              Resumo do método de <strong className="text-ink-soft">Frank Florida</strong>. Segundo a
+              Fórmula Fluente, ele é poliglota com 13 idiomas e já teve mais de 365 mil alunos.
             </p>
           </motion.div>
         </div>
@@ -201,9 +197,8 @@ export default function FormulaFluente() {
                 <span className="gradient-text">É método.</span>
               </h2>
               <p className="text-ink-muted leading-relaxed">
-                Quem segue um método errado pode estudar 10 anos e nunca falar. Quem segue
-                o caminho certo chega à fluência funcional em poucos meses, mesmo do zero.
-                A diferença está em <em className="text-ink not-italic">o que</em> você
+                A premissa do método: dá pra estudar por anos e continuar sem falar, se o
+                estudo não for organizado. Para a Fórmula Fluente, a diferença está em <em className="text-ink not-italic">o que</em> você
                 pratica e <em className="text-ink not-italic">na ordem</em> em que pratica.
               </p>
             </motion.div>
@@ -336,6 +331,7 @@ export default function FormulaFluente() {
               <p className="text-ink-muted max-w-2xl mx-auto">
                 O nível mínimo de vocabulário e gramática a partir do qual você consegue
                 manter uma conversa simples — e a partir do qual o subconsciente assume o trabalho.
+                Os números abaixo são referências do método, não garantia de resultado.
               </p>
             </motion.div>
 
@@ -534,7 +530,7 @@ export default function FormulaFluente() {
             className="text-center mb-12 max-w-3xl mx-auto"
           >
             <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
-              Ferramenta ETT · Subtitles
+              ETT Player · Legendas
             </span>
             <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 leading-tight">
               Escute o método na voz de{' '}
@@ -542,9 +538,9 @@ export default function FormulaFluente() {
             </h2>
             <p className="text-ink-muted text-lg leading-relaxed">
               Não dá pra entender a Fórmula Fluente de verdade só lendo este resumo.
-              Você precisa <strong className="text-ink">ouvir o Frank Florida</strong> —
-              o poliglota que já formou mais de 365 mil brasileiros — explicando cada princípio,
-              do jeito que ele explica há 30+ anos.
+              Vale <strong className="text-ink">ouvir o Frank Florida</strong> explicando cada
+              princípio — as aulas são da Fórmula Fluente e estão no ETT Player com legenda
+              interativa.
             </p>
           </motion.div>
 
@@ -586,14 +582,12 @@ export default function FormulaFluente() {
                   <div className="flex items-center gap-2 mb-4">
                     <Subtitles className="w-5 h-5 text-brand-silver" />
                     <span className="text-brand-silver font-semibold text-sm">
-                      ETT Subtitles — vídeo + legenda interativa
+                      Legendas — vídeo + legenda interativa
                     </span>
                   </div>
 
                   <h3 className="text-2xl md:text-3xl font-bold text-ink mb-4 leading-tight">
-                    Comece pela aula 1.
-                    <br />
-                    <span className="gradient-text">Em 30 minutos você muda de chave.</span>
+                    Comece pela <span className="gradient-text">aula 1</span>.
                   </h3>
 
                   <p className="text-ink-muted leading-relaxed mb-6">
@@ -636,7 +630,7 @@ export default function FormulaFluente() {
                     <ExternalLink className="w-4 h-4" />
                   </a>
                   <p className="text-xs text-ink-subtle mt-3">
-                    Gratuito · abre em nova aba · sem cadastro pra começar
+                    Aberta pra experimentar no ETT Player · abre em nova aba
                   </p>
                 </div>
               </div>
@@ -733,8 +727,8 @@ export default function FormulaFluente() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section id="inscricao" className="section-padding">
+      {/* CTA — o bloco do ebook e o link externo (GUBigData) saíram em 09/11/2026 */}
+      <section id="encontros" className="section-padding">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -750,37 +744,29 @@ export default function FormulaFluente() {
                   <Lightbulb className="w-6 h-6 text-brand-red" />
                 </div>
                 <div className="w-12 h-12 rounded-xl bg-brand-silver/10 border border-brand-silver/30 flex items-center justify-center">
-                  <BookMarked className="w-6 h-6 text-brand-silver" />
+                  <MessageSquare className="w-6 h-6 text-brand-silver" />
                 </div>
               </div>
 
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-5">
-                Inscrição + Ebook gratuito
+                Próximo passo
               </span>
 
               <h2 className="text-3xl md:text-4xl font-bold text-ink mb-5 leading-tight">
-                Inscreva-se no <span className="gradient-text">ETT</span> e receba o ebook
-                quando lançarmos
+                Coloque o método em prática nos <span className="gradient-text">encontros</span>
               </h2>
               <p className="text-ink-muted text-lg leading-relaxed mb-8 max-w-xl mx-auto">
-                Deixe seu e-mail pra receber as novidades do ETT e o ebook da Fórmula Fluente
-                quando ele sair — método completo, threshold, 4 pilares e os 10 passos
-                por lição.
+                Os encontros de conversação do ETT são gratuitos, abertos a qualquer pessoa e sem
+                cadastro: online às segundas, às 20h, e o IEP Talks, aos sábados, às 10h, em
+                Curitiba.
               </p>
 
-              <a
-                href={ETT_PROGRAM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/agenda/"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all hover:shadow-brand-red-lg"
               >
-                Inscreva-se no ETT e receba o ebook
-                <ExternalLink className="w-4 h-4" />
-              </a>
-
-              <p className="text-xs text-ink-subtle mt-4">
-                Lançamento do ebook em breve — quem se inscrever no ETT recebe primeiro.
-              </p>
+                Ver a agenda dos encontros
+              </Link>
             </div>
           </motion.div>
         </div>

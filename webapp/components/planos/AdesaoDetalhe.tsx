@@ -10,7 +10,6 @@ import {
   Gauge,
   LayoutGrid,
   MessagesSquare,
-  PlayCircle,
   ShieldCheck,
   UserRound,
 } from 'lucide-react'
@@ -37,18 +36,12 @@ import {
 const CTA = `Fazer minha ativação — R$ ${PRECO_ADESAO}`
 
 const resumo = [
-  'Todas as ferramentas do ETT Player por 30 dias',
   '2 sessões individuais de 1 hora de orientação',
   'Diagnóstico, plano e material personalizados',
+  'Acompanhamento durante os 30 dias',
 ]
 
 const inclui = [
-  {
-    icon: LayoutGrid,
-    titulo: 'Todas as ferramentas, por 30 dias',
-    texto:
-      'Flashcards de vocabulário, séries com legenda, audiolivro, rádio, conversa guiada com correção e o plano diário. Sem versão reduzida e sem trava por ferramenta.',
-  },
   {
     icon: UserRound,
     titulo: '2 sessões individuais de 1 hora',
@@ -57,9 +50,9 @@ const inclui = [
   },
   {
     icon: Gauge,
-    titulo: 'Diagnóstico de nível e vocabulário',
+    titulo: 'Diagnóstico feito com você',
     texto:
-      'O Level Check estima o seu nível e mapeia as palavras que faltam. O resultado vira um plano de prática montado com você, não uma nota.',
+      'Vocês fazem juntos o Level Check, que estima o seu nível e mapeia as palavras que faltam, e transformam o resultado num plano de prática.',
   },
   {
     icon: FileText,
@@ -68,15 +61,22 @@ const inclui = [
       'Gerado a partir do seu diagnóstico: as palavras que faltam pra você, no contexto que você usa. Não é apostila genérica.',
   },
   {
-    icon: PlayCircle,
-    titulo: 'Vídeos de demonstração',
-    texto: 'Cada ferramenta tem vídeo mostrando como usar, pra assistir quando quiser, quantas vezes quiser.',
+    icon: LayoutGrid,
+    titulo: 'Ferramentas configuradas pra você',
+    texto:
+      'As ferramentas do ETT Player são abertas pra experimentar. Na orientação, vocês escolhem quais usar e com que conteúdo: a sua série, o seu livro, a sua rádio.',
   },
   {
     icon: BarChart3,
-    titulo: 'Acompanhamento e feedback',
+    titulo: 'Acompanhamento durante os 30 dias',
     texto:
-      'Conta no ETT Player e sala do ETT Speak. O sistema registra o que você pratica e as ferramentas devolvem feedback do que voltar.',
+      'Entre uma sessão e outra, o ETT acompanha como está a sua rotina e ajusta o plano com você.',
+  },
+  {
+    icon: MessagesSquare,
+    titulo: 'Encontros continuam gratuitos',
+    texto:
+      'O encontro online de segunda e o IEP Talks de sábado são abertos a todos, com ou sem ativação. Não fazem parte do que você paga.',
   },
 ]
 
@@ -90,7 +90,7 @@ const jornada = [
     quando: 'Semana 2',
     titulo: 'Segunda sessão',
     texto:
-      'Ajuste do que travou de verdade e ferramentas ativadas com conteúdo do seu nível: a sua série, o seu livro, a sua simulação.',
+      'Ajuste do que travou de verdade e escolha de conteúdo do seu nível nas ferramentas: a sua série, o seu livro, a sua rádio.',
   },
   {
     quando: 'Até o dia 30',
@@ -107,7 +107,7 @@ const jornada = [
 
 /* Do FAQ de cobrança, só o que importa pra quem está decidindo a ativação. */
 const perguntas = faqCobranca.filter((f) =>
-  /vira mensalidade|desistir|encontros|nota fiscal/i.test(f.pergunta)
+  /vira mensalidade|usar as ferramentas|desistir|encontros|nota fiscal/i.test(f.pergunta)
 )
 
 function BotaoCompra({ className = '' }: { className?: string }) {
@@ -146,17 +146,17 @@ export default function AdesaoDetalhe() {
               </span>
               <h1 className="text-4xl sm:text-5xl font-bold text-ink mb-5 leading-[1.1]">
                 Ativação acompanhada:{' '}
-                <span className="gradient-text">sua entrada na plataforma.</span>
+                <span className="gradient-text">pratique com um plano.</span>
               </h1>
               <p className="text-ink-soft text-lg md:text-xl leading-relaxed mb-8 max-w-2xl">
-                30 dias com todas as ferramentas do ETT Player abertas e duas sessões individuais pra
-                conhecer tudo, organizar a sua rotina de prática e configurar atividades pros seus
-                objetivos.
+                Seu primeiro mês com orientação individual: duas sessões pra montar o seu plano de
+                prática, configurar as ferramentas do ETT Player pros seus objetivos e organizar a sua
+                rotina, com material personalizado e acompanhamento.
               </p>
 
               <div className="grid sm:grid-cols-3 gap-3 max-w-2xl">
                 {[
-                  { icon: LayoutGrid, t: '30 dias', s: 'todas as ferramentas' },
+                  { icon: LayoutGrid, t: '30 dias', s: 'de acompanhamento' },
                   { icon: UserRound, t: '2 × 1 hora', s: 'orientação individual' },
                   { icon: CalendarCheck, t: 'Pagamento único', s: 'não vira mensalidade' },
                 ].map((f) => (
@@ -263,7 +263,7 @@ export default function AdesaoDetalhe() {
                 <span className="text-ink-subtle text-sm">por mês</span>
               </div>
               <p className="text-sm text-ink-muted leading-relaxed mb-4">
-                Todas as ferramentas no seu ritmo, sem meta obrigatória. Cancela quando quiser. Anual
+                O acompanhamento continua todo mês, sem meta obrigatória. Cancela quando quiser. Anual
                 por R$ {PRECO_ANUAL}.
               </p>
               <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-red">
@@ -281,7 +281,8 @@ export default function AdesaoDetalhe() {
               </div>
               <p className="text-ink text-sm font-semibold mb-2">Custa 1h da sua dedicação por dia.</p>
               <p className="text-sm text-ink-muted leading-relaxed mb-4">
-                Sem mensalidade enquanto você mantiver {META_DIAS} dias válidos de prática por mês.
+                O mesmo acompanhamento, sem mensalidade, enquanto você mantiver {META_DIAS} dias válidos
+                de prática por mês.
               </p>
               <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-red">
                 Ver a Trilha de Aceleração <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -318,7 +319,7 @@ export default function AdesaoDetalhe() {
           <MessagesSquare className="w-10 h-10 text-brand-red mx-auto mb-4" />
           <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4">Pronto pra começar?</h2>
           <p className="text-ink-muted text-lg leading-relaxed mb-8">
-            R$ {PRECO_ADESAO}, uma vez só: 30 dias com todas as ferramentas e duas sessões de orientação.
+            R$ {PRECO_ADESAO}, uma vez só: duas sessões de orientação, plano e material personalizados e acompanhamento por 30 dias.
             Depois, você escolhe a sua trilha.
           </p>
           <BotaoCompra />

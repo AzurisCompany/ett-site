@@ -14,9 +14,9 @@ produto é o encontro de segunda, não uma transformação de carreira.
 
 🗣️ Toda segunda-feira, 20h: encontro de conversação em inglês. Online, gratuito e aberto.
 
-O ETT (English Talk Time) não é aula nem curso — é um grupo que se encontra pra falar inglês. Cada encontro tem tema, perguntas e rodadas, em grupos pequenos, das 20h às 21h30 (horário de Brasília). Você entra pelo navegador, conversa e vai embora: sem matrícula, sem mensalidade e sem venda no fim.
+O encontro de conversação do ETT (English Talk Time) não é aula — é um grupo que se encontra pra falar inglês. Cada encontro tem tema, perguntas e rodadas, em grupos pequenos, das 20h às 21h30 (horário de Brasília). Você entra pelo navegador, conversa e vai embora: o encontro é gratuito, sem matrícula, sem cadastro e sem venda lá dentro.
 
-É pra quem já entende inglês mas trava na hora de falar. Não tem prova de nível na porta e ninguém é corrigido em público.
+É pra qualquer pessoa que já entende inglês mas trava na hora de falar. Não tem prova de nível na porta e ninguém é corrigido em público.
 
 Segunda que vem tem de novo. A sala é esta: https://ett-speak.vercel.app/
 Sobre o grupo: https://englishtalktime.com.br
@@ -27,7 +27,7 @@ Sobre o grupo: https://englishtalktime.com.br
 
 ## Instagram (feed)
 
-Você entende inglês. Segunda-feira você vai falar. 🗣️
+Você entende inglês. Que tal praticar a fala na segunda? 🗣️
 
 Encontro de conversação online do ETT, toda segunda às 20h (horário de Brasília). Tema, perguntas e rodadas em grupos pequenos — você não assiste ao encontro, você fala nele. Gratuito, pelo navegador, sem instalar nada e sem cadastro.
 
@@ -73,9 +73,13 @@ Se você entende inglês mas trava na hora de falar, aparece: https://ett-speak.
 
 ---
 
-## Assuntos de e-mail já testados (do email.html)
+## Assuntos de e-mail sugeridos (do email.html, revisados em 09/11/2026)
 
 A) Segunda, 20h: 90 minutos falando inglês (é de graça)
-B) Sua vaga na roda de conversação de segunda está aberta
-C) Você entende inglês. Segunda-feira você vai falar.
-D) 20h de segunda: entra, fala, sai melhor do que entrou
+B) A roda de conversação de segunda é aberta: é só entrar
+C) Você entende inglês. Que tal praticar a fala na segunda?
+D) 20h de segunda: entra, conversa em inglês, sem cadastro
+
+> Pausa (09/11/2026): os encontros voltam em 16/11 (online) e 21/11 (IEP Talks).
+> Até lá, avise a data de volta no post/assunto. Presencial: IEP Talks, sábados 10h,
+> no IEP (Rua Emiliano Perneta, 174, Curitiba).

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import BlogLayout from '@/components/BlogLayout'
 import { getBlogPost } from '@/lib/blog-posts'
+import { CONTATO_IEP_TALKS, IEP_MAPA } from '@/lib/agenda-events'
 
 const SLUG = 'praticar-ingles-em-curitiba-gratis'
 const SITE_URL = 'https://englishtalktime.com.br'
@@ -18,6 +19,8 @@ export const metadata: Metadata = {
     'inglês Curitiba',
     'meetup inglês Curitiba',
     'grupo de conversação Curitiba',
+    'IEP Talks',
+    'inglês sábado Curitiba',
   ],
   alternates: { canonical: `/blog/${SLUG}/` },
   openGraph: {
@@ -61,21 +64,23 @@ const jsonLd = {
       headline: post.title,
       description: post.description,
       datePublished: `${post.date}T09:00:00-03:00`,
-      dateModified: `${post.date}T09:00:00-03:00`,
+      // Reescrito em 09/11/2026 para o IEP Talks (os antigos locais saíram).
+      dateModified: '2026-11-09T09:00:00-03:00',
       author: { '@id': ORG_ID },
       publisher: { '@id': ORG_ID },
       mainEntityOfPage: `${SITE_URL}/blog/${SLUG}/`,
       url: `${SITE_URL}/blog/${SLUG}/`,
       inLanguage: 'pt-BR',
-      keywords: 'praticar inglês Curitiba, onde treinar inglês Curitiba, meetup inglês',
+      keywords: 'praticar inglês Curitiba, onde treinar inglês Curitiba, IEP Talks, grupo de conversação Curitiba',
       image: `${SITE_URL}/images/og-ett-2026.png`,
-      wordCount: 950,
+      wordCount: 700,
       articleSection: post.category,
       about: {
         '@type': 'Place',
-        name: 'Curitiba',
+        name: 'IEP — Instituto de Engenharia do Paraná',
         address: {
           '@type': 'PostalAddress',
+          streetAddress: 'Rua Emiliano Perneta, 174',
           addressLocality: 'Curitiba',
           addressRegion: 'PR',
           addressCountry: 'BR',
@@ -94,110 +99,78 @@ export default function Post() {
       />
       <BlogLayout post={post}>
         <p>
-          Curitiba tem dezenas de escolas de inglês, professores particulares, plataformas
-          online. O que falta — e o que destrava — são os{' '}
-          <strong>lugares pra praticar a fala de fato</strong>: encontros recorrentes, com
-          gente do seu nível e de níveis acima, em ambiente seguro pra errar. Esse artigo
-          mapeia os 4 pontos onde o English Talk Time roda em Curitiba toda semana, todos
-          gratuitos.
+          Curitiba tem dezenas de escolas de inglês, professores particulares e plataformas
+          online. O que falta são <strong>lugares pra praticar a fala de fato</strong>: encontros
+          recorrentes, com gente de vários níveis, num ambiente em que errar é normal. Este post
+          mostra onde o English Talk Time faz isso em Curitiba — o <strong>IEP Talks</strong>, todo
+          sábado de manhã — e a alternativa online pra quem não pode ir.
         </p>
 
         <h2>Por que &quot;praticar&quot; é diferente de &quot;estudar&quot; inglês</h2>
         <p>
-          Estudar inglês é absorver — você lê, ouve, faz exercício, anota vocabulário.
-          Praticar é o oposto: você <em>produz</em>. Fala em voz alta, escreve frase própria,
-          improvisa resposta. A maioria dos brasileiros que &quot;trava&quot; tem ótimos
-          números de estudo (anos de curso, milhares de horas de Netflix legendado) e quase
-          zero números de prática (talvez 2-3 horas de fala em inglês na vida toda).
+          Estudar inglês é absorver: você lê, ouve, faz exercício, anota vocabulário. Praticar é o
+          oposto: você <em>produz</em>. Fala em voz alta, improvisa resposta, se vira quando falta
+          a palavra. Muita gente que &quot;trava&quot; tem anos de curso e muitas horas de série
+          legendada, mas quase nenhuma hora de fala.
         </p>
         <p>
-          Pra destravar você precisa de prática. E pra prática você precisa de um lugar — de
-          preferência <strong>recorrente</strong> (pra criar hábito),{' '}
-          <strong>em grupo</strong> (pra ter turn-taking real) e{' '}
-          <strong>com método</strong> (pra não voltar ao bate-papo sobre o tempo toda vez).
+          Pra praticar você precisa de um lugar — de preferência <strong>recorrente</strong> (pra
+          virar hábito), <strong>em grupo</strong> (pra ter conversa de verdade, com turnos) e{' '}
+          <strong>com roteiro</strong> (pra não cair sempre no papo sobre o tempo).
         </p>
 
-        <h2>Os 4 locais do ETT em Curitiba</h2>
-        <p>
-          O ETT faz rotação semanal entre 4 venues parceiros — a rotação é proposital. Cada
-          ambiente puxa um tipo diferente de conversação:
-        </p>
-
-        <h3>1. IEP — Instituto de Engenharia do Paraná</h3>
-        <p>
-          Instituição centenária da engenharia paranaense. Espaço acadêmico e formal,
-          perfeito pra conversação técnica e simulações de situação profissional (defesa
-          de projeto, demo, apresentação executiva). Quem está em transição pra cargo mais
-          sênior aproveita muito.
-        </p>
-
-        <h3>2. UTFPR — Universidade Tecnológica Federal do Paraná</h3>
-        <p>
-          A universidade pública mais ligada a tecnologia da região. Ambiente jovem, mente
-          aberta, alunos de TI e engenharia com vontade de carreira internacional. Bom pra
-          quem está começando ou cursando graduação/pós e quer um network universitário.
-        </p>
-
-        <h3>3. Hard Rock Cafe Curitiba</h3>
-        <p>
-          Encontro descontraído fora do ambiente acadêmico. Bar, música, ambiente real.
-          Aqui o foco é small talk, networking informal e desbloquear a fala em situação de
-          baixa pressão. Crítico porque a maioria das conversas reais em inglês acontece em
-          contexto social, não em sala de aula.
-        </p>
-
-        <h3>4. Habitat — Sistema FIEP / Parque Tecnológico</h3>
-        <p>
-          Espaço de inovação e mobilidade ligado ao Sistema FIEP. Ambiente corporativo de
-          startup, onde a conversa puxa pra negócios, produto e tecnologia aplicada.
-          Ótimo pra quem trabalha em empresa de tech ou está empreendendo.
-        </p>
-
-        <h2>Como funciona cada encontro</h2>
-        <p>
-          Os 4 locais têm formatos diferentes (acadêmico, descontraído, corporativo,
-          universitário), mas a estrutura do encontro é a mesma:
-        </p>
+        <h2>IEP Talks: o encontro presencial do ETT em Curitiba</h2>
         <ul>
           <li>
-            <strong>10 min de warm-up</strong> — apresentação rápida, palavras-chave do dia,
-            quebra-gelo.
+            <strong>Quando:</strong> todo sábado, das 10h às 12h. As próximas datas ficam na{' '}
+            <Link href="/agenda/">agenda</Link>.
           </li>
           <li>
-            <strong>60 min de tópico principal</strong> — simulação de situação real, com
-            roteiro flexível e feedback.
+            <strong>Onde:</strong> no IEP — Instituto de Engenharia do Paraná, Rua Emiliano Perneta,
+            174, Centro, Curitiba.{' '}
+            <a href={IEP_MAPA} target="_blank" rel="noopener noreferrer">
+              Ver no mapa
+            </a>
+            .
           </li>
           <li>
-            <strong>15 min em pares</strong> — sub-sessões em duplas pra ninguém ficar
-            calado.
+            <strong>Quanto custa:</strong> nada. A entrada é franca, sem cadastro e sem plano.
           </li>
           <li>
-            <strong>10 min de wrap-up</strong> — feedback, anotação de vocabulário novo,
-            próximo passo individual.
+            <strong>Pra quem:</strong> qualquer pessoa que queira praticar inglês, de qualquer
+            área e em qualquer nível. Não tem prova de nível na porta.
           </li>
         </ul>
+
+        <h2>Como funciona o encontro</h2>
         <p>
-          A agenda dos próximos encontros (com data, dia da semana e venue) está em{' '}
-          <Link href="/agenda/">englishtalktime.com.br/agenda</Link>. Os detalhes do
-          formato presencial em Curitiba estão em{' '}
-          <Link href="/curitiba/">englishtalktime.com.br/curitiba</Link>.
+          Não é aula: não tem professor explicando gramática na frente. É uma roda de conversação
+          com tema, perguntas e rodadas, pra ninguém ficar encarando o silêncio sem saber o que
+          dizer. A conversa acontece em grupos pequenos e com rodízio, então todo mundo fala — e
+          ninguém é corrigido em público.
+        </p>
+        <p>
+          Pra participar, é só chegar no horário. Não precisa avisar antes nem preparar nada. Se
+          tiver alguma dúvida sobre o IEP Talks,{' '}
+          <a href={CONTATO_IEP_TALKS.whatsapp} target="_blank" rel="noopener noreferrer">
+            fale com o {CONTATO_IEP_TALKS.nome} pelo WhatsApp
+          </a>
+          .
         </p>
 
-        <h2>E se eu não puder ir presencial?</h2>
+        <h2>E se eu não puder ir no sábado?</h2>
         <p>
-          Também tem encontro <Link href="/online/">online toda segunda às 20h</Link> via
-          Google Meet — mesma estrutura, aberto pra todo o Brasil. Muita gente da
-          comunidade de Curitiba faz os dois: 1 presencial por semana + o online de
-          segunda. Não tem regra.
+          Tem o <strong>encontro online, toda segunda, das 20h às 21h30</strong>, na sala do ETT
+          Speak, direto no navegador. A estrutura é a mesma, também é gratuito, sem cadastro, e
+          aberto pra quem está em qualquer lugar. Tem gente que faz os dois: o IEP Talks no sábado
+          e o online na segunda. Não tem regra.
         </p>
 
         <h2>Conclusão prática</h2>
         <p>
-          Em Curitiba você não precisa pagar pra praticar inglês. Você precisa{' '}
-          <em>aparecer</em>. Os encontros do ETT são gratuitos, a rotação por 4 venues
-          garante variedade de contexto, e a comunidade existe pra você não ter que destravar
-          sozinho. Inscreva-se, pegue o link da agenda, escolha a próxima data que cabe na
-          sua semana — e vai.
+          Em Curitiba você não precisa pagar pra praticar a fala em inglês. Você precisa{' '}
+          <em>aparecer</em>. Escolha um sábado na <Link href="/agenda/">agenda</Link>, vá ao IEP
+          às 10h — ou entre no online de segunda — e comece.
         </p>
       </BlogLayout>
     </>

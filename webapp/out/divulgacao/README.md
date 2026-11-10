@@ -70,6 +70,6 @@ regerar tudo. O banner do e-mail é um arquivo à parte (JPEG, com regra de nome
 
 1. `npm run build` e conferir que a pasta aparece em `webapp/out/divulgacao/`.
 2. `./deploy.sh` na raiz.
-3. **Pull no `hpanel.hostinger.com`.**
+3. **Esperar o Auto Deployment do Hostinger** (~2 min após o push) e conferir o `last-modified` com `curl -sI`. Só se não mudar, clicar em **Reimplantar** no `hpanel.hostinger.com`.
 4. Abrir a URL em aba anônima e conferir que as imagens carregam.
 5. Copiar o código-fonte pro RD, inserir o campo de nome, **enviar teste pra si mesmo** (conferir Gmail + celular).

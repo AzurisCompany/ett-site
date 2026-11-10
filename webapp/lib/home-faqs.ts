@@ -14,7 +14,7 @@ export const homeFaqsCurtas: HomeFaq[] = [
   },
   {
     q: 'Quanto custa para participar?',
-    a: 'Os encontros de conversação — o online de segunda e o IEP Talks de sábado — são gratuitos, sem cadastro e sem cartão. Isso não muda. As ferramentas começam com a ativação acompanhada: R$ 97, uma vez, com 30 dias de todas as ferramentas, duas sessões individuais de 1 hora, diagnóstico e material personalizado. Depois, o acesso às ferramentas continua na Trilha de Dedicação (R$ 37 por mês) ou na Trilha de Aceleração, que troca a mensalidade por 20 dias válidos de prática no mês.',
+    a: 'Os encontros de conversação — o online de segunda e o IEP Talks de sábado — são gratuitos, sem cadastro e sem cartão. Isso não muda. As ferramentas do ETT Player são abertas pra experimentar. Quem quiser orientação faz a ativação acompanhada: R$ 97, uma vez, com duas sessões individuais de 1 hora, diagnóstico, plano e material personalizados e acompanhamento por 30 dias. Depois, o acompanhamento continua na Trilha de Dedicação (R$ 37 por mês) ou na Trilha de Aceleração, que troca a mensalidade por 20 dias válidos de prática no mês.',
   },
   {
     q: 'Quem oferece os cursos e as imersões?',
@@ -22,7 +22,7 @@ export const homeFaqsCurtas: HomeFaq[] = [
   },
   {
     q: 'Qual nível de inglês eu preciso ter?',
-    a: 'Se você entende razoavelmente mas trava na hora de falar, esse é exatamente o público. A partir de um básico-intermediário (A2) já dá para acompanhar e aproveitar. Quem está começando do zero a gente orienta a construir uma base primeiro — e a porta continua aberta para vir conhecer.',
+    a: 'Se você entende razoavelmente mas trava na hora de falar, esse é exatamente o público. Os encontros são abertos a qualquer nível: quem está começando participa junto. Rende mais a partir de um básico-intermediário (A2).',
   },
   {
     q: 'Como eu entro no encontro online?',
@@ -54,7 +54,7 @@ export const homeFaqs: HomeFaq[] = [
   },
   {
     q: 'O que é gratuito e o que é pago?',
-    a: 'Os encontros são gratuitos e abertos, sem cadastro. As ferramentas começam com a ativação acompanhada: R$ 97, uma vez, com 30 dias de todas as ferramentas, duas sessões individuais de 1 hora de orientação e material personalizado. Depois, o acesso às ferramentas continua na Trilha de Dedicação (R$ 37/mês) ou na Trilha de Aceleração, sem mensalidade pra quem mantém 20 dias válidos de prática no mês. Cursos, imersões e mentoria de carreira são dos parceiros, com preços próprios.',
+    a: 'Os encontros são gratuitos e abertos, sem cadastro. As ferramentas do ETT Player são abertas pra experimentar. A ativação acompanhada custa R$ 97, uma vez, com duas sessões individuais de 1 hora de orientação, plano e material personalizados. Depois, o acompanhamento continua na Trilha de Dedicação (R$ 37/mês) ou na Trilha de Aceleração, sem mensalidade pra quem mantém 20 dias válidos de prática no mês. Cursos, imersões e mentoria de carreira são dos parceiros, com preços próprios.',
   },
   {
     q: 'As sessões individuais da ativação são aulas particulares?',
@@ -66,18 +66,18 @@ export const homeFaqs: HomeFaq[] = [
   },
   {
     q: 'Qual o nível mínimo pra participar dos encontros?',
-    a: 'A partir de um básico-intermediário (A2) já dá pra acompanhar. Quem está bem travado também aproveita: os encontros são feitos pra você falar, não pra ser avaliado. Quem está no zero absoluto costuma aproveitar mais começando por um curso de base.',
+    a: 'Qualquer nível pode participar; rende mais a partir de um básico-intermediário (A2). Quem está bem travado também aproveita: os encontros são feitos pra você falar, não pra ser avaliado.',
   },
   {
     q: 'Funciona pra quem trava na hora de falar mesmo entendendo bem?',
-    a: 'É o perfil mais comum nos encontros: pessoas que estudaram, entendem, mas travam na hora de falar. A conversa em grupo pequeno, sem correção em público, e a conversa guiada no Speak ajudam a ganhar confiança. O ritmo de cada um é diferente — não prometemos prazo.',
+    a: 'É o perfil mais comum nos encontros: pessoas que estudaram, entendem, mas travam na hora de falar. A conversa em salas menores, sem correção em público, ajuda a ganhar confiança. O ritmo de cada um é diferente — não prometemos prazo.',
   },
   {
     q: 'Dá pra treinar entrevista e inglês de trabalho?',
-    a: 'Sim. Entrevista, apresentação de projeto e conversa de trabalho são temas recorrentes nos encontros, e o Speak permite ensaiar conversas guiadas. Pra mentoria de carreira (currículo, LinkedIn, entrevistas internacionais), a Coders é parceira, com condições próprias.',
+    a: 'Sim. Entrevista, apresentação de projeto e conversa de trabalho são temas recorrentes nos encontros, e o Daily tem cartões de conversa e pitch cronometrado pra ensaiar sozinho. Pra mentoria de carreira (currículo, LinkedIn, entrevistas internacionais), a Coders é parceira, com condições próprias.',
   },
   {
     q: 'Como seria uma rotina de 1 hora por dia?',
-    a: 'Uma sugestão: 10 a 15 minutos de flashcards, 20 a 30 de um episódio com legenda ou capítulo de audiolivro, 10 a 15 de conversa guiada e alguns minutos de revisão. O Daily organiza o que fazer em cada dia. É uma sugestão — a meta é sua.',
+    a: 'Uma sugestão: 10 a 15 minutos de flashcards, 20 a 30 de um episódio com legenda ou capítulo de audiolivro, alguns minutos falando no Daily (um exercício de fala por dia) e um pouco de revisão. É uma sugestão — a meta é sua.',
   },
 ]

@@ -4,7 +4,9 @@ import Footer from '@/components/Footer'
 import ImersaoDetalhe from '@/components/ImersaoDetalhe'
 
 const SITE_URL = 'https://englishtalktime.com.br'
-const ORG_ID = `${SITE_URL}/#organization`
+// Quem organiza é a Cherry Top (ela define inscrição, preço e condições). Sem `offers`:
+// o preço é sob consulta com ela, e o ETT não publica faixa de valores.
+const CHERRY_TOP = { '@type': 'Organization', name: 'Cherry Top', url: 'https://cherrytop.com.br' }
 
 const flLocation = {
   '@type': 'Place',
@@ -67,21 +69,7 @@ const jsonLd = {
       eventStatus: 'https://schema.org/EventScheduled',
       eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
       location: flLocation,
-      organizer: { '@id': ORG_ID },
-      performer: {
-        '@type': 'Organization',
-        name: 'Cherry Top Business Communication',
-        url: 'https://cherrytop.com.br',
-      },
-      offers: {
-        '@type': 'AggregateOffer',
-        priceCurrency: 'USD',
-        lowPrice: '5000',
-        highPrice: '12000',
-        availability: 'https://schema.org/LimitedAvailability',
-        url: `${SITE_URL}/imersoes/florida/`,
-        validFrom: '2026-01-01T00:00:00-03:00',
-      },
+      organizer: CHERRY_TOP,
       inLanguage: 'en',
       image: `${SITE_URL}/imersoes/florida-2027/cover.jpeg`,
       url: `${SITE_URL}/imersoes/florida/`,
@@ -146,7 +134,7 @@ export default function FloridaPage() {
         city="Flórida"
         uf="EUA"
         headline="Imersão internacional da Cherry Top na Flórida."
-        intro="A turma convive num resort na Flórida usando o inglês o dia inteiro — refeições juntos, atividades culturais e dias inteiros sem voltar para o português. A imersão é oferecida e conduzida pela Cherry Top, com Leonarda Flyhigher e um mentor residente nos EUA; o ETT divulga e oferece ferramentas e encontros pra praticar antes e depois."
+        intro="A turma convive num resort na Flórida usando o inglês o dia inteiro — refeições juntos, atividades culturais e dias inteiros sem voltar para o português. A imersão é oferecida e conduzida pela Cherry Top, com Leonarda Flyhigher e um mentor residente nos EUA; o ETT divulga e repassa o contato de quem tem interesse. Pra praticar antes e depois, os encontros do ETT são gratuitos e as ferramentas do ETT Player estão abertas pra experimentar."
         turmas={[
           {
             label: 'Turma 1 — 18 dias',
@@ -173,7 +161,7 @@ export default function FloridaPage() {
           'Windsor Cay Resort — infraestrutura completa, "férias em grande estilo"',
           'Inglês o dia inteiro, em convivência com a turma',
           'Conduzida pela equipe da Cherry Top',
-          'Acompanhantes permitidos com nível mínimo pré-intermediário (regra english only)',
+          'Nível mínimo B1+ (intermediário), inclusive pra acompanhantes, porque a regra é english only',
         ]}
         inclusos={[
           'Programa de imersão completo',
@@ -185,7 +173,7 @@ export default function FloridaPage() {
         naoInclusos={[
           'Passagem aérea (~US$ 1.000, parcelável)',
           'Visto americano B1/B2',
-          'Alimentação fora da casa de imersão',
+          'Alimentação fora do resort',
           'Transporte local e ingressos turísticos',
         ]}
         fotos={fotosFlorida}

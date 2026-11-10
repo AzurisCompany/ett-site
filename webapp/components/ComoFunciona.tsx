@@ -10,7 +10,7 @@ const passos = [
     icon: Compass,
     titulo: 'Conheça a plataforma',
     texto:
-      'Venha a um encontro de conversação, que é aberto, ou comece pela ativação acompanhada: 30 dias de ferramentas com orientação individual.',
+      'Venha a um encontro de conversação, que é aberto, ou experimente as ferramentas do ETT Player, que são abertas.',
   },
   {
     icon: Gauge,
