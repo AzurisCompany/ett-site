@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import PlanoDetalhe from '@/components/PlanoDetalhe'
+import AceleracaoDetalhe from '@/components/planos/AceleracaoDetalhe'
 import { detalhesPlanos } from '@/lib/planos'
 
+/* Layout próprio desde 09/11/2026 (components/planos/AceleracaoDetalhe.tsx), no modelo da ativação. */
 const plano = detalhesPlanos.aceleracao
 
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-surface">
       <Navbar />
-      <PlanoDetalhe plano={plano} />
+      <AceleracaoDetalhe />
       <Footer />
     </main>
   )

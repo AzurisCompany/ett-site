@@ -5,7 +5,7 @@ import AdesaoDetalhe from '@/components/planos/AdesaoDetalhe'
 import { detalhesPlanos } from '@/lib/planos'
 
 /* Layout próprio desde 09/11/2026 (components/planos/AdesaoDetalhe.tsx).
-   As outras páginas de plano continuam no PlanoDetalhe genérico. */
+   Dedicação e Aceleração seguem o mesmo modelo (components/planos/). */
 const plano = detalhesPlanos.adesao
 
 export const metadata: Metadata = {
