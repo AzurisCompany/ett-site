@@ -52,3 +52,7 @@ webapp/scripts/tema/contraste.json
 
 # Rascunhos jurídicos com placeholders (revisão do advogado) — não publicar
 novoConteudo/juridico/
+
+# Contratos e termos de parceria (dados pessoais de parceiros, minutas) — a raiz do repo
+# é servida pelo Hostinger: NUNCA comitar, senão vira URL pública
+contratos/
