@@ -120,7 +120,7 @@ export const professores: Professor[] = [
           'Olá, Miguel! Quero participar do Encontro ETT com o J.G. Franklin. Como faço (desafio de 7 dias ou programa)?',
         ),
     },
-    contatoUrl: null,
+    contatoUrl: 'https://crm.englishtalktime.com.br/lp/jgfranklin',
   },
 ]
 

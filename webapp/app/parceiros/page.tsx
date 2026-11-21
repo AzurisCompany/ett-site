@@ -52,25 +52,41 @@ export default function Page() {
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {professores.map((p) => (
-              <Link
+              <div
                 key={p.slug}
-                href={`/parceiros/${p.slug}/`}
-                className="group rounded-2xl border border-surface-line bg-surface-card overflow-hidden hover:border-brand-red/40 transition-all"
+                className="group rounded-2xl border border-surface-line bg-surface-card overflow-hidden hover:border-brand-red/40 transition-all flex flex-col"
               >
-                <div className="relative aspect-square">
+                <Link href={`/parceiros/${p.slug}/`} className="relative aspect-square block" aria-label={`Perfil de ${p.nome}`}>
                   <Image src={p.foto} alt={`Foto de ${p.nome}`} fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="object-cover" />
-                </div>
+                </Link>
+                {p.contatoUrl && (
+                  <a
+                    href={p.contatoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 px-5 py-3 bg-brand-red-deep text-white font-bold hover:bg-brand-red-deep/90 transition-all"
+                  >
+                    Entrar em contato <ArrowUpRight className="w-4 h-4" />
+                  </a>
+                )}
                 <div className="p-5">
                   <div className="text-xs font-bold uppercase tracking-widest text-brand-red mb-1">
                     Professor · {p.cidade}
                   </div>
-                  <h3 className="text-xl font-bold text-ink mb-2">{p.nome}</h3>
+                  <h3 className="text-xl font-bold text-ink mb-2">
+                    <Link href={`/parceiros/${p.slug}/`} className="hover:text-brand-red">
+                      {p.nome}
+                    </Link>
+                  </h3>
                   <p className="text-sm text-ink-muted leading-relaxed mb-4">{p.chamada}</p>
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-brand-red">
+                  <Link
+                    href={`/parceiros/${p.slug}/`}
+                    className="inline-flex items-center gap-1 text-sm font-semibold text-brand-red"
+                  >
                     Ver perfil <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                  </span>
+                  </Link>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>

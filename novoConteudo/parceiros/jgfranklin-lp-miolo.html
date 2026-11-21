@@ -1,0 +1,82 @@
+<!--
+  Miolo da landing de captação do J.G. Franklin no CRM do ETT.
+  Publicada em: https://crm.englishtalktime.com.br/lp/jgfranklin
+  Colar este conteúdo no campo de HTML da LP no CRM (o layout, a capa e o CSS são do CRM).
+  Envio: POST JSON para /api/lp/jgfranklin/submit (Opção B do guia do CRM).
+  Campos: nome, email (obrigatórios), telefone, empresa.
+  O checkbox de consentimento não tem name de propósito: ele só impede o envio sem o aceite
+  (LGPD, opt-in antes de repassar o lead ao professor) e não vai pro CRM.
+  Regras de copy do ETT: sem promessa de resultado; as aulas são do professor, nas condições dele.
+-->
+<p style="text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;font-weight:700;color:#BC1E24;margin:0 0 .5rem">Professor parceiro ETT</p>
+<h1>Converse em inglês com o J.G. Franklin</h1>
+<p>
+  Norte-americano, nascido em Tacoma (EUA), o J.G. ensina inglês há 18 anos e é ator, com
+  quase 100 trabalhos em séries, filmes, comerciais e teatro. Nas aulas, ele trabalha
+  conversação, pronúncia, entonação e as nuances do inglês de quem fala desde criança.
+</p>
+<ul>
+  <li>Aulas online, individuais ou em grupo</li>
+  <li>Para todos os níveis</li>
+  <li>Valores e horários combinados direto com o professor</li>
+</ul>
+<p>Deixe seus dados e a gente te põe em contato com ele.</p>
+
+<form id="lp-form">
+  <label>Nome *
+    <input type="text" name="nome" autocomplete="name" required>
+  </label>
+  <label>E-mail *
+    <input type="email" name="email" autocomplete="email" required>
+  </label>
+  <label>Telefone (WhatsApp)
+    <input type="tel" name="telefone" autocomplete="tel" placeholder="(11) 99999-9999">
+  </label>
+  <label>Empresa
+    <input type="text" name="empresa" autocomplete="organization">
+  </label>
+  <label style="display:flex;gap:.5rem;align-items:flex-start;font-weight:400;font-size:.875rem">
+    <input type="checkbox" required style="width:auto;margin-top:.2rem">
+    <span>Autorizo o English Talk Time a usar estes dados para me contatar e a repassá-los ao
+      professor J.G. Franklin para falar sobre aulas.
+      <a href="https://englishtalktime.com.br/politica-privacidade/" target="_blank" rel="noopener">Política de Privacidade</a>.</span>
+  </label>
+  <button type="submit">Quero falar com o J.G.</button>
+  <p id="lp-erro" style="color:#dc2626;display:none"></p>
+</form>
+
+<div id="lp-ok" style="display:none">
+  <h2>✓ Recebemos seu contato!</h2>
+  <p>Em breve a gente fala com você para combinar o próximo passo com o J.G. Franklin.</p>
+  <p>Enquanto isso, conheça o <a href="https://englishtalktime.com.br/parceiros/jg-franklin/">perfil dele</a>
+    e a <a href="https://englishtalktime.com.br/agenda/">agenda de encontros do ETT</a>.</p>
+</div>
+
+<script>
+(function () {
+  var f = document.getElementById('lp-form');
+  var btn = f.querySelector('button[type="submit"]');
+  f.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var erro = document.getElementById('lp-erro');
+    erro.style.display = 'none';
+    var dados = {};
+    new FormData(f).forEach(function (v, k) { if (String(v).trim()) dados[k] = String(v).trim(); });
+    btn.disabled = true; btn.textContent = 'Enviando...';
+    fetch('https://crm.englishtalktime.com.br/api/lp/jgfranklin/submit', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(dados)
+    }).then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function () {
+        f.style.display = 'none';
+        document.getElementById('lp-ok').style.display = 'block';
+      })
+      .catch(function () {
+        btn.disabled = false; btn.textContent = 'Quero falar com o J.G.';
+        erro.textContent = 'Não foi possível enviar. Confira os campos e tente de novo.';
+        erro.style.display = 'block';
+      });
+  });
+})();
+</script>

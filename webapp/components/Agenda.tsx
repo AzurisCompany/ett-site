@@ -2,13 +2,11 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import {
   ArrowRight,
   ArrowUpRight,
   CalendarDays,
   Clock,
-  ExternalLink,
   MapPin,
   MessageCircle,
   Navigation,
@@ -63,11 +61,6 @@ export default function Agenda() {
   const proximo = (tipo: AgendaEvent['type']) => events?.find((e) => e.type === tipo && !e.restrito)
   const aindaNaoVoltou = (tipo: AgendaEvent['type']) =>
     !!hojeIso && hojeIso < (tipo === 'online' ? REINICIO.online : REINICIO.presencial)
-
-  const periodo =
-    events && events.length > 0
-      ? `${events[0].dateLabel} a ${events[events.length - 1].dateLabel}`
-      : 'próximas semanas'
 
   const onlineProx = proximo('online')
   const iepProx = proximo('presencial')
@@ -227,120 +220,6 @@ export default function Agenda() {
                 </a>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PRÓXIMAS DATAS */}
-      <section className="py-16 md:py-20 bg-surface-alt border-y border-surface-line">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-10">
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-4">
-              Próximas datas
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-ink leading-tight">
-              Encontros de <span className="gradient-text">{periodo}</span>
-            </h2>
-          </div>
-
-          <div className="max-w-5xl mx-auto grid sm:grid-cols-2 gap-3">
-            {events === null
-              ? Array.from({ length: 4 }).map((_, i) => (
-                  <div
-                    key={`skeleton-${i}`}
-                    className="h-[104px] rounded-xl border border-surface-line bg-surface-card animate-pulse"
-                  />
-                ))
-              : events.map((ev, i) => {
-                  const isOnline = ev.type === 'online'
-                  const Icon = isOnline ? Wifi : MapPin
-                  const dayNum = ev.dateLabel.split(' ')[0]
-                  const monthAbbr = ev.dateLabel.split(' de ')[1].slice(0, 3)
-                  const weekdayAbbr = ev.weekday.slice(0, 3).toLowerCase()
-                  const primeiraDaVolta = !ev.restrito && ev.date === (isOnline ? REINICIO.online : REINICIO.presencial)
-                  return (
-                    <motion.div
-                      key={ev.date + ev.type + ev.startTime}
-                      initial={{ opacity: 0, y: 12 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: '-30px' }}
-                      transition={{ duration: 0.3, delay: (i % 4) * 0.04 }}
-                      className={`relative bg-surface-card border rounded-xl p-4 ${
-                        isOnline ? 'border-surface-line' : 'border-brand-red/20'
-                      }`}
-                    >
-                      <div className="flex items-start gap-3">
-                        <div
-                          className={`shrink-0 w-14 rounded-lg border text-center py-1.5 ${
-                            isOnline ? 'border-brand-silver/30 bg-brand-silver/5' : 'border-brand-red/30 bg-brand-red/5'
-                          }`}
-                        >
-                          <div
-                            className={`text-[10px] uppercase tracking-wider font-bold ${
-                              isOnline ? 'text-brand-silver' : 'text-brand-red'
-                            }`}
-                          >
-                            {weekdayAbbr}
-                          </div>
-                          <div className="text-ink font-black text-xl leading-none my-0.5">{dayNum}</div>
-                          <div className="text-ink-subtle text-[10px] uppercase tracking-wider">{monthAbbr}</div>
-                        </div>
-
-                        <div className="flex-1 min-w-0">
-                          <div className="flex flex-wrap items-center gap-1.5 mb-1">
-                            <span
-                              className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider border ${
-                                isOnline
-                                  ? 'bg-brand-silver/10 text-brand-silver border-brand-silver/30'
-                                  : 'bg-brand-red/10 text-brand-red border-brand-red/30'
-                              }`}
-                            >
-                              <Icon className="w-2.5 h-2.5" />
-                              {ev.type}
-                            </span>
-                            {primeiraDaVolta && anuncio && (
-                              <span className="inline-flex px-1.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand-red-deep text-white">
-                                Volta
-                              </span>
-                            )}
-                            {ev.partner && (
-                              <span className="inline-flex px-1.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-brand-silver/10 text-brand-silver border border-brand-silver/30">
-                                {ev.partner}
-                              </span>
-                            )}
-                            <span className="ml-auto inline-flex items-center gap-1 text-xs text-ink-muted">
-                              <Clock className="w-3 h-3" />
-                              {ev.time}
-                            </span>
-                          </div>
-
-                          <h3 className="font-bold text-ink text-sm leading-snug mb-1">{ev.title}</h3>
-                          <p className="text-xs text-ink-subtle leading-snug">
-                            {isOnline ? ev.location : ev.venueAddress ?? ev.location}
-                          </p>
-                          {ev.timeNote && <p className="text-[11px] mt-1 leading-tight text-ink-subtle">{ev.timeNote}</p>}
-
-                          {ev.links && ev.links.length > 0 && (
-                            <div className="flex flex-wrap gap-x-3 gap-y-1 mt-2">
-                              {ev.links.map((l) => (
-                                <a
-                                  key={l.url}
-                                  href={l.url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-1 text-[11px] font-semibold text-brand-red hover:underline"
-                                >
-                                  {l.label}
-                                  <ExternalLink className="w-3 h-3" />
-                                </a>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </motion.div>
-                  )
-                })}
           </div>
         </div>
       </section>

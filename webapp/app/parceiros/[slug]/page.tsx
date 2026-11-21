@@ -186,9 +186,6 @@ export default function Page({ params }: { params: { slug: string } }) {
                     </li>
                   ))}
                 </ul>
-                <Link href="/agenda/" className="inline-block mt-3 text-sm font-semibold text-brand-red hover:underline">
-                  Ver as datas na agenda
-                </Link>
                 {p.encontro.previstos && p.encontro.previstos.length > 0 && (
                   <div className="mt-5 pt-4 border-t border-surface-line">
                     <div className="text-xs font-bold uppercase tracking-widest text-ink-subtle mb-1">
