@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import {
   ArrowRight,
   ArrowUpRight,
@@ -12,6 +13,7 @@ import {
   Navigation,
   PartyPopper,
   UserCheck,
+  Users,
   Video,
   Wifi,
 } from 'lucide-react'
@@ -24,6 +26,7 @@ import {
   eventosFuturos,
   type AgendaEvent,
 } from '@/lib/agenda-events'
+import { professores } from '@/lib/professores'
 
 const SEMANAS = 4
 const SPEAK_URL = 'https://ett-speak.vercel.app/'
@@ -78,8 +81,8 @@ export default function Agenda() {
             <span className="gradient-text">Agenda</span> ETT
           </h1>
           <p className="text-ink-muted text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Dois encontros de conversação em inglês por semana: online às segundas, 20h, e o IEP
-            Talks aos sábados, 10h, em Curitiba.
+            Encontros de conversação em inglês toda semana: online às segundas, 20h, o IEP Talks aos
+            sábados, 10h, em Curitiba, e o encontro online com o professor J.G. Franklin aos sábados, 9h.
           </p>
 
           {anuncio && (
@@ -97,7 +100,7 @@ export default function Agenda() {
         </div>
       </section>
 
-      {/* OS DOIS ENCONTROS */}
+      {/* OS ENCONTROS */}
       <section className="pb-16 md:pb-20">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
@@ -220,6 +223,77 @@ export default function Agenda() {
                 </a>
               </div>
             </div>
+            {/* Encontros dos professores parceiros (lib/professores.ts) */}
+            {professores.map((prof) => {
+              const enc = prof.encontro
+              if (!enc) return null
+              const prox = events?.find((e) => e.restrito && e.title.includes(prof.nome))
+              return (
+                <div
+                  key={prof.slug}
+                  className="md:col-span-2 bg-surface-card border border-surface-line rounded-2xl p-7 flex flex-col md:flex-row gap-6"
+                >
+                  <Link
+                    href={`/parceiros/${prof.slug}/`}
+                    className="relative w-24 h-24 md:w-32 md:h-32 shrink-0 rounded-2xl overflow-hidden border border-surface-line"
+                  >
+                    <Image src={prof.foto} alt={`Foto de ${prof.nome}`} fill sizes="128px" className="object-cover" />
+                  </Link>
+                  <div className="flex-1 flex flex-col">
+                    <div className="text-xs uppercase tracking-wider text-brand-silver font-semibold">
+                      Online · com professor parceiro
+                    </div>
+                    <h2 className="font-bold text-ink text-xl mb-4">Encontro ETT com {prof.nome}</h2>
+                    <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2.5 text-ink-soft mb-4">
+                      {enc.horarios.map((h) => (
+                        <li key={h.dia + h.inicio} className="flex items-center gap-2.5">
+                          <Clock className="w-4 h-4 text-brand-red shrink-0" />
+                          Todo {h.dia.toLowerCase()}, das {h.rotulo}
+                        </li>
+                      ))}
+                      <li className="flex items-center gap-2.5">
+                        <Users className="w-4 h-4 text-brand-red shrink-0" />
+                        {enc.limite}
+                      </li>
+                      <li className="flex items-center gap-2.5">
+                        <CalendarDays className="w-4 h-4 text-brand-red shrink-0" />
+                        {prox ? (
+                          <span>
+                            Próximo: <strong className="text-ink">{prox.weekday.toLowerCase()}, {prox.dateLabel}</strong>
+                          </span>
+                        ) : (
+                          <span className="h-5 w-40 rounded bg-surface-alt animate-pulse" />
+                        )}
+                      </li>
+                    </ul>
+                    <p className="text-sm text-ink-muted mb-5">
+                      Gratuito pra quem está no{' '}
+                      <Link href="/desafio/" className="text-brand-red font-semibold hover:underline">
+                        Desafio de 7 dias
+                      </Link>{' '}
+                      ou é participante regular do programa. As vagas são reservadas pelo Miguel no WhatsApp.
+                    </p>
+                    <div className="mt-auto flex flex-col sm:flex-row gap-3">
+                      <a
+                        href={enc.inscricaoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="sm:flex-[1.6] inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-brand-red-deep text-white font-bold text-sm hover:bg-brand-red-deep/90 transition-all"
+                      >
+                        <MessageCircle className="w-4 h-4" />
+                        Quero participar
+                      </a>
+                      <Link
+                        href={`/parceiros/${prof.slug}/`}
+                        className="flex-1 inline-flex items-center justify-center px-5 py-3 rounded-lg border border-surface-line text-ink-soft font-semibold text-sm hover:border-brand-red/40 hover:text-ink transition-all"
+                      >
+                        Conhecer o professor
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
