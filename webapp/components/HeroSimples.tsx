@@ -95,7 +95,7 @@ function HeroVideo() {
 
 export default function HeroSimples() {
   return (
-    <section id="home" className="relative min-h-[92vh] flex items-center overflow-hidden">
+    <section id="home" className="relative lg:min-h-[min(92vh,880px)] flex items-center overflow-hidden">
       {/* Fundo — só textura: desfocado e quase todo coberto. */}
       <div className="absolute inset-0">
         <Image
@@ -159,7 +159,7 @@ export default function HeroSimples() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row sm:flex-wrap gap-3 justify-center lg:justify-start mb-5"
+              className="flex flex-col sm:flex-row sm:flex-wrap gap-3 justify-center lg:justify-start mb-5 lg:grid lg:w-max"
             >
               <a
                 href="#ferramentas"
@@ -194,11 +194,11 @@ export default function HeroSimples() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.45 }}
-              className="flex flex-col gap-2 text-sm text-ink-muted items-center lg:items-start"
+              className="flex flex-col gap-2 text-sm text-ink-muted items-start w-fit mx-auto lg:mx-0 text-left"
             >
               {reassurances.map((r) => (
-                <li key={r} className="inline-flex items-center gap-2">
-                  <Check className="w-4 h-4 text-brand-red shrink-0" />
+                <li key={r} className="flex items-start gap-2">
+                  <Check className="w-4 h-4 mt-0.5 text-brand-red shrink-0" />
                   {r}
                 </li>
               ))}
@@ -224,7 +224,7 @@ export default function HeroSimples() {
               </div>
               <HeroVideo />
             </div>
-            <div className="absolute -bottom-5 left-4 sm:left-6 right-4 sm:right-auto flex flex-wrap gap-2">
+            <div className="mt-4 flex flex-wrap justify-center lg:justify-start gap-2">
               {['Ferramentas', 'Conversação', 'Parceiros'].map((t) => (
                 <span
                   key={t}
