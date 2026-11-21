@@ -111,7 +111,7 @@ export const professores: Professor[] = [
         { diaSemana: 6, dia: 'Sábado', inicio: '09:00', fim: '12:00', rotulo: '9h às 12h' },
         { diaSemana: 6, dia: 'Sábado', inicio: '14:00', fim: '16:00', rotulo: '14h às 16h' },
       ],
-      limite: 'Grupos de 3 a 4 pessoas',
+      limite: 'Grupos de 3 a 8 pessoas',
       nivel: 'Participantes de nível parecido no mesmo grupo',
       foco: 'Conversação',
       inscricaoUrl:

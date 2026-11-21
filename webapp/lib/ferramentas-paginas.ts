@@ -415,7 +415,7 @@ export const paginasFerramentas: PaginaFerramenta[] = [
       {
         titulo: 'Salas menores',
         texto:
-          'Grupos pequenos montados por nível ou em rodízio, para você conversar com várias pessoas. O áudio de cada sala é separado.',
+          'Grupos de 3 a 8 pessoas, montados por nível ou em rodízio, para você conversar com várias pessoas. O áudio de cada sala é separado.',
       },
       {
         titulo: 'Cartões de tema',

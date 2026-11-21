@@ -167,7 +167,7 @@ export default function Page({ params }: { params: { slug: string } }) {
               <h2 className="text-2xl md:text-3xl font-bold text-ink">Encontro ETT com {p.nome}</h2>
             </div>
             <p className="text-ink-muted text-lg mb-8 max-w-3xl">
-              Grupos pequenos de conversação em inglês, conduzidos por {p.nome} dentro da agenda do ETT.
+              Grupos de 3 a 8 pessoas conversando em inglês, conduzidos por {p.nome} dentro da agenda do ETT.
               Começa em <strong className="text-ink">{dataPorExtenso(p.encontro.inicio)}</strong>, e acontece toda semana.
             </p>
             <div className="grid lg:grid-cols-[1.2fr_1fr] gap-4 mb-6">

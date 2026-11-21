@@ -30,7 +30,7 @@ export const homeFaqsCurtas: HomeFaq[] = [
   },
   {
     q: 'Preciso ligar a câmera e falar na frente de todo mundo?',
-    a: 'A conversa acontece em grupos pequenos, com rodízio — não é você falando para uma plateia. Câmera é bem-vinda, mas ninguém é obrigado. E ninguém corrige seu inglês em público: errar em voz alta faz parte do treino.',
+    a: 'A conversa acontece em grupos pequenos, de 3 a 8 pessoas, com rodízio — não é você falando para uma plateia. Câmera é bem-vinda, mas ninguém é obrigado. E ninguém corrige seu inglês em público: errar em voz alta faz parte do treino.',
   },
   {
     q: 'Onde acontecem os encontros presenciais?',
@@ -70,7 +70,7 @@ export const homeFaqs: HomeFaq[] = [
   },
   {
     q: 'Funciona pra quem trava na hora de falar mesmo entendendo bem?',
-    a: 'É o perfil mais comum nos encontros: pessoas que estudaram, entendem, mas travam na hora de falar. A conversa em salas menores, sem correção em público, ajuda a ganhar confiança. O ritmo de cada um é diferente — não prometemos prazo.',
+    a: 'É o perfil mais comum nos encontros: pessoas que estudaram, entendem, mas travam na hora de falar. A conversa em grupos de 3 a 8 pessoas, sem correção em público, ajuda a ganhar confiança. O ritmo de cada um é diferente — não prometemos prazo.',
   },
   {
     q: 'Dá pra treinar entrevista e inglês de trabalho?',

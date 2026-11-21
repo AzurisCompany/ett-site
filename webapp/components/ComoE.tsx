@@ -20,7 +20,7 @@ const passos = [
     icon: Mic,
     titulo: 'Todo mundo fala',
     texto:
-      'Grupos pequenos e rodízio. Você não assiste ao encontro, você fala nele. E ninguém é corrigido em público.',
+      'Grupos pequenos, de 3 a 8 pessoas, e rodízio. Você não assiste ao encontro, você fala nele. E ninguém é corrigido em público.',
   },
 ]
 

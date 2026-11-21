@@ -133,7 +133,7 @@ export const ferramentas: Ferramenta[] = [
     finalidade: 'A sala dos encontros de conversação.',
     oQueFaz:
       'Sala online com moderador, salas menores e cartões de tema. É onde acontece o encontro de segunda, às 20h.',
-    exemplo: 'Entrar na sala às 20h de segunda e conversar em grupos pequenos.',
+    exemplo: 'Entrar na sala às 20h de segunda e conversar em grupos de 3 a 8 pessoas.',
     status: 'disponivel',
   },
   {

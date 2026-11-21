@@ -215,7 +215,7 @@ export default function Post() {
         <p>
           O English Talk Time é grupo de conversação{' '}
           <strong>estruturado</strong> — não bate-papo. Cada encontro tem tema, perguntas e
-          rodadas, em grupos pequenos, pra todo mundo falar. Os encontros são gratuitos, abertos
+          rodadas, em grupos de 3 a 8 pessoas, pra todo mundo falar. Os encontros são gratuitos, abertos
           a qualquer pessoa e sem cadastro: online toda segunda às 20h, na sala do ETT Speak, e o
           IEP Talks, presencial, aos sábados às 10h, no IEP, em Curitiba. Entre um encontro e
           outro, as ferramentas do <Link href="/ferramentas/">ETT Player</Link> estão abertas pra

@@ -44,7 +44,7 @@ const steps = [
     icon: MessageSquare,
     title: 'Encontros de conversação',
     description:
-      'Conversa com tema, perguntas e rodadas, em grupos pequenos. É onde o que você praticou sozinho vira conversa de verdade — e continua gratuito.',
+      'Conversa com tema, perguntas e rodadas, em grupos de 3 a 8 pessoas. É onde o que você praticou sozinho vira conversa de verdade — e continua gratuito.',
     tag: 'Prática real',
     color: 'brand-silver',
   },

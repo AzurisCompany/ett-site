@@ -146,7 +146,7 @@ export default function Post() {
         <p>
           Não é aula: não tem professor explicando gramática na frente. É uma roda de conversação
           com tema, perguntas e rodadas, pra ninguém ficar encarando o silêncio sem saber o que
-          dizer. A conversa acontece em grupos pequenos e com rodízio, então todo mundo fala — e
+          dizer. A conversa acontece em grupos de 3 a 8 pessoas e com rodízio, então todo mundo fala — e
           ninguém é corrigido em público.
         </p>
         <p>
