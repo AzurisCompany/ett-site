@@ -599,20 +599,20 @@ export default function FormulaFluente() {
                   </p>
 
                   {/* Mini-features */}
-                  <div className="grid grid-cols-3 gap-3 mb-6">
-                    <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-surface/60 border border-surface-line">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 mb-6">
+                    <div className="flex flex-row sm:flex-col items-center sm:items-start gap-2 sm:gap-1.5 p-3 rounded-xl bg-surface/60 border border-surface-line">
                       <MousePointerClick className="w-4 h-4 text-brand-red" />
                       <span className="text-xs text-ink-soft leading-tight">
                         Clique em qualquer palavra
                       </span>
                     </div>
-                    <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-surface/60 border border-surface-line">
+                    <div className="flex flex-row sm:flex-col items-center sm:items-start gap-2 sm:gap-1.5 p-3 rounded-xl bg-surface/60 border border-surface-line">
                       <Pause className="w-4 h-4 text-brand-red" />
                       <span className="text-xs text-ink-soft leading-tight">
                         Pause e repita a frase
                       </span>
                     </div>
-                    <div className="flex flex-col items-start gap-1.5 p-3 rounded-xl bg-surface/60 border border-surface-line">
+                    <div className="flex flex-row sm:flex-col items-center sm:items-start gap-2 sm:gap-1.5 p-3 rounded-xl bg-surface/60 border border-surface-line">
                       <BookOpen className="w-4 h-4 text-brand-red" />
                       <span className="text-xs text-ink-soft leading-tight">
                         Legenda PT + EN sincronizada

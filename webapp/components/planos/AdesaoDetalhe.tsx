@@ -139,12 +139,12 @@ export default function AdesaoDetalhe() {
             Todas as opções
           </Link>
 
-          <div className="grid lg:grid-cols-[minmax(0,1fr)_380px] gap-10 lg:gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_380px] gap-10 lg:gap-14 items-center">
             <div>
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-5">
                 Comece por aqui · seu 1º mês
               </span>
-              <h1 className="text-4xl sm:text-5xl font-bold text-ink mb-5 leading-[1.1]">
+              <h1 className="text-[2rem] sm:text-5xl font-bold text-ink mb-5 leading-[1.1] break-words">
                 Ativação acompanhada:{' '}
                 <span className="gradient-text">pratique com um plano.</span>
               </h1>

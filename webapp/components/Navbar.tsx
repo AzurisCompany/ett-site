@@ -184,8 +184,9 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="xl:hidden text-ink-soft hover:text-ink transition-colors"
+            className="xl:hidden p-2.5 -mr-2.5 text-ink-soft hover:text-ink transition-colors"
             aria-label="Menu"
+            aria-expanded={mobileOpen}
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -194,7 +195,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="xl:hidden bg-surface-alt border-t border-surface-line px-4 py-4 flex flex-col gap-4">
+        <div className="xl:hidden max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain bg-surface-alt border-t border-surface-line px-4 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.href}

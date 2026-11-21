@@ -180,7 +180,7 @@ export default function PartnerPostPage({
                   <span className="text-[10px] font-bold uppercase tracking-widest text-brand-silver">
                     Indicação de parceiro
                   </span>
-                  <span className="text-sm font-semibold text-ink truncate">
+                  <span className="text-sm font-semibold text-ink">
                     {post.partnerName}
                     {post.partnerAuthor ? ` · ${post.partnerAuthor}` : ''}
                   </span>

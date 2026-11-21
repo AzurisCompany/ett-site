@@ -159,8 +159,8 @@ export default function CuritibaPage() {
                 quem quer praticar a fala em inglês. Gratuito, aberto a qualquer pessoa e sem
                 cadastro: é só chegar.
               </p>
-              <p className="text-ink-muted text-base mb-6 inline-flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-brand-red shrink-0" />
+              <p className="text-ink-muted text-base mb-6">
+                <MapPin className="w-4 h-4 text-brand-red inline-block align-[-2px] mr-1.5" />
                 {IEP_ENDERECO}
               </p>
               <div>
@@ -453,9 +453,9 @@ export default function CuritibaPage() {
                     href={CONTATO_IEP_TALKS.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-surface-line text-ink font-semibold hover:border-brand-red/50 transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-xl border border-surface-line text-ink font-semibold text-sm sm:text-base whitespace-nowrap hover:border-brand-red/50 transition-all"
                   >
-                    <MessageCircle className="w-4 h-4" />
+                    <MessageCircle className="w-4 h-4 shrink-0" />
                     Dúvidas? Fale com o {CONTATO_IEP_TALKS.nome}
                   </a>
                 </div>

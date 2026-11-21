@@ -310,7 +310,7 @@ export const detalhesPlanos: Record<string, DetalhePlano> = {
     ctaNota: `Todo mundo começa pela ativação acompanhada: R$ ${PRECO_ADESAO}, uma vez, que é o seu primeiro mês, com duas sessões de orientação. No fim dos 30 dias, você assina a Trilha de Dedicação por R$ ${PRECO_MENSAL}/mês.`,
     ctaSecundario: {
       texto: 'Já fez a ativação?',
-      label: `Assinar a Dedicação — R$ ${PRECO_MENSAL}/mês`,
+      label: `Assinar a Dedicação — R$\u00a0${PRECO_MENSAL}/mês`,
       href: CHECKOUT_DEDICACAO,
     },
   },

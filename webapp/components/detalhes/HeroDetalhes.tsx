@@ -91,8 +91,8 @@ export default function HeroDetalhes() {
           className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-ink-muted"
         >
           {fatos.map((f) => (
-            <li key={f} className="inline-flex items-center gap-1.5">
-              <Check className="w-4 h-4 text-brand-red" />
+            <li key={f} className="flex items-start gap-1.5 text-left">
+              <Check className="w-4 h-4 mt-0.5 text-brand-red shrink-0" />
               {f}
             </li>
           ))}

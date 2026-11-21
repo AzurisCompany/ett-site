@@ -126,7 +126,7 @@ function LinkAssinar() {
     <p className="text-sm text-ink-muted mt-4">
       Já fez a ativação?{' '}
       <a href={CHECKOUT_DEDICACAO} className="font-semibold text-brand-red hover:underline">
-        Assinar a Dedicação — R$ {PRECO_MENSAL}/mês
+        Assinar a Dedicação — {'R$\u00a0'}{PRECO_MENSAL}/mês
       </a>
     </p>
   )
@@ -149,12 +149,12 @@ export default function DedicacaoDetalhe() {
             Todas as opções
           </Link>
 
-          <div className="grid lg:grid-cols-[minmax(0,1fr)_380px] gap-10 lg:gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_380px] gap-10 lg:gap-14 items-center">
             <div>
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border border-brand-red/30 text-brand-red bg-brand-red/5 mb-5">
                 Depois da ativação · a partir do 2º mês
               </span>
-              <h1 className="text-4xl sm:text-5xl font-bold text-ink mb-5 leading-[1.1]">
+              <h1 className="text-[2rem] sm:text-5xl font-bold text-ink mb-5 leading-[1.1] break-words">
                 Trilha de Dedicação:{' '}
                 <span className="gradient-text">o acompanhamento continua.</span>
               </h1>

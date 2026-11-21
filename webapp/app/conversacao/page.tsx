@@ -405,9 +405,9 @@ export default function ConversacaoPage() {
             <div className="text-center mt-8">
               <Link
                 href="/agenda/"
-                className="inline-flex items-center gap-2 text-ink-muted hover:text-brand-red text-sm transition-colors"
+                className="text-ink-muted hover:text-brand-red text-sm transition-colors"
               >
-                <Calendar className="w-4 h-4" />
+                <Calendar className="w-4 h-4 inline-block align-[-3px] mr-1.5" />
                 Ver agenda completa dos próximos encontros
               </Link>
             </div>

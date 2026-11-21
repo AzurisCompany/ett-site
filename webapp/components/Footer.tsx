@@ -134,11 +134,11 @@ export default function Footer({ locale = 'pt-BR' }: FooterProps) {
           <p className="text-xs text-ink-faint text-center uppercase tracking-widest mb-6">
             {m.partnersOfficial}
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8">
+          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8">
             {partnerLogos.map((logo) => (
               <div
                 key={logo.alt}
-                className="relative h-10 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+                className="relative h-10 rounded-md bg-white md:bg-transparent md:rounded-none opacity-100 md:opacity-50 md:hover:opacity-100 transition-opacity md:grayscale md:hover:grayscale-0"
                 style={{ width: logo.width }}
               >
                 <Image

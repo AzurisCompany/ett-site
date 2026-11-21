@@ -132,7 +132,7 @@ export default function BusinessSchoolDetalhe() {
                 </div>
               )}
 
-              <dl className="grid grid-cols-2 gap-3 mb-8 max-w-2xl">
+              <dl className="grid grid-cols-1 min-[420px]:grid-cols-2 gap-3 mb-8 max-w-2xl">
                 {fatos.map((f) => (
                   <div key={f.titulo} className="flex items-start gap-3 p-4 rounded-xl bg-surface-card border border-surface-line">
                     <f.icon className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />

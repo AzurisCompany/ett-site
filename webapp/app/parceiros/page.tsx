@@ -106,7 +106,7 @@ export default function Page() {
                   <p className="text-sm text-ink-muted mb-4">{c.descricao}</p>
                   <div className="grid md:grid-cols-2 gap-4">
                     {lista.map((p) => (
-                      <div key={p.id} className="rounded-2xl border border-surface-line bg-surface-card p-5 flex gap-4">
+                      <div key={p.id} className="rounded-2xl border border-surface-line bg-surface-card p-5 flex flex-col sm:flex-row gap-4">
                         {p.logo && (
                           <div className="relative w-14 h-14 shrink-0 rounded-xl overflow-hidden border border-surface-line bg-surface">
                             <Image src={p.logo} alt={`Logo ${p.nome}`} fill sizes="56px" className="object-contain p-1" />

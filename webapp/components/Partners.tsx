@@ -49,7 +49,7 @@ export default function Partners() {
                   return (
                     <div
                       key={p.id}
-                      className="bg-surface-card border border-surface-line rounded-2xl p-6 flex gap-4"
+                      className="bg-surface-card border border-surface-line rounded-2xl p-6 flex flex-col sm:flex-row gap-4"
                     >
                       {p.logo ? (
                         <div className="relative w-14 h-14 rounded-xl bg-surface-card border border-surface-line overflow-hidden shrink-0">
