@@ -10,6 +10,7 @@ import {
   GraduationCap,
   Info,
   MapPin,
+  MessageCircle,
   MessagesSquare,
   Monitor,
   Users,
@@ -167,40 +168,83 @@ export default function Page({ params }: { params: { slug: string } }) {
             </div>
             <p className="text-ink-muted text-lg mb-8 max-w-3xl">
               Grupos pequenos de conversação em inglês, conduzidos por {p.nome} dentro da agenda do ETT.
-              Começa em <strong className="text-ink">{dataPorExtenso(p.encontro.inicio)}</strong>.
+              Começa em <strong className="text-ink">{dataPorExtenso(p.encontro.inicio)}</strong>, e acontece toda semana.
             </p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-              {[
-                { icon: CalendarDays, t: 'Quando', s: `${p.encontro.horarios.join(' e ')} · horários na agenda` },
-                { icon: Monitor, t: 'Formato', s: p.encontro.formato },
-                { icon: Users, t: 'Tamanho', s: p.encontro.limite },
-                { icon: MessagesSquare, t: 'Foco', s: `${p.encontro.foco}. ${p.encontro.nivel}.` },
-              ].map((c) => (
-                <div key={c.t} className="rounded-2xl border border-surface-line bg-surface-card p-5">
-                  <c.icon className="w-5 h-5 text-brand-red mb-3" />
-                  <div className="text-xs font-bold uppercase tracking-widest text-ink-subtle mb-1">{c.t}</div>
-                  <p className="text-sm text-ink-soft leading-relaxed">{c.s}</p>
+            <div className="grid lg:grid-cols-[1.2fr_1fr] gap-4 mb-6">
+              <div className="rounded-2xl border border-surface-line bg-surface-card p-5">
+                <div className="flex items-center gap-2 mb-3">
+                  <CalendarDays className="w-5 h-5 text-brand-red" />
+                  <div className="text-xs font-bold uppercase tracking-widest text-ink-subtle">
+                    {p.encontro.horarios.length > 1 ? 'Horários' : 'Horário'} (de Brasília)
+                  </div>
                 </div>
-              ))}
-            </div>
-            <div className="rounded-2xl border border-brand-red/20 bg-brand-red/5 p-5 flex gap-3 max-w-3xl">
-              <Info className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
-              <p className="text-sm text-ink-soft leading-relaxed">
-                <strong className="text-ink">Gratuito pra quem participa do ETT:</strong> quem está no{' '}
-                <Link href="/desafio/" className="text-brand-red font-semibold hover:underline">
-                  Desafio de 7 dias
-                </Link>{' '}
-                ou com a{' '}
-                <Link href="/planos/adesao/" className="text-brand-red font-semibold hover:underline">
-                  ativação
-                </Link>{' '}
-                ou uma trilha ativa. As vagas são poucas por grupo e a inscrição é feita pelo ETT. O encontro
-                online de segunda, 20h, continua aberto a qualquer pessoa —{' '}
-                <Link href="/agenda/" className="text-brand-red font-semibold hover:underline">
-                  ver a agenda
+                <ul className="divide-y divide-surface-line">
+                  {p.encontro.horarios.map((h) => (
+                    <li key={h.dia + h.inicio} className="flex justify-between gap-4 py-2 text-sm">
+                      <span className="font-semibold text-ink">{h.dia}</span>
+                      <span className="text-ink-soft">{h.rotulo}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/agenda/" className="inline-block mt-3 text-sm font-semibold text-brand-red hover:underline">
+                  Ver as datas na agenda
                 </Link>
-                .
-              </p>
+                {p.encontro.previstos && p.encontro.previstos.length > 0 && (
+                  <div className="mt-5 pt-4 border-t border-surface-line">
+                    <div className="text-xs font-bold uppercase tracking-widest text-ink-subtle mb-1">
+                      Previsão de novos encontros
+                    </div>
+                    <p className="text-xs text-ink-muted mb-2">
+                      Horários sugeridos pelo professor, ainda sem data confirmada.
+                    </p>
+                    <ul className="space-y-1">
+                      {p.encontro.previstos.map((h) => (
+                        <li key={h.dia + h.inicio} className="flex justify-between gap-4 text-sm text-ink-muted">
+                          <span>{h.dia}</span>
+                          <span>{h.rotulo}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+              <div className="grid sm:grid-cols-3 lg:grid-cols-1 gap-4">
+                {[
+                  { icon: Monitor, t: 'Formato', s: p.encontro.formato },
+                  { icon: Users, t: 'Tamanho', s: p.encontro.limite },
+                  { icon: MessagesSquare, t: 'Foco', s: `${p.encontro.foco}. ${p.encontro.nivel}.` },
+                ].map((c) => (
+                  <div key={c.t} className="rounded-2xl border border-surface-line bg-surface-card p-4 flex gap-3">
+                    <c.icon className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
+                    <div>
+                      <div className="text-xs font-bold uppercase tracking-widest text-ink-subtle mb-0.5">{c.t}</div>
+                      <p className="text-sm text-ink-soft leading-relaxed">{c.s}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-2xl border border-brand-red/20 bg-brand-red/5 p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-5">
+              <div className="flex gap-3 flex-1">
+                <Info className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
+                <p className="text-sm text-ink-soft leading-relaxed">
+                  <strong className="text-ink">Como participar:</strong> é gratuito pra quem está no{' '}
+                  <Link href="/desafio/" className="text-brand-red font-semibold hover:underline">
+                    Desafio de 7 dias
+                  </Link>{' '}
+                  ou é participante regular do programa ETT. Chame o Miguel no WhatsApp: ele te coloca no
+                  desafio, se você ainda não está, e reserva a sua vaga. O encontro online de segunda, 20h,
+                  continua aberto a qualquer pessoa.
+                </p>
+              </div>
+              <a
+                href={p.encontro.inscricaoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-brand-red-deep text-white font-bold hover:bg-brand-red-deep/90 transition-all shrink-0"
+              >
+                <MessageCircle className="w-5 h-5" /> Quero participar
+              </a>
             </div>
           </div>
         </section>

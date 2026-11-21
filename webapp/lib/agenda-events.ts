@@ -1,3 +1,5 @@
+import { professores } from '@/lib/professores'
+
 export type AgendaEventType = 'online' | 'presencial'
 
 export interface AgendaEvent {
@@ -19,6 +21,8 @@ export interface AgendaEvent {
   links?: { url: string; label: string }[]
   /** Quem realiza, quando não for o próprio ETT. */
   partner?: string
+  /** Encontro de professor parceiro (só pra Participantes Habilitados, não é o aberto de segunda). */
+  restrito?: boolean
 }
 
 /**
@@ -157,6 +161,45 @@ export function encontrosPresenciaisRecorrentes(
   }))
 }
 
+function horaDe(hhmm: string): number {
+  return Number(hhmm.split(':')[0]) + 1
+}
+
+/**
+ * Encontros ETT dos professores parceiros (lib/professores.ts), desde 04/12/2026.
+ * Cada horário semanal vira uma série gerada, a partir de `encontro.inicio`.
+ * Gratuitos, mas só pra quem está no Desafio de 7 dias ou no programa — por
+ * isso `restrito` e o link de inscrição no WhatsApp do Miguel.
+ */
+export function encontrosProfessoresRecorrentes(semanas: number, hoje = new Date()): AgendaEvent[] {
+  return professores.flatMap((p) => {
+    const enc = p.encontro
+    if (!enc) return []
+    return enc.horarios.flatMap((h) =>
+      proximosDiasDaSemana(h.diaSemana, semanas, aPartirDe(hoje, enc.inicio), horaDe(h.fim)).map(
+        (dia): AgendaEvent => ({
+          date: iso(dia),
+          startTime: h.inicio,
+          endTime: h.fim,
+          weekday: h.dia,
+          dateLabel: labelData(dia),
+          type: 'online',
+          title: `Encontro ETT com ${p.nome}`,
+          location: `Online · ${enc.limite.toLowerCase()}`,
+          time: h.rotulo,
+          timeNote: 'Para quem está no Desafio de 7 dias ou no programa ETT. Inscrição pelo WhatsApp.',
+          partner: 'Professor parceiro',
+          restrito: true,
+          links: [
+            { url: enc.inscricaoUrl, label: 'Quero participar' },
+            { url: `/parceiros/${p.slug}/`, label: `Sobre ${p.nome}` },
+          ],
+        }),
+      ),
+    )
+  })
+}
+
 /**
  * O que a /agenda/ mostra: os encontros recorrentes gerados (segunda online e
  * sábado presencial) + os eventos datados que ainda não passaram, em ordem.
@@ -176,8 +219,11 @@ export function eventosFuturos(semanas = 4, hoje = new Date()): AgendaEvent[] {
   const recorrentes = [
     ...encontrosOnlineRecorrentes(semanas, hoje),
     ...encontrosPresenciaisRecorrentes(semanas, hoje),
+    ...encontrosProfessoresRecorrentes(semanas, hoje),
   ].filter(
-    (e) => e.date <= limiteIso && !datados.some((d) => d.date === e.date && d.type === e.type),
+    (e) =>
+      e.date <= limiteIso &&
+      !datados.some((d) => d.date === e.date && d.type === e.type && !!d.restrito === !!e.restrito),
   )
 
   return [...datados, ...recorrentes].sort((a, b) =>

@@ -20,15 +20,34 @@
  * - Perfil sai do site em até 15 dias depois do fim do termo (Cl. 9.2).
  */
 
+import { WHATSAPP_MIGUEL } from '@/lib/desafio'
+
+/** Um horário semanal fixo do Encontro ETT (horário de Brasília). */
+export type HorarioEncontro = {
+  /** 0 = domingo … 5 = sexta, 6 = sábado (Date.getDay). */
+  diaSemana: number
+  dia: string
+  inicio: string // HH:mm
+  fim: string // HH:mm
+  rotulo: string // "9h30 às 11h30"
+}
+
 export type EncontroProfessor = {
-  /** Data ISO do primeiro encontro. */
+  /** Data ISO a partir da qual os encontros valem (cada horário começa na 1ª ocorrência dele). */
   inicio: string
   formato: string
-  /** Dias e horários, como combinado no Anexo I (horário de Brasília). */
-  horarios: string[]
+  /** Horários semanais, como no Anexo I. Geram as datas da /agenda/ (lib/agenda-events.ts). */
+  horarios: HorarioEncontro[]
+  /** Horários sugeridos pelo professor e ainda não confirmados. Só aparecem no perfil, como previsão. */
+  previstos?: HorarioEncontro[]
   limite: string
   nivel: string
   foco: string
+  /**
+   * Inscrição: WhatsApp do Miguel. Só participa quem está no Desafio de 7 dias
+   * ou é participante regular do programa (decisão do Alessandro, 21/11/2026).
+   */
+  inscricaoUrl: string
 }
 
 export type Professor = {
@@ -81,12 +100,25 @@ export const professores: Professor[] = [
     niveis: 'Todos os níveis',
     formatos: ['Online', 'Aulas individuais', 'Aulas em grupo'],
     encontro: {
-      inicio: '2026-12-04',
+      inicio: '2026-12-05',
       formato: 'Online',
-      horarios: ['Sextas-feiras', 'sábados'],
+      // Começa com 1 por semana (4 por mês), sábado 9h–10h (Alessandro, 21/11/2026).
+      horarios: [{ diaSemana: 6, dia: 'Sábado', inicio: '09:00', fim: '10:00', rotulo: '9h às 10h' }],
+      // Os 4 horários que ele sugeriu na ficha: só registro/previsão, não entram na agenda.
+      previstos: [
+        { diaSemana: 5, dia: 'Sexta', inicio: '09:30', fim: '11:30', rotulo: '9h30 às 11h30' },
+        { diaSemana: 5, dia: 'Sexta', inicio: '18:30', fim: '20:30', rotulo: '18h30 às 20h30' },
+        { diaSemana: 6, dia: 'Sábado', inicio: '09:00', fim: '12:00', rotulo: '9h às 12h' },
+        { diaSemana: 6, dia: 'Sábado', inicio: '14:00', fim: '16:00', rotulo: '14h às 16h' },
+      ],
       limite: 'Grupos de 3 a 4 pessoas',
       nivel: 'Participantes de nível parecido no mesmo grupo',
       foco: 'Conversação',
+      inscricaoUrl:
+        `https://wa.me/${WHATSAPP_MIGUEL}?text=` +
+        encodeURIComponent(
+          'Olá, Miguel! Quero participar do Encontro ETT com o J.G. Franklin. Como faço (desafio de 7 dias ou programa)?',
+        ),
     },
     contatoUrl: null,
   },

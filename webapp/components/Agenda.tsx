@@ -60,7 +60,7 @@ export default function Agenda() {
     setAnuncio(anuncioReinicioAtivo(hoje))
   }, [])
 
-  const proximo = (tipo: AgendaEvent['type']) => events?.find((e) => e.type === tipo)
+  const proximo = (tipo: AgendaEvent['type']) => events?.find((e) => e.type === tipo && !e.restrito)
   const aindaNaoVoltou = (tipo: AgendaEvent['type']) =>
     !!hojeIso && hojeIso < (tipo === 'online' ? REINICIO.online : REINICIO.presencial)
 
@@ -257,10 +257,10 @@ export default function Agenda() {
                   const dayNum = ev.dateLabel.split(' ')[0]
                   const monthAbbr = ev.dateLabel.split(' de ')[1].slice(0, 3)
                   const weekdayAbbr = ev.weekday.slice(0, 3).toLowerCase()
-                  const primeiraDaVolta = ev.date === (isOnline ? REINICIO.online : REINICIO.presencial)
+                  const primeiraDaVolta = !ev.restrito && ev.date === (isOnline ? REINICIO.online : REINICIO.presencial)
                   return (
                     <motion.div
-                      key={ev.date + ev.type}
+                      key={ev.date + ev.type + ev.startTime}
                       initial={{ opacity: 0, y: 12 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, margin: '-30px' }}

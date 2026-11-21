@@ -43,6 +43,7 @@ function buildLinks(locale: Locale): NavLink[] {
     { href: '/detalhes/', label: m.program },
     { href: '/ff/', label: m.formulafluente },
     { href: '/imersoes', label: m.immersions },
+    { href: '/parceiros/', label: 'Parceiros' },
     { href: '/blog', label: m.blog },
   ]
 }
@@ -102,7 +103,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden xl:flex items-center gap-6">
+        <div className="hidden xl:flex items-center gap-4 2xl:gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.href}
