@@ -12,6 +12,23 @@ O domínio NÃO está no GitHub Pages. Está em um **hosting externo** que apont
 - **O Hostinger está com Auto Deployment ligado (confirmado em 02/08/2026): o push já publica.** O painel mostra "Conectado com GitHub" e a implantação dispara sozinha, levando ~9s. Medido: push às 14:12 UTC, produção com `last-modified` de 14:14 UTC sem ninguém tocar no painel. **Até 02/08 este arquivo dizia que o pull era manual** — era verdade antes; a conexão com o GitHub foi feita em algum momento entre 01/08 e 02/08.
 - Ainda assim, **confira** depois de deployar: `curl -sI https://englishtalktime.com.br/ | grep -i last-modified` mais ou menos 2 minutos após o push. Se não tiver mudado, aí sim abrir `hpanel.hostinger.com` e clicar em **Reimplantar** (o botão continua existindo). Diretório raiz do site no painel: `public_html`, branch `main`.
 
+## DNS e subdomínios
+
+O DNS de `englishtalktime.com.br` é do **Hostinger** (nameservers `aster`/`helios.dns-parking.com`), editado em hpanel.hostinger.com → Domínios → `englishtalktime.com.br` → DNS / Nameservers. `englishtalktime.com` e `.lat` estão no Namecheap (redirect 301 pra `/en/` e `/es/`; o `https://` deles nunca funcionou).
+
+| Subdomínio | Registro | Aponta para | Desde |
+|---|---|---|---|
+| `@` e `www` | (padrão do Hostinger) | este site estático | — |
+| `crm` | `A crm 76.76.21.21` | Vercel, projeto **`ett-crm`** (time `alessandro-binharas-projects`) | 19/11/2026 |
+
+Regras para app novo da Vercel num subdomínio (ex.: `core.` do ETT Core):
+
+- **Criar só um registro `A <sub> 76.76.21.21`** (ou o `CNAME` que a Vercel indicar) no Hostinger. A Vercel emite o certificado Let's Encrypt sozinha em minutos.
+- 🚫 **Ignorar o aviso "This Domain is not configured properly" do `vercel domains inspect englishtalktime.com.br`.** Ele sugere pôr `A englishtalktime.com.br 76.76.21.21` ou trocar os nameservers pra `ns*.vercel-dns.com` — **qualquer das duas tira este site do ar** (o `@` e o `www` são do Hostinger). O aviso é sobre o domínio raiz, que não é da Vercel; o subdomínio funciona mesmo com ele.
+- Não mexer em `@`, `www`, MX nem no TXT do SPF (`_spf.mail.hostinger.com`).
+- **"Não abre" logo depois de criar o registro (`DNS_PROBE_FINISHED_NXDOMAIN`) é cache negativo**, não erro: quem consultou o nome antes do registro existir guarda o "não existe" pelo TTL negativo do SOA do Hostinger (600 s = 10 min). Conferir pelo DNS público (`curl -s "https://dns.google/resolve?name=<sub>.englishtalktime.com.br&type=A"`) e, na máquina do Windows, `ipconfig /flushdns` + `chrome://net-internals/#dns` → Clear host cache, ou testar no 4G. Pra testar o app antes do DNS local atualizar: `curl --resolve <sub>.englishtalktime.com.br:443:76.76.21.21 https://<sub>.englishtalktime.com.br`.
+- Este WSL não tem `dig`; usar `getent hosts` (resolvedor local) ou a API JSON do `dns.google`.
+
 ## Repository Layout
 
 Repo serve o site **ETT (English Talk Time)** via duas árvores acopladas:

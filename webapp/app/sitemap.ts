@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { blogPosts } from '@/lib/blog-posts'
 import { partnerPosts } from '@/lib/partner-posts'
 import { paginasFerramentas } from '@/lib/ferramentas-paginas'
+import { professores } from '@/lib/professores'
 
 const BASE_URL = 'https://englishtalktime.com.br'
 
@@ -19,6 +20,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'monthly',
     priority: 0.6,
   }))
+
+  const parceirosEntries: MetadataRoute.Sitemap = [
+    { url: `${BASE_URL}/parceiros/`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    ...professores.map((p) => ({
+      url: `${BASE_URL}/parceiros/${p.slug}/`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+  ]
 
   return [
     {
@@ -140,6 +151,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...blogEntries,
     ...partnerEntries,
+    ...parceirosEntries,
     {
       url: `${BASE_URL}/politica-privacidade/`,
       lastModified: now,

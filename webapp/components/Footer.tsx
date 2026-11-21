@@ -68,7 +68,10 @@ function buildLinks(locale: Locale) {
     {
       title: m.partners.title,
       // Lista completa de lib/parceiros.ts (antes eram só 4, todos pro mesmo /#parceiros).
-      items: parceiros.map((p) => ({ label: p.nome, href: p.url ?? '/#parceiros' })),
+      items: [
+        { label: 'Todos os parceiros', href: '/parceiros/' },
+        ...parceiros.map((p) => ({ label: p.nome, href: p.url ?? '/parceiros/' })),
+      ],
     },
   ]
 }
