@@ -17,6 +17,19 @@ export interface BlogPostMeta {
 
 export const blogPosts: BlogPostMeta[] = [
   {
+    slug: 'professor-parceiro-jg-franklin',
+    title:
+      'J.G. Franklin, professor nativo norte-americano, é o novo parceiro do ETT — com encontro aos sábados de manhã',
+    description:
+      'O ETT recebe seu primeiro professor parceiro: J.G. Franklin, norte-americano de Tacoma (EUA), professor de inglês há 18 anos e ator com quase 100 créditos. A partir de 05/12/2026 ele conduz um Encontro ETT de conversação online aos sábados, das 9h às 10h.',
+    excerpt:
+      'Norte-americano, falante nativo, 18 anos ensinando inglês e quase 100 trabalhos como ator. O J.G. Franklin chega como primeiro professor parceiro do ETT e passa a conduzir um encontro de conversação online aos sábados, das 9h às 10h, a partir de 5 de dezembro.',
+    date: '2026-11-24',
+    readMinutes: 4,
+    category: 'Parcerias',
+    tags: ['professor parceiro', 'J.G. Franklin', 'professor nativo', 'encontro online', 'conversação'],
+  },
+  {
     slug: 'cherrytop-business-meal',
     title:
       'CherryTop Business Meal: uma hora de inglês de negócios, online e gratuita (realizado em 1º de agosto)',
